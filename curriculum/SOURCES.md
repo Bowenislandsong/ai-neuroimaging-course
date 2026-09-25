@@ -8,6 +8,20 @@ USC's [published curriculum](https://niin.usc.edu/about#curriculum), [FAQ](https
 
 A course-number label in the old introductory pack is therefore a subject-area mapping. It must not be read as a USC syllabus or accreditation claim. The current notebooks use their own IDs and explicit sources.
 
+## Primary papers and research evidence
+
+The [paper registry](papers/README.md) contains **18 guides** with exact titles, publication/version status, primary full-text locations, reading paths and assignments. The strand registries record verification and notebook mappings. These research papers motivate and challenge the methods taught here; they are distinct from the teaching curricula below. Start with six papers in three comparisons:
+
+| Opening comparison | Essential anchor | Newer-method reading |
+|---|---|---|
+| Processing and alignment | [PP01: fMRIPrep](papers/processing.md#pp01) | [PP04: BrainMorph](papers/processing.md#pp04) |
+| Sampling and generalization | [PD02: Marek et al.](papers/design.md#pd02) | [PM03: BrainIAC](papers/modeling.md#pm03) |
+| Analysis choices and evidence | [PD01: NARPS](papers/design.md#pd01) | [PM05: Omni-fMRI](papers/modeling.md#pm05) |
+
+Use the assigned version and the actual figure or named section, not an AI-generated paper summary. The guides distinguish publication status, available code and unexecuted methods. “Frontier” marks a newer reading relevant to a question; it does not establish universal superiority. [PD02](papers/design.md#pd02) concerns brain-wide associations between people, not a universal sample-size rule for every fMRI study; [PD06](papers/design.md#pd06) supplies a design-focused follow-up. [PD05](papers/design.md#pd05) requires reading the cluster-inference paper **with its correction**.
+
+Paper text and publisher figures are linked, not redistributed. Public access alone does not license reuse; paper, code, data and model-weight terms must be checked separately for an [A3 reconstruction or reproduction](coursework/PAPER_TO_EXPERIMENT.md#a3--figure-or-table-reconstruction-proposal). The original reading guides and small local experiments do not claim to reproduce the full papers or modern models.
+
 ## University courses with inspectable schedules
 
 | Course | Actual public evidence | Revision used and teaching role |

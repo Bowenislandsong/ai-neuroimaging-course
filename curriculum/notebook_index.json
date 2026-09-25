@@ -1,476 +1,788 @@
 [
   {
+    "id": "R00",
+    "title": "Read for the question before the equations",
+    "path": "notebooks/00_paper_orientation/00_how_to_read.ipynb",
+    "execution_tier": "reading",
+    "paper_ids": [
+      "PP01",
+      "PP04",
+      "PD02",
+      "PM03",
+      "PD01",
+      "PM05"
+    ]
+  },
+  {
+    "id": "R01",
+    "title": "Why does a scan need a processing workflow?",
+    "path": "notebooks/00_paper_orientation/01_why_processing.ipynb",
+    "execution_tier": "reading",
+    "paper_ids": [
+      "PP01",
+      "PP04"
+    ]
+  },
+  {
+    "id": "R02",
+    "title": "When will a brain result work for a new person?",
+    "path": "notebooks/00_paper_orientation/02_why_generalization.ipynb",
+    "execution_tier": "reading",
+    "paper_ids": [
+      "PD02",
+      "PM03"
+    ]
+  },
+  {
+    "id": "R03",
+    "title": "Which choices stand between a result and a claim?",
+    "path": "notebooks/00_paper_orientation/03_why_evidence_audits.ipynb",
+    "execution_tier": "reading",
+    "paper_ids": [
+      "PD01",
+      "PM05"
+    ]
+  },
+  {
     "id": "F01",
     "title": "What the AI does and what you must understand",
     "path": "notebooks/00_foundations/01_learning_contract.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD01"
+    ]
   },
   {
     "id": "F02",
     "title": "From tissue to MRI contrast to BOLD",
     "path": "notebooks/00_foundations/02_measurement_bridge.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PB01"
+    ]
   },
   {
     "id": "F03",
     "title": "Read a snippet without becoming a software engineer",
     "path": "notebooks/00_foundations/03_snippet_literacy.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD01"
+    ]
   },
   {
     "id": "F04",
     "title": "A notebook is an experiment with state",
     "path": "notebooks/00_foundations/04_notebook_environment.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01",
+      "PD01"
+    ]
   },
   {
     "id": "PR01",
     "title": "Read an image without losing its location",
     "path": "notebooks/01_processing/01_images_coordinates_metadata.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01",
+      "PP04"
+    ]
   },
   {
     "id": "PR02",
     "title": "Estimate alignment, then choose how to sample",
     "path": "notebooks/01_processing/02_registration_resampling.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP04"
+    ]
   },
   {
     "id": "PR03",
     "title": "Read a deformation field and detect folding",
     "path": "notebooks/01_processing/03_nonlinear_warps.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP04"
+    ]
   },
   {
     "id": "PR04",
     "title": "Separate smooth intensity bias from tissue contrast",
     "path": "notebooks/01_processing/04_bias_field.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP03"
+    ]
   },
   {
     "id": "PR05",
     "title": "A brain mask defines what the analysis can see",
     "path": "notebooks/01_processing/05_brain_extraction.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP03"
+    ]
   },
   {
     "id": "PR06",
     "title": "Labels, posterior probabilities and partial volume are different",
     "path": "notebooks/01_processing/06_tissue_segmentation.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP03"
+    ]
   },
   {
     "id": "PR07",
     "title": "Measure volume before making an atrophy claim",
     "path": "notebooks/01_processing/07_morphometry_volume_jacobian.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP03"
+    ]
   },
   {
     "id": "PR08",
     "title": "Surfaces are meshes, not thin voxel masks",
     "path": "notebooks/01_processing/08_surfaces_topology.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP03"
+    ]
   },
   {
     "id": "PR09",
     "title": "Correct time sampling without inventing slice metadata",
     "path": "notebooks/01_processing/09_slice_timing.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01",
+      "PB01"
+    ]
   },
   {
     "id": "PR10",
     "title": "Realign frames and identify what movement correction cannot repair",
     "path": "notebooks/01_processing/10_motion.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP02"
+    ]
   },
   {
     "id": "PR11",
     "title": "Separate geometric unwarping from signal recovery",
     "path": "notebooks/01_processing/11_susceptibility_distortion.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01"
+    ]
   },
   {
     "id": "PR12",
     "title": "Choose a spatial scale and inspect boundaries",
     "path": "notebooks/01_processing/12_spatial_smoothing.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01"
+    ]
   },
   {
     "id": "PR13",
     "title": "Design a temporal filter using actual sampling",
     "path": "notebooks/01_processing/13_temporal_filters.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP02",
+      "PB01"
+    ]
   },
   {
     "id": "PR14",
     "title": "Remove a modeled nuisance contribution without declaring the residual pure",
     "path": "notebooks/01_processing/14_nuisance_ica.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP02",
+      "PD01"
+    ]
   },
   {
     "id": "PR15",
     "title": "Connect QC decisions to time, coverage and study design",
     "path": "notebooks/01_processing/15_qc_censoring.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP02",
+      "PP01"
+    ]
   },
   {
     "id": "PR16",
     "title": "Keep diffusion volumes and gradient directions together",
     "path": "notebooks/01_processing/16_diffusion_gradients.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP06"
+    ]
   },
   {
     "id": "PR17",
     "title": "Separate denoising, Gibbs removal, eddy correction and interpolation",
     "path": "notebooks/01_processing/17_diffusion_preprocessing.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP06"
+    ]
   },
   {
     "id": "PR18",
     "title": "Fit a tensor and interpret FA and MD within its limits",
     "path": "notebooks/01_processing/18_diffusion_tensor.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP06"
+    ]
   },
   {
     "id": "PR19",
     "title": "A streamline is a model trajectory, not an axon",
     "path": "notebooks/01_processing/19_crossing_fibers_tractography.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP06"
+    ]
   },
   {
     "id": "PR20",
     "title": "Extract region signals with coverage and confounds visible",
     "path": "notebooks/01_processing/20_parcellations_connectivity.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP02",
+      "PP06"
+    ]
   },
   {
     "id": "PR21",
     "title": "Audit the complete processing graph and its evidence",
     "path": "notebooks/01_processing/21_workflow_provenance_reports.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01"
+    ]
   },
   {
     "id": "D01",
-    "title": "01 \u00b7 The question is an estimand, not a button",
+    "title": "The question is an estimand, not a button",
     "path": "notebooks/02_design/01_questions_estimands_causality.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD01"
+    ]
   },
   {
     "id": "D02",
-    "title": "02 \u00b7 Sampling, missingness, and the people behind rows",
+    "title": "Sampling, missingness, and the people behind rows",
     "path": "notebooks/02_design/02_sampling_missingness_units.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02",
+      "PD06"
+    ]
   },
   {
     "id": "D03",
-    "title": "03 \u00b7 Reliability is about differences between people",
+    "title": "Reliability is about differences between people",
     "path": "notebooks/02_design/03_reliability_measurement.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD03"
+    ]
   },
   {
     "id": "D04",
-    "title": "04 \u00b7 Plan sample size from effects and precision",
+    "title": "Plan sample size from effects and precision",
     "path": "notebooks/02_design/04_power_precision.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02",
+      "PD06"
+    ]
   },
   {
     "id": "D05",
-    "title": "05 \u00b7 Event logs, blocks, convolution, and scan sampling",
+    "title": "Event logs, blocks, convolution, and scan sampling",
     "path": "notebooks/02_design/05_block_event_hrf.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PB01",
+      "PD03"
+    ]
   },
   {
     "id": "D06",
-    "title": "06 \u00b7 Let the response shape vary: FIR versus a fixed HRF",
+    "title": "Let the response shape vary: FIR versus a fixed HRF",
     "path": "notebooks/02_design/06_fir_hrf_misspecification.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PB01"
+    ]
   },
   {
     "id": "D07",
-    "title": "07 \u00b7 Efficiency belongs to a contrast",
+    "title": "Efficiency belongs to a contrast",
     "path": "notebooks/02_design/07_design_efficiency.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD06",
+      "PD01"
+    ]
   },
   {
     "id": "D08",
-    "title": "08 \u00b7 Factorial questions and the meaning of an interaction",
+    "title": "Factorial questions and the meaning of an interaction",
     "path": "notebooks/02_design/08_factorial_confounding.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD06"
+    ]
   },
   {
     "id": "D09",
-    "title": "09 \u00b7 From coefficients to a defensible contrast",
+    "title": "From coefficients to a defensible contrast",
     "path": "notebooks/02_design/09_glm_contrasts_inference.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD01"
+    ]
   },
   {
     "id": "D10",
-    "title": "10 \u00b7 Correlated residuals and prewhitening",
+    "title": "Correlated residuals and prewhitening",
     "path": "notebooks/02_design/10_temporal_noise_prewhitening.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD05"
+    ]
   },
   {
     "id": "D11",
-    "title": "11 \u00b7 People, runs, visits, and hierarchical uncertainty",
+    "title": "People, runs, visits, and hierarchical uncertainty",
     "path": "notebooks/02_design/11_group_hierarchy_repeated.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02",
+      "PD06"
+    ]
   },
   {
     "id": "D12",
-    "title": "12 \u00b7 Permutation tests must preserve the experiment",
+    "title": "Permutation tests must preserve the experiment",
     "path": "notebooks/02_design/12_permutation_exchangeability.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD05"
+    ]
   },
   {
     "id": "D13",
-    "title": "13 \u00b7 Voxel families, clusters, and TFCE are different targets",
+    "title": "Voxel families, clusters, and TFCE are different targets",
     "path": "notebooks/02_design/13_multiplicity_clusters_tfce.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD05"
+    ]
   },
   {
     "id": "D14",
-    "title": "14 \u00b7 Region selection and evaluation must be independent",
+    "title": "Region selection and evaluation must be independent",
     "path": "notebooks/02_design/14_roi_selection_circularity.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD04"
+    ]
   },
   {
     "id": "D15",
-    "title": "15 \u00b7 Intervals, Bayesian updating, and meaningful effects",
+    "title": "Intervals, Bayesian updating, and meaningful effects",
     "path": "notebooks/02_design/15_bayesian_intervals_equivalence.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD01"
+    ]
   },
   {
     "id": "D16",
-    "title": "16 \u00b7 Make analytical choices visible before publication",
+    "title": "Make analytical choices visible before publication",
     "path": "notebooks/02_design/16_multiverse_prereg_reproducibility.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD01"
+    ]
   },
   {
     "id": "DS01",
     "title": "Arrays, axes, broadcasting, and masks",
     "path": "notebooks/03_data_science/01_arrays_axes.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01",
+      "PM05"
+    ]
   },
   {
     "id": "DS02",
     "title": "Participant identity, tidy tables, and join cardinality",
     "path": "notebooks/03_data_science/02_tables_identity.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02"
+    ]
   },
   {
     "id": "DS03",
     "title": "NIfTI file contracts, metadata, and precision",
     "path": "notebooks/03_data_science/03_nifti_io.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01"
+    ]
   },
   {
     "id": "DS04",
     "title": "Visual distributions, outliers, and robust summaries",
     "path": "notebooks/03_data_science/04_eda.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02"
+    ]
   },
   {
     "id": "DS05",
     "title": "Missing values, selection, and train-only imputation",
     "path": "notebooks/03_data_science/05_missingness.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02",
+      "PM03"
+    ]
   },
   {
     "id": "DS06",
     "title": "Probability, conditional evidence, and base rates",
     "path": "notebooks/03_data_science/06_probability.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM03"
+    ]
   },
   {
     "id": "DS07",
     "title": "Sampling distributions, dependence, and effective information",
     "path": "notebooks/03_data_science/07_sampling.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02"
+    ]
   },
   {
     "id": "DS08",
     "title": "Bootstrap uncertainty at the right unit",
     "path": "notebooks/03_data_science/08_bootstrap.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02"
+    ]
   },
   {
     "id": "DS09",
     "title": "Standardization, percent signal change, and reference choices",
     "path": "notebooks/03_data_science/09_standardization.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PB01"
+    ]
   },
   {
     "id": "DS10",
     "title": "Linear algebra: rank, projection, and identifiability",
     "path": "notebooks/03_data_science/10_projections.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD03"
+    ]
   },
   {
     "id": "DS11",
     "title": "Likelihood: state the noise model before fitting",
     "path": "notebooks/03_data_science/11_likelihood.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02"
+    ]
   },
   {
     "id": "DS12",
     "title": "Optimization, gradients, and learning rates",
     "path": "notebooks/03_data_science/12_optimization.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP04"
+    ]
   },
   {
     "id": "DS13",
     "title": "Regression diagnostics and coefficient instability",
     "path": "notebooks/03_data_science/13_regression_diagnostics.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02"
+    ]
   },
   {
     "id": "DS14",
     "title": "SVD, PCA, compression, and train-only representations",
     "path": "notebooks/03_data_science/14_pca_svd.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM02",
+      "PM03"
+    ]
   },
   {
     "id": "DS15",
     "title": "Feature selection and the full null pipeline",
     "path": "notebooks/03_data_science/15_selection.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD04"
+    ]
   },
   {
     "id": "DS16",
     "title": "Reproducible computation and an AI analysis audit",
     "path": "notebooks/03_data_science/16_reproducibility.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD01",
+      "PP01"
+    ]
   },
   {
     "id": "M01",
     "title": "What is represented, and in which direction?",
     "path": "notebooks/04_modeling/01_representations_encoding_decoding.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM01"
+    ]
   },
   {
     "id": "M02",
     "title": "Ridge, lasso, and logistic models are different commitments",
     "path": "notebooks/04_modeling/02_regularized_linear_models.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM01",
+      "PM03"
+    ]
   },
   {
     "id": "M03",
     "title": "Curved boundaries: SVM kernels and tree ensembles",
     "path": "notebooks/04_modeling/03_kernels_ensembles.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM04"
+    ]
   },
   {
     "id": "M04",
     "title": "Nested validation and the limits of site adjustment",
     "path": "notebooks/04_modeling/04_nested_sites_harmonization.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM03",
+      "PD02"
+    ]
   },
   {
     "id": "M05",
     "title": "PCA reconstruction versus ICA source assumptions",
     "path": "notebooks/04_modeling/05_pca_ica.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM02"
+    ]
   },
   {
     "id": "M06",
     "title": "Clusters, labels, and stability under changed measurements",
     "path": "notebooks/04_modeling/06_clustering_stability.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD03"
+    ]
   },
   {
     "id": "M07",
     "title": "From regional signals to a graph: every edge is a choice",
     "path": "notebooks/04_modeling/07_connectomes_graphs.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP06",
+      "PP02"
+    ]
   },
   {
     "id": "M08",
     "title": "RSA compares relationships, not matching voxel labels",
     "path": "notebooks/04_modeling/08_rsa_crossvalidated_distances.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM02"
+    ]
   },
   {
     "id": "M09",
     "title": "Searchlight decoding: a center score describes a neighborhood",
     "path": "notebooks/04_modeling/09_searchlight.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM02",
+      "PD04"
+    ]
   },
   {
     "id": "M10",
     "title": "Shared movies: ISC, temporal encoding, and alignment",
     "path": "notebooks/04_modeling/10_naturalistic_isc_encoding.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM01",
+      "PD03"
+    ]
   },
   {
     "id": "M11",
     "title": "A generative model must reproduce more than a mean",
     "path": "notebooks/04_modeling/11_generative_latent_models.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM01"
+    ]
   },
   {
     "id": "M12",
     "title": "Hidden states, emissions, and the meaning of an event",
     "path": "notebooks/04_modeling/12_hmm_event_segmentation.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM01"
+    ]
   },
   {
     "id": "M13",
     "title": "Latent dynamics, Kalman updates, and what DCM adds",
     "path": "notebooks/04_modeling/13_latent_dynamics_dcm.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PB01",
+      "PM01"
+    ]
   },
   {
     "id": "M14",
     "title": "Train a small convolutional network and check its gradients",
     "path": "notebooks/04_modeling/14_cnn_backprop_training.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM03",
+      "PM04"
+    ]
   },
   {
     "id": "M15",
     "title": "Segmentation, imbalance, Dice, and image-level splits",
     "path": "notebooks/04_modeling/15_segmentation_losses.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP03",
+      "PM03"
+    ]
   },
   {
     "id": "M16",
     "title": "Pretraining, frozen features, and actual fine-tuning",
     "path": "notebooks/04_modeling/16_selfsupervision_transfer.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM03",
+      "PM04"
+    ]
   },
   {
     "id": "M17",
     "title": "Attention transforms tokens; a model card constrains claims",
     "path": "notebooks/04_modeling/17_attention_foundation_models.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM05"
+    ]
   },
   {
     "id": "M18",
     "title": "Calibrate probabilities, challenge explanations, preserve the evidence",
     "path": "notebooks/04_modeling/18_calibration_explanation_reproducibility.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PM03",
+      "PM04"
+    ]
   },
   {
     "id": "P01",
     "title": "Inspect a real anatomical template through spatial transformations",
     "path": "notebooks/05_projects/01_anatomical_workflow.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PP01",
+      "PP04"
+    ]
   },
   {
     "id": "P02",
     "title": "A real fMRI run: metadata, design, model, and statistical map",
     "path": "notebooks/05_projects/02_real_fmri_glm.ipynb",
-    "execution_tier": "network"
+    "execution_tier": "network",
+    "paper_ids": [
+      "PP01",
+      "PD01",
+      "PB01"
+    ]
   },
   {
     "id": "P03",
     "title": "A cohort prediction workflow with an unseen site",
     "path": "notebooks/05_projects/03_cohort_generalization.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD02",
+      "PM03"
+    ]
   },
   {
     "id": "P04",
     "title": "Turn the notebooks into a defensible supervised research plan",
     "path": "notebooks/05_projects/04_research_defense.ipynb",
-    "execution_tier": "offline"
+    "execution_tier": "offline",
+    "paper_ids": [
+      "PD01",
+      "PM03"
+    ]
   }
 ]

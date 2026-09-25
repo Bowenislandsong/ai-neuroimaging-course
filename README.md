@@ -1,17 +1,32 @@
 # AI-guided neuroimaging: understand every transformation
 
-A notebook-first course for a learner who uses **Ollama + Goose + Qwen/Gemma, or ChatGPT**, to write small analysis snippets—and learns to explain, inspect, and challenge what those snippets do.
+A **paper-first, notebook-based course** for a learner who uses **Ollama + Goose + Qwen/Gemma, or ChatGPT**, to write small analysis snippets—and learns to explain, inspect, and challenge what those snippets do.
 
-**79 original teaching notebooks** cover foundations, image processing, experimental design, data science, modeling, and integrated projects. Each strand pairs digestible explanations and executable experiments with existing university or workshop materials. **13 original upstream notebooks and one Marimo lesson** are included unchanged with attribution, licenses, version pins, and hashes. Longer source assignments are part of the learning plan, not implied completed work.
+**Start with the research motivation.** Read six essential and recent frontier papers in four guided seminars before the fundamentals. Then follow **paper → question → fundamental concept → short AI-assisted experiment → paper again**. The full [18-paper library](curriculum/papers/README.md) includes assigned sections and figures, original coursework, evidence worksheets and instructor checks.
+
+**83 original notebooks** contain those four reading seminars plus **79 computational lessons and projects** covering foundations, image processing, experimental design, data science and modeling. Each strand pairs digestible explanations and executable experiments with existing university or workshop materials. **13 original upstream notebooks and one Marimo lesson** are included unchanged with attribution, licenses, version pins, and hashes. Longer source assignments are part of the learning plan, not implied completed work.
 
 [![Notebook checks](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml/badge.svg)](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml)
 
-**Start:** [First class](notebooks/00_foundations/01_learning_contract.ipynb) · [Every notebook](curriculum/NOTEBOOK_INDEX.md) · [Study sequence](curriculum/STUDY_PLAN.md) · [Setup](curriculum/SETUP.md) · [AI tutor workflow](curriculum/AI_WORKFLOW.md)
+**Start:** [R00: read for the question](notebooks/00_paper_orientation/00_how_to_read.ipynb) · [Papers and coursework](curriculum/papers/README.md) · [Every notebook](curriculum/NOTEBOOK_INDEX.md) · [Study sequence](curriculum/STUDY_PLAN.md) · [Setup](curriculum/SETUP.md) · [AI tutor workflow](curriculum/AI_WORKFLOW.md)
+
+## Read these before the fundamentals
+
+| Opening seminar | Essential paper | Recent frontier paper |
+|---|---|---|
+| Why processing matters | fMRIPrep (2019) | BrainMorph (2025) |
+| Why results must generalize | Marek: reproducible BWAS (2022) | BrainIAC (2026) |
+| Why evidence needs an audit | NARPS (2020) | Omni-fMRI (2026) |
+
+The [reading guides](curriculum/papers/README.md) link the full texts and specify exactly what to read. Begin with the question, figure, result and limitation; record unfamiliar methods for later. These pairs motivate questions across different tasks, not direct performance comparisons. Recent papers are representative frontier selections, with publication status and assigned versions recorded—not a universal SOTA ranking.
+
+The [26-week study plan](curriculum/STUDY_PLAN.md) starts with two weeks of reading. Later papers arrive before their relevant methods blocks. Actual submissions include an [evidence ledger](curriculum/coursework/EVIDENCE_LEDGER.md), a [SOTA audit](curriculum/coursework/SOTA_AUDIT.md), a mechanism experiment, a scoped figure/table reconstruction and a research defense, with [A1–A4 rubrics](curriculum/coursework/PAPER_TO_EXPERIMENT.md). AI helps locate, explain and implement; the learner must trace claims to the paper and explain the transformations herself.
 
 ## What is taught
 
 | Strand | Notebooks | Substantive coverage |
 |---|---:|---|
+| Paper orientation | 4 | Research motivation; figure and table reading; evidence, benchmark and AI-summary audits; questions to revisit after the methods |
 | Foundations | 4 | MRI measurement/contrast, BOLD, snippet literacy, transformations, notebook state |
 | [Processing](curriculum/processing_coverage.md) | 21 | NIfTI geometry; registration and nonlinear warps; bias fields, brain extraction, tissue segmentation, morphometry, surfaces; slice timing, motion, distortion, smoothing, temporal filters, nuisance/ICA, censoring/QC; diffusion gradients, denoising, tensors, crossing fibers, tractography; parcellations and workflows |
 | [Research design](curriculum/design_coverage.md) | 16 | Estimands, sampling, missingness, reliability, power; block/event/HRF/FIR design, efficiency, factorials; GLM/contrasts, temporal noise, hierarchical/repeated data, permutation, multiplicity/TFCE, ROI circularity, Bayesian/equivalence reasoning, reproducibility |
@@ -19,7 +34,7 @@ A notebook-first course for a learner who uses **Ollama + Goose + Qwen/Gemma, or
 | [Modeling](curriculum/modeling_coverage.md) | 18 | Encoding/decoding, regularization, kernels/ensembles, grouped/nested/site validation, PCA/ICA/clustering, connectomes, RSA, searchlights, naturalistic ISC, latent/generative models, HMMs/dynamics, CNN training, segmentation, self-supervision/transfer, attention/foundation models, calibration/explanations |
 | Projects | 4 | Real anatomical-template transformations; real single-run fMRI GLM; held-out-site cohort prediction; supervised research plan and defense |
 
-Classes follow **predict → ask AI → run a short operation → inspect → break → explain → transfer**. The local examples isolate mechanics; the upstream assignments provide longer practicals. The learner is assessed on scientific understanding, not on whether an assistant can produce code that runs.
+After the opening reading, technical classes follow **predict → ask AI → run a short operation → inspect → break → explain → transfer**. The local examples isolate mechanics; the upstream assignments provide longer practicals. The learner is assessed on scientific understanding, not on whether an assistant can produce code that runs.
 
 ## The actual source curricula
 
@@ -41,7 +56,7 @@ See the [source and reuse registry](curriculum/SOURCES.md), [upstream assignment
 
 USC NIIN 540/520/580/550 inspired the four strands. **Detailed public USC syllabi were not found**, so this repository does not claim to reproduce their weekly coverage or replace the master's program. It expands against inspectable parallel curricula and explicitly records gaps.
 
-The 79 notebooks are a substantial guided foundation. Full FSL/FreeSurfer/DIPY processing, real cohort inference, DCM/ComBat, large 3D neural networks, and external imaging checkpoints remain named specialist extensions where appropriate. The real fMRI project deliberately exposes what a GLM on supplied raw teaching images omits; it is not presented as a fully preprocessed research result. The [coverage audit](curriculum/COVERAGE_AUDIT.md) prevents a toy demonstration from being mistaken for completed method training.
+The 79 computational notebooks are a substantial guided foundation. The four reading seminars and paper assignments add motivation and evidence appraisal; they do not replace practical method training. Full FSL/FreeSurfer/DIPY processing, real cohort inference, DCM/ComBat, large 3D neural networks, and external imaging checkpoints remain named specialist extensions where appropriate. The real fMRI project deliberately exposes what a GLM on supplied raw teaching images omits; it is not presented as a fully preprocessed research result. The [coverage audit](curriculum/COVERAGE_AUDIT.md) prevents a toy demonstration from being mistaken for completed method training.
 
 ## Run and verify
 
@@ -60,7 +75,7 @@ Windows: use `.venv\Scripts\python.exe`. No local LLM is needed to run the noteb
 .venv/bin/python scripts/validate_notebooks.py
 ```
 
-The default check runs **78 offline notebooks** in fresh Jupyter kernels. The real fMRI project is opt-in with `--include-network`. All **79 notebooks / 150 code cells** passed the delivered local Jupyter run; see [verification](curriculum/VERIFICATION.md). The 13 upstream reference notebooks are preserved material, not included in that execution claim. GitHub Actions independently checks the offline core on Linux.
+The default check runs **78 offline computational notebooks** in fresh Jupyter kernels and explicitly skips the four human-assessed reading seminars. The real fMRI project is opt-in with `--include-network`. All **79 computational notebooks / 150 code cells** passed the delivered local Jupyter run; see [verification](curriculum/VERIFICATION.md). The 13 upstream reference notebooks are preserved material, not included in that execution claim. GitHub Actions independently checks the offline core on Linux.
 
 The earlier short [introductory pack](course/README.md) remains as a supplement. The `notebooks/` tree and this README are the expanded course.
 

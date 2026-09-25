@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "strand": "processing",
+  "verified_utc": "2026-09-25T06:11:10Z",
+  "orientation_ids": [
+    "PP01",
+    "PP04"
+  ],
+  "papers": [
+    {
+      "id": "PP01",
+      "title": "fMRIPrep: a robust preprocessing pipeline for functional MRI",
+      "authors": "Oscar Esteban et al.",
+      "year": 2019,
+      "status": "peer-reviewed journal article; Nature Methods 16, 111\u2013116; online 2018-12-10, issue January 2019",
+      "doi": "10.1038/s41592-018-0235-4",
+      "url": "https://doi.org/10.1038/s41592-018-0235-4",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6319393/",
+      "code_url": "https://github.com/nipreps/fmriprep",
+      "role": "essential",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "Results: adaptive workflow and visual reports",
+        "Functional preprocessing methods",
+        "Validation: manual assessment protocol",
+        "Figures 1 and 3 captions; alternative-pipeline comparison setup"
+      ],
+      "notebook_ids": [
+        "PR09",
+        "PR10",
+        "PR11",
+        "PR12",
+        "PR13",
+        "PR14",
+        "PR15",
+        "PR21",
+        "DS03",
+        "DS16",
+        "P02"
+      ],
+      "read_evidence": "Primary PMC full-text passages retrieved through indexed search; direct PMC open encountered a browser challenge. Publisher metadata and figure captions also inspected. No claim of complete supplement review.",
+      "verification_urls": [
+        "https://www.nature.com/articles/s41592-018-0235-4",
+        "https://pubmed.ncbi.nlm.nih.gov/30532080/",
+        "https://github.com/nipreps/fmriprep"
+      ],
+      "orientation": true,
+      "code_executed": false
+    },
+    {
+      "id": "PP02",
+      "title": "Spurious but systematic correlations in functional connectivity MRI networks arise from subject motion",
+      "authors": "Jonathan D. Power, Kelly A. Barnes, Abraham Z. Snyder, Bradley L. Schlaggar, Steven E. Petersen",
+      "year": 2012,
+      "status": "peer-reviewed journal article; NeuroImage 59(3), 2142\u20132154; online 2011-10-14, issue 2012-02-01",
+      "doi": "10.1016/j.neuroimage.2011.10.018",
+      "url": "https://doi.org/10.1016/j.neuroimage.2011.10.018",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254728/",
+      "code_url": null,
+      "role": "essential",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "Results on motion and quality indices",
+        "Figures 4\u20135 and targeted versus random censoring comparison",
+        "Figure 9 regression comparison",
+        "Developmental-interpretation discussion"
+      ],
+      "notebook_ids": [
+        "PR10",
+        "PR14",
+        "PR15",
+        "PR20",
+        "DS07",
+        "DS08",
+        "P02"
+      ],
+      "read_evidence": "Read primary PMC full-text result passages and captions retrieved through indexed search, plus PubMed metadata. Direct PMC open encountered a browser challenge.",
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/22019881/",
+        "https://www.jonathanpower.net/2012-ni-motion-1.html"
+      ],
+      "code_status": "Dedicated original-paper code repository not verified; author paper page checked. Local synthetic coursework is original and is not claimed as a reproduction.",
+      "orientation": false,
+      "code_executed": false
+    },
+    {
+      "id": "PP03",
+      "title": "SynthSeg: Segmentation of brain MRI scans of any contrast and resolution without retraining",
+      "authors": "Benjamin Billot et al.",
+      "year": 2023,
+      "status": "peer-reviewed journal article; Medical Image Analysis 86, 102789; reading copy arXiv v3 dated 2023-01-04",
+      "doi": "10.1016/j.media.2023.102789",
+      "url": "https://doi.org/10.1016/j.media.2023.102789",
+      "fulltext_url": "https://arxiv.org/html/2107.09559v3",
+      "arxiv": "2107.09559v3",
+      "code_url": "https://github.com/BBillot/SynthSeg",
+      "role": "essential",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "3.1.2\u20133.1.4: image generation, intensity/bias and resolution",
+        "Figures 2\u20133 captions",
+        "5.1\u20135.2: robustness and ablations",
+        "6: Discussion, including evaluation reference limitations"
+      ],
+      "notebook_ids": [
+        "PR04",
+        "PR06",
+        "PR07",
+        "PR12",
+        "DS03",
+        "P01"
+      ],
+      "read_evidence": "Read author manuscript HTML at fixed arXiv v3; journal identity/DOI confirmed through PubMed and official project.",
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/36857946/",
+        "https://arxiv.org/abs/2107.09559",
+        "https://github.com/BBillot/SynthSeg"
+      ],
+      "orientation": false,
+      "code_executed": false
+    },
+    {
+      "id": "PP04",
+      "title": "BrainMorph: A Foundational Keypoint Model for Robust and Flexible Brain MRI Registration",
+      "authors": "Alan Q. Wang, Rachit Saluja, Heejong Kim, Xinzi He, Adrian Dalca, Mert R. Sabuncu",
+      "year": 2025,
+      "status": "peer-reviewed journal article; Machine Learning for Biomedical Imaging, published 2025-05-27; first arXiv submission 2024-05-22, v3 2025-06-06",
+      "doi": "10.59275/j.melba.2025-59g7",
+      "url": "https://doi.org/10.59275/j.melba.2025-59g7",
+      "fulltext_url": "https://www.melba-journal.org/papers/2025:010.html",
+      "arxiv": "2405.14019v3",
+      "code_url": "https://github.com/alanqrwang/brainmorph",
+      "role": "frontier",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "3: keypoint model and transform fitting",
+        "Figures 1\u20135 captions",
+        "5.1\u20135.4: datasets, evaluation, metrics and baselines",
+        "7: Discussion and nonlinear-registration limitations"
+      ],
+      "notebook_ids": [
+        "PR01",
+        "PR02",
+        "PR03",
+        "PR21",
+        "DS10",
+        "P01"
+      ],
+      "read_evidence": "Read journal full-text HTML and PDF-extracted caption/section text; journal and arXiv dates cross-checked. PDF screenshot requests failed; no visual-image inspection is claimed.",
+      "verification_urls": [
+        "https://www.melba-journal.org/papers/2025:010.html",
+        "https://arxiv.org/abs/2405.14019v3",
+        "https://github.com/alanqrwang/brainmorph"
+      ],
+      "orientation": true,
+      "code_executed": false
+    },
+    {
+      "id": "PP05",
+      "title": "Towards contrast- and pathology-agnostic clinical fetal brain MRI segmentation using SynthSeg",
+      "authors": "Ziyao Shang et al.",
+      "year": 2026,
+      "status": "peer-reviewed journal article; NeuroImage 327, 121729, issue 2026-02-15; first preprint 2025-04-14, v2 2026-01-23",
+      "doi": "10.1016/j.neuroimage.2026.121729",
+      "url": "https://doi.org/10.1016/j.neuroimage.2026.121729",
+      "fulltext_url": "https://arxiv.org/pdf/2504.10244v2",
+      "arxiv": "2504.10244v2",
+      "code_url": "https://github.com/ZiyaoShang/synthseg-for-clinical-fetal-brains",
+      "role": "frontier",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "2.1: datasets and reference construction",
+        "3.4\u20133.5: pathology and boundary-distance results",
+        "Figures 1\u20132/6 captions and Table 3 context",
+        "4: Discussion",
+        "Data and Code Availability statement"
+      ],
+      "notebook_ids": [
+        "PR06",
+        "PR07",
+        "PR15",
+        "DS04",
+        "DS07",
+        "DS08",
+        "P03",
+        "P04"
+      ],
+      "read_evidence": "Read extracted text of current 29-page arXiv PDF, whose metadata identifies v2 and journal DOI. Publisher search result confirms 2026 issue; direct publisher page unavailable. Figure-reading directions reference manuscript numbering. PDF screenshot failed, so no visual-image inspection is claimed.",
+      "verification_urls": [
+        "https://arxiv.org/abs/2504.10244v2",
+        "https://www.sciencedirect.com/science/article/pii/S1053811926000479",
+        "https://github.com/ZiyaoShang/synthseg-for-clinical-fetal-brains"
+      ],
+      "orientation": false,
+      "code_executed": false
+    },
+    {
+      "id": "PP06",
+      "title": "The challenge of mapping the human connectome based on diffusion tractography",
+      "authors": "Klaus H. Maier-Hein et al.",
+      "year": 2017,
+      "status": "Peer-reviewed Nature Communications article, volume 8, article 1349, published 2017-11-07; author-name correction published 2019-11-04",
+      "doi": "10.1038/s41467-017-01285-x",
+      "url": "https://doi.org/10.1038/s41467-017-01285-x",
+      "fulltext_url": "https://www.nature.com/articles/s41467-017-01285-x",
+      "code_url": null,
+      "code_status": "Publisher lists Supplementary Software 1 with the article. Archive not downloaded or inspected; no single repository claimed for all submitted pipelines.",
+      "role": "essential",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Results: datasets, performance metrics, valid and invalid bundles",
+        "Results: tracking directly on ground-truth directions",
+        "Figures 1, 4, 6 and 7 captions",
+        "Discussion: ambiguity and phantom limitations",
+        "Methods: ground-truth bundle generation",
+        "Data availability and author-name correction"
+      ],
+      "notebook_ids": [
+        "PR16",
+        "PR17",
+        "PR18",
+        "PR19",
+        "M07"
+      ],
+      "read_evidence": "Read primary publisher full-text Results/Methods/Discussion and captions. Read 2019 correction statement: Renjie He was previously misspelled H. Renjie. No claim of running challenge software or visually inspecting downloaded figures.",
+      "verification_urls": [
+        "https://www.nature.com/articles/s41467-017-01285-x",
+        "https://www.nature.com/articles/s41467-019-12867-2"
+      ],
+      "correction_doi": "10.1038/s41467-019-12867-2",
+      "data_dois": [
+        "10.5281/zenodo.572345",
+        "10.5281/zenodo.840086"
+      ],
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp06"
+    }
+  ],
+  "scope": "Original motivation-first reading paths, discussion questions and coursework. No primary-paper PDFs, figures, datasets or checkpoints copied. Listed code was located and read at repository level, not executed. Frontier is a dated curricular choice, not a global SOTA ranking.",
+  "search_log": [
+    {
+      "query": "2025 2026 brain MRI image registration segmentation foundation model BrainMorph paper",
+      "selected": [
+        "PP04"
+      ],
+      "purpose": "Find and verify recent registration publication rather than treating preprint year as final publication."
+    },
+    {
+      "query": "2025 2026 SynthMorph brain registration SynthSeg robust segmentation MRI paper",
+      "selected": [
+        "PP05"
+      ],
+      "purpose": "Actively search 2026 segmentation/robustness work; distinguish journal publication from 2025 preprint."
+    },
+    {
+      "query": "2026 brain MRI registration segmentation robustness paper deepmriprep",
+      "selected": [],
+      "considered_url": "https://www.nature.com/articles/s43588-026-00953-7",
+      "decision": "Read primary Results/Discussion/validation portions; retained as optional extension, not an assessed sixth paper."
+    }
+  ]
+}

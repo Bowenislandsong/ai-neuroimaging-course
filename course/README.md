@@ -1,12 +1,12 @@
-> **Introductory supplement.** The expanded 79-notebook course is now in the [repository start page](../README.md) and [complete class index](../curriculum/NOTEBOOK_INDEX.md). This earlier pack is retained for reference.
+> **Earlier introductory supplement.** The current paper-first course has **83 original notebooks: 79 computational lessons/projects and four human-assessed reading seminars**, supported by [18 paper guides](../curriculum/papers/README.md). Start with [R00](../notebooks/00_paper_orientation/00_how_to_read.ipynb) and the [26-week study plan](../curriculum/STUDY_PLAN.md), which opens with six papers before fundamentals. See the [repository start page](../README.md), [complete class index](../curriculum/NOTEBOOK_INDEX.md) and [paper-to-experiment coursework](../curriculum/coursework/PAPER_TO_EXPERIMENT.md). This earlier pack is retained for reference; its schedule below is not the current course sequence.
 
 # AI-assisted neuroimaging: understand every transformation
 
 A beginner course for a learner who uses AI to write short analysis snippets and wants to understand, inspect, and defend what those snippets do.
 
-**Start here:** [Setup and the AI teaching contract](SETUP.md), then [two foundation classes](lessons/00_bridge.md). The [complete reading edition](COURSEBOOK.md) collects the teaching text in one file. The four notebooks contain the executable demonstrations; their HTML companions show the verified outputs without installing Python.
+**For this retained supplement:** [Setup and the AI teaching contract](SETUP.md), then [two foundation classes](lessons/00_bridge.md). The [complete reading edition](COURSEBOOK.md) collects its teaching text in one file. The four notebooks contain the executable demonstrations; their HTML companions show the verified outputs without installing Python. The current course instead starts with the paper seminars linked above.
 
-## What this course is
+## What this earlier supplement contains
 
 24 core classes, two foundation classes, and two capstone sessions. Allow **14 weeks at two 60–75 minute classes per week**, plus 30–60 minutes of practice weekly. Slow down when the explain-back questions are difficult. The target is informed use of small snippets, not independent software engineering or the full training of a master's degree.
 
@@ -23,7 +23,7 @@ For a transformation, explain the input, output, parameter units, what changes, 
 | Data science • 580-inspired | Arrays/axes; participant joins; z standardization; regression/residuals; QC/uncertainty; provenance/leakage | [580](lessons/580.md) | [Notebook](labs/580_data_science.ipynb) · [Outputs](labs/580_data_science.html) |
 | Modeling • 550-inspired | Representations; baselines; honest splits; metrics; CNNs/segmentation; foundation-model audit | [550](lessons/550.md) | [Notebook](labs/550_modeling.ipynb) · [Outputs](labs/550_modeling.html) |
 
-## Suggested order: interleave understanding with practice
+## Earlier supplement schedule
 
 The numbers label subject areas, not a requirement to finish one block before touching another. Introduce a research question early, before choosing processing settings.
 

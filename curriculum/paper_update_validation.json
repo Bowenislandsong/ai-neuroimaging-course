@@ -1,0 +1,67 @@
+{
+  "checked_at_utc": "2026-09-25T06:24:59.861915+00:00",
+  "computational_baseline_commit": "3b9dcd62511fb333a5cf580e1734cc7d13647fc0",
+  "notebooks": {
+    "total": 83,
+    "computational": 79,
+    "reading_seminars": 4
+  },
+  "papers": 18,
+  "code_and_stored_outputs_unchanged_against_baseline": 79,
+  "reading_include_network_test": {
+    "passed": 0,
+    "failed": 0,
+    "skipped": 4,
+    "results": [
+      {
+        "path": "notebooks/00_paper_orientation/00_how_to_read.ipynb",
+        "course_id": "R00",
+        "tier": "reading",
+        "status": "skipped",
+        "reason": "reading seminar; requires human assessment, not execution"
+      },
+      {
+        "path": "notebooks/00_paper_orientation/01_why_processing.ipynb",
+        "course_id": "R01",
+        "tier": "reading",
+        "status": "skipped",
+        "reason": "reading seminar; requires human assessment, not execution"
+      },
+      {
+        "path": "notebooks/00_paper_orientation/02_why_generalization.ipynb",
+        "course_id": "R02",
+        "tier": "reading",
+        "status": "skipped",
+        "reason": "reading seminar; requires human assessment, not execution"
+      },
+      {
+        "path": "notebooks/00_paper_orientation/03_why_evidence_audits.ipynb",
+        "course_id": "R03",
+        "tier": "reading",
+        "status": "skipped",
+        "reason": "reading seminar; requires human assessment, not execution"
+      }
+    ]
+  },
+  "scope": "Reading assignments need human assessment. Source verification and implementation execution are distinct. No paper model reproduction is claimed.",
+  "computational_smoke_test": {
+    "path": "notebooks/00_foundations/01_learning_contract.ipynb",
+    "course_id": "F01",
+    "tier": "offline",
+    "status": "passed",
+    "code_cells": 2,
+    "explicitly_skipped_cells": [],
+    "figures": 0,
+    "seconds": 0.85
+  },
+  "reading_default_test": {
+    "passed": 0,
+    "failed": 0,
+    "skipped": 4
+  },
+  "index_generator_idempotent": true,
+  "repository_check_output": [
+    "83 original notebooks; 83 unique IDs; 1074 local links; 25 upstream file hashes",
+    "Repository checks passed. External-link access and scientific validity are separate checks."
+  ]
+}

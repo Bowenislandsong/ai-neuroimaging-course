@@ -22,3 +22,9 @@ The files above are byte-for-byte source copies, with the current DartBrains fil
 ## Anatomical-template visualizations
 
 P01 and the earlier template demonstration visualize Nilearn's rescaled/skullstripped ICBM152 nonlinear 2009a asymmetric template. Credit the McConnell Brain Imaging Centre, Montreal Neurological Institute, McGill University, and Fonov et al. [2011](https://doi.org/10.1016/j.neuroimage.2010.07.033) and [2009](https://doi.org/10.1016/S1053-8119(09)70884-5). The source [atlas page and permission terms](https://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009) apply to that material and its displayed derivatives; the repository does not claim ownership or replace those terms. Required source copyright notice: Copyright (C) 1993–2004 Louis Collins, McConnell Brain Imaging Centre, Montreal Neurological Institute, McGill University.
+
+## Linked research papers and original reading coursework
+
+The [paper library](curriculum/papers/README.md) credits 18 linked publications. Original reading guides, seminar worksheets, questions, rubrics and small teaching experiments were written for this course. No paper PDF, publisher figure, author implementation or model weights were imported with this addition. Assigned author-manuscript versions are distinguished from publication records. Corrections and access limitations are retained in the [paper registry](curriculum/papers/paper_registry.json).
+
+Paper access, software access and redistribution permission are separate. BrainIAC's official repository, for example, carries a [research-only license](https://github.com/AIM-KannLab/BrainIAC/blob/main/LICENSE); its code and weights do not inherit this repository's CC BY-SA/MIT terms. Check the applicable paper, dataset, implementation and checkpoint terms before completing optional reproduction work.

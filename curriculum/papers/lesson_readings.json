@@ -1,0 +1,586 @@
+[
+  {
+    "notebook_id": "F01",
+    "paper_ids": [
+      "PD01"
+    ],
+    "motivation_question": "Which decisions in the NARPS analysis path would remain your responsibility if AI wrote every line?"
+  },
+  {
+    "notebook_id": "F02",
+    "paper_ids": [
+      "PB01"
+    ],
+    "motivation_question": "What evidence would justify moving from a BOLD change to a claim about neural activity?"
+  },
+  {
+    "notebook_id": "F03",
+    "paper_ids": [
+      "PD01"
+    ],
+    "motivation_question": "How could two short, valid snippets implement different scientific comparisons?"
+  },
+  {
+    "notebook_id": "F04",
+    "paper_ids": [
+      "PP01",
+      "PD01"
+    ],
+    "motivation_question": "Which hidden choices would prevent a second analyst from recreating your result?"
+  },
+  {
+    "notebook_id": "PR01",
+    "paper_ids": [
+      "PP01",
+      "PP04"
+    ],
+    "motivation_question": "What must be preserved about a scan's location before a pipeline or registration model can use it?"
+  },
+  {
+    "notebook_id": "PR02",
+    "paper_ids": [
+      "PP04"
+    ],
+    "motivation_question": "Why are estimating a transformation and sampling the transformed image separate decisions?"
+  },
+  {
+    "notebook_id": "PR03",
+    "paper_ids": [
+      "PP04"
+    ],
+    "motivation_question": "Can an image look aligned while its deformation is anatomically implausible?"
+  },
+  {
+    "notebook_id": "PR04",
+    "paper_ids": [
+      "PP03"
+    ],
+    "motivation_question": "Why should a segmentation model distinguish smooth scanner-related intensity changes from tissue differences?"
+  },
+  {
+    "notebook_id": "PR05",
+    "paper_ids": [
+      "PP03"
+    ],
+    "motivation_question": "How can an incorrect brain boundary alter the inputs and evaluation of a segmentation method?"
+  },
+  {
+    "notebook_id": "PR06",
+    "paper_ids": [
+      "PP03"
+    ],
+    "motivation_question": "What is lost when a probability or a mixed-tissue voxel becomes one categorical label?"
+  },
+  {
+    "notebook_id": "PR07",
+    "paper_ids": [
+      "PP03"
+    ],
+    "motivation_question": "What extra measurement assumptions are needed to turn a segmentation into a volume comparison?"
+  },
+  {
+    "notebook_id": "PR08",
+    "paper_ids": [
+      "PP03"
+    ],
+    "motivation_question": "Which surface or topology claims cannot be established from a voxel-segmentation score alone?"
+  },
+  {
+    "notebook_id": "PR09",
+    "paper_ids": [
+      "PP01",
+      "PB01"
+    ],
+    "motivation_question": "How can different acquisition times within a volume affect a task-response interpretation?"
+  },
+  {
+    "notebook_id": "PR10",
+    "paper_ids": [
+      "PP02"
+    ],
+    "motivation_question": "Why can aligned frames still contain motion-related differences in connectivity?"
+  },
+  {
+    "notebook_id": "PR11",
+    "paper_ids": [
+      "PP01"
+    ],
+    "motivation_question": "Which distortions can a geometric mapping address, and which missing signals can it not recover?"
+  },
+  {
+    "notebook_id": "PR12",
+    "paper_ids": [
+      "PP01"
+    ],
+    "motivation_question": "How would changing spatial scale affect which structures a downstream result could distinguish?"
+  },
+  {
+    "notebook_id": "PR13",
+    "paper_ids": [
+      "PP02",
+      "PB01"
+    ],
+    "motivation_question": "Could a filter remove part of the signal whose biological meaning you want to study?"
+  },
+  {
+    "notebook_id": "PR14",
+    "paper_ids": [
+      "PP02",
+      "PD01"
+    ],
+    "motivation_question": "What warrants calling a regressor nuisance, and what could remain after removing its fitted contribution?"
+  },
+  {
+    "notebook_id": "PR15",
+    "paper_ids": [
+      "PP02",
+      "PP01"
+    ],
+    "motivation_question": "How could the same censoring rule change both data quality and the people or time points represented?"
+  },
+  {
+    "notebook_id": "PR16",
+    "paper_ids": [
+      "PP06"
+    ],
+    "motivation_question": "Why must each diffusion volume retain the correct gradient direction before a pathway can be inferred?"
+  },
+  {
+    "notebook_id": "PR17",
+    "paper_ids": [
+      "PP06"
+    ],
+    "motivation_question": "Which artifacts could change the directional evidence that a tractography model receives?"
+  },
+  {
+    "notebook_id": "PR18",
+    "paper_ids": [
+      "PP06"
+    ],
+    "motivation_question": "Why does fitting one diffusion tensor not establish the number or course of axonal bundles?"
+  },
+  {
+    "notebook_id": "PR19",
+    "paper_ids": [
+      "PP06"
+    ],
+    "motivation_question": "How can a plausible-looking streamline connect the wrong endpoints?"
+  },
+  {
+    "notebook_id": "PR20",
+    "paper_ids": [
+      "PP02",
+      "PP06"
+    ],
+    "motivation_question": "What evidence distinguishes a functional edge, a tractography edge, and a direct biological connection?"
+  },
+  {
+    "notebook_id": "PR21",
+    "paper_ids": [
+      "PP01"
+    ],
+    "motivation_question": "What would another researcher need to inspect every step between a raw image and a derivative?"
+  },
+  {
+    "notebook_id": "D01",
+    "paper_ids": [
+      "PD01"
+    ],
+    "motivation_question": "Which pipeline choices could change the scientific quantity being estimated rather than merely its estimator?"
+  },
+  {
+    "notebook_id": "D02",
+    "paper_ids": [
+      "PD02",
+      "PD06"
+    ],
+    "motivation_question": "Who is represented by the rows, and whose brain–behavior relationship do you intend to estimate?"
+  },
+  {
+    "notebook_id": "D03",
+    "paper_ids": [
+      "PD03"
+    ],
+    "motivation_question": "Can a strong average task response coexist with an unreliable ranking of individuals?"
+  },
+  {
+    "notebook_id": "D04",
+    "paper_ids": [
+      "PD02",
+      "PD06"
+    ],
+    "motivation_question": "Why do the estimand, measurement reliability, and sampling plan matter alongside participant count?"
+  },
+  {
+    "notebook_id": "D05",
+    "paper_ids": [
+      "PB01",
+      "PD03"
+    ],
+    "motivation_question": "What must be assumed to predict a sampled BOLD response from an event log?"
+  },
+  {
+    "notebook_id": "D06",
+    "paper_ids": [
+      "PB01"
+    ],
+    "motivation_question": "Could a wrong assumed response shape conceal an effect or create a misleading comparison?"
+  },
+  {
+    "notebook_id": "D07",
+    "paper_ids": [
+      "PD06",
+      "PD01"
+    ],
+    "motivation_question": "How does a fixed scanning budget provide different information for different contrasts?"
+  },
+  {
+    "notebook_id": "D08",
+    "paper_ids": [
+      "PD06"
+    ],
+    "motivation_question": "What comparison is needed to distinguish an interaction from a main effect or a sampling difference?"
+  },
+  {
+    "notebook_id": "D09",
+    "paper_ids": [
+      "PD01"
+    ],
+    "motivation_question": "Could similar fitted maps produce different answers because analysts tested different contrasts?"
+  },
+  {
+    "notebook_id": "D10",
+    "paper_ids": [
+      "PD05"
+    ],
+    "motivation_question": "What goes wrong with uncertainty when residual time points are treated as independent?"
+  },
+  {
+    "notebook_id": "D11",
+    "paper_ids": [
+      "PD02",
+      "PD06"
+    ],
+    "motivation_question": "Why does adding visits not automatically add independent people or separate within-person change?"
+  },
+  {
+    "notebook_id": "D12",
+    "paper_ids": [
+      "PD05"
+    ],
+    "motivation_question": "Which rearrangements would preserve the null experiment, and which would destroy its dependence structure?"
+  },
+  {
+    "notebook_id": "D13",
+    "paper_ids": [
+      "PD05"
+    ],
+    "motivation_question": "Does the reported error rate concern voxels, clusters, or another family of decisions?"
+  },
+  {
+    "notebook_id": "D14",
+    "paper_ids": [
+      "PD04"
+    ],
+    "motivation_question": "Did the observations used to select a promising region also influence its reported evaluation?"
+  },
+  {
+    "notebook_id": "D15",
+    "paper_ids": [
+      "PD01"
+    ],
+    "motivation_question": "Would a thresholded decision, an interval, and a posterior probability answer the same question?"
+  },
+  {
+    "notebook_id": "D16",
+    "paper_ids": [
+      "PD01"
+    ],
+    "motivation_question": "Which alternatives should be declared and shown before knowing which result looks most convincing?"
+  },
+  {
+    "notebook_id": "DS01",
+    "paper_ids": [
+      "PP01",
+      "PM05"
+    ],
+    "motivation_question": "Which axis represents space, time, or a sample, and what changes if AI silently swaps them?"
+  },
+  {
+    "notebook_id": "DS02",
+    "paper_ids": [
+      "PD02"
+    ],
+    "motivation_question": "How could an incorrect table join change the number of apparent people and the estimated association?"
+  },
+  {
+    "notebook_id": "DS03",
+    "paper_ids": [
+      "PP01"
+    ],
+    "motivation_question": "Which file metadata must survive loading and saving for a derivative to remain interpretable?"
+  },
+  {
+    "notebook_id": "DS04",
+    "paper_ids": [
+      "PD02"
+    ],
+    "motivation_question": "Could a mean conceal unstable effects, outliers, or a population mismatch?"
+  },
+  {
+    "notebook_id": "DS05",
+    "paper_ids": [
+      "PD02",
+      "PM03"
+    ],
+    "motivation_question": "Whose observations disappear when values are missing, and who is allowed to inform an imputation rule?"
+  },
+  {
+    "notebook_id": "DS06",
+    "paper_ids": [
+      "PM03"
+    ],
+    "motivation_question": "Would the same model score imply the same risk in a population with a different outcome frequency?"
+  },
+  {
+    "notebook_id": "DS07",
+    "paper_ids": [
+      "PD02"
+    ],
+    "motivation_question": "How would repeated sampling change the association you report, even with unchanged biology?"
+  },
+  {
+    "notebook_id": "DS08",
+    "paper_ids": [
+      "PD02"
+    ],
+    "motivation_question": "Which unit should be resampled when multiple scans belong to the same person?"
+  },
+  {
+    "notebook_id": "DS09",
+    "paper_ids": [
+      "PB01"
+    ],
+    "motivation_question": "Does converting a signal into z scores change what biological process the signal measures?"
+  },
+  {
+    "notebook_id": "DS10",
+    "paper_ids": [
+      "PD03"
+    ],
+    "motivation_question": "Could redundant predictors prevent a unique explanation of measured variation?"
+  },
+  {
+    "notebook_id": "DS11",
+    "paper_ids": [
+      "PD02"
+    ],
+    "motivation_question": "Which noise assumptions connect a fitted association to the uncertainty attached to it?"
+  },
+  {
+    "notebook_id": "DS12",
+    "paper_ids": [
+      "PP04"
+    ],
+    "motivation_question": "How could an optimizer's behavior change an estimated alignment without changing the scientific target?"
+  },
+  {
+    "notebook_id": "DS13",
+    "paper_ids": [
+      "PD02"
+    ],
+    "motivation_question": "Could correlated predictors or influential participants change a coefficient's apparent meaning?"
+  },
+  {
+    "notebook_id": "DS14",
+    "paper_ids": [
+      "PM02",
+      "PM03"
+    ],
+    "motivation_question": "Does preserving variation or representational structure guarantee preserving information for the research target?"
+  },
+  {
+    "notebook_id": "DS15",
+    "paper_ids": [
+      "PD04"
+    ],
+    "motivation_question": "When does selecting features become part of the model that must be evaluated independently?"
+  },
+  {
+    "notebook_id": "DS16",
+    "paper_ids": [
+      "PD01",
+      "PP01"
+    ],
+    "motivation_question": "Which records distinguish an auditable analysis from a plausible story about one?"
+  },
+  {
+    "notebook_id": "M01",
+    "paper_ids": [
+      "PM01"
+    ],
+    "motivation_question": "Does this model predict brain measurements from a stimulus or predict a target from brain measurements?"
+  },
+  {
+    "notebook_id": "M02",
+    "paper_ids": [
+      "PM01",
+      "PM03"
+    ],
+    "motivation_question": "What scientific comparison would a regularized linear baseline make possible?"
+  },
+  {
+    "notebook_id": "M03",
+    "paper_ids": [
+      "PM04"
+    ],
+    "motivation_question": "Is an apparent method advantage attributable to the model, its tuning, or unequal evaluation conditions?"
+  },
+  {
+    "notebook_id": "M04",
+    "paper_ids": [
+      "PM03",
+      "PD02"
+    ],
+    "motivation_question": "What would count as a genuinely new person, site, or population for this evaluation?"
+  },
+  {
+    "notebook_id": "M05",
+    "paper_ids": [
+      "PM02"
+    ],
+    "motivation_question": "Does a compressed representation preserve the relationships needed by the scientific question?"
+  },
+  {
+    "notebook_id": "M06",
+    "paper_ids": [
+      "PD03"
+    ],
+    "motivation_question": "Could unstable measurements create unstable clusters even if the clustering algorithm is deterministic?"
+  },
+  {
+    "notebook_id": "M07",
+    "paper_ids": [
+      "PP06",
+      "PP02"
+    ],
+    "motivation_question": "Which processing and modeling choices determine what an edge in this brain graph means?"
+  },
+  {
+    "notebook_id": "M08",
+    "paper_ids": [
+      "PM02"
+    ],
+    "motivation_question": "How can two representations be compared when their individual feature dimensions do not correspond?"
+  },
+  {
+    "notebook_id": "M09",
+    "paper_ids": [
+      "PM02",
+      "PD04"
+    ],
+    "motivation_question": "What does successful local decoding establish, and what would circular feature selection invalidate?"
+  },
+  {
+    "notebook_id": "M10",
+    "paper_ids": [
+      "PM01",
+      "PD03"
+    ],
+    "motivation_question": "Does prediction of a shared stimulus response establish a stable individual difference?"
+  },
+  {
+    "notebook_id": "M11",
+    "paper_ids": [
+      "PM01"
+    ],
+    "motivation_question": "What observations should a proposed model generate if it is to explain more than a fitted mean?"
+  },
+  {
+    "notebook_id": "M12",
+    "paper_ids": [
+      "PM01"
+    ],
+    "motivation_question": "How would predicting a measured task label differ from inferring an unobserved event state?"
+  },
+  {
+    "notebook_id": "M13",
+    "paper_ids": [
+      "PB01",
+      "PM01"
+    ],
+    "motivation_question": "How do assumptions about latent activity and measurement constrain an inferred dynamical explanation?"
+  },
+  {
+    "notebook_id": "M14",
+    "paper_ids": [
+      "PM03",
+      "PM04"
+    ],
+    "motivation_question": "Which local computation turns an image pattern into a feature, and what training evidence tests its usefulness?"
+  },
+  {
+    "notebook_id": "M15",
+    "paper_ids": [
+      "PP03",
+      "PM03"
+    ],
+    "motivation_question": "Could a good average segmentation score hide a small structure's failure or a participant split error?"
+  },
+  {
+    "notebook_id": "M16",
+    "paper_ids": [
+      "PM03",
+      "PM04"
+    ],
+    "motivation_question": "What actually changes between frozen features and fine-tuning, and which data are allowed to drive that change?"
+  },
+  {
+    "notebook_id": "M17",
+    "paper_ids": [
+      "PM05"
+    ],
+    "motivation_question": "How do tokens and attention connect to the paper's atlas-free claim and its evaluation limits?"
+  },
+  {
+    "notebook_id": "M18",
+    "paper_ids": [
+      "PM03",
+      "PM04"
+    ],
+    "motivation_question": "Could a predictor discriminate well while giving poorly calibrated probabilities or misleading explanations?"
+  },
+  {
+    "notebook_id": "P01",
+    "paper_ids": [
+      "PP01",
+      "PP04"
+    ],
+    "motivation_question": "Which checks would make your image transformations reviewable by someone who did not run them?"
+  },
+  {
+    "notebook_id": "P02",
+    "paper_ids": [
+      "PP01",
+      "PD01",
+      "PB01"
+    ],
+    "motivation_question": "Which links between these raw teaching images and a biological claim remain unsupported by this limited GLM?"
+  },
+  {
+    "notebook_id": "P03",
+    "paper_ids": [
+      "PD02",
+      "PM03"
+    ],
+    "motivation_question": "What evidence would show that a cohort predictor transfers to the held-out site rather than exploiting a shortcut?"
+  },
+  {
+    "notebook_id": "P04",
+    "paper_ids": [
+      "PD01",
+      "PM03"
+    ],
+    "motivation_question": "Which claim can your supervised project actually support, and which ambitious claim must remain untested?"
+  }
+]

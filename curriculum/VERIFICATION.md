@@ -1,14 +1,22 @@
 # What was verified
 
-**Delivered local result: 79/79 original notebooks passed, 150 code cells, 45 captured figures.** Each notebook ran in a fresh real Jupyter kernel using `nbclient`, in source order, with no allowed cell errors. The complete machine-readable record is [validation.json](validation.json). A targeted rerun after review verified DS03's added NIfTI millimeter metadata check. Markdown-only source-link corrections did not change executed calculations.
+**Computational baseline: 79/79 original computational notebooks passed, 150 code cells, 45 captured figures.** Each notebook ran in a fresh real Jupyter kernel using `nbclient`, in source order, with no allowed cell errors. The complete machine-readable record is [validation.json](validation.json). A targeted rerun after review verified DS03's added NIfTI millimeter metadata check. Markdown-only source-link corrections did not change executed calculations.
 
 The run used Python 3.14.7, NumPy 2.5.3, SciPy 1.18.1, pandas 3.0.6, Matplotlib 3.11.2, scikit-learn 1.9.1, NiBabel 5.4.2, Nilearn 0.14.1, nbformat 5.11.1, nbclient 0.11.0 and ipykernel 7.3.0. The [tested environment snapshot](../requirements-tested.txt) includes platform-specific dependencies; use [requirements.txt](../requirements.txt) for a fresh portable installation and rerun checks. Dependency ranges are not a claim that every permitted combination has been tested.
+
+## Paper-first addition
+
+The course now contains **83 notebooks: the same 79 computational notebooks and four reading-only seminars**. The seminars require human assessment and are explicitly skipped by the executor, including when `--include-network` is supplied. A skipped seminar is not a passed assignment. The computational notebooks gained original paper questions and return tasks; their code and stored numerical outputs were preserved.
+
+The [paper registry](papers/paper_registry.json) contains 18 sources with publication/assigned-version distinctions and exact reading targets. Source records state which primary passages, captions and publication/code records were inspected, including access limitations. The new coursework does not claim complete visual inspection of all paper figures, a systematic review of all frontier models, or execution of author implementations.
+
+Structural checks cover reading metadata, paper IDs, notebook mappings, local links and all preserved upstream hashes. The publication's Linux workflow reruns the 78 offline computational notebooks. The original 79-notebook local report below remains the historical numerical baseline; see the dated [paper update checks](paper_update_validation.json) for this addition's checks.
 
 ## Scope of the checks
 
 | Check | Result and interpretation |
 |---|---|
-| Core notebooks | All 79 passed fresh-kernel execution and their encoded assertions; 78 offline plus one opt-in data-download project |
+| Computational notebooks | All 79 passed fresh-kernel execution and their encoded assertions; 78 offline plus one opt-in data-download project |
 | Repo structure | Notebook schemas, unique IDs, local teaching links and upstream byte hashes checked by [check_repository.py](../scripts/check_repository.py) |
 | Code/model mechanics | Assertions cover geometry, units, matching rows, rank, fitting boundaries, numerical recovery, gradient checks and deliberate failure contrasts where appropriate |
 | Source integrity | All 25 preserved file hashes in the manifests match; 13 upstream `.ipynb` files plus one Marimo `.py` and source/license evidence are separately identified |

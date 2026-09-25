@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Execute our teaching notebooks in fresh Jupyter kernels; exclude upstream copies.
 
-No scientific interpretation is certified by a passing run. Network-tier projects
+No scientific interpretation is certified by a passing run. Reading seminars are
+human-assessed, not marked as executed. Network-tier projects
 require an explicit flag. Executed copies go in ignored build/executed/ by default.
 """
 from __future__ import annotations
@@ -50,6 +51,9 @@ def main():
         nbformat.validate(notebook)
         tier = notebook.metadata.get('execution_tier', 'offline')
         row = {'path':rel, 'course_id':notebook.metadata.get('course_id'), 'tier':tier}
+        if tier == 'reading':
+            row['status']='skipped'; row['reason']='reading seminar; requires human assessment, not execution'
+            results.append(row); print('READING',rel,flush=True); continue
         if tier != 'offline' and not args.include_network:
             row['status']='skipped'; row['reason']='requires --include-network'
             results.append(row); print('SKIP',rel,flush=True); continue

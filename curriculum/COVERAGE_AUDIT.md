@@ -1,11 +1,12 @@
 # Coverage audit: scope, depth, and omissions
 
-The first 24-class pack was an introduction. This expanded edition has **71 strand notebooks plus 4 foundations and 4 projects**, a complete class sequence, code, failure exercises, AI prompts, answer guides and named upstream assignments. Notebook count is not a measure of degree equivalence.
+The first 24-class pack was an introduction. This paper-first edition has **83 original notebooks: 79 computational notebooks (71 strand, 4 foundations and 4 projects) plus 4 markdown-only reading seminars**. It adds [18 paper guides](papers/README.md), six opening readings and [A1–A4 coursework](coursework/PAPER_TO_EXPERIMENT.md). The numerical lessons retain their existing scope; paper reading adds motivation and evidence assessment, not executed pipeline coverage. Notebook count is not a measure of degree equivalence.
 
 **We cannot honestly claim every topic in all four USC syllabi:** detailed public NIIN 540/520/580/550 syllabi were not located. What we can audit is the coverage of specific topics in the parallel public curricula we inspected. The [source registry](SOURCES.md) separates dated university syllabi from course repositories, workshops and documentation.
 
 ## Evidence levels
 
+- **Human-assessed reading:** a traceable paper/figure interpretation, question list, claim boundary and evidence record. The four reading seminars are structurally checked but are not marked as executed or automatically passed; linking a paper does not demonstrate learner completion.
 - **Worked locally:** original explanation, executable experiment, prediction, numerical/visual inspection, deliberate error, repair and transfer question. The delivered Jupyter run checks execution, not learner mastery.
 - **Guided source practical:** an exact existing course/tutorial assignment and required submission, with its original environment/data. Its inclusion does not mean it has been run.
 - **Conceptual boundary:** a method is explained and contrasted with related methods, but the full estimator or pipeline is not implemented locally.
@@ -21,6 +22,8 @@ The first 24-class pack was an introduction. This expanded edition has **71 stra
 | NIIN 550 modeling | Neuromatch computational/deep learning; BrainIAK; Dartmouth naturalistic course | 18 | [Every modeling topic, check, source and limitation](modeling_coverage.md) |
 
 ## Important depth boundaries
+
+The paper guides include foundational findings, newer methods and explicitly identified preprint versions. They are not a universal ranking of the latest models. Reading a model paper or inspecting its code link does not mean that its weights were run, its benchmark was independently reproduced, or its applicability to a new population was established.
 
 | Area | What is genuinely implemented here | What still requires the upstream/supervised work |
 |---|---|---|
@@ -38,4 +41,4 @@ Broader topics found in the source curricula—cellular dynamics, reinforcement 
 
 For a topic to be “learned,” the student must explain its transformation and failure, complete the named transfer artifact, and pass the relevant checkpoint. For a full-tool practical to be “completed,” she must use its actual environment/data, retain QC and outputs, and defend the interpretation. A course can supply the material and checks; it cannot pre-complete a learner's supervised competence.
 
-The [24-week plan](STUDY_PLAN.md) includes source assignments and a specialist track. Completing only the small local experiments is a broad conceptual and computational foundation, not completion of every source curriculum. See [assessment](ASSESSMENT.md) for independent performance criteria.
+The [26-week plan](STUDY_PLAN.md) starts with two weeks of paper reading before fundamentals, then revisits papers through their mapped experiments, source assignments and a specialist track. First-pass and revised evidence records must be assessed alongside the technical work. Completing only the small local experiments is a broad conceptual and computational foundation, not completion of every source curriculum. See [assessment](ASSESSMENT.md) for independent performance criteria.

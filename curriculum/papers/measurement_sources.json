@@ -1,0 +1,31 @@
+[
+  {
+    "id": "PB01",
+    "title": "Neurophysiological investigation of the basis of the fMRI signal",
+    "authors": "Nikos K. Logothetis, Jon Pauls, Mark Augath, Torsten Trinath, Axel Oeltermann",
+    "year": 2001,
+    "status": "Peer-reviewed Nature research article; published 2001-07-12",
+    "doi": "10.1038/35084005",
+    "url": "https://www.nature.com/articles/35084005",
+    "fulltext_url": "https://www.researchgate.net/publication/11892860_Neurophysiological_Investigation_of_the_Basis_of_the_fMRI_Signal",
+    "code_url": null,
+    "role": "essential",
+    "verified_utc": "2026-09-25",
+    "read_sections": [
+      "Abstract",
+      "Figure 3 and caption",
+      "Figure 4 and caption",
+      "Discussion"
+    ],
+    "notebook_ids": [
+      "F02",
+      "DS09",
+      "D05",
+      "D06",
+      "PR13",
+      "M01"
+    ],
+    "access_note": "Publisher preview is paywalled; inspected public full text uploaded by coauthor Jon Pauls. Not redistributed.",
+    "guide": "measurement.md#pb01"
+  }
+]

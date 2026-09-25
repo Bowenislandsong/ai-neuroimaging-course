@@ -1,0 +1,874 @@
+{
+  "schema_version": 1,
+  "verified_date_utc": "2026-09-25",
+  "scope": "18 linked papers and original coursework. Six opening reads precede fundamentals. Representative frontier selections are not a global performance ranking. Publication and assigned manuscript versions are recorded separately. No full paper implementation or large-model reproduction is claimed.",
+  "papers": [
+    {
+      "id": "PB01",
+      "title": "Neurophysiological investigation of the basis of the fMRI signal",
+      "authors": "Nikos K. Logothetis, Jon Pauls, Mark Augath, Torsten Trinath, Axel Oeltermann",
+      "year": 2001,
+      "status": "Peer-reviewed Nature research article; published 2001-07-12",
+      "doi": "10.1038/35084005",
+      "url": "https://www.nature.com/articles/35084005",
+      "fulltext_url": "https://www.researchgate.net/publication/11892860_Neurophysiological_Investigation_of_the_Basis_of_the_fMRI_Signal",
+      "code_url": null,
+      "role": "essential",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Abstract",
+        "Figure 3 and caption",
+        "Figure 4 and caption",
+        "Discussion"
+      ],
+      "notebook_ids": [
+        "F02",
+        "DS09",
+        "D05",
+        "D06",
+        "PR13",
+        "M01"
+      ],
+      "access_note": "Publisher preview is paywalled; inspected public full text uploaded by coauthor Jon Pauls. Not redistributed.",
+      "guide": "measurement.md#pb01",
+      "source_registry": "measurement_sources.json",
+      "motivation_notebook_ids": [
+        "F02",
+        "PR09",
+        "PR13",
+        "D05",
+        "D06",
+        "DS09",
+        "M13",
+        "P02"
+      ]
+    },
+    {
+      "id": "PP01",
+      "title": "fMRIPrep: a robust preprocessing pipeline for functional MRI",
+      "authors": "Oscar Esteban et al.",
+      "year": 2019,
+      "status": "peer-reviewed journal article; Nature Methods 16, 111–116; online 2018-12-10, issue January 2019",
+      "doi": "10.1038/s41592-018-0235-4",
+      "url": "https://doi.org/10.1038/s41592-018-0235-4",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6319393/",
+      "code_url": "https://github.com/nipreps/fmriprep",
+      "role": "essential",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "Results: adaptive workflow and visual reports",
+        "Functional preprocessing methods",
+        "Validation: manual assessment protocol",
+        "Figures 1 and 3 captions; alternative-pipeline comparison setup"
+      ],
+      "notebook_ids": [
+        "PR09",
+        "PR10",
+        "PR11",
+        "PR12",
+        "PR13",
+        "PR14",
+        "PR15",
+        "PR21",
+        "DS03",
+        "DS16",
+        "P02"
+      ],
+      "read_evidence": "Primary PMC full-text passages retrieved through indexed search; direct PMC open encountered a browser challenge. Publisher metadata and figure captions also inspected. No claim of complete supplement review.",
+      "verification_urls": [
+        "https://www.nature.com/articles/s41592-018-0235-4",
+        "https://pubmed.ncbi.nlm.nih.gov/30532080/",
+        "https://github.com/nipreps/fmriprep"
+      ],
+      "orientation": true,
+      "code_executed": false,
+      "guide": "processing.md#pp01",
+      "source_registry": "processing_sources.json",
+      "motivation_notebook_ids": [
+        "R00",
+        "R01",
+        "F04",
+        "PR01",
+        "PR09",
+        "PR11",
+        "PR12",
+        "PR15",
+        "PR21",
+        "DS01",
+        "DS03",
+        "DS16",
+        "P01",
+        "P02"
+      ]
+    },
+    {
+      "id": "PP02",
+      "title": "Spurious but systematic correlations in functional connectivity MRI networks arise from subject motion",
+      "authors": "Jonathan D. Power, Kelly A. Barnes, Abraham Z. Snyder, Bradley L. Schlaggar, Steven E. Petersen",
+      "year": 2012,
+      "status": "peer-reviewed journal article; NeuroImage 59(3), 2142–2154; online 2011-10-14, issue 2012-02-01",
+      "doi": "10.1016/j.neuroimage.2011.10.018",
+      "url": "https://doi.org/10.1016/j.neuroimage.2011.10.018",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254728/",
+      "code_url": null,
+      "role": "essential",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "Results on motion and quality indices",
+        "Figures 4–5 and targeted versus random censoring comparison",
+        "Figure 9 regression comparison",
+        "Developmental-interpretation discussion"
+      ],
+      "notebook_ids": [
+        "PR10",
+        "PR14",
+        "PR15",
+        "PR20",
+        "DS07",
+        "DS08",
+        "P02"
+      ],
+      "read_evidence": "Read primary PMC full-text result passages and captions retrieved through indexed search, plus PubMed metadata. Direct PMC open encountered a browser challenge.",
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/22019881/",
+        "https://www.jonathanpower.net/2012-ni-motion-1.html"
+      ],
+      "code_status": "Dedicated original-paper code repository not verified; author paper page checked. Local synthetic coursework is original and is not claimed as a reproduction.",
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp02",
+      "source_registry": "processing_sources.json",
+      "motivation_notebook_ids": [
+        "PR10",
+        "PR13",
+        "PR14",
+        "PR15",
+        "PR20",
+        "M07"
+      ]
+    },
+    {
+      "id": "PP03",
+      "title": "SynthSeg: Segmentation of brain MRI scans of any contrast and resolution without retraining",
+      "authors": "Benjamin Billot et al.",
+      "year": 2023,
+      "status": "peer-reviewed journal article; Medical Image Analysis 86, 102789; reading copy arXiv v3 dated 2023-01-04",
+      "doi": "10.1016/j.media.2023.102789",
+      "url": "https://doi.org/10.1016/j.media.2023.102789",
+      "fulltext_url": "https://arxiv.org/html/2107.09559v3",
+      "arxiv": "2107.09559v3",
+      "code_url": "https://github.com/BBillot/SynthSeg",
+      "role": "essential",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "3.1.2–3.1.4: image generation, intensity/bias and resolution",
+        "Figures 2–3 captions",
+        "5.1–5.2: robustness and ablations",
+        "6: Discussion, including evaluation reference limitations"
+      ],
+      "notebook_ids": [
+        "PR04",
+        "PR06",
+        "PR07",
+        "PR12",
+        "DS03",
+        "P01"
+      ],
+      "read_evidence": "Read author manuscript HTML at fixed arXiv v3; journal identity/DOI confirmed through PubMed and official project.",
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/36857946/",
+        "https://arxiv.org/abs/2107.09559",
+        "https://github.com/BBillot/SynthSeg"
+      ],
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp03",
+      "source_registry": "processing_sources.json",
+      "motivation_notebook_ids": [
+        "PR04",
+        "PR05",
+        "PR06",
+        "PR07",
+        "PR08",
+        "M15"
+      ]
+    },
+    {
+      "id": "PP04",
+      "title": "BrainMorph: A Foundational Keypoint Model for Robust and Flexible Brain MRI Registration",
+      "authors": "Alan Q. Wang, Rachit Saluja, Heejong Kim, Xinzi He, Adrian Dalca, Mert R. Sabuncu",
+      "year": 2025,
+      "status": "peer-reviewed journal article; Machine Learning for Biomedical Imaging, published 2025-05-27; first arXiv submission 2024-05-22, v3 2025-06-06",
+      "doi": "10.59275/j.melba.2025-59g7",
+      "url": "https://doi.org/10.59275/j.melba.2025-59g7",
+      "fulltext_url": "https://www.melba-journal.org/papers/2025:010.html",
+      "arxiv": "2405.14019v3",
+      "code_url": "https://github.com/alanqrwang/brainmorph",
+      "role": "frontier",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "3: keypoint model and transform fitting",
+        "Figures 1–5 captions",
+        "5.1–5.4: datasets, evaluation, metrics and baselines",
+        "7: Discussion and nonlinear-registration limitations"
+      ],
+      "notebook_ids": [
+        "PR01",
+        "PR02",
+        "PR03",
+        "PR21",
+        "DS10",
+        "P01"
+      ],
+      "read_evidence": "Read journal full-text HTML and PDF-extracted caption/section text; journal and arXiv dates cross-checked. PDF screenshot requests failed; no visual-image inspection is claimed.",
+      "verification_urls": [
+        "https://www.melba-journal.org/papers/2025:010.html",
+        "https://arxiv.org/abs/2405.14019v3",
+        "https://github.com/alanqrwang/brainmorph"
+      ],
+      "orientation": true,
+      "code_executed": false,
+      "guide": "processing.md#pp04",
+      "source_registry": "processing_sources.json",
+      "motivation_notebook_ids": [
+        "R00",
+        "R01",
+        "PR01",
+        "PR02",
+        "PR03",
+        "DS12",
+        "P01"
+      ]
+    },
+    {
+      "id": "PP05",
+      "title": "Towards contrast- and pathology-agnostic clinical fetal brain MRI segmentation using SynthSeg",
+      "authors": "Ziyao Shang et al.",
+      "year": 2026,
+      "status": "peer-reviewed journal article; NeuroImage 327, 121729, issue 2026-02-15; first preprint 2025-04-14, v2 2026-01-23",
+      "doi": "10.1016/j.neuroimage.2026.121729",
+      "url": "https://doi.org/10.1016/j.neuroimage.2026.121729",
+      "fulltext_url": "https://arxiv.org/pdf/2504.10244v2",
+      "arxiv": "2504.10244v2",
+      "code_url": "https://github.com/ZiyaoShang/synthseg-for-clinical-fetal-brains",
+      "role": "frontier",
+      "verified_utc": "2026-09-25T06:11:10Z",
+      "read_sections": [
+        "2.1: datasets and reference construction",
+        "3.4–3.5: pathology and boundary-distance results",
+        "Figures 1–2/6 captions and Table 3 context",
+        "4: Discussion",
+        "Data and Code Availability statement"
+      ],
+      "notebook_ids": [
+        "PR06",
+        "PR07",
+        "PR15",
+        "DS04",
+        "DS07",
+        "DS08",
+        "P03",
+        "P04"
+      ],
+      "read_evidence": "Read extracted text of current 29-page arXiv PDF, whose metadata identifies v2 and journal DOI. Publisher search result confirms 2026 issue; direct publisher page unavailable. Figure-reading directions reference manuscript numbering. PDF screenshot failed, so no visual-image inspection is claimed.",
+      "verification_urls": [
+        "https://arxiv.org/abs/2504.10244v2",
+        "https://www.sciencedirect.com/science/article/pii/S1053811926000479",
+        "https://github.com/ZiyaoShang/synthseg-for-clinical-fetal-brains"
+      ],
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp05",
+      "source_registry": "processing_sources.json",
+      "motivation_notebook_ids": []
+    },
+    {
+      "id": "PP06",
+      "title": "The challenge of mapping the human connectome based on diffusion tractography",
+      "authors": "Klaus H. Maier-Hein et al.",
+      "year": 2017,
+      "status": "Peer-reviewed Nature Communications article, volume 8, article 1349, published 2017-11-07; author-name correction published 2019-11-04",
+      "doi": "10.1038/s41467-017-01285-x",
+      "url": "https://doi.org/10.1038/s41467-017-01285-x",
+      "fulltext_url": "https://www.nature.com/articles/s41467-017-01285-x",
+      "code_url": null,
+      "code_status": "Publisher lists Supplementary Software 1 with the article. Archive not downloaded or inspected; no single repository claimed for all submitted pipelines.",
+      "role": "essential",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Results: datasets, performance metrics, valid and invalid bundles",
+        "Results: tracking directly on ground-truth directions",
+        "Figures 1, 4, 6 and 7 captions",
+        "Discussion: ambiguity and phantom limitations",
+        "Methods: ground-truth bundle generation",
+        "Data availability and author-name correction"
+      ],
+      "notebook_ids": [
+        "PR16",
+        "PR17",
+        "PR18",
+        "PR19",
+        "M07"
+      ],
+      "read_evidence": "Read primary publisher full-text Results/Methods/Discussion and captions. Read 2019 correction statement: Renjie He was previously misspelled H. Renjie. No claim of running challenge software or visually inspecting downloaded figures.",
+      "verification_urls": [
+        "https://www.nature.com/articles/s41467-017-01285-x",
+        "https://www.nature.com/articles/s41467-019-12867-2"
+      ],
+      "correction_doi": "10.1038/s41467-019-12867-2",
+      "data_dois": [
+        "10.5281/zenodo.572345",
+        "10.5281/zenodo.840086"
+      ],
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp06",
+      "source_registry": "processing_sources.json",
+      "motivation_notebook_ids": [
+        "PR16",
+        "PR17",
+        "PR18",
+        "PR19",
+        "PR20",
+        "M07"
+      ]
+    },
+    {
+      "id": "PD01",
+      "title": "Variability in the analysis of a single neuroimaging dataset by many teams",
+      "authors": "Rotem Botvinik-Nezer et al.",
+      "year": 2020,
+      "status": "Peer-reviewed journal research article, Nature 582, 84–88; full author-hosted paper and PMC author manuscript available.",
+      "doi": "10.1038/s41586-020-2314-9",
+      "url": "https://www.nature.com/articles/s41586-020-2314-9",
+      "fulltext_url": "https://kuhllab.com/wp-content/uploads/2020/09/Botvinik-Nezer-et-al.-2020.pdf",
+      "alternate_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7771346/",
+      "role": "essential",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Abstract",
+        "Figure 1 and caption",
+        "Figure 2 and caption",
+        "Results on unthresholded maps",
+        "Discussion"
+      ],
+      "notebook_ids": [
+        "D09",
+        "D13",
+        "D16",
+        "P04"
+      ],
+      "figure_verification": "Author-hosted full PDF text and captions checked: Figure 1 counts 70 reporting teams and includes prediction-market beliefs; Figure 2 uses 64 teams with usable unthresholded maps.",
+      "access_note": "Author-hosted PDF full text was available through the web reader; direct automated download returned HTTP403. PMC live browser requests intermittently presented a challenge. No local public copy made.",
+      "assignment_anchor": "design.md#pd01",
+      "guide": "design.md#pd01",
+      "source_registry": "design_sources.json",
+      "motivation_notebook_ids": [
+        "R00",
+        "R03",
+        "F01",
+        "F03",
+        "F04",
+        "PR14",
+        "D01",
+        "D07",
+        "D09",
+        "D15",
+        "D16",
+        "DS16",
+        "P02",
+        "P04"
+      ]
+    },
+    {
+      "id": "PD02",
+      "title": "Reproducible brain-wide association studies require thousands of individuals",
+      "authors": "Scott Marek, Brenden Tervo-Clemmens et al.",
+      "year": 2022,
+      "status": "Peer-reviewed journal research article, Nature 603, 654–660; publisher version has a 2022 correction.",
+      "doi": "10.1038/s41586-022-04492-9",
+      "url": "https://www.nature.com/articles/s41586-022-04492-9",
+      "fulltext_url": "https://www.nature.com/articles/s41586-022-04492-9",
+      "alternate_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8991999/",
+      "role": "essential",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Abstract",
+        "Opening BWAS definition",
+        "Figure 1, especially e–h",
+        "Figure 3 and caption",
+        "Discussion",
+        "Methods definitions of replication and error",
+        "Publisher correction"
+      ],
+      "notebook_ids": [
+        "D01",
+        "D04",
+        "DS07",
+        "P03"
+      ],
+      "correction_doi": "10.1038/s41586-022-04692-3",
+      "correction_url": "https://www.nature.com/articles/s41586-022-04692-3",
+      "correction_note": "Publisher correction changes the received date and records conversion to CC BY4 open access; it is not a retraction.",
+      "figure_verification": "Publisher full HTML and PDF checked; Figure 1 covers association sizes and subsampling variation, Figure 3 statistical errors and replication definitions.",
+      "access_note": "Publisher full text and PDF accessible; paper states CC BY4 with usual third-party-material exceptions. Linked only.",
+      "assignment_anchor": "design.md#pd02",
+      "guide": "design.md#pd02",
+      "source_registry": "design_sources.json",
+      "motivation_notebook_ids": [
+        "R00",
+        "R02",
+        "D02",
+        "D04",
+        "D11",
+        "DS02",
+        "DS04",
+        "DS05",
+        "DS07",
+        "DS08",
+        "DS11",
+        "DS13",
+        "M04",
+        "P03"
+      ]
+    },
+    {
+      "id": "PD03",
+      "title": "What Is the Test-Retest Reliability of Common Task-Functional MRI Measures? New Empirical Evidence and a Meta-Analysis",
+      "authors": "Maxwell L. Elliott et al.",
+      "year": 2020,
+      "status": "Peer-reviewed empirical study and meta-analysis, Psychological Science 31, 792–806.",
+      "doi": "10.1177/0956797620916786",
+      "url": "https://doi.org/10.1177/0956797620916786",
+      "fulltext_url": "https://dunedinstudy.otago.ac.nz/files/1598912609210.pdf",
+      "alternate_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7370246/",
+      "role": "essential",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Abstract",
+        "Figure 4 and caption",
+        "Figure 3 and caption",
+        "Discussion of experimental versus individual-difference research",
+        "Reliability analysis",
+        "Appendix on ICC"
+      ],
+      "notebook_ids": [
+        "D03",
+        "D11",
+        "DS07",
+        "P04"
+      ],
+      "figure_verification": "Study-hosted full PDF inspected; Figure 4 visually checked on printed page 800. Warm t maps and cool ICC maps have different thresholds and quantities.",
+      "access_note": "Full paper hosted by the Dunedin Study; PMC author manuscript also indexed. No redistribution permission inferred or figures copied into the course.",
+      "assignment_anchor": "design.md#pd03",
+      "guide": "design.md#pd03",
+      "source_registry": "design_sources.json",
+      "motivation_notebook_ids": [
+        "D03",
+        "D05",
+        "DS10",
+        "M06",
+        "M10"
+      ]
+    },
+    {
+      "id": "PD04",
+      "title": "Circular analysis in systems neuroscience: the dangers of double dipping",
+      "authors": "Nikolaus Kriegeskorte, W. Kyle Simmons, Patrick S. F. Bellgowan, Chris I. Baker",
+      "year": 2009,
+      "status": "Peer-reviewed methodological paper with simulations, Nature Neuroscience 12, 535–540; author manuscript available.",
+      "doi": "10.1038/nn.2303",
+      "url": "https://doi.org/10.1038/nn.2303",
+      "fulltext_url": "https://www.mrc-cbu.cam.ac.uk/personal/nikolaus.kriegeskorte/Kriegeskorte_Simmons_Bellgowan_Baker_Circular_analysis_in_systems_neuroscience_incl_supplement_author_version.pdf",
+      "alternate_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2841687/",
+      "role": "essential",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Figure 3 and Example 2",
+        "Figure 2 and Example 1",
+        "Figure 4 and policy discussion",
+        "Supplementary contrast-covariance discussion on the later pass"
+      ],
+      "notebook_ids": [
+        "D09",
+        "D14",
+        "DS15",
+        "M04"
+      ],
+      "figure_verification": "Full author manuscript with supplement read for assigned examples; Figure 3 visually checked on author-PDF page 12. Its simulated selection and test comparisons differ.",
+      "access_note": "Public author manuscript on the author's MRC-CBU institutional page; no paper or figure redistribution in the course.",
+      "assignment_anchor": "design.md#pd04",
+      "guide": "design.md#pd04",
+      "source_registry": "design_sources.json",
+      "motivation_notebook_ids": [
+        "D14",
+        "DS15",
+        "M09"
+      ]
+    },
+    {
+      "id": "PD05",
+      "title": "Cluster failure: Why fMRI inferences for spatial extent have inflated false-positive rates",
+      "authors": "Anders Eklund, Thomas E. Nichols, Hans Knutsson",
+      "year": 2016,
+      "status": "Peer-reviewed journal research article, PNAS 113, 7900–7905; corrected August 2016.",
+      "doi": "10.1073/pnas.1602413113",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.1602413113",
+      "fulltext_url": "https://www.pnas.org/doi/10.1073/pnas.1602413113",
+      "alternate_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4948312/",
+      "role": "essential",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Corrected Significance statement",
+        "Table 1",
+        "Figure 1 and caption",
+        "Figure 2 and caption",
+        "One-sample permutation Results subsection",
+        "Discussion",
+        "August 2016 correction"
+      ],
+      "notebook_ids": [
+        "D10",
+        "D12",
+        "D13",
+        "P02"
+      ],
+      "correction_doi": "10.1073/pnas.1612033113",
+      "correction_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4995979/",
+      "correction_note": "The correction removes the blanket extrapolation to 40,000 studies and narrows the wording about affected results. Reading the correction is mandatory in PD05.",
+      "figure_verification": "Primary PNAS full HTML, Figure 1–2 captions, parameter table and one-sample sign-flip caveat checked; correction full text checked in indexed PMC record.",
+      "access_note": "Publisher marks the article open access. Source versions and tested procedures are historical; no current-package benchmark was performed here.",
+      "assignment_anchor": "design.md#pd05",
+      "guide": "design.md#pd05",
+      "source_registry": "design_sources.json",
+      "motivation_notebook_ids": [
+        "D10",
+        "D12",
+        "D13"
+      ]
+    },
+    {
+      "id": "PD06",
+      "title": "Study design features increase replicability in brain-wide association studies",
+      "authors": "Kaidi Kang et al.",
+      "year": 2024,
+      "status": "Peer-reviewed journal research article, Nature 636, 719–727; published 27 November 2024.",
+      "doi": "10.1038/s41586-024-08260-9",
+      "url": "https://www.nature.com/articles/s41586-024-08260-9",
+      "fulltext_url": "https://www.nature.com/articles/s41586-024-08260-9",
+      "code_url": "https://github.com/KaidiK/RESI_BWAS",
+      "role": "frontier",
+      "role_note": "Newer methodological follow-up to PD02; not claimed the latest global SOTA method or a universally optimal design.",
+      "verified_utc": "2026-09-25",
+      "read_sections": [
+        "Abstract",
+        "Figure 2 and caption",
+        "Figure 5 and caption",
+        "Optimal-design discussion",
+        "Longitudinal-design discussion",
+        "Methods replicability definition",
+        "Methods separate between/within-person effects"
+      ],
+      "notebook_ids": [
+        "D01",
+        "D02",
+        "D04",
+        "D11",
+        "P04"
+      ],
+      "figure_verification": "Primary publisher full text checked: Figure 2 contrasts sampling schemes; Figure 5 compares longitudinal interpretations and between/within-person coefficients. Methods define replicability as two independent studies both reaching significance.",
+      "access_note": "Publisher open-access full article inspected and author code link verified; neither paper figures nor code vendored or executed here.",
+      "assignment_anchor": "design.md#pd06",
+      "guide": "design.md#pd06",
+      "source_registry": "design_sources.json",
+      "motivation_notebook_ids": [
+        "D02",
+        "D04",
+        "D07",
+        "D08",
+        "D11"
+      ]
+    },
+    {
+      "id": "PM01",
+      "title": "Encoding and decoding in fMRI",
+      "authors": "Thomas Naselaris, Kendrick N. Kay, Shinji Nishimoto, Jack L. Gallant",
+      "year": 2011,
+      "status": "Peer-reviewed review; NeuroImage 56(2):400–410, 2011 issue; first published online in 2010.",
+      "doi": "10.1016/j.neuroimage.2010.07.073",
+      "url": "https://doi.org/10.1016/j.neuroimage.2010.07.073",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3037423/",
+      "code_url": null,
+      "code_verification": "No original paper-specific code repository verified. Course notebook is an independent teaching exercise.",
+      "role": "foundational_conceptual_review",
+      "verified_utc": "2026-09-25T06:11:34Z",
+      "read_sections": [
+        "Sections 2 and 3",
+        "Section 4, especially 4.2",
+        "Figure 1 caption"
+      ],
+      "notebook_ids": [
+        "M01",
+        "M02",
+        "M10"
+      ],
+      "coursework_anchor": "modeling.md#pm01",
+      "deliverable": "Two prediction diagrams, a three-row generalization test sheet, and an annotated toy target-replacement experiment.",
+      "verification_sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3037423/",
+          "kind": "primary_author_manuscript",
+          "checked": "Title, authors, DOI, issue date, assigned sections, figure caption."
+        }
+      ],
+      "reuse": "Linked reading only; original coursework. No PDF, figure, or original implementation redistributed.",
+      "guide": "modeling.md#pm01",
+      "source_registry": "modeling_sources.json",
+      "motivation_notebook_ids": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M12",
+        "M13"
+      ]
+    },
+    {
+      "id": "PM02",
+      "title": "Representational similarity analysis – connecting the branches of systems neuroscience",
+      "authors": "Nikolaus Kriegeskorte, Marieke Mur, Peter Bandettini",
+      "year": 2008,
+      "status": "Peer-reviewed research; Frontiers in Systems Neuroscience 2:4.",
+      "doi": "10.3389/neuro.06.004.2008",
+      "url": "https://doi.org/10.3389/neuro.06.004.2008",
+      "fulltext_url": "https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/neuro.06.004.2008/full",
+      "code_url": null,
+      "code_verification": "No original paper-specific code release verified. Course implementation is original and does not reproduce the study.",
+      "role": "foundational_representational_comparison",
+      "verified_utc": "2026-09-25T06:11:34Z",
+      "read_sections": [
+        "Introduction: RDM explanation",
+        "Figure 2 caption",
+        "Discussion of relationships among models, regions, subjects, species, and behavior"
+      ],
+      "notebook_ids": [
+        "M08",
+        "M09"
+      ],
+      "coursework_anchor": "modeling.md#pm02",
+      "deliverable": "Two qualitative four-condition matrices, a discriminating stimulus comparison, and a label-scrambling audit.",
+      "verification_sources": [
+        {
+          "url": "https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/neuro.06.004.2008/full",
+          "kind": "primary_journal_fulltext",
+          "checked": "Bibliographic record, representation rationale, assigned passages and caption."
+        }
+      ],
+      "reuse": "Linked reading only; original coursework. No paper PDF or figure redistributed.",
+      "guide": "modeling.md#pm02",
+      "source_registry": "modeling_sources.json",
+      "motivation_notebook_ids": [
+        "DS14",
+        "M05",
+        "M08",
+        "M09"
+      ]
+    },
+    {
+      "id": "PM03",
+      "title": "A generalizable foundation model for analysis of human brain MRI",
+      "authors": "Divyanshu Tak and colleagues",
+      "year": 2026,
+      "status": "Peer-reviewed research; Nature Neuroscience; published 2026-02-05.",
+      "doi": "10.1038/s41593-026-02202-6",
+      "url": "https://doi.org/10.1038/s41593-026-02202-6",
+      "fulltext_url": "https://www.nature.com/articles/s41593-026-02202-6",
+      "code_url": "https://github.com/AIM-KannLab/BrainIAC",
+      "code_verification": "Official paper's code-availability link and repository inspected; no model execution or weight download.",
+      "code_license": "Custom BrainIAC Research-Only License; non-commercial academic research and educational use, separate commercial terms.",
+      "code_license_url": "https://github.com/AIM-KannLab/BrainIAC/blob/main/LICENSE",
+      "role": "modern_structural_mri_selfsupervision_frontier",
+      "verified_utc": "2026-09-25T06:11:34Z",
+      "read_sections": [
+        "Results overview",
+        "Figure 3 caption",
+        "Methods: Pretraining",
+        "Discussion limitations"
+      ],
+      "notebook_ids": [
+        "M04",
+        "M15",
+        "M16",
+        "M18"
+      ],
+      "coursework_anchor": "modeling.md#pm03",
+      "deliverable": "A transfer contract, a sourced result-panel audit, and a frozen-versus-adapted toy comparison.",
+      "claim_scope": "Representative structural-MRI frontier; reported comparisons do not establish universal superiority or fMRI applicability.",
+      "verification_sources": [
+        {
+          "url": "https://www.nature.com/articles/s41593-026-02202-6",
+          "kind": "primary_journal_fulltext",
+          "checked": "Publication, assigned passages, scope, and code availability."
+        },
+        {
+          "url": "https://github.com/AIM-KannLab/BrainIAC",
+          "kind": "official_author_code",
+          "checked": "Repository and checkpoint link availability; no execution."
+        },
+        {
+          "url": "https://github.com/AIM-KannLab/BrainIAC/blob/main/LICENSE",
+          "kind": "official_code_license",
+          "checked": "Research-only terms."
+        }
+      ],
+      "reuse": "Links and original educational assignments only. No restricted code, weights, data, paper PDF, or figures redistributed.",
+      "guide": "modeling.md#pm03",
+      "source_registry": "modeling_sources.json",
+      "motivation_notebook_ids": [
+        "R00",
+        "R02",
+        "DS05",
+        "DS06",
+        "DS14",
+        "M02",
+        "M04",
+        "M14",
+        "M15",
+        "M16",
+        "M18",
+        "P03",
+        "P04"
+      ]
+    },
+    {
+      "id": "PM04",
+      "title": "An OpenMind for 3D Medical Vision Self-supervised Learning",
+      "authors": "Tassilo Wald and colleagues",
+      "year": 2025,
+      "status": "Peer-reviewed ICCV 2025 paper. Assigned full text is arXiv v2, revised 2025-04-18; initial preprint was 2024-12-22.",
+      "doi": "10.48550/arXiv.2412.17041",
+      "doi_kind": "arXiv record DOI, not an IEEE proceedings DOI",
+      "arxiv": "2412.17041v2",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Wald_An_OpenMind_for_3D_Medical_Vision_Self-supervised_Learning_ICCV_2025_paper.html",
+      "fulltext_url": "https://arxiv.org/html/2412.17041v2",
+      "code_url": "https://github.com/MIC-DKFZ/nnssl",
+      "code_verification": "Official repository linked by the paper inspected. Training, datasets, and checkpoints not executed or downloaded.",
+      "code_license": "Repository identifies CC BY-SA 4.0; data and pretrained asset terms must be checked separately.",
+      "role": "modern_selfsupervision_benchmark_and_fair_comparison",
+      "verified_utc": "2026-09-25T06:11:34Z",
+      "read_sections": [
+        "Sections 3.1 and 3.2",
+        "Sections 4.1 and 4.2",
+        "Section 5"
+      ],
+      "notebook_ids": [
+        "M14",
+        "M15",
+        "M16"
+      ],
+      "coursework_anchor": "modeling.md#pm04",
+      "deliverable": "A controlled four-run comparison plan, a reviewer note, and an adaptation experiment ledger.",
+      "claim_scope": "Benchmark-relative comparisons with task and adaptation dependence; not a global winner ranking.",
+      "verification_sources": [
+        {
+          "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Wald_An_OpenMind_for_3D_Medical_Vision_Self-supervised_Learning_ICCV_2025_paper.html",
+          "kind": "official_conference_record",
+          "checked": "Accepted publication title, author list, year."
+        },
+        {
+          "url": "https://arxiv.org/abs/2412.17041",
+          "kind": "primary_preprint_record",
+          "checked": "Version history and DOI."
+        },
+        {
+          "url": "https://arxiv.org/html/2412.17041v2",
+          "kind": "primary_fulltext",
+          "checked": "Assigned sections and task-dependent comparisons."
+        },
+        {
+          "url": "https://github.com/MIC-DKFZ/nnssl",
+          "kind": "official_author_code",
+          "checked": "Code availability and repository license label."
+        }
+      ],
+      "reuse": "Linked readings and code only; no paper PDF, figure, dataset, model, or upstream implementation redistributed.",
+      "guide": "modeling.md#pm04",
+      "source_registry": "modeling_sources.json",
+      "motivation_notebook_ids": [
+        "M03",
+        "M14",
+        "M16",
+        "M18"
+      ]
+    },
+    {
+      "id": "PM05",
+      "title": "Omni-fMRI: A Universal Atlas-Free fMRI Foundation Model",
+      "authors": "Mo Wang and colleagues",
+      "year": 2026,
+      "status": "Listed in official ICML 2026 program and author project. Assigned text remains arXiv v1 dated 2026-01-30; final proceedings version not independently inspected.",
+      "doi": "10.48550/arXiv.2601.23090",
+      "doi_kind": "arXiv record DOI",
+      "arxiv": "2601.23090v1",
+      "url": "https://arxiv.org/abs/2601.23090v1",
+      "fulltext_url": "https://arxiv.org/html/2601.23090v1",
+      "code_url": "https://github.com/OneMore1/Omni-fMRI",
+      "code_verification": "Official repository and author checkpoint link inspected; neither executed nor downloaded.",
+      "code_license": "Not established from inspected repository page. Public visibility is not treated as a redistribution grant.",
+      "paper_license": "Assigned arXiv manuscript declares CC BY-NC-SA 4.0; link only in this course.",
+      "role": "modern_voxel_fmri_foundation_frontier",
+      "verified_utc": "2026-09-25T06:11:34Z",
+      "read_sections": [
+        "Sections 3.2 and 3.3",
+        "Sections 4.2–4.5, including Table 3",
+        "Section 5 limitations"
+      ],
+      "notebook_ids": [
+        "M01",
+        "M04",
+        "M16",
+        "M17",
+        "M18"
+      ],
+      "coursework_anchor": "modeling.md#pm05",
+      "deliverable": "Uniform and adaptive representation budgets, an evaluation evidence table, and a nuisance-control proposal.",
+      "claim_scope": "Reported benchmarks and comparators only; Table 3 SALD values do not support winning every task. Atlas-free does not imply preprocessing-free.",
+      "verification_sources": [
+        {
+          "url": "https://arxiv.org/abs/2601.23090",
+          "kind": "primary_preprint_record",
+          "checked": "Title, authors, v1 date, DOI."
+        },
+        {
+          "url": "https://arxiv.org/html/2601.23090v1",
+          "kind": "primary_fulltext",
+          "checked": "Assigned methods, evaluations, ablations, limitations, and Table 3 counterexample."
+        },
+        {
+          "url": "https://icml.cc/Downloads/2026",
+          "kind": "official_conference_listing",
+          "checked": "Exact title listed with poster 64023; poster detail page could not be accessed."
+        },
+        {
+          "url": "https://onemore1.github.io/Omni-fMRI/",
+          "kind": "official_author_project",
+          "checked": "ICML 2026 label, repository, checkpoint links."
+        },
+        {
+          "url": "https://github.com/OneMore1/Omni-fMRI",
+          "kind": "official_author_code",
+          "checked": "Repository and quickstart availability; license not established."
+        }
+      ],
+      "reuse": "Links and original assignments only. No paper media, weights, code, or subject data redistributed.",
+      "guide": "modeling.md#pm05",
+      "source_registry": "modeling_sources.json",
+      "motivation_notebook_ids": [
+        "R00",
+        "R03",
+        "DS01",
+        "M17"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "R00",
+    "title": "Read for the question before the equations",
+    "path": "notebooks/00_paper_orientation/00_how_to_read.ipynb",
+    "execution_tier": "reading",
+    "paper_ids": [
+      "PP01",
+      "PP04",
+      "PD02",
+      "PM03",
+      "PD01",
+      "PM05"
+    ]
+  },
+  {
+    "id": "R01",
+    "title": "Why does a scan need a processing workflow?",
+    "path": "notebooks/00_paper_orientation/01_why_processing.ipynb",
+    "execution_tier": "reading",
+    "paper_ids": [
+      "PP01",
+      "PP04"
+    ]
+  },
+  {
+    "id": "R02",
+    "title": "When will a brain result work for a new person?",
+    "path": "notebooks/00_paper_orientation/02_why_generalization.ipynb",
+    "execution_tier": "reading",
+    "paper_ids": [
+      "PD02",
+      "PM03"
+    ]
+  },
+  {
+    "id": "R03",
+    "title": "Which choices stand between a result and a claim?",
+    "path": "notebooks/00_paper_orientation/03_why_evidence_audits.ipynb",
+    "execution_tier": "reading",
+    "paper_ids": [
+      "PD01",
+      "PM05"
+    ]
+  }
+]
