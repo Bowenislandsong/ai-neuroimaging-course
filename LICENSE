@@ -1,0 +1,15 @@
+Original teaching prose and notebooks in this repository are licensed under
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+Copyright (c) 2026 AI-guided neuroimaging course contributors.
+
+Full text: LICENSES/CC-BY-SA-4.0.txt
+Canonical license: https://creativecommons.org/licenses/by-sa/4.0/
+
+Original standalone Python scripts in scripts/ and course/verification/ are
+licensed under the MIT license in LICENSES/MIT.txt.
+
+Exceptions: third_party/ files and anatomical-template visualization outputs
+retain their source licenses, credits, and notices.
+See THIRD_PARTY_NOTICES.md and each source manifest. Linked external readings,
+software dependencies, model weights, and downloaded datasets are not relicensed
+by this repository. No institutional or source-author endorsement is implied.

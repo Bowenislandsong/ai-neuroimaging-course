@@ -1,0 +1,26 @@
+[
+  {
+    "id": "P01",
+    "title": "Inspect a real anatomical template through spatial transformations",
+    "path": "notebooks/05_projects/01_anatomical_workflow.ipynb",
+    "tier": "offline"
+  },
+  {
+    "id": "P02",
+    "title": "A real fMRI run: metadata, design, model, and statistical map",
+    "path": "notebooks/05_projects/02_real_fmri_glm.ipynb",
+    "tier": "network"
+  },
+  {
+    "id": "P03",
+    "title": "A cohort prediction workflow with an unseen site",
+    "path": "notebooks/05_projects/03_cohort_generalization.ipynb",
+    "tier": "offline"
+  },
+  {
+    "id": "P04",
+    "title": "Turn the notebooks into a defensible supervised research plan",
+    "path": "notebooks/05_projects/04_research_defense.ipynb",
+    "tier": "offline"
+  }
+]

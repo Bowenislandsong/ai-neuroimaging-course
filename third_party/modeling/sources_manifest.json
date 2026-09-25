@@ -1,0 +1,366 @@
+{
+  "retrieved": "2026-09-25",
+  "note": "Original upstream bytes; vendored tutorials are reference material, NOT executed in this course verification. Other sources were read from the pinned versions.",
+  "sources": [
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "README.md",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/README.md",
+      "sha256": "f6f24bd57e830ed65104a642915a0b855546a4d42a4c9b91363ae8d7654b1f74",
+      "bytes": 3831,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "LICENSE.md",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/LICENSE.md",
+      "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661",
+      "bytes": 18650,
+      "vendored": true,
+      "local_path": "third_party/modeling/course-content/LICENSE.md"
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "LICENSE-CODE.md",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/LICENSE-CODE.md",
+      "sha256": "20651b355ec5e6abad136a6cf9dae86e2672777b7c6436af09ea1096b66ea308",
+      "bytes": 1462,
+      "vendored": true,
+      "local_path": "third_party/modeling/course-content/LICENSE-CODE.md"
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "tutorials/Schedule/daily_schedules.md",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/Schedule/daily_schedules.md",
+      "sha256": "2944809561a08a4bdbb72d35036f523053261f1fc58c0ea80624667437c29492",
+      "bytes": 5609,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "tutorials/W1D1_ModelTypes/student/W1D1_Tutorial1.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D1_ModelTypes/student/W1D1_Tutorial1.ipynb",
+      "sha256": "b8730cf1cdbc3d0b268061f36d74f776b222f0df329a3ed08fa3e3b4099271cc",
+      "bytes": 52809,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "tutorials/W1D2_ModelFitting/student/W1D2_Tutorial4.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D2_ModelFitting/student/W1D2_Tutorial4.ipynb",
+      "sha256": "608c5b9a9aee3b39c7d0e30e5e684e0eba73f55a64489c6eaf8dd470b8140825",
+      "bytes": 37185,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "tutorials/W1D3_GeneralizedLinearModels/student/W1D3_Tutorial1.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D3_GeneralizedLinearModels/student/W1D3_Tutorial1.ipynb",
+      "sha256": "ae6c2e7b43927ef8ec29d3e1bc1455a610c3880639a4a3b0e5f2f4ae49e6d81c",
+      "bytes": 47614,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "tutorials/W1D4_DimensionalityReduction/student/W1D4_Tutorial4.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D4_DimensionalityReduction/student/W1D4_Tutorial4.ipynb",
+      "sha256": "71cd5069a12f28caf9b3f686d990a8a4e67b9eb288dbee3aabba98f28f594f34",
+      "bytes": 24802,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "tutorials/W2D3_LinearSystems/student/W2D3_Tutorial1.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W2D3_LinearSystems/student/W2D3_Tutorial1.ipynb",
+      "sha256": "318af9e95a6cdbe458a04c933631a1e01efcae4f7bc51af99252bd368f6a4a94",
+      "bytes": 44142,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "tutorials/W3D3_HiddenDynamics/student/W3D3_Tutorial2.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W3D3_HiddenDynamics/student/W3D3_Tutorial2.ipynb",
+      "sha256": "054bdf1cfde15b2ce1d012ab64ce38d882db2adb7a15cf94aff2d9ed8169a05e",
+      "bytes": 65648,
+      "vendored": true,
+      "local_path": "third_party/modeling/course-content/tutorials/W3D3_HiddenDynamics/student/W3D3_Tutorial2.ipynb"
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content",
+      "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+      "path": "tutorials/W3D3_HiddenDynamics/student/W3D3_Tutorial3.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W3D3_HiddenDynamics/student/W3D3_Tutorial3.ipynb",
+      "sha256": "4fb13eedd424dbbb10d7b5dacd1d353d38439f5a9c7f048d938b332c61021f20",
+      "bytes": 93523,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "README.md",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/README.md",
+      "sha256": "c2691178b24bbd270dcefac26481a257be0a445752c0ecf61367edf81bf9d6ee",
+      "bytes": 4282,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "LICENSE.md",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/LICENSE.md",
+      "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661",
+      "bytes": 18650,
+      "vendored": true,
+      "local_path": "third_party/modeling/course-content-dl/LICENSE.md"
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "LICENSE-CODE.md",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/LICENSE-CODE.md",
+      "sha256": "20651b355ec5e6abad136a6cf9dae86e2672777b7c6436af09ea1096b66ea308",
+      "bytes": 1462,
+      "vendored": true,
+      "local_path": "third_party/modeling/course-content-dl/LICENSE-CODE.md"
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "tutorials/Schedule/daily_schedules.md",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/Schedule/daily_schedules.md",
+      "sha256": "be8c9b8ebc759c7521f29f9e9dafe9667a5ac9ee367b5d2ceb621f3d9538703d",
+      "bytes": 4942,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "tutorials/W1D4_Optimization/student/W1D4_Tutorial1.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W1D4_Optimization/student/W1D4_Tutorial1.ipynb",
+      "sha256": "12bf7f5988de84fc0bab036b84d59c17d4d8a51c88ffcc8f960c79b4914161be",
+      "bytes": 126798,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "tutorials/W2D2_Convnets/student/W2D2_Tutorial1.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.ipynb",
+      "sha256": "4d9a2bb40de84b73e0142b5d3765bdfb3e7b1db3d9bdbbe1634e248cdf4fc748",
+      "bytes": 148495,
+      "vendored": true,
+      "local_path": "third_party/modeling/course-content-dl/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.ipynb"
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "tutorials/W2D3_GenerativeModelsAndDeepLearningDiscussion1/student/W2D3_Tutorial1.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W2D3_GenerativeModelsAndDeepLearningDiscussion1/student/W2D3_Tutorial1.ipynb",
+      "sha256": "2597748ad007211d9980a4c823bc56600697bf94ce4a4d95016790b6e55dd7e5",
+      "bytes": 113036,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "tutorials/W3D1_AttentionAndTransformers/student/W3D1_Tutorial1.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W3D1_AttentionAndTransformers/student/W3D1_Tutorial1.ipynb",
+      "sha256": "9358f6b9dd0fc67a80337ac0cae24b95c18e2fce803e3f4e3f8b651e94cc11ce",
+      "bytes": 90458,
+      "vendored": false
+    },
+    {
+      "repository": "NeuromatchAcademy/course-content-dl",
+      "commit": "caba36c513fb8139ac3c9e7503f7a769dadde25e",
+      "path": "tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/student/W3D3_Tutorial1.ipynb",
+      "url": "https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/student/W3D3_Tutorial1.ipynb",
+      "sha256": "9951aae72c9359e0c61887108f46eb4b1215f58623f15af6a69eca60ca480023",
+      "bytes": 283516,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "README.md",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/README.md",
+      "sha256": "f57c0f8fd9102bf74c45848632f575550718edf1d81391566d124c9a70e5e323",
+      "bytes": 800,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "LICENSE",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "vendored": true,
+      "local_path": "third_party/modeling/brainiak-tutorials/LICENSE"
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/03-classification.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/03-classification.ipynb",
+      "sha256": "c75265bb53e3b4a0345ae124caba981ef0c8f28bf9bc3ab4d5f6ba25c84e5b72",
+      "bytes": 50467,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/04-dimensionality-reduction.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/04-dimensionality-reduction.ipynb",
+      "sha256": "db6ce57919d2a71934d553e81f4ebb95ee45adbdadc00d7e76d0f456918d60d7",
+      "bytes": 28871,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/05-classifier-optimization.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/05-classifier-optimization.ipynb",
+      "sha256": "b784ecab104f204644c36aed58470719cd370e85395f1bc602e95b16d4f6b57a",
+      "bytes": 37380,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/06-rsa.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/06-rsa.ipynb",
+      "sha256": "d3fc70b62b0957d232badc4f6370a18be80e79d30171c4b244aca9e3c96ccd42",
+      "bytes": 34692,
+      "vendored": true,
+      "local_path": "third_party/modeling/brainiak-tutorials/tutorials/06-rsa.ipynb"
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/07-searchlight.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/07-searchlight.ipynb",
+      "sha256": "fa73bf313e4a032e6e36551b84649178b329f74e4a690d6fcc994aca13e4b967",
+      "bytes": 55278,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/08-connectivity.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/08-connectivity.ipynb",
+      "sha256": "f692deed1cf7cb43866f453d772820ad4622cd886ef631eb51addc533d56c427",
+      "bytes": 44789,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/09-fcma.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/09-fcma.ipynb",
+      "sha256": "a5de708303352ed35952154a338ceef3a49752fe36f3f2cad2c7bbd353cf9c13",
+      "bytes": 58423,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/10-isc.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/10-isc.ipynb",
+      "sha256": "47fd6cda4c2de2bd93b3d1311418e1c55823bd0f14e68b821289adcc72a88ce9",
+      "bytes": 40693,
+      "vendored": true,
+      "local_path": "third_party/modeling/brainiak-tutorials/tutorials/10-isc.ipynb"
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/11-srm.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/11-srm.ipynb",
+      "sha256": "a6d8929f056da225469890d7802c5bbc9fea30a9db4cdf5817dedd92e5dd549a",
+      "bytes": 49970,
+      "vendored": false
+    },
+    {
+      "repository": "brainiak/brainiak-tutorials",
+      "commit": "fb62ede943d9694fe703aee0df5f43ecf5558415",
+      "path": "tutorials/12-hmm.ipynb",
+      "url": "https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/12-hmm.ipynb",
+      "sha256": "4ab9f485bec0a2c3b40390d8880bde540e751baf5c94977981a75a65ad69dfc9",
+      "bytes": 40817,
+      "vendored": false
+    },
+    {
+      "repository": "naturalistic-data-analysis/naturalistic_data_analysis",
+      "commit": "88bd22741508b4d678202bde7530cee0511e283f",
+      "path": "README.md",
+      "url": "https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/README.md",
+      "sha256": "de9167d67e39e1ef52a71e0ebd27dba8c8218db56e638660001eb3815bb784dc",
+      "bytes": 4625,
+      "vendored": false
+    },
+    {
+      "repository": "naturalistic-data-analysis/naturalistic_data_analysis",
+      "commit": "88bd22741508b4d678202bde7530cee0511e283f",
+      "path": "content/Contributing.md",
+      "url": "https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/Contributing.md",
+      "sha256": "7571ccfb22fe453621e01c1d4b088b1016ff797911cc09f4d658b811af8883b8",
+      "bytes": 1712,
+      "vendored": false
+    },
+    {
+      "repository": "naturalistic-data-analysis/naturalistic_data_analysis",
+      "commit": "88bd22741508b4d678202bde7530cee0511e283f",
+      "path": "content/Intersubject_Correlation.ipynb",
+      "url": "https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/Intersubject_Correlation.ipynb",
+      "sha256": "90767214c4df6cc86eddb169bed937b0a8df507a94c6901be77fd12030400cd8",
+      "bytes": 40476292,
+      "vendored": false
+    },
+    {
+      "repository": "naturalistic-data-analysis/naturalistic_data_analysis",
+      "commit": "88bd22741508b4d678202bde7530cee0511e283f",
+      "path": "content/Intersubject_RSA.ipynb",
+      "url": "https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/Intersubject_RSA.ipynb",
+      "sha256": "100f7425fae025fda2e5a21f07eb21c0f8caec58cdbb43fdfa05ff76f679b743",
+      "bytes": 3517063,
+      "vendored": false
+    },
+    {
+      "repository": "naturalistic-data-analysis/naturalistic_data_analysis",
+      "commit": "88bd22741508b4d678202bde7530cee0511e283f",
+      "path": "content/Event_Segmentation.ipynb",
+      "url": "https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/Event_Segmentation.ipynb",
+      "sha256": "0d2b81c470629842d58e7993269f062a2fac06ebcf630d2f1578937fb9c14124",
+      "bytes": 1889255,
+      "vendored": false
+    },
+    {
+      "repository": "naturalistic-data-analysis/naturalistic_data_analysis",
+      "commit": "88bd22741508b4d678202bde7530cee0511e283f",
+      "path": "content/HiddenSemiMarkovModel.ipynb",
+      "url": "https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/HiddenSemiMarkovModel.ipynb",
+      "sha256": "2b479d795f9890cec455b124782a7cc7ce7140696e122157c8a848a64410a460",
+      "bytes": 981608,
+      "vendored": false
+    },
+    {
+      "repository": "naturalistic-data-analysis/naturalistic_data_analysis",
+      "commit": "88bd22741508b4d678202bde7530cee0511e283f",
+      "path": "content/Functional_Alignment.ipynb",
+      "url": "https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/Functional_Alignment.ipynb",
+      "sha256": "2307589e97442d1f9c33723bf8cdbc2cdaaa356309e04073694f4f4ab214a01b",
+      "bytes": 1345717,
+      "vendored": false
+    }
+  ]
+}

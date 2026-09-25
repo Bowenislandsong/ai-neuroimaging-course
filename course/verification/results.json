@@ -1,0 +1,63 @@
+{
+  "python": "3.14.7",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "nibabel": "5.4.2",
+    "nilearn": "0.14.1",
+    "nbformat": "5.11.1"
+  },
+  "notebooks": [
+    {
+      "notebook": "520_design.ipynb",
+      "sections": 6,
+      "code_cells": 16,
+      "plots": 7,
+      "status": "PASS"
+    },
+    {
+      "notebook": "540_processing.ipynb",
+      "sections": 6,
+      "code_cells": 13,
+      "plots": 6,
+      "status": "PASS"
+    },
+    {
+      "notebook": "550_modeling.ipynb",
+      "sections": 6,
+      "code_cells": 18,
+      "plots": 4,
+      "status": "PASS"
+    },
+    {
+      "notebook": "580_data_science.ipynb",
+      "sections": 6,
+      "code_cells": 12,
+      "plots": 3,
+      "status": "PASS"
+    }
+  ],
+  "bridge_signal_checks": "PASS",
+  "template": {
+    "shape": [
+      99,
+      117,
+      95
+    ],
+    "voxel_mm": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "orientation": [
+      "R",
+      "A",
+      "S"
+    ],
+    "source": "Nilearn packaged MNI152 template, resolution=2",
+    "checks": "same shape and affine, different intensities; comparable cuts and display scale"
+  }
+}

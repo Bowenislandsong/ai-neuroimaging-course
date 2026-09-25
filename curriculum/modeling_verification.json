@@ -1,0 +1,164 @@
+[
+  {
+    "path": "notebooks/04_modeling/01_representations_encoding_decoding.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Encoding / decoding held-out R\u00b2: 0.9817933292612452 0.9954356798612215",
+      "Stimulus correlation: first channel / averaged region 0.993649961139653 -0.05892500469494497\nEncoding R\u00b2 after scrambling row correspondence: -0.3718094016972846"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/02_regularized_linear_models.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Held-out MSE: {'OLS': 4.1264392698677375, 'ridge': 3.8464944114150716, 'lasso': 1.2565333488446822, 'overshrunk': 13.972977564869108}",
+      "ridge paired feature weights: [0.92396027 0.9099756 ] nonzero count: 100\nlasso paired feature weights: [2.42035215 0.        ] nonzero count: 23\nLogistic balanced accuracy: 0.7466666666666666"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/03_kernels_ensembles.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Train/test accuracy: {'linear': (0.6366666666666667, 0.605), 'RBF': (1.0, 1.0), 'forest': (1.0, 0.985), 'too_local': (1.0, 0.51)}"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/04_nested_sites_harmonization.ipynb",
+    "passed": true,
+    "code_cells": 3,
+    "checks": [
+      "Outer-fold MAE: [0.5010350531826453, 0.33817584254808164, 0.2594385653761417, 0.4023449679823005]",
+      "Rank / columns: 2 3\nBefore/after group difference: 2.0 0.0",
+      "Unseen-site MAE with a measurement offset: [1.6708239785557724, 1.2386981804367234, 2.72289514378277]"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/05_pca_ica.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "PCA reconstruction MSE / matched ICA correlations: 0.28667103829033797 [0.99919173 0.99978828]",
+      "Leading PC correlation with signal/nuisance: -0.022489550475652313 0.9999999982919112"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/06_clustering_stability.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Raw / standardized ARI: 0.0020581284066312896 1.0\nStandardized silhouette: 0.5330150144947168",
+      "Bootstrap partition ARI range: 1.0 1.0"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/07_connectomes_graphs.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Between-module mean correlation raw/residual: 0.7375466449426544 0.060287725234902",
+      "Threshold, unique edges, degree: 0.1 7 [2 2 3 2 3 2]\nThreshold, unique edges, degree: 0.5 6 [2 2 2 2 2 2]\nThreshold, unique edges, degree: 0.95 0 [0 0 0 0 0 0]"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/08_rsa_crossvalidated_distances.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "RDM shape / category-model Spearman: (6, 6) 0.8504200642707612",
+      "Mean ordinary / independent crossvalidated / reused-run: 40.215572428782124 -0.03842206372639939 40.215572428782124"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/09_searchlight.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Signal-neighborhood score / distant average: 0.9875 0.4912500000000001",
+      "Random-label train/test accuracy: 1.0 0.4875"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/10_naturalistic_isc_encoding.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Mean correct ISC / shifted participant ISC: 0.8377253039718606 0.21862448253028466",
+      "Separated-block encoding R\u00b2: 0.9694900328296571 unused gap: 40\nSelf-inclusive / leave-one-out reference: 0.8870261084462621 0.8492100419648768"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/11_generative_latent_models.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Relative held-out covariance error: 0.10401020633255886",
+      "Independent-marginals covariance error: 0.7929942611000556\nFitted factor dimensions: (600, 2)"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/12_hmm_event_segmentation.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Filtering state accuracy / sequence log likelihood: 0.9971428571428571 -355.6853428323161",
+      "Time-scrambled likelihood: -724.6319638017659"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/13_latent_dynamics_dcm.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Observed / correct-filter / wrong-noise MSE: [np.float64(0.971160202761464), np.float64(0.24390892151815385), np.float64(0.9580723999675794)]",
+      "Mean reported variance correct/wrong: 0.26982237619387406 0.0009934264546838912"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/14_cnn_backprop_training.ipynb",
+    "passed": true,
+    "code_cells": 4,
+    "checks": [
+      "Analytic / finite-difference kernel gradient: -0.03894641858378446 -0.03894641857904446",
+      "Initial/final training loss; test accuracy: 0.6447451968017485 0.003193018647366773 1.0"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/15_segmentation_losses.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Foreground fraction / background accuracy: 0.0619140625 0.9380859375\nPer-image Dice: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]\nContrast-reversed mean Dice: 0.0"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/16_selfsupervision_transfer.ipynb",
+    "passed": true,
+    "code_cells": 3,
+    "checks": [
+      "Denoising reconstruction loss: 1.2068431143441591 0.015291843201967761",
+      "Frozen / fine-tuned test accuracy: 0.96 0.96",
+      "Collapsed representation unique rows: 1"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/17_attention_foundation_models.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Permutation equivariance error: 1.7763568394002505e-15",
+      "Moving content between fixed positions changes pooled output: 0.3570793276521015\n{'model': 'BrainSegFounder', 'weights_downloaded': False, 'inference_executed': False, 'weight_terms': 'UK Biobank MTA; verify access with author card', 'code_license': 'GPL-3.0 in author repository', 'checkpoint_revision': 'not selected', 'our_target_domain_validation': 'not performed'}"
+    ]
+  },
+  {
+    "path": "notebooks/04_modeling/18_calibration_explanation_reproducibility.ipynb",
+    "passed": true,
+    "code_cells": 2,
+    "checks": [
+      "Raw/calibrated Brier: 0.2475395188887777 0.20482820360437995\nRaw/calibrated AUC: 0.7474149247393489 0.7474149247393489",
+      "Held-out permutation importance: [ 1.90288362e+00 -3.62100760e-05  1.80821226e-04 -1.64211530e-05\n  6.89680808e-05]\n{\n  \"data_sha256\": \"6dbd1fff7f433b828e4834597ffec4627e58e82977d29a22f4144920f8cf05fc\",\n  \"train_rows\": 350,\n  \"test_rows\": 250,\n  \"seed\": 418,\n  \"sklearn\": \"1.9.1\",\n  \"metric\": \"R\\u00b2 drop on held-out rows\",\n  \"real_MRI\": false,\n  \"independent_site_validation\": \"not performed\"\n}"
+    ]
+  }
+]

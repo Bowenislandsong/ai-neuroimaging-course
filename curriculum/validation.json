@@ -1,0 +1,811 @@
+{
+  "checked_at_utc": "2026-09-25T06:00:46.393251+00:00",
+  "method": "nbclient; fresh ipykernel per notebook; source order; no allowed errors",
+  "python": "3.14.7",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "scikit-learn": "1.9.1",
+    "nibabel": "5.4.2",
+    "nilearn": "0.14.1",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.3.0"
+  },
+  "upstream_notebooks": "Excluded; reference copies and student exercises are not certified as executed",
+  "results": [
+    {
+      "path": "notebooks/00_foundations/01_learning_contract.ipynb",
+      "course_id": "F01",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.58
+    },
+    {
+      "path": "notebooks/00_foundations/02_measurement_bridge.ipynb",
+      "course_id": "F02",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.79
+    },
+    {
+      "path": "notebooks/00_foundations/03_snippet_literacy.ipynb",
+      "course_id": "F03",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.56
+    },
+    {
+      "path": "notebooks/00_foundations/04_notebook_environment.ipynb",
+      "course_id": "F04",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.55
+    },
+    {
+      "path": "notebooks/01_processing/01_images_coordinates_metadata.ipynb",
+      "course_id": "PR01",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.62
+    },
+    {
+      "path": "notebooks/01_processing/02_registration_resampling.ipynb",
+      "course_id": "PR02",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.95
+    },
+    {
+      "path": "notebooks/01_processing/03_nonlinear_warps.ipynb",
+      "course_id": "PR03",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.77
+    },
+    {
+      "path": "notebooks/01_processing/04_bias_field.ipynb",
+      "course_id": "PR04",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.95
+    },
+    {
+      "path": "notebooks/01_processing/05_brain_extraction.ipynb",
+      "course_id": "PR05",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.01
+    },
+    {
+      "path": "notebooks/01_processing/06_tissue_segmentation.ipynb",
+      "course_id": "PR06",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.98
+    },
+    {
+      "path": "notebooks/01_processing/07_morphometry_volume_jacobian.ipynb",
+      "course_id": "PR07",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.53
+    },
+    {
+      "path": "notebooks/01_processing/08_surfaces_topology.ipynb",
+      "course_id": "PR08",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.74
+    },
+    {
+      "path": "notebooks/01_processing/09_slice_timing.ipynb",
+      "course_id": "PR09",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.94
+    },
+    {
+      "path": "notebooks/01_processing/10_motion.ipynb",
+      "course_id": "PR10",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.85
+    },
+    {
+      "path": "notebooks/01_processing/11_susceptibility_distortion.ipynb",
+      "course_id": "PR11",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.84
+    },
+    {
+      "path": "notebooks/01_processing/12_spatial_smoothing.ipynb",
+      "course_id": "PR12",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.91
+    },
+    {
+      "path": "notebooks/01_processing/13_temporal_filters.ipynb",
+      "course_id": "PR13",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.28
+    },
+    {
+      "path": "notebooks/01_processing/14_nuisance_ica.ipynb",
+      "course_id": "PR14",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.35
+    },
+    {
+      "path": "notebooks/01_processing/15_qc_censoring.ipynb",
+      "course_id": "PR15",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.78
+    },
+    {
+      "path": "notebooks/01_processing/16_diffusion_gradients.ipynb",
+      "course_id": "PR16",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.53
+    },
+    {
+      "path": "notebooks/01_processing/17_diffusion_preprocessing.ipynb",
+      "course_id": "PR17",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.7
+    },
+    {
+      "path": "notebooks/01_processing/18_diffusion_tensor.ipynb",
+      "course_id": "PR18",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.57
+    },
+    {
+      "path": "notebooks/01_processing/19_crossing_fibers_tractography.ipynb",
+      "course_id": "PR19",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.72
+    },
+    {
+      "path": "notebooks/01_processing/20_parcellations_connectivity.ipynb",
+      "course_id": "PR20",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.76
+    },
+    {
+      "path": "notebooks/01_processing/21_workflow_provenance_reports.ipynb",
+      "course_id": "PR21",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.62
+    },
+    {
+      "path": "notebooks/02_design/01_questions_estimands_causality.ipynb",
+      "course_id": "D01",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.68
+    },
+    {
+      "path": "notebooks/02_design/02_sampling_missingness_units.ipynb",
+      "course_id": "D02",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.97
+    },
+    {
+      "path": "notebooks/02_design/03_reliability_measurement.ipynb",
+      "course_id": "D03",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.93
+    },
+    {
+      "path": "notebooks/02_design/04_power_precision.ipynb",
+      "course_id": "D04",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.24
+    },
+    {
+      "path": "notebooks/02_design/05_block_event_hrf.ipynb",
+      "course_id": "D05",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.28
+    },
+    {
+      "path": "notebooks/02_design/06_fir_hrf_misspecification.ipynb",
+      "course_id": "D06",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.82
+    },
+    {
+      "path": "notebooks/02_design/07_design_efficiency.ipynb",
+      "course_id": "D07",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.76
+    },
+    {
+      "path": "notebooks/02_design/08_factorial_confounding.ipynb",
+      "course_id": "D08",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.98
+    },
+    {
+      "path": "notebooks/02_design/09_glm_contrasts_inference.ipynb",
+      "course_id": "D09",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.31
+    },
+    {
+      "path": "notebooks/02_design/10_temporal_noise_prewhitening.ipynb",
+      "course_id": "D10",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.83
+    },
+    {
+      "path": "notebooks/02_design/11_group_hierarchy_repeated.ipynb",
+      "course_id": "D11",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.72
+    },
+    {
+      "path": "notebooks/02_design/12_permutation_exchangeability.ipynb",
+      "course_id": "D12",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.75
+    },
+    {
+      "path": "notebooks/02_design/13_multiplicity_clusters_tfce.ipynb",
+      "course_id": "D13",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.92
+    },
+    {
+      "path": "notebooks/02_design/14_roi_selection_circularity.ipynb",
+      "course_id": "D14",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.79
+    },
+    {
+      "path": "notebooks/02_design/15_bayesian_intervals_equivalence.ipynb",
+      "course_id": "D15",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.24
+    },
+    {
+      "path": "notebooks/02_design/16_multiverse_prereg_reproducibility.ipynb",
+      "course_id": "D16",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.94
+    },
+    {
+      "path": "notebooks/03_data_science/01_arrays_axes.ipynb",
+      "course_id": "DS01",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.57
+    },
+    {
+      "path": "notebooks/03_data_science/02_tables_identity.ipynb",
+      "course_id": "DS02",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.65
+    },
+    {
+      "path": "notebooks/03_data_science/03_nifti_io.ipynb",
+      "course_id": "DS03",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.61
+    },
+    {
+      "path": "notebooks/03_data_science/04_eda.ipynb",
+      "course_id": "DS04",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.23
+    },
+    {
+      "path": "notebooks/03_data_science/05_missingness.ipynb",
+      "course_id": "DS05",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.39
+    },
+    {
+      "path": "notebooks/03_data_science/06_probability.ipynb",
+      "course_id": "DS06",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.54
+    },
+    {
+      "path": "notebooks/03_data_science/07_sampling.ipynb",
+      "course_id": "DS07",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.88
+    },
+    {
+      "path": "notebooks/03_data_science/08_bootstrap.ipynb",
+      "course_id": "DS08",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.54
+    },
+    {
+      "path": "notebooks/03_data_science/09_standardization.ipynb",
+      "course_id": "DS09",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.57
+    },
+    {
+      "path": "notebooks/03_data_science/10_projections.ipynb",
+      "course_id": "DS10",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.53
+    },
+    {
+      "path": "notebooks/03_data_science/11_likelihood.ipynb",
+      "course_id": "DS11",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.92
+    },
+    {
+      "path": "notebooks/03_data_science/12_optimization.ipynb",
+      "course_id": "DS12",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.78
+    },
+    {
+      "path": "notebooks/03_data_science/13_regression_diagnostics.ipynb",
+      "course_id": "DS13",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.56
+    },
+    {
+      "path": "notebooks/03_data_science/14_pca_svd.ipynb",
+      "course_id": "DS14",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.33
+    },
+    {
+      "path": "notebooks/03_data_science/15_selection.ipynb",
+      "course_id": "DS15",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.58
+    },
+    {
+      "path": "notebooks/03_data_science/16_reproducibility.ipynb",
+      "course_id": "DS16",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 1,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.56
+    },
+    {
+      "path": "notebooks/04_modeling/01_representations_encoding_decoding.ipynb",
+      "course_id": "M01",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.36
+    },
+    {
+      "path": "notebooks/04_modeling/02_regularized_linear_models.ipynb",
+      "course_id": "M02",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.35
+    },
+    {
+      "path": "notebooks/04_modeling/03_kernels_ensembles.ipynb",
+      "course_id": "M03",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.81
+    },
+    {
+      "path": "notebooks/04_modeling/04_nested_sites_harmonization.ipynb",
+      "course_id": "M04",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 3,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.43
+    },
+    {
+      "path": "notebooks/04_modeling/05_pca_ica.ipynb",
+      "course_id": "M05",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.36
+    },
+    {
+      "path": "notebooks/04_modeling/06_clustering_stability.ipynb",
+      "course_id": "M06",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.51
+    },
+    {
+      "path": "notebooks/04_modeling/07_connectomes_graphs.ipynb",
+      "course_id": "M07",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.73
+    },
+    {
+      "path": "notebooks/04_modeling/08_rsa_crossvalidated_distances.ipynb",
+      "course_id": "M08",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.88
+    },
+    {
+      "path": "notebooks/04_modeling/09_searchlight.ipynb",
+      "course_id": "M09",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 1.67
+    },
+    {
+      "path": "notebooks/04_modeling/10_naturalistic_isc_encoding.ipynb",
+      "course_id": "M10",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.36
+    },
+    {
+      "path": "notebooks/04_modeling/11_generative_latent_models.ipynb",
+      "course_id": "M11",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.37
+    },
+    {
+      "path": "notebooks/04_modeling/12_hmm_event_segmentation.ipynb",
+      "course_id": "M12",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.85
+    },
+    {
+      "path": "notebooks/04_modeling/13_latent_dynamics_dcm.ipynb",
+      "course_id": "M13",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.77
+    },
+    {
+      "path": "notebooks/04_modeling/14_cnn_backprop_training.ipynb",
+      "course_id": "M14",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 4,
+      "explicitly_skipped_cells": [],
+      "figures": 1,
+      "seconds": 0.9
+    },
+    {
+      "path": "notebooks/04_modeling/15_segmentation_losses.ipynb",
+      "course_id": "M15",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.34
+    },
+    {
+      "path": "notebooks/04_modeling/16_selfsupervision_transfer.ipynb",
+      "course_id": "M16",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 3,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.37
+    },
+    {
+      "path": "notebooks/04_modeling/17_attention_foundation_models.ipynb",
+      "course_id": "M17",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.64
+    },
+    {
+      "path": "notebooks/04_modeling/18_calibration_explanation_reproducibility.ipynb",
+      "course_id": "M18",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.41
+    },
+    {
+      "path": "notebooks/05_projects/01_anatomical_workflow.ipynb",
+      "course_id": "P01",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 3,
+      "explicitly_skipped_cells": [],
+      "figures": 2,
+      "seconds": 2.46
+    },
+    {
+      "path": "notebooks/05_projects/02_real_fmri_glm.ipynb",
+      "course_id": "P02",
+      "tier": "network",
+      "status": "passed",
+      "code_cells": 4,
+      "explicitly_skipped_cells": [],
+      "figures": 3,
+      "seconds": 3.49
+    },
+    {
+      "path": "notebooks/05_projects/03_cohort_generalization.ipynb",
+      "course_id": "P03",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 3,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 1.41
+    },
+    {
+      "path": "notebooks/05_projects/04_research_defense.ipynb",
+      "course_id": "P04",
+      "tier": "offline",
+      "status": "passed",
+      "code_cells": 2,
+      "explicitly_skipped_cells": [],
+      "figures": 0,
+      "seconds": 0.52
+    }
+  ],
+  "note": "Full fresh-kernel run, followed by targeted recheck of DS03 after adding explicit NIfTI millimeter units."
+}
