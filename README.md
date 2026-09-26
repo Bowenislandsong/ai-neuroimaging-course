@@ -1,64 +1,53 @@
-# AI-guided neuroimaging: understand every transformation
+# Neuroimaging Research Methods with AI
 
-A **paper-first, notebook-based course** for a learner who uses **Ollama + Goose + Qwen/Gemma, or ChatGPT**, to write small analysis snippets—and learns to explain, inspect, and challenge what those snippets do.
+A 26-week course in neuroimaging analysis, experimental design, data science, and computational modeling. Students read research papers to understand the scientific questions, investigate the underlying methods in Jupyter notebooks, and use AI as a tutor and coding assistant. Each lesson asks them to explain what an analysis changes, inspect its output, and defend the resulting claim.
 
-**Start with the research motivation.** Read six essential and recent frontier papers in four guided seminars before the fundamentals. Then follow **paper → question → fundamental concept → short AI-assisted experiment → paper again**. The full [18-paper library](curriculum/papers/README.md) includes assigned sections and figures, original coursework, evidence worksheets and instructor checks.
-
-**83 original notebooks** contain those four reading seminars plus **79 computational lessons and projects** covering foundations, image processing, experimental design, data science and modeling. Each strand pairs digestible explanations and executable experiments with existing university or workshop materials. **13 original upstream notebooks and one Marimo lesson** are included unchanged with attribution, licenses, version pins, and hashes. Longer source assignments are part of the learning plan, not implied completed work.
+**Begin with [R00: Reading a research paper](notebooks/00_paper_orientation/00_how_to_read.ipynb).** The [study plan](curriculum/STUDY_PLAN.md) then guides students through the full course. [Setup](curriculum/SETUP.md) covers Jupyter, Ollama with Goose, and ChatGPT.
 
 [![Notebook checks](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml/badge.svg)](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml)
 
-**Start:** [R00: read for the question](notebooks/00_paper_orientation/00_how_to_read.ipynb) · [Papers and coursework](curriculum/papers/README.md) · [Every notebook](curriculum/NOTEBOOK_INDEX.md) · [Study sequence](curriculum/STUDY_PLAN.md) · [Setup](curriculum/SETUP.md) · [AI tutor workflow](curriculum/AI_WORKFLOW.md)
+## Course sequence
 
-## Read these before the fundamentals
+The opening two weeks use six papers in three seminars. Students first identify the question, interpret a figure, and record what they need to learn. They revisit those papers after studying the relevant methods.
 
-| Opening seminar | Essential paper | Recent frontier paper |
-|---|---|---|
-| Why processing matters | fMRIPrep (2019) | BrainMorph (2025) |
-| Why results must generalize | Marek: reproducible BWAS (2022) | BrainIAC (2026) |
-| Why evidence needs an audit | NARPS (2020) | Omni-fMRI (2026) |
+| Seminar | Foundational study | Recent method | Guiding question |
+|---|---|---|---|
+| [Processing](notebooks/00_paper_orientation/01_why_processing.ipynb) | [fMRIPrep](curriculum/papers/processing.md#pp01) | [BrainMorph](curriculum/papers/processing.md#pp04) | Which transformations connect a scan to an analysis? |
+| [Generalization](notebooks/00_paper_orientation/02_why_generalization.ipynb) | [Marek et al.](curriculum/papers/design.md#pd02) | [BrainIAC](curriculum/papers/modeling.md#pm03) | When will a result extend to new participants? |
+| [Evidence](notebooks/00_paper_orientation/03_why_evidence_audits.ipynb) | [NARPS](curriculum/papers/design.md#pd01) | [Omni-fMRI](curriculum/papers/modeling.md#pm05) | How do analysis choices and evaluation conditions shape a conclusion? |
 
-The [reading guides](curriculum/papers/README.md) link the full texts and specify exactly what to read. Begin with the question, figure, result and limitation; record unfamiliar methods for later. These pairs motivate questions across different tasks, not direct performance comparisons. Recent papers are representative frontier selections, with publication status and assigned versions recorded—not a universal SOTA ranking.
+The complete [paper library](curriculum/papers/README.md) contains 18 readings with assigned sections, figure questions, coursework, and instructor notes. Each computational lesson opens with a paper question and closes with a return to the research claim.
 
-The [26-week study plan](curriculum/STUDY_PLAN.md) starts with two weeks of reading. Later papers arrive before their relevant methods blocks. Actual submissions include an [evidence ledger](curriculum/coursework/EVIDENCE_LEDGER.md), a [SOTA audit](curriculum/coursework/SOTA_AUDIT.md), a mechanism experiment, a scoped figure/table reconstruction and a research defense, with [A1–A4 rubrics](curriculum/coursework/PAPER_TO_EXPERIMENT.md). AI helps locate, explain and implement; the learner must trace claims to the paper and explain the transformations herself.
+## Curriculum
 
-## What is taught
-
-| Strand | Notebooks | Substantive coverage |
+| Component | Classes | Topics |
 |---|---:|---|
-| Paper orientation | 4 | Research motivation; figure and table reading; evidence, benchmark and AI-summary audits; questions to revisit after the methods |
-| Foundations | 4 | MRI measurement/contrast, BOLD, snippet literacy, transformations, notebook state |
-| [Processing](curriculum/processing_coverage.md) | 21 | NIfTI geometry; registration and nonlinear warps; bias fields, brain extraction, tissue segmentation, morphometry, surfaces; slice timing, motion, distortion, smoothing, temporal filters, nuisance/ICA, censoring/QC; diffusion gradients, denoising, tensors, crossing fibers, tractography; parcellations and workflows |
-| [Research design](curriculum/design_coverage.md) | 16 | Estimands, sampling, missingness, reliability, power; block/event/HRF/FIR design, efficiency, factorials; GLM/contrasts, temporal noise, hierarchical/repeated data, permutation, multiplicity/TFCE, ROI circularity, Bayesian/equivalence reasoning, reproducibility |
-| [Data science](curriculum/data_science_coverage.md) | 16 | Arrays, participant tables, NIfTI I/O, EDA, missingness, probability, sampling and bootstrap, standardization, linear algebra, likelihood, optimization, regression diagnostics, PCA, selection, provenance |
-| [Modeling](curriculum/modeling_coverage.md) | 18 | Encoding/decoding, regularization, kernels/ensembles, grouped/nested/site validation, PCA/ICA/clustering, connectomes, RSA, searchlights, naturalistic ISC, latent/generative models, HMMs/dynamics, CNN training, segmentation, self-supervision/transfer, attention/foundation models, calibration/explanations |
-| Projects | 4 | Real anatomical-template transformations; real single-run fMRI GLM; held-out-site cohort prediction; supervised research plan and defense |
+| Reading seminars | 4 | Research questions, figures, evidence, and evaluation |
+| Foundations | 4 | MRI and BOLD measurement; computational literacy |
+| [Image processing](curriculum/processing_coverage.md) | 21 | Image geometry, registration, segmentation, fMRI preprocessing, diffusion MRI, quality control, and workflows |
+| [Research design](curriculum/design_coverage.md) | 16 | Sampling, reliability, experimental timing, general linear models, inference, and reproducibility |
+| [Data science](curriculum/data_science_coverage.md) | 16 | Arrays, participant data, probability, regression, validation, and provenance |
+| [Modeling](curriculum/modeling_coverage.md) | 18 | Encoding and decoding, representation analysis, CNNs, transfer learning, and foundation models |
+| Projects | 4 | Anatomical transformations, a single-run fMRI analysis, cohort prediction, and a supervised research proposal |
 
-After the opening reading, technical classes follow **predict → ask AI → run a short operation → inspect → break → explain → transfer**. The local examples isolate mechanics; the upstream assignments provide longer practicals. The learner is assessed on scientific understanding, not on whether an assistant can produce code that runs.
+The [class index](curriculum/NOTEBOOK_INDEX.md) links all **83 original notebooks**: four reading seminars and 79 computational lessons and projects. The course also assigns longer practicals from established university courses and research software workshops. Selected source notebooks are preserved with [attribution and license records](THIRD_PARTY_NOTICES.md).
 
-## The actual source curricula
+## Coursework and assessment
 
-The selection favors public syllabi, substantial lesson sequences, available code, and clear reuse terms. It is not a ranking by popularity or a claim that every source is a graduate course.
+Students keep an [evidence ledger](curriculum/coursework/EVIDENCE_LEDGER.md) for each paper and complete four integrated assignments:
 
-| Source | Why it anchors this course |
-|---|---|
-| [Dartmouth PSYC60 / DartBrains](https://github.com/ljchang/dartbrains/blob/b72537ad25deee0281248a415a052cd87ff325de/content/Syllabus.md) | Actual syllabus, comprehensive brain-mapping lessons and notebooks; legacy Jupyter version distinguished from current Marimo version |
-| [Berkeley PSYCH214](https://bic-berkeley.github.io/psych-214-fall-2016/syllabus.html) | Actual imaging-analysis syllabus, classes/labs, coordinate transforms, GLM and reproducible projects |
-| [Berkeley Data 8](https://inferentialthinking.com/chapters/intro.html) | Extensive accessible data-science textbook and exercises; linked in its original form under its own terms |
-| [MIT 9.07](https://ocw.mit.edu/courses/9-07-statistics-for-brain-and-cognitive-science-fall-2016/pages/syllabus/) and [9.63](https://ocw.mit.edu/courses/9-63-laboratory-in-visual-cognition-fall-2009/pages/lecture-notes/) | Dated statistics and experimental-design course schedules and lecture materials |
-| [Neuromatch computational neuroscience](https://compneuro.neuromatch.io/) and [deep learning](https://deeplearning.neuromatch.io/) | Full open notebook curricula, exercises, models, optimization, CNNs and attention |
-| [BrainIAK tutorials](https://github.com/brainiak/brainiak-tutorials) | Advanced imaging analysis materials based on courses at Princeton and Yale |
-| [Oxford FSL](https://fsl.fmrib.ox.ac.uk/fslcourse/), [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial), [DIPY](https://docs.dipy.org/stable/examples_built/index.html), [Nipype](https://github.com/nipy/nipype_tutorial) | Specialist processing workshops and workflows that short Python simulations cannot replace |
+1. **[Figure brief](curriculum/coursework/PAPER_TO_EXPERIMENT.md#a1--first-pass-figure-brief):** explain the motivating question and evidence in the six opening papers.
+2. **[Mechanism experiment](curriculum/coursework/PAPER_TO_EXPERIMENT.md#a2--mechanism-experiment):** predict, run, inspect, and explain a transformation relevant to a paper.
+3. **[Figure or table reconstruction](curriculum/coursework/PAPER_TO_EXPERIMENT.md#a3--figure-or-table-reconstruction-proposal):** plan and complete an agreed analysis with documented inputs and methods.
+4. **[Research review and defense](curriculum/coursework/PAPER_TO_EXPERIMENT.md#a4--reviewer-response-and-research-proposal):** connect the literature to a research question, analysis plan, and independent evaluation.
 
-See the [source and reuse registry](curriculum/SOURCES.md), [upstream assignments](third_party/README.md), and [coverage audit](curriculum/COVERAGE_AUDIT.md) for exact versions, source topics, local depth, and remaining work.
+A separate [model evaluation worksheet](curriculum/coursework/SOTA_AUDIT.md) examines a method's inputs, training target, comparison, metrics, and generalization. Students can work with **Ollama and Goose** using Qwen or Gemma, or use **ChatGPT** beside Jupyter. The [AI workflow](curriculum/AI_WORKFLOW.md) keeps each interaction focused on a source, a prediction, a short operation, and an explanation.
 
-## What “thorough” means here
+## Teaching sources
 
-USC NIIN 540/520/580/550 inspired the four strands. **Detailed public USC syllabi were not found**, so this repository does not claim to reproduce their weekly coverage or replace the master's program. It expands against inspectable parallel curricula and explicitly records gaps.
+The course draws practical assignments and teaching structure from [Dartmouth DartBrains](https://github.com/ljchang/dartbrains), [Berkeley PSYCH214](https://bic-berkeley.github.io/psych-214-fall-2016/), [Berkeley Data 8](https://inferentialthinking.com/), [MIT OpenCourseWare](https://ocw.mit.edu/), [Neuromatch](https://compneuro.neuromatch.io/), and [BrainIAK](https://github.com/brainiak/brainiak-tutorials). Specialist exercises use [FSL](https://fsl.fmrib.ox.ac.uk/fslcourse/), [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial), [DIPY](https://docs.dipy.org/stable/examples_built/index.html), and [Nipype](https://github.com/nipy/nipype_tutorial). The [source registry](curriculum/SOURCES.md) records the selected materials and versions; the [coverage map](curriculum/COVERAGE_AUDIT.md) shows how each topic is taught.
 
-The 79 computational notebooks are a substantial guided foundation. The four reading seminars and paper assignments add motivation and evidence appraisal; they do not replace practical method training. Full FSL/FreeSurfer/DIPY processing, real cohort inference, DCM/ComBat, large 3D neural networks, and external imaging checkpoints remain named specialist extensions where appropriate. The real fMRI project deliberately exposes what a GLM on supplied raw teaching images omits; it is not presented as a fully preprocessed research result. The [coverage audit](curriculum/COVERAGE_AUDIT.md) prevents a toy demonstration from being mistaken for completed method training.
-
-## Run and verify
+## Run the notebooks
 
 From the repository root:
 
@@ -68,17 +57,15 @@ python3 -m venv .venv
 .venv/bin/python -m jupyter lab notebooks
 ```
 
-Windows: use `.venv\Scripts\python.exe`. No local LLM is needed to run the notebooks. See [setup](curriculum/SETUP.md) for AI configuration and the course environment.
+On Windows, use `.venv\Scripts\python.exe`. The opening seminars can be read directly on GitHub. The computational lessons run in Jupyter; one project downloads a public teaching dataset.
 
 ```sh
 .venv/bin/python scripts/check_repository.py
 .venv/bin/python scripts/validate_notebooks.py
 ```
 
-The default check runs **78 offline computational notebooks** in fresh Jupyter kernels and explicitly skips the four human-assessed reading seminars. The real fMRI project is opt-in with `--include-network`. All **79 computational notebooks / 150 code cells** passed the delivered local Jupyter run; see [verification](curriculum/VERIFICATION.md). The 13 upstream reference notebooks are preserved material, not included in that execution claim. GitHub Actions independently checks the offline core on Linux.
-
-The earlier short [introductory pack](course/README.md) remains as a supplement. The `notebooks/` tree and this README are the expanded course.
+The repository check validates notebook structure, paper references, local links, and preserved source files. The notebook check executes the 78 offline computational lessons in fresh kernels. The network project is selected with `--include-network`; reading seminars are assessed by an instructor. See the [verification record](curriculum/VERIFICATION.md) for results and the [setup guide](curriculum/SETUP.md) for installation details.
 
 ## Reuse
 
-Original teaching text and notebooks: [CC BY-SA 4.0](LICENSE). Original standalone scripts: [MIT](LICENSES/MIT.txt). Third-party files retain their original licenses and notices; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Linked readings and downloaded datasets do not inherit this repository's license. No institutional endorsement is implied.
+Original lessons and notebooks are licensed [CC BY-SA 4.0](LICENSE); original standalone scripts use [MIT](LICENSES/MIT.txt). External publications, datasets, notebooks, and software retain their own terms, documented in [third-party notices](THIRD_PARTY_NOTICES.md).

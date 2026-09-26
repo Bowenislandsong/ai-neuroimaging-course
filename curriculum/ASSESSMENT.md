@@ -1,6 +1,6 @@
-# Assessment: can she supervise the AI?
+# Assessment and learning outcomes
 
-Passing code is a necessary computational check, not the learning outcome. Assess independent explanation and transfer. The learner may use AI and references while preparing, but must answer the final questions in her own words.
+Assessment centers on independent explanation, careful interpretation, and transfer to a new example. Students may use AI and references while preparing, then explain their decisions in their own words.
 
 ## Opening reading seminars
 

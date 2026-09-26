@@ -1,12 +1,12 @@
-# Design papers: learn the reason for the methods first
+# Papers in neuroimaging research design
 
-Start each paper's first pass **before its mapped methods block**. The first encounter is a guided evidence discussion, with no prerequisite programming or equations. Read PD01 and PD02 during the course orientation; first encounter PD03–PD06 before their assigned blocks in the study plan, then return after the linked technical lessons. These are five essential methodological anchors and one newer methodological follow-up, not a list of today's best-performing models. The course's frontier-model readings ask whether newer systems solve the problems raised here.
+Read PD01 and PD02 during the opening seminars. PD03–PD06 introduce later blocks in the [study plan](../STUDY_PLAN.md). Each first reading focuses on the research question and a figure; the second reading follows the related technical lessons. Together, the papers examine analytical choices, sample size, reliability, circularity, inference, and study design.
 
-For each first pass, allow 60–75 minutes: predict the answer to the opening question (5 minutes), inspect the assigned figure and caption (15), read the specified parts (20), prepare the coursework artifact (20), and explain it aloud (10). An unfamiliar term goes into a question list; it does not require completing a statistics textbook first. Later, budget 90–120 minutes for the linked computational assignment. These are our original assignments, not the papers' official exercises, and completing them does not replicate the published studies.
+Allow 60–75 minutes for a first reading: predict an answer to the opening question, inspect the assigned figure and caption, read the specified passages, prepare the evidence card, and explain it aloud. Record unfamiliar terms for the methods lessons. Budget another 90–120 minutes for the linked computational assignment.
 
-Ask Goose/Ollama or ChatGPT: **“Tutor me through this paper one figure at a time. Ask what I think its axes and observations mean before explaining. Separate the authors' result, their interpretation, and your speculation. Give a section or figure locator for every paper-specific claim. Do not invent numbers, supply my coursework answers, or claim our synthetic demonstration reproduces the paper.”** Open the full paper yourself; an AI summary is not the reading.
+Ask Goose/Ollama or ChatGPT: **“Tutor me through this paper one figure at a time. Ask what I think its axes and observations mean before explaining. Separate the authors' result, their interpretation, and your inference. Give a section or figure locator for every paper-specific claim. Ask me to check the source and explain my answer.”** Keep the assigned paper open during the discussion.
 
-Every submission uses an evidence card: question; measured object; comparison; figure/section locator; supported claim; remaining uncertainty; proposed next test. Keep the paper's images on the linked publisher or author site. Submit your own diagrams and prose, without copying its PDF or figures into the public course repository. Bibliographic records, versions, access notes, and later lesson IDs are in [design_sources.json](design_sources.json).
+Every submission includes an evidence card: question, measured object, comparison, figure or section locator, supported claim, remaining uncertainty, and proposed next test. Submit original diagrams and prose. Bibliographic records, assigned versions, and later lesson IDs appear in [design_sources.json](design_sources.json).
 
 <a id="pd01"></a>
 

@@ -1,4 +1,4 @@
-> **Earlier introductory supplement.** The current paper-first course has **83 original notebooks: 79 computational lessons/projects and four human-assessed reading seminars**, supported by [18 paper guides](../curriculum/papers/README.md). Start with [R00](../notebooks/00_paper_orientation/00_how_to_read.ipynb) and the [26-week study plan](../curriculum/STUDY_PLAN.md), which opens with six papers before fundamentals. See the [repository start page](../README.md), [complete class index](../curriculum/NOTEBOOK_INDEX.md) and [paper-to-experiment coursework](../curriculum/coursework/PAPER_TO_EXPERIMENT.md). This earlier pack is retained for reference; its schedule below is not the current course sequence.
+> **Introductory supplement.** The [current course](../README.md) begins with [R00](../notebooks/00_paper_orientation/00_how_to_read.ipynb), uses the [26-week study plan](../curriculum/STUDY_PLAN.md), and includes [83 notebooks](../curriculum/NOTEBOOK_INDEX.md). This page collects the earlier short-format lessons for reference.
 
 # AI-assisted neuroimaging: understand every transformation
 
@@ -6,17 +6,17 @@ A beginner course for a learner who uses AI to write short analysis snippets and
 
 **For this retained supplement:** [Setup and the AI teaching contract](SETUP.md), then [two foundation classes](lessons/00_bridge.md). The [complete reading edition](COURSEBOOK.md) collects its teaching text in one file. The four notebooks contain the executable demonstrations; their HTML companions show the verified outputs without installing Python. The current course instead starts with the paper seminars linked above.
 
-## What this earlier supplement contains
+## Supplement structure
 
-24 core classes, two foundation classes, and two capstone sessions. Allow **14 weeks at two 60–75 minute classes per week**, plus 30–60 minutes of practice weekly. Slow down when the explain-back questions are difficult. The target is informed use of small snippets, not independent software engineering or the full training of a master's degree.
+This collection has 24 core classes, two foundation classes, and two capstone sessions. Its original 14-week schedule uses two 60–75 minute classes per week, plus 30–60 minutes of practice.
 
-USC's [NIIN curriculum](https://niin.usc.edu/about#curriculum) supplies four broad subject areas. Detailed public syllabi were not located during this research session. The sequence, lessons, prompts, notebooks, assessments, and capstone here are original; **this is not USC course material or an official NIIN syllabus**. [Research and materials record](SOURCES.md).
+The four blocks follow the broad subject areas of [USC's NIIN curriculum](https://niin.usc.edu/about#curriculum). Their lessons and assignments were developed for this course; [source records](SOURCES.md) identify the teaching materials used.
 
-## What she should be able to do
+## Learning outcomes
 
-For a transformation, explain the input, output, parameter units, what changes, what information is lost, one likely failure, and the evidence needed to accept the result. Ask an AI to implement that step, inspect it, and explain its scientific limits. She need not memorize syntax; she must be able to reject plausible-looking code and conclusions.
+Students explain a transformation's inputs, outputs, units, information loss, likely failure, and relevant checks. They can ask an AI to implement a step, inspect the result, and assess its scientific interpretation.
 
-| Block | Six actual classes | Lesson text | Runnable lab |
+| Block | Six classes | Lesson text | Runnable lab |
 | --- | --- | --- | --- |
 | Processing • 540-inspired | Coordinates/QC; registration and resampling; smoothing; temporal filtering; nuisance regression; pipeline audit | [540](lessons/540.md) | [Notebook](labs/540_processing.ipynb) · [Outputs](labs/540_processing.html) |
 | Research design • 520-inspired | Question and unit; confounding/design; timing and HRF; GLM/contrasts; uncertainty and multiplicity; preregistration/power | [520](lessons/520.md) | [Notebook](labs/520_design.ipynb) · [Outputs](labs/520_design.html) |

@@ -1,12 +1,12 @@
-# Source registry and selection rationale
+# Teaching sources and research references
 
-Checked 2026-09-25 UTC / 2026-09-24 Pacific. Source selection favors **actual public syllabi or tables of contents, sustained lesson sequences, executable teaching materials, and visible reuse terms**. We did not use GitHub stars as a substitute for educational quality. These sources include undergraduate courses, methods workshops and advanced tutorials; they do not all represent equivalent academic levels.
+Source records were checked on 25 September 2026 UTC. Materials were selected for their published course structure, sustained lesson sequences, practical exercises, and documented reuse terms. The collection includes university courses, methods workshops, and advanced tutorials.
 
-## USC: the inspiration and evidence boundary
+## Program context
 
-USC's [published curriculum](https://niin.usc.edu/about#curriculum), [FAQ](https://niin.usc.edu/faq) and [prospective-student page](https://niin.usc.edu/students/prospective-students) were inspected. They establish the NIIN program and the processing, experimental-design, data-science and modeling subject areas. **Detailed public syllabi for NIIN 540, 520, 580 and 550 were not located.** We cannot audit week-by-week correspondence, readings, assessments or complete coverage of those USC classes. The supplied course is our original parallel learning plan, informed by the actual public material below.
+USC's [NIIN curriculum](https://niin.usc.edu/about#curriculum) groups relevant study into neuroimaging processing, experimental design, data science, and computational modeling. This course develops those areas through its own lessons and the published teaching materials listed below.
 
-A course-number label in the old introductory pack is therefore a subject-area mapping. It must not be read as a USC syllabus or accreditation claim. The current notebooks use their own IDs and explicit sources.
+Course numbers in the [introductory supplement](../course/README.md) identify the corresponding subject area. The current course uses its own class IDs, assignments, and source records.
 
 ## Primary papers and research evidence
 
@@ -18,9 +18,9 @@ The [paper registry](papers/README.md) contains **18 guides** with exact titles,
 | Sampling and generalization | [PD02: Marek et al.](papers/design.md#pd02) | [PM03: BrainIAC](papers/modeling.md#pm03) |
 | Analysis choices and evidence | [PD01: NARPS](papers/design.md#pd01) | [PM05: Omni-fMRI](papers/modeling.md#pm05) |
 
-Use the assigned version and the actual figure or named section, not an AI-generated paper summary. The guides distinguish publication status, available code and unexecuted methods. “Frontier” marks a newer reading relevant to a question; it does not establish universal superiority. [PD02](papers/design.md#pd02) concerns brain-wide associations between people, not a universal sample-size rule for every fMRI study; [PD06](papers/design.md#pd06) supplies a design-focused follow-up. [PD05](papers/design.md#pd05) requires reading the cluster-inference paper **with its correction**.
+Students use the assigned paper version and identify the figure or section supporting each claim. The guides record publication status and code availability. [PD02](papers/design.md#pd02) focuses on associations between people; [PD06](papers/design.md#pd06) examines how study design affects replicability. [PD05](papers/design.md#pd05) is assigned with its published correction.
 
-Paper text and publisher figures are linked, not redistributed. Public access alone does not license reuse; paper, code, data and model-weight terms must be checked separately for an [A3 reconstruction or reproduction](coursework/PAPER_TO_EXPERIMENT.md#a3--figure-or-table-reconstruction-proposal). The original reading guides and small local experiments do not claim to reproduce the full papers or modern models.
+Paper text and publisher figures are linked at their source. For an [A3 reconstruction](coursework/PAPER_TO_EXPERIMENT.md#a3--figure-or-table-reconstruction-proposal), students record the permissions and terms that apply to the paper, code, data, and model weights.
 
 ## University courses with inspectable schedules
 
@@ -48,12 +48,12 @@ Paper text and publisher figures are linked, not redistributed. Public access al
 
 ## Documentation and real-data projects
 
-Official NiBabel, Nilearn, SciPy, scikit-learn, BIDS, fMRIPrep, SPM and model-author documentation support the precise operations and transfer tasks. They are technical references, not mislabeled university classes. Exact links are placed in the relevant notebooks and strand maps.
+Official NiBabel, Nilearn, SciPy, scikit-learn, BIDS, fMRIPrep, SPM, and model-author documentation support the operations and transfer tasks. Links appear in the relevant notebooks and strand maps.
 
 P01 uses the MNI152 template shipped in the installed Nilearn package. P02 follows the educational scope of the [Nilearn single-run GLM example](https://nilearn.github.io/stable/auto_examples/00_tutorials/plot_single_subject_single_run.html), with original inspection/assessment cells and explicit omissions. Its input is the [UCL SPM auditory dataset](https://www.fil.ion.ucl.ac.uk/spm/data/auditory/), credited to Geraint Rees, Karl Friston and the FIL methods group, downloaded under the source's personal education/evaluation terms. Raw dataset files are not in this repository.
 
-[Goose](https://goose-docs.ai/docs/getting-started/providers/), [Ollama](https://docs.ollama.com/quickstart), [Qwen3.6](https://ollama.com/library/qwen3.6), [Gemma4](https://ollama.com/library/gemma4) and [ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) official materials inform the setup guide. Tags and interfaces are checked snapshots, not permanent guarantees. The Python lessons do not require a live LLM connection.
+[Goose](https://goose-docs.ai/docs/getting-started/providers/), [Ollama](https://docs.ollama.com/quickstart), [Qwen3.6](https://ollama.com/library/qwen3.6), [Gemma4](https://ollama.com/library/gemma4), and [ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) documentation informs the setup guide. Students should check current model tags and interfaces when installing.
 
-## How to audit the borrowing
+## Attribution and version records
 
-Read the four strand coverage matrices for topic-to-source correspondence. Then inspect [third_party/README.md](../third_party/README.md), its original license notices and manifests. Pinned source bytes are validated by `scripts/check_repository.py`. Preserved notebooks are unmodified reference/assignment material; our original notebooks are executed separately. A link or a successful download is never counted as an executed practical.
+The four strand maps connect topics to teaching sources. [Third-party materials](../third_party/README.md) retain their source versions, licenses, and file hashes; `scripts/check_repository.py` validates the preserved files. The course's original notebooks have a separate [execution record](VERIFICATION.md).

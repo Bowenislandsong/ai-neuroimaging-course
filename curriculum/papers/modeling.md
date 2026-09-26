@@ -1,10 +1,10 @@
-# Modeling: five papers before the mathematics
+# Papers in computational modeling
 
-Read the problem first, predict what evidence would persuade you, and only then study the transformation. This pack contains two foundations and three recent papers, checked on **2026-09-25 UTC**. The recent choices are representative frontier work and a benchmark study; this is not a claim that they are the best available model for every neuroimaging task. Current searches included 2025 and 2026 work, rather than using a 2024 list as a proxy for the frontier.
+These five readings connect established ideas in encoding and representational analysis with recent work on brain-imaging foundation models. Begin with the research problem and the evidence for a proposed method, then return to the model's transformations and evaluation after the corresponding lessons. Publication and manuscript details were checked on **25 September 2026 UTC**.
 
 **Suggested first encounter:** PM03 → PM05 → PM01 → PM02 → PM04. Spend 60–75 minutes per paper: 10 minutes on the motivating problem, 15 on the assigned passages, 15 on the evidence worksheet, 15 on discussion, and 5–20 on revision. Equations are optional on this first pass. Keep a question list for the later notebooks instead of asking AI to erase every unfamiliar term immediately.
 
-Each card separates a short source-based orientation from original coursework. Open figures in the linked paper; no paper PDFs, figure files, or model weights are redistributed here. Full model reproduction is an optional later project requiring a separate environment, data permissions, hardware planning, and license review. The course notebooks below are deliberately small demonstrations, not reproductions of these papers.
+Each guide gives a reading path, figure questions, a practical assignment, and instructor notes. Open figures in the linked papers and create your own diagrams and evidence sheets. The specialist project can extend one question using appropriate data, software, and compute.
 
 For every reading, submit a one-page **evidence sheet** with five boxes: scientific question; input → operations → output; what was compared; who or what was held out; claim supported versus claim still untested. Mark every statement **paper evidence**, **your inference**, or **unknown**. A cited section is required for the first category. AI can help organize evidence, but the learner owns the final explanation.
 

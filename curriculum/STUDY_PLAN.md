@@ -1,23 +1,23 @@
-# Paper-first study sequence and workload
+# Study plan
 
-**Read the motivating papers before digging into the fundamentals.** The first two weeks contain six papers and four reading seminars; no Python, algebra or statistics prerequisite is imposed. She first sees the scientific problems and modern methods, makes a question list, and then learns the mechanics needed to judge them.
+The course begins with six research papers and four reading seminars. Students identify the scientific problems, interpret selected figures, and record questions that will guide their study of the methods. Programming and mathematics enter in week 3.
 
-Use **26 weeks at roughly 8–12 hours per week** as a planning assumption. The previous 24-week technical sequence is retained after a two-week paper orientation. Paper returns and source practicals are integrated into the later weeks; difficult readings, specialist installations and real-data projects may require extra weeks. This is a proposed workload, not institutional credit or measured learner completion time.
+Plan for **26 weeks**, with most weeks requiring **8–12 hours**. The schedule includes paper discussions, Jupyter lessons, source practicals, and a supervised project. Specialist installations and real-data work may extend the calendar.
 
-Opening workload: roughly 12–16 hours across two weeks for the six first-pass readings and discussion. Later, allow 45–75 minutes for a newly assigned paper's first pass, then a focused return after its mapped lessons. Do not reread an entire paper for every notebook that cites it. The technical classes generally take 75–100 minutes plus source practicals. Use the notebook's paper question to focus each return.
+Allow **12–16 hours across the opening two weeks** for the first readings and discussion. Later papers generally take 45–75 minutes on first reading. A technical class generally takes 75–100 minutes, followed by a focused return to the paper. Reuse the original evidence record when a paper appears in several classes.
 
-Weeks 5–6 contain six technical lessons each: about 7.5–10 hours before reading or upstream practicals. Weeks 8–13 add roughly 3–5 hours per week when the required processing practicals are spread evenly. These periods may need about 10–15 hours in a week, with longer cases depending on installation or compute. If 8–12 hours is a firm weekly limit, add consolidation weeks at the relevant checkpoints instead of skipping required work; 26 weeks is then a sequence, not a guaranteed completion deadline. Reuse seminar and paper-card artifacts in A1–A4 so the integrated assessments do not duplicate writing already completed.
+Weeks 5–6 contain six technical lessons each, about 7.5–10 hours before reading and practicals. The processing practicals add roughly 3–5 hours per week in weeks 8–13. Plan for **10–15 hours** in these periods or insert consolidation weeks. Evidence sheets and paper cards feed directly into A1–A4.
 
 ## The learning cycle
 
-**Paper problem and figure → questions she wants answered → fundamental concept → short AI-assisted experiment → return to the paper → revise the claim.** The [reading method](papers/READING_METHOD.md) and [coursework sequence](coursework/PAPER_TO_EXPERIMENT.md) turn this into submitted work.
+**Paper problem and figure → research question → fundamental concept → AI-assisted experiment → return to the paper → revised claim.** The [reading method](papers/READING_METHOD.md) and [coursework sequence](coursework/PAPER_TO_EXPERIMENT.md) specify the work submitted at each stage.
 
 Notebook IDs: **R** reading seminar, **F** foundations, **PR** processing, **D** design, **DS** data science, **M** modeling, **P** projects. Paper IDs point to the [complete reading list](papers/README.md). The [class index](NOTEBOOK_INDEX.md) links all 83 notebooks: 79 computational lessons/projects and four human-assessed reading seminars.
 
 | Week | Classes | Paper before or alongside the block | Evidence before progressing |
 |---:|---|---|---|
 | 1 | R00, R01 | PP01 fMRIPrep + PP04 BrainMorph | Two diagrams, evidence rows, questions about transforms |
-| 2 | R02, R03 | PD02 Marek + PM03 BrainIAC; PD01 NARPS + PM05 Omni-fMRI | Six total paper ledgers, three comparisons, first SOTA audit; **then** begin fundamentals |
+| 2 | R02, R03 | PD02 Marek + PM03 BrainIAC; PD01 NARPS + PM05 Omni-fMRI | Six paper ledgers, three comparisons, first model evaluation audit |
 | 3 | F01–F04 | PB01 measurement bridge; revisit the opening questions | Explain why a transformation contract and measurement model matter |
 | 4 | DS01–DS04 | Revisit PP01/PD02 inputs and counting units | Correct axes, joins, geometry and EDA; paper-to-data diagram |
 | 5 | DS05–DS08; D01–D02 | First pass PD06 design follow-up; revisit PD02 | Missingness/sampling questions and participant bootstrap |
@@ -31,15 +31,15 @@ Notebook IDs: **R** reading seminar, **F** foundations, **PR** processing, **D**
 | 13 | PR20–PR21; P01 | Revisit PP01/PP04/PP06 | Transformation manifest and reproducible graph; A2 mechanism experiment |
 | 14 | D07–D10 | First pass PD05 cluster failure **and correction** before D10; revisit PD04/PD06 and NARPS questions | Explain contrast, design rank, efficiency and temporal noise |
 | 15 | D11–D14 | Return to PD05 and its correction; revisit PD02/PD04 | Hierarchy, exchangeability, multiplicity and independent selection |
-| 16 | D15–D16; P02 | Return to PD01/PP01 with full workflow vocabulary | Real-run GLM audit and explicit preprocessing omissions |
+| 16 | D15–D16; P02 | Return to PD01/PP01 with full workflow vocabulary | Single-run GLM audit and preprocessing scope |
 | 17 | M01–M03 | First pass PM01 encoding/decoding and PM04 OpenMind benchmark before M03; revisit PM03 | Separate targets, representations and generalization questions |
 | 18 | M04–M06 | Return to PM04; revisit PD02/PM03 | Nested/group/site split and fair-comparison audit |
 | 19 | M07–M09 | Full first pass/return to PM02; revisit PP06 | Labeled RDMs, connectomes, overlapping searchlights and claim boundaries |
 | 20 | M10–M12 | Return to PM01/PD03 | Timing, latent variables, state uncertainty and measurement reliability |
-| 21 | M13–M15 | Revisit PM03/PP03 | Dynamics, CNN optimization, segmentation and what is still unimplemented |
+| 21 | M13–M15 | Revisit PM03/PP03 | Dynamics, CNN optimization, segmentation, and validation checks |
 | 22 | M16–M18 | Return to PM03/PM04/PM05 Methods, ablations and limitations | Revised SOTA card, pretraining/attention/calibration explanation; settle A3 scope and access |
 | 23 | P03 | Revisit PD02/PD06/PM03 | Unseen-site failure, baseline and participant-level uncertainty |
-| 24 | Specialist track and A3 | Execute the agreed plan for an exact paper panel/table or source practical | Completed artifact and run evidence for the agreed scope; preserve unresolved reproduction limits |
+| 24 | Specialist track and A3 | Execute the agreed plan for an exact paper panel/table or source practical | Completed artifact, run evidence, and documented method scope |
 | 25 | P04 and A4 | Relevant paper pair for the proposed research question | Frozen question, metadata, QC, analysis and validation boundaries |
 | 26 | Rerun, defend, revise | First-pass claims versus final interpretations | Independent paper/figure defense and reproducible project evidence |
 
@@ -47,7 +47,7 @@ Paper cards sometimes include a short local rubric; the [A1–A4 rubrics](course
 
 ## Required longer practicals
 
-The original notebooks in [third_party](../third_party/README.md) remain concrete technical assignments. Work on copies and preserve source versions. Read the corresponding paper first to explain why the practical matters. An incomplete upstream exercise or a code link does not count as an executed result.
+The [source practicals](../third_party/README.md) provide longer technical assignments. Work on copies, preserve source versions, and connect each practical to its assigned paper. Submit the completed exercise and inspected outputs.
 
 - **Processing:** complete all five guided blocks in the [processing coverage map](processing_coverage.md): geometry/fMRI alignment, structural morphometry, cortical surfaces, diffusion, and reproducible workflow/QC. These use Nipype/FSL/FreeSurfer/DIPY and add roughly 19–29 hours plus compute. Spread them across weeks 8–13 and extend the schedule when needed. One specialist track does not replace the five blocks.
 - **Design:** complete the Poldrack efficiency and DartBrains resampling assignments. Explain which uncertainty or design question from the papers each calculation addresses. Historical source environments may differ from this core environment.

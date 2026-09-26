@@ -1,10 +1,10 @@
-# Processing papers: see the problem before learning the machinery
+# Papers in neuroimaging processing
 
-Start with **PP01 + PP04 before the fundamentals**. They turn an attractive brain image into a set of questions: what changed, what was learned, what was measured, and what could still be wrong? Revisit them after the linked notebooks. Read PP02 before motion/QC, PP03 before tissue segmentation, PP05 after the first segmentation lab, and PP06 before the diffusion block.
+Begin with **PP01 and PP04** in the opening seminar, then revisit them after the corresponding notebooks. Read PP02 with motion and quality control, PP03 with tissue segmentation, PP06 with diffusion MRI, and PP05 as a fetal-imaging extension. For each paper, identify the input, transformation, output, and evidence used to evaluate the result.
 
-These are primary research papers, selected for explanatory value and testable claims. “Essential” describes their role in this course; “frontier” identifies recent work to interrogate, **not a global state-of-the-art ranking**. A targeted September 2026 search included 2025–2026 publications and preprints. The selected frontier papers have verified journal publications. Their initial preprint dates are recorded separately. The [machine-readable registry](processing_sources.json) records the sections actually consulted and the official repositories.
+The readings combine established methodological studies with recent published methods. The [source registry](processing_sources.json) records their publication dates, assigned manuscript versions, reading sections, and official code repositories.
 
-No PDFs, paper figures, participant data or model weights are copied here. The coursework below is newly designed. Proposed student experiments are assignments, not claimed reproductions or experiments already run in this repository.
+Students read the papers at their publisher or author sites and submit original diagrams, analyses, and written interpretations.
 
 ## First meeting: a two-paper orientation, 60–75 minutes
 
@@ -12,7 +12,7 @@ Open fMRIPrep's **Figure 1** and BrainMorph's **Figure 1** in the original paper
 
 The student then answers, without equations: Which system coordinates a collection of processing operations? Which system predicts information used to align images? Where would an incorrect input assumption become visible? Compare the role of a report with the role of a learned keypoint. Make a list of three fundamentals she now wants to learn. A useful list might include coordinates, interpolation and independent validation; it need not match the instructor's list.
 
-**Submit:** two original diagrams, three learning questions, and one sentence for each paper that starts “This paper does not establish…”. Ask Goose/Ollama or ChatGPT to challenge one sentence, using only passages the student supplies. Each AI claim must be tied to a section or marked unverified. **Instructor check:** the student must distinguish a pipeline, a trained registration component, and the evidence supporting either. Equations and code are intentionally deferred in this first meeting.
+**Submit:** two diagrams, three learning questions, and one well-supported conclusion with a stated boundary for each paper. Ask Goose/Ollama or ChatGPT to challenge one conclusion using passages you supply. Check every paper-specific AI claim against a section. **Instructor check:** the student distinguishes a processing pipeline, a learned registration component, and the evidence supporting each.
 
 <a id="pp01"></a>
 ## PP01 · fMRIPrep: why an automated pipeline still needs inspection

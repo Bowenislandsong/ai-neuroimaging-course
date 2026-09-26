@@ -1,8 +1,8 @@
-# Papers first: the research problem before the machinery
+# Research papers and reading guides
 
-Start here, then open [R00: how to read](../../notebooks/00_paper_orientation/00_how_to_read.ipynb). The first two weeks introduce **three essential papers paired with three recent frontier papers**. She does not need to understand their equations yet. She should see why processing, research design, statistics and modeling matter, and collect questions she wants the later classes to answer.
+Begin with [R00: Reading a research paper](../../notebooks/00_paper_orientation/00_how_to_read.ipynb). The first two weeks pair three established studies with three recent methods. Students identify the questions that motivate processing, research design, statistics, and modeling before working through the technical lessons.
 
-This library contains **18 papers** with targeted reading paths, evidence questions, original assignments and instructor checks. Six are opening readings; the others introduce their relevant technical blocks. PP05 is a specialist fetal-imaging extension. Follow the [26-week sequence](../STUDY_PLAN.md), rather than trying to master all 18 before beginning. The 79 computational notebooks each contain a paper question and a return-to-paper task; four additional notebooks conduct the opening reading seminars.
+The library contains **18 papers**, each with assigned sections, evidence questions, coursework, and instructor notes. Six appear in the opening seminars. The remaining readings introduce their corresponding technical blocks in the [study plan](../STUDY_PLAN.md). PP05 supports the optional fetal-imaging extension.
 
 ## The six opening readings
 
@@ -12,13 +12,13 @@ This library contains **18 papers** with targeted reading paths, evidence questi
 | [R02: generalization](../../notebooks/00_paper_orientation/02_why_generalization.ipynb) | [PD02 · Marek: reproducible BWAS (2022)](design.md#pd02) | [PM03 · BrainIAC (2026)](modeling.md#pm03) | When can evidence from these people support a claim about new people? Association estimation and predictive transfer ask different questions. |
 | [R03: evidence and choices](../../notebooks/00_paper_orientation/03_why_evidence_audits.ipynb) | [PD01 · NARPS (2020)](design.md#pd01) | [PM05 · Omni-fMRI (2026)](modeling.md#pm05) | Which analysis choices and benchmark comparisons support a claim, and which narrow it? |
 
-These are conceptual pairings, not head-to-head benchmarks. Do not compare the papers' headline numbers as if their tasks, data and metrics were interchangeable.
+Each pair approaches a shared research problem from a different angle. Compare the questions and evidence while keeping the papers' distinct tasks, datasets, and metrics in view.
 
-For each paper: read its abstract and introduction, inspect the assigned figure/table and caption, then read the relevant result and limitations. Write the scientific question in your own words before asking AI for help. The guides specify what to postpone. Use the [three-pass reading method](READING_METHOD.md): **motivation now → mechanism during the notebooks → judgment after the experiment**.
+For each paper, read the abstract and introduction, inspect the assigned figure or table, and study the relevant result and discussion. Write the scientific question in your own words before consulting AI. The [reading method](READING_METHOD.md) has three passes: **motivation → mechanism → evaluation**.
 
-## All readings and the coursework they motivate
+## Reading list and coursework
 
-The title links lead to a primary publication record; each guide links the assigned full text and exact sections. Publication year and the version of the assigned reading copy can differ.
+Paper titles link to publication records. Each guide identifies the reading copy, relevant sections, and its place in the course.
 
 | ID | Paper | Role and first encounter | Original coursework |
 |---|---|---|---|
@@ -34,16 +34,16 @@ The title links lead to a primary publication record; each guide links the assig
 | [PD04 guide](design.md#pd04) | [Circular analysis in systems neuroscience: the dangers of double dipping (2009)](https://doi.org/10.1038/nn.2303) | Essential · before feature selection | Expose double dipping with independent evaluation |
 | [PD05 guide](design.md#pd05) | [Cluster failure: Why fMRI inferences for spatial extent have inflated false-positive rates (2016)](https://www.pnas.org/doi/10.1073/pnas.1602413113) | Essential · before temporal noise/inference | Name the inferential family and inspect null assumptions; read correction |
 | [PD06 guide](design.md#pd06) | [Study design features increase replicability in brain-wide association studies (2024)](https://www.nature.com/articles/s41586-024-08260-9) | 2024 methodological follow-up · before sampling | Compare designs under a fixed scan budget and target population |
-| [PM01 guide](modeling.md#pm01) | [Encoding and decoding in fMRI (2011)](https://doi.org/10.1016/j.neuroimage.2010.07.073) | Essential review · before modeling | Draw encoding/decoding diagrams and change a toy prediction target |
+| [PM01 guide](modeling.md#pm01) | [Encoding and decoding in fMRI (2011)](https://doi.org/10.1016/j.neuroimage.2010.07.073) | Essential review · before modeling | Draw encoding/decoding diagrams and change a sample prediction target |
 | [PM02 guide](modeling.md#pm02) | [Representational similarity analysis – connecting the branches of systems neuroscience (2008)](https://doi.org/10.3389/neuro.06.004.2008) | Essential · preview before PCA; return before RSA | Build qualitative representational dissimilarity matrices |
 | [PM03 guide](modeling.md#pm03) | [A generalizable foundation model for analysis of human brain MRI (2026)](https://doi.org/10.1038/s41593-026-02202-6) | Frontier · opening | Write a transfer contract and inspect a task-specific result panel |
 | [PM04 guide](modeling.md#pm04) | [An OpenMind for 3D Medical Vision Self-supervised Learning (2025)](https://openaccess.thecvf.com/content/ICCV2025/html/Wald_An_OpenMind_for_3D_Medical_Vision_Self-supervised_Learning_ICCV_2025_paper.html) | Frontier benchmark · before model comparison | Plan a fair comparison with matched adaptation conditions |
 | [PM05 guide](modeling.md#pm05) | [Omni-fMRI: A Universal Atlas-Free fMRI Foundation Model (2026)](https://arxiv.org/abs/2601.23090v1) | Frontier · opening | Audit tokenization and find a within-paper performance exception |
 | [PB01 guide](measurement.md#pb01) | [Neurophysiological investigation of the basis of the fMRI signal (2001)](https://www.nature.com/articles/35084005) | Essential measurement bridge · before F02 | Separate neural activity, physiological coupling and measured BOLD |
 
-## Actual submissions
+## Assignments
 
-Use these reusable templates inside the notebooks or in your own study folder. Reuse a paper-card artifact in the portfolio; do not write the same assignment twice.
+Use these assignments throughout the course. Evidence sheets and diagrams prepared for a paper guide can be included in the final portfolio.
 
 1. **[A1: figure brief](../coursework/PAPER_TO_EXPERIMENT.md#a1--first-pass-figure-brief).** Six opening evidence ledgers, three pair comparisons and a first frontier-paper audit. Explain what is being counted, what the comparison is, and what the figure cannot establish. Unknown methods are questions to investigate.
 2. **[A2: mechanism experiment](../coursework/PAPER_TO_EXPERIMENT.md#a2--mechanism-experiment).** Predict one transformation, ask AI for a short implementation, deliberately change one assumption, inspect the result and revise a paper interpretation.
@@ -52,16 +52,16 @@ Use these reusable templates inside the notebooks or in your own study folder. R
 
 Each uses an [evidence ledger](../coursework/EVIDENCE_LEDGER.md). The [SOTA audit](../coursework/SOTA_AUDIT.md) is completed once at the opening level, then revised after the modeling block. Read the instructor checks only after attempting the work. Rubrics reward evidence and explanation, not vocabulary or flawless prose.
 
-## How “SOTA” is used here
+## Evaluating recent methods
 
-BrainMorph, BrainIAC, OpenMind and Omni-fMRI are representative 2025–2026 frontier readings. The fetal-imaging extension adds a 2026 application. This is a dated editorial selection, **not a verified ranking of every model available**. A performance claim must name the task, data, split, baseline, adaptation protocol, metric and uncertainty. The Omni-fMRI coursework deliberately examines a comparison where its model is not the best on the reported metrics.
+BrainMorph, BrainIAC, OpenMind, and Omni-fMRI provide 2025–2026 examples of active research; the fetal-imaging paper adds a clinical application. Students evaluate each reported result against its task, data, split, baseline, adaptation protocol, metric, and uncertainty. The Omni-fMRI assignment includes a comparison where another method performs better on the reported metrics.
 
-BrainMorph's assigned manuscript is arXiv v3, associated with its 2025 MELBA publication. OpenMind's publication record is ICCV 2025; its assigned reading copy is arXiv v2. Omni-fMRI is listed in the official ICML 2026 program; the worksheet assigns arXiv v1 and does not assume every conference-version detail is identical. BrainIAC is a 2026 Nature Neuroscience article. PD06 is a 2024 methodological follow-up, not a latest-model claim. The individual guides and registry retain dates, versions and verification links.
+The guides identify the version used for each assignment. BrainMorph uses arXiv v3 alongside its 2025 MELBA publication; OpenMind uses arXiv v2 alongside ICCV 2025. Omni-fMRI uses arXiv v1 and is listed in the ICML 2026 program. BrainIAC appeared in *Nature Neuroscience* in 2026. PD06 is a 2024 study-design follow-up.
 
-## Source access and reuse
+## Source records and reuse
 
-The [machine-readable registry](paper_registry.json) records all 18 citations, publication status, assigned sections, primary links, notebook connections and available code links. Its component source records preserve access limitations and the passages inspected. Verification was performed on **25 September 2026 UTC**. Some sources were accessible through author manuscripts or indexed full-text passages when a publisher page blocked access; figure-caption review does not imply that every figure image or supplement was inspected. No complete literature search or empirical leaderboard replication is claimed.
+The [source registry](paper_registry.json) records citations, publication status, assigned versions and sections, notebook connections, and code links. The records also identify author manuscripts and access limitations where relevant. Source information was checked on **25 September 2026 UTC**.
 
-The papers are linked, and the coursework is original. PDFs, publisher figures, participant data and model weights are not copied into this repository. Open reading access does not by itself grant redistribution rights. Code and weights have separate terms: for example, BrainIAC's official repository uses a research-only license. Follow each source's terms before any optional model work. Source reuse notices for the separately preserved teaching notebooks remain in [THIRD_PARTY_NOTICES.md](../../THIRD_PARTY_NOTICES.md).
+The coursework is original and links to papers at their publisher or author sites. Consult the source terms before using paper figures, code, data, or model weights in a project; BrainIAC's official repository, for example, uses a research-only license. Attribution for preserved teaching materials appears in the [third-party notices](../../THIRD_PARTY_NOTICES.md).
 
-To maintain this course, edit the strand source JSON files and [lesson_readings.json](lesson_readings.json), then run `python scripts/build_reading_indexes.py` from the repository root. Recheck primary publication/version records when replacing a frontier paper; do not silently substitute an evolving manuscript while retaining old figure questions.
+Course maintainers can update the strand source files and [lesson_readings.json](lesson_readings.json), then run `python scripts/build_reading_indexes.py` from the repository root. Update figure questions whenever the assigned manuscript version changes.

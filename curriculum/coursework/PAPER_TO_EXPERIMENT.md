@@ -1,10 +1,10 @@
-# Assignment sequence: from motivating paper to an analysis you can defend
+# Paper-based assignments
 
-Paper cards may have a short 10-point local checkpoint; the 20-point rubrics below assess the complete course submission.
+Paper guides include brief checkpoints. The 20-point rubrics below assess the completed course assignments.
 
-The paper leads the lesson. A notebook is then the smallest useful experiment for understanding a part of that paper. It is not automatically a reproduction of the paper's result.
+Each assignment connects a published research question to a focused notebook experiment and a revised interpretation of the evidence.
 
-Reuse the evidence sheets, diagrams and experiments produced in the paper cards and seminars; these integrated assessments do not require a second copy of the same work. One experiment may support several paper returns if each connection is explained. Multiple notebook links on a card are a learning path, not a demand for a new report after every linked notebook.
+Reuse evidence sheets, diagrams, and experiments from the paper guides and seminars. One experiment may support several paper returns when each connection is explained.
 
 **Common 0–4 scale:** 0 = absent; 1 = major unresolved misconception; 2 = partly correct but missing evidence or explanation; 3 = correct, traceable and independently explained for the assigned stage; 4 = meets 3 and adds a well-justified check, alternative or limitation. For A1, a precisely located unknown with a sensible next question can meet 3; prior command of technical methods is not required. For A2 and A3, passing requires at least 3 in each area. A4 uses the existing P04 passing rule.
 
