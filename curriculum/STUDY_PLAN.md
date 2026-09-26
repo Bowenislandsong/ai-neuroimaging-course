@@ -1,8 +1,8 @@
 # Study plan
 
-The course begins with six research papers and four reading seminars. Students identify the scientific problems, interpret selected figures, and record questions that will guide their study of the methods. Programming and mathematics enter in week 3.
+The course is designed for **macOS on a standard Apple Silicon MacBook Pro** and begins with **[Step 0: Agentic Workstation Setup](SETUP.md)** (installing **Ollama** with **Qwen** and **Gemma 4**, configuring **Goose**, and syncing the locked Python 3.12 + JupyterLab environment), followed by six research papers and four reading seminars (`R00`–`R03`). Students identify the scientific problems, interpret selected figures, and record questions that will guide their study of the methods. Programming and mathematical derivations enter in Week 3 (`F01`–`F04`), where students use Goose + Ollama to handle implementation grunt work while learning to spot errors immediately, trace bugs to their root cause, and verify outputs against expected ranges.
 
-Plan for **26 weeks**, with most weeks requiring **8–12 hours**. The schedule includes paper discussions, Jupyter lessons, source practicals, and a supervised project. Specialist installations and real-data work may extend the calendar.
+Plan for **26 weeks** (preceded by the 30-minute **Step 0** setup), with most weeks requiring **8–12 hours**. The schedule includes paper discussions, Jupyter lessons, source practicals, and a supervised project. Specialist installations and real-data work may extend the calendar.
 
 Allow **12–16 hours across the opening two weeks** for the first readings and discussion. Later papers generally take 45–75 minutes on first reading. A technical class generally takes 75–100 minutes, followed by a focused return to the paper. Reuse the original evidence record when a paper appears in several classes.
 
@@ -10,15 +10,16 @@ Weeks 5–6 contain six technical lessons each, about 7.5–10 hours before read
 
 ## The learning cycle
 
-**Paper problem and figure → research question → fundamental concept → AI-assisted experiment → return to the paper → revised claim.** The [reading method](papers/READING_METHOD.md) and [coursework sequence](coursework/PAPER_TO_EXPERIMENT.md) specify the work submitted at each stage.
+**Step 0 (MacBook Pro Goose + Ollama setup) → Paper problem and figure → research question → fundamental concept → agent-assisted experiment (suggestive prompt → error trace → expected outcome range check) → return to the paper → revised claim.** The [reading method](papers/READING_METHOD.md), [agentic AI workflow](AI_WORKFLOW.md), and [coursework sequence](coursework/PAPER_TO_EXPERIMENT.md) specify the work submitted at each stage.
 
 Notebook IDs: **R** reading seminar, **F** foundations, **PR** processing, **D** design, **DS** data science, **M** modeling, **P** projects. Paper IDs point to the [complete reading list](papers/README.md). The [class index](NOTEBOOK_INDEX.md) links all 83 notebooks: 79 computational lessons/projects and four human-assessed reading seminars.
 
 | Week | Classes | Paper before or alongside the block | Evidence before progressing |
 |---:|---|---|---|
+| **0** | **[Step 0 Setup](SETUP.md)** | — | **MacBook Pro running Ollama (`qwen3.5:9b`/`qwen3.6:27b` + `gemma4:e4b`/`gemma4:26b`), Goose (`goose session`), and locked JupyterLab; pass the 10-minute Step 0 smoke test** |
 | 1 | R00, R01 | PP01 fMRIPrep + PP04 BrainMorph | Two diagrams, evidence rows, questions about transforms |
 | 2 | R02, R03 | PD02 Marek + PM03 BrainIAC; PD01 NARPS + PM05 Omni-fMRI | Six paper ledgers, three comparisons, first model evaluation audit |
-| 3 | F01–F04 | PB01 measurement bridge; revisit the opening questions | Explain why a transformation contract and measurement model matter |
+| 3 | F01–F04 | PB01 measurement bridge; revisit the opening questions | Explain why a transformation contract, error traceback, and measurement model matter |
 | 4 | DS01–DS04 | Revisit PP01/PD02/PD07 inputs and counting units | Correct axes, joins, geometry and EDA; paper-to-data diagram |
 | 5 | DS05–DS08; D01–D02 | First pass PD06 design follow-up and PD07 ComBat; revisit PD02 | Missingness/sampling questions and participant bootstrap |
 | 6 | DS09–DS12; D03–D04 | First pass PD03 reliability; revisit PB01/PD06 | Distinguish scale, fitting, reliability, power and precision |

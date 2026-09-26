@@ -7,7 +7,18 @@ import re
 import tomllib
 from urllib.parse import unquote, urlsplit
 import nbformat
-from build_reading_indexes import KEY_BLOCK, KEY_REFERENCES, KEY_ROLES, VERIFICATION, key_reference_block, reference_key
+from build_reading_indexes import (
+    AGENTIC_BLOCK,
+    AGENTIC_GUIDES,
+    KEY_BLOCK,
+    KEY_REFERENCES,
+    KEY_ROLES,
+    VERIFICATION,
+    agentic_guide_block,
+    key_reference_block,
+    load_agentic_guides,
+    reference_key,
+)
 
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
@@ -150,6 +161,23 @@ if paper_registry.exists():
                 errors.append(f'{ident}: first cell lacks the current key-references block; run scripts/build_reading_indexes.py')
         for ident in sorted(set(entries)-computational):
             errors.append(f'key_references.json: {ident} is not a computational notebook')
+    # Every notebook renders its macOS agentic deliverable supervision block (agentic_guides.json).
+    if AGENTIC_GUIDES.exists():
+        agentic_guides=load_agentic_guides()
+        for p in notebooks:
+            n=nbformat.read(p,4);ident=n.metadata.get('course_id')
+            guide=agentic_guides.get(ident)
+            if guide is None:
+                errors.append(f'{ident}: missing from curriculum/agentic_guides.json');continue
+            for req in ('deliverable_focus','suggestive_prompt','what_to_look_for_and_trace','expected_outcome_range_and_why'):
+                if not guide.get(req):
+                    errors.append(f'{ident}: agentic_guides.json missing {req}')
+            expected_guide=agentic_guide_block(ident,guide)
+            full_md='\n\n'.join(c.source for c in n.cells if c.cell_type=='markdown')
+            if [b.strip() for b in AGENTIC_BLOCK.findall(full_md)]!=[expected_guide]:
+                errors.append(f'{ident}: notebook lacks the current agentic-guide block; run scripts/build_reading_indexes.py')
+        for ident in sorted(set(agentic_guides)-ids):
+            errors.append(f'agentic_guides.json: unknown notebook {ident}')
 # Different upstream projects expose different manifest schemas; all source bytes
 # remain unchanged. Metadata-only sources that were read but not copied are skipped.
 records=[]

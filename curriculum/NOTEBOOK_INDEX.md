@@ -1,6 +1,6 @@
 # Every class
 
-**Start with R00–R03 before F01.** Use the [26-week study sequence](STUDY_PLAN.md) to interleave the strands. These 83 notebooks contain 79 computational lessons/projects and four human-assessed reading seminars. The [24-paper library](papers/README.md) supplies exact readings, questions and assignments. Paper links motivate a question; they do not mean each paper implements every local method.
+**Start with Step 0 (macOS MacBook Pro Goose + Ollama setup) and R00–R03 before F01.** Use the [26-week study sequence](STUDY_PLAN.md) to interleave the strands. These 83 notebooks contain 79 computational lessons/projects and four human-assessed reading seminars. The [24-paper library](papers/README.md) supplies exact readings, questions and assignments. Paper links motivate a question; they do not mean each paper implements every local method.
 
 Offline computational notebooks include reference outputs; P02 requires a public-data download. Reading seminars are submitted for discussion and assessment, not marked as executed. [Setup](SETUP.md) · [AI workflow](AI_WORKFLOW.md) · [Assessments](ASSESSMENT.md)
 

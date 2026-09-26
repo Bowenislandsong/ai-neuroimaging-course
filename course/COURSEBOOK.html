@@ -48,7 +48,7 @@ pre{white-space:pre-wrap;background:#eee!important;color:black!important}a{color
 .table-scroll{overflow:visible}table{font-size:8pt}.output figure{break-inside:avoid}}
 </style></head><body id="top">
 <header class="cover"><div class="eyebrow">AI-assisted neuroimaging · complete reading edition</div><h1>Understand every transformation</h1>
-<p class="lede">A course in understanding what AI-assisted analysis does to an image, a time series, and a research claim. Read the lessons here, then open a recorded lab or run its editable notebook. The syllabus, exercises, and explanations are original materials inspired by USC’s published NIIN course areas.</p></header><div class="layout"><nav aria-label="Contents"><h2>Course contents</h2><ol><li><a href="#doc-readme-md">AI-assisted neuroimaging: understand every transformation</a></li><li><a href="#doc-setup-md">Setup: one tutor, one notebook, one operation at a time</a></li><li><a href="#doc-lessons-00-bridge-md">Two bridge classes before the core course</a></li><li><a href="#doc-lessons-580-md">Data science: understand the numbers AI produces</a></li><li><a href="#doc-lessons-540-md">Processing: explain every transformation</a></li><li><a href="#doc-lessons-520-md">Ask a question that the analysis can answer</a></li><li><a href="#doc-lessons-550-md">550-inspired strand: make a model, then earn trust in its result</a></li><li><a href="#doc-lessons-90-capstone-md">Capstone: make one defensible neuroimaging claim</a></li><li><a href="#doc-real-data-md">From transparent toy examples to actual MRI</a></li><li><a href="#doc-transformations-md">What each transformation actually changes</a></li><li><a href="#doc-glossary-md">Words she needs to explain</a></li><li><a href="#doc-assessment-md">Assessment: understanding earns the credit</a></li><li><a href="#doc-verification-report-md">Verification report</a></li><li><a href="#doc-templates-transformation-card-md">Transformation card</a></li><li><a href="#doc-templates-analysis-record-md">Analysis record</a></li><li><a href="#doc-templates-project-plan-md">One-page project plan — write before viewing the result</a></li><li><a href="#doc-answer-keys-520-md">520 answer key</a></li><li><a href="#doc-sources-md">Materials and source map</a></li><li><a href="#doc-sources-580-md">580 source and syllabus record</a></li><li><a href="#doc-sources-540-md">Processing source ledger</a></li><li><a href="#doc-sources-520-md">NIIN 520 source and reuse record</a></li><li><a href="#doc-sources-550-md">Source register — modeling strand</a></li></ol><div class="lab-links"><h2>Recorded labs</h2><ul><li><a href="labs/520_design.html">520 design</a></li><li><a href="labs/540_processing.html">540 processing</a></li><li><a href="labs/550_modeling.html">550 modeling</a></li><li><a href="labs/580_data_science.html">580 data science</a></li></ul></div></nav>
+<p class="lede">A course in understanding what AI-assisted analysis does to an image, a time series, and a research claim. Read the lessons here, then open a recorded lab or run its editable notebook. The syllabus, exercises, and explanations are original materials inspired by USC’s published NIIN course areas.</p></header><div class="layout"><nav aria-label="Contents"><h2>Course contents</h2><ol><li><a href="#doc-readme-md">AI-assisted neuroimaging: understand every transformation</a></li><li><a href="#doc-setup-md">Setup: Step 0 on macOS (MacBook Pro) — Goose + Ollama with Qwen &amp; Gemma</a></li><li><a href="#doc-lessons-00-bridge-md">Two bridge classes before the core course</a></li><li><a href="#doc-lessons-580-md">Data science: understand the numbers AI produces</a></li><li><a href="#doc-lessons-540-md">Processing: explain every transformation</a></li><li><a href="#doc-lessons-520-md">Ask a question that the analysis can answer</a></li><li><a href="#doc-lessons-550-md">550-inspired strand: make a model, then earn trust in its result</a></li><li><a href="#doc-lessons-90-capstone-md">Capstone: make one defensible neuroimaging claim</a></li><li><a href="#doc-real-data-md">From transparent toy examples to actual MRI</a></li><li><a href="#doc-transformations-md">What each transformation actually changes</a></li><li><a href="#doc-glossary-md">Words she needs to explain</a></li><li><a href="#doc-assessment-md">Assessment: understanding earns the credit</a></li><li><a href="#doc-verification-report-md">Verification report</a></li><li><a href="#doc-templates-transformation-card-md">Transformation card</a></li><li><a href="#doc-templates-analysis-record-md">Analysis record</a></li><li><a href="#doc-templates-project-plan-md">One-page project plan — write before viewing the result</a></li><li><a href="#doc-answer-keys-520-md">520 answer key</a></li><li><a href="#doc-sources-md">Materials and source map</a></li><li><a href="#doc-sources-580-md">580 source and syllabus record</a></li><li><a href="#doc-sources-540-md">Processing source ledger</a></li><li><a href="#doc-sources-520-md">NIIN 520 source and reuse record</a></li><li><a href="#doc-sources-550-md">Source register — modeling strand</a></li></ol><div class="lab-links"><h2>Recorded labs</h2><ul><li><a href="labs/520_design.html">520 design</a></li><li><a href="labs/540_processing.html">540 processing</a></li><li><a href="labs/550_modeling.html">550 modeling</a></li><li><a href="labs/580_data_science.html">580 data science</a></li></ul></div></nav>
 <main><article class="chapter" id="doc-readme-md"><p class="chapter-meta">Source: <a href="README.md">README.md</a></p><blockquote>
 <p><strong>Introductory supplement.</strong> The <a href="../README.md">current course</a> begins with <a href="../notebooks/00_paper_orientation/00_how_to_read.html">R00</a>, uses the <a href="../curriculum/STUDY_PLAN.md">26-week study plan</a>, and includes <a href="../curriculum/NOTEBOOK_INDEX.md">83 notebooks</a>. This page collects the earlier short-format lessons for reference.</p>
 </blockquote>
@@ -205,9 +205,9 @@ pre{white-space:pre-wrap;background:#eee!important;color:black!important}a{color
 <li>Primary-source reading links and an optional <a href="#doc-real-data-md">real-data bridge</a>. External books, slides, scans, and model weights are linked rather than bundled.</li>
 <li><a href="#doc-verification-report-md">Verification report</a> documents what was executed. Local AI setup is documented, not installed or benchmarked on her hardware.</li>
 </ul>
-<p>The runnable core uses small synthetic arrays so she can see the correct answer. It does not perform research-grade MRI preprocessing. The real-data stage uses an existing documented teaching pipeline; an instructor reviews the acquisition, processing, and inference decisions.</p><a class="back-top" href="#top">Back to contents ↑</a></article><article class="chapter" id="doc-setup-md"><p class="chapter-meta">Source: <a href="SETUP.md">SETUP.md</a></p><h2 id="doc-setup-md-setup-one-tutor-one-notebook-one-operation-at-a-time">Setup: one tutor, one notebook, one operation at a time</h2>
-<p>Written 24 September 2026. Model tags and interfaces can change; verify the linked provider page when installing. The lessons work with <strong>Ollama + Goose + a tool-capable Qwen3.6 or Gemma4 model</strong>, or with <strong>ChatGPT</strong> as the tutor. Model choice does not change the scientific checks.</p>
-<h3 id="doc-setup-md-choose-a-route">Choose a route</h3>
+<p>The runnable core uses small synthetic arrays so she can see the correct answer. It does not perform research-grade MRI preprocessing. The real-data stage uses an existing documented teaching pipeline; an instructor reviews the acquisition, processing, and inference decisions.</p><a class="back-top" href="#top">Back to contents ↑</a></article><article class="chapter" id="doc-setup-md"><p class="chapter-meta">Source: <a href="SETUP.md">SETUP.md</a></p><h2 id="doc-setup-md-setup-step-0-on-macos-macbook-pro-goose-ollama-with-qwen-gemma">Setup: Step 0 on macOS (MacBook Pro) — Goose + Ollama with Qwen &amp; Gemma</h2>
+<p>This introductory supplement shares the same <strong>macOS (Apple Silicon MacBook Pro)</strong> environment and <strong>Step 0 agentic setup</strong> as the main 83-notebook curriculum (<a href="../curriculum/SETUP.md">full setup guide</a>). The lessons work with <strong>Ollama + Goose running the latest Qwen (<code>qwen3.5:9b</code> / <code>qwen3.6:27b</code>) and Gemma 4 (<code>gemma4:e4b</code> / <code>gemma4:26b</code>) models</strong> on your MacBook Pro, or with <strong>ChatGPT</strong> alongside local JupyterLab.</p>
+<h3 id="doc-setup-md-choose-a-route-on-your-macbook-pro">Choose a route on your MacBook Pro</h3>
 <div class="table-scroll" role="region" aria-label="Scrollable table" tabindex="0"><table>
 <thead>
 <tr>
@@ -218,60 +218,64 @@ pre{white-space:pre-wrap;background:#eee!important;color:black!important}a{color
 </thead>
 <tbody>
 <tr>
-<td>Ollama + Goose</td>
-<td>Ollama runs the selected model; Goose connects that model to approved local file/code tools; Python computes the result</td>
-<td>Guided local notebook/code work</td>
+<td><strong>Ollama + Goose on macOS</strong> <em>(Recommended)</em></td>
+<td>Ollama runs <strong>Qwen</strong> (primary coding/tool agent) and <strong>Gemma 4</strong> (scientific auditor) on Apple Silicon unified memory; Goose connects the model to local repo files; Python computes the result</td>
+<td>Agentic notebook execution, error tracing, and class deliverables</td>
 </tr>
 <tr>
-<td>ChatGPT + local Jupyter</td>
-<td>ChatGPT explains or drafts a snippet; she runs it in Jupyter and shares the toy result for discussion</td>
-<td>Fast start, same lessons and checks</td>
+<td><strong>ChatGPT + local Jupyter on macOS</strong></td>
+<td>ChatGPT drafts or critiques a snippet under the tutor contract; you run it in local JupyterLab and verify the output against expected ranges</td>
+<td>Fast fallback with the exact same lessons and checks</td>
 </tr>
 </tbody>
 </table></div>
-<p>The language model is the tutor/code assistant. NumPy, SciPy, NiBabel, Nilearn, and scikit-learn do the numerical work. An LLM's fluent explanation is not an image-registration algorithm, and a general vision model seeing a screenshot is not validated volumetric MRI analysis. A neuroimaging foundation model later in the course is a different kind of model with its own data and validation requirements.</p>
-<h3 id="doc-setup-md-local-ai-route">Local AI route</h3>
+<p>The language model is your coding assistant and reasoning partner; NumPy, SciPy, NiBabel, Nilearn, and scikit-learn perform the numerical computation. A fluent LLM explanation is not an image-registration algorithm, and a neuroimaging foundation model later in the course (<code>BrainIAC</code>, <code>BrainMorph</code>, <code>Omni-fMRI</code>, <code>MindEye2</code>) is a distinct scientific model with its own input contract and validation rules.</p>
+<h3 id="doc-setup-md-step-0-local-ai-route-on-macos-macbook-pro">Step 0 · Local AI route on macOS (MacBook Pro)</h3>
 <ol>
-<li>Install <a href="https://docs.ollama.com/quickstart">Ollama</a> and <a href="https://goose-docs.ai/docs/quickstart/">Goose</a> using their official instructions for the learner's operating system.</li>
-<li>Choose an explicit model tag. Current official listings include <code>gemma4:e2b</code>, <code>gemma4:e4b</code>, <code>qwen3.6:27b</code>, and <code>qwen3.6:35b</code>. Start with a model that fits the machine and passes the short exercise below. Exact hardware is not yet known.</li>
-<li>Download <strong>one</strong> chosen model. For example:</li>
+<li>Check your MacBook Pro's unified memory in <strong>Terminal.app</strong>:
+   <code>zsh
+   sysctl -n hw.memsize | awk '{printf "MacBook Pro Unified Memory: %.0f GB\n", $1/1073741824}'</code></li>
+<li>Install <a href="https://ollama.com/download/mac">Ollama for macOS</a> (<code>brew install --cask ollama &amp;&amp; open -a Ollama</code>) and pull <strong>both</strong> the latest <strong>Qwen</strong> and <strong>Gemma 4</strong> models sized for your MacBook Pro:
+   - <strong>Standard 16 GB – 24 GB MacBook Pro:</strong>
+     <code>zsh
+     ollama pull qwen3.5:9b
+     ollama pull gemma4:e4b</code>
+   - <strong>32 GB+ MacBook Pro (<code>M1/M2/M3/M4</code> Pro or Max):</strong>
+     <code>zsh
+     ollama pull qwen3.6:27b
+     ollama pull gemma4:26b</code>
+   <em>(Or run <code>./setup.sh --setup-ai</code> from the repository root to detect your MacBook Pro RAM and pull both models automatically.)</em></li>
+<li>Install <a href="https://goose-docs.ai/docs/quickstart/">Goose</a> on macOS (<code>curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash</code>), run <code>goose configure</code>, select <strong>Ollama</strong> (<code>http://localhost:11434</code>), and choose <code>qwen3.5:9b</code> (or <code>qwen3.6:27b</code>) as your coding agent. Use <code>gemma4:e4b</code> (or <code>gemma4:26b</code>) when you want a second-opinion scientific audit of a figure or transformation contract.</li>
+<li>Open only this repository folder for your session. The root <a href="../.goosehints"><code>.goosehints</code></a> configures Goose to follow our three-part supervision workflow: <strong>Suggestive Prompts ("in the spirit of")</strong>, <strong>Immediate Error Spotting &amp; Root-Cause Traceback</strong>, and <strong>Expected Outcome Ranges &amp; Why</strong>.</li>
 </ol>
-<pre><code class="language-sh">ollama pull gemma4:e2b
-ollama run gemma4:e2b
-</code></pre>
-<p>For a machine suited to the larger Qwen model, substitute <code>qwen3.6:27b</code> in both commands. “Qwen 3.6+” is a preference, not a literal Ollama tag. Newer versions can be substituted after checking their exact tags and tool support.</p>
-<ol start="4">
-<li>Keep the Ollama service running. Run <code>goose configure</code>, select the Ollama provider, enter <code>http://localhost:11434</code>, and select the <strong>same installed model tag</strong>. In Goose Desktop, configure the equivalent provider/model settings. See <a href="https://goose-docs.ai/docs/getting-started/providers/">official provider guidance</a>.</li>
-<li>Open only this course folder for the session. Use a mode that lets her review execution and enable only the file/code tools needed for the exercise. The <code>.goosehints</code> in this folder gives the tutor instructions; it is guidance, not a security boundary.</li>
-<li>Run the smoke test below. If tool calls fail, she can use the model as a chat tutor and paste the snippet into Jupyter. A model's advertised tool capability does not guarantee reliable tool use in every integration.</li>
-</ol>
-<p>The <a href="https://ollama.com/library/gemma4">Gemma4 listing</a> currently shows roughly 7.2 GB and 9.6 GB downloads for e2b/e4b. The <a href="https://ollama.com/library/qwen3.6">Qwen3.6 listing</a> shows roughly 18 GB and 23 GB for 27b/35b. Download size is <strong>not total working memory</strong>; the runtime and context also need memory. These are installation facts, not claims about neuroimaging accuracy. No large model download is required to read or execute this course's reference notebooks.</p>
-<p>Use an ordinary local tag rather than a <code>cloud</code> tag when the intention is local inference. Goose's external tools can still send data outside the machine. The bundled exercises use synthetic data. For actual research data, use the lab's approved environment and data rules.</p>
 <h3 id="doc-setup-md-chatgpt-route">ChatGPT route</h3>
-<p>Open ChatGPT, start a learning conversation, and paste the tutor contract plus the current lesson. Ask it to work one prediction and one snippet at a time. Run reference snippets in local Jupyter, then paste the text output or a plot from the synthetic exercise. This route does not require Goose or configuring an OpenAI API key. Available tools and models vary with the account; the course does not require a particular paid tier. <a href="https://learn.chatgpt.com/docs/use-chatgpt">Official ChatGPT guidance</a>.</p>
-<h3 id="doc-setup-md-python-notebooks">Python notebooks</h3>
-<p>From the repository root, use the same locked environment as the current course:</p>
-<pre><code class="language-sh">./setup.sh
+<p>Open ChatGPT, start a learning conversation, and paste the tutor contract below plus the current lesson. Ask it to work one prediction and one snippet at a time, run the code in local JupyterLab on your MacBook Pro, and verify the result against the expected range. <a href="https://learn.chatgpt.com/docs/use-chatgpt">Official ChatGPT guidance</a>.</p>
+<h3 id="doc-setup-md-python-notebooks-on-macos">Python notebooks on macOS</h3>
+<p>From the repository root in <strong>Terminal.app</strong>:</p>
+<pre><code class="language-zsh">./setup.sh
 uv run --locked jupyter lab course/labs
 </code></pre>
-<p>Choose the uv environment as the Jupyter kernel. Each notebook can be run from top to bottom. The exported <code>.html</code> companions display saved reference outputs.</p>
-<p>The root <a href="../uv.lock">uv.lock</a> pins the environment. The earlier <a href="requirements-tested.txt">requirements-tested.txt</a> records the supplement's original test environment.
-Run <code>./setup.sh --check</code> from the repository root to execute these four notebooks along with the current course's offline lessons.</p>
+<p>Choose the locked <code>uv</code> environment as the Jupyter kernel. Each notebook runs cleanly from top to bottom, and the exported <code>.html</code> companions display saved reference outputs. Run <code>./setup.sh --check</code> from the repository root to execute these four notebooks along with the main course's 78 offline lessons.</p>
 <h3 id="doc-setup-md-the-tutor-contract">The tutor contract</h3>
-<p>Copy this into the chosen AI at the beginning of each lesson:</p>
+<p>Copy this into your AI assistant at the beginning of each lesson (or launch <code>goose session</code> from the repository root so <code>.goosehints</code> loads automatically):</p>
 <blockquote>
-<p>You are my neuroimaging tutor. I am learning to supervise AI-written analysis, not memorize programming syntax. Work on only the current lesson. Explain the input, named axes, units, output, parameters, and what information will be changed or lost. Ask me to predict one result and wait for my answer. Then propose one small operation, usually no more than 20 lines. Tell me how to inspect the code and show at least one numerical check and one visual check when relevant. Do not run ahead or reveal the answer key before I try. Use the supplied synthetic data first. Label simulations and assumptions. If I make a mistake, explain the missing concept in simpler terms and give a smaller example. Do not remove checks to make code pass. Do not invent a file, API, citation, execution result, diagnosis, or scientific conclusion. Preserve raw inputs, record actual versions/settings, and distinguish code you proposed from code we executed. When you suggest a method, name the research question that makes it appropriate.</p>
+<p>You are my neuroimaging tutor and pair-programming agent on macOS. I am learning to supervise AI-written analysis for class deliverables: you handle the coding boilerplate while I verify the transformation contract, spot silent errors immediately, trace bugs back to their root cause, and check outcomes against expected ranges. Work on only the current lesson. Explain the input, named axes, units, output, parameters, and what information will be changed or lost. Ask me to predict one result and wait for my answer. Then propose one small operation, usually no more than 20 lines, with at least one numerical check and one visual check. Do not remove checks to make code pass. Do not invent a file, API, citation, execution result, diagnosis, or scientific conclusion.</p>
 </blockquote>
 <h3 id="doc-setup-md-ten-minute-acceptance-exercise">Ten-minute acceptance exercise</h3>
-<p>Ask: “For <code>[2,4,6]</code>, predict the mean and describe what z standardization does. Wait. Then provide a short snippet with ddof=0, verify its mean and SD, and explain why this is not a significance test.”</p>
-<p>The tutor passes if it waits for a prediction, gives executable short code, recovers mean 4, produces standardized mean near 0 and SD near 1, and rejects the significance-test interpretation. This is a small usability check, not a model benchmark. If it fails, use the provided reference notebook and a stronger available tutor model; do not let the learner absorb the incorrect explanation.</p>
+<p>Give Goose (or your tutor) a prompt <strong>in the spirit of</strong>:</p>
+<blockquote>
+<p><em>"For the 1D array <code>[2.0, 4.0, 6.0]</code>, ask me to predict the mean and what $z$-standardization (<code>ddof=0</code>) will produce, and wait. Then write a 10-line snippet that computes the standardized array, contrasts <code>ddof=0</code> vs. <code>ddof=1</code>, and explains why a standardized array is not a hypothesis test."</em></p>
+</blockquote>
+<ul>
+<li><strong>What to look for &amp; trace back:</strong> Check whether the snippet used <code>ddof=0</code> ($\sigma = \sqrt{8/3} \approx 1.6330$) vs. <code>ddof=1</code> ($s = 2.0$). If the output values are <code>[-1.0, 0.0, +1.0]</code> instead of <code>[-1.2247, 0.0, +1.2247]</code>, trace the discrepancy directly to the <code>ddof</code> argument in <code>np.std()</code>.</li>
+<li><strong>Expected outcome range &amp; why:</strong> The mean must be <code>4.0</code>, the standardized mean must lie within <code>0.0 ± 1e-12</code>, the <code>ddof=0</code> standard deviation must be <code>1.0 ± 1e-12</code>, and the standardized values must be <code>[-1.2247, 0.0, +1.2247]</code> because $\frac{6 - 4}{\sqrt{8/3}} = \sqrt{3/2} \approx 1.2247$.</li>
+</ul>
 <h3 id="doc-setup-md-when-something-fails">When something fails</h3>
 <ul>
-<li><strong>Import error:</strong> check which Python kernel is running and install into that environment.</li>
-<li><strong>Goose cannot reach the model:</strong> confirm Ollama is running and the endpoint and installed tag match.</li>
-<li><strong>Slow or failed inference:</strong> reduce model size/context, or use ChatGPT; keep notebook data small.</li>
-<li><strong>AI forgets the instructions:</strong> start a fresh lesson conversation with the contract and current data card.</li>
-<li><strong>Wrong numbers or plots:</strong> compare with the supplied checks; ask the AI to identify the first divergent step. Never ask it to simply make the assertions pass.</li>
+<li><strong>Import error:</strong> check that JupyterLab was started via <code>uv run --locked jupyter lab</code>.</li>
+<li><strong>Goose cannot reach the model:</strong> confirm <code>Ollama.app</code> is running on macOS (<code>ollama list</code>) and the endpoint (<code>http://localhost:11434</code>) and installed tag (<code>qwen3.5:9b</code>, <code>qwen3.6:27b</code>, <code>gemma4:e4b</code>, or <code>gemma4:26b</code>) match.</li>
+<li><strong>High memory pressure on MacBook Pro:</strong> switch to <code>qwen3.5:9b</code> or <code>gemma4:e4b</code> and close unused applications.</li>
+<li><strong>Wrong numbers or plots:</strong> compare with the lesson's expected outcome range and trace back to the first divergent array shape, axis, unit, or split. Never delete an assertion to force a pass.</li>
 </ul><a class="back-top" href="#top">Back to contents ↑</a></article><article class="chapter" id="doc-lessons-00-bridge-md"><p class="chapter-meta">Source: <a href="lessons/00_bridge.md">lessons/00_bridge.md</a></p><h2 id="doc-lessons-00-bridge-md-two-bridge-classes-before-the-core-course">Two bridge classes before the core course</h2>
 <p>These are original introductory lessons. They provide the minimum vocabulary needed to supervise the processing and modeling exercises. They do not replace anatomy, acquisition, or research training.</p>
 <h3 id="doc-lessons-00-bridge-md-bridge-a-what-an-mri-number-measures-60-minutes">Bridge A — What an MRI number measures (60 minutes)</h3>

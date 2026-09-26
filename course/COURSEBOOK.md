@@ -5,7 +5,7 @@ Original course materials, collected into one reading edition. Use the accompany
 ## Contents
 
 - [AI-assisted neuroimaging: understand every transformation](#doc-readme-md)
-- [Setup: one tutor, one notebook, one operation at a time](#doc-setup-md)
+- [Setup: Step 0 on macOS (MacBook Pro) — Goose + Ollama with Qwen & Gemma](#doc-setup-md)
 - [Two bridge classes before the core course](#doc-lessons-00-bridge-md)
 - [Data science: understand the numbers AI produces](#doc-lessons-580-md)
 - [Processing: explain every transformation](#doc-lessons-540-md)
@@ -99,77 +99,75 @@ The runnable core uses small synthetic arrays so she can see the correct answer.
 
 <a id="doc-setup-md"></a>
 
-# Setup: one tutor, one notebook, one operation at a time
+# Setup: Step 0 on macOS (MacBook Pro) — Goose + Ollama with Qwen & Gemma
 
-Written 24 September 2026. Model tags and interfaces can change; verify the linked provider page when installing. The lessons work with **Ollama + Goose + a tool-capable Qwen3.6 or Gemma4 model**, or with **ChatGPT** as the tutor. Model choice does not change the scientific checks.
+This introductory supplement shares the same **macOS (Apple Silicon MacBook Pro)** environment and **Step 0 agentic setup** as the main 83-notebook curriculum ([full setup guide](../curriculum/SETUP.md)). The lessons work with **Ollama + Goose running the latest Qwen (`qwen3.5:9b` / `qwen3.6:27b`) and Gemma 4 (`gemma4:e4b` / `gemma4:26b`) models** on your MacBook Pro, or with **ChatGPT** alongside local JupyterLab.
 
-## Choose a route
+## Choose a route on your MacBook Pro
 
 | Route | What each part does | Use it for |
 | --- | --- | --- |
-| Ollama + Goose | Ollama runs the selected model; Goose connects that model to approved local file/code tools; Python computes the result | Guided local notebook/code work |
-| ChatGPT + local Jupyter | ChatGPT explains or drafts a snippet; she runs it in Jupyter and shares the toy result for discussion | Fast start, same lessons and checks |
+| **Ollama + Goose on macOS** *(Recommended)* | Ollama runs **Qwen** (primary coding/tool agent) and **Gemma 4** (scientific auditor) on Apple Silicon unified memory; Goose connects the model to local repo files; Python computes the result | Agentic notebook execution, error tracing, and class deliverables |
+| **ChatGPT + local Jupyter on macOS** | ChatGPT drafts or critiques a snippet under the tutor contract; you run it in local JupyterLab and verify the output against expected ranges | Fast fallback with the exact same lessons and checks |
 
-The language model is the tutor/code assistant. NumPy, SciPy, NiBabel, Nilearn, and scikit-learn do the numerical work. An LLM's fluent explanation is not an image-registration algorithm, and a general vision model seeing a screenshot is not validated volumetric MRI analysis. A neuroimaging foundation model later in the course is a different kind of model with its own data and validation requirements.
+The language model is your coding assistant and reasoning partner; NumPy, SciPy, NiBabel, Nilearn, and scikit-learn perform the numerical computation. A fluent LLM explanation is not an image-registration algorithm, and a neuroimaging foundation model later in the course (`BrainIAC`, `BrainMorph`, `Omni-fMRI`, `MindEye2`) is a distinct scientific model with its own input contract and validation rules.
 
-## Local AI route
+## Step 0 · Local AI route on macOS (MacBook Pro)
 
-1. Install [Ollama](https://docs.ollama.com/quickstart) and [Goose](https://goose-docs.ai/docs/quickstart/) using their official instructions for the learner's operating system.
-2. Choose an explicit model tag. Current official listings include `gemma4:e2b`, `gemma4:e4b`, `qwen3.6:27b`, and `qwen3.6:35b`. Start with a model that fits the machine and passes the short exercise below. Exact hardware is not yet known.
-3. Download **one** chosen model. For example:
-
-```sh
-ollama pull gemma4:e2b
-ollama run gemma4:e2b
-```
-
-For a machine suited to the larger Qwen model, substitute `qwen3.6:27b` in both commands. “Qwen 3.6+” is a preference, not a literal Ollama tag. Newer versions can be substituted after checking their exact tags and tool support.
-
-4. Keep the Ollama service running. Run `goose configure`, select the Ollama provider, enter `http://localhost:11434`, and select the **same installed model tag**. In Goose Desktop, configure the equivalent provider/model settings. See [official provider guidance](https://goose-docs.ai/docs/getting-started/providers/).
-5. Open only this course folder for the session. Use a mode that lets her review execution and enable only the file/code tools needed for the exercise. The `.goosehints` in this folder gives the tutor instructions; it is guidance, not a security boundary.
-6. Run the smoke test below. If tool calls fail, she can use the model as a chat tutor and paste the snippet into Jupyter. A model's advertised tool capability does not guarantee reliable tool use in every integration.
-
-The [Gemma4 listing](https://ollama.com/library/gemma4) currently shows roughly 7.2 GB and 9.6 GB downloads for e2b/e4b. The [Qwen3.6 listing](https://ollama.com/library/qwen3.6) shows roughly 18 GB and 23 GB for 27b/35b. Download size is **not total working memory**; the runtime and context also need memory. These are installation facts, not claims about neuroimaging accuracy. No large model download is required to read or execute this course's reference notebooks.
-
-Use an ordinary local tag rather than a `cloud` tag when the intention is local inference. Goose's external tools can still send data outside the machine. The bundled exercises use synthetic data. For actual research data, use the lab's approved environment and data rules.
+1. Check your MacBook Pro's unified memory in **Terminal.app**:
+   ```zsh
+   sysctl -n hw.memsize | awk '{printf "MacBook Pro Unified Memory: %.0f GB\n", $1/1073741824}'
+   ```
+2. Install [Ollama for macOS](https://ollama.com/download/mac) (`brew install --cask ollama && open -a Ollama`) and pull **both** the latest **Qwen** and **Gemma 4** models sized for your MacBook Pro:
+   - **Standard 16 GB – 24 GB MacBook Pro:**
+     ```zsh
+     ollama pull qwen3.5:9b
+     ollama pull gemma4:e4b
+     ```
+   - **32 GB+ MacBook Pro (`M1/M2/M3/M4` Pro or Max):**
+     ```zsh
+     ollama pull qwen3.6:27b
+     ollama pull gemma4:26b
+     ```
+   *(Or run `./setup.sh --setup-ai` from the repository root to detect your MacBook Pro RAM and pull both models automatically.)*
+3. Install [Goose](https://goose-docs.ai/docs/quickstart/) on macOS (`curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash`), run `goose configure`, select **Ollama** (`http://localhost:11434`), and choose `qwen3.5:9b` (or `qwen3.6:27b`) as your coding agent. Use `gemma4:e4b` (or `gemma4:26b`) when you want a second-opinion scientific audit of a figure or transformation contract.
+4. Open only this repository folder for your session. The root [`.goosehints`](../.goosehints) configures Goose to follow our three-part supervision workflow: **Suggestive Prompts ("in the spirit of")**, **Immediate Error Spotting & Root-Cause Traceback**, and **Expected Outcome Ranges & Why**.
 
 ## ChatGPT route
 
-Open ChatGPT, start a learning conversation, and paste the tutor contract plus the current lesson. Ask it to work one prediction and one snippet at a time. Run reference snippets in local Jupyter, then paste the text output or a plot from the synthetic exercise. This route does not require Goose or configuring an OpenAI API key. Available tools and models vary with the account; the course does not require a particular paid tier. [Official ChatGPT guidance](https://learn.chatgpt.com/docs/use-chatgpt).
+Open ChatGPT, start a learning conversation, and paste the tutor contract below plus the current lesson. Ask it to work one prediction and one snippet at a time, run the code in local JupyterLab on your MacBook Pro, and verify the result against the expected range. [Official ChatGPT guidance](https://learn.chatgpt.com/docs/use-chatgpt).
 
-## Python notebooks
+## Python notebooks on macOS
 
-From the repository root, use the same locked environment as the current course:
+From the repository root in **Terminal.app**:
 
-```sh
+```zsh
 ./setup.sh
 uv run --locked jupyter lab course/labs
 ```
 
-Choose the uv environment as the Jupyter kernel. Each notebook can be run from top to bottom. The exported `.html` companions display saved reference outputs.
-
-The root [uv.lock](../uv.lock) pins the environment. The earlier [requirements-tested.txt](requirements-tested.txt) records the supplement's original test environment.
-Run `./setup.sh --check` from the repository root to execute these four notebooks along with the current course's offline lessons.
+Choose the locked `uv` environment as the Jupyter kernel. Each notebook runs cleanly from top to bottom, and the exported `.html` companions display saved reference outputs. Run `./setup.sh --check` from the repository root to execute these four notebooks along with the main course's 78 offline lessons.
 
 ## The tutor contract
 
-Copy this into the chosen AI at the beginning of each lesson:
+Copy this into your AI assistant at the beginning of each lesson (or launch `goose session` from the repository root so `.goosehints` loads automatically):
 
-> You are my neuroimaging tutor. I am learning to supervise AI-written analysis, not memorize programming syntax. Work on only the current lesson. Explain the input, named axes, units, output, parameters, and what information will be changed or lost. Ask me to predict one result and wait for my answer. Then propose one small operation, usually no more than 20 lines. Tell me how to inspect the code and show at least one numerical check and one visual check when relevant. Do not run ahead or reveal the answer key before I try. Use the supplied synthetic data first. Label simulations and assumptions. If I make a mistake, explain the missing concept in simpler terms and give a smaller example. Do not remove checks to make code pass. Do not invent a file, API, citation, execution result, diagnosis, or scientific conclusion. Preserve raw inputs, record actual versions/settings, and distinguish code you proposed from code we executed. When you suggest a method, name the research question that makes it appropriate.
+> You are my neuroimaging tutor and pair-programming agent on macOS. I am learning to supervise AI-written analysis for class deliverables: you handle the coding boilerplate while I verify the transformation contract, spot silent errors immediately, trace bugs back to their root cause, and check outcomes against expected ranges. Work on only the current lesson. Explain the input, named axes, units, output, parameters, and what information will be changed or lost. Ask me to predict one result and wait for my answer. Then propose one small operation, usually no more than 20 lines, with at least one numerical check and one visual check. Do not remove checks to make code pass. Do not invent a file, API, citation, execution result, diagnosis, or scientific conclusion.
 
 ## Ten-minute acceptance exercise
 
-Ask: “For `[2,4,6]`, predict the mean and describe what z standardization does. Wait. Then provide a short snippet with ddof=0, verify its mean and SD, and explain why this is not a significance test.”
+Give Goose (or your tutor) a prompt **in the spirit of**:
+> *"For the 1D array `[2.0, 4.0, 6.0]`, ask me to predict the mean and what $z$-standardization (`ddof=0`) will produce, and wait. Then write a 10-line snippet that computes the standardized array, contrasts `ddof=0` vs. `ddof=1`, and explains why a standardized array is not a hypothesis test."*
 
-The tutor passes if it waits for a prediction, gives executable short code, recovers mean 4, produces standardized mean near 0 and SD near 1, and rejects the significance-test interpretation. This is a small usability check, not a model benchmark. If it fails, use the provided reference notebook and a stronger available tutor model; do not let the learner absorb the incorrect explanation.
+- **What to look for & trace back:** Check whether the snippet used `ddof=0` ($\sigma = \sqrt{8/3} \approx 1.6330$) vs. `ddof=1` ($s = 2.0$). If the output values are `[-1.0, 0.0, +1.0]` instead of `[-1.2247, 0.0, +1.2247]`, trace the discrepancy directly to the `ddof` argument in `np.std()`.
+- **Expected outcome range & why:** The mean must be `4.0`, the standardized mean must lie within `0.0 ± 1e-12`, the `ddof=0` standard deviation must be `1.0 ± 1e-12`, and the standardized values must be `[-1.2247, 0.0, +1.2247]` because $\frac{6 - 4}{\sqrt{8/3}} = \sqrt{3/2} \approx 1.2247$.
 
 ## When something fails
 
-- **Import error:** check which Python kernel is running and install into that environment.
-- **Goose cannot reach the model:** confirm Ollama is running and the endpoint and installed tag match.
-- **Slow or failed inference:** reduce model size/context, or use ChatGPT; keep notebook data small.
-- **AI forgets the instructions:** start a fresh lesson conversation with the contract and current data card.
-- **Wrong numbers or plots:** compare with the supplied checks; ask the AI to identify the first divergent step. Never ask it to simply make the assertions pass.
+- **Import error:** check that JupyterLab was started via `uv run --locked jupyter lab`.
+- **Goose cannot reach the model:** confirm `Ollama.app` is running on macOS (`ollama list`) and the endpoint (`http://localhost:11434`) and installed tag (`qwen3.5:9b`, `qwen3.6:27b`, `gemma4:e4b`, or `gemma4:26b`) match.
+- **High memory pressure on MacBook Pro:** switch to `qwen3.5:9b` or `gemma4:e4b` and close unused applications.
+- **Wrong numbers or plots:** compare with the lesson's expected outcome range and trace back to the first divergent array shape, axis, unit, or split. Never delete an assertion to force a pass.
 
 
 ---

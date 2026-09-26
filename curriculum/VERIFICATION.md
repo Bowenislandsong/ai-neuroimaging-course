@@ -1,38 +1,43 @@
 # What was verified
 
-## Locked uv environment
+## Locked uv environment (macOS MacBook Pro target + CI runner)
 
-The [fresh uv run](uv_validation.json) used Python 3.12.13 and the committed [lockfile](../uv.lock). **All 83 course-authored computational notebooks passed in fresh Jupyter kernels:** 79 in the current course, including the public-data fMRI project, and four in the introductory supplement. The four reading seminars are assessed by an instructor. Run `./setup.sh --check-all` to repeat the complete computational check.
+The [macOS uv validation run](uv_validation.json) used `darwin` (macOS), Python 3.12.13, and the committed [lockfile](../uv.lock). **All 83 course-authored computational notebooks passed in fresh Jupyter kernels:** 79 in the current course, including the public-data fMRI project, and four in the introductory supplement. The four reading seminars are assessed by an instructor. On your MacBook Pro, run `./setup.sh --check-all` to repeat the complete computational check.
 
 The source notebooks preserved in `third_party/` are assignments from other courses and retain their original software and data requirements.
 
-## Earlier validation record
+## Latest fresh-kernel validation record
 
-**Computational baseline (upgraded graduate curriculum): 79/79 original computational notebooks passed (78 offline + 1 network), 371 code cells (13,990 lines of Python), and 80 captured multi-panel figures across 100% of offline computational notebooks.** Each notebook ran in a fresh real Jupyter kernel using `nbclient`, in source order, with no allowed cell errors and zero saved `stderr` warnings. The complete machine-readable record is [validation.json](validation.json).
+**Computational baseline (upgraded graduate curriculum): 83/83 computational notebooks passed (78 offline lessons + 1 network project + 4 companion labs), 371 main-course code cells, and 80 captured multi-panel figures across 100% of offline computational notebooks.** Each notebook ran in a fresh real Jupyter kernel using `nbclient`, in source order, with no allowed cell errors and zero saved `stderr` warnings. The complete machine-readable record is [validation.json](validation.json).
 
-The initial run used Python 3.14.7, NumPy 2.5.3, SciPy 1.18.1, pandas 3.0.6, Matplotlib 3.11.2, scikit-learn 1.9.1, NiBabel 5.4.2, Nilearn 0.14.1, nbformat 5.11.1, nbclient 0.11.0 and ipykernel 7.3.0. The [environment snapshot](../requirements-tested.txt) records that run. New installations use the [uv lockfile](../uv.lock) and Python 3.12.
+New installations on macOS use the [uv lockfile](../uv.lock) and Python 3.12 via `./setup.sh`. The earlier [environment snapshot](../requirements-tested.txt) records the historical Python 3.14 baseline run.
 
-## Paper-first and SOTA curriculum expansion
+## Paper-first, SOTA, and Agentic Supervision expansion
 
-The course contains **83 notebooks: 79 computational notebooks (~224,201 markdown words total across all 83 notebooks, ~2,680 words per computational lesson) and four reading-only seminars**. The seminars require human assessment and are explicitly skipped by the executor, including when `--include-network` is supplied. A skipped seminar is not a passed assignment. Every computational notebook includes graduate-level mathematical derivations, a deterministic *"Why this technique matters"* section with 2–4 verified canonical and modern (2019+) citations, explicit SOTA paper motivations, 4–5 multi-step lab code cells, and embedded multi-panel diagnostic visualizations.
+The course contains **83 notebooks: 79 computational notebooks and four reading-only seminars**. The seminars require human assessment and are explicitly skipped by the executor, including when `--include-network` is supplied. A skipped seminar is not a passed assignment. Every computational notebook includes:
+- Graduate-level mathematical derivations and physical/statistical intuition;
+- A deterministic *"Why this technique matters"* section with 2–4 verified canonical and modern (2019+) citations;
+- Explicit SOTA paper motivations and 4–5 multi-step lab code cells;
+- Embedded multi-panel diagnostic visualizations; and
+- A lesson-specific **Agentic Deliverable Supervision Guide (Goose + Ollama Qwen/Gemma on macOS)** containing a **Suggestive Prompt ("in the spirit of")**, **What to Look For & Root-Cause Error Traceback**, and **Expected Outcome Ranges & First-Principles "Why"**.
 
 The [paper registry](papers/paper_registry.json) contains **24 foundational and SOTA sources** (`PP01`–`PP08`, `PD01`–`PD07`, `PM01`–`PM08`, `PB01`) with publication/assigned-version distinctions and exact reading targets, complemented by [key_references.json](papers/key_references.json) and [REFERENCES.md](papers/REFERENCES.md) (**310 lesson reference entries across 263 distinct works; 277/277 total distinct references verified `MATCH` against Crossref, OpenAlex, and arXiv in [reference_verification.json](papers/reference_verification.json) by [verify_references.py](../scripts/verify_references.py)**). Source records state which primary passages, captions and publication/code records were inspected, including access limitations. The coursework does not claim complete visual inspection of all paper figures, a systematic review of all frontier models, or execution of author implementations.
 
-Structural checks cover reading metadata, paper IDs, notebook mappings, local links, saved `stderr`/path-leak hygiene, LaTeX math integrity, reference verification status, and all preserved upstream hashes. The publication's Linux workflow reruns the 78 offline computational notebooks. The original 79-notebook local report below remains the historical numerical baseline; see the dated [paper update checks](paper_update_validation.json) for this addition's checks.
+Structural checks cover reading metadata, paper IDs, notebook mappings, agentic supervision guides, local links, saved `stderr`/path-leak hygiene, LaTeX math integrity, reference verification status, and all preserved upstream hashes. See the dated [paper update checks](paper_update_validation.json) for this addition's checks.
 
 ## Scope of the checks
 
 | Check | Result and interpretation |
 |---|---|
 | Computational notebooks | All 79 passed fresh-kernel execution and their encoded assertions (plus all 4 companion labs in `course/labs/`, for 83/83 computational notebooks total); 78 offline plus one opt-in data-download project |
-| Repo structure & hygiene | Notebook schemas, unique IDs, 1,769 local teaching links, zero saved `stderr` outputs, zero local home-path leaks, zero stripped-math signatures, and 25 upstream byte hashes checked by [check_repository.py](../scripts/check_repository.py) |
+| Repo structure & hygiene | Notebook schemas, unique IDs, local teaching links, agentic supervision guides (`agentic_guides.json`), zero saved `stderr` outputs, zero local home-path leaks, zero stripped-math signatures, and 25 upstream byte hashes checked by [check_repository.py](../scripts/check_repository.py) |
 | Reference & citation audit | All 277 distinct works across the 24-paper library and 310 lesson key references verified `MATCH` against Crossref, OpenAlex, and arXiv by [verify_references.py](../scripts/verify_references.py) |
 | Code/model mechanics | Assertions cover geometry, units, matching rows, rank, fitting boundaries, numerical recovery, gradient checks and deliberate failure contrasts where appropriate |
 | Source integrity | All 25 preserved file hashes in the manifests match; 13 upstream `.ipynb` files plus one Marimo `.py` and source/license evidence are separately identified |
-| Source accuracy | Actual syllabi/TOCs and pinned notebook headings inspected; independent spot-check of representative chapter links and official setup/model links |
+| Source accuracy | Actual syllabi/TOCs and pinned notebook headings inspected; independent spot-check of representative chapter links and official setup/model links (`ollama.com/library/qwen3.6`, `qwen3.5`, `gemma4`, and `goose-docs.ai`) |
 | Visual review | Representative real-template slices, TFCE demonstration and CNN training curves inspected; strand-level figure checks are recorded separately |
 | Public-data project | SPM download, sidecar/events, design, AR(1) GLM, effects/z map, two-sided voxel FDR and residual diagnostic executed locally |
-| GitHub Actions | Workflow supplied for an independent Linux/Python 3.12 offline run; consult the live Actions result for its status |
+| GitHub Actions CI | Automated CI workflow executes the offline verification suite on every push/PR; consult the live Actions badge for status |
 
 The strand-specific JSON files describe earlier direct Python/Agg checks. The repository-wide Jupyter record above is the integrated execution evidence and includes the final core cells. Neither record is a learner's completed assessment.
 
@@ -44,6 +49,6 @@ These are implementation results, not biological validation. P02 intentionally m
 
 ## Explicitly not verified here
 
-The 13 preserved upstream Jupyter notebooks and one Marimo lesson were not run with their external data/tools; some retain student exercises and historical dependencies. FSL, FreeSurfer, DIPY, fMRIPrep, DCM, ComBat, SRM and external imaging checkpoints are not certified installed or executed by this build. No live Ollama/Goose tutor integration, large-model download, or accuracy benchmark of Qwen/Gemma/ChatGPT was performed. Official setup instructions were checked, and the scientific code runs independently of a tutor model.
+The 13 preserved upstream Jupyter notebooks and one Marimo lesson were not run with their external data/tools; some retain student exercises and historical dependencies. FSL, FreeSurfer, DIPY, fMRIPrep, DCM, ComBat, SRM and external imaging checkpoints are not certified installed or executed by this build. Official macOS setup instructions and model tags for Ollama (`qwen3.5:9b`, `qwen3.6:27b`, `gemma4:e4b`, `gemma4:26b`) and Goose were verified against live documentation, while the scientific Python code runs deterministically without requiring live LLM calls during automated notebook validation.
 
-Run `./setup.sh --check` for the offline suite or `./setup.sh --check-all` for all original computational notebooks, including the public-data project. Results and executed copies go to ignored `build/`; downloaded and derived data go to ignored `data/` and `outputs/`.
+Run `./setup.sh --check` on your MacBook Pro for the offline suite or `./setup.sh --check-all` for all original computational notebooks, including the public-data project. Results and executed copies go to ignored `build/`; downloaded and derived data go to ignored `data/` and `outputs/`.

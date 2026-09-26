@@ -16,8 +16,10 @@ ROOT = Path(__file__).resolve().parents[1]
 PAPERS = ROOT / 'curriculum/papers'
 KEY_REFERENCES = PAPERS / 'key_references.json'
 VERIFICATION = PAPERS / 'reference_verification.json'
+AGENTIC_GUIDES = ROOT / 'curriculum/agentic_guides.json'
 KEY_ROLES = ('foundational', 'standard tool', 'state of the art', 'critical evaluation', 'review')
 KEY_BLOCK = re.compile(r'\n*<!-- key-references -->.*?<!-- /key-references -->\n*', re.S)
+AGENTIC_BLOCK = re.compile(r'\n*<!-- agentic-guide -->.*?<!-- /agentic-guide -->\n*', re.S)
 
 
 def write_json(path, value):
@@ -50,6 +52,39 @@ def load_key_references():
     if not KEY_REFERENCES.exists():
         return {}
     return {entry['notebook_id']: entry for entry in json.loads(KEY_REFERENCES.read_text())['lessons']}
+
+
+def load_agentic_guides():
+    if not AGENTIC_GUIDES.exists():
+        return {}
+    return json.loads(AGENTIC_GUIDES.read_text())
+
+
+def agentic_guide_block(ident, guide):
+    """Markdown block for macOS (Goose + Ollama: Qwen & Gemma) agentic deliverable supervision."""
+    trace_items = guide['what_to_look_for_and_trace']
+    if isinstance(trace_items, str):
+        trace_items = [trace_items]
+    lines = [
+        '<!-- agentic-guide -->',
+        f'### Agentic Deliverable Supervision ({ident} · macOS Goose + Ollama: Qwen & Gemma)',
+        '',
+        f'**Deliverable focus:** {guide["deliverable_focus"]}',
+        '',
+        '#### 1. Suggestive Prompt (in the spirit of what to ask — adapt, do not copy verbatim)',
+        f'> {guide["suggestive_prompt"]}',
+        '',
+        '#### 2. What to Look For & How to Trace the Error Back Down',
+    ]
+    for item in trace_items:
+        lines.append(f'- {item}')
+    lines += [
+        '',
+        '#### 3. Expected Outcome Range & Why It Must Look That Way',
+        guide['expected_outcome_range_and_why'],
+        '<!-- /agentic-guide -->',
+    ]
+    return '\n'.join(lines)
 
 
 def sorted_references(entry):
@@ -142,6 +177,7 @@ def main():
     by_id = {p['id']: p for p in papers}
     assignments = {x['notebook_id']: x for x in json.loads((PAPERS / 'lesson_readings.json').read_text())}
     key_refs = load_key_references()
+    agentic_guides = load_agentic_guides()
     groups = [
         ('00_paper_orientation', 'Paper orientation — start here'),
         ('00_foundations', 'Foundations'), ('01_processing', 'Processing'),
@@ -150,7 +186,7 @@ def main():
     ]
     index = []
     markdown = ['# Every class', '',
-        '**Start with R00–R03 before F01.** Use the [26-week study sequence](STUDY_PLAN.md) to interleave the strands. '
+        '**Start with Step 0 (macOS MacBook Pro Goose + Ollama setup) and R00–R03 before F01.** Use the [26-week study sequence](STUDY_PLAN.md) to interleave the strands. '
         'These 83 notebooks contain 79 computational lessons/projects and four human-assessed reading seminars. '
         'The [24-paper library](papers/README.md) supplies exact readings, questions and assignments. '
         'Paper links motivate a question; they do not mean each paper implements every local method.', '',
@@ -164,7 +200,18 @@ def main():
             notebook = json.loads(path.read_text())
             ident = notebook['metadata']['course_id']
             tier = notebook['metadata']['execution_tier']
-            if tier != 'reading':
+            guide_md = agentic_guide_block(ident, agentic_guides[ident]) if ident in agentic_guides else ''
+            if tier == 'reading':
+                notebook['cells'] = [c for c in notebook['cells']
+                    if c.get('metadata', {}).get('course_component') != 'agentic_guide']
+                if guide_md:
+                    notebook['cells'].append({
+                        'cell_type': 'markdown', 'id': f'agentic-guide-{ident.lower()}',
+                        'metadata': {'course_component': 'agentic_guide'},
+                        'source': (guide_md + '\n').splitlines(keepends=True),
+                    })
+                path.write_text(json.dumps(notebook, indent=1, ensure_ascii=False) + '\n')
+            else:
                 assignment = assignments[ident]
                 ids = assignment['paper_ids']
                 notebook['metadata']['paper_ids'] = ids
@@ -187,20 +234,24 @@ def main():
                 source = first + '\n\n' + block + '\n\n' + rest.lstrip('\n')
                 cell['source'] = source.splitlines(keepends=True)
                 notebook['cells'] = [c for c in notebook['cells']
-                    if c.get('metadata', {}).get('course_component') != 'paper_return']
+                    if c.get('metadata', {}).get('course_component') not in ('paper_return', 'agentic_guide')]
+                return_body = (
+                    '### Return to the research question\n\n'
+                    f'Revisit {links} and your initial prediction. In your '
+                    '[evidence ledger](../../curriculum/coursework/EVIDENCE_LEDGER.md):\n\n'
+                    '1. Cite one output or diagnostic from this lesson and explain the transformation it demonstrates.\n'
+                    '2. Revise one claim or question from the paper, with a figure or section locator. '
+                    'Which part of the published result remains open after this exercise?\n'
+                    '3. Ask AI to propose a next check. Accept, revise or reject it with a scientific reason. '
+                    'Then explain your decision aloud without reading the AI response.\n\n'
+                    'Include this entry in the A2 portfolio when relevant.\n'
+                )
+                if guide_md:
+                    return_body = guide_md + '\n\n' + return_body
                 notebook['cells'].append({
                     'cell_type': 'markdown', 'id': f'paper-return-{ident.lower()}',
                     'metadata': {'course_component': 'paper_return'},
-                    'source': ('### Return to the research question\n\n'
-                        f'Revisit {links} and your initial prediction. In your '
-                        '[evidence ledger](../../curriculum/coursework/EVIDENCE_LEDGER.md):\n\n'
-                        '1. Cite one output or diagnostic from this lesson and explain the transformation it demonstrates.\n'
-                        '2. Revise one claim or question from the paper, with a figure or section locator. '
-                        'Which part of the published result remains open after this exercise?\n'
-                        '3. Ask AI to propose a next check. Accept, revise or reject it with a scientific reason. '
-                        'Then explain your decision aloud without reading the AI response.\n\n'
-                        'Include this entry in the A2 portfolio when relevant.\n'
-                    ).splitlines(keepends=True),
+                    'source': return_body.splitlines(keepends=True),
                 })
                 # Match nbformat's existing indentation without rewriting any cell values.
                 path.write_text(json.dumps(notebook, indent=1, ensure_ascii=False) + '\n')
@@ -233,7 +284,7 @@ def main():
     (ROOT / 'curriculum/NOTEBOOK_INDEX.md').write_text('\n'.join(markdown))
     distinct = write_bibliography(key_refs, index, groups, by_id) if key_refs else 0
     print(f'Built {len(papers)} paper records and {len(index)} notebook entries; updated {len(assignments)} paper questions; '
-          f'rendered key references for {len(key_refs)} lessons ({distinct} distinct works).')
+          f'rendered key references for {len(key_refs)} lessons ({distinct} distinct works) and agentic guides for {len(agentic_guides)} lessons.')
 
 
 if __name__ == '__main__':

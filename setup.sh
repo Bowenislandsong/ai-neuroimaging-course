@@ -1,44 +1,108 @@
 #!/usr/bin/env bash
-# Install the locked course environment; optionally validate the notebooks.
+# Step 0 + Course Setup for macOS (Apple Silicon MacBook Pro); also supports headless CI checks.
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 case "${1:-}" in
-  ''|--check|--check-all) ;;
+  ''|--setup-ai|--check|--check-all) ;;
   *)
-    printf 'Usage: ./setup.sh [--check | --check-all]\n' >&2
+    printf 'Usage: ./setup.sh [--setup-ai | --check | --check-all]\n' >&2
     exit 2
     ;;
 esac
 
+export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
+
+OS_NAME="$(uname -s 2>/dev/null || echo Unknown)"
+ARCH_NAME="$(uname -m 2>/dev/null || echo Unknown)"
+MEM_GB=16
+if [ "$OS_NAME" = "Darwin" ] && command -v sysctl >/dev/null 2>&1; then
+  MEM_BYTES="$(sysctl -n hw.memsize 2>/dev/null || echo 17179869184)"
+  MEM_GB="$(( MEM_BYTES / 1073741824 ))"
+fi
+
+# Select recommended Qwen (coding/tool agent) and Gemma 4 (scientific audit/reasoning) tags for MacBook Pro unified memory.
+if [ "$MEM_GB" -ge 32 ]; then
+  REC_QWEN="qwen3.6:27b"
+  REC_GEMMA="gemma4:26b"
+else
+  REC_QWEN="qwen3.5:9b"
+  REC_GEMMA="gemma4:e4b"
+fi
+
 if ! command -v uv >/dev/null 2>&1; then
   if ! command -v curl >/dev/null 2>&1; then
-    printf 'Install curl or uv, then rerun this script.\n' >&2
+    printf 'Install curl or uv (on macOS: brew install uv), then rerun this script.\n' >&2
     exit 1
   fi
-  printf 'Installing uv with its official installer...\n'
+  printf 'Installing uv with its official macOS/Unix installer...\n'
   curl -LsSf https://astral.sh/uv/install.sh | sh
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
 if ! command -v uv >/dev/null 2>&1; then
-  printf 'uv was installed but is not on PATH. Add ~/.local/bin to PATH and rerun.\n' >&2
+  printf 'uv was installed but is not on PATH. Add ~/.local/bin to PATH (in ~/.zshrc on macOS) and rerun.\n' >&2
   exit 1
 fi
 
-uv sync --locked
+uv sync --frozen
+
+setup_macos_agentic_stack() {
+  printf '\n=== Step 0: macOS (MacBook Pro) Agentic Setup (Goose + Ollama with Qwen & Gemma) ===\n'
+  printf 'Detected platform: %s (%s) | Unified Memory: ~%s GB\n' "$OS_NAME" "$ARCH_NAME" "$MEM_GB"
+  printf 'Recommended MacBook Pro models:\n'
+  printf '  - Primary Agentic Coder (Qwen):     %s\n' "$REC_QWEN"
+  printf '  - Scientific Auditor (Gemma 4):     %s\n' "$REC_GEMMA"
+
+  if ! command -v ollama >/dev/null 2>&1; then
+    if [ "$OS_NAME" = "Darwin" ] && command -v brew >/dev/null 2>&1; then
+      printf 'Installing Ollama via Homebrew...\n'
+      brew install --cask ollama || printf 'Please install Ollama from https://ollama.com/download/mac\n'
+    else
+      printf 'Ollama not found. On macOS, run: brew install --cask ollama (or download from https://ollama.com/download/mac)\n'
+    fi
+  fi
+
+  if command -v ollama >/dev/null 2>&1; then
+    printf 'Pulling latest Qwen (%s) and Gemma (%s) models for your MacBook Pro...\n' "$REC_QWEN" "$REC_GEMMA"
+    ollama pull "$REC_QWEN"
+    ollama pull "$REC_GEMMA"
+  fi
+
+  if ! command -v goose >/dev/null 2>&1; then
+    printf 'Installing Goose CLI for macOS...\n'
+    curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash
+    export PATH="$HOME/.local/bin:$PATH"
+  fi
+
+  printf '\nStep 0 complete! Configure Goose to use Ollama:\n'
+  printf '  1. Run: goose configure   (Choose Provider: Ollama -> Host: http://localhost:11434 -> Model: %s)\n' "$REC_QWEN"
+  printf '  2. Start Goose in this repo: goose session\n'
+  printf '  3. Launch JupyterLab:        uv run --frozen jupyter lab notebooks\n'
+}
 
 case "${1:-}" in
   '')
-    printf '\nReady. Open the course with: uv run --locked jupyter lab notebooks\n'
-    printf 'Validate the offline lessons with: ./setup.sh --check\n'
+    printf '\n=== macOS (MacBook Pro) Course Environment Ready ===\n'
+    if [ "$OS_NAME" = "Darwin" ]; then
+      printf 'Detected macOS (%s, ~%s GB unified memory).\n' "$ARCH_NAME" "$MEM_GB"
+    fi
+    printf 'Step 0 (Agentic AI Setup — Goose + Ollama with Qwen & Gemma on MacBook Pro):\n'
+    printf '  Run automated setup:  ./setup.sh --setup-ai\n'
+    printf '  Or manually pull:     ollama pull %s && ollama pull %s\n' "$REC_QWEN" "$REC_GEMMA"
+    printf '  See full Step 0 guide: curriculum/SETUP.md\n\n'
+    printf 'Open the course in JupyterLab:  uv run --frozen jupyter lab notebooks\n'
+    printf 'Validate offline lessons:       ./setup.sh --check\n'
+    ;;
+  --setup-ai)
+    setup_macos_agentic_stack
     ;;
   --check)
-    uv run --locked python scripts/check_repository.py
-    uv run --locked python scripts/validate_notebooks.py
+    uv run --frozen python scripts/check_repository.py
+    uv run --frozen python scripts/validate_notebooks.py
     ;;
   --check-all)
-    uv run --locked python scripts/check_repository.py
-    uv run --locked python scripts/validate_notebooks.py --include-network
+    uv run --frozen python scripts/check_repository.py
+    uv run --frozen python scripts/validate_notebooks.py --include-network
     ;;
 esac
