@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-09-26T06:05:40.999623+00:00",
+  "python": "3.12.13",
+  "uv": "uv 0.11.7 (9d177269e 2026-04-15 aarch64-apple-darwin)",
+  "lock_sha256": "08fc7187eb93b09c302d9aa81fb6b46f262aac0b5a01ac3406ce2e5803878fb0",
+  "environment": "fresh uv-managed Python 3.12 environment; locked dependencies",
+  "method": "nbclient; fresh Jupyter kernel per computational notebook",
+  "current_course": {
+    "passed": 79,
+    "failed": 0,
+    "reading_seminars_for_human_assessment": 4,
+    "public_data_project_P02": "passed"
+  },
+  "introductory_supplement": {
+    "passed": 4,
+    "failed": 0
+  },
+  "third_party_source_notebooks": "preserved source assignments with separate original tool and data requirements",
+  "offline_setup_command": {
+    "command": "./setup.sh --check",
+    "passed": 82,
+    "failed": 0,
+    "skipped": 5,
+    "scope": "78 current course computational notebooks; 4 introductory supplement notebooks; 4 reading seminars and network project skipped"
+  }
+}

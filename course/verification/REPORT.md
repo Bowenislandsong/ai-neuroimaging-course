@@ -1,5 +1,7 @@
 # Verification report
 
+The [locked uv validation](../../curriculum/uv_validation.json) also ran all four supplemental notebooks in fresh Jupyter kernels with Python 3.12.13. The record below describes the original Python 3.14 validation of this introductory supplement.
+
 Verified 24 September 2026 (Los Angeles), Python 3.14.7. Exact package versions are in [results.json](results.json) and [requirements-tested.txt](../requirements-tested.txt).
 
 | Notebook | Lesson sections | Executed code cells | Embedded figures | Result |

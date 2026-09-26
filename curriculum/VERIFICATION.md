@@ -1,8 +1,16 @@
 # What was verified
 
+## Locked uv environment
+
+The [fresh uv run](uv_validation.json) used Python 3.12.13 and the committed [lockfile](../uv.lock). **All 83 course-authored computational notebooks passed in fresh Jupyter kernels:** 79 in the current course, including the public-data fMRI project, and four in the introductory supplement. The four reading seminars are assessed by an instructor. Run `./setup.sh --check-all` to repeat the complete computational check.
+
+The source notebooks preserved in `third_party/` are assignments from other courses and retain their original software and data requirements.
+
+## Earlier validation record
+
 **Computational baseline: 79/79 original computational notebooks passed, 150 code cells, 45 captured figures.** Each notebook ran in a fresh real Jupyter kernel using `nbclient`, in source order, with no allowed cell errors. The complete machine-readable record is [validation.json](validation.json). A targeted rerun after review verified DS03's added NIfTI millimeter metadata check. Markdown-only source-link corrections did not change executed calculations.
 
-The run used Python 3.14.7, NumPy 2.5.3, SciPy 1.18.1, pandas 3.0.6, Matplotlib 3.11.2, scikit-learn 1.9.1, NiBabel 5.4.2, Nilearn 0.14.1, nbformat 5.11.1, nbclient 0.11.0 and ipykernel 7.3.0. The [tested environment snapshot](../requirements-tested.txt) includes platform-specific dependencies; use [requirements.txt](../requirements.txt) for a fresh portable installation and rerun checks. Dependency ranges are not a claim that every permitted combination has been tested.
+The initial run used Python 3.14.7, NumPy 2.5.3, SciPy 1.18.1, pandas 3.0.6, Matplotlib 3.11.2, scikit-learn 1.9.1, NiBabel 5.4.2, Nilearn 0.14.1, nbformat 5.11.1, nbclient 0.11.0 and ipykernel 7.3.0. The [environment snapshot](../requirements-tested.txt) records that run. New installations use the [uv lockfile](../uv.lock) and Python 3.12.
 
 ## Paper-first addition
 
@@ -37,4 +45,4 @@ These are implementation results, not biological validation. P02 intentionally m
 
 The 13 preserved upstream Jupyter notebooks and one Marimo lesson were not run with their external data/tools; some retain student exercises and historical dependencies. FSL, FreeSurfer, DIPY, fMRIPrep, DCM, ComBat, SRM and external imaging checkpoints are not certified installed or executed by this build. No live Ollama/Goose tutor integration, large-model download, or accuracy benchmark of Qwen/Gemma/ChatGPT was performed. Official setup instructions were checked, and the scientific code runs independently of a tutor model.
 
-Reproduce the offline run with `python scripts/validate_notebooks.py`; add `--include-network` for the real-data project. Results and executed copies go to ignored `build/`, and downloaded/derived data go to ignored `data/` and `outputs/`. Do not modify preserved upstream bytes to make local checks pass.
+Run `./setup.sh --check` for the offline suite or `./setup.sh --check-all` for all original computational notebooks, including the public-data project. Results and executed copies go to ignored `build/`; downloaded and derived data go to ignored `data/` and `outputs/`.

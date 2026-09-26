@@ -2,7 +2,7 @@
 
 The processing strand contains **21 original notebooks, 42 executable code cells and approximately 17,900 words of instruction**. Each lesson includes objectives, an input/output contract, a conceptual explanation, an AI prompt, a short reference implementation, numerical checks, a deliberate mistake, an upstream reading, a real-tool transfer assignment and exit answers. The notebooks are the teaching material; the matrix below records their scope.
 
-This is a broad processing curriculum built around public course material, **not a claim that we obtained USC NIIN 540's weekly syllabus or reproduced its assessments**. USC's public description establishes the subject area. The actual detailed sequences consulted here are Berkeley Psych214, Dartmouth DartBrains, Oxford FSL, the FreeSurfer workshop and DIPY tutorials. Their different audiences and tool requirements remain visible.
+This processing strand draws on published lessons and practicals from Berkeley PSYCH214, Dartmouth DartBrains, Oxford FSL, the FreeSurfer workshop, and DIPY. The topic map below links each original notebook to its longer source assignment and expected evidence.
 
 ## How to complete this strand
 

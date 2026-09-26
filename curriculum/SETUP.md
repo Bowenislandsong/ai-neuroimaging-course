@@ -44,17 +44,16 @@ Open ChatGPT, start a learning conversation, and paste the appropriate reading o
 
 ## Python notebooks
 
-From the repository root, create a virtual environment (or use this workspace's existing one):
+From the repository root on macOS, Linux, or Windows Subsystem for Linux:
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -m jupyter lab notebooks
+./setup.sh
+uv run --locked jupyter lab notebooks
 ```
 
-On Windows replace `.venv/bin/python` with `.venv\Scripts\python.exe`. Pick the virtual environment's Python kernel. Installation needs internet; the **offline computational notebooks themselves do not**; P02 explicitly downloads a public fMRI dataset. Each computational notebook is standalone and should be run from top to bottom. Within a section, run its cells in order. GitHub renders notebook text, code, and saved offline outputs without installation. R00–R03 contain reading and discussion, with no code to execute. The third_party notebooks retain their own environments and are not included in this execution guarantee.
+The script installs uv when needed, selects Python 3.12, and installs the versions in [uv.lock](../uv.lock). Choose the course environment as the Jupyter kernel. The offline notebooks run without a dataset download; P02 retrieves a public fMRI teaching dataset. R00–R03 can be read in a browser.
 
-The tested package versions are in [requirements-tested.txt](../requirements-tested.txt). The shorter requirements file gives compatible package families for another machine; rerun the notebook checks after an environment change. On this Mac the notebooks were checked in Python 3.14; use a Python version supported by all chosen packages if setting up elsewhere.
+The [project file](../pyproject.toml) lists direct dependencies, and `uv.lock` pins the complete environment. [requirements-tested.txt](../requirements-tested.txt) records the earlier Python 3.14 validation environment.
 
 ## The tutor contract
 
@@ -77,19 +76,18 @@ The tutor passes if it waits for a prediction, gives executable short code, reco
 - **Wrong numbers or plots:** compare with the supplied checks; ask the AI to identify the first divergent step. Never ask it to simply make the assertions pass.
 
 
-## Check the expanded course
+## Check the course
 
 Run from the repository root:
 
 ```sh
-.venv/bin/python scripts/check_repository.py
-.venv/bin/python scripts/validate_notebooks.py
+./setup.sh --check
 ```
 
-The inventory contains 83 original notebooks: 79 computational and four reading seminars. The first command checks notebook structure, paper mappings and local links. The second runs the 78 offline computational notebooks in fresh Jupyter kernels and labels the reading seminars as requiring human assessment. It skips execution of the reading seminars, the network project and all upstream reference notebooks. To opt into the public SPM data download and real-run GLM:
+This checks repository structure and runs 82 offline computational notebooks in fresh Jupyter kernels: 78 from the current course and four from the introductory supplement. To include the public-data fMRI project:
 
 ```sh
-.venv/bin/python scripts/validate_notebooks.py --include-network --match 02_real_fmri_glm
+./setup.sh --check-all
 ```
 
-Generated data, outputs, environments, and execution copies are ignored by Git. Validation records explain what passed; they do not grade a reading, certify biological conclusions or establish reproduction of a paper's full model. Start with [R00](../notebooks/00_paper_orientation/00_how_to_read.ipynb), complete the opening readings, and follow the [study sequence](STUDY_PLAN.md) into F01 and the later experiments.
+The full check executes 83 course-authored computational notebooks and labels the four reading seminars for instructor assessment. Preserved third-party notebooks use their original tool and data environments. Generated data, outputs, environments, and execution copies remain outside version control. Start with [R00](../notebooks/00_paper_orientation/00_how_to_read.ipynb) and follow the [study sequence](STUDY_PLAN.md).

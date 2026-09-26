@@ -43,14 +43,16 @@ def main():
     parser.add_argument('--report', default='build/validation.json')
     args = parser.parse_args()
     results = []
-    for path in sorted((ROOT/'notebooks').glob('*/*.ipynb')):
+    paths = sorted((ROOT/'notebooks').glob('*/*.ipynb')) + sorted((ROOT/'course/labs').glob('*.ipynb'))
+    for path in paths:
         rel = str(path.relative_to(ROOT))
         if args.match and args.match not in rel:
             continue
         notebook = nbformat.read(path, as_version=4)
         nbformat.validate(notebook)
         tier = notebook.metadata.get('execution_tier', 'offline')
-        row = {'path':rel, 'course_id':notebook.metadata.get('course_id'), 'tier':tier}
+        supplement=ROOT/'course/labs' in path.parents
+        row = {'path':rel, 'course_id':notebook.metadata.get('course_id') or ('S'+path.stem.split('_')[0] if supplement else None), 'tier':tier}
         if tier == 'reading':
             row['status']='skipped'; row['reason']='reading seminar; requires human assessment, not execution'
             results.append(row); print('READING',rel,flush=True); continue
@@ -66,9 +68,9 @@ def main():
             NotebookClient(notebook, timeout=240, kernel_name='course-python', resources={'metadata':{'path':str(ROOT)}}, allow_errors=False).execute()
             row.update(status='passed',code_cells=sum(c.cell_type=='code' for c in notebook.cells)-len(skipped),explicitly_skipped_cells=skipped,
                        figures=sum('image/png' in o.get('data',{}) for c in notebook.cells if c.cell_type=='code' for o in c.get('outputs',[])))
-            target=ROOT/'build'/'executed'/path.relative_to(ROOT/'notebooks')
+            target=ROOT/'build'/'executed'/(path.relative_to(ROOT) if supplement else path.relative_to(ROOT/'notebooks'))
             target.parent.mkdir(parents=True,exist_ok=True); nbformat.write(notebook,target)
-            if args.publish_offline_outputs and tier=='offline' and not skipped:
+            if args.publish_offline_outputs and tier=='offline' and not skipped and not supplement:
                 # Kernel absolute interpreter paths are not part of the teaching artifact.
                 notebook.metadata.kernelspec={'display_name':'Python 3','language':'python','name':'python3'}
                 nbformat.write(notebook,path)

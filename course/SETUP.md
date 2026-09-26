@@ -38,17 +38,17 @@ Open ChatGPT, start a learning conversation, and paste the tutor contract plus t
 
 ## Python notebooks
 
-In the course's parent folder, use the existing `.venv` for this delivered workspace, or create one on another machine:
+From the repository root, use the same locked environment as the current course:
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r course/requirements.txt
-.venv/bin/python -m jupyter lab course/labs
+./setup.sh
+uv run --locked jupyter lab course/labs
 ```
 
-On Windows replace `.venv/bin/python` with `.venv\Scripts\python.exe`. Pick the virtual environment's Python kernel. Installation needs internet; the **four core notebooks themselves do not**. Each core notebook is standalone and should be run from top to bottom. Within a section, run its cells in order. Exported `.html` companions let her inspect the reference outputs without installing anything.
+Choose the uv environment as the Jupyter kernel. Each notebook can be run from top to bottom. The exported `.html` companions display saved reference outputs.
 
-The tested package versions are in [requirements-tested.txt](requirements-tested.txt). The shorter requirements file gives compatible package families for another machine; rerun the notebook checks after an environment change. On this Mac the notebooks were checked in Python 3.14; use a Python version supported by all chosen packages if setting up elsewhere.
+The root [uv.lock](../uv.lock) pins the environment. The earlier [requirements-tested.txt](requirements-tested.txt) records the supplement's original test environment.
+Run `./setup.sh --check` from the repository root to execute these four notebooks along with the current course's offline lessons.
 
 ## The tutor contract
 

@@ -4,11 +4,17 @@ from pathlib import Path
 import hashlib
 import json
 import re
+import tomllib
 from urllib.parse import unquote, urlsplit
 import nbformat
 
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
+project=tomllib.loads((ROOT/'pyproject.toml').read_text())
+declared={x.replace(' ','') for x in project['project']['dependencies']}
+legacy={x.replace(' ','') for x in (ROOT/'requirements.txt').read_text().splitlines() if x.strip() and not x.lstrip().startswith('#')}
+if declared!=legacy:errors.append('requirements.txt differs from uv project dependencies')
+if not (ROOT/'uv.lock').exists():errors.append('Missing uv.lock')
 ids=set()
 notebooks=sorted((ROOT/'notebooks').glob('*/*.ipynb'))
 texts=[]

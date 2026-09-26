@@ -6,6 +6,19 @@ A 26-week course in neuroimaging analysis, experimental design, data science, an
 
 [![Notebook checks](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml/badge.svg)](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml)
 
+## Get started
+
+On macOS, Linux, or Windows Subsystem for Linux, run:
+
+```sh
+git clone https://github.com/Bowenislandsong/ai-neuroimaging-course.git
+cd ai-neuroimaging-course
+./setup.sh
+uv run --locked jupyter lab notebooks
+```
+
+The setup script installs [uv](https://docs.astral.sh/uv/) if needed, installs the pinned Python version and course libraries, and prepares Jupyter. Run `./setup.sh --check` for the offline lessons or `./setup.sh --check-all` to include the public-data project. Both checks cover the four notebooks in the introductory supplement. The reading seminars open directly on GitHub.
+
 ## Course sequence
 
 The opening two weeks use six papers in three seminars. Students first identify the question, interpret a figure, and record what they need to learn. They revisit those papers after studying the relevant methods.
@@ -45,26 +58,16 @@ A separate [model evaluation worksheet](curriculum/coursework/SOTA_AUDIT.md) exa
 
 ## Teaching sources
 
-The course draws practical assignments and teaching structure from [Dartmouth DartBrains](https://github.com/ljchang/dartbrains), [Berkeley PSYCH214](https://bic-berkeley.github.io/psych-214-fall-2016/), [Berkeley Data 8](https://inferentialthinking.com/), [MIT OpenCourseWare](https://ocw.mit.edu/), [Neuromatch](https://compneuro.neuromatch.io/), and [BrainIAK](https://github.com/brainiak/brainiak-tutorials). Specialist exercises use [FSL](https://fsl.fmrib.ox.ac.uk/fslcourse/), [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial), [DIPY](https://docs.dipy.org/stable/examples_built/index.html), and [Nipype](https://github.com/nipy/nipype_tutorial). The [source registry](curriculum/SOURCES.md) records the selected materials and versions; the [coverage map](curriculum/COVERAGE_AUDIT.md) shows how each topic is taught.
+| Teaching sequence | Source examples |
+|---|---|
+| University and open courses | [DartBrains](https://github.com/ljchang/dartbrains), [Berkeley PSYCH214](https://bic-berkeley.github.io/psych-214-fall-2016/), [Data 8](https://inferentialthinking.com/), [MIT OpenCourseWare](https://ocw.mit.edu/), [Neuromatch](https://compneuro.neuromatch.io/), [BrainIAK](https://github.com/brainiak/brainiak-tutorials) |
+| Specialist practicals | [FSL](https://fsl.fmrib.ox.ac.uk/fslcourse/), [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial), [DIPY](https://docs.dipy.org/stable/examples_built/index.html), [Nipype](https://github.com/nipy/nipype_tutorial) |
 
-## Run the notebooks
+The [source registry](curriculum/SOURCES.md) records selected materials and versions; the [coverage map](curriculum/COVERAGE_AUDIT.md) shows how each topic is taught.
 
-From the repository root:
+## Verification
 
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -m jupyter lab notebooks
-```
-
-On Windows, use `.venv\Scripts\python.exe`. The opening seminars can be read directly on GitHub. The computational lessons run in Jupyter; one project downloads a public teaching dataset.
-
-```sh
-.venv/bin/python scripts/check_repository.py
-.venv/bin/python scripts/validate_notebooks.py
-```
-
-The repository check validates notebook structure, paper references, local links, and preserved source files. The notebook check executes the 78 offline computational lessons in fresh kernels. The network project is selected with `--include-network`; reading seminars are assessed by an instructor. See the [verification record](curriculum/VERIFICATION.md) for results and the [setup guide](curriculum/SETUP.md) for installation details.
+`./setup.sh --check` validates repository links and runs **82 offline notebooks** in fresh kernels: 78 current lessons and four from the introductory supplement. `./setup.sh --check-all` also runs the public-data fMRI project, for **83 computational notebooks** in total. The four reading seminars use instructor assessment. Preserved third-party notebooks are separate source assignments with their original tool and data requirements. See the [verification record](curriculum/VERIFICATION.md) for results.
 
 ## Reuse
 
