@@ -1,8 +1,8 @@
 # Papers in computational modeling
 
-These five readings connect established ideas in encoding and representational analysis with recent work on brain-imaging foundation models. Begin with the research problem and the evidence for a proposed method, then return to the model's transformations and evaluation after the corresponding lessons. Publication and manuscript details were checked on **25 September 2026 UTC**.
+These eight readings (`PM01`–`PM08`) connect established ideas in encoding, representational analysis, connectome predictive modeling, normative modeling, and latent state-space dynamics with recent work on brain-imaging foundation models. Begin with the research problem and the evidence for a proposed method, then return to the model's transformations and evaluation after the corresponding lessons. Publication and manuscript details were checked on **25 September 2026 UTC**.
 
-**Suggested first encounter:** PM03 → PM05 → PM01 → PM02 → PM04. Spend 60–75 minutes per paper: 10 minutes on the motivating problem, 15 on the assigned passages, 15 on the evidence worksheet, 15 on discussion, and 5–20 on revision. Equations are optional on this first pass. Keep a question list for the later notebooks instead of asking AI to erase every unfamiliar term immediately.
+**Suggested first encounter:** PM03 → PM05 → PM01 → PM02 → PM07 → PM06 → PM08 → PM04. Spend 60–75 minutes per paper: 10 minutes on the motivating problem, 15 on the assigned passages, 15 on the evidence worksheet, 15 on discussion, and 5–20 on revision. Equations are optional on this first pass. Keep a question list for the later notebooks instead of asking AI to erase every unfamiliar term immediately.
 
 Each guide gives a reading path, figure questions, a practical assignment, and instructor notes. Open figures in the linked papers and create your own diagrams and evidence sheets. The specialist project can extend one question using appropriate data, software, and compute.
 

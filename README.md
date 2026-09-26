@@ -35,7 +35,7 @@ curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download
 goose configure             # Select: Ollama -> http://localhost:11434 -> qwen3.5:9b (or qwen3.6:27b)
 
 # 4. Launch JupyterLab in one Terminal tab and Goose in a second tab
-uv run --locked jupyter lab notebooks
+uv run --frozen jupyter lab notebooks
 ```
 
 *(You can also run `./setup.sh --setup-ai` on macOS to automatically detect your MacBook Pro's unified memory via `sysctl -n hw.memsize` and pull the matching Qwen + Gemma model pair.)* See [curriculum/SETUP.md](curriculum/SETUP.md) for the complete macOS Step 0 guide and verification smoke test.

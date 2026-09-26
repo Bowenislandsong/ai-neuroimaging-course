@@ -143,7 +143,7 @@ From the repository root in **Terminal.app**:
 
 ```zsh
 ./setup.sh
-uv run --locked jupyter lab course/labs
+uv run --frozen jupyter lab course/labs
 ```
 
 Choose the locked `uv` environment as the Jupyter kernel. Each notebook runs cleanly from top to bottom, and the exported `.html` companions display saved reference outputs. Run `./setup.sh --check` from the repository root to execute these four notebooks along with the main course's 78 offline lessons.
@@ -164,7 +164,7 @@ Give Goose (or your tutor) a prompt **in the spirit of**:
 
 ## When something fails
 
-- **Import error:** check that JupyterLab was started via `uv run --locked jupyter lab`.
+- **Import error:** check that JupyterLab was started via `uv run --frozen jupyter lab`.
 - **Goose cannot reach the model:** confirm `Ollama.app` is running on macOS (`ollama list`) and the endpoint (`http://localhost:11434`) and installed tag (`qwen3.5:9b`, `qwen3.6:27b`, `gemma4:e4b`, or `gemma4:26b`) match.
 - **High memory pressure on MacBook Pro:** switch to `qwen3.5:9b` or `gemma4:e4b` and close unused applications.
 - **Wrong numbers or plots:** compare with the lesson's expected outcome range and trace back to the first divergent array shape, axis, unit, or split. Never delete an assertion to force a pass.

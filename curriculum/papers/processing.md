@@ -1,6 +1,6 @@
 # Papers in neuroimaging processing
 
-Begin with **PP01 and PP04** in the opening seminar, then revisit them after the corresponding notebooks. Read PP02 with motion and quality control, PP03 with tissue segmentation, PP06 with diffusion MRI, and PP05 as a fetal-imaging extension. For each paper, identify the input, transformation, output, and evidence used to evaluate the result.
+Begin with **PP01 and PP04** in the opening seminar, then revisit them after the corresponding notebooks. Read PP02 with motion and quality control, PP03 with tissue segmentation, PP07 with cortical surface reconstruction, PP06 and PP08 with diffusion MRI preprocessing and tractography, PP09 with unsupervised diffeomorphic registration, and PP05 as a fetal-imaging extension. For each paper, identify the input, transformation, output, and evidence used to evaluate the result.
 
 The readings combine established methodological studies with recent published methods. The [source registry](processing_sources.json) records their publication dates, assigned manuscript versions, reading sections, and official code repositories.
 

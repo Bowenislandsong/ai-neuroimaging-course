@@ -1,6 +1,6 @@
 # Papers in neuroimaging research design
 
-Read PD01 and PD02 during the opening seminars. PD03–PD06 introduce later blocks in the [study plan](../STUDY_PLAN.md). Each first reading focuses on the research question and a figure; the second reading follows the related technical lessons. Together, the papers examine analytical choices, sample size, reliability, circularity, inference, and study design.
+Read PD01 and PD02 during the opening seminars. PD03–PD07 introduce later blocks in the [study plan](../STUDY_PLAN.md). Each first reading focuses on the research question and a figure; the second reading follows the related technical lessons. Together, the seven papers examine analytical choices, sample size, reliability, circularity, cluster inference, longitudinal sampling, and multi-site harmonization.
 
 Allow 60–75 minutes for a first reading: predict an answer to the opening question, inspect the assigned figure and caption, read the specified passages, prepare the evidence card, and explain it aloud. Record unfamiliar terms for the methods lessons. Budget another 90–120 minutes for the linked computational assignment.
 

@@ -253,7 +253,7 @@ pre{white-space:pre-wrap;background:#eee!important;color:black!important}a{color
 <h3 id="doc-setup-md-python-notebooks-on-macos">Python notebooks on macOS</h3>
 <p>From the repository root in <strong>Terminal.app</strong>:</p>
 <pre><code class="language-zsh">./setup.sh
-uv run --locked jupyter lab course/labs
+uv run --frozen jupyter lab course/labs
 </code></pre>
 <p>Choose the locked <code>uv</code> environment as the Jupyter kernel. Each notebook runs cleanly from top to bottom, and the exported <code>.html</code> companions display saved reference outputs. Run <code>./setup.sh --check</code> from the repository root to execute these four notebooks along with the main course's 78 offline lessons.</p>
 <h3 id="doc-setup-md-the-tutor-contract">The tutor contract</h3>
@@ -272,7 +272,7 @@ uv run --locked jupyter lab course/labs
 </ul>
 <h3 id="doc-setup-md-when-something-fails">When something fails</h3>
 <ul>
-<li><strong>Import error:</strong> check that JupyterLab was started via <code>uv run --locked jupyter lab</code>.</li>
+<li><strong>Import error:</strong> check that JupyterLab was started via <code>uv run --frozen jupyter lab</code>.</li>
 <li><strong>Goose cannot reach the model:</strong> confirm <code>Ollama.app</code> is running on macOS (<code>ollama list</code>) and the endpoint (<code>http://localhost:11434</code>) and installed tag (<code>qwen3.5:9b</code>, <code>qwen3.6:27b</code>, <code>gemma4:e4b</code>, or <code>gemma4:26b</code>) match.</li>
 <li><strong>High memory pressure on MacBook Pro:</strong> switch to <code>qwen3.5:9b</code> or <code>gemma4:e4b</code> and close unused applications.</li>
 <li><strong>Wrong numbers or plots:</strong> compare with the lesson's expected outcome range and trace back to the first divergent array shape, axis, unit, or split. Never delete an assertion to force a pass.</li>

@@ -83,11 +83,11 @@ From the repository root on your MacBook Pro:
 
 ```zsh
 ./setup.sh
-uv run --locked jupyter lab notebooks
+uv run --frozen jupyter lab notebooks
 ```
 
 - `./setup.sh` installs [`uv`](https://docs.astral.sh/uv/) if needed, creates `.venv` with Python 3.12, and syncs the exact package versions pinned in [`uv.lock`](../uv.lock) (`numpy`, `scipy`, `pandas`, `matplotlib`, `scikit-learn`, `nibabel`, `nilearn`, `jupyterlab`, `nbclient`, `ipykernel`).
-- Keep **JupyterLab** running in Terminal Tab 1 (`uv run --locked jupyter lab notebooks`) and run **Goose** in Terminal Tab 2 (`goose session`) from the repository root so `.goosehints` is automatically loaded.
+- Keep **JupyterLab** running in Terminal Tab 1 (`uv run --frozen jupyter lab notebooks`) and run **Goose** in Terminal Tab 2 (`goose session`) from the repository root so `.goosehints` is automatically loaded.
 - **Alternative ChatGPT route:** If you ever work away from your local Ollama setup, you can paste the [supervisory contracts](AI_WORKFLOW.md#start-with-the-scientific-problem) into ChatGPT alongside local JupyterLab on your MacBook Pro; the scientific checks, error-tracing protocol, and expected outcome ranges are identical.
 
 ---
@@ -126,7 +126,7 @@ In your repo directory (`goose session`), ask something in the spirit of:
 
 - **`ollama: command not found` or `goose cannot connect to localhost:11434`:** Launch `Ollama.app` from `/Applications` (`open -a Ollama`) or run `ollama serve` in a background terminal tab, then verify with `ollama list`.
 - **MacBook Pro fan spin / memory pressure in Activity Monitor:** Check *Activity Monitor $\to$ Memory*. If Memory Pressure turns yellow/red while running a 27B model alongside Jupyter, switch Goose to `qwen3.5:9b` or `gemma4:e4b` and unload idle models with `ollama stop <model>`.
-- **`ModuleNotFoundError` in JupyterLab:** Confirm the notebook kernel in the top-right corner of JupyterLab is **Python 3 (ipykernel)** launched via `uv run --locked jupyter lab notebooks`.
+- **`ModuleNotFoundError` in JupyterLab:** Confirm the notebook kernel in the top-right corner of JupyterLab is **Python 3 (ipykernel)** launched via `uv run --frozen jupyter lab notebooks`.
 - **AI output disagrees with a notebook assertion:** Never ask Goose to delete or loosen the `assert`. Use the lesson's **What to Look For & Error Traceback** checklist to find the first intermediate array whose shape, units, axis, or fitting boundary diverged.
 
 ---
