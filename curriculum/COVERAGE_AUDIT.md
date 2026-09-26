@@ -1,6 +1,6 @@
 # Curriculum coverage
 
-This map shows where students study each method and what evidence they produce. The course has **83 original notebooks**: 79 computational lessons and projects, and four reading seminars. A [24-paper library](papers/README.md), practical assignments, and [A1–A4 coursework](coursework/PAPER_TO_EXPERIMENT.md) connect the methods to foundational studies and 2023–2026 frontier research.
+This map shows where students study each method and what evidence they produce. The course has **83 original notebooks**: 79 computational lessons and projects, and four reading seminars. A [24-paper library](papers/README.md), a [310-citation key reference index](papers/REFERENCES.md), practical assignments, and [A1–A4 coursework](coursework/PAPER_TO_EXPERIMENT.md) connect the methods to foundational studies and 2023–2026 frontier research.
 
 The four subject areas correspond to image processing, research design, data science, and modeling. The [source registry](SOURCES.md) identifies the university courses, workshops, and software materials used to develop each strand.
 

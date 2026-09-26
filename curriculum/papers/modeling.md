@@ -168,7 +168,7 @@ For every reading, submit a one-page **evidence sheet** with five boxes: scienti
 <a id="pm08"></a>
 ## PM08 — Hidden Markov Models of brain network dynamics: beyond static connectivity
 
-**Diego Vidaurre, Stephen M. Smith, and Mark W. Woolrich (2017). _Brain network dynamics are hierarchically organized in time._** *PNAS* 114(48), 12827–12832. [DOI](https://doi.org/10.1073/pnas.1705120114) · [PMC full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC5715737/) · [Official HMM-MAR code](https://github.com/OHBA-analysis/HMM-MAR).
+**Diego Vidaurre, Stephen M. Smith, and Mark W. Woolrich (2017). _Brain network dynamics are hierarchically organized in time._** *PNAS* 114(48), 12827–12832. [DOI](https://doi.org/10.1073/pnas.1705120114) · [PMC full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC5715736/) · [Official HMM-MAR code](https://github.com/OHBA-analysis/HMM-MAR).
 
 **Why read it?** Static functional connectivity averages over an entire 10–15 minute scan, concealing rapid transitions between recurring brain states. Vidaurre et al. model resting-state fMRI as a Hidden Markov Model (HMM) where each latent state $z_t \in \{1, \dots, K\}$ has a distinct mean activation and covariance matrix, revealing that human brain dynamics cycle non-randomly through two higher-order "metastates" with heritable fractional occupancy.
 

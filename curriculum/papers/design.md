@@ -138,9 +138,9 @@ Every submission includes an evidence card: question, measured object, compariso
 
 **First reading path.** Read the Introduction on additive ($\gamma_{iv}$) and multiplicative ($\delta_{iv}$) scanner effects, Methods Section 2.3 (the location-and-scale model), Figures 2 and 4 (removal of site classification vs. preservation of age associations), and the Discussion on study design and confounding.
 
-**Evidence questions.** Why does pooling variance across thousands of cortical vertices or ROIs via empirical Bayes improve small-site parameter estimates compared to independent per-feature regression? What goes wrong if ComBat is fitted on the combined train+test cohort before cross-validation, or if patients are scanned primarily at Site A and controls at Site B?
+**Evidence questions.** Why does pooling variance across thousands of cortical vertices or ROIs via empirical Bayes improve small-site parameter estimates compared to independent per-feature regression? Why must biological covariates of interest be preserved in the design matrix when site assignment and demographics are unbalanced? When extending harmonization to out-of-sample predictive modeling (connecting `PD07` to `PD04` and Varoquaux, 2018), what goes wrong if harmonization parameters are fitted on the combined train+test cohort before cross-validation?
 
-**Coursework later.** Complete [D08: factorial confounding](../../notebooks/02_design/08_factorial_confounding.ipynb), [M04: nested validation and site harmonization](../../notebooks/04_modeling/04_nested_sites_harmonization.ipynb), and [P03: cohort generalization](../../notebooks/05_projects/03_cohort_generalization.ipynb). Compare unharmonized, leaky full-cohort harmonization, and train-only fold-isolated harmonization on a synthetic multi-site dataset.
+**Coursework later.** Complete [D08: factorial confounding](../../notebooks/02_design/08_factorial_confounding.ipynb), [M04: nested validation and site harmonization](../../notebooks/04_modeling/04_nested_sites_harmonization.ipynb), and [P03: cohort generalization](../../notebooks/05_projects/03_cohort_generalization.ipynb). Compare unharmonized, leaky full-cohort harmonization, and train-only / label-free per-site harmonization on a synthetic multi-site dataset.
 
 ## Finish with a research decision, not a reading list
 

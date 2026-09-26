@@ -47,6 +47,10 @@ Paper titles link to publication records. Each guide identifies the reading copy
 | [PM08 guide](modeling.md#pm08) | [Brain network dynamics are hierarchically organized in time (2017)](https://doi.org/10.1073/pnas.1705120114) | Essential · latent dynamical brain states | Compare static connectivity with Hidden Markov Model state transitions |
 | [PB01 guide](measurement.md#pb01) | [Neurophysiological investigation of the basis of the fMRI signal (2001)](https://www.nature.com/articles/35084005) | Essential measurement bridge · before F02 | Separate neural activity, physiological coupling and measured BOLD |
 
+## Key references for each lesson
+
+The 24 papers above set the research questions. Each computational lesson also opens with **Why this technique matters** and two to four **key references** for the technique it teaches: at least one foundational method or standard-tool paper and at least one published in 2019 or later (a current method, benchmark, or critical evaluation). The [course bibliography](REFERENCES.md) collects them by lesson, with verification status and OpenAlex citation counts. Citation counts indicate how widely a work is used, not whether it is correct; older papers accumulate more citations.
+
 ## Assignments
 
 Use these assignments throughout the course. Evidence sheets and diagrams prepared for a paper guide can be included in the final portfolio.
@@ -66,8 +70,8 @@ The guides identify the version used for each assignment. BrainMorph uses arXiv 
 
 ## Source records and reuse
 
-The [source registry](paper_registry.json) records citations, publication status, assigned versions and sections, notebook connections, and code links. The records also identify author manuscripts and access limitations where relevant. Source information was checked on **25 September 2026 UTC**.
+The [source registry](paper_registry.json) records citations, publication status, assigned versions and sections, notebook connections, and code links. Two notebook lists serve different purposes: `motivation_notebook_ids` is generated from [lesson_readings.json](lesson_readings.json) and names the lessons whose opening research question assigns the paper; `notebook_ids` is curated in the strand source files and lists later lessons suited to follow-up work on the paper; most guides name them as forward links. The records also identify author manuscripts and access limitations where relevant. Source information was checked on **25 September 2026 UTC**; the key references and all 24 library records were re-checked against Crossref, OpenAlex and arXiv on **26 September 2026 UTC** ([reference_verification.json](reference_verification.json)).
 
 The coursework is original and links to papers at their publisher or author sites. Consult the source terms before using paper figures, code, data, or model weights in a project; BrainIAC's official repository, for example, uses a research-only license. Attribution for preserved teaching materials appears in the [third-party notices](../../THIRD_PARTY_NOTICES.md).
 
-Course maintainers can update the strand source files and [lesson_readings.json](lesson_readings.json), then run `python scripts/build_reading_indexes.py` from the repository root. Update figure questions whenever the assigned manuscript version changes.
+Course maintainers edit the strand source files, [lesson_readings.json](lesson_readings.json) and [key_references.json](key_references.json). After changing a key reference, run `uv run --locked python scripts/verify_references.py` (network required; every entry must report `MATCH`). Then run `uv run --locked python scripts/build_reading_indexes.py` from the repository root to regenerate the notebook question blocks, key-reference blocks, indexes and bibliography. `scripts/check_repository.py` fails if a block is stale or a reference is unverified. Update figure questions whenever the assigned manuscript version changes.

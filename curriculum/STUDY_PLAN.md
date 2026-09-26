@@ -38,7 +38,7 @@ Notebook IDs: **R** reading seminar, **F** foundations, **PR** processing, **D**
 | 20 | M10–M12 | First pass PM08 Vidaurre HMM; return to PM01/PM06/PD03 | ISC/SRM functional alignment, latent state transitions, and measurement reliability |
 | 21 | M13–M15 | Revisit PM03/PP03/PP07/PM08 | Latent dynamics/DCM, CNN backprop gradients, segmentation losses, and validation checks |
 | 22 | M16–M18 | Return to PM03/PM04/PM05/PM06 Methods, ablations and limitations | Revised SOTA card, pretraining/attention/calibration explanation; settle A3 scope |
-| 23 | P03 | Revisit PD02/PD06/PD07/PM03/PM07 | Unseen-site failure, train-only ComBat harmonization, and participant-level uncertainty |
+| 23 | P03 | Revisit PD02/PD06/PD07/PM03/PM07 | Unseen-site failure, label-free per-site / train-only harmonization, and participant-level uncertainty |
 | 24 | Specialist track and A3 | Execute the agreed plan for an exact paper panel/table or source practical | Completed artifact, run evidence, and documented method scope |
 | 25 | P04 and A4 | Relevant paper pair for the proposed research question | Frozen question, metadata, QC, analysis and validation boundaries |
 | 26 | Rerun, defend, revise | First-pass claims versus final interpretations | Independent paper/figure defense and reproducible project evidence |

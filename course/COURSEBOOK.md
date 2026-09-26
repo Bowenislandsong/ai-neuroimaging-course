@@ -32,30 +32,32 @@ Original course materials, collected into one reading edition. Use the accompany
 
 <a id="doc-readme-md"></a>
 
+> **Introductory supplement.** The [current course](../README.md) begins with [R00](../notebooks/00_paper_orientation/00_how_to_read.ipynb), uses the [26-week study plan](../curriculum/STUDY_PLAN.md), and includes [83 notebooks](../curriculum/NOTEBOOK_INDEX.md). This page collects the earlier short-format lessons for reference.
+
 # AI-assisted neuroimaging: understand every transformation
 
 A beginner course for a learner who uses AI to write short analysis snippets and wants to understand, inspect, and defend what those snippets do.
 
-**Start here:** [Setup and the AI teaching contract](SETUP.md), then [two foundation classes](lessons/00_bridge.md). The [complete reading edition](COURSEBOOK.md) collects the teaching text in one file. The four notebooks contain the executable demonstrations; their HTML companions show the verified outputs without installing Python.
+**For this retained supplement:** [Setup and the AI teaching contract](SETUP.md), then [two foundation classes](lessons/00_bridge.md). The [complete reading edition](COURSEBOOK.md) collects its teaching text in one file. The four notebooks contain the executable demonstrations; their HTML companions show the verified outputs without installing Python. The current course instead starts with the paper seminars linked above.
 
-## What this course is
+## Supplement structure
 
-24 core classes, two foundation classes, and two capstone sessions. Allow **14 weeks at two 60–75 minute classes per week**, plus 30–60 minutes of practice weekly. Slow down when the explain-back questions are difficult. The target is informed use of small snippets, not independent software engineering or the full training of a master's degree.
+This collection has 24 core classes, two foundation classes, and two capstone sessions. Its original 14-week schedule uses two 60–75 minute classes per week, plus 30–60 minutes of practice.
 
-USC's [NIIN curriculum](https://niin.usc.edu/about#curriculum) supplies four broad subject areas. Detailed public syllabi were not located during this research session. The sequence, lessons, prompts, notebooks, assessments, and capstone here are original; **this is not USC course material or an official NIIN syllabus**. [Research and materials record](SOURCES.md).
+The four blocks follow the broad subject areas of [USC's NIIN curriculum](https://niin.usc.edu/about#curriculum). Their lessons and assignments were developed for this course; [source records](SOURCES.md) identify the teaching materials used.
 
-## What she should be able to do
+## Learning outcomes
 
-For a transformation, explain the input, output, parameter units, what changes, what information is lost, one likely failure, and the evidence needed to accept the result. Ask an AI to implement that step, inspect it, and explain its scientific limits. She need not memorize syntax; she must be able to reject plausible-looking code and conclusions.
+Students explain a transformation's inputs, outputs, units, information loss, likely failure, and relevant checks. They can ask an AI to implement a step, inspect the result, and assess its scientific interpretation.
 
-| Block | Six actual classes | Lesson text | Runnable lab |
+| Block | Six classes | Lesson text | Runnable lab |
 | --- | --- | --- | --- |
 | Processing • 540-inspired | Coordinates/QC; registration and resampling; smoothing; temporal filtering; nuisance regression; pipeline audit | [540](lessons/540.md) | [Notebook](labs/540_processing.ipynb) · [Outputs](labs/540_processing.html) |
 | Research design • 520-inspired | Question and unit; confounding/design; timing and HRF; GLM/contrasts; uncertainty and multiplicity; preregistration/power | [520](lessons/520.md) | [Notebook](labs/520_design.ipynb) · [Outputs](labs/520_design.html) |
 | Data science • 580-inspired | Arrays/axes; participant joins; z standardization; regression/residuals; QC/uncertainty; provenance/leakage | [580](lessons/580.md) | [Notebook](labs/580_data_science.ipynb) · [Outputs](labs/580_data_science.html) |
 | Modeling • 550-inspired | Representations; baselines; honest splits; metrics; CNNs/segmentation; foundation-model audit | [550](lessons/550.md) | [Notebook](labs/550_modeling.ipynb) · [Outputs](labs/550_modeling.html) |
 
-## Suggested order: interleave understanding with practice
+## Earlier supplement schedule
 
 The numbers label subject areas, not a requirement to finish one block before touching another. Introduce a research question early, before choosing processing settings.
 
@@ -137,17 +139,17 @@ Open ChatGPT, start a learning conversation, and paste the tutor contract plus t
 
 ## Python notebooks
 
-In the course's parent folder, use the existing `.venv` for this delivered workspace, or create one on another machine:
+From the repository root, use the same locked environment as the current course:
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r course/requirements.txt
-.venv/bin/python -m jupyter lab course/labs
+./setup.sh
+uv run --locked jupyter lab course/labs
 ```
 
-On Windows replace `.venv/bin/python` with `.venv\Scripts\python.exe`. Pick the virtual environment's Python kernel. Installation needs internet; the **four core notebooks themselves do not**. Each core notebook is standalone and should be run from top to bottom. Within a section, run its cells in order. Exported `.html` companions let her inspect the reference outputs without installing anything.
+Choose the uv environment as the Jupyter kernel. Each notebook can be run from top to bottom. The exported `.html` companions display saved reference outputs.
 
-The tested package versions are in [requirements-tested.txt](requirements-tested.txt). The shorter requirements file gives compatible package families for another machine; rerun the notebook checks after an environment change. On this Mac the notebooks were checked in Python 3.14; use a Python version supported by all chosen packages if setting up elsewhere.
+The root [uv.lock](../uv.lock) pins the environment. The earlier [requirements-tested.txt](requirements-tested.txt) records the supplement's original test environment.
+Run `./setup.sh --check` from the repository root to execute these four notebooks along with the current course's offline lessons.
 
 ## The tutor contract
 
@@ -1137,6 +1139,8 @@ Two capstone questions to ask unexpectedly: “What could make this plot look co
 
 # Verification report
 
+The [locked uv validation](../curriculum/uv_validation.json) also ran all four supplemental notebooks in fresh Jupyter kernels with Python 3.12.13. The record below describes the original Python 3.14 validation of this introductory supplement.
+
 Verified 24 September 2026 (Los Angeles), Python 3.14.7. Exact package versions are in [results.json](verification/results.json) and [requirements-tested.txt](requirements-tested.txt).
 
 | Notebook | Lesson sections | Executed code cells | Embedded figures | Result |
@@ -1364,7 +1368,7 @@ Verified 2026-09-24 (Los Angeles date). The six lessons, exercises, synthetic ar
 |---|---|---|
 | [USC NIIN curriculum](https://niin.usc.edu/about#curriculum) | NIIN 540 is listed with a broad processing/software/workflow description. | Supports the subject-area inspiration only. |
 | Exact searches `"NIIN 540" syllabus pdf`, `site.classes.usc.edu "NIIN" "540"`, `site.web-app.usc.edu "NIIN" "540" syllabus` | No detailed instructor syllabus was located in returned results. | Weekly USC topics, assignments, grading, and required readings remain unverified. |
-| [2025 fall course endpoint attempted](https://classes.usc.edu/term-20253/course/niin-540/) and [older schedule route attempted](https://web-app.usc.edu/soc/20253/niin/) | Both were inaccessible through the web tool. They were plausible endpoints to investigate, not discovered syllabus documents. | Do not interpret access failure as proof that a syllabus does not exist. |
+| [2025 fall course endpoint attempted](https://classes.usc.edu/term-20253/course/niin-540/) and older schedule route attempted (`web-app.usc.edu/soc/20253/niin/`; that host no longer resolves as of 2026-09-26) | Both were inaccessible through the web tool. They were plausible endpoints to investigate, not discovered syllabus documents. | Do not interpret access failure as proof that a syllabus does not exist. |
 | [USC progressive degree course plan](https://academicprograms.usc.edu/wp-content/uploads/2024/10/KECK-Neuroimaging-and-Informatics-8.24.pdf) | Search result confirms the course title and 3 units. | This is a degree plan, not a teaching syllabus. |
 
 **Missing material:** a public detailed NIIN 540 syllabus. If the instructor or learner obtains one with authorized access, compare it with this course's topic coverage before calling the course syllabus-aligned. Current language is **inspired by the published course description**.
@@ -1415,7 +1419,7 @@ Research checked 2026-09-25 UTC (2026-09-24 in Los Angeles). Lessons, prompts, n
 
 [USC NIIN curriculum](https://niin.usc.edu/about#curriculum) lists NIIN 520, Experimental Design for Neuroimaging, as a 3-credit course and describes rigorous study design for cognitive and clinical neuroscience. This supports the **subject-area inspiration only**. The six lessons, timing, examples, and assignments are our proposed learning sequence.
 
-An exact public NIIN 520 syllabus was **not located in this search**. Searches covered `site:web-app.usc.edu/soc/syllabus "NIIN 520"`, `site:classes.usc.edu "NIIN-520"`, `"NIIN 520" syllabus pdf`, and the current NIIN curriculum. This is not proof that no syllabus exists; the program may distribute one privately. Search also found USC's [BME 599 Human Neuroimaging Methods syllabus, Spring 2025](https://web-app.usc.edu/soc/syllabus/20251/29357.pdf), but that is a different course and is not presented as NIIN 520 or used to infer its weekly coverage. The older [2014 USC catalogue](https://cataloguepubs.usc.edu/cat2014/files/2010/06/catalogue-edited.pdf) is historical course-description evidence, not a current syllabus.
+An exact public NIIN 520 syllabus was **not located in this search**. Searches covered `site:web-app.usc.edu/soc/syllabus "NIIN 520"`, `site:classes.usc.edu "NIIN-520"`, `"NIIN 520" syllabus pdf`, and the current NIIN curriculum. This is not proof that no syllabus exists; the program may distribute one privately. Search also found USC's BME 599 Human Neuroimaging Methods syllabus, Spring 2025 (`web-app.usc.edu/soc/syllabus/20251/29357.pdf`; that host no longer resolves as of 2026-09-26), but that is a different course and is not presented as NIIN 520 or used to infer its weekly coverage. The older [2014 USC catalogue](https://cataloguepubs.usc.edu/cat2014/files/2010/06/catalogue-edited.pdf) is historical course-description evidence, not a current syllabus.
 
 USC pages and syllabi: publicly readable where linked; no open redistribution licence was established. Link for reference; do not mirror lecture notes, slides, textbooks, or institutional branding.
 

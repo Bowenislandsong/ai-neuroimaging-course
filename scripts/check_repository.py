@@ -7,9 +7,16 @@ import re
 import tomllib
 from urllib.parse import unquote, urlsplit
 import nbformat
+from build_reading_indexes import KEY_BLOCK, KEY_REFERENCES, KEY_ROLES, VERIFICATION, key_reference_block, reference_key
 
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
+# Absolute home directories must never reach the public repository (outputs, prose or code).
+LOCAL_PATH=re.compile(r'(?<![\w.:/])(?:/usr/local/google/home|/home|/Users)/[\w.-]+/')
+# Signatures of math whose parenthesized arguments were stripped; KaTeX rejects all of them.
+DELIMITER=r'[()\[\]|./<>]|\\[{}|]|\\(?:[lr]?[vV]ert|[lr]angle|[lr]floor|[lr]ceil|[lr]brace|[lr]brack|backslash)(?![A-Za-z])'
+BROKEN_MATH=re.compile(r'\\left(?![A-Za-z])(?!\s*(?:'+DELIMITER+r'))|\\right(?![A-Za-z])(?!\s*(?:'+DELIMITER+r'))'
+                       r'|\\text\{\}|\\[bB]igg?[lr]?\s*[-+=]')
 project=tomllib.loads((ROOT/'pyproject.toml').read_text())
 declared={x.replace(' ','') for x in project['project']['dependencies']}
 legacy={x.replace(' ','') for x in (ROOT/'requirements.txt').read_text().splitlines() if x.strip() and not x.lstrip().startswith('#')}
@@ -35,15 +42,24 @@ for p in notebooks:
         elif not any(c.cell_type=='code' and c.source.strip() for c in n.cells):
             errors.append(f'{p.relative_to(ROOT)}: no executable lesson')
         texts.append((p,'\n'.join(c.source for c in n.cells if c.cell_type=='markdown')))
-        for c in n.cells:
+        for i,c in enumerate(n.cells):
+            if c.cell_type=='markdown':
+                for hit in BROKEN_MATH.finditer(c.source):
+                    errors.append(f'{p.relative_to(ROOT)}: cell {i}: broken math near {c.source[max(0,hit.start()-30):hit.end()+20]!r}')
+            if LOCAL_PATH.search(c.source):errors.append(f'{p.relative_to(ROOT)}: cell {i}: absolute local path in source')
             for o in c.get('outputs',[]):
                 if o.output_type=='error':errors.append(f'{p.relative_to(ROOT)}: saved error output')
+                if o.output_type=='stream' and o.get('name')=='stderr':
+                    errors.append(f'{p.relative_to(ROOT)}: cell {i}: saved stderr output (fix the warning, do not store it)')
+                if LOCAL_PATH.search(json.dumps(o)):errors.append(f'{p.relative_to(ROOT)}: cell {i}: absolute local path in output')
     except Exception as e:errors.append(f'{p.relative_to(ROOT)}: {e}')
 for folder in ['curriculum','course']:
     texts += [(p,p.read_text()) for p in (ROOT/folder).rglob('*.md')]
 texts += [(p,p.read_text()) for p in ROOT.glob('*.md')]
 texts += [(p,p.read_text()) for p in (ROOT/'third_party').glob('*/README.md')]
 texts += [(ROOT/'third_party/README.md',(ROOT/'third_party/README.md').read_text())]
+for p,s in texts:
+    if p.suffix=='.md' and LOCAL_PATH.search(s):errors.append(f'{p.relative_to(ROOT)}: absolute local path')
 links=0
 for p,s in texts:
     s=re.sub(r'```.*?```','',s,flags=re.S)
@@ -94,6 +110,46 @@ if paper_registry.exists():
                 anchors=re.findall(r'<a\s+id="([^"]+)"',target.read_text())
                 if unquote(u.fragment) not in anchors:
                     errors.append(f'{p.relative_to(ROOT)}: missing reading anchor {destination}')
+    # Each computational lesson renders two to four verified key references (key_references.json).
+    if KEY_REFERENCES.exists():
+        by_id={x['id']:x for x in papers}
+        lessons=json.loads(KEY_REFERENCES.read_text())['lessons']
+        verified=json.loads(VERIFICATION.read_text())['references'] if VERIFICATION.exists() else {}
+        entries={x['notebook_id']:x for x in lessons}
+        if len(entries)!=len(lessons):errors.append('key_references.json: duplicate lesson entries')
+        for pid in sorted(paper_ids-{r.get('library_id') for r in verified.values() if r.get('status')=='MATCH'}):
+            errors.append(f'{pid}: library paper lacks a MATCH record; run scripts/verify_references.py')
+        computational=set()
+        for p in notebooks:
+            n=nbformat.read(p,4);ident=n.metadata.get('course_id')
+            if n.metadata.get('execution_tier')=='reading':continue
+            computational.add(ident)
+            entry=entries.get(ident)
+            if entry is None:
+                errors.append(f'{ident}: missing from key_references.json');continue
+            refs=entry.get('references',[])
+            if not entry.get('technique') or not entry.get('why_it_matters'):
+                errors.append(f'{ident}: key references need technique and why_it_matters')
+            if not 2<=len(refs)<=4:errors.append(f'{ident}: needs two to four key references')
+            if not any(r.get('role') in {'foundational','standard tool'} for r in refs):
+                errors.append(f'{ident}: needs a foundational or standard-tool key reference')
+            if not any(int(r.get('year') or 0)>=2019 for r in refs):
+                errors.append(f'{ident}: needs a key reference published in 2019 or later')
+            for r in refs:
+                missing=[k for k in ['role','cite','authors','year','title','venue','takeaway'] if not r.get(k)]
+                if missing or r.get('role') not in KEY_ROLES or not (r.get('doi') or r.get('arxiv')):
+                    errors.append(f'{ident}: malformed key reference {str(r.get("title"))[:60]!r} (missing {missing})');continue
+                if r.get('registry_id') and r['registry_id'] not in paper_ids:
+                    errors.append(f'{ident}: unknown registry_id {r["registry_id"]}')
+                status=verified.get(reference_key(r),{}).get('status','UNVERIFIED')
+                if status!='MATCH':errors.append(f'{ident}: {reference_key(r)} is {status}; run scripts/verify_references.py')
+            try:expected=key_reference_block(entry,by_id)
+            except (KeyError,ValueError):expected=None
+            source=next(c for c in n.cells if c.cell_type=='markdown').source
+            if [b.strip() for b in KEY_BLOCK.findall(source)]!=[expected]:
+                errors.append(f'{ident}: first cell lacks the current key-references block; run scripts/build_reading_indexes.py')
+        for ident in sorted(set(entries)-computational):
+            errors.append(f'key_references.json: {ident} is not a computational notebook')
 # Different upstream projects expose different manifest schemas; all source bytes
 # remain unchanged. Metadata-only sources that were read but not copied are skipped.
 records=[]

@@ -42,7 +42,7 @@ The student then answers, without equations: Which system coordinates a collecti
 
 **Power, Barnes, Snyder, Schlaggar and Petersen — *Spurious but systematic correlations in functional connectivity MRI networks arise from subject motion*. NeuroImage 59, 2142–2154 (2012).** Peer-reviewed; online publication 14 October 2011. [DOI: 10.1016/j.neuroimage.2011.10.018](https://doi.org/10.1016/j.neuroimage.2011.10.018) · [Author manuscript](https://pmc.ncbi.nlm.nih.gov/articles/PMC3254728/) · [Author's paper page](https://www.jonathanpower.net/2012-ni-motion-1.html). **Role:** essential. A dedicated original-paper code repository was not verified; do not substitute an unrelated motion package and call it original code.
 
-**Motivation and evidence.** Movement-related signal changes altered correlations after conventional correction. The paper used frame-quality measures, targeted removal and a random-removal comparison to examine this problem. It is a motivation for testing residual artifact; its historical thresholds are not universal recommendations for present-day acquisitions.
+**Motivation and evidence.** Movement-related signal changes altered correlations after conventional correction. The paper used frame-quality measures, 18-parameter nuisance regression, targeted frame removal, and a random-removal comparison to examine this problem. It is a motivation for testing residual artifact; its historical thresholds and step order (in which band-pass filtering preceded scrubbing, before Carp, 2013, Hallquist et al., 2013, Power et al., 2014, and Lindquist et al., 2019 established that filtering before censoring or regression spreads spike artifacts and reintroduces nuisance variance) are not universal recommendations for present-day pipelines.
 
 **Reading path:** Abstract → the results around Figures 1–2 → Figure 4 → Figure 5's targeted-versus-random removal comparison → Figure 9 and the discussion of regression. The full-text passages and captions associated with these analyses were consulted; no figures are reproduced here.
 
@@ -157,11 +157,11 @@ Create three undirected adjacency matrices: the declared truth, a liberal recons
 <a id="pp07"></a>
 ## PP07 · FastSurfer: why cortical surface topology is more than voxel segmentation
 
-**Henschel, Conjeti, Estrada, Diers, Fischl and Reuter — *FastSurfer - A fast and accurate deep learning based neuroimaging pipeline*. NeuroImage 219, 117012 (2020).** Peer-reviewed. [DOI: 10.1016/j.neuroimage.2020.117012](https://doi.org/10.1016/j.neuroimage.2020.117012) · [Open full text (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7440743/) · [Official code](https://github.com/Deep-MI/FastSurfer). **Role:** essential surface-reconstruction and morphometry bridge; read alongside PR05, PR07, PR08, and M15.
+**Henschel, Conjeti, Estrada, Diers, Fischl and Reuter — *FastSurfer - A fast and accurate deep learning based neuroimaging pipeline*. NeuroImage 219, 117012 (2020).** Peer-reviewed. [DOI: 10.1016/j.neuroimage.2020.117012](https://doi.org/10.1016/j.neuroimage.2020.117012) · [Open full text (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7898243/) · [Official code](https://github.com/Deep-MI/FastSurfer). **Role:** essential surface-reconstruction and morphometry bridge; read alongside PR05, PR07, PR08, and M15.
 
 **Motivation and evidence.** While convolutional neural networks can rapidly predict volumetric parcellation labels, cortical morphometry (such as cortical thickness, sulcal depth, and surface-based registration) requires topologically valid 2-manifold triangle meshes with Euler characteristic $\chi = 2$ (genus 0). FastSurfer combines multi-view 2.5D CNN segmentation (`FastSurferCNN`) with spectral spherical mesh projection and topological defect repair (`recon-surf`), bridging classic FreeSurfer geometry (Dale & Fischl, 1999) and modern deep learning.
 
-**Reading path:** Abstract → Figure 1 (pipeline architecture separating volumetric CNN segmentation from topological surface creation) → Sections 2.1–2.2 → Figure 2 and Figure 6 (test–retest reliability and thickness group sensitivity) → Discussion on why volumetric Dice alone does not guarantee valid cortical surfaces.
+**Reading path:** Abstract → Figure 1 (`FastSurferCNN` architecture) and Figure 6 (`recon-surf` topological surface creation pipeline) → Sections 2.2–2.3 → Figures 9–12 (surface Hausdorff distance, cortical thickness correlation, test–retest reliability, and group sensitivity) → Discussion on why volumetric Dice alone does not guarantee valid cortical surfaces.
 
 **Discuss:**
 
@@ -174,7 +174,7 @@ Create three undirected adjacency matrices: the declared truth, a liberal recons
 <a id="pp08"></a>
 ## PP08 · QSIPrep: coordinate-consistent diffusion preprocessing and b-vector rotation
 
-**Cieslak et al. — *QSIPrep: an integrative platform for preprocessing and reconstructing diffusion MRI data*. Nature Methods 18, 775–778 (2021).** Peer-reviewed. [DOI: 10.1038/s41592-021-01185-5](https://doi.org/10.1038/s41592-021-01185-5) · [Open full text (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8282670/) · [Official code](https://github.com/PennLINC/qsiprep). **Role:** essential diffusion workflow paper; read alongside PR16–PR21.
+**Cieslak et al. — *QSIPrep: an integrative platform for preprocessing and reconstructing diffusion MRI data*. Nature Methods 18, 775–778 (2021).** Peer-reviewed. [DOI: 10.1038/s41592-021-01185-5](https://doi.org/10.1038/s41592-021-01185-5) · [Open full text (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8596781/) · [Official code](https://github.com/PennLINC/qsiprep). **Role:** essential diffusion workflow paper; read alongside PR16–PR21.
 
 **Motivation and evidence.** Diffusion MRI encodes directional water displacement across tens or hundreds of sensitization volumes (`bvals` and `bvecs`). Unlike fMRI, head rotation in dMRI changes the physical orientation of the tissue fibers relative to the diffusion gradients, requiring exact rotation of the B-table ($g' = R g$) alongside eddy-current, susceptibility, and single-interpolation resampling. QSIPrep adapts preprocessing to diverse q-space sampling schemes (single-shell, multi-shell, DSI) and separates image preprocessing from local fiber reconstruction (DTI, CSD, GQI).
 

@@ -244,15 +244,15 @@
       "status": "Peer-reviewed journal article; NeuroImage 219, 117012, published 2020-10-01",
       "doi": "10.1016/j.neuroimage.2020.117012",
       "url": "https://doi.org/10.1016/j.neuroimage.2020.117012",
-      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7440743/",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7898243/",
       "code_url": "https://github.com/Deep-MI/FastSurfer",
       "role": "essential",
       "verified_utc": "2026-09-26",
       "read_sections": [
         "Introduction: whole-brain segmentation and cortical surface reconstruction",
-        "Methods 2.1-2.2: FastSurferCNN and spherical topological surface pipeline",
-        "Figures 1, 2 and 6 captions",
-        "Results 3.2-3.4: test-retest reliability and cortical thickness",
+        "Methods 2.2-2.3: FastSurferCNN and recon-surf spherical topological surface pipeline",
+        "Figures 1, 2, 6, and 9-12 captions",
+        "Results 3.2-3.5: surface accuracy, test-retest reliability, and cortical thickness sensitivity",
         "Discussion: surface topology versus volumetric Dice"
       ],
       "notebook_ids": [
@@ -279,7 +279,7 @@
       "status": "Peer-reviewed journal article; Nature Methods 18, 775-778, published 2021-06-21",
       "doi": "10.1038/s41592-021-01185-5",
       "url": "https://doi.org/10.1038/s41592-021-01185-5",
-      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8282670/",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8596781/",
       "code_url": "https://github.com/PennLINC/qsiprep",
       "role": "essential",
       "verified_utc": "2026-09-26",
