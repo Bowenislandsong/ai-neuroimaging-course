@@ -119,6 +119,29 @@
       "figure_verification": "Primary publisher full text checked: Figure 2 contrasts sampling schemes; Figure 5 compares longitudinal interpretations and between/within-person coefficients. Methods define replicability as two independent studies both reaching significance.",
       "access_note": "Publisher open-access full article inspected and author code link verified; neither paper figures nor code vendored or executed here.",
       "assignment_anchor": "design.md#pd06"
+    },
+    {
+      "id": "PD07",
+      "title": "Harmonization of cortical thickness measurements across scanners and sites",
+      "authors": "Jean-Philippe Fortin, Nicholas Cullen, Yvette I. Sheline, Warren D. Taylor, Irem Aselcioglu, Philip A. Cook et al.",
+      "year": 2018,
+      "status": "Peer-reviewed journal research article, NeuroImage 167, 104-120; published 2018-02-15.",
+      "doi": "10.1016/j.neuroimage.2017.11.024",
+      "url": "https://doi.org/10.1016/j.neuroimage.2017.11.024",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5845848/",
+      "code_url": "https://github.com/Jfortin1/ComBatHarmonization",
+      "role": "essential",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: scanner additive and multiplicative batch effects",
+        "Methods 2.3: ComBat location-and-scale empirical Bayes model",
+        "Figures 2, 4 and 6 captions: site removal versus biological covariate preservation",
+        "Discussion: confounding between site and biological group"
+      ],
+      "notebook_ids": ["D02", "D08", "D11", "DS02", "DS05", "DS13", "M04", "P03"],
+      "figure_verification": "PMC open-access full text and official ComBat repository checked.",
+      "access_note": "PMC manuscript and GitHub repository verified; linked only.",
+      "assignment_anchor": "design.md#pd07"
     }
   ]
 }

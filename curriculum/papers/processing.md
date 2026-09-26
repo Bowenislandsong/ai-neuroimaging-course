@@ -154,8 +154,42 @@ Create three undirected adjacency matrices: the declared truth, a liberal recons
 
 **Instructor notes:** liberal precision is 1/2 and recall is 1; strict precision is 1 and recall is 1/2. Truth/liberal/strict graphs have 2/1/3 connected components, respectively. Liberal reconstruction creates a connected network although truth consists of two disconnected pairs; strict reconstruction isolates two nodes. These known answers concern the invented graph only. A student's observation that both reconstruction policies can mislead is more useful than declaring one universally preferable. Revisit [PR16](../../notebooks/01_processing/16_diffusion_gradients.ipynb), [PR17](../../notebooks/01_processing/17_diffusion_preprocessing.ipynb), [PR18](../../notebooks/01_processing/18_diffusion_tensor.ipynb) and [PR19](../../notebooks/01_processing/19_crossing_fibers_tractography.ipynb) to separate gradient bookkeeping, preprocessing, local modeling and tracking. Continue with [M07](../../notebooks/04_modeling/07_connectomes_graphs.ipynb) to see why a graph statistic inherits the uncertainty of its edges.
 
+<a id="pp07"></a>
+## PP07 · FastSurfer: why cortical surface topology is more than voxel segmentation
+
+**Henschel, Conjeti, Estrada, Diers, Fischl and Reuter — *FastSurfer - A fast and accurate deep learning based neuroimaging pipeline*. NeuroImage 219, 117012 (2020).** Peer-reviewed. [DOI: 10.1016/j.neuroimage.2020.117012](https://doi.org/10.1016/j.neuroimage.2020.117012) · [Open full text (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7440743/) · [Official code](https://github.com/Deep-MI/FastSurfer). **Role:** essential surface-reconstruction and morphometry bridge; read alongside PR05, PR07, PR08, and M15.
+
+**Motivation and evidence.** While convolutional neural networks can rapidly predict volumetric parcellation labels, cortical morphometry (such as cortical thickness, sulcal depth, and surface-based registration) requires topologically valid 2-manifold triangle meshes with Euler characteristic $\chi = 2$ (genus 0). FastSurfer combines multi-view 2.5D CNN segmentation (`FastSurferCNN`) with spectral spherical mesh projection and topological defect repair (`recon-surf`), bridging classic FreeSurfer geometry (Dale & Fischl, 1999) and modern deep learning.
+
+**Reading path:** Abstract → Figure 1 (pipeline architecture separating volumetric CNN segmentation from topological surface creation) → Sections 2.1–2.2 → Figure 2 and Figure 6 (test–retest reliability and thickness group sensitivity) → Discussion on why volumetric Dice alone does not guarantee valid cortical surfaces.
+
+**Discuss:**
+
+1. Why can two voxel segmentations with 0.92 volumetric Dice have completely different Euler characteristics and topological handles when converted to a mesh?
+2. How does cortical thickness measured as distance between white and pial surfaces differ from counting gray-matter voxels inside an ROI?
+3. What does high test–retest reliability of cortical thickness establish, and what biological confounders (hydration, motion, scanner field strength) can still shift it?
+
+**Assignment — volumetric Dice vs. topological validity (90 minutes after PR08).** Use the synthetic mesh and voxel-handle diagnostics in [PR08](../../notebooks/01_processing/08_surfaces_topology.ipynb) and [PR07](../../notebooks/01_processing/07_morphometry_volume_jacobian.ipynb). Construct a single-voxel bridge ("handle") across a sulcus that changes less than 0.5% of voxel labels, and compute both volumetric Dice and mesh Euler characteristic $\chi = V - E + F$. Deliver a four-box comparison contrasting volumetric CNN segmentation with topological surface reconstruction.
+
+<a id="pp08"></a>
+## PP08 · QSIPrep: coordinate-consistent diffusion preprocessing and b-vector rotation
+
+**Cieslak et al. — *QSIPrep: an integrative platform for preprocessing and reconstructing diffusion MRI data*. Nature Methods 18, 775–778 (2021).** Peer-reviewed. [DOI: 10.1038/s41592-021-01185-5](https://doi.org/10.1038/s41592-021-01185-5) · [Open full text (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8282670/) · [Official code](https://github.com/PennLINC/qsiprep). **Role:** essential diffusion workflow paper; read alongside PR16–PR21.
+
+**Motivation and evidence.** Diffusion MRI encodes directional water displacement across tens or hundreds of sensitization volumes (`bvals` and `bvecs`). Unlike fMRI, head rotation in dMRI changes the physical orientation of the tissue fibers relative to the diffusion gradients, requiring exact rotation of the B-table ($g' = R g$) alongside eddy-current, susceptibility, and single-interpolation resampling. QSIPrep adapts preprocessing to diverse q-space sampling schemes (single-shell, multi-shell, DSI) and separates image preprocessing from local fiber reconstruction (DTI, CSD, GQI).
+
+**Reading path:** Main text → Figure 1 (separation of BIDS q-space preprocessing from reconstruction workflows) → Figure 2 (spatial smoothness and quality control metrics across pipelines) → Online Methods on head motion, susceptibility distortion, and b-vector rotation.
+
+**Discuss:**
+
+1. Why does rotating a diffusion volume during motion correction without rotating its corresponding column in `.bvec` bias principal eigenvectors and tractography?
+2. Why does QSIPrep compose susceptibility, eddy-current, and rigid-body transforms into a single interpolation step rather than resampling after each stage?
+3. How do multi-shell acquisitions change what local microstructure models can separate compared to single-shell DTI?
+
+**Assignment — audit the q-space contract (90 minutes after PR16 and PR17).** Trace a diffusion volume from raw BIDS (`dwi.nii.gz`, `.bval`, `.bvec`, `.json`) through denoising, Gibbs unringing, eddy/motion correction, B-table rotation, and tensor/ODF fitting using [PR16](../../notebooks/01_processing/16_diffusion_gradients.ipynb) and [PR17](../../notebooks/01_processing/17_diffusion_preprocessing.ipynb). Identify the exact step where spatial coordinates and directional gradient coordinates must be coupled.
+
 ## Assessment and reading record
 
 For each paper retain: its exact version, one claim in your words, the evidence location, one limitation, three discussion answers and the named coursework artifact. Score each on a four-part rubric: accurate scope, traceable evidence, reproducible artifact and a limitation that changes the interpretation. A fluent abstract summary alone does not pass. Orientation artifacts are completed before the fundamentals; computational assignments are completed after their prerequisites.
 
-The registry distinguishes bibliographic verification, sections read and code location. Official code being available does not imply that it has been installed, its checkpoint is appropriate, or its benchmark has been reproduced. Additional 2026 work was considered during the search, including [deepmriprep](https://doi.org/10.1038/s43588-026-00953-7); it is an extension reading, not an additional assessed paper in this six-paper strand.
+The registry distinguishes bibliographic verification, sections read and code location. Official code being available does not imply that it has been installed, its checkpoint is appropriate, or its benchmark has been reproduced. Additional 2026 work was considered during the search, including [deepmriprep](https://doi.org/10.1038/s43588-026-00953-7); it is an extension reading alongside this eight-paper processing strand.

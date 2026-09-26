@@ -37,7 +37,7 @@ def main():
     markdown = ['# Every class', '',
         '**Start with R00–R03 before F01.** Use the [26-week study sequence](STUDY_PLAN.md) to interleave the strands. '
         'These 83 notebooks contain 79 computational lessons/projects and four human-assessed reading seminars. '
-        'The [18-paper library](papers/README.md) supplies exact readings, questions and assignments. '
+        'The [24-paper library](papers/README.md) supplies exact readings, questions and assignments. '
         'Paper links motivate a question; they do not mean each paper implements every local method.', '',
         'Offline computational notebooks include reference outputs; P02 requires a public-data download. '
         'Reading seminars are submitted for discussion and assessment, not marked as executed. '
@@ -103,8 +103,8 @@ def main():
         paper['motivation_notebook_ids'] = [r['id'] for r in index if paper['id'] in r['paper_ids']]
     write_json(PAPERS / 'paper_registry.json', {
         'schema_version': 1,
-        'verified_date_utc': '2026-09-25',
-        'scope': '18 linked papers and original coursework. Six opening reads precede fundamentals. '
+        'verified_date_utc': '2026-09-26',
+        'scope': '24 linked papers and original coursework. Six opening reads precede fundamentals. '
                  'Representative frontier selections are not a global performance ranking. '
                  'Publication and assigned manuscript versions are recorded separately. '
                  'No full paper implementation or large-model reproduction is claimed.',

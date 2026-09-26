@@ -123,7 +123,8 @@
     "path": "notebooks/01_processing/05_brain_extraction.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PP03"
+      "PP03",
+      "PP07"
     ]
   },
   {
@@ -141,7 +142,8 @@
     "path": "notebooks/01_processing/07_morphometry_volume_jacobian.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PP03"
+      "PP03",
+      "PP07"
     ]
   },
   {
@@ -150,7 +152,8 @@
     "path": "notebooks/01_processing/08_surfaces_topology.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PP03"
+      "PP03",
+      "PP07"
     ]
   },
   {
@@ -226,7 +229,8 @@
     "path": "notebooks/01_processing/16_diffusion_gradients.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PP06"
+      "PP06",
+      "PP08"
     ]
   },
   {
@@ -235,7 +239,8 @@
     "path": "notebooks/01_processing/17_diffusion_preprocessing.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PP06"
+      "PP06",
+      "PP08"
     ]
   },
   {
@@ -244,7 +249,8 @@
     "path": "notebooks/01_processing/18_diffusion_tensor.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PP06"
+      "PP06",
+      "PP08"
     ]
   },
   {
@@ -253,7 +259,8 @@
     "path": "notebooks/01_processing/19_crossing_fibers_tractography.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PP06"
+      "PP06",
+      "PP08"
     ]
   },
   {
@@ -263,7 +270,9 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PP02",
-      "PP06"
+      "PP06",
+      "PP08",
+      "PM07"
     ]
   },
   {
@@ -272,7 +281,8 @@
     "path": "notebooks/01_processing/21_workflow_provenance_reports.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PP01"
+      "PP01",
+      "PP08"
     ]
   },
   {
@@ -291,7 +301,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PD02",
-      "PD06"
+      "PD06",
+      "PD07"
     ]
   },
   {
@@ -320,7 +331,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PB01",
-      "PD03"
+      "PD03",
+      "PM08"
     ]
   },
   {
@@ -329,7 +341,8 @@
     "path": "notebooks/02_design/06_fir_hrf_misspecification.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PB01"
+      "PB01",
+      "PM08"
     ]
   },
   {
@@ -348,7 +361,8 @@
     "path": "notebooks/02_design/08_factorial_confounding.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PD06"
+      "PD06",
+      "PD07"
     ]
   },
   {
@@ -376,7 +390,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PD02",
-      "PD06"
+      "PD06",
+      "PD07"
     ]
   },
   {
@@ -440,7 +455,8 @@
     "path": "notebooks/03_data_science/02_tables_identity.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PD02"
+      "PD02",
+      "PD07"
     ]
   },
   {
@@ -468,7 +484,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PD02",
-      "PM03"
+      "PM03",
+      "PD07"
     ]
   },
   {
@@ -495,7 +512,8 @@
     "path": "notebooks/03_data_science/08_bootstrap.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PD02"
+      "PD02",
+      "PM07"
     ]
   },
   {
@@ -522,7 +540,8 @@
     "path": "notebooks/03_data_science/11_likelihood.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PD02"
+      "PD02",
+      "PM08"
     ]
   },
   {
@@ -540,7 +559,8 @@
     "path": "notebooks/03_data_science/13_regression_diagnostics.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PD02"
+      "PD02",
+      "PD07"
     ]
   },
   {
@@ -559,7 +579,8 @@
     "path": "notebooks/03_data_science/15_selection.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PD04"
+      "PD04",
+      "PM07"
     ]
   },
   {
@@ -578,7 +599,8 @@
     "path": "notebooks/04_modeling/01_representations_encoding_decoding.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PM01"
+      "PM01",
+      "PM06"
     ]
   },
   {
@@ -588,7 +610,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PM01",
-      "PM03"
+      "PM03",
+      "PM06"
     ]
   },
   {
@@ -597,7 +620,8 @@
     "path": "notebooks/04_modeling/03_kernels_ensembles.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PM04"
+      "PM04",
+      "PM07"
     ]
   },
   {
@@ -607,7 +631,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PM03",
-      "PD02"
+      "PD02",
+      "PD07"
     ]
   },
   {
@@ -616,7 +641,8 @@
     "path": "notebooks/04_modeling/05_pca_ica.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PM02"
+      "PM02",
+      "PM08"
     ]
   },
   {
@@ -625,7 +651,8 @@
     "path": "notebooks/04_modeling/06_clustering_stability.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PD03"
+      "PD03",
+      "PM07"
     ]
   },
   {
@@ -635,7 +662,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PP06",
-      "PP02"
+      "PP02",
+      "PM07"
     ]
   },
   {
@@ -644,7 +672,8 @@
     "path": "notebooks/04_modeling/08_rsa_crossvalidated_distances.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PM02"
+      "PM02",
+      "PM06"
     ]
   },
   {
@@ -654,7 +683,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PM02",
-      "PD04"
+      "PD04",
+      "PM06"
     ]
   },
   {
@@ -664,7 +694,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PM01",
-      "PD03"
+      "PD03",
+      "PM06"
     ]
   },
   {
@@ -673,7 +704,8 @@
     "path": "notebooks/04_modeling/11_generative_latent_models.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PM01"
+      "PM01",
+      "PM08"
     ]
   },
   {
@@ -682,7 +714,8 @@
     "path": "notebooks/04_modeling/12_hmm_event_segmentation.ipynb",
     "execution_tier": "offline",
     "paper_ids": [
-      "PM01"
+      "PM01",
+      "PM08"
     ]
   },
   {
@@ -692,7 +725,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PB01",
-      "PM01"
+      "PM01",
+      "PM08"
     ]
   },
   {
@@ -712,7 +746,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PP03",
-      "PM03"
+      "PM03",
+      "PP07"
     ]
   },
   {
@@ -722,7 +757,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PM03",
-      "PM04"
+      "PM04",
+      "PM06"
     ]
   },
   {
@@ -751,7 +787,8 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PP01",
-      "PP04"
+      "PP04",
+      "PP07"
     ]
   },
   {
@@ -772,7 +809,9 @@
     "execution_tier": "offline",
     "paper_ids": [
       "PD02",
-      "PM03"
+      "PM03",
+      "PD07",
+      "PM07"
     ]
   },
   {

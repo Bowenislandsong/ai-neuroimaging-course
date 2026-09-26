@@ -1,13 +1,13 @@
 # Curriculum coverage
 
-This map shows where students study each method and what evidence they produce. The course has **83 original notebooks**: 79 computational lessons and projects, and four reading seminars. An [18-paper library](papers/README.md), practical assignments, and [A1–A4 coursework](coursework/PAPER_TO_EXPERIMENT.md) connect the methods to current research.
+This map shows where students study each method and what evidence they produce. The course has **83 original notebooks**: 79 computational lessons and projects, and four reading seminars. A [24-paper library](papers/README.md), practical assignments, and [A1–A4 coursework](coursework/PAPER_TO_EXPERIMENT.md) connect the methods to foundational studies and 2023–2026 frontier research.
 
 The four subject areas correspond to image processing, research design, data science, and modeling. The [source registry](SOURCES.md) identifies the university courses, workshops, and software materials used to develop each strand.
 
 ## Forms of instruction
 
-- **Reading seminar:** students interpret a figure, identify the study question, and prepare an evidence record for discussion.
-- **Computational lesson:** students predict a result, run a focused experiment, inspect diagnostics, and explain a deliberate error.
+- **Reading seminar:** students interpret a figure, compare foundational and SOTA methods, identify the study question, and prepare an evidence record for discussion.
+- **Computational lesson:** students study the mathematical formulation and SOTA motivation, run a 4–5 cell multi-step experiment on synthetic neuroimaging phantoms, diagnose and repair a deliberate methodological failure, inspect a parameter sensitivity sweep, and analyze a multi-panel diagnostic visualization dashboard.
 - **Source practical:** students complete an assigned university or software tutorial with its original data and tools.
 - **Specialist extension:** students pursue an advanced method through supervised work and a documented project.
 
@@ -15,10 +15,10 @@ The four subject areas correspond to image processing, research design, data sci
 
 | Area | Teaching sources | Classes | Topic map |
 |---|---|---:|---|
-| Image processing | Berkeley PSYCH214; DartBrains; FSL; FreeSurfer; DIPY; Nipype | 21 | [Processing topics and exercises](processing_coverage.md) |
-| Research design | Dartmouth PSYC60; Berkeley PSYCH214; MIT 9.07/9.63; Poldrack teaching notebooks | 16 | [Design topics and exercises](design_coverage.md) |
-| Data science | Berkeley Data 8; Neuromatch fitting/geometry; imaging and software references | 16 | [Data science topics and exercises](data_science_coverage.md) |
-| Modeling | Neuromatch computational/deep learning; BrainIAK; Dartmouth naturalistic course | 18 | [Modeling topics and exercises](modeling_coverage.md) |
+| Image processing | USC NIIN 520/540; Stanford Psych 204A; Berkeley PSYCH214; DartBrains; FSL; FreeSurfer; DIPY; Nipype | 21 | [Processing topics and exercises](processing_coverage.md) |
+| Research design | Stanford Psych 204B; USC NIIN 550; Dartmouth PSYC60/DartBrains; Berkeley PSYCH214; MIT 9.07/9.63; Poldrack teaching notebooks | 16 | [Design topics and exercises](design_coverage.md) |
+| Data science | Berkeley Data 8 & Data 100; USC NIIN 540/580; Neuromatch fitting/geometry; imaging and software references | 16 | [Data science topics and exercises](data_science_coverage.md) |
+| Modeling | USC NIIN 580; Stanford CS231n/MedAI; Neuromatch computational/deep learning; BrainIAK; Dartmouth naturalistic course | 18 | [Modeling topics and exercises](modeling_coverage.md) |
 
 ## Practical depth
 

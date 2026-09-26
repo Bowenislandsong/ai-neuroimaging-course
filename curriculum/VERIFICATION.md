@@ -8,15 +8,15 @@ The source notebooks preserved in `third_party/` are assignments from other cour
 
 ## Earlier validation record
 
-**Computational baseline: 79/79 original computational notebooks passed, 150 code cells, 45 captured figures.** Each notebook ran in a fresh real Jupyter kernel using `nbclient`, in source order, with no allowed cell errors. The complete machine-readable record is [validation.json](validation.json). A targeted rerun after review verified DS03's added NIfTI millimeter metadata check. Markdown-only source-link corrections did not change executed calculations.
+**Computational baseline (upgraded graduate curriculum): 79/79 original computational notebooks passed (78 offline + 1 network), 371 code cells (13,964 lines of Python), and 80 captured multi-panel figures across 100% of offline computational notebooks.** Each notebook ran in a fresh real Jupyter kernel using `nbclient`, in source order, with no allowed cell errors. The complete machine-readable record is [validation.json](validation.json).
 
 The initial run used Python 3.14.7, NumPy 2.5.3, SciPy 1.18.1, pandas 3.0.6, Matplotlib 3.11.2, scikit-learn 1.9.1, NiBabel 5.4.2, Nilearn 0.14.1, nbformat 5.11.1, nbclient 0.11.0 and ipykernel 7.3.0. The [environment snapshot](../requirements-tested.txt) records that run. New installations use the [uv lockfile](../uv.lock) and Python 3.12.
 
-## Paper-first addition
+## Paper-first and SOTA curriculum expansion
 
-The course now contains **83 notebooks: the same 79 computational notebooks and four reading-only seminars**. The seminars require human assessment and are explicitly skipped by the executor, including when `--include-network` is supplied. A skipped seminar is not a passed assignment. The computational notebooks gained original paper questions and return tasks; their code and stored numerical outputs were preserved.
+The course contains **83 notebooks: 79 computational notebooks (~190,470 markdown words total, ~2,295 words per lesson) and four reading-only seminars**. The seminars require human assessment and are explicitly skipped by the executor, including when `--include-network` is supplied. A skipped seminar is not a passed assignment. Every computational notebook includes graduate-level mathematical derivations, explicit SOTA paper motivations, 4–5 multi-step lab code cells, and embedded multi-panel diagnostic visualizations.
 
-The [paper registry](papers/paper_registry.json) contains 18 sources with publication/assigned-version distinctions and exact reading targets. Source records state which primary passages, captions and publication/code records were inspected, including access limitations. The new coursework does not claim complete visual inspection of all paper figures, a systematic review of all frontier models, or execution of author implementations.
+The [paper registry](papers/paper_registry.json) contains **24 foundational and SOTA sources** (`PP01`–`PP08`, `PD01`–`PD07`, `PM01`–`PM08`, `PB01`) with publication/assigned-version distinctions and exact reading targets. Source records state which primary passages, captions and publication/code records were inspected, including access limitations. The coursework does not claim complete visual inspection of all paper figures, a systematic review of all frontier models, or execution of author implementations.
 
 Structural checks cover reading metadata, paper IDs, notebook mappings, local links and all preserved upstream hashes. The publication's Linux workflow reruns the 78 offline computational notebooks. The original 79-notebook local report below remains the historical numerical baseline; see the dated [paper update checks](paper_update_validation.json) for this addition's checks.
 
