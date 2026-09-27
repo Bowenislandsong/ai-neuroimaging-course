@@ -136,6 +136,76 @@
         {"url": "https://github.com/OneMore1/Omni-fMRI", "kind": "official_author_code", "checked": "Repository and quickstart availability; license not established."}
       ],
       "reuse": "Links and original assignments only. No paper media, weights, code, or subject data redistributed."
+    },
+    {
+      "id": "PM06",
+      "title": "MindEye2: Shared-Subject Models Enable fMRI-To-Image With 1 Hour of Data",
+      "authors": "Paul S. Scotti, Mihir Tripathy, Cesar Kadir Torrico Villanueva, Reese Kneeland, Tong Chen, Ashutosh Narang et al.",
+      "year": 2024,
+      "status": "Peer-reviewed ICML 2024 conference paper (PMLR 235:44038-44059); arXiv preprint 2403.11207.",
+      "doi": "10.48550/arXiv.2403.11207",
+      "arxiv": "2403.11207",
+      "url": "https://arxiv.org/abs/2403.11207",
+      "fulltext_url": "https://arxiv.org/html/2403.11207v2",
+      "code_url": "https://github.com/MedARC-AI/MindEyeV2",
+      "role": "modern_shared_subject_decoding_and_reconstruction",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: subject-specific ridge alignment into a shared latent space",
+        "Method Section 2: linear subject-specific mapping, shared backbone, and diffusion prior",
+        "Figures 1, 2 and 4 captions: 1-hour fine-tuning vs full 40-hour NSD training",
+        "Discussion: decoding vs generative image prior hallucinations"
+      ],
+      "notebook_ids": ["M01", "M02", "M08", "M09", "M10", "M16"],
+      "coursework_anchor": "modeling.md#pm06",
+      "deliverable": "Shared-latent alignment diagram and linear-vs-prior reconstruction audit.",
+      "reuse": "Links and original assignments only."
+    },
+    {
+      "id": "PM07",
+      "title": "Using connectome-based predictive modeling to predict individual behavior from brain connectivity",
+      "authors": "Xilin Shen, Emily S. Finn, Dustin Scheinost, Monica D. Rosenberg, Marvin M. Chun, Xenophon Papademetris, R. Todd Constable",
+      "year": 2017,
+      "status": "Peer-reviewed protocol; Nature Protocols 12(3):506-518.",
+      "doi": "10.1038/nprot.2016.178",
+      "url": "https://doi.org/10.1038/nprot.2016.178",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5526681/",
+      "code_url": "https://github.com/YaleMRRC/CPM",
+      "role": "foundational_connectome_predictive_modeling",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: brain-behavior prediction from functional connectivity matrices",
+        "Figures 1 and 2 captions: edge selection inside cross-validation folds",
+        "Procedure Steps 1-7: confound control, fold-isolated edge screening, permutation testing",
+        "Anticipated Results: interpreting predictive network anatomy"
+      ],
+      "notebook_ids": ["PR20", "DS08", "DS15", "M03", "M06", "M07", "P03"],
+      "coursework_anchor": "modeling.md#pm07",
+      "deliverable": "Fold-isolated CPM edge-selection audit and permutation null verification.",
+      "reuse": "Links and original assignments only."
+    },
+    {
+      "id": "PM08",
+      "title": "Brain network dynamics are hierarchically organized in time",
+      "authors": "Diego Vidaurre, Stephen M. Smith, Mark W. Woolrich",
+      "year": 2017,
+      "status": "Peer-reviewed research article; PNAS 114(48):12827-12832.",
+      "doi": "10.1073/pnas.1705120114",
+      "url": "https://doi.org/10.1073/pnas.1705120114",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5715736/",
+      "code_url": "https://github.com/OHBA-analysis/HMM-MAR",
+      "role": "foundational_latent_state_dynamics",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: time-varying functional connectivity versus static averages",
+        "Results: HMM state inference, fractional occupancy, and metastate transitions",
+        "Figures 1 and 2 captions: state transition matrices and heritability",
+        "Materials and Methods: Hidden Markov Model observation distributions"
+      ],
+      "notebook_ids": ["D05", "D06", "DS11", "M05", "M11", "M12", "M13"],
+      "coursework_anchor": "modeling.md#pm08",
+      "deliverable": "Latent state transition matrix audit and generative vs static covariance comparison.",
+      "reuse": "Links and original assignments only."
     }
   ]
 }

@@ -1,8 +1,8 @@
 # Study plan
 
-The course begins with six research papers and four reading seminars. Students identify the scientific problems, interpret selected figures, and record questions that will guide their study of the methods. Programming and mathematics enter in week 3.
+The course is designed for **macOS on a standard Apple Silicon MacBook Pro** and begins with **[Step 0: Agentic Workstation Setup](SETUP.md)** (installing **Ollama** with **Qwen** and **Gemma 4**, configuring **Goose**, and syncing the locked Python 3.12 + JupyterLab environment), followed by six research papers and four reading seminars (`R00`–`R03`). Students identify the scientific problems, interpret selected figures, and record questions that will guide their study of the methods. Programming and mathematical derivations enter in Week 3 (`F01`–`F04`), where students use Goose + Ollama to handle implementation grunt work while learning to spot errors immediately, trace bugs to their root cause, and verify outputs against expected ranges.
 
-Plan for **26 weeks**, with most weeks requiring **8–12 hours**. The schedule includes paper discussions, Jupyter lessons, source practicals, and a supervised project. Specialist installations and real-data work may extend the calendar.
+Plan for **26 weeks** (preceded by the 30-minute **Step 0** setup), with most weeks requiring **8–12 hours**. The schedule includes paper discussions, Jupyter lessons, source practicals, and a supervised project. Specialist installations and real-data work may extend the calendar.
 
 Allow **12–16 hours across the opening two weeks** for the first readings and discussion. Later papers generally take 45–75 minutes on first reading. A technical class generally takes 75–100 minutes, followed by a focused return to the paper. Reuse the original evidence record when a paper appears in several classes.
 
@@ -10,35 +10,36 @@ Weeks 5–6 contain six technical lessons each, about 7.5–10 hours before read
 
 ## The learning cycle
 
-**Paper problem and figure → research question → fundamental concept → AI-assisted experiment → return to the paper → revised claim.** The [reading method](papers/READING_METHOD.md) and [coursework sequence](coursework/PAPER_TO_EXPERIMENT.md) specify the work submitted at each stage.
+**Step 0 (MacBook Pro Goose + Ollama setup) → Paper problem and figure → research question → fundamental concept → agent-assisted experiment (suggestive prompt → error trace → expected outcome range check) → return to the paper → revised claim.** The [reading method](papers/READING_METHOD.md), [agentic AI workflow](AI_WORKFLOW.md), and [coursework sequence](coursework/PAPER_TO_EXPERIMENT.md) specify the work submitted at each stage.
 
 Notebook IDs: **R** reading seminar, **F** foundations, **PR** processing, **D** design, **DS** data science, **M** modeling, **P** projects. Paper IDs point to the [complete reading list](papers/README.md). The [class index](NOTEBOOK_INDEX.md) links all 83 notebooks: 79 computational lessons/projects and four human-assessed reading seminars.
 
 | Week | Classes | Paper before or alongside the block | Evidence before progressing |
 |---:|---|---|---|
+| **0** | **[Step 0 Setup](SETUP.md)** | — | **MacBook Pro running Ollama (`qwen3.5:9b`/`qwen3.6:27b` + `gemma4:e4b`/`gemma4:26b`), Goose (`goose session`), and locked JupyterLab; pass the 10-minute Step 0 smoke test** |
 | 1 | R00, R01 | PP01 fMRIPrep + PP04 BrainMorph | Two diagrams, evidence rows, questions about transforms |
 | 2 | R02, R03 | PD02 Marek + PM03 BrainIAC; PD01 NARPS + PM05 Omni-fMRI | Six paper ledgers, three comparisons, first model evaluation audit |
-| 3 | F01–F04 | PB01 measurement bridge; revisit the opening questions | Explain why a transformation contract and measurement model matter |
-| 4 | DS01–DS04 | Revisit PP01/PD02 inputs and counting units | Correct axes, joins, geometry and EDA; paper-to-data diagram |
-| 5 | DS05–DS08; D01–D02 | First pass PD06 design follow-up; revisit PD02 | Missingness/sampling questions and participant bootstrap |
+| 3 | F01–F04 | PB01 measurement bridge; revisit the opening questions | Explain why a transformation contract, error traceback, and measurement model matter |
+| 4 | DS01–DS04 | Revisit PP01/PD02/PD07 inputs and counting units | Correct axes, joins, geometry and EDA; paper-to-data diagram |
+| 5 | DS05–DS08; D01–D02 | First pass PD06 design follow-up and PD07 ComBat; revisit PD02 | Missingness/sampling questions and participant bootstrap |
 | 6 | DS09–DS12; D03–D04 | First pass PD03 reliability; revisit PB01/PD06 | Distinguish scale, fitting, reliability, power and precision |
-| 7 | DS13–DS16 | First pass PD04 circularity; preview PM02 representation comparison | Diagnose selection, train-only fitting and provenance |
+| 7 | DS13–DS16 | First pass PD04 circularity and PM07 CPM; preview PM02 RSA | Diagnose selection, train-only fitting and provenance |
 | 8 | PR01–PR04 | First pass PP03 SynthSeg before PR04; return to PP04 with coordinate/warp questions | Geometry, resampling, warps and bias audit |
-| 9 | PR05–PR08 | Return to PP03; PP05 fetal MRI as selected extension | Explain segmentation, boundaries, morphology and target population |
+| 9 | PR05–PR08 | First pass PP07 FastSurfer; return to PP03; PP05 fetal MRI as extension | Explain segmentation, cortical surface topology, morphology and target population |
 | 10 | PR09–PR12; D05 | First pass PP02 motion; revisit PP01/PB01 | Link timing, motion/distortion and HRF assumptions to the papers |
 | 11 | PR13–PR15; D06 | Return to PP02 and PB01 | Filtering, nuisance/censoring and response-shape failure |
-| 12 | PR16–PR19 | First pass PP06 tractography challenge | Trace diffusion measurements to pathways and false positives |
-| 13 | PR20–PR21; P01 | Revisit PP01/PP04/PP06 | Transformation manifest and reproducible graph; A2 mechanism experiment |
-| 14 | D07–D10 | First pass PD05 cluster failure **and correction** before D10; revisit PD04/PD06 and NARPS questions | Explain contrast, design rank, efficiency and temporal noise |
-| 15 | D11–D14 | Return to PD05 and its correction; revisit PD02/PD04 | Hierarchy, exchangeability, multiplicity and independent selection |
+| 12 | PR16–PR19 | First pass PP06 tractography challenge and PP08 QSIPrep | Trace diffusion B-tables, preprocessing, ODFs, and false-positive pathways |
+| 13 | PR20–PR21; P01 | Revisit PP01/PP04/PP06/PP07/PP08 and PM07 | Transformation manifest and reproducible graph; A2 mechanism experiment |
+| 14 | D07–D10 | First pass PD05 cluster failure **and correction** before D10; revisit PD04/PD06/PD07 and NARPS | Explain contrast, design rank, efficiency and temporal noise |
+| 15 | D11–D14 | Return to PD05 and its correction; revisit PD02/PD04/PD07 | Hierarchy, exchangeability, multiplicity and independent selection |
 | 16 | D15–D16; P02 | Return to PD01/PP01 with full workflow vocabulary | Single-run GLM audit and preprocessing scope |
-| 17 | M01–M03 | First pass PM01 encoding/decoding and PM04 OpenMind benchmark before M03; revisit PM03 | Separate targets, representations and generalization questions |
-| 18 | M04–M06 | Return to PM04; revisit PD02/PM03 | Nested/group/site split and fair-comparison audit |
-| 19 | M07–M09 | Full first pass/return to PM02; revisit PP06 | Labeled RDMs, connectomes, overlapping searchlights and claim boundaries |
-| 20 | M10–M12 | Return to PM01/PD03 | Timing, latent variables, state uncertainty and measurement reliability |
-| 21 | M13–M15 | Revisit PM03/PP03 | Dynamics, CNN optimization, segmentation, and validation checks |
-| 22 | M16–M18 | Return to PM03/PM04/PM05 Methods, ablations and limitations | Revised SOTA card, pretraining/attention/calibration explanation; settle A3 scope and access |
-| 23 | P03 | Revisit PD02/PD06/PM03 | Unseen-site failure, baseline and participant-level uncertainty |
+| 17 | M01–M03 | First pass PM01 encoding/decoding, PM06 MindEye2, and PM04 OpenMind benchmark | Separate targets, Haufe weights, shared-subject alignment, and generalization |
+| 18 | M04–M06 | Return to PM04 and PD07 ComBat; revisit PD02/PM03 | Nested/group/site split, fold-isolated harmonization, and fair-comparison audit |
+| 19 | M07–M09 | Full pass/return to PM02 RSA, PM06 MindEye2, and PM07 CPM; revisit PP06 | Crossnobis RDMs, connectomes, searchlight rim effects, and claim boundaries |
+| 20 | M10–M12 | First pass PM08 Vidaurre HMM; return to PM01/PM06/PD03 | ISC/SRM functional alignment, latent state transitions, and measurement reliability |
+| 21 | M13–M15 | Revisit PM03/PP03/PP07/PM08 | Latent dynamics/DCM, CNN backprop gradients, segmentation losses, and validation checks |
+| 22 | M16–M18 | Return to PM03/PM04/PM05/PM06 Methods, ablations and limitations | Revised SOTA card, pretraining/attention/calibration explanation; settle A3 scope |
+| 23 | P03 | Revisit PD02/PD06/PD07/PM03/PM07 | Unseen-site failure, label-free per-site / train-only harmonization, and participant-level uncertainty |
 | 24 | Specialist track and A3 | Execute the agreed plan for an exact paper panel/table or source practical | Completed artifact, run evidence, and documented method scope |
 | 25 | P04 and A4 | Relevant paper pair for the proposed research question | Frozen question, metadata, QC, analysis and validation boundaries |
 | 26 | Rerun, defend, revise | First-pass claims versus final interpretations | Independent paper/figure defense and reproducible project evidence |

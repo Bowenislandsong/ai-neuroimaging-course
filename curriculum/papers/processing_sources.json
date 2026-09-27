@@ -235,6 +235,76 @@
       "orientation": false,
       "code_executed": false,
       "guide": "processing.md#pp06"
+    },
+    {
+      "id": "PP07",
+      "title": "FastSurfer - A fast and accurate deep learning based neuroimaging pipeline",
+      "authors": "Leonie Henschel, Sailesh Conjeti, Santiago Estrada, Kersten Diers, Bruce Fischl, Martin Reuter",
+      "year": 2020,
+      "status": "Peer-reviewed journal article; NeuroImage 219, 117012, published 2020-10-01",
+      "doi": "10.1016/j.neuroimage.2020.117012",
+      "url": "https://doi.org/10.1016/j.neuroimage.2020.117012",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7898243/",
+      "code_url": "https://github.com/Deep-MI/FastSurfer",
+      "role": "essential",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: whole-brain segmentation and cortical surface reconstruction",
+        "Methods 2.2-2.3: FastSurferCNN and recon-surf spherical topological surface pipeline",
+        "Figures 1, 2, 6, and 9-12 captions",
+        "Results 3.2-3.5: surface accuracy, test-retest reliability, and cortical thickness sensitivity",
+        "Discussion: surface topology versus volumetric Dice"
+      ],
+      "notebook_ids": [
+        "PR05",
+        "PR07",
+        "PR08",
+        "M15",
+        "P01"
+      ],
+      "read_evidence": "Indexed open-access NeuroImage / PMC record and official Deep-MI repository verified.",
+      "verification_urls": [
+        "https://doi.org/10.1016/j.neuroimage.2020.117012",
+        "https://github.com/Deep-MI/FastSurfer"
+      ],
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp07"
+    },
+    {
+      "id": "PP08",
+      "title": "QSIPrep: an integrative platform for preprocessing and reconstructing diffusion MRI data",
+      "authors": "Matthew Cieslak, Philip A. Cook, Xiaoyu He, Fang-Cheng Yeh, Thijs Dhollander, Azeez Adebimpe et al.",
+      "year": 2021,
+      "status": "Peer-reviewed journal article; Nature Methods 18, 775-778, published 2021-06-21",
+      "doi": "10.1038/s41592-021-01185-5",
+      "url": "https://doi.org/10.1038/s41592-021-01185-5",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8596781/",
+      "code_url": "https://github.com/PennLINC/qsiprep",
+      "role": "essential",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Main text: adaptive q-space preprocessing and B-table handling",
+        "Figure 1: preprocessing and reconstruction workflows",
+        "Figure 2: image quality metrics and spatial smoothness comparisons",
+        "Online Methods: head motion, eddy current, susceptibility and b-vector rotation"
+      ],
+      "notebook_ids": [
+        "PR16",
+        "PR17",
+        "PR18",
+        "PR19",
+        "PR20",
+        "PR21"
+      ],
+      "read_evidence": "Nature Methods record, PMC manuscript, and PennLINC QSIPrep repository verified.",
+      "verification_urls": [
+        "https://www.nature.com/articles/s41592-021-01185-5",
+        "https://github.com/PennLINC/qsiprep"
+      ],
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp08"
     }
   ],
   "scope": "Original motivation-first reading paths, discussion questions and coursework. No primary-paper PDFs, figures, datasets or checkpoints copied. Listed code was located and read at repository level, not executed. Frontier is a dated curricular choice, not a global SOTA ranking.",

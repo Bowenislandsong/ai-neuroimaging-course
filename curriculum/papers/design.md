@@ -1,6 +1,6 @@
 # Papers in neuroimaging research design
 
-Read PD01 and PD02 during the opening seminars. PD03–PD06 introduce later blocks in the [study plan](../STUDY_PLAN.md). Each first reading focuses on the research question and a figure; the second reading follows the related technical lessons. Together, the papers examine analytical choices, sample size, reliability, circularity, inference, and study design.
+Read PD01 and PD02 during the opening seminars. PD03–PD07 introduce later blocks in the [study plan](../STUDY_PLAN.md). Each first reading focuses on the research question and a figure; the second reading follows the related technical lessons. Together, the seven papers examine analytical choices, sample size, reliability, circularity, cluster inference, longitudinal sampling, and multi-site harmonization.
 
 Allow 60–75 minutes for a first reading: predict an answer to the opening question, inspect the assigned figure and caption, read the specified passages, prepare the evidence card, and explain it aloud. Record unfamiliar terms for the methods lessons. Budget another 90–120 minutes for the linked computational assignment.
 
@@ -128,8 +128,22 @@ Every submission includes an evidence card: question, measured object, compariso
 
 **Instructor check.** A change in covariate spread can change a standardized effect without changing a fixed raw slope. Enriched samples may require weighting for population summaries. Repeated observations demand a model and an estimand; they are not automatically extra independent people or a guarantee of improved replication.
 
+<a id="pd07"></a>
+
+## PD07 · Multi-site harmonization: when can ComBat remove scanner effects without erasing biology?
+
+**Fortin et al. (2018). _Harmonization of cortical thickness measurements across scanners and sites._ NeuroImage.** Peer-reviewed research article. [DOI](https://doi.org/10.1016/j.neuroimage.2017.11.024) · [PMC full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC5845848/) · [Official ComBat code](https://github.com/Jfortin1/ComBatHarmonization).
+
+**What the paper contributes.** Large neuroimaging consortia (ABCD, UK Biobank, ENIGMA, ADNI) pool participants across scanners that differ in field strength, coil geometry, and reconstruction software. Fortin et al. adapt ComBat—an empirical Bayes location-and-scale adjustment ($Y_{ijv} = \alpha_v + X_{ij}\beta_v + \gamma_{iv} + \delta_{iv}\varepsilon_{ijv}$)—to pool information across features while preserving declared biological covariates $X_{ij}$. Critically, the paper also shows that when site is confounded with the biological variable of interest, statistical harmonization cannot untangle scanner artifact from biology, and fitting harmonization parameters on held-out test subjects introduces data leakage.
+
+**First reading path.** Read the Introduction on additive ($\gamma_{iv}$) and multiplicative ($\delta_{iv}$) scanner effects, Methods Section 2.3 (the location-and-scale model), Figures 2 and 4 (removal of site classification vs. preservation of age associations), and the Discussion on study design and confounding.
+
+**Evidence questions.** Why does pooling variance across thousands of cortical vertices or ROIs via empirical Bayes improve small-site parameter estimates compared to independent per-feature regression? Why must biological covariates of interest be preserved in the design matrix when site assignment and demographics are unbalanced? When extending harmonization to out-of-sample predictive modeling (connecting `PD07` to `PD04` and Varoquaux, 2018), what goes wrong if harmonization parameters are fitted on the combined train+test cohort before cross-validation?
+
+**Coursework later.** Complete [D08: factorial confounding](../../notebooks/02_design/08_factorial_confounding.ipynb), [M04: nested validation and site harmonization](../../notebooks/04_modeling/04_nested_sites_harmonization.ipynb), and [P03: cohort generalization](../../notebooks/05_projects/03_cohort_generalization.ipynb). Compare unharmonized, leaky full-cohort harmonization, and train-only / label-free per-site harmonization on a synthetic multi-site dataset.
+
 ## Finish with a research decision, not a reading list
 
-After all six first passes, submit a two-page proposal for one supervised project. Include a measurement plan, an independent unit, an information-flow diagram, a declared inferential family, and a frozen primary analysis with justified alternatives. In a five-minute oral defense, the instructor introduces one unexpected change: a second visit, a new site, a different ROI selection rule, or a stricter threshold. Predict which part of the claim changes and which new evidence becomes necessary.
+After all first passes, submit a two-page proposal for one supervised project. Include a measurement plan, an independent unit, an information-flow diagram, a declared inferential family, and a frozen primary analysis with justified alternatives. In a five-minute oral defense, the instructor introduces one unexpected change: a second visit, a new site, a different ROI selection rule, or a stricter threshold. Predict which part of the claim changes and which new evidence becomes necessary.
 
-The final portfolio contains six evidence cards, six first-pass artifacts, the later simulation records, a prompt/correction log, and the proposal. Passing requires at least 8/10 on each completed paper assignment and correction of every unresolved independence, denominator, or source-attribution error. These are course assessment criteria, not research certification. No original paper's code or full empirical replication has been executed by adding this reading strand.
+The final portfolio contains evidence cards, first-pass artifacts, the later simulation records, a prompt/correction log, and the proposal. Passing requires at least 8/10 on each completed paper assignment and correction of every unresolved independence, denominator, or source-attribution error. These are course assessment criteria, not research certification. No original paper's code or full empirical replication has been executed by adding this reading strand.

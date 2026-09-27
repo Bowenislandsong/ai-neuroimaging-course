@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "verified_date_utc": "2026-09-25",
-  "scope": "18 linked papers and original coursework. Six opening reads precede fundamentals. Representative frontier selections are not a global performance ranking. Publication and assigned manuscript versions are recorded separately. No full paper implementation or large-model reproduction is claimed.",
+  "verified_date_utc": "2026-09-26",
+  "scope": "24 linked papers and original coursework. Six opening reads precede fundamentals. Representative frontier selections are not a global performance ranking. Publication and assigned manuscript versions are recorded separately. No full paper implementation or large-model reproduction is claimed.",
   "papers": [
     {
       "id": "PB01",
@@ -334,6 +334,93 @@
       ]
     },
     {
+      "id": "PP07",
+      "title": "FastSurfer - A fast and accurate deep learning based neuroimaging pipeline",
+      "authors": "Leonie Henschel, Sailesh Conjeti, Santiago Estrada, Kersten Diers, Bruce Fischl, Martin Reuter",
+      "year": 2020,
+      "status": "Peer-reviewed journal article; NeuroImage 219, 117012, published 2020-10-01",
+      "doi": "10.1016/j.neuroimage.2020.117012",
+      "url": "https://doi.org/10.1016/j.neuroimage.2020.117012",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7898243/",
+      "code_url": "https://github.com/Deep-MI/FastSurfer",
+      "role": "essential",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: whole-brain segmentation and cortical surface reconstruction",
+        "Methods 2.2-2.3: FastSurferCNN and recon-surf spherical topological surface pipeline",
+        "Figures 1, 2, 6, and 9-12 captions",
+        "Results 3.2-3.5: surface accuracy, test-retest reliability, and cortical thickness sensitivity",
+        "Discussion: surface topology versus volumetric Dice"
+      ],
+      "notebook_ids": [
+        "PR05",
+        "PR07",
+        "PR08",
+        "M15",
+        "P01"
+      ],
+      "read_evidence": "Indexed open-access NeuroImage / PMC record and official Deep-MI repository verified.",
+      "verification_urls": [
+        "https://doi.org/10.1016/j.neuroimage.2020.117012",
+        "https://github.com/Deep-MI/FastSurfer"
+      ],
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp07",
+      "source_registry": "processing_sources.json",
+      "motivation_notebook_ids": [
+        "PR05",
+        "PR07",
+        "PR08",
+        "M15",
+        "P01"
+      ]
+    },
+    {
+      "id": "PP08",
+      "title": "QSIPrep: an integrative platform for preprocessing and reconstructing diffusion MRI data",
+      "authors": "Matthew Cieslak, Philip A. Cook, Xiaoyu He, Fang-Cheng Yeh, Thijs Dhollander, Azeez Adebimpe et al.",
+      "year": 2021,
+      "status": "Peer-reviewed journal article; Nature Methods 18, 775-778, published 2021-06-21",
+      "doi": "10.1038/s41592-021-01185-5",
+      "url": "https://doi.org/10.1038/s41592-021-01185-5",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8596781/",
+      "code_url": "https://github.com/PennLINC/qsiprep",
+      "role": "essential",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Main text: adaptive q-space preprocessing and B-table handling",
+        "Figure 1: preprocessing and reconstruction workflows",
+        "Figure 2: image quality metrics and spatial smoothness comparisons",
+        "Online Methods: head motion, eddy current, susceptibility and b-vector rotation"
+      ],
+      "notebook_ids": [
+        "PR16",
+        "PR17",
+        "PR18",
+        "PR19",
+        "PR20",
+        "PR21"
+      ],
+      "read_evidence": "Nature Methods record, PMC manuscript, and PennLINC QSIPrep repository verified.",
+      "verification_urls": [
+        "https://www.nature.com/articles/s41592-021-01185-5",
+        "https://github.com/PennLINC/qsiprep"
+      ],
+      "orientation": false,
+      "code_executed": false,
+      "guide": "processing.md#pp08",
+      "source_registry": "processing_sources.json",
+      "motivation_notebook_ids": [
+        "PR16",
+        "PR17",
+        "PR18",
+        "PR19",
+        "PR20",
+        "PR21"
+      ]
+    },
+    {
       "id": "PD01",
       "title": "Variability in the analysis of a single neuroimaging dataset by many teams",
       "authors": "Rotem Botvinik-Nezer et al.",
@@ -587,6 +674,50 @@
         "D07",
         "D08",
         "D11"
+      ]
+    },
+    {
+      "id": "PD07",
+      "title": "Harmonization of cortical thickness measurements across scanners and sites",
+      "authors": "Jean-Philippe Fortin, Nicholas Cullen, Yvette I. Sheline, Warren D. Taylor, Irem Aselcioglu, Philip A. Cook et al.",
+      "year": 2018,
+      "status": "Peer-reviewed journal research article, NeuroImage 167, 104-120; published 2018-02-15.",
+      "doi": "10.1016/j.neuroimage.2017.11.024",
+      "url": "https://doi.org/10.1016/j.neuroimage.2017.11.024",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5845848/",
+      "code_url": "https://github.com/Jfortin1/ComBatHarmonization",
+      "role": "essential",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: scanner additive and multiplicative batch effects",
+        "Methods 2.3: ComBat location-and-scale empirical Bayes model",
+        "Figures 2, 4 and 6 captions: site removal versus biological covariate preservation",
+        "Discussion: confounding between site and biological group"
+      ],
+      "notebook_ids": [
+        "D02",
+        "D08",
+        "D11",
+        "DS02",
+        "DS05",
+        "DS13",
+        "M04",
+        "P03"
+      ],
+      "figure_verification": "PMC open-access full text and official ComBat repository checked.",
+      "access_note": "PMC manuscript and GitHub repository verified; linked only.",
+      "assignment_anchor": "design.md#pd07",
+      "guide": "design.md#pd07",
+      "source_registry": "design_sources.json",
+      "motivation_notebook_ids": [
+        "D02",
+        "D08",
+        "D11",
+        "DS02",
+        "DS05",
+        "DS13",
+        "M04",
+        "P03"
       ]
     },
     {
@@ -868,6 +999,131 @@
         "R03",
         "DS01",
         "M17"
+      ]
+    },
+    {
+      "id": "PM06",
+      "title": "MindEye2: Shared-Subject Models Enable fMRI-To-Image With 1 Hour of Data",
+      "authors": "Paul S. Scotti, Mihir Tripathy, Cesar Kadir Torrico Villanueva, Reese Kneeland, Tong Chen, Ashutosh Narang et al.",
+      "year": 2024,
+      "status": "Peer-reviewed ICML 2024 conference paper (PMLR 235:44038-44059); arXiv preprint 2403.11207.",
+      "doi": "10.48550/arXiv.2403.11207",
+      "arxiv": "2403.11207",
+      "url": "https://arxiv.org/abs/2403.11207",
+      "fulltext_url": "https://arxiv.org/html/2403.11207v2",
+      "code_url": "https://github.com/MedARC-AI/MindEyeV2",
+      "role": "modern_shared_subject_decoding_and_reconstruction",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: subject-specific ridge alignment into a shared latent space",
+        "Method Section 2: linear subject-specific mapping, shared backbone, and diffusion prior",
+        "Figures 1, 2 and 4 captions: 1-hour fine-tuning vs full 40-hour NSD training",
+        "Discussion: decoding vs generative image prior hallucinations"
+      ],
+      "notebook_ids": [
+        "M01",
+        "M02",
+        "M08",
+        "M09",
+        "M10",
+        "M16"
+      ],
+      "coursework_anchor": "modeling.md#pm06",
+      "deliverable": "Shared-latent alignment diagram and linear-vs-prior reconstruction audit.",
+      "reuse": "Links and original assignments only.",
+      "guide": "modeling.md#pm06",
+      "source_registry": "modeling_sources.json",
+      "motivation_notebook_ids": [
+        "M01",
+        "M02",
+        "M08",
+        "M09",
+        "M10",
+        "M16"
+      ]
+    },
+    {
+      "id": "PM07",
+      "title": "Using connectome-based predictive modeling to predict individual behavior from brain connectivity",
+      "authors": "Xilin Shen, Emily S. Finn, Dustin Scheinost, Monica D. Rosenberg, Marvin M. Chun, Xenophon Papademetris, R. Todd Constable",
+      "year": 2017,
+      "status": "Peer-reviewed protocol; Nature Protocols 12(3):506-518.",
+      "doi": "10.1038/nprot.2016.178",
+      "url": "https://doi.org/10.1038/nprot.2016.178",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5526681/",
+      "code_url": "https://github.com/YaleMRRC/CPM",
+      "role": "foundational_connectome_predictive_modeling",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: brain-behavior prediction from functional connectivity matrices",
+        "Figures 1 and 2 captions: edge selection inside cross-validation folds",
+        "Procedure Steps 1-7: confound control, fold-isolated edge screening, permutation testing",
+        "Anticipated Results: interpreting predictive network anatomy"
+      ],
+      "notebook_ids": [
+        "PR20",
+        "DS08",
+        "DS15",
+        "M03",
+        "M06",
+        "M07",
+        "P03"
+      ],
+      "coursework_anchor": "modeling.md#pm07",
+      "deliverable": "Fold-isolated CPM edge-selection audit and permutation null verification.",
+      "reuse": "Links and original assignments only.",
+      "guide": "modeling.md#pm07",
+      "source_registry": "modeling_sources.json",
+      "motivation_notebook_ids": [
+        "PR20",
+        "DS08",
+        "DS15",
+        "M03",
+        "M06",
+        "M07",
+        "P03"
+      ]
+    },
+    {
+      "id": "PM08",
+      "title": "Brain network dynamics are hierarchically organized in time",
+      "authors": "Diego Vidaurre, Stephen M. Smith, Mark W. Woolrich",
+      "year": 2017,
+      "status": "Peer-reviewed research article; PNAS 114(48):12827-12832.",
+      "doi": "10.1073/pnas.1705120114",
+      "url": "https://doi.org/10.1073/pnas.1705120114",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5715736/",
+      "code_url": "https://github.com/OHBA-analysis/HMM-MAR",
+      "role": "foundational_latent_state_dynamics",
+      "verified_utc": "2026-09-26",
+      "read_sections": [
+        "Introduction: time-varying functional connectivity versus static averages",
+        "Results: HMM state inference, fractional occupancy, and metastate transitions",
+        "Figures 1 and 2 captions: state transition matrices and heritability",
+        "Materials and Methods: Hidden Markov Model observation distributions"
+      ],
+      "notebook_ids": [
+        "D05",
+        "D06",
+        "DS11",
+        "M05",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "coursework_anchor": "modeling.md#pm08",
+      "deliverable": "Latent state transition matrix audit and generative vs static covariance comparison.",
+      "reuse": "Links and original assignments only.",
+      "guide": "modeling.md#pm08",
+      "source_registry": "modeling_sources.json",
+      "motivation_notebook_ids": [
+        "D05",
+        "D06",
+        "DS11",
+        "M05",
+        "M11",
+        "M12",
+        "M13"
       ]
     }
   ]

@@ -1,0 +1,5705 @@
+{
+  "checked_at_utc": "2026-09-26T21:35:22+00:00",
+  "method": "Crossref works API (title similarity >= 0.85, year within 1, first-author family name); OpenAlex and Crossref citation counts; arXiv API for preprints.",
+  "summary": {
+    "MATCH": 277
+  },
+  "references": {
+    "arxiv:1706.03762": {
+      "title": "Attention Is All You Need",
+      "year": 2017,
+      "first_author_family": "Vaswani",
+      "author_count": 8,
+      "author_families": [
+        "Vaswani",
+        "Shazeer",
+        "Parmar"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M17"
+      ]
+    },
+    "arxiv:1706.04599": {
+      "title": "On Calibration of Modern Neural Networks",
+      "year": 2017,
+      "first_author_family": "Guo",
+      "author_count": 4,
+      "author_families": [
+        "Guo",
+        "Pleiss",
+        "Sun"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M18"
+      ]
+    },
+    "arxiv:1810.03292": {
+      "title": "Sanity Checks for Saliency Maps",
+      "year": 2018,
+      "first_author_family": "Adebayo",
+      "author_count": 6,
+      "author_families": [
+        "Adebayo",
+        "Gilmer",
+        "Muelly"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M18"
+      ]
+    },
+    "arxiv:2002.05709": {
+      "title": "A Simple Framework for Contrastive Learning of Visual Representations",
+      "year": 2020,
+      "first_author_family": "Chen",
+      "author_count": 4,
+      "author_families": [
+        "Chen",
+        "Kornblith",
+        "Norouzi"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M16"
+      ]
+    },
+    "arxiv:2010.11929": {
+      "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+      "year": 2020,
+      "first_author_family": "Dosovitskiy",
+      "author_count": 12,
+      "author_families": [
+        "Dosovitskiy",
+        "Beyer",
+        "Kolesnikov"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M17"
+      ]
+    },
+    "arxiv:2202.10054": {
+      "title": "Fine-Tuning can Distort Pretrained Features and Underperform Out-of-Distribution",
+      "year": 2022,
+      "first_author_family": "Kumar",
+      "author_count": 5,
+      "author_families": [
+        "Kumar",
+        "Raghunathan",
+        "Jones"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M16"
+      ]
+    },
+    "arxiv:2403.11207": {
+      "title": "MindEye2: Shared-Subject Models Enable fMRI-To-Image With 1 Hour of Data",
+      "year": 2024,
+      "first_author_family": "Scotti",
+      "author_count": 11,
+      "author_families": [
+        "Scotti",
+        "Tripathy",
+        "Villanueva"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PM06"
+    },
+    "arxiv:2412.17041": {
+      "title": "An OpenMind for 3D medical vision self-supervised learning",
+      "year": 2024,
+      "first_author_family": "Wald",
+      "author_count": 8,
+      "author_families": [
+        "Wald",
+        "Ulrich",
+        "Suprijadi"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PM04"
+    },
+    "arxiv:2601.23090": {
+      "title": "Omni-fMRI: A Universal Atlas-Free fMRI Foundation Model",
+      "year": 2026,
+      "first_author_family": "Wang",
+      "author_count": 9,
+      "author_families": [
+        "Wang",
+        "Ye",
+        "Xia"
+      ],
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PM05"
+    },
+    "doi:10.1001/jamapsychiatry.2019.3671": {
+      "title": "Establishment of Best Practices for Evidence for Prediction",
+      "year": 2020,
+      "first_author_family": "Poldrack",
+      "author_count": 3,
+      "author_families": [
+        "Poldrack",
+        "Huckins",
+        "Varoquaux"
+      ],
+      "venue": "JAMA Psychiatry",
+      "type": "journal-article",
+      "crossref_cited_by": 764,
+      "openalex_id": "https://openalex.org/W2990091959",
+      "openalex_cited_by": 820,
+      "title_similarity": 0.929,
+      "status": "MATCH",
+      "lessons": [
+        "DS15",
+        "F01"
+      ]
+    },
+    "doi:10.1002/(sici)1097-0193(1996)4:1<58::aid-hbm4>3.0.co;2-o": {
+      "title": "A unified statistical approach for determining significant signals in images of cerebral activation",
+      "year": 1996,
+      "first_author_family": "Worsley",
+      "author_count": 6,
+      "author_families": [
+        "Worsley",
+        "Marrett",
+        "Neelin"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 1742,
+      "openalex_id": "https://openalex.org/W1987599891",
+      "openalex_cited_by": 2907,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D13"
+      ]
+    },
+    "doi:10.1002/(sici)1097-0193(1996)4:1<74::aid-hbm5>3.0.co;2-m": {
+      "title": "Searching scale space for activation in PET images",
+      "year": 1996,
+      "first_author_family": "Worsley",
+      "author_count": 4,
+      "author_families": [
+        "Worsley",
+        "Marrett",
+        "Neelin"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 196,
+      "openalex_id": "https://openalex.org/W2080558881",
+      "openalex_cited_by": 283,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR12"
+      ]
+    },
+    "doi:10.1002/(sici)1097-0193(1998)6:4<239::aid-hbm4>3.0.co;2-4": {
+      "title": "Effect of temporal autocorrelation due to physiological noise and stimulus paradigm on voxel-level false-positive rates in fMRI",
+      "year": 1998,
+      "first_author_family": "Purdon",
+      "author_count": 2,
+      "author_families": [
+        "Purdon",
+        "Weisskoff"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 196,
+      "openalex_id": "https://openalex.org/W1964777591",
+      "openalex_cited_by": 323,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D10"
+      ]
+    },
+    "doi:10.1002/(sici)1097-0193(1999)8:2/3<109::aid-hbm7>3.0.co;2-w": {
+      "title": "Optimal experimental design for event-related fMRI",
+      "year": 1999,
+      "first_author_family": "Dale",
+      "author_count": 1,
+      "author_families": [
+        "Dale"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 1081,
+      "openalex_id": "https://openalex.org/W2095827013",
+      "openalex_cited_by": 1816,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D07"
+      ]
+    },
+    "doi:10.1002/cpz1.719": {
+      "title": "An Updated Guide to Robust Statistical Methods in Neuroscience",
+      "year": 2023,
+      "first_author_family": "Wilcox",
+      "author_count": 2,
+      "author_families": [
+        "Wilcox",
+        "Rousselet"
+      ],
+      "venue": "Current Protocols",
+      "type": "journal-article",
+      "crossref_cited_by": 42,
+      "openalex_id": "https://openalex.org/W4361003209",
+      "openalex_cited_by": 46,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS13"
+      ]
+    },
+    "doi:10.1002/hbm.10062": {
+      "title": "Fast robust automated brain extraction",
+      "year": 2002,
+      "first_author_family": "Smith",
+      "author_count": 1,
+      "author_families": [
+        "Smith"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 9672,
+      "openalex_id": "https://openalex.org/W2071881327",
+      "openalex_cited_by": 10954,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR05"
+      ]
+    },
+    "doi:10.1002/hbm.1058": {
+      "title": "Nonparametric permutation tests for functional neuroimaging: A primer with examples",
+      "year": 2002,
+      "first_author_family": "Nichols",
+      "author_count": 2,
+      "author_families": [
+        "Nichols",
+        "Holmes"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 5763,
+      "openalex_id": "https://openalex.org/W2138790588",
+      "openalex_cited_by": 6549,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D12"
+      ]
+    },
+    "doi:10.1002/hbm.24218": {
+      "title": "Accurate modeling of temporal correlations in rapidly sampled fMRI time series",
+      "year": 2018,
+      "first_author_family": "Corbin",
+      "author_count": 4,
+      "author_families": [
+        "Corbin",
+        "Todd",
+        "Friston"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 120,
+      "openalex_id": "https://openalex.org/W2805365294",
+      "openalex_cited_by": 132,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D10"
+      ]
+    },
+    "doi:10.1002/hbm.24528": {
+      "title": "Modular preprocessing pipelines can reintroduce artifacts into fMRI data",
+      "year": 2019,
+      "first_author_family": "Lindquist",
+      "author_count": 4,
+      "author_families": [
+        "Lindquist",
+        "Geuter",
+        "Wager"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 239,
+      "openalex_id": "https://openalex.org/W2949455193",
+      "openalex_cited_by": 251,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR13"
+      ]
+    },
+    "doi:10.1002/hbm.24603": {
+      "title": "Exploring the impact of analysis software on task fMRI results",
+      "year": 2019,
+      "first_author_family": "Bowring",
+      "author_count": 3,
+      "author_families": [
+        "Bowring",
+        "Maumet",
+        "Nichols"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 134,
+      "openalex_id": "https://openalex.org/W2950480787",
+      "openalex_cited_by": 168,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS16"
+      ]
+    },
+    "doi:10.1002/hbm.24750": {
+      "title": "Automated brain extraction of multisequence MRI using artificial neural networks",
+      "year": 2019,
+      "first_author_family": "Isensee",
+      "author_count": 13,
+      "author_families": [
+        "Isensee",
+        "Schell",
+        "Pflueger"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 721,
+      "openalex_id": "https://openalex.org/W2968446587",
+      "openalex_cited_by": 763,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR05"
+      ]
+    },
+    "doi:10.1002/hbm.460020402": {
+      "title": "Statistical parametric maps in functional imaging: A general linear approach",
+      "year": 1994,
+      "first_author_family": "Friston",
+      "author_count": 6,
+      "author_families": [
+        "Friston",
+        "Holmes",
+        "Worsley"
+      ],
+      "venue": "Human Brain Mapping",
+      "type": "journal-article",
+      "crossref_cited_by": 7836,
+      "openalex_id": "https://openalex.org/W2116649573",
+      "openalex_cited_by": 9869,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D09",
+        "P02"
+      ]
+    },
+    "doi:10.1002/mrm.1910340111": {
+      "title": "Correction for geometric distortion in echo planar images from B<i>0</i> field variations",
+      "year": 1995,
+      "first_author_family": "Jezzard",
+      "author_count": 2,
+      "author_families": [
+        "Jezzard",
+        "Balaban"
+      ],
+      "venue": "Magnetic Resonance in Medicine",
+      "type": "journal-article",
+      "crossref_cited_by": 1330,
+      "openalex_id": "https://openalex.org/W2071472234",
+      "openalex_cited_by": 1467,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR11"
+      ]
+    },
+    "doi:10.1002/mrm.1910350312": {
+      "title": "Movement‐Related effects in fMRI time‐series",
+      "year": 1996,
+      "first_author_family": "Friston",
+      "author_count": 5,
+      "author_families": [
+        "Friston",
+        "Williams",
+        "Howard"
+      ],
+      "venue": "Magnetic Resonance in Medicine",
+      "type": "journal-article",
+      "crossref_cited_by": 3609,
+      "openalex_id": "https://openalex.org/W2005238835",
+      "openalex_cited_by": 4006,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR10"
+      ]
+    },
+    "doi:10.1002/mrm.1910360612": {
+      "title": "Toward a quantitative assessment of diffusion anisotropy",
+      "year": 1996,
+      "first_author_family": "Pierpaoli",
+      "author_count": 2,
+      "author_families": [
+        "Pierpaoli",
+        "Basser"
+      ],
+      "venue": "Magnetic Resonance in Medicine",
+      "type": "journal-article",
+      "crossref_cited_by": 2087,
+      "openalex_id": "https://openalex.org/W2157035009",
+      "openalex_cited_by": 2452,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR18"
+      ]
+    },
+    "doi:10.1002/mrm.1910390602": {
+      "title": "Dynamics of blood flow and oxygenation changes during brain activation: The balloon model",
+      "year": 1998,
+      "first_author_family": "Buxton",
+      "author_count": 3,
+      "author_families": [
+        "Buxton",
+        "Wong",
+        "Frank"
+      ],
+      "venue": "Magnetic Resonance in Medicine",
+      "type": "journal-article",
+      "crossref_cited_by": 1459,
+      "openalex_id": "https://openalex.org/W2123586737",
+      "openalex_cited_by": 1726,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "F02"
+      ]
+    },
+    "doi:10.1002/mrm.21890": {
+      "title": "The <i>B</i>‐matrix must be rotated when correcting for subject motion in DTI data",
+      "year": 2009,
+      "first_author_family": "Leemans",
+      "author_count": 2,
+      "author_families": [
+        "Leemans",
+        "Jones"
+      ],
+      "venue": "Magnetic Resonance in Medicine",
+      "type": "journal-article",
+      "crossref_cited_by": 1249,
+      "openalex_id": "https://openalex.org/W2168844688",
+      "openalex_cited_by": 1357,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR16"
+      ]
+    },
+    "doi:10.1002/mrm.26054": {
+      "title": "Gibbs‐ringing artifact removal based on local subvoxel‐shifts",
+      "year": 2016,
+      "first_author_family": "Kellner",
+      "author_count": 4,
+      "author_families": [
+        "Kellner",
+        "Dhital",
+        "Kiselev"
+      ],
+      "venue": "Magnetic Resonance in Medicine",
+      "type": "journal-article",
+      "crossref_cited_by": 1601,
+      "openalex_id": "https://openalex.org/W1895268124",
+      "openalex_cited_by": 1653,
+      "title_similarity": 0.983,
+      "status": "MATCH",
+      "lessons": [
+        "PR17"
+      ]
+    },
+    "doi:10.1002/nbm.3785": {
+      "title": "Diffusion MRI fiber tractography of the brain",
+      "year": 2019,
+      "first_author_family": "Jeurissen",
+      "author_count": 4,
+      "author_families": [
+        "Jeurissen",
+        "Descoteaux",
+        "Mori"
+      ],
+      "venue": "NMR in Biomedicine",
+      "type": "journal-article",
+      "crossref_cited_by": 541,
+      "openalex_id": "https://openalex.org/W2758113150",
+      "openalex_cited_by": 622,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR19"
+      ]
+    },
+    "doi:10.1006/nimg.1996.0033": {
+      "title": "The Trouble with Cognitive Subtraction",
+      "year": 1996,
+      "first_author_family": "Friston",
+      "author_count": 6,
+      "author_families": [
+        "Friston",
+        "Price",
+        "Fletcher"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 402,
+      "openalex_id": "https://openalex.org/W2105033552",
+      "openalex_cited_by": 552,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D08"
+      ]
+    },
+    "doi:10.1006/nimg.1997.0289": {
+      "title": "Anatomic Localization and Quantitative Analysis of Gradient Refocused Echo-Planar fMRI Susceptibility Artifacts",
+      "year": 1997,
+      "first_author_family": "Ojemann",
+      "author_count": 6,
+      "author_families": [
+        "Ojemann",
+        "Akbudak",
+        "Snyder"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 627,
+      "openalex_id": "https://openalex.org/W2098866999",
+      "openalex_cited_by": 723,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR11"
+      ]
+    },
+    "doi:10.1006/nimg.1997.0306": {
+      "title": "Event-Related fMRI: Characterizing Differential Responses",
+      "year": 1998,
+      "first_author_family": "Friston",
+      "author_count": 6,
+      "author_families": [
+        "Friston",
+        "Fletcher",
+        "Josephs"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1773,
+      "openalex_id": "https://openalex.org/W2170797424",
+      "openalex_cited_by": 2100,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D06"
+      ]
+    },
+    "doi:10.1006/nimg.1998.0395": {
+      "title": "Cortical Surface-Based Analysis",
+      "year": 1999,
+      "first_author_family": "Dale",
+      "author_count": 3,
+      "author_families": [
+        "Dale",
+        "Fischl",
+        "Sereno"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 10272,
+      "openalex_id": "https://openalex.org/W2151721316",
+      "openalex_cited_by": 11692,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR08"
+      ]
+    },
+    "doi:10.1006/nimg.1998.0419": {
+      "title": "Deconvolution of Impulse Response in Event-Related BOLD fMRI1",
+      "year": 1999,
+      "first_author_family": "Glover",
+      "author_count": 1,
+      "author_families": [
+        "Glover"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1202,
+      "openalex_id": "https://openalex.org/W2107187638",
+      "openalex_cited_by": 1445,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D05"
+      ]
+    },
+    "doi:10.1006/nimg.2000.0582": {
+      "title": "Voxel-Based Morphometry—The Methods",
+      "year": 2000,
+      "first_author_family": "Ashburner",
+      "author_count": 2,
+      "author_families": [
+        "Ashburner",
+        "Friston"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 7480,
+      "openalex_id": "https://openalex.org/W2119848633",
+      "openalex_cited_by": 8776,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR07"
+      ]
+    },
+    "doi:10.1006/nimg.2000.0609": {
+      "title": "To Smooth or Not to Smooth?",
+      "year": 2000,
+      "first_author_family": "Friston",
+      "author_count": 6,
+      "author_families": [
+        "Friston",
+        "Josephs",
+        "Zarahn"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 376,
+      "openalex_id": "https://openalex.org/W2099660465",
+      "openalex_cited_by": 441,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR13"
+      ]
+    },
+    "doi:10.1006/nimg.2000.0728": {
+      "title": "Detection Power, Estimation Efficiency, and Predictability in Event-Related fMRI",
+      "year": 2001,
+      "first_author_family": "Liu",
+      "author_count": 4,
+      "author_families": [
+        "Liu",
+        "Frank",
+        "Wong"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 230,
+      "openalex_id": "https://openalex.org/W2133239174",
+      "openalex_cited_by": 266,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D07"
+      ]
+    },
+    "doi:10.1006/nimg.2001.0786": {
+      "title": "A Voxel-Based Morphometric Study of Ageing in 465 Normal Adult Human Brains",
+      "year": 2001,
+      "first_author_family": "Good",
+      "author_count": 6,
+      "author_families": [
+        "Good",
+        "Johnsrude",
+        "Ashburner"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 3875,
+      "openalex_id": "https://openalex.org/W2118421222",
+      "openalex_cited_by": 4633,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR07"
+      ]
+    },
+    "doi:10.1006/nimg.2001.0931": {
+      "title": "Temporal Autocorrelation in Univariate Linear Modeling of FMRI Data",
+      "year": 2001,
+      "first_author_family": "Woolrich",
+      "author_count": 4,
+      "author_families": [
+        "Woolrich",
+        "Ripley",
+        "Brady"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 2707,
+      "openalex_id": "https://openalex.org/W1978660262",
+      "openalex_cited_by": 3058,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D10",
+        "P02"
+      ]
+    },
+    "doi:10.1006/nimg.2001.1037": {
+      "title": "Thresholding of Statistical Maps in Functional Neuroimaging Using the False Discovery Rate",
+      "year": 2002,
+      "first_author_family": "Genovese",
+      "author_count": 3,
+      "author_families": [
+        "Genovese",
+        "Lazar",
+        "Nichols"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 4151,
+      "openalex_id": "https://openalex.org/W2163274894",
+      "openalex_cited_by": 5052,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D13",
+        "P02"
+      ]
+    },
+    "doi:10.1006/nimg.2002.1132": {
+      "title": "Improved Optimization for the Robust and Accurate Linear Registration and Motion Correction of Brain Images",
+      "year": 2002,
+      "first_author_family": "Jenkinson",
+      "author_count": 4,
+      "author_families": [
+        "Jenkinson",
+        "Bannister",
+        "Brady"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 15895,
+      "openalex_id": "https://openalex.org/W4235770099",
+      "openalex_cited_by": 9753,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS12",
+        "PR10"
+      ]
+    },
+    "doi:10.1007/978-3-319-24574-4_28": {
+      "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+      "year": 2015,
+      "first_author_family": "Ronneberger",
+      "author_count": 3,
+      "author_families": [
+        "Ronneberger",
+        "Fischer",
+        "Brox"
+      ],
+      "venue": "Lecture Notes in Computer Science Medical Image Computing and Computer-Assisted Intervention – MICCAI 2015",
+      "type": "book-chapter",
+      "crossref_cited_by": 62343,
+      "openalex_id": "https://openalex.org/W1901129140",
+      "openalex_cited_by": 92974,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M15"
+      ]
+    },
+    "doi:10.1007/bf00994018": {
+      "title": "Support-vector networks",
+      "year": 1995,
+      "first_author_family": "Cortes",
+      "author_count": 2,
+      "author_families": [
+        "Cortes",
+        "Vapnik"
+      ],
+      "venue": "Machine Learning",
+      "type": "journal-article",
+      "crossref_cited_by": 31043,
+      "openalex_id": "https://openalex.org/W4239510810",
+      "openalex_cited_by": 41237,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M03"
+      ]
+    },
+    "doi:10.1007/bf01068419": {
+      "title": "A comparison of the Two One-Sided Tests Procedure and the Power Approach for assessing the equivalence of average bioavailability",
+      "year": 1987,
+      "first_author_family": "Schuirmann",
+      "author_count": 1,
+      "author_families": [
+        "Schuirmann"
+      ],
+      "venue": "Journal of Pharmacokinetics and Biopharmaceutics",
+      "type": "journal-article",
+      "crossref_cited_by": 2237,
+      "openalex_id": "https://openalex.org/W2037698344",
+      "openalex_cited_by": 2694,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D15"
+      ]
+    },
+    "doi:10.1007/bf01908075": {
+      "title": "Comparing partitions",
+      "year": 1985,
+      "first_author_family": "Hubert",
+      "author_count": 2,
+      "author_families": [
+        "Hubert",
+        "Arabie"
+      ],
+      "venue": "Journal of Classification",
+      "type": "journal-article",
+      "crossref_cited_by": 7937,
+      "openalex_id": "https://openalex.org/W4235169531",
+      "openalex_cited_by": 8100,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M06"
+      ]
+    },
+    "doi:10.1007/bf02288367": {
+      "title": "The Approximation of One Matrix by Another of Lower Rank",
+      "year": 1936,
+      "first_author_family": "Eckart",
+      "author_count": 2,
+      "author_families": [
+        "Eckart",
+        "Young"
+      ],
+      "venue": "Psychometrika",
+      "type": "journal-article",
+      "crossref_cited_by": 2902,
+      "openalex_id": "https://openalex.org/W2004026774",
+      "openalex_cited_by": 3898,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS14"
+      ]
+    },
+    "doi:10.1007/bf02293851": {
+      "title": "EM Algorithms for ML Factor Analysis",
+      "year": 1982,
+      "first_author_family": "Rubin",
+      "author_count": 2,
+      "author_families": [
+        "Rubin",
+        "Thayer"
+      ],
+      "venue": "Psychometrika",
+      "type": "journal-article",
+      "crossref_cited_by": 374,
+      "openalex_id": "https://openalex.org/W2076818396",
+      "openalex_cited_by": 606,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M11"
+      ]
+    },
+    "doi:10.1007/s11222-021-10057-z": {
+      "title": "Unrestricted permutation forces extrapolation: variable importance requires at least one more model, or there is no free variable importance",
+      "year": 2021,
+      "first_author_family": "Hooker",
+      "author_count": 3,
+      "author_families": [
+        "Hooker",
+        "Mentch",
+        "Zhou"
+      ],
+      "venue": "Statistics and Computing",
+      "type": "journal-article",
+      "crossref_cited_by": 204,
+      "openalex_id": "https://openalex.org/W3209434414",
+      "openalex_cited_by": 232,
+      "title_similarity": 0.968,
+      "status": "MATCH",
+      "lessons": [
+        "M18"
+      ]
+    },
+    "doi:10.1016/0041-5553(64)90137-5": {
+      "title": "Some methods of speeding up the convergence of iteration methods",
+      "year": 1964,
+      "first_author_family": "Polyak",
+      "author_count": 1,
+      "author_families": [
+        "Polyak"
+      ],
+      "venue": "USSR Computational Mathematics and Mathematical Physics",
+      "type": "journal-article",
+      "crossref_cited_by": 2234,
+      "openalex_id": "https://openalex.org/W1988720110",
+      "openalex_cited_by": 2948,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS12"
+      ]
+    },
+    "doi:10.1016/0165-1684(94)90029-9": {
+      "title": "Independent component analysis, A new concept?",
+      "year": 1994,
+      "first_author_family": "Comon",
+      "author_count": 1,
+      "author_families": [
+        "Comon"
+      ],
+      "venue": "Signal Processing",
+      "type": "journal-article",
+      "crossref_cited_by": 6324,
+      "openalex_id": "https://openalex.org/W2099741732",
+      "openalex_cited_by": 8302,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M05"
+      ]
+    },
+    "doi:10.1016/0377-0427(87)90125-7": {
+      "title": "Silhouettes: A graphical aid to the interpretation and validation of cluster analysis",
+      "year": 1987,
+      "first_author_family": "Rousseeuw",
+      "author_count": 1,
+      "author_families": [
+        "Rousseeuw"
+      ],
+      "venue": "Journal of Computational and Applied Mathematics",
+      "type": "journal-article",
+      "crossref_cited_by": 18393,
+      "openalex_id": "https://openalex.org/W1987971958",
+      "openalex_cited_by": 21835,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M06"
+      ]
+    },
+    "doi:10.1016/j.conb.2019.04.002": {
+      "title": "Interpreting encoding and decoding models",
+      "year": 2019,
+      "first_author_family": "Kriegeskorte",
+      "author_count": 2,
+      "author_families": [
+        "Kriegeskorte",
+        "Douglas"
+      ],
+      "venue": "Current Opinion in Neurobiology",
+      "type": "journal-article",
+      "crossref_cited_by": 241,
+      "openalex_id": "https://openalex.org/W2902687238",
+      "openalex_cited_by": 255,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M01"
+      ]
+    },
+    "doi:10.1016/j.conb.2019.06.004": {
+      "title": "Vascular and neural basis of the BOLD signal",
+      "year": 2019,
+      "first_author_family": "Drew",
+      "author_count": 1,
+      "author_families": [
+        "Drew"
+      ],
+      "venue": "Current Opinion in Neurobiology",
+      "type": "journal-article",
+      "crossref_cited_by": 146,
+      "openalex_id": "https://openalex.org/W2963123582",
+      "openalex_cited_by": 150,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "F02"
+      ]
+    },
+    "doi:10.1016/j.jml.2019.104038": {
+      "title": "How to capitalize on a priori contrasts in linear (mixed) models: A tutorial",
+      "year": 2020,
+      "first_author_family": "Schad",
+      "author_count": 4,
+      "author_families": [
+        "Schad",
+        "Vasishth",
+        "Hohenstein"
+      ],
+      "venue": "Journal of Memory and Language",
+      "type": "journal-article",
+      "crossref_cited_by": 562,
+      "openalex_id": "https://openalex.org/W2884133857",
+      "openalex_cited_by": 75,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D08"
+      ]
+    },
+    "doi:10.1016/j.jneumeth.2016.03.001": {
+      "title": "The first step for neuroimaging data analysis: DICOM to NIfTI conversion",
+      "year": 2016,
+      "first_author_family": "Li",
+      "author_count": 5,
+      "author_families": [
+        "Li",
+        "Morgan",
+        "Ashburner"
+      ],
+      "venue": "Journal of Neuroscience Methods",
+      "type": "journal-article",
+      "crossref_cited_by": 1116,
+      "openalex_id": "https://openalex.org/W2290321704",
+      "openalex_cited_by": 1169,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS03",
+        "PR01"
+      ]
+    },
+    "doi:10.1016/j.media.2007.06.004": {
+      "title": "Symmetric diffeomorphic image registration with cross-correlation: Evaluating automated labeling of elderly and neurodegenerative brain",
+      "year": 2008,
+      "first_author_family": "AVANTS",
+      "author_count": 4,
+      "author_families": [
+        "AVANTS",
+        "EPSTEIN",
+        "GROSSMAN"
+      ],
+      "venue": "Medical Image Analysis",
+      "type": "journal-article",
+      "crossref_cited_by": 5750,
+      "openalex_id": "https://openalex.org/W1970928383",
+      "openalex_cited_by": 6206,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR03"
+      ]
+    },
+    "doi:10.1016/j.media.2023.102789": {
+      "title": "SynthSeg: Segmentation of brain MRI scans of any contrast and resolution without retraining",
+      "year": 2023,
+      "first_author_family": "Billot",
+      "author_count": 8,
+      "author_families": [
+        "Billot",
+        "Greve",
+        "Puonti"
+      ],
+      "venue": "Medical Image Analysis",
+      "type": "journal-article",
+      "crossref_cited_by": 665,
+      "openalex_id": "https://openalex.org/W4321760728",
+      "openalex_cited_by": 641,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "P01"
+      ],
+      "library_id": "PP03"
+    },
+    "doi:10.1016/j.media.2024.103301": {
+      "title": "BrainSegFounder: Towards 3D foundation models for neuroimage segmentation",
+      "year": 2024,
+      "first_author_family": "Cox",
+      "author_count": 8,
+      "author_families": [
+        "Cox",
+        "Liu",
+        "Stolte"
+      ],
+      "venue": "Medical Image Analysis",
+      "type": "journal-article",
+      "crossref_cited_by": 62,
+      "openalex_id": "https://openalex.org/W4401435830",
+      "openalex_cited_by": 54,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M17"
+      ]
+    },
+    "doi:10.1016/j.mri.2007.08.006": {
+      "title": "Effects of spatial smoothing on fMRI group inferences",
+      "year": 2008,
+      "first_author_family": "Mikl",
+      "author_count": 8,
+      "author_families": [
+        "Mikl",
+        "Mareček",
+        "Hluštík"
+      ],
+      "venue": "Magnetic Resonance Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 303,
+      "openalex_id": "https://openalex.org/W2153499253",
+      "openalex_cited_by": 360,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR12"
+      ]
+    },
+    "doi:10.1016/j.mri.2019.01.018": {
+      "title": "A fiber coherence index for quality control of B-table orientation in diffusion MRI scans",
+      "year": 2019,
+      "first_author_family": "Schilling",
+      "author_count": 8,
+      "author_families": [
+        "Schilling",
+        "Yeh",
+        "Nath"
+      ],
+      "venue": "Magnetic Resonance Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 94,
+      "openalex_id": "https://openalex.org/W2914124137",
+      "openalex_cited_by": 97,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR16"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2003.11.029": {
+      "title": "Variation of BOLD hemodynamic responses across subjects and brain regions and their effects on statistical analyses",
+      "year": 2004,
+      "first_author_family": "Handwerker",
+      "author_count": 3,
+      "author_families": [
+        "Handwerker",
+        "Ollinger",
+        "D'Esposito"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 873,
+      "openalex_id": "https://openalex.org/W2082906925",
+      "openalex_cited_by": 1039,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D06"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2003.12.023": {
+      "title": "Multilevel linear modelling for FMRI group analysis using Bayesian inference",
+      "year": 2004,
+      "first_author_family": "Woolrich",
+      "author_count": 5,
+      "author_families": [
+        "Woolrich",
+        "Behrens",
+        "Beckmann"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1611,
+      "openalex_id": "https://openalex.org/W2018102971",
+      "openalex_cited_by": 1829,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D11"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2005.01.011": {
+      "title": "Increased sensitivity in neuroimaging analyses using robust regression",
+      "year": 2005,
+      "first_author_family": "Wager",
+      "author_count": 4,
+      "author_families": [
+        "Wager",
+        "Keller",
+        "Lacey"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 258,
+      "openalex_id": "https://openalex.org/W2107669723",
+      "openalex_cited_by": 303,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS11"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2005.02.018": {
+      "title": "Unified segmentation",
+      "year": 2005,
+      "first_author_family": "Ashburner",
+      "author_count": 2,
+      "author_families": [
+        "Ashburner",
+        "Friston"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 7466,
+      "openalex_id": "https://openalex.org/W4230920194",
+      "openalex_cited_by": 7643,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR06"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2005.12.062": {
+      "title": "Divide and conquer: A defense of functional localizers",
+      "year": 2006,
+      "first_author_family": "Saxe",
+      "author_count": 3,
+      "author_families": [
+        "Saxe",
+        "Brett",
+        "Kanwisher"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 503,
+      "openalex_id": "https://openalex.org/W2084332617",
+      "openalex_cited_by": 583,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D14"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2006.09.018": {
+      "title": "Probabilistic diffusion tractography with multiple fibre orientations: What can we gain?",
+      "year": 2007,
+      "first_author_family": "Behrens",
+      "author_count": 5,
+      "author_families": [
+        "Behrens",
+        "Berg",
+        "Jbabdi"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 3049,
+      "openalex_id": "https://openalex.org/W2000133863",
+      "openalex_cited_by": 3637,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR19"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2006.09.019": {
+      "title": "Meaningful design and contrast estimability in FMRI",
+      "year": 2007,
+      "first_author_family": "Smith",
+      "author_count": 5,
+      "author_families": [
+        "Smith",
+        "Jenkinson",
+        "Beckmann"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 60,
+      "openalex_id": "https://openalex.org/W2050674166",
+      "openalex_cited_by": 71,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS10"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2007.02.016": {
+      "title": "Robust determination of the fibre orientation distribution in diffusion MRI: Non-negativity constrained super-resolved spherical deconvolution",
+      "year": 2007,
+      "first_author_family": "Tournier",
+      "author_count": 3,
+      "author_families": [
+        "Tournier",
+        "Calamante",
+        "Connelly"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 2172,
+      "openalex_id": "https://openalex.org/W2001611992",
+      "openalex_cited_by": 2363,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR19"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2007.04.042": {
+      "title": "A component based noise correction method (CompCor) for BOLD and perfusion based fMRI",
+      "year": 2007,
+      "first_author_family": "Behzadi",
+      "author_count": 4,
+      "author_families": [
+        "Behzadi",
+        "Restom",
+        "Liau"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 4643,
+      "openalex_id": "https://openalex.org/W2130010412",
+      "openalex_cited_by": 4979,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR14"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2007.07.007": {
+      "title": "A fast diffeomorphic image registration algorithm",
+      "year": 2007,
+      "first_author_family": "Ashburner",
+      "author_count": 1,
+      "author_families": [
+        "Ashburner"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 7722,
+      "openalex_id": "https://openalex.org/W2155298532",
+      "openalex_cited_by": 8480,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR03"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2008.03.061": {
+      "title": "Threshold-free cluster enhancement: Addressing problems of smoothing, threshold dependence and localisation in cluster inference",
+      "year": 2009,
+      "first_author_family": "SMITH",
+      "author_count": 2,
+      "author_families": [
+        "SMITH",
+        "NICHOLS"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 5196,
+      "openalex_id": "https://openalex.org/W2046557060",
+      "openalex_cited_by": 5636,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D13"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2008.10.065": {
+      "title": "Modeling the hemodynamic response function in fMRI: Efficiency, bias and mis-modeling",
+      "year": 2009,
+      "first_author_family": "Lindquist",
+      "author_count": 4,
+      "author_families": [
+        "Lindquist",
+        "Meng Loh",
+        "Atlas"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 508,
+      "openalex_id": "https://openalex.org/W2151969869",
+      "openalex_cited_by": 576,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D06"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2008.12.037": {
+      "title": "Evaluation of 14 nonlinear deformation algorithms applied to human brain MRI registration",
+      "year": 2009,
+      "first_author_family": "Klein",
+      "author_count": 19,
+      "author_families": [
+        "Klein",
+        "Andersson",
+        "Ardekani"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 2052,
+      "openalex_id": "https://openalex.org/W2102099319",
+      "openalex_cited_by": 2339,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR03"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2009.10.003": {
+      "title": "Complex network measures of brain connectivity: Uses and interpretations",
+      "year": 2010,
+      "first_author_family": "Rubinov",
+      "author_count": 2,
+      "author_families": [
+        "Rubinov",
+        "Sporns"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 11026,
+      "openalex_id": "https://openalex.org/W2167822639",
+      "openalex_cited_by": 12258,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M07"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2010.06.025": {
+      "title": "Head size, age and gender adjustment in MRI studies: a necessary nuisance?",
+      "year": 2010,
+      "first_author_family": "Barnes",
+      "author_count": 10,
+      "author_families": [
+        "Barnes",
+        "Ridgway",
+        "Bartlett"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 498,
+      "openalex_id": "https://openalex.org/W2104384019",
+      "openalex_cited_by": 538,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR07"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2010.07.033": {
+      "title": "Unbiased average age-appropriate atlases for pediatric studies",
+      "year": 2011,
+      "first_author_family": "Fonov",
+      "author_count": 6,
+      "author_families": [
+        "Fonov",
+        "Evans",
+        "Botteron"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 2323,
+      "openalex_id": "https://openalex.org/W2020745232",
+      "openalex_cited_by": 2508,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "P01"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2010.07.073": {
+      "title": "Encoding and decoding in fMRI",
+      "year": 2011,
+      "first_author_family": "Naselaris",
+      "author_count": 4,
+      "author_families": [
+        "Naselaris",
+        "Kay",
+        "Nishimoto"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 906,
+      "openalex_id": "https://openalex.org/W2063951486",
+      "openalex_cited_by": 1026,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PM01"
+    },
+    "doi:10.1016/j.neuroimage.2010.08.063": {
+      "title": "Network modelling methods for FMRI",
+      "year": 2011,
+      "first_author_family": "Smith",
+      "author_count": 8,
+      "author_families": [
+        "Smith",
+        "Miller",
+        "Salimi-Khorshidi"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1728,
+      "openalex_id": "https://openalex.org/W2138905229",
+      "openalex_cited_by": 1996,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M13",
+        "PR20"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2011.06.078": {
+      "title": "Slice-timing effects and their correction in functional MRI",
+      "year": 2011,
+      "first_author_family": "Sladky",
+      "author_count": 6,
+      "author_families": [
+        "Sladky",
+        "Friston",
+        "Tröstl"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 424,
+      "openalex_id": "https://openalex.org/W2051222601",
+      "openalex_cited_by": 484,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR09"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2011.09.015": {
+      "title": "FSL",
+      "year": 2012,
+      "first_author_family": "Jenkinson",
+      "author_count": 5,
+      "author_families": [
+        "Jenkinson",
+        "Beckmann",
+        "Behrens"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 11874,
+      "openalex_id": "https://openalex.org/W2977883299",
+      "openalex_cited_by": 12186,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS03"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2011.10.018": {
+      "title": "Spurious but systematic correlations in functional connectivity MRI networks arise from subject motion",
+      "year": 2012,
+      "first_author_family": "Power",
+      "author_count": 5,
+      "author_families": [
+        "Power",
+        "Barnes",
+        "Snyder"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 7420,
+      "openalex_id": "https://openalex.org/W1990134753",
+      "openalex_cited_by": 7991,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS04"
+      ],
+      "library_id": "PP02"
+    },
+    "doi:10.1016/j.neuroimage.2012.01.133": {
+      "title": "The general linear model and fMRI: Does love last forever?",
+      "year": 2012,
+      "first_author_family": "Poline",
+      "author_count": 2,
+      "author_families": [
+        "Poline",
+        "Brett"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 140,
+      "openalex_id": "https://openalex.org/W1984050705",
+      "openalex_cited_by": 170,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D09"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2012.06.081": {
+      "title": "White matter integrity, fiber count, and other fallacies: The do's and don'ts of diffusion MRI",
+      "year": 2013,
+      "first_author_family": "Jones",
+      "author_count": 3,
+      "author_families": [
+        "Jones",
+        "Knösche",
+        "Turner"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 2259,
+      "openalex_id": "https://openalex.org/W2117987496",
+      "openalex_cited_by": 2478,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR18"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2012.08.022": {
+      "title": "Filtering induces correlation in fMRI resting state data",
+      "year": 2013,
+      "first_author_family": "Davey",
+      "author_count": 4,
+      "author_families": [
+        "Davey",
+        "Grayden",
+        "Egan"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 93,
+      "openalex_id": "https://openalex.org/W2070534910",
+      "openalex_cited_by": 99,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR13"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2012.09.063": {
+      "title": "Statistical inference and multiple testing correction in classification-based multi-voxel pattern analysis (MVPA): Random permutations and cluster size control",
+      "year": 2013,
+      "first_author_family": "Stelzer",
+      "author_count": 3,
+      "author_families": [
+        "Stelzer",
+        "Chen",
+        "Turner"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 411,
+      "openalex_id": "https://openalex.org/W2096424612",
+      "openalex_cited_by": 444,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M09"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2013.03.041": {
+      "title": "Searchlight analysis: Promise, pitfalls, and potential",
+      "year": 2013,
+      "first_author_family": "Etzel",
+      "author_count": 3,
+      "author_families": [
+        "Etzel",
+        "Zacks",
+        "Braver"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 233,
+      "openalex_id": "https://openalex.org/W2137940356",
+      "openalex_cited_by": 272,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M09"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2013.05.116": {
+      "title": "The nuisance of nuisance regression: Spectral misspecification in a common approach to resting-state fMRI preprocessing reintroduces noise and obscures functional connectivity",
+      "year": 2013,
+      "first_author_family": "Hallquist",
+      "author_count": 3,
+      "author_families": [
+        "Hallquist",
+        "Hwang",
+        "Luna"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 784,
+      "openalex_id": "https://openalex.org/W2068375947",
+      "openalex_cited_by": 831,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR13"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2013.08.048": {
+      "title": "Methods to detect, characterize, and remove motion artifact in resting state fMRI",
+      "year": 2014,
+      "first_author_family": "Power",
+      "author_count": 6,
+      "author_families": [
+        "Power",
+        "Mitra",
+        "Laumann"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 3949,
+      "openalex_id": "https://openalex.org/W1973776237",
+      "openalex_cited_by": 4185,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR10",
+        "PR15"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2013.10.067": {
+      "title": "On the interpretation of weight vectors of linear models in multivariate neuroimaging",
+      "year": 2014,
+      "first_author_family": "Haufe",
+      "author_count": 7,
+      "author_families": [
+        "Haufe",
+        "Meinecke",
+        "Görgen"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1486,
+      "openalex_id": "https://openalex.org/W2011402106",
+      "openalex_cited_by": 1600,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M01"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2014.01.060": {
+      "title": "Permutation inference for the general linear model",
+      "year": 2014,
+      "first_author_family": "Winkler",
+      "author_count": 5,
+      "author_families": [
+        "Winkler",
+        "Ridgway",
+        "Webster"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 3639,
+      "openalex_id": "https://openalex.org/W2126693856",
+      "openalex_cited_by": 3889,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D12"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2015.02.064": {
+      "title": "ICA-AROMA: A robust ICA-based strategy for removing motion artifacts from fMRI data",
+      "year": 2015,
+      "first_author_family": "Pruim",
+      "author_count": 6,
+      "author_families": [
+        "Pruim",
+        "Mennes",
+        "van Rooij"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1765,
+      "openalex_id": "https://openalex.org/W2047453615",
+      "openalex_cited_by": 1907,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR14"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2015.05.092": {
+      "title": "Multi-level block permutation",
+      "year": 2015,
+      "first_author_family": "Winkler",
+      "author_count": 5,
+      "author_families": [
+        "Winkler",
+        "Webster",
+        "Vidaurre"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 273,
+      "openalex_id": "https://openalex.org/W1606491053",
+      "openalex_cited_by": 288,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS07"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2015.10.019": {
+      "title": "An integrated approach to correction for off-resonance effects and subject movement in diffusion MR imaging",
+      "year": 2016,
+      "first_author_family": "Andersson",
+      "author_count": 2,
+      "author_families": [
+        "Andersson",
+        "Sotiropoulos"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 3739,
+      "openalex_id": "https://openalex.org/W2127309075",
+      "openalex_cited_by": 3929,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR16",
+        "PR17"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2015.12.012": {
+      "title": "Reliability of dissimilarity measures for multi-voxel pattern analysis",
+      "year": 2016,
+      "first_author_family": "Walther",
+      "author_count": 6,
+      "author_families": [
+        "Walther",
+        "Nili",
+        "Ejaz"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 632,
+      "openalex_id": "https://openalex.org/W2220779336",
+      "openalex_cited_by": 683,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M08"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2016.08.016": {
+      "title": "Denoising of diffusion MRI using random matrix theory",
+      "year": 2016,
+      "first_author_family": "Veraart",
+      "author_count": 6,
+      "author_families": [
+        "Veraart",
+        "Novikov",
+        "Christiaens"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 2029,
+      "openalex_id": "https://openalex.org/W2508982726",
+      "openalex_cited_by": 2085,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR17"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2016.09.066": {
+      "title": "Is the statistic value all we should care about in neuroimaging?",
+      "year": 2017,
+      "first_author_family": "Chen",
+      "author_count": 3,
+      "author_families": [
+        "Chen",
+        "Taylor",
+        "Cox"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 148,
+      "openalex_id": "https://openalex.org/W2952384350",
+      "openalex_cited_by": 172,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D09",
+        "DS09"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2016.10.038": {
+      "title": "Assessing and tuning brain decoders: Cross-validation, caveats, and guidelines",
+      "year": 2017,
+      "first_author_family": "Varoquaux",
+      "author_count": 6,
+      "author_families": [
+        "Varoquaux",
+        "Raamana",
+        "Engemann"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 787,
+      "openalex_id": "https://openalex.org/W2421101021",
+      "openalex_cited_by": 882,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS02"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2017.02.005": {
+      "title": "Proportional thresholding in resting-state fMRI functional connectivity networks and consequences for patient-control connectome studies: Issues and recommendations",
+      "year": 2017,
+      "first_author_family": "van den Heuvel",
+      "author_count": 6,
+      "author_families": [
+        "van den Heuvel",
+        "de Lange",
+        "Zalesky"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 490,
+      "openalex_id": "https://openalex.org/W2583548943",
+      "openalex_cited_by": 524,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M07"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2017.03.020": {
+      "title": "Benchmarking of participant-level confound regression strategies for the control of motion artifact in studies of functional connectivity",
+      "year": 2017,
+      "first_author_family": "Ciric",
+      "author_count": 14,
+      "author_families": [
+        "Ciric",
+        "Wolf",
+        "Power"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1102,
+      "openalex_id": "https://openalex.org/W2597348720",
+      "openalex_cited_by": 1198,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR14"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2017.06.061": {
+      "title": "Cross-validation failure: Small sample sizes lead to large error bars",
+      "year": 2018,
+      "first_author_family": "Varoquaux",
+      "author_count": 1,
+      "author_families": [
+        "Varoquaux"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 821,
+      "openalex_id": "https://openalex.org/W2708474221",
+      "openalex_cited_by": 896,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS15",
+        "P03"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2017.11.024": {
+      "title": "Harmonization of cortical thickness measurements across scanners and sites",
+      "year": 2018,
+      "first_author_family": "Fortin",
+      "author_count": 15,
+      "author_families": [
+        "Fortin",
+        "Cullen",
+        "Sheline"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1658,
+      "openalex_id": "https://openalex.org/W2950086191",
+      "openalex_cited_by": 1698,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "P03"
+      ],
+      "library_id": "PD07"
+    },
+    "doi:10.1016/j.neuroimage.2017.12.098": {
+      "title": "Insight and inference for DVARS",
+      "year": 2018,
+      "first_author_family": "Afyouni",
+      "author_count": 2,
+      "author_families": [
+        "Afyouni",
+        "Nichols"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 122,
+      "openalex_id": "https://openalex.org/W2950180172",
+      "openalex_cited_by": 119,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR15"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2019.01.054": {
+      "title": "Intracortical smoothing of small-voxel fMRI data can provide increased detection power without spatial resolution losses compared to conventional large-voxel fMRI data",
+      "year": 2019,
+      "first_author_family": "Blazejewska",
+      "author_count": 4,
+      "author_families": [
+        "Blazejewska",
+        "Fischl",
+        "Wald"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 68,
+      "openalex_id": "https://openalex.org/W2912544111",
+      "openalex_cited_by": 74,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR12"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2019.02.062": {
+      "title": "Benchmarking functional connectome-based predictive models for resting-state fMRI",
+      "year": 2019,
+      "first_author_family": "Dadi",
+      "author_count": 7,
+      "author_families": [
+        "Dadi",
+        "Rahim",
+        "Abraham"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 355,
+      "openalex_id": "https://openalex.org/W2890996272",
+      "openalex_cited_by": 379,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M07"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2019.06.031": {
+      "title": "A guide to group effective connectivity analysis, part 1: First level analysis with DCM for fMRI",
+      "year": 2019,
+      "first_author_family": "Zeidman",
+      "author_count": 7,
+      "author_families": [
+        "Zeidman",
+        "Jafarian",
+        "Corbin"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 417,
+      "openalex_id": "https://openalex.org/W2949727937",
+      "openalex_cited_by": 428,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M13"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2019.116157": {
+      "title": "A decade of test-retest reliability of functional connectivity: A systematic review and meta-analysis",
+      "year": 2019,
+      "first_author_family": "Noble",
+      "author_count": 3,
+      "author_families": [
+        "Noble",
+        "Scheinost",
+        "Constable"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 614,
+      "openalex_id": "https://openalex.org/W2971837286",
+      "openalex_cited_by": 661,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D03"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2019.116276": {
+      "title": "Deep neural networks and kernel regression achieve comparable accuracies for functional connectivity prediction of behavior and demographics",
+      "year": 2020,
+      "first_author_family": "He",
+      "author_count": 9,
+      "author_families": [
+        "He",
+        "Kong",
+        "Holmes"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 297,
+      "openalex_id": "https://openalex.org/W2979650665",
+      "openalex_cited_by": 318,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M03"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2019.116400": {
+      "title": "Correction of respiratory artifacts in MRI head motion estimates",
+      "year": 2020,
+      "first_author_family": "Fair",
+      "author_count": 28,
+      "author_families": [
+        "Fair",
+        "Miranda-Dominguez",
+        "Snyder"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 246,
+      "openalex_id": "https://openalex.org/W2991634959",
+      "openalex_cited_by": 275,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR10"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2019.116450": {
+      "title": "Harmonization of large MRI datasets for the analysis of brain imaging patterns throughout the lifespan",
+      "year": 2020,
+      "first_author_family": "Pomponio",
+      "author_count": 30,
+      "author_families": [
+        "Pomponio",
+        "Erus",
+        "Habes"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 536,
+      "openalex_id": "https://openalex.org/W2993515580",
+      "openalex_cited_by": 568,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M04"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2019.116468": {
+      "title": "Cluster failure or power failure? Evaluating sensitivity in cluster-level inference",
+      "year": 2020,
+      "first_author_family": "Noble",
+      "author_count": 3,
+      "author_families": [
+        "Noble",
+        "Scheinost",
+        "Constable"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 91,
+      "openalex_id": "https://openalex.org/W2996080470",
+      "openalex_cited_by": 99,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D13"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2020.116604": {
+      "title": "Optimising network modelling methods for fMRI",
+      "year": 2020,
+      "first_author_family": "Pervaiz",
+      "author_count": 4,
+      "author_families": [
+        "Pervaiz",
+        "Vidaurre",
+        "Woolrich"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 243,
+      "openalex_id": "https://openalex.org/W3006025189",
+      "openalex_cited_by": 262,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR20"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2020.117012": {
+      "title": "FastSurfer - A fast and accurate deep learning based neuroimaging pipeline",
+      "year": 2020,
+      "first_author_family": "Henschel",
+      "author_count": 6,
+      "author_families": [
+        "Henschel",
+        "Conjeti",
+        "Estrada"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 692,
+      "openalex_id": "https://openalex.org/W3033878890",
+      "openalex_cited_by": 713,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR06",
+        "PR08"
+      ],
+      "library_id": "PP07"
+    },
+    "doi:10.1016/j.neuroimage.2020.117065": {
+      "title": "Permutation inference for canonical correlation analysis",
+      "year": 2020,
+      "first_author_family": "Winkler",
+      "author_count": 4,
+      "author_families": [
+        "Winkler",
+        "Renaud",
+        "Smith"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 107,
+      "openalex_id": "https://openalex.org/W3006951634",
+      "openalex_cited_by": 3,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D12"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2021.118786": {
+      "title": "Hyperbolic trade-off: The importance of balancing trial and subject sample sizes in neuroimaging",
+      "year": 2022,
+      "first_author_family": "Chen",
+      "author_count": 7,
+      "author_families": [
+        "Chen",
+        "Pine",
+        "Brotman"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 65,
+      "openalex_id": "https://openalex.org/W4220894910",
+      "openalex_cited_by": 76,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D11"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2021.118830": {
+      "title": "What’s new and what’s next in diffusion MRI preprocessing",
+      "year": 2022,
+      "first_author_family": "Tax",
+      "author_count": 5,
+      "author_families": [
+        "Tax",
+        "Bastiani",
+        "Veraart"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 109,
+      "openalex_id": "https://openalex.org/W4200162605",
+      "openalex_cited_by": 117,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR17"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2022.119296": {
+      "title": "Accounting for motion in resting-state fMRI: What part of the spectrum are we characterizing in autism spectrum disorder?",
+      "year": 2022,
+      "first_author_family": "Nebel",
+      "author_count": 6,
+      "author_families": [
+        "Nebel",
+        "Lidstone",
+        "Wang"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 48,
+      "openalex_id": "https://openalex.org/W4280499774",
+      "openalex_cited_by": 48,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D02",
+        "DS05",
+        "PR15"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2022.119728": {
+      "title": "Feature-space selection with banded ridge regression",
+      "year": 2022,
+      "first_author_family": "Dupré la Tour",
+      "author_count": 4,
+      "author_families": [
+        "Dupré la Tour",
+        "Eickenberg",
+        "Nunez-Elizalde"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 108,
+      "openalex_id": "https://openalex.org/W4308294451",
+      "openalex_cited_by": 106,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M02"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2023.120138": {
+      "title": "Highlight results, don't hide them: Enhance interpretation, reduce biases and improve reproducibility",
+      "year": 2023,
+      "first_author_family": "Taylor",
+      "author_count": 8,
+      "author_families": [
+        "Taylor",
+        "Reynolds",
+        "Calhoun"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 104,
+      "openalex_id": "https://openalex.org/W4367043603",
+      "openalex_cited_by": 112,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D09"
+      ]
+    },
+    "doi:10.1016/j.neuroimage.2026.121729": {
+      "title": "Towards contrast- and pathology-agnostic clinical fetal brain MRI segmentation using SynthSeg",
+      "year": 2026,
+      "first_author_family": "Shang",
+      "author_count": 12,
+      "author_families": [
+        "Shang",
+        "Kaandorp",
+        "Payette"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 5,
+      "openalex_id": "https://openalex.org/W4415160276",
+      "openalex_cited_by": 3,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PP05"
+    },
+    "doi:10.1016/j.neuron.2011.08.026": {
+      "title": "A Common, High-Dimensional Model of the Representational Space in Human Ventral Temporal Cortex",
+      "year": 2011,
+      "first_author_family": "Haxby",
+      "author_count": 8,
+      "author_families": [
+        "Haxby",
+        "Guntupalli",
+        "Connolly"
+      ],
+      "venue": "Neuron",
+      "type": "journal-article",
+      "crossref_cited_by": 649,
+      "openalex_id": "https://openalex.org/W1976193721",
+      "openalex_cited_by": 738,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M10"
+      ]
+    },
+    "doi:10.1016/j.neuron.2017.06.041": {
+      "title": "Discovering Event Structure in Continuous Narrative Perception and Memory",
+      "year": 2017,
+      "first_author_family": "Baldassano",
+      "author_count": 6,
+      "author_families": [
+        "Baldassano",
+        "Chen",
+        "Zadbood"
+      ],
+      "venue": "Neuron",
+      "type": "journal-article",
+      "crossref_cited_by": 943,
+      "openalex_id": "https://openalex.org/W2537240939",
+      "openalex_cited_by": 1097,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M12"
+      ]
+    },
+    "doi:10.1016/j.nicl.2019.101796": {
+      "title": "Evaluating the evidence for biotypes of depression: Methodological replication and extension of",
+      "year": 2019,
+      "first_author_family": "Dinga",
+      "author_count": 9,
+      "author_families": [
+        "Dinga",
+        "Schmaal",
+        "Penninx"
+      ],
+      "venue": "NeuroImage: Clinical",
+      "type": "journal-article",
+      "crossref_cited_by": 288,
+      "openalex_id": "https://openalex.org/W2923495490",
+      "openalex_cited_by": 341,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M06"
+      ]
+    },
+    "doi:10.1016/j.nicl.2020.102375": {
+      "title": "NeuroMark: An automated and adaptive ICA based pipeline to identify reproducible fMRI markers of brain disorders",
+      "year": 2020,
+      "first_author_family": "Du",
+      "author_count": 14,
+      "author_families": [
+        "Du",
+        "Fu",
+        "Sui"
+      ],
+      "venue": "NeuroImage: Clinical",
+      "type": "journal-article",
+      "crossref_cited_by": 446,
+      "openalex_id": "https://openalex.org/W3048396787",
+      "openalex_cited_by": 484,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M05"
+      ]
+    },
+    "doi:10.1016/j.patter.2023.100804": {
+      "title": "Leakage and the reproducibility crisis in machine-learning-based science",
+      "year": 2023,
+      "first_author_family": "Kapoor",
+      "author_count": 2,
+      "author_families": [
+        "Kapoor",
+        "Narayanan"
+      ],
+      "venue": "Patterns",
+      "type": "journal-article",
+      "crossref_cited_by": 1060,
+      "openalex_id": "https://openalex.org/W4385576721",
+      "openalex_cited_by": 1073,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS02",
+        "DS05"
+      ]
+    },
+    "doi:10.1016/j.pneurobio.2021.102174": {
+      "title": "Imaging faster neural dynamics with fast fMRI: A need for updated models of the hemodynamic response",
+      "year": 2021,
+      "first_author_family": "Polimeni",
+      "author_count": 2,
+      "author_families": [
+        "Polimeni",
+        "Lewis"
+      ],
+      "venue": "Progress in Neurobiology",
+      "type": "journal-article",
+      "crossref_cited_by": 115,
+      "openalex_id": "https://openalex.org/W3199287463",
+      "openalex_cited_by": 118,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D05"
+      ]
+    },
+    "doi:10.1016/s0006-3495(94)80775-1": {
+      "title": "MR diffusion tensor spectroscopy and imaging",
+      "year": 1994,
+      "first_author_family": "Basser",
+      "author_count": 3,
+      "author_families": [
+        "Basser",
+        "Mattiello",
+        "LeBihan"
+      ],
+      "venue": "Biophysical Journal",
+      "type": "journal-article",
+      "crossref_cited_by": 5262,
+      "openalex_id": "https://openalex.org/W1964802316",
+      "openalex_cited_by": 6140,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR16",
+        "PR18"
+      ]
+    },
+    "doi:10.1016/s0893-6080(00)00026-5": {
+      "title": "Independent component analysis: algorithms and applications",
+      "year": 2000,
+      "first_author_family": "Hyvärinen",
+      "author_count": 2,
+      "author_families": [
+        "Hyvärinen",
+        "Oja"
+      ],
+      "venue": "Neural Networks",
+      "type": "journal-article",
+      "crossref_cited_by": 7018,
+      "openalex_id": "https://openalex.org/W2123649031",
+      "openalex_cited_by": 8920,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M05"
+      ]
+    },
+    "doi:10.1016/s1053-8119(03)00202-7": {
+      "title": "Dynamic causal modelling",
+      "year": 2003,
+      "first_author_family": "Friston",
+      "author_count": 3,
+      "author_families": [
+        "Friston",
+        "Harrison",
+        "Penny"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 4150,
+      "openalex_id": "https://openalex.org/W2117663940",
+      "openalex_cited_by": 4794,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M13"
+      ]
+    },
+    "doi:10.1016/s1053-8119(03)00336-7": {
+      "title": "How to correct susceptibility distortions in spin-echo echo-planar images: application to diffusion tensor imaging",
+      "year": 2003,
+      "first_author_family": "Andersson",
+      "author_count": 3,
+      "author_families": [
+        "Andersson",
+        "Skare",
+        "Ashburner"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 3623,
+      "openalex_id": "https://openalex.org/W1984453610",
+      "openalex_cited_by": 3846,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR11"
+      ]
+    },
+    "doi:10.1016/s1053-8119(03)00435-x": {
+      "title": "General multilevel linear modeling for group analysis in FMRI",
+      "year": 2003,
+      "first_author_family": "Beckmann",
+      "author_count": 3,
+      "author_families": [
+        "Beckmann",
+        "Jenkinson",
+        "Smith"
+      ],
+      "venue": "NeuroImage",
+      "type": "journal-article",
+      "crossref_cited_by": 1247,
+      "openalex_id": "https://openalex.org/W2143112732",
+      "openalex_cited_by": 1528,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D11"
+      ]
+    },
+    "doi:10.1016/s1361-8415(01)00036-6": {
+      "title": "A global optimisation method for robust affine registration of brain images",
+      "year": 2001,
+      "first_author_family": "Jenkinson",
+      "author_count": 2,
+      "author_families": [
+        "Jenkinson",
+        "Smith"
+      ],
+      "venue": "Medical Image Analysis",
+      "type": "journal-article",
+      "crossref_cited_by": 6418,
+      "openalex_id": "https://openalex.org/W2148726987",
+      "openalex_cited_by": 7273,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR02"
+      ]
+    },
+    "doi:10.1017/s0305004100030401": {
+      "title": "A generalized inverse for matrices",
+      "year": 1955,
+      "first_author_family": "Penrose",
+      "author_count": 1,
+      "author_families": [
+        "Penrose"
+      ],
+      "venue": "Mathematical Proceedings of the Cambridge Philosophical Society",
+      "type": "journal-article",
+      "crossref_cited_by": 3514,
+      "openalex_id": "https://openalex.org/W1974511160",
+      "openalex_cited_by": 4578,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS10"
+      ]
+    },
+    "doi:10.1023/a:1010933404324": {
+      "title": "Random Forests",
+      "year": 2001,
+      "first_author_family": "Breiman",
+      "author_count": 1,
+      "author_families": [
+        "Breiman"
+      ],
+      "venue": "Machine Learning",
+      "type": "journal-article",
+      "crossref_cited_by": 120927,
+      "openalex_id": "https://openalex.org/W2911964244",
+      "openalex_cited_by": 133269,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M03"
+      ]
+    },
+    "doi:10.1037/0033-2909.86.2.420": {
+      "title": "Intraclass correlations: Uses in assessing rater reliability.",
+      "year": 1979,
+      "first_author_family": "Shrout",
+      "author_count": 2,
+      "author_families": [
+        "Shrout",
+        "Fleiss"
+      ],
+      "venue": "Psychological Bulletin",
+      "type": "journal-article",
+      "crossref_cited_by": 19939,
+      "openalex_id": "https://openalex.org/W2141403362",
+      "openalex_cited_by": 23390,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D03"
+      ]
+    },
+    "doi:10.1037/1082-989x.1.1.30": {
+      "title": "Forming inferences about some intraclass correlation coefficients.",
+      "year": 1996,
+      "first_author_family": "McGraw",
+      "author_count": 2,
+      "author_families": [
+        "McGraw",
+        "Wong"
+      ],
+      "venue": "Psychological Methods",
+      "type": "journal-article",
+      "crossref_cited_by": 5532,
+      "openalex_id": "https://openalex.org/W2067724039",
+      "openalex_cited_by": 6841,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D03"
+      ]
+    },
+    "doi:10.1037/h0037350": {
+      "title": "Estimating causal effects of treatments in randomized and nonrandomized studies.",
+      "year": 1974,
+      "first_author_family": "Rubin",
+      "author_count": 1,
+      "author_families": [
+        "Rubin"
+      ],
+      "venue": "Journal of Educational Psychology",
+      "type": "journal-article",
+      "crossref_cited_by": 6636,
+      "openalex_id": "https://openalex.org/W2132917208",
+      "openalex_cited_by": 9621,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D01"
+      ]
+    },
+    "doi:10.1037/met0000402": {
+      "title": "Decisions about equivalence: A comparison of TOST, HDI-ROPE, and the Bayes factor.",
+      "year": 2023,
+      "first_author_family": "Linde",
+      "author_count": 5,
+      "author_families": [
+        "Linde",
+        "Tendeiro",
+        "Selker"
+      ],
+      "venue": "Psychological Methods",
+      "type": "journal-article",
+      "crossref_cited_by": 34,
+      "openalex_id": "https://openalex.org/W3104606175",
+      "openalex_cited_by": 51,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D15"
+      ]
+    },
+    "doi:10.1038/323533a0": {
+      "title": "Learning representations by back-propagating errors",
+      "year": 1986,
+      "first_author_family": "Rumelhart",
+      "author_count": 3,
+      "author_families": [
+        "Rumelhart",
+        "Hinton",
+        "Williams"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 25325,
+      "openalex_id": "https://openalex.org/W1498436455",
+      "openalex_cited_by": 32083,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M14"
+      ]
+    },
+    "doi:10.1038/35084005": {
+      "title": "Neurophysiological investigation of the basis of the fMRI signal",
+      "year": 2001,
+      "first_author_family": "Logothetis",
+      "author_count": 5,
+      "author_families": [
+        "Logothetis",
+        "Pauls",
+        "Augath"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 5331,
+      "openalex_id": "https://openalex.org/W2114104729",
+      "openalex_cited_by": 6524,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D05",
+        "F02"
+      ],
+      "library_id": "PB01"
+    },
+    "doi:10.1038/nature06713": {
+      "title": "Identifying natural images from human brain activity",
+      "year": 2008,
+      "first_author_family": "Kay",
+      "author_count": 4,
+      "author_families": [
+        "Kay",
+        "Naselaris",
+        "Prenger"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 1135,
+      "openalex_id": "https://openalex.org/W2007226897",
+      "openalex_cited_by": 1393,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M01"
+      ]
+    },
+    "doi:10.1038/nature18933": {
+      "title": "A multi-modal parcellation of human cerebral cortex",
+      "year": 2016,
+      "first_author_family": "Glasser",
+      "author_count": 12,
+      "author_families": [
+        "Glasser",
+        "Coalson",
+        "Robinson"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 5452,
+      "openalex_id": "https://openalex.org/W2499800833",
+      "openalex_cited_by": 5807,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR20"
+      ]
+    },
+    "doi:10.1038/nn.2303": {
+      "title": "Circular analysis in systems neuroscience: the dangers of double dipping",
+      "year": 2009,
+      "first_author_family": "Kriegeskorte",
+      "author_count": 4,
+      "author_families": [
+        "Kriegeskorte",
+        "Simmons",
+        "Bellgowan"
+      ],
+      "venue": "Nature Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 2467,
+      "openalex_id": "https://openalex.org/W2015866962",
+      "openalex_cited_by": 2869,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "F03"
+      ],
+      "library_id": "PD04"
+    },
+    "doi:10.1038/nn.2886": {
+      "title": "Erroneous analyses of interactions in neuroscience: a problem of significance",
+      "year": 2011,
+      "first_author_family": "Nieuwenhuis",
+      "author_count": 3,
+      "author_families": [
+        "Nieuwenhuis",
+        "Forstmann",
+        "Wagenmakers"
+      ],
+      "venue": "Nature Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 715,
+      "openalex_id": "https://openalex.org/W2165810797",
+      "openalex_cited_by": 912,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D08"
+      ]
+    },
+    "doi:10.1038/nn.4500": {
+      "title": "Best practices in data analysis and sharing in neuroimaging using MRI",
+      "year": 2017,
+      "first_author_family": "Nichols",
+      "author_count": 15,
+      "author_families": [
+        "Nichols",
+        "Das",
+        "Eickhoff"
+      ],
+      "venue": "Nature Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 619,
+      "openalex_id": "https://openalex.org/W2950532129",
+      "openalex_cited_by": 732,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "F01",
+        "P04"
+      ]
+    },
+    "doi:10.1038/nprot.2016.178": {
+      "title": "Using connectome-based predictive modeling to predict individual behavior from brain connectivity",
+      "year": 2017,
+      "first_author_family": "Shen",
+      "author_count": 7,
+      "author_families": [
+        "Shen",
+        "Finn",
+        "Scheinost"
+      ],
+      "venue": "Nature Protocols",
+      "type": "journal-article",
+      "crossref_cited_by": 1185,
+      "openalex_id": "https://openalex.org/W2587272693",
+      "openalex_cited_by": 1240,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PM07"
+    },
+    "doi:10.1038/nrn2575": {
+      "title": "Complex brain networks: graph theoretical analysis of structural and functional systems",
+      "year": 2009,
+      "first_author_family": "Bullmore",
+      "author_count": 2,
+      "author_families": [
+        "Bullmore",
+        "Sporns"
+      ],
+      "venue": "Nature Reviews Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 10385,
+      "openalex_id": "https://openalex.org/W1999653836",
+      "openalex_cited_by": 12343,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M07"
+      ]
+    },
+    "doi:10.1038/nrn3475": {
+      "title": "Power failure: why small sample size undermines the reliability of neuroscience",
+      "year": 2013,
+      "first_author_family": "Button",
+      "author_count": 7,
+      "author_families": [
+        "Button",
+        "Ioannidis",
+        "Mokrysz"
+      ],
+      "venue": "Nature Reviews Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 6441,
+      "openalex_id": "https://openalex.org/W2105824687",
+      "openalex_cited_by": 8074,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D04",
+        "DS06"
+      ]
+    },
+    "doi:10.1038/s41467-017-01285-x": {
+      "title": "The challenge of mapping the human connectome based on diffusion tractography",
+      "year": 2017,
+      "first_author_family": "Maier-Hein",
+      "author_count": 77,
+      "author_families": [
+        "Maier-Hein",
+        "Neher",
+        "Houde"
+      ],
+      "venue": "Nature Communications",
+      "type": "journal-article",
+      "crossref_cited_by": 1274,
+      "openalex_id": "https://openalex.org/W2766639217",
+      "openalex_cited_by": 1462,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR19"
+      ],
+      "library_id": "PP06"
+    },
+    "doi:10.1038/s41467-019-09230-w": {
+      "title": "Accurate autocorrelation modeling substantially improves fMRI reliability",
+      "year": 2019,
+      "first_author_family": "Olszowy",
+      "author_count": 4,
+      "author_families": [
+        "Olszowy",
+        "Aston",
+        "Rua"
+      ],
+      "venue": "Nature Communications",
+      "type": "journal-article",
+      "crossref_cited_by": 138,
+      "openalex_id": "https://openalex.org/W2950244299",
+      "openalex_cited_by": 180,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D10",
+        "DS11",
+        "P02"
+      ]
+    },
+    "doi:10.1038/s41467-020-18037-z": {
+      "title": "Different scaling of linear models and deep learning in UKBiobank brain images versus machine-learning datasets",
+      "year": 2020,
+      "first_author_family": "Schulz",
+      "author_count": 8,
+      "author_families": [
+        "Schulz",
+        "Yeo",
+        "Vogelstein"
+      ],
+      "venue": "Nature Communications",
+      "type": "journal-article",
+      "crossref_cited_by": 274,
+      "openalex_id": "https://openalex.org/W3080221164",
+      "openalex_cited_by": 311,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M03"
+      ]
+    },
+    "doi:10.1038/s41467-022-31347-8": {
+      "title": "A guided multiverse study of neuroimaging analyses",
+      "year": 2022,
+      "first_author_family": "Dafflon",
+      "author_count": 10,
+      "author_families": [
+        "Dafflon",
+        "F. Da Costa",
+        "Váša"
+      ],
+      "venue": "Nature Communications",
+      "type": "journal-article",
+      "crossref_cited_by": 76,
+      "openalex_id": "https://openalex.org/W4283756697",
+      "openalex_cited_by": 86,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D16"
+      ]
+    },
+    "doi:10.1038/s41467-024-46150-w": {
+      "title": "Data leakage inflates prediction performance in connectome-based machine learning models",
+      "year": 2024,
+      "first_author_family": "Rosenblatt",
+      "author_count": 5,
+      "author_families": [
+        "Rosenblatt",
+        "Tejavibulya",
+        "Jiang"
+      ],
+      "venue": "Nature Communications",
+      "type": "journal-article",
+      "crossref_cited_by": 229,
+      "openalex_id": "https://openalex.org/W4392232009",
+      "openalex_cited_by": 210,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D14",
+        "DS15",
+        "F03"
+      ]
+    },
+    "doi:10.1038/s41562-020-0912-z": {
+      "title": "Specification curve analysis",
+      "year": 2020,
+      "first_author_family": "Simonsohn",
+      "author_count": 3,
+      "author_families": [
+        "Simonsohn",
+        "Simmons",
+        "Nelson"
+      ],
+      "venue": "Nature Human Behaviour",
+      "type": "journal-article",
+      "crossref_cited_by": 541,
+      "openalex_id": "https://openalex.org/W3044225844",
+      "openalex_cited_by": 644,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D16",
+        "DS16",
+        "P04"
+      ]
+    },
+    "doi:10.1038/s41586-020-2314-9": {
+      "title": "Variability in the analysis of a single neuroimaging dataset by many teams",
+      "year": 2020,
+      "first_author_family": "Botvinik-Nezer",
+      "author_count": 197,
+      "author_families": [
+        "Botvinik-Nezer",
+        "Holzmeister",
+        "Camerer"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 933,
+      "openalex_id": "https://openalex.org/W2985923507",
+      "openalex_cited_by": 1229,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D07",
+        "F01"
+      ],
+      "library_id": "PD01"
+    },
+    "doi:10.1038/s41586-020-2649-2": {
+      "title": "Array programming with NumPy",
+      "year": 2020,
+      "first_author_family": "Harris",
+      "author_count": 26,
+      "author_families": [
+        "Harris",
+        "Millman",
+        "van der Walt"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 24649,
+      "openalex_id": "https://openalex.org/W3035965352",
+      "openalex_cited_by": 23967,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS01",
+        "F03"
+      ]
+    },
+    "doi:10.1038/s41586-022-04492-9": {
+      "title": "Reproducible brain-wide association studies require thousands of individuals",
+      "year": 2022,
+      "first_author_family": "Marek",
+      "author_count": 45,
+      "author_families": [
+        "Marek",
+        "Tervo-Clemmens",
+        "Calabro"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 1984,
+      "openalex_id": "https://openalex.org/W4220838968",
+      "openalex_cited_by": 2128,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PD02"
+    },
+    "doi:10.1038/s41586-022-04554-y": {
+      "title": "Brain charts for the human lifespan",
+      "year": 2022,
+      "first_author_family": "Bethlehem",
+      "author_count": 225,
+      "author_families": [
+        "Bethlehem",
+        "Seidlitz",
+        "White"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 1867,
+      "openalex_id": "https://openalex.org/W4225246927",
+      "openalex_cited_by": 1903,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "P03"
+      ]
+    },
+    "doi:10.1038/s41586-023-05745-x": {
+      "title": "Multivariate BWAS can be replicable with moderate sample sizes",
+      "year": 2023,
+      "first_author_family": "Spisak",
+      "author_count": 3,
+      "author_families": [
+        "Spisak",
+        "Bingel",
+        "Wager"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 138,
+      "openalex_id": "https://openalex.org/W4323546552",
+      "openalex_cited_by": 151,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS07"
+      ]
+    },
+    "doi:10.1038/s41586-024-08260-9": {
+      "title": "Study design features increase replicability in brain-wide association studies",
+      "year": 2024,
+      "first_author_family": "Kang",
+      "author_count": 22,
+      "author_families": [
+        "Kang",
+        "Seidlitz",
+        "Bethlehem"
+      ],
+      "venue": "Nature",
+      "type": "journal-article",
+      "crossref_cited_by": 60,
+      "openalex_id": "https://openalex.org/W4404791539",
+      "openalex_cited_by": 55,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS13"
+      ],
+      "library_id": "PD06"
+    },
+    "doi:10.1038/s41592-018-0235-4": {
+      "title": "fMRIPrep: a robust preprocessing pipeline for functional MRI",
+      "year": 2019,
+      "first_author_family": "Esteban",
+      "author_count": 16,
+      "author_families": [
+        "Esteban",
+        "Markiewicz",
+        "Blair"
+      ],
+      "venue": "Nature Methods",
+      "type": "journal-article",
+      "crossref_cited_by": 4103,
+      "openalex_id": "https://openalex.org/W2951583631",
+      "openalex_cited_by": 4411,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS01",
+        "DS03",
+        "P01",
+        "PR01",
+        "PR09",
+        "PR21"
+      ],
+      "library_id": "PP01"
+    },
+    "doi:10.1038/s41592-020-01008-z": {
+      "title": "nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation",
+      "year": 2021,
+      "first_author_family": "Isensee",
+      "author_count": 5,
+      "author_families": [
+        "Isensee",
+        "Jaeger",
+        "Kohl"
+      ],
+      "venue": "Nature Methods",
+      "type": "journal-article",
+      "crossref_cited_by": 9987,
+      "openalex_id": "https://openalex.org/W3014974815",
+      "openalex_cited_by": 9720,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M15"
+      ]
+    },
+    "doi:10.1038/s41592-021-01185-5": {
+      "title": "QSIPrep: an integrative platform for preprocessing and reconstructing diffusion MRI data",
+      "year": 2021,
+      "first_author_family": "Cieslak",
+      "author_count": 42,
+      "author_families": [
+        "Cieslak",
+        "Cook",
+        "He"
+      ],
+      "venue": "Nature Methods",
+      "type": "journal-article",
+      "crossref_cited_by": 345,
+      "openalex_id": "https://openalex.org/W3174100758",
+      "openalex_cited_by": 349,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PP08"
+    },
+    "doi:10.1038/s41592-023-02151-z": {
+      "title": "Metrics reloaded: recommendations for image analysis validation",
+      "year": 2024,
+      "first_author_family": "Maier-Hein",
+      "author_count": 73,
+      "author_families": [
+        "Maier-Hein",
+        "Reinke",
+        "Godau"
+      ],
+      "venue": "Nature Methods",
+      "type": "journal-article",
+      "crossref_cited_by": 439,
+      "openalex_id": "https://openalex.org/W4391756091",
+      "openalex_cited_by": 471,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M15"
+      ]
+    },
+    "doi:10.1038/s41593-026-02202-6": {
+      "title": "A generalizable foundation model for analysis of human brain MRI",
+      "year": 2026,
+      "first_author_family": "Tak",
+      "author_count": 25,
+      "author_families": [
+        "Tak",
+        "Garomsa",
+        "Zapaishchykova"
+      ],
+      "venue": "Nature Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 19,
+      "openalex_id": "https://openalex.org/W7128029160",
+      "openalex_cited_by": 18,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PM03"
+    },
+    "doi:10.1038/s42003-020-0794-7": {
+      "title": "BrainSpace: a toolbox for the analysis of macroscale gradients in neuroimaging and connectomics datasets",
+      "year": 2020,
+      "first_author_family": "Vos de Wael",
+      "author_count": 15,
+      "author_families": [
+        "Vos de Wael",
+        "Benkarim",
+        "Paquola"
+      ],
+      "venue": "Communications Biology",
+      "type": "journal-article",
+      "crossref_cited_by": 670,
+      "openalex_id": "https://openalex.org/W3010641024",
+      "openalex_cited_by": 720,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS14"
+      ]
+    },
+    "doi:10.1038/s42256-020-00257-z": {
+      "title": "Shortcut learning in deep neural networks",
+      "year": 2020,
+      "first_author_family": "Geirhos",
+      "author_count": 7,
+      "author_families": [
+        "Geirhos",
+        "Jacobsen",
+        "Michaelis"
+      ],
+      "venue": "Nature Machine Intelligence",
+      "type": "journal-article",
+      "crossref_cited_by": 1864,
+      "openalex_id": "https://openalex.org/W3016970897",
+      "openalex_cited_by": 2140,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M14"
+      ]
+    },
+    "doi:10.1038/sdata.2016.44": {
+      "title": "The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments",
+      "year": 2016,
+      "first_author_family": "Gorgolewski",
+      "author_count": 27,
+      "author_families": [
+        "Gorgolewski",
+        "Auer",
+        "Calhoun"
+      ],
+      "venue": "Scientific Data",
+      "type": "journal-article",
+      "crossref_cited_by": 1792,
+      "openalex_id": "https://openalex.org/W2951103577",
+      "openalex_cited_by": 1988,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS02",
+        "DS16",
+        "PR01",
+        "PR21"
+      ]
+    },
+    "doi:10.1073/pnas.0600244103": {
+      "title": "Information-based functional brain mapping",
+      "year": 2006,
+      "first_author_family": "Kriegeskorte",
+      "author_count": 3,
+      "author_families": [
+        "Kriegeskorte",
+        "Goebel",
+        "Bandettini"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 2008,
+      "openalex_id": "https://openalex.org/W2048631316",
+      "openalex_cited_by": 2329,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M09"
+      ]
+    },
+    "doi:10.1073/pnas.102102699": {
+      "title": "Selection bias in gene extraction on the basis of microarray gene-expression data",
+      "year": 2002,
+      "first_author_family": "Ambroise",
+      "author_count": 2,
+      "author_families": [
+        "Ambroise",
+        "McLachlan"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 1150,
+      "openalex_id": "https://openalex.org/W2107956883",
+      "openalex_cited_by": 1495,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS15"
+      ]
+    },
+    "doi:10.1073/pnas.1602413113": {
+      "title": "Cluster failure: Why fMRI inferences for spatial extent have inflated false-positive rates",
+      "year": 2016,
+      "first_author_family": "Eklund",
+      "author_count": 3,
+      "author_families": [
+        "Eklund",
+        "Nichols",
+        "Knutsson"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 3123,
+      "openalex_id": "https://openalex.org/W2134305330",
+      "openalex_cited_by": 3719,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PD05"
+    },
+    "doi:10.1073/pnas.1705120114": {
+      "title": "Brain network dynamics are hierarchically organized in time",
+      "year": 2017,
+      "first_author_family": "Vidaurre",
+      "author_count": 3,
+      "author_families": [
+        "Vidaurre",
+        "Smith",
+        "Woolrich"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 894,
+      "openalex_id": "https://openalex.org/W2765216222",
+      "openalex_cited_by": 1003,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PM08"
+    },
+    "doi:10.1073/pnas.1801582115": {
+      "title": "The impact of traditional neuroimaging methods on the spatial localization of cortical areas",
+      "year": 2018,
+      "first_author_family": "Coalson",
+      "author_count": 3,
+      "author_families": [
+        "Coalson",
+        "Van Essen",
+        "Glasser"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 332,
+      "openalex_id": "https://openalex.org/W2809303994",
+      "openalex_cited_by": 361,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR12"
+      ]
+    },
+    "doi:10.1073/pnas.200033797": {
+      "title": "Measuring the thickness of the human cerebral cortex from magnetic resonance images",
+      "year": 2000,
+      "first_author_family": "Fischl",
+      "author_count": 2,
+      "author_families": [
+        "Fischl",
+        "Dale"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 5341,
+      "openalex_id": "https://openalex.org/W2110208125",
+      "openalex_cited_by": 6100,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR08"
+      ]
+    },
+    "doi:10.1073/pnas.2216399120": {
+      "title": "Robust machine learning segmentation for large-scale analysis of heterogeneous clinical brain MRI datasets",
+      "year": 2023,
+      "first_author_family": "Billot",
+      "author_count": 6,
+      "author_families": [
+        "Billot",
+        "Magdamo",
+        "Cheng"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 244,
+      "openalex_id": "https://openalex.org/W4321440702",
+      "openalex_cited_by": 239,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR06"
+      ]
+    },
+    "doi:10.1073/pnas.87.24.9868": {
+      "title": "Brain magnetic resonance imaging with contrast dependent on blood oxygenation.",
+      "year": 1990,
+      "first_author_family": "Ogawa",
+      "author_count": 4,
+      "author_families": [
+        "Ogawa",
+        "Lee",
+        "Kay"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 5162,
+      "openalex_id": "https://openalex.org/W2071714163",
+      "openalex_cited_by": 6589,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "F02"
+      ]
+    },
+    "doi:10.1080/00031305.1973.10478966": {
+      "title": "Graphs in Statistical Analysis",
+      "year": 1973,
+      "first_author_family": "Anscombe",
+      "author_count": 1,
+      "author_families": [
+        "Anscombe"
+      ],
+      "venue": "The American Statistician",
+      "type": "journal-article",
+      "crossref_cited_by": 1924,
+      "openalex_id": "https://openalex.org/W2088960431",
+      "openalex_cited_by": 967,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS04"
+      ]
+    },
+    "doi:10.1080/00401706.1970.10488634": {
+      "title": "Ridge Regression: Biased Estimation for Nonorthogonal Problems",
+      "year": 1970,
+      "first_author_family": "Hoerl",
+      "author_count": 2,
+      "author_families": [
+        "Hoerl",
+        "Kennard"
+      ],
+      "venue": "Technometrics",
+      "type": "journal-article",
+      "crossref_cited_by": 13314,
+      "openalex_id": "https://openalex.org/W4234698323",
+      "openalex_cited_by": 9534,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M02"
+      ]
+    },
+    "doi:10.1080/00401706.1977.10489493": {
+      "title": "Detection of Influential Observation in Linear Regression",
+      "year": 1977,
+      "first_author_family": "Cook",
+      "author_count": 1,
+      "author_families": [
+        "Cook"
+      ],
+      "venue": "Technometrics",
+      "type": "journal-article",
+      "crossref_cited_by": 5658,
+      "openalex_id": "https://openalex.org/W4233620411",
+      "openalex_cited_by": 2272,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS13"
+      ]
+    },
+    "doi:10.1080/01621459.1974.10482962": {
+      "title": "The Influence Curve and its Role in Robust Estimation",
+      "year": 1974,
+      "first_author_family": "Hampel",
+      "author_count": 1,
+      "author_families": [
+        "Hampel"
+      ],
+      "venue": "Journal of the American Statistical Association",
+      "type": "journal-article",
+      "crossref_cited_by": 2376,
+      "openalex_id": "https://openalex.org/W1989898472",
+      "openalex_cited_by": 2545,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS04"
+      ]
+    },
+    "doi:10.1093/biomet/63.3.581": {
+      "title": "Inference and missing data",
+      "year": 1976,
+      "first_author_family": "RUBIN",
+      "author_count": 1,
+      "author_families": [
+        "RUBIN"
+      ],
+      "venue": "Biometrika",
+      "type": "journal-article",
+      "crossref_cited_by": 7911,
+      "openalex_id": "https://openalex.org/W2100358124",
+      "openalex_cited_by": 9872,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D02",
+        "DS05"
+      ]
+    },
+    "doi:10.1093/biomet/70.1.41": {
+      "title": "The central role of the propensity score in observational studies for causal effects",
+      "year": 1983,
+      "first_author_family": "ROSENBAUM",
+      "author_count": 2,
+      "author_families": [
+        "ROSENBAUM",
+        "RUBIN"
+      ],
+      "venue": "Biometrika",
+      "type": "journal-article",
+      "crossref_cited_by": 26037,
+      "openalex_id": "https://openalex.org/W2150291618",
+      "openalex_cited_by": 31600,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D01"
+      ]
+    },
+    "doi:10.1093/biostatistics/kxj037": {
+      "title": "Adjusting batch effects in microarray expression data using empirical Bayes methods",
+      "year": 2007,
+      "first_author_family": "Johnson",
+      "author_count": 3,
+      "author_families": [
+        "Johnson",
+        "Li",
+        "Rabinovic"
+      ],
+      "venue": "Biostatistics",
+      "type": "journal-article",
+      "crossref_cited_by": 8107,
+      "openalex_id": "https://openalex.org/W2107665951",
+      "openalex_cited_by": 9427,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M04",
+        "P03"
+      ]
+    },
+    "doi:10.1093/biostatistics/kxv027": {
+      "title": "Methods that remove batch effects while retaining group differences may lead to exaggerated confidence in downstream analyses",
+      "year": 2016,
+      "first_author_family": "Nygaard",
+      "author_count": 3,
+      "author_families": [
+        "Nygaard",
+        "Rødland",
+        "Hovig"
+      ],
+      "venue": "Biostatistics",
+      "type": "journal-article",
+      "crossref_cited_by": 345,
+      "openalex_id": "https://openalex.org/W2115003883",
+      "openalex_cited_by": 432,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M04"
+      ]
+    },
+    "doi:10.1093/cercor/bhw265": {
+      "title": "On the Stability of BOLD fMRI Correlations",
+      "year": 2016,
+      "first_author_family": "Laumann",
+      "author_count": 16,
+      "author_families": [
+        "Laumann",
+        "Snyder",
+        "Mitra"
+      ],
+      "venue": "Cerebral Cortex",
+      "type": "journal-article",
+      "crossref_cited_by": 249,
+      "openalex_id": "https://openalex.org/W2516718464",
+      "openalex_cited_by": 588,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M12"
+      ]
+    },
+    "doi:10.1093/cercor/bhx179": {
+      "title": "Local-Global Parcellation of the Human Cerebral Cortex from Intrinsic Functional Connectivity MRI",
+      "year": 2018,
+      "first_author_family": "Schaefer",
+      "author_count": 8,
+      "author_families": [
+        "Schaefer",
+        "Kong",
+        "Gordon"
+      ],
+      "venue": "Cerebral Cortex",
+      "type": "journal-article",
+      "crossref_cited_by": 3748,
+      "openalex_id": "https://openalex.org/W2951617899",
+      "openalex_cited_by": 3985,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR20"
+      ]
+    },
+    "doi:10.1093/gigascience/giae049": {
+      "title": "CAT: a computational anatomy toolbox for the analysis of structural MRI data",
+      "year": 2024,
+      "first_author_family": "Gaser",
+      "author_count": 6,
+      "author_families": [
+        "Gaser",
+        "Dahnke",
+        "Thompson"
+      ],
+      "venue": "GigaScience",
+      "type": "journal-article",
+      "crossref_cited_by": 644,
+      "openalex_id": "https://openalex.org/W4401338748",
+      "openalex_cited_by": 922,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR07"
+      ]
+    },
+    "doi:10.1093/scan/nsaa057": {
+      "title": "Tools of the Trade Multivoxel pattern analysis in fMRI: a practical introduction for social and affective neuroscientists",
+      "year": 2020,
+      "first_author_family": "Weaverdyck",
+      "author_count": 3,
+      "author_families": [
+        "Weaverdyck",
+        "Lieberman",
+        "Parkinson"
+      ],
+      "venue": "Social Cognitive and Affective Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 134,
+      "openalex_id": "https://openalex.org/W3021329421",
+      "openalex_cited_by": 142,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M09"
+      ]
+    },
+    "doi:10.1093/scan/nsm006": {
+      "title": "Region of interest analysis for fMRI",
+      "year": 2007,
+      "first_author_family": "Poldrack",
+      "author_count": 1,
+      "author_families": [
+        "Poldrack"
+      ],
+      "venue": "Social Cognitive and Affective Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 705,
+      "openalex_id": "https://openalex.org/W2137746168",
+      "openalex_cited_by": 849,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D14"
+      ]
+    },
+    "doi:10.1093/scan/nsz037": {
+      "title": "Measuring shared responses across subjects using intersubject correlation",
+      "year": 2019,
+      "first_author_family": "Nastase",
+      "author_count": 4,
+      "author_families": [
+        "Nastase",
+        "Gazzola",
+        "Hasson"
+      ],
+      "venue": "Social Cognitive and Affective Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 253,
+      "openalex_id": "https://openalex.org/W2952856751",
+      "openalex_cited_by": 457,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M10"
+      ]
+    },
+    "doi:10.1097/01.ede.0000135174.63482.43": {
+      "title": "A Structural Approach to Selection Bias",
+      "year": 2004,
+      "first_author_family": "Hernán",
+      "author_count": 3,
+      "author_families": [
+        "Hernán",
+        "Hernández-Díaz",
+        "Robins"
+      ],
+      "venue": "Epidemiology",
+      "type": "journal-article",
+      "crossref_cited_by": 2403,
+      "openalex_id": "https://openalex.org/W1978209044",
+      "openalex_cited_by": 2851,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D02"
+      ]
+    },
+    "doi:10.1098/rsta.2015.0202": {
+      "title": "Principal component analysis: a review and recent developments",
+      "year": 2016,
+      "first_author_family": "Jolliffe",
+      "author_count": 2,
+      "author_families": [
+        "Jolliffe",
+        "Cadima"
+      ],
+      "venue": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+      "type": "journal-article",
+      "crossref_cited_by": 7374,
+      "openalex_id": "https://openalex.org/W2295124130",
+      "openalex_cited_by": 10104,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS14"
+      ]
+    },
+    "doi:10.1109/3dv.2016.79": {
+      "title": "V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation",
+      "year": 2016,
+      "first_author_family": "Milletari",
+      "author_count": 3,
+      "author_families": [
+        "Milletari",
+        "Navab",
+        "Ahmadi"
+      ],
+      "venue": "2016 Fourth International Conference on 3D Vision (3DV)",
+      "type": "proceedings-article",
+      "crossref_cited_by": 8795,
+      "openalex_id": "https://openalex.org/W2432481613",
+      "openalex_cited_by": 10858,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M15"
+      ]
+    },
+    "doi:10.1109/42.563664": {
+      "title": "Multimodality image registration by maximization of mutual information",
+      "year": 1997,
+      "first_author_family": "Maes",
+      "author_count": 5,
+      "author_families": [
+        "Maes",
+        "Collignon",
+        "Vandermeulen"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 3575,
+      "openalex_id": "https://openalex.org/W2034432063",
+      "openalex_cited_by": 4560,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR02"
+      ]
+    },
+    "doi:10.1109/42.668698": {
+      "title": "A nonparametric method for automatic correction of intensity nonuniformity in MRI data",
+      "year": 1998,
+      "first_author_family": "Sled",
+      "author_count": 3,
+      "author_families": [
+        "Sled",
+        "Zijdenbos",
+        "Evans"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 4151,
+      "openalex_id": "https://openalex.org/W2157848968",
+      "openalex_cited_by": 4858,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR04"
+      ]
+    },
+    "doi:10.1109/42.906424": {
+      "title": "Segmentation of brain MR images through a hidden Markov random field model and the expectation-maximization algorithm",
+      "year": 2001,
+      "first_author_family": "Zhang",
+      "author_count": 3,
+      "author_families": [
+        "Zhang",
+        "Brady",
+        "Smith"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 6525,
+      "openalex_id": "https://openalex.org/W2136573752",
+      "openalex_cited_by": 7429,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR06"
+      ]
+    },
+    "doi:10.1109/5.18626": {
+      "title": "A tutorial on hidden Markov models and selected applications in speech recognition",
+      "year": 1989,
+      "first_author_family": "Rabiner",
+      "author_count": 1,
+      "author_families": [
+        "Rabiner"
+      ],
+      "venue": "Proceedings of the IEEE",
+      "type": "journal-article",
+      "crossref_cited_by": 15396,
+      "openalex_id": "https://openalex.org/W2125838338",
+      "openalex_cited_by": 22930,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M12"
+      ]
+    },
+    "doi:10.1109/5.726791": {
+      "title": "Gradient-based learning applied to document recognition",
+      "year": 1998,
+      "first_author_family": "Lecun",
+      "author_count": 4,
+      "author_families": [
+        "Lecun",
+        "Bottou",
+        "Bengio"
+      ],
+      "venue": "Proceedings of the IEEE",
+      "type": "journal-article",
+      "crossref_cited_by": 47546,
+      "openalex_id": "https://openalex.org/W2112796928",
+      "openalex_cited_by": 59934,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M14"
+      ]
+    },
+    "doi:10.1109/cvpr.2016.90": {
+      "title": "Deep Residual Learning for Image Recognition",
+      "year": 2016,
+      "first_author_family": "He",
+      "author_count": 4,
+      "author_families": [
+        "He",
+        "Zhang",
+        "Ren"
+      ],
+      "venue": "2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "type": "proceedings-article",
+      "crossref_cited_by": 175346,
+      "openalex_id": "https://openalex.org/W2194775991",
+      "openalex_cited_by": 229732,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M14"
+      ]
+    },
+    "doi:10.1109/cvpr52688.2022.01553": {
+      "title": "Masked Autoencoders Are Scalable Vision Learners",
+      "year": 2022,
+      "first_author_family": "He",
+      "author_count": 6,
+      "author_families": [
+        "He",
+        "Chen",
+        "Xie"
+      ],
+      "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "type": "proceedings-article",
+      "crossref_cited_by": 7534,
+      "openalex_id": "https://openalex.org/W4226002507",
+      "openalex_cited_by": 7930,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M16"
+      ]
+    },
+    "doi:10.1109/msr.2019.00077": {
+      "title": "A Large-Scale Study About Quality and Reproducibility of Jupyter Notebooks",
+      "year": 2019,
+      "first_author_family": "Pimentel",
+      "author_count": 4,
+      "author_families": [
+        "Pimentel",
+        "Murta",
+        "Braganholo"
+      ],
+      "venue": "2019 IEEE/ACM 16th International Conference on Mining Software Repositories (MSR)",
+      "type": "proceedings-article",
+      "crossref_cited_by": 198,
+      "openalex_id": "https://openalex.org/W2954370766",
+      "openalex_cited_by": 245,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "F04"
+      ]
+    },
+    "doi:10.1109/tac.1974.1100705": {
+      "title": "A new look at the statistical model identification",
+      "year": 1974,
+      "first_author_family": "Akaike",
+      "author_count": 1,
+      "author_families": [
+        "Akaike"
+      ],
+      "venue": "IEEE Transactions on Automatic Control",
+      "type": "journal-article",
+      "crossref_cited_by": 42606,
+      "openalex_id": "https://openalex.org/W2142635246",
+      "openalex_cited_by": 51702,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS11"
+      ]
+    },
+    "doi:10.1109/tmi.2003.822821": {
+      "title": "Probabilistic Independent Component Analysis for Functional Magnetic Resonance Imaging",
+      "year": 2004,
+      "first_author_family": "Beckmann",
+      "author_count": 2,
+      "author_families": [
+        "Beckmann",
+        "Smith"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 2481,
+      "openalex_id": "https://openalex.org/W2117621792",
+      "openalex_cited_by": 2880,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M05"
+      ]
+    },
+    "doi:10.1109/tmi.2006.887364": {
+      "title": "Geometrically Accurate Topology-Correction of Cortical Surfaces Using Nonseparating Loops",
+      "year": 2007,
+      "first_author_family": "Segonne",
+      "author_count": 3,
+      "author_families": [
+        "Segonne",
+        "Pacheco",
+        "Fischl"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 910,
+      "openalex_id": "https://openalex.org/W2105086806",
+      "openalex_cited_by": 1040,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR08"
+      ]
+    },
+    "doi:10.1109/tmi.2006.891486": {
+      "title": "A Review of Methods for Correction of Intensity Inhomogeneity in MRI",
+      "year": 2007,
+      "first_author_family": "Vovk",
+      "author_count": 3,
+      "author_families": [
+        "Vovk",
+        "Pernus",
+        "Likar"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 735,
+      "openalex_id": "https://openalex.org/W2117530999",
+      "openalex_cited_by": 856,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR04"
+      ]
+    },
+    "doi:10.1109/tmi.2010.2046908": {
+      "title": "N4ITK: Improved N3 Bias Correction",
+      "year": 2010,
+      "first_author_family": "Tustison",
+      "author_count": 7,
+      "author_families": [
+        "Tustison",
+        "Avants",
+        "Cook"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 6203,
+      "openalex_id": "https://openalex.org/W2117340355",
+      "openalex_cited_by": 6601,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR04"
+      ]
+    },
+    "doi:10.1109/tmi.2011.2131152": {
+      "title": "A Four-Dimensional Registration Algorithm With Application to Joint Correction of Motion and Slice Timing in fMRI",
+      "year": 2011,
+      "first_author_family": "Roche",
+      "author_count": 1,
+      "author_families": [
+        "Roche"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 81,
+      "openalex_id": "https://openalex.org/W2136835047",
+      "openalex_cited_by": 89,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR09"
+      ]
+    },
+    "doi:10.1109/tmi.2011.2138152": {
+      "title": "Robust Brain Extraction Across Datasets and Comparison With Publicly Available Methods",
+      "year": 2011,
+      "first_author_family": "Iglesias",
+      "author_count": 4,
+      "author_families": [
+        "Iglesias",
+        "Cheng-Yi Liu",
+        "Thompson"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 523,
+      "openalex_id": "https://openalex.org/W2145661921",
+      "openalex_cited_by": 612,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR05"
+      ]
+    },
+    "doi:10.1109/tmi.2019.2897538": {
+      "title": "VoxelMorph: A Learning Framework for Deformable Medical Image Registration",
+      "year": 2019,
+      "first_author_family": "Balakrishnan",
+      "author_count": 5,
+      "author_families": [
+        "Balakrishnan",
+        "Zhao",
+        "Sabuncu"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 2158,
+      "openalex_id": "https://openalex.org/W2891631795",
+      "openalex_cited_by": 2175,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS12",
+        "PR03"
+      ]
+    },
+    "doi:10.1109/tmi.2021.3116879": {
+      "title": "SynthMorph: Learning Contrast-Invariant Registration Without Acquired Images",
+      "year": 2022,
+      "first_author_family": "Hoffmann",
+      "author_count": 6,
+      "author_families": [
+        "Hoffmann",
+        "Billot",
+        "Greve"
+      ],
+      "venue": "IEEE Transactions on Medical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 210,
+      "openalex_id": "https://openalex.org/W3204867994",
+      "openalex_cited_by": 205,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR02"
+      ]
+    },
+    "doi:10.1111/1467-9868.00196": {
+      "title": "Probabilistic Principal Component Analysis",
+      "year": 1999,
+      "first_author_family": "Tipping",
+      "author_count": 2,
+      "author_families": [
+        "Tipping",
+        "Bishop"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+      "type": "journal-article",
+      "crossref_cited_by": 2606,
+      "openalex_id": "https://openalex.org/W2125027820",
+      "openalex_cited_by": 3781,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M11"
+      ]
+    },
+    "doi:10.1111/j.1467-9868.2005.00503.x": {
+      "title": "Regularization and Variable Selection Via the Elastic Net",
+      "year": 2005,
+      "first_author_family": "Zou",
+      "author_count": 2,
+      "author_families": [
+        "Zou",
+        "Hastie"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+      "type": "journal-article",
+      "crossref_cited_by": 17254,
+      "openalex_id": "https://openalex.org/W2122825543",
+      "openalex_cited_by": 21772,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M02"
+      ]
+    },
+    "doi:10.1111/j.1467-9868.2007.00593.x": {
+      "title": "Bootstrapping Clustered Data",
+      "year": 2007,
+      "first_author_family": "Field",
+      "author_count": 2,
+      "author_families": [
+        "Field",
+        "Welsh"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+      "type": "journal-article",
+      "crossref_cited_by": 334,
+      "openalex_id": "https://openalex.org/W2084007633",
+      "openalex_cited_by": 417,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS08"
+      ]
+    },
+    "doi:10.1111/j.1467-9868.2010.00740.x": {
+      "title": "Stability Selection",
+      "year": 2010,
+      "first_author_family": "Meinshausen",
+      "author_count": 2,
+      "author_families": [
+        "Meinshausen",
+        "Bühlmann"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+      "type": "journal-article",
+      "crossref_cited_by": 2143,
+      "openalex_id": "https://openalex.org/W2562162676",
+      "openalex_cited_by": 2297,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS08"
+      ]
+    },
+    "doi:10.1111/j.1745-6924.2009.01125.x": {
+      "title": "Puzzlingly High Correlations in fMRI Studies of Emotion, Personality, and Social Cognition",
+      "year": 2009,
+      "first_author_family": "Vul",
+      "author_count": 4,
+      "author_families": [
+        "Vul",
+        "Harris",
+        "Winkielman"
+      ],
+      "venue": "Perspectives on Psychological Science",
+      "type": "journal-article",
+      "crossref_cited_by": 1120,
+      "openalex_id": "https://openalex.org/W2160453617",
+      "openalex_cited_by": 1516,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D14"
+      ]
+    },
+    "doi:10.1111/j.1745-6924.2009.01127.x": {
+      "title": "Big Correlations in Little Studies: Inflated fMRI Correlations Reflect Low Statistical Power—Commentary on Vul et al. (2009)",
+      "year": 2009,
+      "first_author_family": "Yarkoni",
+      "author_count": 1,
+      "author_families": [
+        "Yarkoni"
+      ],
+      "venue": "Perspectives on Psychological Science",
+      "type": "journal-article",
+      "crossref_cited_by": 451,
+      "openalex_id": "https://openalex.org/W2036231449",
+      "openalex_cited_by": 595,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS07"
+      ]
+    },
+    "doi:10.1111/j.2517-6161.1996.tb02080.x": {
+      "title": "Regression Shrinkage and Selection Via the Lasso",
+      "year": 1996,
+      "first_author_family": "Tibshirani",
+      "author_count": 1,
+      "author_families": [
+        "Tibshirani"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+      "type": "journal-article",
+      "crossref_cited_by": 40958,
+      "openalex_id": "https://openalex.org/W2135046866",
+      "openalex_cited_by": 53114,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M02"
+      ]
+    },
+    "doi:10.1111/rssa.12378": {
+      "title": "Visualization in Bayesian Workflow",
+      "year": 2019,
+      "first_author_family": "Gabry",
+      "author_count": 5,
+      "author_families": [
+        "Gabry",
+        "Simpson",
+        "Vehtari"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series A: Statistics in Society",
+      "type": "journal-article",
+      "crossref_cited_by": 995,
+      "openalex_id": "https://openalex.org/W2753599755",
+      "openalex_cited_by": 1170,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M11"
+      ]
+    },
+    "doi:10.1115/1.3662552": {
+      "title": "A New Approach to Linear Filtering and Prediction Problems",
+      "year": 1960,
+      "first_author_family": "Kalman",
+      "author_count": 1,
+      "author_families": [
+        "Kalman"
+      ],
+      "venue": "Journal of Basic Engineering",
+      "type": "journal-article",
+      "crossref_cited_by": 23496,
+      "openalex_id": "https://openalex.org/W2105934661",
+      "openalex_cited_by": 31804,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M13"
+      ]
+    },
+    "doi:10.1126/sciadv.add3607": {
+      "title": "SynthSR: A public AI tool to turn heterogeneous clinical brain scans into high-resolution T1-weighted images for 3D morphometry",
+      "year": 2023,
+      "first_author_family": "Iglesias",
+      "author_count": 10,
+      "author_families": [
+        "Iglesias",
+        "Billot",
+        "Balbastre"
+      ],
+      "venue": "Science Advances",
+      "type": "journal-article",
+      "crossref_cited_by": 235,
+      "openalex_id": "https://openalex.org/W4318767763",
+      "openalex_cited_by": 225,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR04"
+      ]
+    },
+    "doi:10.1126/science.1063736": {
+      "title": "Distributed and Overlapping Representations of Faces and Objects in Ventral Temporal Cortex",
+      "year": 2001,
+      "first_author_family": "Haxby",
+      "author_count": 6,
+      "author_families": [
+        "Haxby",
+        "Gobbini",
+        "Furey"
+      ],
+      "venue": "Science",
+      "type": "journal-article",
+      "crossref_cited_by": 3314,
+      "openalex_id": "https://openalex.org/W2089632738",
+      "openalex_cited_by": 4184,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M01"
+      ]
+    },
+    "doi:10.1126/science.1089506": {
+      "title": "Intersubject Synchronization of Cortical Activity During Natural Vision",
+      "year": 2004,
+      "first_author_family": "Hasson",
+      "author_count": 5,
+      "author_families": [
+        "Hasson",
+        "Nir",
+        "Levy"
+      ],
+      "venue": "Science",
+      "type": "journal-article",
+      "crossref_cited_by": 1667,
+      "openalex_id": "https://openalex.org/W2172168442",
+      "openalex_cited_by": 2015,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M10"
+      ]
+    },
+    "doi:10.1136/jech.2004.029496": {
+      "title": "Estimating causal effects from epidemiological data",
+      "year": 2006,
+      "first_author_family": "Hernán",
+      "author_count": 2,
+      "author_families": [
+        "Hernán",
+        "Robins"
+      ],
+      "venue": "Journal of Epidemiology and Community Health",
+      "type": "journal-article",
+      "crossref_cited_by": 885,
+      "openalex_id": "https://openalex.org/W2128984831",
+      "openalex_cited_by": 1063,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D01"
+      ]
+    },
+    "doi:10.1137/16m1080173": {
+      "title": "Optimization Methods for Large-Scale Machine Learning",
+      "year": 2018,
+      "first_author_family": "Bottou",
+      "author_count": 3,
+      "author_families": [
+        "Bottou",
+        "Curtis",
+        "Nocedal"
+      ],
+      "venue": "SIAM Review",
+      "type": "journal-article",
+      "crossref_cited_by": 2263,
+      "openalex_id": "https://openalex.org/W2436219157",
+      "openalex_cited_by": 3250,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS12"
+      ]
+    },
+    "doi:10.1145/1390156.1390294": {
+      "title": "Extracting and composing robust features with denoising autoencoders",
+      "year": 2008,
+      "first_author_family": "Vincent",
+      "author_count": 4,
+      "author_families": [
+        "Vincent",
+        "Larochelle",
+        "Bengio"
+      ],
+      "venue": "Proceedings of the 25th international conference on Machine learning - ICML '08",
+      "type": "proceedings-article",
+      "crossref_cited_by": 5031,
+      "openalex_id": "https://openalex.org/W2025768430",
+      "openalex_cited_by": 7453,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M16"
+      ]
+    },
+    "doi:10.1145/3287560.3287596": {
+      "title": "Model Cards for Model Reporting",
+      "year": 2019,
+      "first_author_family": "Mitchell",
+      "author_count": 9,
+      "author_families": [
+        "Mitchell",
+        "Wu",
+        "Zaldivar"
+      ],
+      "venue": "Proceedings of the Conference on Fairness, Accountability, and Transparency",
+      "type": "proceedings-article",
+      "crossref_cited_by": 2130,
+      "openalex_id": "https://openalex.org/W2897042519",
+      "openalex_cited_by": 2070,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M17"
+      ]
+    },
+    "doi:10.1162/089976602753284446": {
+      "title": "Adjusting the Outputs of a Classifier to New a\n                    <i>Priori</i>\n                    Probabilities: A Simple Procedure",
+      "year": 2002,
+      "first_author_family": "Saerens",
+      "author_count": 3,
+      "author_families": [
+        "Saerens",
+        "Latinne",
+        "Decaestecker"
+      ],
+      "venue": "Neural Computation",
+      "type": "journal-article",
+      "crossref_cited_by": 262,
+      "openalex_id": "https://openalex.org/W2141253686",
+      "openalex_cited_by": 352,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS06"
+      ]
+    },
+    "doi:10.1162/089976604773717621": {
+      "title": "Stability-Based Validation of Clustering Solutions",
+      "year": 2004,
+      "first_author_family": "Lange",
+      "author_count": 4,
+      "author_families": [
+        "Lange",
+        "Roth",
+        "Braun"
+      ],
+      "venue": "Neural Computation",
+      "type": "journal-article",
+      "crossref_cited_by": 402,
+      "openalex_id": "https://openalex.org/W2116219421",
+      "openalex_cited_by": 539,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M06"
+      ]
+    },
+    "doi:10.1162/imag_a_00347": {
+      "title": "Processing, evaluating, and understanding FMRI data with afni_proc.py",
+      "year": 2024,
+      "first_author_family": "Reynolds",
+      "author_count": 6,
+      "author_families": [
+        "Reynolds",
+        "Glen",
+        "Chen"
+      ],
+      "venue": "Imaging Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 18,
+      "openalex_id": "https://openalex.org/W4399597750",
+      "openalex_cited_by": 18,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS09"
+      ]
+    },
+    "doi:10.1162/netn_a_00116": {
+      "title": "Questions and controversies in the study of time-varying functional                     connectivity in resting fMRI",
+      "year": 2020,
+      "first_author_family": "Lurie",
+      "author_count": 23,
+      "author_families": [
+        "Lurie",
+        "Kessler",
+        "Bassett"
+      ],
+      "venue": "Network Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 637,
+      "openalex_id": "https://openalex.org/W2995313551",
+      "openalex_cited_by": 712,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M12"
+      ]
+    },
+    "doi:10.1177/00031224211004187": {
+      "title": "What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory",
+      "year": 2021,
+      "first_author_family": "Lundberg",
+      "author_count": 3,
+      "author_families": [
+        "Lundberg",
+        "Johnson",
+        "Stewart"
+      ],
+      "venue": "American Sociological Review",
+      "type": "journal-article",
+      "crossref_cited_by": 316,
+      "openalex_id": "https://openalex.org/W3168499785",
+      "openalex_cited_by": 379,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D01"
+      ]
+    },
+    "doi:10.1177/0956797620916786": {
+      "title": "What Is the Test-Retest Reliability of Common Task-Functional MRI Measures? New Empirical Evidence and a Meta-Analysis",
+      "year": 2020,
+      "first_author_family": "Elliott",
+      "author_count": 10,
+      "author_families": [
+        "Elliott",
+        "Knodt",
+        "Ireland"
+      ],
+      "venue": "Psychological Science",
+      "type": "journal-article",
+      "crossref_cited_by": 654,
+      "openalex_id": "https://openalex.org/W3032707732",
+      "openalex_cited_by": 783,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PD03"
+    },
+    "doi:10.1177/1745691614551642": {
+      "title": "Beyond Power Calculations",
+      "year": 2014,
+      "first_author_family": "Gelman",
+      "author_count": 2,
+      "author_families": [
+        "Gelman",
+        "Carlin"
+      ],
+      "venue": "Perspectives on Psychological Science",
+      "type": "journal-article",
+      "crossref_cited_by": 1113,
+      "openalex_id": "https://openalex.org/W2119303750",
+      "openalex_cited_by": 1410,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D04",
+        "DS07",
+        "P04"
+      ]
+    },
+    "doi:10.1177/1745691616658637": {
+      "title": "Increasing Transparency Through a Multiverse Analysis",
+      "year": 2016,
+      "first_author_family": "Steegen",
+      "author_count": 4,
+      "author_families": [
+        "Steegen",
+        "Tuerlinckx",
+        "Gelman"
+      ],
+      "venue": "Perspectives on Psychological Science",
+      "type": "journal-article",
+      "crossref_cited_by": 1132,
+      "openalex_id": "https://openalex.org/W2526501380",
+      "openalex_cited_by": 1554,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D16"
+      ]
+    },
+    "doi:10.1177/2515245918770963": {
+      "title": "Equivalence Testing for Psychological Research: A Tutorial",
+      "year": 2018,
+      "first_author_family": "Lakens",
+      "author_count": 3,
+      "author_families": [
+        "Lakens",
+        "Scheel",
+        "Isager"
+      ],
+      "venue": "Advances in Methods and Practices in Psychological Science",
+      "type": "journal-article",
+      "crossref_cited_by": 1282,
+      "openalex_id": "https://openalex.org/W2788930055",
+      "openalex_cited_by": 1635,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D15"
+      ]
+    },
+    "doi:10.1177/2515245918771304": {
+      "title": "Rejecting or Accepting Parameter Values in Bayesian Estimation",
+      "year": 2018,
+      "first_author_family": "Kruschke",
+      "author_count": 1,
+      "author_families": [
+        "Kruschke"
+      ],
+      "venue": "Advances in Methods and Practices in Psychological Science",
+      "type": "journal-article",
+      "crossref_cited_by": 661,
+      "openalex_id": "https://openalex.org/W2801776818",
+      "openalex_cited_by": 781,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D15"
+      ]
+    },
+    "doi:10.1177/2515245920911881": {
+      "title": "The Percentile Bootstrap: A Primer With Step-by-Step Instructions in R",
+      "year": 2021,
+      "first_author_family": "Rousselet",
+      "author_count": 3,
+      "author_families": [
+        "Rousselet",
+        "Pernet",
+        "Wilcox"
+      ],
+      "venue": "Advances in Methods and Practices in Psychological Science",
+      "type": "journal-article",
+      "crossref_cited_by": 77,
+      "openalex_id": "https://openalex.org/W2999655107",
+      "openalex_cited_by": 101,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS08"
+      ]
+    },
+    "doi:10.1186/1471-2105-7-91": {
+      "title": "Bias in error estimation when using cross-validation for model selection",
+      "year": 2006,
+      "first_author_family": "Varma",
+      "author_count": 2,
+      "author_families": [
+        "Varma",
+        "Simon"
+      ],
+      "venue": "BMC Bioinformatics",
+      "type": "journal-article",
+      "crossref_cited_by": 2065,
+      "openalex_id": "https://openalex.org/W2141007997",
+      "openalex_cited_by": 2345,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M04"
+      ]
+    },
+    "doi:10.1186/1471-2202-11-5": {
+      "title": "The problem of pseudoreplication in neuroscientific studies: is it affecting your analysis?",
+      "year": 2010,
+      "first_author_family": "Lazic",
+      "author_count": 1,
+      "author_families": [
+        "Lazic"
+      ],
+      "venue": "BMC Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 316,
+      "openalex_id": "https://openalex.org/W2109626712",
+      "openalex_cited_by": 376,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D02",
+        "D11"
+      ]
+    },
+    "doi:10.1186/s12916-019-1466-7": {
+      "title": "Calibration: the Achilles heel of predictive analytics",
+      "year": 2019,
+      "first_author_family": "On behalf of Topic Group ‘Evaluating diagnostic tests and prediction models’ of the STRATOS initiative",
+      "author_count": 6,
+      "author_families": [
+        "On behalf of Topic Group ‘Evaluating diagnostic tests and prediction models’ of the STRATOS initiative",
+        "Van Calster",
+        "McLernon"
+      ],
+      "venue": "BMC Medicine",
+      "type": "journal-article",
+      "crossref_cited_by": 2250,
+      "openalex_id": "https://openalex.org/W2996480032",
+      "openalex_cited_by": 2416,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS06",
+        "M18"
+      ]
+    },
+    "doi:10.1198/000313006x152649": {
+      "title": "The Difference Between “Significant” and “Not Significant” is not Itself Statistically Significant",
+      "year": 2006,
+      "first_author_family": "Gelman",
+      "author_count": 2,
+      "author_families": [
+        "Gelman",
+        "Stern"
+      ],
+      "venue": "The American Statistician",
+      "type": "journal-article",
+      "crossref_cited_by": 1042,
+      "openalex_id": "https://openalex.org/W2130663341",
+      "openalex_cited_by": 1307,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D08"
+      ]
+    },
+    "doi:10.1214/aoms/1177703732": {
+      "title": "Robust Estimation of a Location Parameter",
+      "year": 1964,
+      "first_author_family": "Huber",
+      "author_count": 1,
+      "author_families": [
+        "Huber"
+      ],
+      "venue": "The Annals of Mathematical Statistics",
+      "type": "journal-article",
+      "crossref_cited_by": 5580,
+      "openalex_id": "https://openalex.org/W2046033161",
+      "openalex_cited_by": 7274,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS11"
+      ]
+    },
+    "doi:10.1214/aos/1176344552": {
+      "title": "Bootstrap Methods: Another Look at the Jackknife",
+      "year": 1979,
+      "first_author_family": "Efron",
+      "author_count": 1,
+      "author_families": [
+        "Efron"
+      ],
+      "venue": "The Annals of Statistics",
+      "type": "journal-article",
+      "crossref_cited_by": 12804,
+      "openalex_id": "https://openalex.org/W2117897510",
+      "openalex_cited_by": 17813,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS08"
+      ]
+    },
+    "doi:10.1214/aos/1176346785": {
+      "title": "Bayesianly Justifiable and Relevant Frequency Calculations for the Applied Statistician",
+      "year": 1984,
+      "first_author_family": "Rubin",
+      "author_count": 1,
+      "author_families": [
+        "Rubin"
+      ],
+      "venue": "The Annals of Statistics",
+      "type": "journal-article",
+      "crossref_cited_by": 973,
+      "openalex_id": "https://openalex.org/W2040011853",
+      "openalex_cited_by": 1394,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M11"
+      ]
+    },
+    "doi:10.1371/journal.pcbi.1003285": {
+      "title": "Ten Simple Rules for Reproducible Computational Research",
+      "year": 2013,
+      "first_author_family": "Sandve",
+      "author_count": 4,
+      "author_families": [
+        "Sandve",
+        "Nekrutenko",
+        "Taylor"
+      ],
+      "venue": "PLoS Computational Biology",
+      "type": "journal-article",
+      "crossref_cited_by": 723,
+      "openalex_id": "https://openalex.org/W2036318837",
+      "openalex_cited_by": 890,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS16",
+        "F04"
+      ]
+    },
+    "doi:10.1371/journal.pcbi.1003553": {
+      "title": "A Toolbox for Representational Similarity Analysis",
+      "year": 2014,
+      "first_author_family": "Nili",
+      "author_count": 6,
+      "author_families": [
+        "Nili",
+        "Wingfield",
+        "Walther"
+      ],
+      "venue": "PLoS Computational Biology",
+      "type": "journal-article",
+      "crossref_cited_by": 994,
+      "openalex_id": "https://openalex.org/W2057307785",
+      "openalex_cited_by": 1102,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M08"
+      ]
+    },
+    "doi:10.1371/journal.pcbi.1005508": {
+      "title": "Representational models: A common framework for understanding encoding, pattern-component, and representational-similarity analysis",
+      "year": 2017,
+      "first_author_family": "Diedrichsen",
+      "author_count": 2,
+      "author_families": [
+        "Diedrichsen",
+        "Kriegeskorte"
+      ],
+      "venue": "PLOS Computational Biology",
+      "type": "journal-article",
+      "crossref_cited_by": 337,
+      "openalex_id": "https://openalex.org/W2951877485",
+      "openalex_cited_by": 366,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M08"
+      ]
+    },
+    "doi:10.1371/journal.pcbi.1007007": {
+      "title": "Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks",
+      "year": 2019,
+      "first_author_family": "Rule",
+      "author_count": 11,
+      "author_families": [
+        "Rule",
+        "Birmingham",
+        "Zuniga"
+      ],
+      "venue": "PLOS Computational Biology",
+      "type": "journal-article",
+      "crossref_cited_by": 136,
+      "openalex_id": "https://openalex.org/W2964148489",
+      "openalex_cited_by": 196,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "F04"
+      ]
+    },
+    "doi:10.1371/journal.pcbi.1007549": {
+      "title": "BrainIAK tutorials: User-friendly learning materials for advanced fMRI analysis",
+      "year": 2020,
+      "first_author_family": "Kumar",
+      "author_count": 9,
+      "author_families": [
+        "Kumar",
+        "Ellis",
+        "Lu"
+      ],
+      "venue": "PLOS Computational Biology",
+      "type": "journal-article",
+      "crossref_cited_by": 66,
+      "openalex_id": "https://openalex.org/W2961763468",
+      "openalex_cited_by": 76,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M10"
+      ]
+    },
+    "doi:10.1371/journal.pcbi.1011942": {
+      "title": "Continuous evaluation of denoising strategies in resting-state fMRI connectivity using fMRIPrep and Nilearn",
+      "year": 2024,
+      "first_author_family": "Wang",
+      "author_count": 9,
+      "author_families": [
+        "Wang",
+        "Meisler",
+        "Sharmarke"
+      ],
+      "venue": "PLOS Computational Biology",
+      "type": "journal-article",
+      "crossref_cited_by": 38,
+      "openalex_id": "https://openalex.org/W4392927049",
+      "openalex_cited_by": 36,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR14"
+      ]
+    },
+    "doi:10.1371/journal.pone.0077089": {
+      "title": "On the Definition of Signal-To-Noise Ratio and Contrast-To-Noise Ratio for fMRI Data",
+      "year": 2013,
+      "first_author_family": "Welvaert",
+      "author_count": 2,
+      "author_families": [
+        "Welvaert",
+        "Rosseel"
+      ],
+      "venue": "PLoS ONE",
+      "type": "journal-article",
+      "crossref_cited_by": 474,
+      "openalex_id": "https://openalex.org/W2092062478",
+      "openalex_cited_by": 524,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS09"
+      ]
+    },
+    "doi:10.1371/journal.pone.0118432": {
+      "title": "The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets",
+      "year": 2015,
+      "first_author_family": "Saito",
+      "author_count": 2,
+      "author_families": [
+        "Saito",
+        "Rehmsmeier"
+      ],
+      "venue": "PLOS ONE",
+      "type": "journal-article",
+      "crossref_cited_by": 4689,
+      "openalex_id": "https://openalex.org/W1966716734",
+      "openalex_cited_by": 5262,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS06"
+      ]
+    },
+    "doi:10.1371/journal.pone.0126255": {
+      "title": "Orthogonalization of Regressors in fMRI Models",
+      "year": 2015,
+      "first_author_family": "Mumford",
+      "author_count": 3,
+      "author_families": [
+        "Mumford",
+        "Poline",
+        "Poldrack"
+      ],
+      "venue": "PLOS ONE",
+      "type": "journal-article",
+      "crossref_cited_by": 277,
+      "openalex_id": "https://openalex.org/W2013974533",
+      "openalex_cited_by": 304,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D07",
+        "DS10"
+      ]
+    },
+    "doi:10.1371/journal.pone.0184661": {
+      "title": "MRIQC: Advancing the automatic prediction of image quality in MRI from unseen sites",
+      "year": 2017,
+      "first_author_family": "Esteban",
+      "author_count": 6,
+      "author_families": [
+        "Esteban",
+        "Birman",
+        "Schaer"
+      ],
+      "venue": "PLOS ONE",
+      "type": "journal-article",
+      "crossref_cited_by": 853,
+      "openalex_id": "https://openalex.org/W2950120067",
+      "openalex_cited_by": 1024,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR15"
+      ]
+    },
+    "doi:10.1371/journal.pone.0236418": {
+      "title": "Distortion correction of diffusion weighted MRI without reverse phase-encoding scans or field-maps",
+      "year": 2020,
+      "first_author_family": "Schilling",
+      "author_count": 15,
+      "author_families": [
+        "Schilling",
+        "Blaber",
+        "Hansen"
+      ],
+      "venue": "PLOS ONE",
+      "type": "journal-article",
+      "crossref_cited_by": 131,
+      "openalex_id": "https://openalex.org/W2999182567",
+      "openalex_cited_by": 135,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR11"
+      ]
+    },
+    "doi:10.1523/jneurosci.16-13-04207.1996": {
+      "title": "Linear Systems Analysis of Functional Magnetic Resonance Imaging in Human V1",
+      "year": 1996,
+      "first_author_family": "Boynton",
+      "author_count": 4,
+      "author_families": [
+        "Boynton",
+        "Engel",
+        "Glover"
+      ],
+      "venue": "The Journal of Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 1915,
+      "openalex_id": "https://openalex.org/W2111609296",
+      "openalex_cited_by": 2390,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D05"
+      ]
+    },
+    "doi:10.1525/collabra.33267": {
+      "title": "Sample Size Justification",
+      "year": 2022,
+      "first_author_family": "Lakens",
+      "author_count": 1,
+      "author_families": [
+        "Lakens"
+      ],
+      "venue": "Collabra: Psychology",
+      "type": "journal-article",
+      "crossref_cited_by": 1472,
+      "openalex_id": "https://openalex.org/W4220832516",
+      "openalex_cited_by": 1731,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D04"
+      ]
+    },
+    "doi:10.18637/jss.v045.i03": {
+      "title": "<b>mice</b>: Multivariate Imputation by Chained Equations in<i>R</i>",
+      "year": 2011,
+      "first_author_family": "Buuren",
+      "author_count": 2,
+      "author_families": [
+        "Buuren",
+        "Groothuis-Oudshoorn"
+      ],
+      "venue": "Journal of Statistical Software",
+      "type": "journal-article",
+      "crossref_cited_by": 9452,
+      "openalex_id": "https://openalex.org/W2115098571",
+      "openalex_cited_by": 14248,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS05"
+      ]
+    },
+    "doi:10.18637/jss.v059.i10": {
+      "title": "Tidy Data",
+      "year": 2014,
+      "first_author_family": "Wickham",
+      "author_count": 1,
+      "author_families": [
+        "Wickham"
+      ],
+      "venue": "Journal of Statistical Software",
+      "type": "journal-article",
+      "crossref_cited_by": 820,
+      "openalex_id": "https://openalex.org/W4235243453",
+      "openalex_cited_by": 933,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS02"
+      ]
+    },
+    "doi:10.2202/1544-6115.1585": {
+      "title": "Permutation P-values Should Never Be Zero: Calculating Exact P-values When Permutations Are Randomly Drawn",
+      "year": 2010,
+      "first_author_family": "Phipson",
+      "author_count": 2,
+      "author_families": [
+        "Phipson",
+        "Smyth"
+      ],
+      "venue": "Statistical Applications in Genetics and Molecular Biology",
+      "type": "journal-article",
+      "crossref_cited_by": 632,
+      "openalex_id": "https://openalex.org/W2013223495",
+      "openalex_cited_by": 702,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D12"
+      ]
+    },
+    "doi:10.2307/1942661": {
+      "title": "Pseudoreplication and the Design of Ecological Field Experiments",
+      "year": 1984,
+      "first_author_family": "Hurlbert",
+      "author_count": 1,
+      "author_families": [
+        "Hurlbert"
+      ],
+      "venue": "Ecological Monographs",
+      "type": "journal-article",
+      "crossref_cited_by": 6055,
+      "openalex_id": "https://openalex.org/W2139156166",
+      "openalex_cited_by": 8426,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "P04"
+      ]
+    },
+    "doi:10.2307/2348005": {
+      "title": "A Note on the Use of Principal Components in Regression",
+      "year": 1982,
+      "first_author_family": "Jolliffe",
+      "author_count": 1,
+      "author_families": [
+        "Jolliffe"
+      ],
+      "venue": "Applied Statistics",
+      "type": "journal-article",
+      "crossref_cited_by": 458,
+      "openalex_id": "https://openalex.org/W2740586183",
+      "openalex_cited_by": 853,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS14"
+      ]
+    },
+    "doi:10.2307/2530245": {
+      "title": "A Multiple Testing Procedure for Clinical Trials",
+      "year": 1979,
+      "first_author_family": "O'Brien",
+      "author_count": 2,
+      "author_families": [
+        "O'Brien",
+        "Fleming"
+      ],
+      "venue": "Biometrics",
+      "type": "journal-article",
+      "crossref_cited_by": 2604,
+      "openalex_id": "https://openalex.org/W2059707463",
+      "openalex_cited_by": 3371,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D04"
+      ]
+    },
+    "doi:10.3389/fnhum.2012.00119": {
+      "title": "Improving standards in brain-behavior correlation analyses",
+      "year": 2012,
+      "first_author_family": "Rousselet",
+      "author_count": 2,
+      "author_families": [
+        "Rousselet",
+        "Pernet"
+      ],
+      "venue": "Frontiers in Human Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 192,
+      "openalex_id": "https://openalex.org/W2160799121",
+      "openalex_cited_by": 247,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS13"
+      ]
+    },
+    "doi:10.3389/fnimg.2022.1073734": {
+      "title": "Quality control in functional MRI studies with MRIQC and fMRIPrep",
+      "year": 2023,
+      "first_author_family": "Provins",
+      "author_count": 5,
+      "author_families": [
+        "Provins",
+        "MacNicol",
+        "Seeley"
+      ],
+      "venue": "Frontiers in Neuroimaging",
+      "type": "journal-article",
+      "crossref_cited_by": 28,
+      "openalex_id": "https://openalex.org/W4315781007",
+      "openalex_cited_by": 27,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR21"
+      ]
+    },
+    "doi:10.3389/fninf.2011.00013": {
+      "title": "Nipype: A Flexible, Lightweight and Extensible Neuroimaging Data Processing Framework in Python",
+      "year": 2011,
+      "first_author_family": "Gorgolewski",
+      "author_count": 7,
+      "author_families": [
+        "Gorgolewski",
+        "Burns",
+        "Madison"
+      ],
+      "venue": "Frontiers in Neuroinformatics",
+      "type": "journal-article",
+      "crossref_cited_by": 2026,
+      "openalex_id": "https://openalex.org/W2113619522",
+      "openalex_cited_by": 2532,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR21"
+      ]
+    },
+    "doi:10.3389/fninf.2014.00014": {
+      "title": "Machine learning for neuroimaging with scikit-learn",
+      "year": 2014,
+      "first_author_family": "Abraham",
+      "author_count": 9,
+      "author_families": [
+        "Abraham",
+        "Pedregosa",
+        "Eickenberg"
+      ],
+      "venue": "Frontiers in Neuroinformatics",
+      "type": "journal-article",
+      "crossref_cited_by": 2155,
+      "openalex_id": "https://openalex.org/W2151591509",
+      "openalex_cited_by": 2732,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS01",
+        "F03",
+        "P01"
+      ]
+    },
+    "doi:10.3389/fninf.2015.00012": {
+      "title": "Reproducibility of neuroimaging analyses across operating systems",
+      "year": 2015,
+      "first_author_family": "Glatard",
+      "author_count": 12,
+      "author_families": [
+        "Glatard",
+        "Lewis",
+        "Ferreira da Silva"
+      ],
+      "venue": "Frontiers in Neuroinformatics",
+      "type": "journal-article",
+      "crossref_cited_by": 117,
+      "openalex_id": "https://openalex.org/W1979051296",
+      "openalex_cited_by": 154,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "F04"
+      ]
+    },
+    "doi:10.3389/fnins.2012.00149": {
+      "title": "On the Plurality of (Methodological) Worlds: Estimating the Analytic Flexibility of fMRI Experiments",
+      "year": 2012,
+      "first_author_family": "Carp",
+      "author_count": 1,
+      "author_families": [
+        "Carp"
+      ],
+      "venue": "Frontiers in Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 304,
+      "openalex_id": "https://openalex.org/W2156451368",
+      "openalex_cited_by": 435,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D16"
+      ]
+    },
+    "doi:10.3389/fnins.2014.00001": {
+      "title": "Misconceptions in the use of the General Linear Model applied to functional MRI: a tutorial for junior neuro-imagers",
+      "year": 2014,
+      "first_author_family": "Pernet",
+      "author_count": 1,
+      "author_families": [
+        "Pernet"
+      ],
+      "venue": "Frontiers in Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 80,
+      "openalex_id": "https://openalex.org/W2129708289",
+      "openalex_cited_by": 182,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS09"
+      ]
+    },
+    "doi:10.3389/fnins.2019.00821": {
+      "title": "The Benefit of Slice Timing Correction in Common fMRI Preprocessing Pipelines",
+      "year": 2019,
+      "first_author_family": "Parker",
+      "author_count": 2,
+      "author_families": [
+        "Parker",
+        "Razlighi"
+      ],
+      "venue": "Frontiers in Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 48,
+      "openalex_id": "https://openalex.org/W2963432444",
+      "openalex_cited_by": 57,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR09"
+      ]
+    },
+    "doi:10.3389/fnins.2021.799576": {
+      "title": "Potential Pitfalls of Using Fractional Anisotropy, Axial Diffusivity, and Radial Diffusivity as Biomarkers of Cerebral White Matter Microstructure",
+      "year": 2022,
+      "first_author_family": "Figley",
+      "author_count": 6,
+      "author_families": [
+        "Figley",
+        "Uddin",
+        "Wong"
+      ],
+      "venue": "Frontiers in Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 229,
+      "openalex_id": "https://openalex.org/W4205639396",
+      "openalex_cited_by": 255,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "PR18"
+      ]
+    },
+    "doi:10.3389/neuro.06.004.2008": {
+      "title": "Representational similarity analysis – connecting the branches of systems neuroscience",
+      "year": 2008,
+      "first_author_family": "Kriegeskorte",
+      "author_count": 1,
+      "author_families": [
+        "Kriegeskorte"
+      ],
+      "venue": "Frontiers in Systems Neuroscience",
+      "type": "journal-article",
+      "crossref_cited_by": 1421,
+      "openalex_id": "https://openalex.org/W2160654481",
+      "openalex_cited_by": 3815,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PM02"
+    },
+    "doi:10.3758/s13428-017-0935-1": {
+      "title": "The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences",
+      "year": 2018,
+      "first_author_family": "Hedge",
+      "author_count": 3,
+      "author_families": [
+        "Hedge",
+        "Powell",
+        "Sumner"
+      ],
+      "venue": "Behavior Research Methods",
+      "type": "journal-article",
+      "crossref_cited_by": 1134,
+      "openalex_id": "https://openalex.org/W2724821146",
+      "openalex_cited_by": 1598,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D03"
+      ]
+    },
+    "doi:10.5334/irsp.289": {
+      "title": "How to Classify, Detect, and Manage Univariate and Multivariate Outliers, With Emphasis on Pre-Registration",
+      "year": 2019,
+      "first_author_family": "Leys",
+      "author_count": 5,
+      "author_families": [
+        "Leys",
+        "Delacre",
+        "Mora"
+      ],
+      "venue": "International Review of Social Psychology",
+      "type": "journal-article",
+      "crossref_cited_by": 254,
+      "openalex_id": "https://openalex.org/W2942533109",
+      "openalex_cited_by": 316,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "DS04"
+      ]
+    },
+    "doi:10.59275/j.melba.2025-59g7": {
+      "title": "BrainMorph: A Foundational Keypoint Model for Robust and Flexible Brain MRI Registration",
+      "year": 2025,
+      "first_author_family": "Wang",
+      "author_count": 6,
+      "author_families": [
+        "Wang",
+        "Saluja",
+        "Kim"
+      ],
+      "venue": "Machine Learning for Biomedical Imaging",
+      "type": "journal-article",
+      "crossref_cited_by": 6,
+      "openalex_id": "https://openalex.org/W4398796397",
+      "openalex_cited_by": 5,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [],
+      "library_id": "PP04"
+    },
+    "doi:10.7554/elife.77599": {
+      "title": "Improving the accuracy of single-trial fMRI response estimates using GLMsingle",
+      "year": 2022,
+      "first_author_family": "Prince",
+      "author_count": 6,
+      "author_families": [
+        "Prince",
+        "Charest",
+        "Kurzawski"
+      ],
+      "venue": "eLife",
+      "type": "journal-article",
+      "crossref_cited_by": 196,
+      "openalex_id": "https://openalex.org/W4310113667",
+      "openalex_cited_by": 190,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "D06",
+        "DS10"
+      ]
+    },
+    "doi:10.7554/elife.82566": {
+      "title": "Statistical inference on representational geometries",
+      "year": 2023,
+      "first_author_family": "Schütt",
+      "author_count": 4,
+      "author_families": [
+        "Schütt",
+        "Kipnis",
+        "Diedrichsen"
+      ],
+      "venue": "eLife",
+      "type": "journal-article",
+      "crossref_cited_by": 45,
+      "openalex_id": "https://openalex.org/W37610302",
+      "openalex_cited_by": 3,
+      "title_similarity": 1.0,
+      "status": "MATCH",
+      "lessons": [
+        "M08"
+      ]
+    }
+  }
+}

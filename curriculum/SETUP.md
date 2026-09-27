@@ -1,93 +1,148 @@
-# Setup: one tutor, one notebook, one operation at a time
+# Step 0 · macOS (MacBook Pro) Agentic Setup: Goose + Ollama with Qwen & Gemma
 
-Written 24 September 2026. Model tags and interfaces can change; verify the linked provider page when installing. The lessons work with **Ollama + Goose + a tool-capable Qwen3.6 or Gemma4 model**, or with **ChatGPT** as the tutor. Model choice does not change the scientific checks.
+This course targets **macOS on a standard Apple Silicon MacBook Pro (`M1` / `M2` / `M3` / `M4`)**. In **Step 0**, you will configure your MacBook Pro with:
+1. **[Ollama](https://ollama.com/download/mac)** serving both **Qwen** (`qwen3.5:9b` or `qwen3.6:27b`) and **Gemma 4** (`gemma4:e4b` or `gemma4:26b`) locally on Apple Silicon unified memory.
+2. **[Goose](https://goose-docs.ai/docs/quickstart/)** (`goose` CLI or Goose Desktop for macOS Apple Silicon) connected to your local Ollama server and guided by the repository's [`.goosehints`](../.goosehints).
+3. **Locked Python 3.12 + JupyterLab** (`./setup.sh`) so your agentic assistant and your Jupyter kernel operate on the exact same workspace.
 
-## Start reading before installing Python
+> **Why we pull both Qwen and Gemma on your MacBook Pro:**
+> - **Qwen (`qwen3.5:9b` / `qwen3.6:27b`) — Your Primary Coding & Tool Agent:** Optimized for multi-step agentic tool execution, reading repository files, writing NumPy/SciPy/NiBabel/Nilearn code, and generating multi-panel diagnostic plots inside Goose.
+> - **Gemma 4 (`gemma4:e4b` / `gemma4:26b`) — Your Scientific Auditor & Second Opinion:** Optimized for analytical reasoning, reading paper figure captions, checking transformation contracts, and auditing whether a snippet written by Qwen contains a silent methodological flaw (such as an axis swap, affine reset, or cross-validation leakage).
 
-Open [R00: how to read](../notebooks/00_paper_orientation/00_how_to_read.ipynb), the [reading method](papers/READING_METHOD.md) and the [paper list](papers/README.md). The [26-week study plan](STUDY_PLAN.md) begins with two weeks of six motivating papers and R00–R03 before F01. GitHub can display these markdown-only seminars in a browser; no Python, model download or equation solving is needed for the first pass. Save questions and figure evidence in the [coursework templates](coursework/PAPER_TO_EXPERIMENT.md).
+---
 
-AI is optional for the reading itself. When using it, provide the assigned paper version or check that it can access the text. Follow the [reading tutor contract](AI_WORKFLOW.md#start-with-the-scientific-problem); a model's general knowledge does not establish that it has read a recent paper. Set up Python before the computational lessons begin.
+## 1. Check your MacBook Pro's Unified Memory (`macOS`)
 
-## Choose a route
+Apple Silicon MacBook Pros share unified memory between the CPU, GPU, and Neural Engine. Because you will run **macOS + JupyterLab + Ollama + Goose** simultaneously, choose the Qwen + Gemma model pair that fits comfortably inside your MacBook Pro's RAM without swapping to SSD.
 
-| Route | What each part does | Use it for |
-| --- | --- | --- |
-| Ollama + Goose | Ollama runs the selected model; Goose connects that model to approved local file/code tools; Python computes the result | Paper discussion and guided local notebook/code work |
-| ChatGPT + local Jupyter | ChatGPT discusses an accessible paper or drafts a snippet; she later runs code in Jupyter and shares the toy result | Fast start, same readings, lessons and checks |
+Open **Terminal.app** on your MacBook Pro and check your unified memory in GB:
 
-The language model is the tutor/code assistant. NumPy, SciPy, NiBabel, Nilearn, and scikit-learn do the numerical work. An LLM's fluent explanation is not an image-registration algorithm, and a general vision model seeing a screenshot is not validated volumetric MRI analysis. A neuroimaging foundation model later in the course is a different kind of model with its own data and validation requirements.
-
-## Local AI route
-
-1. Install [Ollama](https://docs.ollama.com/quickstart) and [Goose](https://goose-docs.ai/docs/quickstart/) using their official instructions for the learner's operating system.
-2. Choose an explicit model tag. Current official listings include `gemma4:e2b`, `gemma4:e4b`, `qwen3.6:27b`, and `qwen3.6:35b`. Start with a model that fits the machine and passes the short exercise below. Exact hardware is not yet known.
-3. Download **one** chosen model. For example:
-
-```sh
-ollama pull gemma4:e2b
-ollama run gemma4:e2b
+```zsh
+sysctl -n hw.memsize | awk '{printf "MacBook Pro Unified Memory: %.0f GB\n", $1/1073741824}'
 ```
 
-For a machine suited to the larger Qwen model, substitute `qwen3.6:27b` in both commands. “Qwen 3.6+” is a preference, not a literal Ollama tag. Newer versions can be substituted after checking their exact tags and tool support.
+| MacBook Pro Unified Memory | Primary Goose Coding Agent (Qwen) | Scientific Audit & Reasoning Model (Gemma 4) | Combined Disk / Active Memory Footprint |
+| :--- | :--- | :--- | :--- |
+| **16 GB – 24 GB** *(Standard M1/M2/M3/M4 MacBook Pro)* | [`qwen3.5:9b`](https://ollama.com/library/qwen3.5) (`6.6 GB`, 256K context, Tools + Thinking) | [`gemma4:e4b`](https://ollama.com/library/gemma4) (`9.6 GB`, `gemma4:latest`, 128K context, Multimodal + Tools + Thinking) | One model loaded in RAM at a time (`~7–10 GB`), leaving `6–14 GB` free for macOS & JupyterLab |
+| **32 GB – 36 GB+** *(M1/M2/M3/M4 Pro or Max MacBook Pro)* | [`qwen3.6:27b`](https://ollama.com/library/qwen3.6) (`18 GB`, 256K context, flagship agentic coder) | [`gemma4:26b`](https://ollama.com/library/gemma4) (`19 GB`, MoE reasoning) or [`gemma4:e4b`](https://ollama.com/library/gemma4) (`9.6 GB`) | `~18–22 GB` active when running a 26B/27B model; `qwen3.6:35b` (`23 GB`) / `gemma4:31b` (`20 GB`) for 48 GB+ Macs |
+| **8 GB** *(Entry Air / older MacBook Pro fallback)* | [`qwen3.5:4b`](https://ollama.com/library/qwen3.5) (`3.4 GB`, 256K context) | [`gemma4:e2b`](https://ollama.com/library/gemma4) (`7.2 GB`, 128K context) | Lightweight fallback so Jupyter kernels never run out of memory |
 
-4. Keep the Ollama service running. Run `goose configure`, select the Ollama provider, enter `http://localhost:11434`, and select the **same installed model tag**. In Goose Desktop, configure the equivalent provider/model settings. See [official provider guidance](https://goose-docs.ai/docs/getting-started/providers/).
-5. Open only this course folder for the session. Use a mode that lets her review execution and enable only the file/code tools needed for the exercise. The `.goosehints` in the repository root gives the tutor instructions; it is guidance, not a security boundary.
-6. Run the smoke test below. If tool calls fail, she can use the model as a chat tutor and paste the snippet into Jupyter. A model's advertised tool capability does not guarantee reliable tool use in every integration.
+---
 
-The [Gemma4 listing](https://ollama.com/library/gemma4) currently shows roughly 7.2 GB and 9.6 GB downloads for e2b/e4b. The [Qwen3.6 listing](https://ollama.com/library/qwen3.6) shows roughly 18 GB and 23 GB for 27b/35b. Download size is **not total working memory**; the runtime and context also need memory. These are installation facts, not claims about neuroimaging accuracy. No large model download is required to read or execute this course's reference notebooks.
+## 2. Install Ollama and pull Qwen + Gemma on macOS
 
-Use an ordinary local tag rather than a `cloud` tag when the intention is local inference. Goose's external tools can still send data outside the machine. The bundled exercises use synthetic data. For actual research data, use the lab's approved environment and data rules.
+You can run `./setup.sh --setup-ai` from the repository root to automate Steps 2–4 on macOS, or run the explicit commands below in **Terminal.app**:
 
-## ChatGPT route
+```zsh
+# 1. Install Ollama for macOS (via Homebrew Cask or https://ollama.com/download/mac)
+brew install --cask ollama
+open -a Ollama
 
-Open ChatGPT, start a learning conversation, and paste the appropriate reading or computational tutor contract plus the current lesson. For a paper, work through one source-grounded figure question at a time. Later, ask it to work one prediction and one snippet at a time. Run reference snippets in local Jupyter, then paste the text output or a plot from the synthetic exercise. This route does not require Goose or configuring an OpenAI API key. Available tools and models vary with the account; the course does not require a particular paid tier. [Official ChatGPT guidance](https://learn.chatgpt.com/docs/use-chatgpt).
+# 2. Pull the Standard MacBook Pro (16–24 GB) Qwen + Gemma pair:
+ollama pull qwen3.5:9b
+ollama pull gemma4:e4b
 
-## Python notebooks
+# (If sysctl reported 32 GB+ unified memory on your MacBook Pro, also pull the 27B/26B pair):
+# ollama pull qwen3.6:27b
+# ollama pull gemma4:26b
 
-From the repository root on macOS, Linux, or Windows Subsystem for Linux:
+# 3. Verify both models are registered locally in Ollama:
+ollama list
+```
 
-```sh
+> **Local privacy note:** Always pull standard local weight tags (`qwen3.5:9b`, `qwen3.6:27b`, `gemma4:e4b`, `gemma4:26b`) rather than `-cloud` tags so inference stays 100% on your MacBook Pro.
+
+---
+
+## 3. Install and configure Goose on macOS
+
+[Goose](https://goose-docs.ai/docs/quickstart/) connects your local Ollama models to the course repository so the agent can inspect notebooks, run verification snippets, and help you build and debug class deliverables.
+
+```zsh
+# 1. Install the Goose CLI on macOS (or install via Homebrew: brew install --cask block-goose)
+curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash
+export PATH="$HOME/.local/bin:$PATH"
+
+# 2. Configure Goose to point to your local Ollama server
+goose configure
+```
+
+When `goose configure` prompts you:
+1. Choose **Configure Providers** $\to$ **Ollama**.
+2. Set `OLLAMA_HOST` to `http://localhost:11434`.
+3. Select your primary coding model (`qwen3.5:9b` on a 16–24 GB MacBook Pro, or `qwen3.6:27b` on a 32 GB+ MacBook Pro).
+4. Enable the **Developer** extension when working on computational notebooks so Goose can read files and run small verification checks inside this repository.
+
+To switch between your **Qwen** coding agent and your **Gemma 4** scientific auditor during a session, either run `goose configure` to switch the active model to `gemma4:e4b` (or `gemma4:26b`), or keep a second Terminal tab open with `ollama run gemma4:e4b` to cross-examine claims and equations!
+
+---
+
+## 4. Install the locked Python 3.12 + JupyterLab environment on macOS
+
+From the repository root on your MacBook Pro:
+
+```zsh
 ./setup.sh
-uv run --locked jupyter lab notebooks
+uv run --frozen jupyter lab notebooks
 ```
 
-The script installs uv when needed, selects Python 3.12, and installs the versions in [uv.lock](../uv.lock). Choose the course environment as the Jupyter kernel. The offline notebooks run without a dataset download; P02 retrieves a public fMRI teaching dataset. R00–R03 can be read in a browser.
+- `./setup.sh` installs [`uv`](https://docs.astral.sh/uv/) if needed, creates `.venv` with Python 3.12, and syncs the exact package versions pinned in [`uv.lock`](../uv.lock) (`numpy`, `scipy`, `pandas`, `matplotlib`, `scikit-learn`, `nibabel`, `nilearn`, `jupyterlab`, `nbclient`, `ipykernel`).
+- Keep **JupyterLab** running in Terminal Tab 1 (`uv run --frozen jupyter lab notebooks`) and run **Goose** in Terminal Tab 2 (`goose session`) from the repository root so `.goosehints` is automatically loaded.
+- **Alternative ChatGPT route:** If you ever work away from your local Ollama setup, you can paste the [supervisory contracts](AI_WORKFLOW.md#start-with-the-scientific-problem) into ChatGPT alongside local JupyterLab on your MacBook Pro; the scientific checks, error-tracing protocol, and expected outcome ranges are identical.
 
-The [project file](../pyproject.toml) lists direct dependencies, and `uv.lock` pins the complete environment. [requirements-tested.txt](../requirements-tested.txt) records the earlier Python 3.14 validation environment.
+---
 
 ## The tutor contract
 
-Copy this into the chosen AI at the beginning of each computational lesson. Use the separate [reading contract](AI_WORKFLOW.md#start-with-the-scientific-problem) for paper seminars:
+Our [`.goosehints`](../.goosehints) file automatically loads the course supervision rules into Goose when you launch `goose session` from the repository root. If you start a fresh chat or use `ollama run` / ChatGPT directly, paste this contract at the start of a computational lesson (or use the [reading contract](AI_WORKFLOW.md#start-with-the-scientific-problem) for `R00`–`R03`):
 
-> You are my neuroimaging tutor. I am learning to supervise AI-written analysis, not memorize programming syntax. Work on only the current lesson. Explain the input, named axes, units, output, parameters, and what information will be changed or lost. Ask me to predict one result and wait for my answer. Then propose one small operation, usually no more than 20 lines. Tell me how to inspect the code and show at least one numerical check and one visual check when relevant. Do not run ahead or reveal the answer key before I try. Use the supplied synthetic data first. Label simulations and assumptions. If I make a mistake, explain the missing concept in simpler terms and give a smaller example. Do not remove checks to make code pass. Do not invent a file, API, citation, execution result, diagnosis, or scientific conclusion. Preserve raw inputs, record actual versions/settings, and distinguish code you proposed from code we executed. When you suggest a method, name the research question that makes it appropriate.
+> You are my neuroimaging pair-programming agent and scientific tutor on macOS. My goal is to use you efficiently for class deliverables—delegating coding and plotting grunt work to you while I verify the transformation contract, spot silent errors immediately, trace bugs back to their root cause, and check outcomes against expected ranges. Work on the current lesson only. Before writing code, state the input shape, output shape, axis semantics, physical units, coordinate space, fitted parameters (and which subset of data they are fitted on), preserved invariants, and destroyed information. Propose concise, readable code (10–25 lines per step) with at least one numerical `assert` check and one diagnostic plot check. Never delete or weaken an `assert` to make code pass. If an output falls outside the expected range, help me trace the error back to the exact line, axis, unit, or split where the bug entered.
+
+---
 
 ## Ten-minute acceptance exercise
 
-Ask: “For `[2,4,6]`, predict the mean and describe what z standardization does. Wait. Then provide a short snippet with ddof=0, verify its mean and SD, and explain why this is not a significance test.”
+Before opening [`R00`](../notebooks/00_paper_orientation/00_how_to_read.ipynb) and [`F01`](../notebooks/00_foundations/01_learning_contract.ipynb), run this 10-minute **Step 0 Agentic Supervision Smoke Test** on your MacBook Pro to practice the exact three-part workflow used in every class deliverable:
 
-The tutor passes if it waits for a prediction, gives executable short code, recovers mean 4, produces standardized mean near 0 and SD near 1, and rejects the significance-test interpretation. This is a small usability check, not a model benchmark. If it fails, use the provided reference notebook and a stronger available tutor model; do not let the learner absorb the incorrect explanation.
+### 1. Give Goose a Suggestive Prompt (*in the spirit of what to ask, not a rigid script*)
+In your repo directory (`goose session`), ask something in the spirit of:
+> *"Let's run a quick 2D fMRI centering and $z$-standardization check on a synthetic `(V=3 voxels, T=4 time points)` matrix `X = np.array([[98., 100., 102., 104.], [196., 200., 204., 208.], [300., 300., 300., 300.]])`. Write a short snippet that standardizes each voxel's time course (`ddof=0`), and show me what goes wrong if someone standardizes along `axis=0` instead of `axis=1` or fails to guard against a zero-variance constant voxel."*
 
-## When something fails
+### 2. What to Look For & How to Trace the Error Back Down
+- **Red Flag 1 (Wrong Axis `axis=0` vs. `axis=1`):** If the AI writes `(X - X.mean(axis=0)) / X.std(axis=0)`, it standardizes across the *3 voxels at each time point* instead of across each voxel's *4 time points*. Even worse, `X_wrong.mean()` across the whole matrix is still `0.0`!
+  - *Traceback:* Check per-voxel row means `X_std.mean(axis=1)`—under `axis=0`, row means are non-zero (`[-1.20, -0.02, +1.22]`), proving static tissue baseline differences were mixed across time instead of removed within each voxel. Fix by specifying `axis=1, keepdims=True`.
+- **Red Flag 2 (Zero-Variance Voxel `NaN`/`Inf`):** Voxel 2 (`[300., 300., 300., 300.]`, e.g., an out-of-brain or saturated voxel) has temporal standard deviation $\sigma_{v=2} = 0.0$. Naive division raises a `RuntimeWarning: invalid value encountered in divide` and fills row 2 with `nan`.
+  - *Traceback:* Inspect `np.isnan(X_std).any()` and `X.std(axis=1)`. Fix with `np.divide(X - mu, sd, out=np.zeros_like(X), where=sd > 1e-12)`.
 
-- **Import error:** check which Python kernel is running and install into that environment.
-- **Goose cannot reach the model:** confirm Ollama is running and the endpoint and installed tag match.
-- **Slow or failed inference:** reduce model size/context, or use ChatGPT; keep notebook data small.
-- **AI forgets the instructions:** start a fresh lesson conversation with the contract and current data card.
-- **Wrong numbers or plots:** compare with the supplied checks; ask the AI to identify the first divergent step. Never ask it to simply make the assertions pass.
+### 3. Expected Outcome Range & Why It Must Look That Way
+- **Expected Valid Outcome:**
+  - Voxels 0 and 1 have **identical standardized time courses** `[-1.3416, -0.4472, +0.4472, +1.3416]` (mean $= 0.0$ within $\pm 10^{-12}$, `ddof=0` SD $= 1.0$ within $\pm 10^{-12}$, range $\in [-1.35, +1.35]$), even though Voxel 1 had twice the raw baseline (`200` vs. `100`) and twice the raw step (`4` vs. `2`).
+  - Voxel 2 is cleanly `0.0` across all 4 time points with zero `NaN`s.
+- **Why It Must Look That Way:** For any equally spaced 4-point linear ramp $x_t = \mu + c \cdot (-1.5, -0.5, +0.5, +1.5)$ with $c > 0$, subtracting $\mu$ removes the baseline offset and dividing by $\sigma = c \sqrt{\frac{1}{4}(2.25 + 0.25 + 0.25 + 2.25)} = c \sqrt{1.25}$ cancels the slope $c$ completely, leaving $z_t = (-1.5, -0.5, +0.5, +1.5) / \sqrt{1.25} \approx (-1.3416, -0.4472, +0.4472, +1.3416)$. Notice also why this $z$-score is a *descriptive within-voxel rescaling*, **not** an inferential $z$-statistic testing a population hypothesis!
 
+---
 
-## Check the course
+## When something fails on macOS
 
-Run from the repository root:
+- **`ollama: command not found` or `goose cannot connect to localhost:11434`:** Launch `Ollama.app` from `/Applications` (`open -a Ollama`) or run `ollama serve` in a background terminal tab, then verify with `ollama list`.
+- **MacBook Pro fan spin / memory pressure in Activity Monitor:** Check *Activity Monitor $\to$ Memory*. If Memory Pressure turns yellow/red while running a 27B model alongside Jupyter, switch Goose to `qwen3.5:9b` or `gemma4:e4b` and unload idle models with `ollama stop <model>`.
+- **`ModuleNotFoundError` in JupyterLab:** Confirm the notebook kernel in the top-right corner of JupyterLab is **Python 3 (ipykernel)** launched via `uv run --frozen jupyter lab notebooks`.
+- **AI output disagrees with a notebook assertion:** Never ask Goose to delete or loosen the `assert`. Use the lesson's **What to Look For & Error Traceback** checklist to find the first intermediate array whose shape, units, axis, or fitting boundary diverged.
 
-```sh
+---
+
+## Check the course on your MacBook Pro
+
+From the repository root:
+
+```zsh
 ./setup.sh --check
 ```
 
-This checks repository structure and runs 82 offline computational notebooks in fresh Jupyter kernels: 78 from the current course and four from the introductory supplement. To include the public-data fMRI project:
+This validates repository links, citations, and math hygiene, and executes **82 offline computational notebooks** in fresh Jupyter kernels (78 main-course lessons + 4 introductory supplement labs). To include the public-data fMRI project (`P02`):
 
-```sh
+```zsh
 ./setup.sh --check-all
 ```
 
-The full check executes 83 course-authored computational notebooks and labels the four reading seminars for instructor assessment. Preserved third-party notebooks use their original tool and data environments. Generated data, outputs, environments, and execution copies remain outside version control. Start with [R00](../notebooks/00_paper_orientation/00_how_to_read.ipynb) and follow the [study sequence](STUDY_PLAN.md).
+Once Step 0 is complete, open **[R00: Reading a research paper](../notebooks/00_paper_orientation/00_how_to_read.ipynb)** and follow the **[26-week study sequence](STUDY_PLAN.md)**.

@@ -1,8 +1,8 @@
 # Papers in computational modeling
 
-These five readings connect established ideas in encoding and representational analysis with recent work on brain-imaging foundation models. Begin with the research problem and the evidence for a proposed method, then return to the model's transformations and evaluation after the corresponding lessons. Publication and manuscript details were checked on **25 September 2026 UTC**.
+These eight readings (`PM01`–`PM08`) connect established ideas in encoding, representational analysis, connectome predictive modeling, normative modeling, and latent state-space dynamics with recent work on brain-imaging foundation models. Begin with the research problem and the evidence for a proposed method, then return to the model's transformations and evaluation after the corresponding lessons. Publication and manuscript details were checked on **25 September 2026 UTC**.
 
-**Suggested first encounter:** PM03 → PM05 → PM01 → PM02 → PM04. Spend 60–75 minutes per paper: 10 minutes on the motivating problem, 15 on the assigned passages, 15 on the evidence worksheet, 15 on discussion, and 5–20 on revision. Equations are optional on this first pass. Keep a question list for the later notebooks instead of asking AI to erase every unfamiliar term immediately.
+**Suggested first encounter:** PM03 → PM05 → PM01 → PM02 → PM07 → PM06 → PM08 → PM04. Spend 60–75 minutes per paper: 10 minutes on the motivating problem, 15 on the assigned passages, 15 on the evidence worksheet, 15 on discussion, and 5–20 on revision. Equations are optional on this first pass. Keep a question list for the later notebooks instead of asking AI to erase every unfamiliar term immediately.
 
 Each guide gives a reading path, figure questions, a practical assignment, and instructor notes. Open figures in the linked papers and create your own diagrams and evidence sheets. The specialist project can extend one question using appropriate data, software, and compute.
 
@@ -143,10 +143,41 @@ For every reading, submit a one-page **evidence sheet** with five boxes: scienti
 
 **Instructor notes / answer guide:** Matching means does not preserve spatial pattern. Extra detail may help but can also preserve nuisance and increase variance. Good answers name a perturbation experiment plus independent participant/site evaluation; they do not infer these controls were performed unless cited. Table 3's SALD columns favor SwiFT over Omni-fMRI on both reported metrics: an explicit counterexample to “wins every task.” Ask the learner to check which direction is better before comparing values. The paper acknowledges heuristic selection, and attribution agreement should motivate further validation. The public repository and author checkpoint link were verified; neither was executed or downloaded. A code license was not established from the inspected repository page, so public visibility is not treated as permission to redistribute it. The assigned manuscript declares CC BY-NC-SA 4.0; we link it only.
 
+<a id="pm06"></a>
+## PM06 — MindEye2: how do shared-subject fMRI decoders align brains with 1 hour of data?
+
+**Paul S. Scotti et al. (2024). _MindEye2: Shared-Subject Models Enable fMRI-To-Image With 1 Hour of Data._** Peer-reviewed ICML 2024 paper. [arXiv record](https://arxiv.org/abs/2403.11207) · [HTML full text](https://arxiv.org/html/2403.11207v2) · [Official code](https://github.com/MedARC-AI/MindEyeV2).
+
+**Why read it?** Classic fMRI visual reconstruction required 30–40 hours of scanning per participant because voxel spaces do not match across individuals. MindEye2 maps each subject's flattened ROI voxels into a shared 4096-dimensional latent space using a subject-specific linear ridge layer before passing representations through a shared nonlinear backbone and diffusion prior. This directly connects linear ridge baselines ([M01](../../notebooks/04_modeling/01_representations_encoding_decoding.ipynb), [M02](../../notebooks/04_modeling/02_regularized_linear_models.ipynb)), cross-subject alignment ([M08](../../notebooks/04_modeling/08_rsa_crossvalidated_distances.ipynb), [M10](../../notebooks/04_modeling/10_naturalistic_isc_encoding.ipynb)), and transfer learning ([M16](../../notebooks/04_modeling/16_selfsupervision_transfer.ipynb)).
+
+**Three discussion questions**
+
+1. Why does MindEye2 use a simple subject-specific linear ridge projection as the first layer rather than a deep subject-specific network when adapting to 1 hour of data?
+2. How can you distinguish detail genuinely decoded from the fMRI signal from plausible visual detail hallucinated by the pretrained Stable Diffusion prior?
+3. Why must stimulus images in the test split never appear in the training split of any subject used to pretrain the shared backbone?
+
+<a id="pm07"></a>
+## PM07 — Connectome-Based Predictive Modeling (CPM): when do brain graph edges predict behavior?
+
+**Xilin Shen, Emily S. Finn et al. (2017). _Using connectome-based predictive modeling to predict individual behavior from brain connectivity._** *Nature Protocols* 12(3), 506–518. [DOI](https://doi.org/10.1038/nprot.2016.178) · [PMC full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC5526681/) · [Official Yale code](https://github.com/YaleMRRC/CPM).
+
+**Why read it?** Parcellating a brain into $P = 268$ nodes yields $P(P-1)/2 = 35{,}778$ undirected edges per participant—far more features than participants in typical cohorts. CPM provides a transparent, linear baseline protocol that screens edges correlated with a target variable **strictly inside each cross-validation training fold**, sums positive and negative network strengths, and evaluates out-of-fold generalization against head-motion confounds and permutation null distributions.
+
+**Later notebook bridge:** [PR20](../../notebooks/01_processing/20_parcellations_connectivity.ipynb), [DS15](../../notebooks/03_data_science/15_selection.ipynb), [M07](../../notebooks/04_modeling/07_connectomes_graphs.ipynb), and [P03](../../notebooks/05_projects/03_cohort_generalization.ipynb). Audit how edge screening outside the cross-validation loop creates massive artificial $R^2$ on pure Gaussian noise.
+
+<a id="pm08"></a>
+## PM08 — Hidden Markov Models of brain network dynamics: beyond static connectivity
+
+**Diego Vidaurre, Stephen M. Smith, and Mark W. Woolrich (2017). _Brain network dynamics are hierarchically organized in time._** *PNAS* 114(48), 12827–12832. [DOI](https://doi.org/10.1073/pnas.1705120114) · [PMC full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC5715736/) · [Official HMM-MAR code](https://github.com/OHBA-analysis/HMM-MAR).
+
+**Why read it?** Static functional connectivity averages over an entire 10–15 minute scan, concealing rapid transitions between recurring brain states. Vidaurre et al. model resting-state fMRI as a Hidden Markov Model (HMM) where each latent state $z_t \in \{1, \dots, K\}$ has a distinct mean activation and covariance matrix, revealing that human brain dynamics cycle non-randomly through two higher-order "metastates" with heritable fractional occupancy.
+
+**Later notebook bridge:** [M11](../../notebooks/04_modeling/11_generative_latent_models.ipynb), [M12](../../notebooks/04_modeling/12_hmm_event_segmentation.ipynb), and [M13](../../notebooks/04_modeling/13_latent_dynamics_dcm.ipynb). Compare static covariance with state-specific emission matrices and Viterbi state decoding.
+
 ## Assessment and return to fundamentals
 
 Score each evidence sheet out of ten: correct prediction target and representation (2); traceable paper evidence (2); correct unit of independence (2); concrete failure test (2); restrained claim and understandable explanation (2). A polished AI summary without the cited evidence sheet does not satisfy the assignment. The learner should first explain the process aloud, then use AI to revise unclear wording.
 
 After the relevant notebooks, revisit the same sheet in a different color. Add the actual shape of each array, identify which operation is fitted, and state where fitting stops before evaluation. Preserve the original misunderstanding and explain the correction. The final deliverable is a small portfolio of evolving explanations, not a collection of generated paper summaries.
 
-**Orientation selections:** PM03 and PM05 are the strongest modern starting points. PM04 is the optional third reading when the orientation needs an explicit lesson in fair comparisons. PM01 and PM02 provide conceptual language for the return to fundamentals. These selections are editorial teaching choices, not a global ranking of research quality.
+**Orientation selections:** PM03 and PM05 are the strongest modern starting points. PM04 is the optional third reading when the orientation needs an explicit lesson in fair comparisons. PM01, PM02, PM06, PM07, and PM08 provide conceptual and methodological anchors across encoding, RSA, connectomes, and latent dynamics. These selections are editorial teaching choices, not a global ranking of research quality.

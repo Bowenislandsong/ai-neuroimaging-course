@@ -5,7 +5,7 @@ Original course materials, collected into one reading edition. Use the accompany
 ## Contents
 
 - [AI-assisted neuroimaging: understand every transformation](#doc-readme-md)
-- [Setup: one tutor, one notebook, one operation at a time](#doc-setup-md)
+- [Setup: Step 0 on macOS (MacBook Pro) — Goose + Ollama with Qwen & Gemma](#doc-setup-md)
 - [Two bridge classes before the core course](#doc-lessons-00-bridge-md)
 - [Data science: understand the numbers AI produces](#doc-lessons-580-md)
 - [Processing: explain every transformation](#doc-lessons-540-md)
@@ -32,30 +32,32 @@ Original course materials, collected into one reading edition. Use the accompany
 
 <a id="doc-readme-md"></a>
 
+> **Introductory supplement.** The [current course](../README.md) begins with [R00](../notebooks/00_paper_orientation/00_how_to_read.ipynb), uses the [26-week study plan](../curriculum/STUDY_PLAN.md), and includes [83 notebooks](../curriculum/NOTEBOOK_INDEX.md). This page collects the earlier short-format lessons for reference.
+
 # AI-assisted neuroimaging: understand every transformation
 
 A beginner course for a learner who uses AI to write short analysis snippets and wants to understand, inspect, and defend what those snippets do.
 
-**Start here:** [Setup and the AI teaching contract](SETUP.md), then [two foundation classes](lessons/00_bridge.md). The [complete reading edition](COURSEBOOK.md) collects the teaching text in one file. The four notebooks contain the executable demonstrations; their HTML companions show the verified outputs without installing Python.
+**For this retained supplement:** [Setup and the AI teaching contract](SETUP.md), then [two foundation classes](lessons/00_bridge.md). The [complete reading edition](COURSEBOOK.md) collects its teaching text in one file. The four notebooks contain the executable demonstrations; their HTML companions show the verified outputs without installing Python. The current course instead starts with the paper seminars linked above.
 
-## What this course is
+## Supplement structure
 
-24 core classes, two foundation classes, and two capstone sessions. Allow **14 weeks at two 60–75 minute classes per week**, plus 30–60 minutes of practice weekly. Slow down when the explain-back questions are difficult. The target is informed use of small snippets, not independent software engineering or the full training of a master's degree.
+This collection has 24 core classes, two foundation classes, and two capstone sessions. Its original 14-week schedule uses two 60–75 minute classes per week, plus 30–60 minutes of practice.
 
-USC's [NIIN curriculum](https://niin.usc.edu/about#curriculum) supplies four broad subject areas. Detailed public syllabi were not located during this research session. The sequence, lessons, prompts, notebooks, assessments, and capstone here are original; **this is not USC course material or an official NIIN syllabus**. [Research and materials record](SOURCES.md).
+The four blocks follow the broad subject areas of [USC's NIIN curriculum](https://niin.usc.edu/about#curriculum). Their lessons and assignments were developed for this course; [source records](SOURCES.md) identify the teaching materials used.
 
-## What she should be able to do
+## Learning outcomes
 
-For a transformation, explain the input, output, parameter units, what changes, what information is lost, one likely failure, and the evidence needed to accept the result. Ask an AI to implement that step, inspect it, and explain its scientific limits. She need not memorize syntax; she must be able to reject plausible-looking code and conclusions.
+Students explain a transformation's inputs, outputs, units, information loss, likely failure, and relevant checks. They can ask an AI to implement a step, inspect the result, and assess its scientific interpretation.
 
-| Block | Six actual classes | Lesson text | Runnable lab |
+| Block | Six classes | Lesson text | Runnable lab |
 | --- | --- | --- | --- |
 | Processing • 540-inspired | Coordinates/QC; registration and resampling; smoothing; temporal filtering; nuisance regression; pipeline audit | [540](lessons/540.md) | [Notebook](labs/540_processing.ipynb) · [Outputs](labs/540_processing.html) |
 | Research design • 520-inspired | Question and unit; confounding/design; timing and HRF; GLM/contrasts; uncertainty and multiplicity; preregistration/power | [520](lessons/520.md) | [Notebook](labs/520_design.ipynb) · [Outputs](labs/520_design.html) |
 | Data science • 580-inspired | Arrays/axes; participant joins; z standardization; regression/residuals; QC/uncertainty; provenance/leakage | [580](lessons/580.md) | [Notebook](labs/580_data_science.ipynb) · [Outputs](labs/580_data_science.html) |
 | Modeling • 550-inspired | Representations; baselines; honest splits; metrics; CNNs/segmentation; foundation-model audit | [550](lessons/550.md) | [Notebook](labs/550_modeling.ipynb) · [Outputs](labs/550_modeling.html) |
 
-## Suggested order: interleave understanding with practice
+## Earlier supplement schedule
 
 The numbers label subject areas, not a requirement to finish one block before touching another. Introduce a research question early, before choosing processing settings.
 
@@ -97,77 +99,75 @@ The runnable core uses small synthetic arrays so she can see the correct answer.
 
 <a id="doc-setup-md"></a>
 
-# Setup: one tutor, one notebook, one operation at a time
+# Setup: Step 0 on macOS (MacBook Pro) — Goose + Ollama with Qwen & Gemma
 
-Written 24 September 2026. Model tags and interfaces can change; verify the linked provider page when installing. The lessons work with **Ollama + Goose + a tool-capable Qwen3.6 or Gemma4 model**, or with **ChatGPT** as the tutor. Model choice does not change the scientific checks.
+This introductory supplement shares the same **macOS (Apple Silicon MacBook Pro)** environment and **Step 0 agentic setup** as the main 83-notebook curriculum ([full setup guide](../curriculum/SETUP.md)). The lessons work with **Ollama + Goose running the latest Qwen (`qwen3.5:9b` / `qwen3.6:27b`) and Gemma 4 (`gemma4:e4b` / `gemma4:26b`) models** on your MacBook Pro, or with **ChatGPT** alongside local JupyterLab.
 
-## Choose a route
+## Choose a route on your MacBook Pro
 
 | Route | What each part does | Use it for |
 | --- | --- | --- |
-| Ollama + Goose | Ollama runs the selected model; Goose connects that model to approved local file/code tools; Python computes the result | Guided local notebook/code work |
-| ChatGPT + local Jupyter | ChatGPT explains or drafts a snippet; she runs it in Jupyter and shares the toy result for discussion | Fast start, same lessons and checks |
+| **Ollama + Goose on macOS** *(Recommended)* | Ollama runs **Qwen** (primary coding/tool agent) and **Gemma 4** (scientific auditor) on Apple Silicon unified memory; Goose connects the model to local repo files; Python computes the result | Agentic notebook execution, error tracing, and class deliverables |
+| **ChatGPT + local Jupyter on macOS** | ChatGPT drafts or critiques a snippet under the tutor contract; you run it in local JupyterLab and verify the output against expected ranges | Fast fallback with the exact same lessons and checks |
 
-The language model is the tutor/code assistant. NumPy, SciPy, NiBabel, Nilearn, and scikit-learn do the numerical work. An LLM's fluent explanation is not an image-registration algorithm, and a general vision model seeing a screenshot is not validated volumetric MRI analysis. A neuroimaging foundation model later in the course is a different kind of model with its own data and validation requirements.
+The language model is your coding assistant and reasoning partner; NumPy, SciPy, NiBabel, Nilearn, and scikit-learn perform the numerical computation. A fluent LLM explanation is not an image-registration algorithm, and a neuroimaging foundation model later in the course (`BrainIAC`, `BrainMorph`, `Omni-fMRI`, `MindEye2`) is a distinct scientific model with its own input contract and validation rules.
 
-## Local AI route
+## Step 0 · Local AI route on macOS (MacBook Pro)
 
-1. Install [Ollama](https://docs.ollama.com/quickstart) and [Goose](https://goose-docs.ai/docs/quickstart/) using their official instructions for the learner's operating system.
-2. Choose an explicit model tag. Current official listings include `gemma4:e2b`, `gemma4:e4b`, `qwen3.6:27b`, and `qwen3.6:35b`. Start with a model that fits the machine and passes the short exercise below. Exact hardware is not yet known.
-3. Download **one** chosen model. For example:
-
-```sh
-ollama pull gemma4:e2b
-ollama run gemma4:e2b
-```
-
-For a machine suited to the larger Qwen model, substitute `qwen3.6:27b` in both commands. “Qwen 3.6+” is a preference, not a literal Ollama tag. Newer versions can be substituted after checking their exact tags and tool support.
-
-4. Keep the Ollama service running. Run `goose configure`, select the Ollama provider, enter `http://localhost:11434`, and select the **same installed model tag**. In Goose Desktop, configure the equivalent provider/model settings. See [official provider guidance](https://goose-docs.ai/docs/getting-started/providers/).
-5. Open only this course folder for the session. Use a mode that lets her review execution and enable only the file/code tools needed for the exercise. The `.goosehints` in this folder gives the tutor instructions; it is guidance, not a security boundary.
-6. Run the smoke test below. If tool calls fail, she can use the model as a chat tutor and paste the snippet into Jupyter. A model's advertised tool capability does not guarantee reliable tool use in every integration.
-
-The [Gemma4 listing](https://ollama.com/library/gemma4) currently shows roughly 7.2 GB and 9.6 GB downloads for e2b/e4b. The [Qwen3.6 listing](https://ollama.com/library/qwen3.6) shows roughly 18 GB and 23 GB for 27b/35b. Download size is **not total working memory**; the runtime and context also need memory. These are installation facts, not claims about neuroimaging accuracy. No large model download is required to read or execute this course's reference notebooks.
-
-Use an ordinary local tag rather than a `cloud` tag when the intention is local inference. Goose's external tools can still send data outside the machine. The bundled exercises use synthetic data. For actual research data, use the lab's approved environment and data rules.
+1. Check your MacBook Pro's unified memory in **Terminal.app**:
+   ```zsh
+   sysctl -n hw.memsize | awk '{printf "MacBook Pro Unified Memory: %.0f GB\n", $1/1073741824}'
+   ```
+2. Install [Ollama for macOS](https://ollama.com/download/mac) (`brew install --cask ollama && open -a Ollama`) and pull **both** the latest **Qwen** and **Gemma 4** models sized for your MacBook Pro:
+   - **Standard 16 GB – 24 GB MacBook Pro:**
+     ```zsh
+     ollama pull qwen3.5:9b
+     ollama pull gemma4:e4b
+     ```
+   - **32 GB+ MacBook Pro (`M1/M2/M3/M4` Pro or Max):**
+     ```zsh
+     ollama pull qwen3.6:27b
+     ollama pull gemma4:26b
+     ```
+   *(Or run `./setup.sh --setup-ai` from the repository root to detect your MacBook Pro RAM and pull both models automatically.)*
+3. Install [Goose](https://goose-docs.ai/docs/quickstart/) on macOS (`curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash`), run `goose configure`, select **Ollama** (`http://localhost:11434`), and choose `qwen3.5:9b` (or `qwen3.6:27b`) as your coding agent. Use `gemma4:e4b` (or `gemma4:26b`) when you want a second-opinion scientific audit of a figure or transformation contract.
+4. Open only this repository folder for your session. The root [`.goosehints`](../.goosehints) configures Goose to follow our three-part supervision workflow: **Suggestive Prompts ("in the spirit of")**, **Immediate Error Spotting & Root-Cause Traceback**, and **Expected Outcome Ranges & Why**.
 
 ## ChatGPT route
 
-Open ChatGPT, start a learning conversation, and paste the tutor contract plus the current lesson. Ask it to work one prediction and one snippet at a time. Run reference snippets in local Jupyter, then paste the text output or a plot from the synthetic exercise. This route does not require Goose or configuring an OpenAI API key. Available tools and models vary with the account; the course does not require a particular paid tier. [Official ChatGPT guidance](https://learn.chatgpt.com/docs/use-chatgpt).
+Open ChatGPT, start a learning conversation, and paste the tutor contract below plus the current lesson. Ask it to work one prediction and one snippet at a time, run the code in local JupyterLab on your MacBook Pro, and verify the result against the expected range. [Official ChatGPT guidance](https://learn.chatgpt.com/docs/use-chatgpt).
 
-## Python notebooks
+## Python notebooks on macOS
 
-In the course's parent folder, use the existing `.venv` for this delivered workspace, or create one on another machine:
+From the repository root in **Terminal.app**:
 
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r course/requirements.txt
-.venv/bin/python -m jupyter lab course/labs
+```zsh
+./setup.sh
+uv run --frozen jupyter lab course/labs
 ```
 
-On Windows replace `.venv/bin/python` with `.venv\Scripts\python.exe`. Pick the virtual environment's Python kernel. Installation needs internet; the **four core notebooks themselves do not**. Each core notebook is standalone and should be run from top to bottom. Within a section, run its cells in order. Exported `.html` companions let her inspect the reference outputs without installing anything.
-
-The tested package versions are in [requirements-tested.txt](requirements-tested.txt). The shorter requirements file gives compatible package families for another machine; rerun the notebook checks after an environment change. On this Mac the notebooks were checked in Python 3.14; use a Python version supported by all chosen packages if setting up elsewhere.
+Choose the locked `uv` environment as the Jupyter kernel. Each notebook runs cleanly from top to bottom, and the exported `.html` companions display saved reference outputs. Run `./setup.sh --check` from the repository root to execute these four notebooks along with the main course's 78 offline lessons.
 
 ## The tutor contract
 
-Copy this into the chosen AI at the beginning of each lesson:
+Copy this into your AI assistant at the beginning of each lesson (or launch `goose session` from the repository root so `.goosehints` loads automatically):
 
-> You are my neuroimaging tutor. I am learning to supervise AI-written analysis, not memorize programming syntax. Work on only the current lesson. Explain the input, named axes, units, output, parameters, and what information will be changed or lost. Ask me to predict one result and wait for my answer. Then propose one small operation, usually no more than 20 lines. Tell me how to inspect the code and show at least one numerical check and one visual check when relevant. Do not run ahead or reveal the answer key before I try. Use the supplied synthetic data first. Label simulations and assumptions. If I make a mistake, explain the missing concept in simpler terms and give a smaller example. Do not remove checks to make code pass. Do not invent a file, API, citation, execution result, diagnosis, or scientific conclusion. Preserve raw inputs, record actual versions/settings, and distinguish code you proposed from code we executed. When you suggest a method, name the research question that makes it appropriate.
+> You are my neuroimaging tutor and pair-programming agent on macOS. I am learning to supervise AI-written analysis for class deliverables: you handle the coding boilerplate while I verify the transformation contract, spot silent errors immediately, trace bugs back to their root cause, and check outcomes against expected ranges. Work on only the current lesson. Explain the input, named axes, units, output, parameters, and what information will be changed or lost. Ask me to predict one result and wait for my answer. Then propose one small operation, usually no more than 20 lines, with at least one numerical check and one visual check. Do not remove checks to make code pass. Do not invent a file, API, citation, execution result, diagnosis, or scientific conclusion.
 
 ## Ten-minute acceptance exercise
 
-Ask: “For `[2,4,6]`, predict the mean and describe what z standardization does. Wait. Then provide a short snippet with ddof=0, verify its mean and SD, and explain why this is not a significance test.”
+Give Goose (or your tutor) a prompt **in the spirit of**:
+> *"For the 1D array `[2.0, 4.0, 6.0]`, ask me to predict the mean and what $z$-standardization (`ddof=0`) will produce, and wait. Then write a 10-line snippet that computes the standardized array, contrasts `ddof=0` vs. `ddof=1`, and explains why a standardized array is not a hypothesis test."*
 
-The tutor passes if it waits for a prediction, gives executable short code, recovers mean 4, produces standardized mean near 0 and SD near 1, and rejects the significance-test interpretation. This is a small usability check, not a model benchmark. If it fails, use the provided reference notebook and a stronger available tutor model; do not let the learner absorb the incorrect explanation.
+- **What to look for & trace back:** Check whether the snippet used `ddof=0` ($\sigma = \sqrt{8/3} \approx 1.6330$) vs. `ddof=1` ($s = 2.0$). If the output values are `[-1.0, 0.0, +1.0]` instead of `[-1.2247, 0.0, +1.2247]`, trace the discrepancy directly to the `ddof` argument in `np.std()`.
+- **Expected outcome range & why:** The mean must be `4.0`, the standardized mean must lie within `0.0 ± 1e-12`, the `ddof=0` standard deviation must be `1.0 ± 1e-12`, and the standardized values must be `[-1.2247, 0.0, +1.2247]` because $\frac{6 - 4}{\sqrt{8/3}} = \sqrt{3/2} \approx 1.2247$.
 
 ## When something fails
 
-- **Import error:** check which Python kernel is running and install into that environment.
-- **Goose cannot reach the model:** confirm Ollama is running and the endpoint and installed tag match.
-- **Slow or failed inference:** reduce model size/context, or use ChatGPT; keep notebook data small.
-- **AI forgets the instructions:** start a fresh lesson conversation with the contract and current data card.
-- **Wrong numbers or plots:** compare with the supplied checks; ask the AI to identify the first divergent step. Never ask it to simply make the assertions pass.
+- **Import error:** check that JupyterLab was started via `uv run --frozen jupyter lab`.
+- **Goose cannot reach the model:** confirm `Ollama.app` is running on macOS (`ollama list`) and the endpoint (`http://localhost:11434`) and installed tag (`qwen3.5:9b`, `qwen3.6:27b`, `gemma4:e4b`, or `gemma4:26b`) match.
+- **High memory pressure on MacBook Pro:** switch to `qwen3.5:9b` or `gemma4:e4b` and close unused applications.
+- **Wrong numbers or plots:** compare with the lesson's expected outcome range and trace back to the first divergent array shape, axis, unit, or split. Never delete an assertion to force a pass.
 
 
 ---
@@ -1137,6 +1137,8 @@ Two capstone questions to ask unexpectedly: “What could make this plot look co
 
 # Verification report
 
+The [locked uv validation](../curriculum/uv_validation.json) also ran all four supplemental notebooks in fresh Jupyter kernels with Python 3.12.13. The record below describes the original Python 3.14 validation of this introductory supplement.
+
 Verified 24 September 2026 (Los Angeles), Python 3.14.7. Exact package versions are in [results.json](verification/results.json) and [requirements-tested.txt](requirements-tested.txt).
 
 | Notebook | Lesson sections | Executed code cells | Embedded figures | Result |
@@ -1364,7 +1366,7 @@ Verified 2026-09-24 (Los Angeles date). The six lessons, exercises, synthetic ar
 |---|---|---|
 | [USC NIIN curriculum](https://niin.usc.edu/about#curriculum) | NIIN 540 is listed with a broad processing/software/workflow description. | Supports the subject-area inspiration only. |
 | Exact searches `"NIIN 540" syllabus pdf`, `site.classes.usc.edu "NIIN" "540"`, `site.web-app.usc.edu "NIIN" "540" syllabus` | No detailed instructor syllabus was located in returned results. | Weekly USC topics, assignments, grading, and required readings remain unverified. |
-| [2025 fall course endpoint attempted](https://classes.usc.edu/term-20253/course/niin-540/) and [older schedule route attempted](https://web-app.usc.edu/soc/20253/niin/) | Both were inaccessible through the web tool. They were plausible endpoints to investigate, not discovered syllabus documents. | Do not interpret access failure as proof that a syllabus does not exist. |
+| [2025 fall course endpoint attempted](https://classes.usc.edu/term-20253/course/niin-540/) and older schedule route attempted (`web-app.usc.edu/soc/20253/niin/`; that host no longer resolves as of 2026-09-26) | Both were inaccessible through the web tool. They were plausible endpoints to investigate, not discovered syllabus documents. | Do not interpret access failure as proof that a syllabus does not exist. |
 | [USC progressive degree course plan](https://academicprograms.usc.edu/wp-content/uploads/2024/10/KECK-Neuroimaging-and-Informatics-8.24.pdf) | Search result confirms the course title and 3 units. | This is a degree plan, not a teaching syllabus. |
 
 **Missing material:** a public detailed NIIN 540 syllabus. If the instructor or learner obtains one with authorized access, compare it with this course's topic coverage before calling the course syllabus-aligned. Current language is **inspired by the published course description**.
@@ -1415,7 +1417,7 @@ Research checked 2026-09-25 UTC (2026-09-24 in Los Angeles). Lessons, prompts, n
 
 [USC NIIN curriculum](https://niin.usc.edu/about#curriculum) lists NIIN 520, Experimental Design for Neuroimaging, as a 3-credit course and describes rigorous study design for cognitive and clinical neuroscience. This supports the **subject-area inspiration only**. The six lessons, timing, examples, and assignments are our proposed learning sequence.
 
-An exact public NIIN 520 syllabus was **not located in this search**. Searches covered `site:web-app.usc.edu/soc/syllabus "NIIN 520"`, `site:classes.usc.edu "NIIN-520"`, `"NIIN 520" syllabus pdf`, and the current NIIN curriculum. This is not proof that no syllabus exists; the program may distribute one privately. Search also found USC's [BME 599 Human Neuroimaging Methods syllabus, Spring 2025](https://web-app.usc.edu/soc/syllabus/20251/29357.pdf), but that is a different course and is not presented as NIIN 520 or used to infer its weekly coverage. The older [2014 USC catalogue](https://cataloguepubs.usc.edu/cat2014/files/2010/06/catalogue-edited.pdf) is historical course-description evidence, not a current syllabus.
+An exact public NIIN 520 syllabus was **not located in this search**. Searches covered `site:web-app.usc.edu/soc/syllabus "NIIN 520"`, `site:classes.usc.edu "NIIN-520"`, `"NIIN 520" syllabus pdf`, and the current NIIN curriculum. This is not proof that no syllabus exists; the program may distribute one privately. Search also found USC's BME 599 Human Neuroimaging Methods syllabus, Spring 2025 (`web-app.usc.edu/soc/syllabus/20251/29357.pdf`; that host no longer resolves as of 2026-09-26), but that is a different course and is not presented as NIIN 520 or used to infer its weekly coverage. The older [2014 USC catalogue](https://cataloguepubs.usc.edu/cat2014/files/2010/06/catalogue-edited.pdf) is historical course-description evidence, not a current syllabus.
 
 USC pages and syllabi: publicly readable where linked; no open redistribution licence was established. Link for reference; do not mirror lecture notes, slides, textbooks, or institutional branding.
 
