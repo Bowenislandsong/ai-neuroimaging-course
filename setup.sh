@@ -4,9 +4,9 @@ set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 case "${1:-}" in
-  ''|--setup-ai|--check|--check-all) ;;
+  ''|--setup-ai|--build-site|--check|--check-all) ;;
   *)
-    printf 'Usage: ./setup.sh [--setup-ai | --check | --check-all]\n' >&2
+    printf 'Usage: ./setup.sh [--setup-ai | --build-site | --check | --check-all]\n' >&2
     exit 2
     ;;
 esac
@@ -16,9 +16,15 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
 OS_NAME="$(uname -s 2>/dev/null || echo Unknown)"
 ARCH_NAME="$(uname -m 2>/dev/null || echo Unknown)"
 MEM_GB=16
-if [ "$OS_NAME" = "Darwin" ] && command -v sysctl >/dev/null 2>&1; then
-  MEM_BYTES="$(sysctl -n hw.memsize 2>/dev/null || echo 17179869184)"
-  MEM_GB="$(( MEM_BYTES / 1073741824 ))"
+if [ "$OS_NAME" = "Darwin" ]; then
+  if ! xcode-select -p >/dev/null 2>&1; then
+    printf 'Note: Apple Command Line Tools not detected. Run: xcode-select --install\n'
+    printf '      Official guide: https://developer.apple.com/documentation/xcode/installing-the-command-line-tools\n'
+  fi
+  if command -v sysctl >/dev/null 2>&1; then
+    MEM_BYTES="$(sysctl -n hw.memsize 2>/dev/null || echo 17179869184)"
+    MEM_GB="$(( MEM_BYTES / 1073741824 ))"
+  fi
 fi
 
 # Select recommended Qwen (coding/tool agent) and Gemma 4 (scientific audit/reasoning) tags for MacBook Pro unified memory.
@@ -50,6 +56,9 @@ uv sync --frozen
 setup_macos_agentic_stack() {
   printf '\n=== Step 0: macOS (MacBook Pro) Agentic Setup (Goose + Ollama with Qwen & Gemma) ===\n'
   printf 'Detected platform: %s (%s) | Unified Memory: ~%s GB\n' "$OS_NAME" "$ARCH_NAME" "$MEM_GB"
+  printf 'Minimal Apple Developer Prerequisites:\n'
+  printf '  - Apple Command Line Tools: xcode-select --install (https://developer.apple.com/documentation/xcode/installing-the-command-line-tools)\n'
+  printf '  - Apple Metal & Accelerate: Built into macOS (https://developer.apple.com/metal/)\n'
   printf 'Recommended MacBook Pro models:\n'
   printf '  - Primary Agentic Coder (Qwen):     %s\n' "$REC_QWEN"
   printf '  - Scientific Auditor (Gemma 4):     %s\n' "$REC_GEMMA"
@@ -88,14 +97,19 @@ case "${1:-}" in
       printf 'Detected macOS (%s, ~%s GB unified memory).\n' "$ARCH_NAME" "$MEM_GB"
     fi
     printf 'Step 0 (Agentic AI Setup — Goose + Ollama with Qwen & Gemma on MacBook Pro):\n'
-    printf '  Run automated setup:  ./setup.sh --setup-ai\n'
-    printf '  Or manually pull:     ollama pull %s && ollama pull %s\n' "$REC_QWEN" "$REC_GEMMA"
-    printf '  See full Step 0 guide: curriculum/SETUP.md\n\n'
+    printf '  Minimal Apple Dev Tools:      xcode-select --install\n'
+    printf '  Run automated AI setup:       ./setup.sh --setup-ai\n'
+    printf '  Or manually pull:             ollama pull %s && ollama pull %s\n' "$REC_QWEN" "$REC_GEMMA"
+    printf '  See full Step 0 guide:        curriculum/SETUP.md\n\n'
     printf 'Open the course in JupyterLab:  uv run --frozen jupyter lab notebooks\n'
+    printf 'Build course website locally:   ./setup.sh --build-site\n'
     printf 'Validate offline lessons:       ./setup.sh --check\n'
     ;;
   --setup-ai)
     setup_macos_agentic_stack
+    ;;
+  --build-site)
+    uv run --frozen python scripts/build_website.py --output build/site
     ;;
   --check)
     uv run --frozen python scripts/check_repository.py

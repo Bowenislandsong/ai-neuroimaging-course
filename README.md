@@ -5,14 +5,21 @@ A 26-week graduate-level course in neuroimaging analysis, experimental design, d
 **Start with [Step 0: Set Up Goose + Ollama (Qwen & Gemma) on Your MacBook Pro](curriculum/SETUP.md), then open [R00: Reading a research paper](notebooks/00_paper_orientation/00_how_to_read.ipynb).** The [26-week study plan](curriculum/STUDY_PLAN.md) and [agentic AI workflow](curriculum/AI_WORKFLOW.md) guide you through every deliverable.
 
 [![Notebook checks](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml/badge.svg)](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml)
+[![Publish Course Website to GitHub Pages](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/pages.yml/badge.svg)](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/pages.yml)
 
-## Step 0 · Set up your MacBook Pro agentic environment (macOS + Ollama + Goose)
+> **Interactive GitHub Pages Website:** Every push or merge to `main` automatically builds and publishes the complete static course website via [`.github/workflows/pages.yml`](.github/workflows/pages.yml) (`./setup.sh --build-site`). The website organizes all 83 classes in both the **26-Week Chronological Study Path (`#1`–`#83`)** and by **7 Subject Strands (`R`, `F`, `PR`, `D`, `DS`, `M`, `P`)**, embeds verified open-licensed scientific concept diagrams from Wikimedia Commons alongside 5-stage transformation schematics and executed `matplotlib` figures, and provides **logical term-by-term equation breakdowns** explaining which part of each equation does what and what breaks if omitted.
 
-This course targets **macOS on a standard Apple Silicon MacBook Pro (`M1` / `M2` / `M3` / `M4`)**. Before starting the lessons, set up your local agentic pair-programming stack (**Ollama** serving the latest **Qwen** and **Gemma 4** models connected to **Goose**) alongside the locked Python environment.
+## Step 0 · Set up your MacBook Pro agentic environment (macOS + Apple Dev Tools + Ollama + Goose)
+
+This course targets **macOS on a standard Apple Silicon MacBook Pro (`M1` / `M2` / `M3` / `M4`)** ([Apple Silicon guide](https://support.apple.com/en-us/116943)). You only need **minimal Apple developer setup**: [Command Line Tools for Xcode](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools) (`xcode-select --install`, ~600 MB — **not** the full 12+ GB Xcode.app), native `arm64` [Terminal.app](https://support.apple.com/guide/terminal/welcome/mac), and macOS's built-in [Metal GPU](https://developer.apple.com/metal/) and [Accelerate](https://developer.apple.com/documentation/accelerate) frameworks ([Gatekeeper & Privacy guide](https://support.apple.com/en-us/102445)).
 
 Open **Terminal.app** on your MacBook Pro and run:
 
 ```zsh
+# 0. Enable minimal Apple Developer Command Line Tools (provides git, clang & SDK headers; skip full Xcode.app)
+xcode-select -p >/dev/null 2>&1 || xcode-select --install
+uname -m                    # Confirm native Apple Silicon (must print: arm64)
+
 # 1. Clone the course repository and install the locked Python 3.12 + Jupyter environment
 git clone https://github.com/Bowenislandsong/ai-neuroimaging-course.git
 cd ai-neuroimaging-course
@@ -38,7 +45,7 @@ goose configure             # Select: Ollama -> http://localhost:11434 -> qwen3.
 uv run --frozen jupyter lab notebooks
 ```
 
-*(You can also run `./setup.sh --setup-ai` on macOS to automatically detect your MacBook Pro's unified memory via `sysctl -n hw.memsize` and pull the matching Qwen + Gemma model pair.)* See [curriculum/SETUP.md](curriculum/SETUP.md) for the complete macOS Step 0 guide and verification smoke test.
+*(You can also run `./setup.sh --setup-ai` on macOS to automatically detect your MacBook Pro's unified memory via `sysctl -n hw.memsize` and pull the matching Qwen + Gemma model pair, or `./setup.sh --build-site` to build the static course website locally.)* See [curriculum/SETUP.md](curriculum/SETUP.md) for the complete macOS Step 0 guide, minimal Apple developer prerequisites, and verification smoke test.
 
 ## How we use AI for class deliverables: delegate the grunt work, supervise the science
 

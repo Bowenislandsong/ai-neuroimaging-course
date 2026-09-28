@@ -11,9 +11,35 @@ This course targets **macOS on a standard Apple Silicon MacBook Pro (`M1` / `M2`
 
 ---
 
+## 0. Minimal Apple Developer Environment Prerequisites (`macOS` on Apple Silicon)
+
+Before installing the course Python or AI stack, enable your MacBook Pro's built-in developer toolchain with **minimal setup** (~600 MB, under 5 minutes). You do **not** need the full 12+ GB Xcode IDE from the Mac App Store, a paid Apple Developer account, Docker Desktop, Conda/Anaconda, or Rosetta 2 (`x86_64` emulation).
+
+| Apple Component | Minimal Setup Command / Action | Why It Is Needed | Official Apple Documentation & Links |
+| :--- | :--- | :--- | :--- |
+| **1. Command Line Tools for Xcode** *(Required)* | `xcode-select --install` | Provides `git`, Apple `clang`, `make`, and the macOS SDK headers without installing the 12+ GB Xcode.app bundle | [Installing the Command Line Tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools) · [Apple Developer Downloads](https://developer.apple.com/download/all/) |
+| **2. Native Apple Silicon (`arm64`) Shell** *(Built-in)* | Open **Terminal.app** (`⌘ + Space` $\to$ `Terminal`) and verify `uname -m` outputs `arm64` | Ensures Python, NumPy, and Ollama execute natively on Apple Silicon rather than under slow Rosetta `x86_64` translation | [Mac computers with Apple silicon](https://support.apple.com/en-us/116943) · [macOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac) |
+| **3. Apple Metal GPU & Accelerate Framework** *(Built-in)* | Enabled automatically in macOS Sonoma (14+) / Sequoia (15+) | Powers zero-copy unified-memory GPU inference in Ollama and hardware-vectorized BLAS/LAPACK matrix algebra in NumPy/SciPy | [Apple Metal Overview](https://developer.apple.com/metal/) · [Apple Accelerate Framework](https://developer.apple.com/documentation/accelerate) · [PyTorch MPS on Mac](https://developer.apple.com/metal/pytorch/) |
+| **4. macOS Gatekeeper & Privacy Controls** *(Only if prompted)* | *System Settings $\to$ Privacy & Security* | Approves downloaded CLI tools (`goose`, `Ollama.app`) and grants `Terminal.app` access to local folders | [Safely open apps on your Mac](https://support.apple.com/en-us/102445) · [Control access to files and folders on Mac](https://support.apple.com/guide/mac-help/control-access-to-files-and-folders-on-mac-mchld5a35146/mac) |
+
+Run this 3-line readiness check in **Terminal.app**:
+
+```zsh
+# 1. Install Apple Command Line Tools if not already present (triggers native macOS installer popup)
+xcode-select -p >/dev/null 2>&1 || xcode-select --install
+
+# 2. Verify native Apple Silicon arm64 execution (must print: arm64)
+uname -m
+
+# 3. Verify git is available from Apple Command Line Tools
+git --version
+```
+
+---
+
 ## 1. Check your MacBook Pro's Unified Memory (`macOS`)
 
-Apple Silicon MacBook Pros share unified memory between the CPU, GPU, and Neural Engine. Because you will run **macOS + JupyterLab + Ollama + Goose** simultaneously, choose the Qwen + Gemma model pair that fits comfortably inside your MacBook Pro's RAM without swapping to SSD.
+Apple Silicon MacBook Pros share unified memory between the CPU, GPU, and Neural Engine ([Activity Monitor Memory Guide](https://support.apple.com/guide/activity-monitor/view-memory-usage-actmntr1004/mac)). Because you will run **macOS + JupyterLab + Ollama + Goose** simultaneously, choose the Qwen + Gemma model pair that fits comfortably inside your MacBook Pro's RAM without swapping to SSD.
 
 Open **Terminal.app** on your MacBook Pro and check your unified memory in GB:
 
