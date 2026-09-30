@@ -13,8 +13,10 @@ The language model is your coding assistant and reasoning partner; NumPy, SciPy,
 
 ## Step 0 · Local AI route on macOS (MacBook Pro)
 
-1. Check your MacBook Pro's unified memory in **Terminal.app**:
+0. **Minimal Apple Developer Setup (~5 min, no full Xcode needed):** Install [Apple Command Line Tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools) (`xcode-select --install`, ~600 MB) for `git` and `clang` without downloading the 12+ GB Xcode.app bundle, and confirm native [Apple Silicon](https://support.apple.com/en-us/116943) (`uname -m` $\to$ `arm64`) in [Terminal.app](https://support.apple.com/guide/terminal/welcome/mac). Built-in [Apple Metal](https://developer.apple.com/metal/) and [Accelerate](https://developer.apple.com/documentation/accelerate) handle GPU/BLAS compute automatically ([macOS Gatekeeper & Privacy guide](https://support.apple.com/en-us/102445)).
+1. Check your MacBook Pro's unified memory in **Terminal.app** ([Activity Monitor Memory guide](https://support.apple.com/guide/activity-monitor/view-memory-usage-actmntr1004/mac)):
    ```zsh
+   xcode-select -p >/dev/null 2>&1 || xcode-select --install
    sysctl -n hw.memsize | awk '{printf "MacBook Pro Unified Memory: %.0f GB\n", $1/1073741824}'
    ```
 2. Install [Ollama for macOS](https://ollama.com/download/mac) (`brew install --cask ollama && open -a Ollama`) and pull **both** the latest **Qwen** and **Gemma 4** models sized for your MacBook Pro:
