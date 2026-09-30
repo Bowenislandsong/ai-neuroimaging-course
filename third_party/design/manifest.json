@@ -1,0 +1,58 @@
+[
+  {
+    "repository": "poldrack/fmri-analysis-vm",
+    "commit": "d93fcf8e818c850d0a1b4e96b01ac987f27e9d34",
+    "upstream_path": "LICENSE",
+    "local_path": "third_party/design/fmri-analysis-vm/LICENSE",
+    "sha256": "cd2417dbadd975522f60e145c56bbc92f8dcd1e77b235e3be6befcc6d7267637",
+    "modified": false
+  },
+  {
+    "repository": "poldrack/fmri-analysis-vm",
+    "commit": "d93fcf8e818c850d0a1b4e96b01ac987f27e9d34",
+    "upstream_path": "analysis/efficiency/DesignEfficiency.ipynb",
+    "local_path": "third_party/design/fmri-analysis-vm/analysis/efficiency/DesignEfficiency.ipynb",
+    "sha256": "714a6a2acba531faec4877e3478598d5a4008941c707552ab4b6c00d43591524",
+    "modified": false
+  },
+  {
+    "repository": "ljchang/dartbrains",
+    "commit": "b72537ad25deee0281248a415a052cd87ff325de",
+    "upstream_path": "content/intro.md",
+    "local_path": "third_party/design/dartbrains/content/intro.md",
+    "sha256": "e8dbf7255faaf37d668eba4c81a7e6ec8ce6c53da691b71a3cb58088416b9db7",
+    "modified": false
+  },
+  {
+    "repository": "ljchang/dartbrains",
+    "commit": "b72537ad25deee0281248a415a052cd87ff325de",
+    "upstream_path": "content/Syllabus.md",
+    "local_path": "third_party/design/dartbrains/content/Syllabus.md",
+    "sha256": "b28245e3080da221727b4bd6b9b77bfbbde3158dbcc692ddc181d49c7e5c571e",
+    "modified": false
+  },
+  {
+    "repository": "ljchang/dartbrains",
+    "commit": "b72537ad25deee0281248a415a052cd87ff325de",
+    "upstream_path": "_toc.yml",
+    "local_path": "third_party/design/dartbrains/_toc.yml",
+    "sha256": "586e697355115f94b0acdef07ddfc6a781705f66f55f55b2a76ab3c7243ce819",
+    "modified": false
+  },
+  {
+    "repository": "ljchang/dartbrains",
+    "commit": "b72537ad25deee0281248a415a052cd87ff325de",
+    "upstream_path": "content/Resampling_Statistics.ipynb",
+    "local_path": "third_party/design/dartbrains/content/Resampling_Statistics.ipynb",
+    "sha256": "76d8d6b164a1f1a6508693e80c5db1b68f8b6d549df3bd7720eaa958113ab002",
+    "modified": false
+  },
+  {
+    "repository": "poldrack/fmri-analysis-vm",
+    "commit": "d93fcf8e818c850d0a1b4e96b01ac987f27e9d34",
+    "upstream_path": "analysis/efficiency/EfficiencyCorrelation.ipynb",
+    "local_path": "third_party/design/fmri-analysis-vm/analysis/efficiency/EfficiencyCorrelation.ipynb",
+    "sha256": "a6635915f8397e8a999fcc1426ad87b68d76d13362558f8ec9c7fcea349b4f3a",
+    "modified": false
+  }
+]

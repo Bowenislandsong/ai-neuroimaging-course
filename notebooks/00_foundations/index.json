@@ -1,0 +1,26 @@
+[
+  {
+    "id": "F01",
+    "title": "What the AI does and what you must understand",
+    "path": "notebooks/00_foundations/01_learning_contract.ipynb",
+    "tier": "offline"
+  },
+  {
+    "id": "F02",
+    "title": "From tissue to MRI contrast to BOLD",
+    "path": "notebooks/00_foundations/02_measurement_bridge.ipynb",
+    "tier": "offline"
+  },
+  {
+    "id": "F03",
+    "title": "Read a snippet without becoming a software engineer",
+    "path": "notebooks/00_foundations/03_snippet_literacy.ipynb",
+    "tier": "offline"
+  },
+  {
+    "id": "F04",
+    "title": "A notebook is an experiment with state",
+    "path": "notebooks/00_foundations/04_notebook_environment.ipynb",
+    "tier": "offline"
+  }
+]

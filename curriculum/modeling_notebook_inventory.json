@@ -1,0 +1,226 @@
+[
+  {
+    "number": 1,
+    "title": "What is represented, and in which direction?",
+    "path": "notebooks/04_modeling/01_representations_encoding_decoding.ipynb",
+    "original_explanatory_words": 567,
+    "markdown_words": 811,
+    "sources": [
+      "[NMA: GLMs for Encoding](https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D3_GeneralizedLinearModels/student/W1D3_Tutorial1.ipynb)",
+      "[BrainIAK: fMRI classification](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/03-classification.ipynb)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 2,
+    "title": "Ridge, lasso, and logistic models are different commitments",
+    "path": "notebooks/04_modeling/02_regularized_linear_models.ipynb",
+    "original_explanatory_words": 538,
+    "markdown_words": 775,
+    "sources": [
+      "[BrainIAK: regularization and nested optimization](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/05-classifier-optimization.ipynb)",
+      "[NMA: multiple and polynomial regression](https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D2_ModelFitting/student/W1D2_Tutorial4.ipynb)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 3,
+    "title": "Curved boundaries: SVM kernels and tree ensembles",
+    "path": "notebooks/04_modeling/03_kernels_ensembles.ipynb",
+    "original_explanatory_words": 536,
+    "markdown_words": 786,
+    "sources": [
+      "[BrainIAK: classifiers](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/03-classification.ipynb)",
+      "[BrainIAK: precomputed connectivity kernels](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/09-fcma.ipynb)",
+      "[scikit-learn SVM guide](https://scikit-learn.org/stable/modules/svm.html)",
+      "[scikit-learn ensemble guide](https://scikit-learn.org/stable/modules/ensemble.html)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 4,
+    "title": "Nested validation and the limits of site adjustment",
+    "path": "notebooks/04_modeling/04_nested_sites_harmonization.ipynb",
+    "original_explanatory_words": 554,
+    "markdown_words": 830,
+    "sources": [
+      "[BrainIAK: nested validation and circular inference](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/05-classifier-optimization.ipynb)",
+      "[neuroHarmonize official repository](https://github.com/rpomponio/neuroHarmonize)"
+    ],
+    "code_cells": 3
+  },
+  {
+    "number": 5,
+    "title": "PCA reconstruction versus ICA source assumptions",
+    "path": "notebooks/04_modeling/05_pca_ica.ipynb",
+    "original_explanatory_words": 540,
+    "markdown_words": 760,
+    "sources": [
+      "[BrainIAK: PCA and feature-selection pipelines](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/04-dimensionality-reduction.ipynb)",
+      "[scikit-learn component decomposition](https://scikit-learn.org/stable/modules/decomposition.html)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 6,
+    "title": "Clusters, labels, and stability under changed measurements",
+    "path": "notebooks/04_modeling/06_clustering_stability.ipynb",
+    "original_explanatory_words": 577,
+    "markdown_words": 808,
+    "sources": [
+      "[NMA: representation and nonlinear visualization](https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D4_DimensionalityReduction/student/W1D4_Tutorial4.ipynb)",
+      "[scikit-learn clustering guide](https://scikit-learn.org/stable/modules/clustering.html)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 7,
+    "title": "From regional signals to a graph: every edge is a choice",
+    "path": "notebooks/04_modeling/07_connectomes_graphs.ipynb",
+    "original_explanatory_words": 561,
+    "markdown_words": 795,
+    "sources": [
+      "[BrainIAK: seed and atlas connectivity](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/08-connectivity.ipynb)",
+      "[BrainIAK: full-correlation matrix analysis](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/09-fcma.ipynb)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 8,
+    "title": "RSA compares relationships, not matching voxel labels",
+    "path": "notebooks/04_modeling/08_rsa_crossvalidated_distances.ipynb",
+    "original_explanatory_words": 546,
+    "markdown_words": 778,
+    "sources": [
+      "[BrainIAK: RSA (vendored original)](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/06-rsa.ipynb)",
+      "[Dartmouth/OHBM: intersubject RSA](https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/Intersubject_RSA.ipynb)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 9,
+    "title": "Searchlight decoding: a center score describes a neighborhood",
+    "path": "notebooks/04_modeling/09_searchlight.ipynb",
+    "original_explanatory_words": 574,
+    "markdown_words": 802,
+    "sources": [
+      "[BrainIAK: searchlight workflow](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/07-searchlight.ipynb)",
+      "[BrainIAK: double dipping](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/05-classifier-optimization.ipynb)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 10,
+    "title": "Shared movies: ISC, temporal encoding, and alignment",
+    "path": "notebooks/04_modeling/10_naturalistic_isc_encoding.ipynb",
+    "original_explanatory_words": 577,
+    "markdown_words": 824,
+    "sources": [
+      "[BrainIAK: ISC and ISFC (vendored)](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/10-isc.ipynb)",
+      "[BrainIAK: shared response modeling](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/11-srm.ipynb)",
+      "[Dartmouth/OHBM: functional alignment](https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/Functional_Alignment.ipynb)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 11,
+    "title": "A generative model must reproduce more than a mean",
+    "path": "notebooks/04_modeling/11_generative_latent_models.ipynb",
+    "original_explanatory_words": 556,
+    "markdown_words": 790,
+    "sources": [
+      "[NMA DL: generative models and latent variables](https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W2D3_GenerativeModelsAndDeepLearningDiscussion1/student/W2D3_Tutorial1.ipynb)",
+      "[scikit-learn factor-analysis documentation](https://scikit-learn.org/stable/modules/decomposition.html#factor-analysis)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 12,
+    "title": "Hidden states, emissions, and the meaning of an event",
+    "path": "notebooks/04_modeling/12_hmm_event_segmentation.ipynb",
+    "original_explanatory_words": 538,
+    "markdown_words": 778,
+    "sources": [
+      "[NMA: HMM (vendored)](https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W3D3_HiddenDynamics/student/W3D3_Tutorial2.ipynb)",
+      "[BrainIAK: event segmentation](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/12-hmm.ipynb)",
+      "[Dartmouth/OHBM: event segmentation](https://github.com/naturalistic-data-analysis/naturalistic_data_analysis/blob/88bd22741508b4d678202bde7530cee0511e283f/content/Event_Segmentation.ipynb)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 13,
+    "title": "Latent dynamics, Kalman updates, and what DCM adds",
+    "path": "notebooks/04_modeling/13_latent_dynamics_dcm.ipynb",
+    "original_explanatory_words": 584,
+    "markdown_words": 836,
+    "sources": [
+      "[NMA: linear dynamics](https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W2D3_LinearSystems/student/W2D3_Tutorial1.ipynb)",
+      "[NMA: Kalman filter](https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W3D3_HiddenDynamics/student/W3D3_Tutorial3.ipynb)",
+      "[SPM: DCM for fMRI first level](https://www.fil.ion.ucl.ac.uk/spm/docs/tutorials/dcm/dcm_fmri_first_level/)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 14,
+    "title": "Train a small convolutional network and check its gradients",
+    "path": "notebooks/04_modeling/14_cnn_backprop_training.ipynb",
+    "original_explanatory_words": 577,
+    "markdown_words": 819,
+    "sources": [
+      "[NMA DL: CNNs (vendored)](https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.ipynb)",
+      "[NMA DL: optimization](https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W1D4_Optimization/student/W1D4_Tutorial1.ipynb)"
+    ],
+    "code_cells": 4
+  },
+  {
+    "number": 15,
+    "title": "Segmentation, imbalance, Dice, and image-level splits",
+    "path": "notebooks/04_modeling/15_segmentation_losses.ipynb",
+    "original_explanatory_words": 568,
+    "markdown_words": 800,
+    "sources": [
+      "[NMA DL: image architectures](https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.ipynb)",
+      "[MONAI BraTS model input/target documentation](https://huggingface.co/MONAI/brats_mri_segmentation/blob/main/docs/README.md)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 16,
+    "title": "Pretraining, frozen features, and actual fine-tuning",
+    "path": "notebooks/04_modeling/16_selfsupervision_transfer.ipynb",
+    "original_explanatory_words": 565,
+    "markdown_words": 801,
+    "sources": [
+      "[NMA DL: unsupervised and self-supervised learning](https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/student/W3D3_Tutorial1.ipynb)",
+      "[NMA DL: autoencoders](https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W2D3_GenerativeModelsAndDeepLearningDiscussion1/student/W2D3_Tutorial1.ipynb)"
+    ],
+    "code_cells": 3
+  },
+  {
+    "number": 17,
+    "title": "Attention transforms tokens; a model card constrains claims",
+    "path": "notebooks/04_modeling/17_attention_foundation_models.ipynb",
+    "original_explanatory_words": 588,
+    "markdown_words": 824,
+    "sources": [
+      "[NMA DL: attention and transformers](https://github.com/NeuromatchAcademy/course-content-dl/blob/caba36c513fb8139ac3c9e7503f7a769dadde25e/tutorials/W3D1_AttentionAndTransformers/student/W3D1_Tutorial1.ipynb)",
+      "[BrainSegFounder author model card](https://huggingface.co/smilelab/BrainSegFounder)",
+      "[BrainSegFounder author research code](https://github.com/lab-smile/BrainSegFounder)"
+    ],
+    "code_cells": 2
+  },
+  {
+    "number": 18,
+    "title": "Calibrate probabilities, challenge explanations, preserve the evidence",
+    "path": "notebooks/04_modeling/18_calibration_explanation_reproducibility.ipynb",
+    "original_explanatory_words": 582,
+    "markdown_words": 836,
+    "sources": [
+      "[BrainIAK: model evaluation and selection](https://github.com/brainiak/brainiak-tutorials/blob/fb62ede943d9694fe703aee0df5f43ecf5558415/tutorials/05-classifier-optimization.ipynb)",
+      "[scikit-learn probability calibration](https://scikit-learn.org/stable/modules/calibration.html)",
+      "[scikit-learn permutation importance](https://scikit-learn.org/stable/modules/permutation_importance.html)",
+      "[Adebayo et al.: Sanity Checks for Saliency Maps](https://arxiv.org/abs/1810.03292)"
+    ],
+    "code_cells": 2
+  }
+]

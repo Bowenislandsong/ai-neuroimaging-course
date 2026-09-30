@@ -1,0 +1,24 @@
+{
+  "n_scans": 84,
+  "TR_seconds": 7.0,
+  "n_mask_voxels": 61335,
+  "design_columns": [
+    "listening",
+    "drift_1",
+    "drift_2",
+    "drift_3",
+    "drift_4",
+    "drift_5",
+    "drift_6",
+    "drift_7",
+    "drift_8",
+    "drift_9",
+    "drift_10",
+    "drift_11",
+    "constant"
+  ],
+  "max_abs_z": 9.398995123095064,
+  "two_sided_FDR_0.05_z": 2.5488395204189827,
+  "retained_voxels": 13260,
+  "scope": "raw-image teaching GLM; no motion/distortion correction; no population inference"
+}

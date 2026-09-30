@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DartBrains Preprocessing (Marimo) · Neuroimaging Research Methods with AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-badge">NEURO+AI</span>
+      <span>Neuroimaging Research Methods with AI</span>
+    </a>
+    <nav class="top-links" aria-label="Primary Navigation">
+      <a href="../../index.html">26-Week Roadmap</a>
+      <a href="../../curriculum/SETUP.html">Mac Env &amp; Apple Setup</a>
+      <a href="../../curriculum/STUDY_PLAN.html">Study Plan</a>
+      <a href="../../curriculum/NOTEBOOK_INDEX.html">83 Classes</a>
+      <a href="../../curriculum/EQUATION_ATLAS.html">Equation &amp; Diagram Atlas</a>
+      <a href="../../curriculum/papers/README.html">24 Papers &amp; 310 Citations</a>
+      <a href="../../curriculum/AI_WORKFLOW.html">AI Workflow</a>
+      <a href="../../curriculum/ALL_MATERIALS.html" class="active">All Repo Materials (250)</a>
+    </nav>
+    <div class="reader-controls" aria-label="Reading Comfort Controls">
+      <button type="button" id="eq-logic-toggle-btn" class="ctrl-btn active" title="Expand or collapse all inline equation logic breakdown tables">∑ Logic: Expanded</button>
+      <button type="button" id="focus-mode-btn" class="ctrl-btn" title="Toggle distraction-free wide reading mode">⇄ Focus Width</button>
+      <button type="button" id="theme-cycle-btn" class="ctrl-btn" title="Switch reading theme (Light / Warm Sepia / Dark)">☀ Light</button>
+    </div>
+  </header>
+
+  <div class="page-shell wide-shell">
+    <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-expanded="false">
+      <span>☰ Browse 83 Classes, 26-Week Path &amp; Repo Docs</span>
+      <span class="mobile-toggle-hint" style="font-family:var(--font-mono);font-size:0.76rem">Show ▾</span>
+    </button>
+    
+    <aside class="sidebar-left" aria-label="Course and Repository Navigation">
+      <input type="search" id="sidebar-filter-input" class="sidebar-search" placeholder="Filter 83 classes &amp; docs (press /)..." aria-label="Filter classes and documents">
+      <div class="sidebar-mode-tabs" role="tablist">
+        <button type="button" class="sidebar-mode-btn active" data-mode="chronological">26-Week Path</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="strand">By Strand</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="repodocs">Repo Docs</button>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="chronological">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html" class=""><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li><li class="nav-item"><a href="../../curriculum/ALL_MATERIALS.html" class=""><span class="nav-cid">ALL</span><span>All 250 Repo Materials</span><span class="nav-week-tag">Index</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase I · Paper Orientation &amp; Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">W3</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase II · Neuroimaging Data Science &amp; Experimental Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">W7</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase III · Image Processing &amp; Biophysical Pipelines</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">W13</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase IV · General Linear Modeling, Statistical Inference &amp; Multiverse Design</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">W16</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase V · Multivariate Modeling, Dynamics &amp; Foundation Models</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">W22</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase VI · Capstone Generalization &amp; Research Defense</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">W23</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">W25</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="strand" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html"><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Paper Orientation Seminars (R00–R03)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">#1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">#2</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">#3</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">#4</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Foundations &amp; MR Physics (F01–F04)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">#5</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">#6</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">#7</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">#8</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Image Processing &amp; Pipelines (PR01–PR21)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">#29</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">#30</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">#31</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">#32</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">#33</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">#34</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">#35</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">#36</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">#37</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">#38</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">#39</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">#40</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">#42</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">#43</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">#44</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">#46</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">#47</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">#48</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">#49</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">#50</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">#51</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Research Design &amp; Inference (D01–D16)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">#17</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">#18</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">#23</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">#24</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">#41</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">#45</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">#53</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">#54</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">#55</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">#56</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">#57</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">#58</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">#59</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">#60</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">#61</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">#62</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Data Science &amp; Computing (DS01–DS16)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">#9</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">#10</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">#11</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">#12</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">#13</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">#14</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">#15</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">#16</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">#19</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">#20</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">#21</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">#22</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">#25</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">#26</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">#27</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">#28</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Computational Modeling &amp; AI (M01–M18)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">#64</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">#65</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">#66</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">#67</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">#68</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">#69</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">#70</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">#71</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">#72</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">#73</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">#74</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">#75</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">#76</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">#77</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">#78</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">#79</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">#80</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">#81</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Capstone Projects (P01–P04)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">#52</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">#63</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">#82</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">#83</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="repodocs" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Complete Repository Index</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/ALL_MATERIALS.html"><span class="nav-cid">ALL</span><span>All 250 Repository Materials</span></a></li><li class="nav-item"><a href="../../curriculum/EQUATION_ATLAS.html"><span class="nav-cid">EQS</span><span>Equation &amp; Diagram Atlas (83)</span></a></li><li class="nav-item"><a href="../../README.html"><span class="nav-cid">README</span><span>Course Overview (README)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Curriculum &amp; Coursework Guides</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html"><span class="nav-cid">SETUP</span><span>Step 0: macOS Apple Dev + AI</span></a></li><li class="nav-item"><a href="../../curriculum/STUDY_PLAN.html"><span class="nav-cid">PLAN</span><span>26-Week Study Plan</span></a></li><li class="nav-item"><a href="../../curriculum/AI_WORKFLOW.html"><span class="nav-cid">AI</span><span>Agentic AI Supervision Guide</span></a></li><li class="nav-item"><a href="../../curriculum/NOTEBOOK_INDEX.html"><span class="nav-cid">IDX</span><span>83-Class Notebook Index</span></a></li><li class="nav-item"><a href="../../curriculum/ASSESSMENT.html"><span class="nav-cid">RUBRIC</span><span>Assessment &amp; Grading Rubrics</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/EVIDENCE_LEDGER.html"><span class="nav-cid">LEDGER</span><span>Paper Evidence Ledger</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/PAPER_TO_EXPERIMENT.html"><span class="nav-cid">A1-A4</span><span>Paper-to-Experiment Projects</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/SOTA_AUDIT.html"><span class="nav-cid">SOTA</span><span>SOTA Model Audit Worksheet</span></a></li><li class="nav-item"><a href="../../curriculum/COVERAGE_AUDIT.html"><span class="nav-cid">AUDIT</span><span>Curriculum Coverage Audit</span></a></li><li class="nav-item"><a href="../../curriculum/SOURCES.html"><span class="nav-cid">SRC</span><span>University Teaching Sources</span></a></li><li class="nav-item"><a href="../../curriculum/VERIFICATION.html"><span class="nav-cid">VERIF</span><span>83-Notebook Verification Log</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">24 Papers &amp; 310 Citations</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/papers/README.html"><span class="nav-cid">LIB</span><span>24-Paper Library Overview</span></a></li><li class="nav-item"><a href="../../curriculum/papers/READING_METHOD.html"><span class="nav-cid">3PASS</span><span>Three-Pass Reading Method</span></a></li><li class="nav-item"><a href="../../curriculum/papers/REFERENCES.html"><span class="nav-cid">310REF</span><span>All 310 Verified References</span></a></li><li class="nav-item"><a href="../../curriculum/papers/measurement.html"><span class="nav-cid">PB01</span><span>Measurement &amp; BOLD Physics</span></a></li><li class="nav-item"><a href="../../curriculum/papers/processing.html"><span class="nav-cid">PP01-08</span><span>Processing Papers (fMRIPrep–BrainMorph)</span></a></li><li class="nav-item"><a href="../../curriculum/papers/design.html"><span class="nav-cid">PD01-07</span><span>Design &amp; Generalization Papers</span></a></li><li class="nav-item"><a href="../../curriculum/papers/modeling.html"><span class="nav-cid">PM01-08</span><span>Modeling &amp; Foundation AI Papers</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Strand Coverage Ledgers</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/processing_coverage.html"><span class="nav-cid">COV-PR</span><span>Processing Coverage (PR01–PR21)</span></a></li><li class="nav-item"><a href="../../curriculum/design_coverage.html"><span class="nav-cid">COV-D</span><span>Design Coverage (D01–D16)</span></a></li><li class="nav-item"><a href="../../curriculum/data_science_coverage.html"><span class="nav-cid">COV-DS</span><span>Data Science Coverage (DS01–DS16)</span></a></li><li class="nav-item"><a href="../../curriculum/modeling_coverage.html"><span class="nav-cid">COV-M</span><span>Modeling Coverage (M01–M18)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Introductory Coursebook &amp; Labs (course/)</div><ul class="nav-list"><li class="nav-item"><a href="../../course/COURSEBOOK.html"><span class="nav-cid">BOOK</span><span>Unified Introductory Coursebook</span></a></li><li class="nav-item"><a href="../../course/labs/520_design.html"><span class="nav-cid">LAB520</span><span>Lab 520: Experimental Design</span></a></li><li class="nav-item"><a href="../../course/labs/540_processing.html"><span class="nav-cid">LAB540</span><span>Lab 540: Image Processing</span></a></li><li class="nav-item"><a href="../../course/labs/550_modeling.html"><span class="nav-cid">LAB550</span><span>Lab 550: Modeling &amp; ML</span></a></li><li class="nav-item"><a href="../../course/labs/580_data_science.html"><span class="nav-cid">LAB580</span><span>Lab 580: Data Science</span></a></li><li class="nav-item"><a href="../../course/GLOSSARY.html"><span class="nav-cid">GLOSS</span><span>Neuroimaging Glossary</span></a></li><li class="nav-item"><a href="../../course/TRANSFORMATIONS.html"><span class="nav-cid">XFORM</span><span>Transformation Contracts</span></a></li><li class="nav-item"><a href="../../course/REAL_DATA.html"><span class="nav-cid">REAL</span><span>Real fMRI Data Guide</span></a></li><li class="nav-item"><a href="../../course/verification/REPORT.html"><span class="nav-cid">PLOTS</span><span>Verification Report &amp; 22 Plots</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Pinned Upstream Tutorials (third_party/)</div><ul class="nav-list"><li class="nav-item"><a href="../../third_party/README.html"><span class="nav-cid">3P-ALL</span><span>Third-Party Provenance Overview</span></a></li><li class="nav-item"><a href="../../third_party/processing/README.html"><span class="nav-cid">3P-PR</span><span>Nipype &amp; DartBrains Processing (4)</span></a></li><li class="nav-item"><a href="../../third_party/design/README.html"><span class="nav-cid">3P-D</span><span>Poldrack &amp; DartBrains Design (3)</span></a></li><li class="nav-item"><a href="../../third_party/data_science/README.html"><span class="nav-cid">3P-DS</span><span>Neuromatch Data Science (3)</span></a></li><li class="nav-item"><a href="../../third_party/modeling/README.html"><span class="nav-cid">3P-M</span><span>BrainIAK &amp; Neuromatch Modeling (4)</span></a></li><li class="nav-item"><a href="../../THIRD_PARTY_NOTICES.html"><span class="nav-cid">NOTICES</span><span>Complete Third-Party Notices</span></a></li></ul></div>
+      </div>
+    </aside>
+    
+    <main class="main-content" id="top">
+      
+        <section class="class-banner">
+          <div class="badge-row">
+            <span class="badge badge-primary">Pinned Upstream Marimo Chapter</span>
+            <span class="badge badge-phase"><code>third_party/processing/DartBrains_Preprocessing.py</code></span>
+            <span class="badge badge-tier">CC BY-SA 4.0 · Luke Chang &amp; DartBrains</span>
+          </div>
+          <h1>DartBrains Preprocessing Chapter (Marimo <code>.py</code> Notebook)</h1>
+          <p style="margin:0.4rem 0 0.8rem;color:var(--ink-secondary);max-width:80ch">
+            Unmodified upstream Dartmouth <em>DartBrains</em> preprocessing chapter in reactive Marimo format, preserved alongside <a href="README.html">third_party/processing/README</a>.
+          </p>
+          <div class="banner-actions">
+            <a class="btn-action primary" href="DartBrains_Preprocessing.py" download>⬇ Download Original DartBrains_Preprocessing.py</a>
+            <a class="btn-action" href="README.html">← Back to Processing Upstream Materials</a>
+          </div>
+        </section>
+        <article class="content-card">
+          <div class="code-block-wrap">
+            <div class="code-header"><span>Python · third_party/processing/DartBrains_Preprocessing.py</span><button type="button" class="copy-btn">Copy Code</button></div>
+            <pre><code># /// script
+# requires-python = &quot;&gt;=3.11&quot;
+# dependencies = [
+#     &quot;dartbrains-tools&gt;=0.3.1&quot;,
+#     &quot;matplotlib&quot;,
+#     &quot;numpy&quot;,
+#     &quot;plotly&quot;,
+# ]
+# 
+# [tool.grader]
+# server = &quot;https://grader.dartbrains.org&quot;
+# course = &quot;neuroimaging&quot;
+# term = &quot;2026-fall&quot;
+# ///
+
+import marimo
+
+__generated_with = &quot;0.24.2&quot;
+app = marimo.App(width=&quot;medium&quot;, app_title=&quot;Preprocessing&quot;)
+
+
+@app.cell(hide_code=True)
+def _(image, mo):
+    mo.vstack([
+        mo.md(r&quot;&quot;&quot;
+        # Preprocessing
+        *Written by Luke Chang*
+
+        Being able to study brain activity associated with cognitive processes
+        in humans is an amazing achievement. However, there is an extraordinary
+        amount of noise and very low levels of signal, which makes it difficult
+        to make inferences about brain function using BOLD imaging. A critical
+        step before any analysis is to remove as much noise as possible. The
+        series of steps to remove noise comprise our *neuroimaging data
+        **preprocessing** pipeline*. See slides on our preprocessing lecture [here](../images/lectures/Preprocessing.pdf).
+        &quot;&quot;&quot;),
+        image(&quot;preprocessing/preprocessing.png&quot;),
+        mo.md(r&quot;&quot;&quot;
+        In this lab, we will go over the basics of preprocessing fMRI data using the [fmriprep](https://fmriprep.org/) preprocessing pipeline. We will cover:
+
+        - **Image transformations** (rigid body and affine)
+        - **Cost functions** for image registration
+        - **Head motion correction** (realignment)
+        - **Spatial normalization**
+        - **Spatial smoothing**
+        - **fMRIPrep** automated preprocessing pipeline
+
+        There are other preprocessing steps that are also common, but not necessarily performed by all labs such as slice timing and distortion correction. We will not be discussing these in depth outside of the videos.
+
+        Let’s start with watching a short video by Martin Lindquist to get a general overview of the main steps of preprocessing and the basics of how to transform images and register them to other images.
+        &quot;&quot;&quot;),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _():
+    import marimo as mo
+    import numpy as np
+    import plotly.graph_objects as go
+    from pathlib import Path
+    from dartbrains_tools.mr_widgets import TransformCubeWidget, CostFunctionWidget, SmoothingWidget
+
+    from dartbrains_tools.notebook_utils import image, youtube
+
+    # Repo root = two levels up from this notebook (content/&lt;nb&gt;.py -&gt; repo
+    # root). Only read_svg() uses it; figures go through image().
+    IMG_DIR = Path(__file__).resolve().parent.parent / &quot;images&quot; / &quot;preprocessing&quot;
+
+    def read_svg(filename: str) -&gt; str:
+        # For inline-SVG cells that need to embed raw SVG markup into the DOM
+        # (mo.image() loads via an &lt;img&gt; tag, which sandboxes embedded
+        # @keyframes / animation CSS). In marimo edit + at build the file is
+        # on disk; elsewhere (WASM browser, molab) we fetch it from the
+        # deployed /images/preprocessing/&lt;filename&gt; URL.
+        p = IMG_DIR / filename
+        if p.is_file():
+            return p.read_text()
+        import urllib.request
+        with urllib.request.urlopen(
+            f&quot;https://dartbrains.org/images/preprocessing/{filename}&quot;
+        ) as resp:
+            return resp.read().decode(&quot;utf-8&quot;)
+
+    return (
+        CostFunctionWidget,
+        SmoothingWidget,
+        TransformCubeWidget,
+        image,
+        mo,
+        read_svg,
+        youtube,
+    )
+
+
+@app.cell(hide_code=True)
+def _(CostFunctionWidget, SmoothingWidget, TransformCubeWidget, mo):
+    # Widgets are built ONCE, here -- never inside a slider-driven cell.
+    # Rebuilding a widget hands marimo a new anywidget model_id, so the browser
+    # unmounts the old widget and mounts a new one. That teardown is what makes
+    # a plot vanish mid-drag and lets neighbouring text reflow into the gap.
+    # Sliders instead mutate traits via on_change; each widget&#x27;s JS re-reads its
+    # traits every animation frame and redraws in place, so the mount is stable.
+    transform_w = TransformCubeWidget(
+        trans_x=0.0, trans_y=0.0, trans_z=0.0,
+        rot_x=0.0, rot_y=0.0, rot_z=0.0,
+        scale_x=1.0, scale_y=1.0, scale_z=1.0,
+    )
+    transform_view = mo.ui.anywidget(transform_w)
+
+    cost_w = CostFunctionWidget(trans_x=0.0, trans_y=0.0)
+    cost_view = mo.ui.anywidget(cost_w)
+
+    smooth_w = SmoothingWidget(fwhm=0.0)
+    smooth_view = mo.ui.anywidget(smooth_w)
+    return (
+        cost_view,
+        cost_w,
+        smooth_view,
+        smooth_w,
+        transform_view,
+        transform_w,
+    )
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(youtube):
+    youtube(&quot;Qc3rRaJWOc4&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ---
+    ## Image Transformations
+
+    Ok, now let’s dive deeper into how we can transform images into different spaces using linear transformations.
+
+    Recall from our introduction to neuroimaging data lab, that neuroimaging data is typically stored in a nifti container, which contains a 3D or 4D matrix of the voxel intensities and also an **affine matrix** that maps voxel
+    coordinates \((i, j, k)\) to world coordinates \((x, y, z)\).
+
+
+    $$\begin{bmatrix} x \\ y \\ z \\ 1 \end{bmatrix} = \mathbf{A} \begin{bmatrix} i \\ j \\ k \\ 1 \end{bmatrix}$$
+
+    A **rigid body transformation** has 6 parameters:
+    - 3 **translations** (shift in x, y, z)
+    - 3 **rotations** (around x, y, z axes)
+
+    A full **affine transformation** adds 6 more (12 total):
+    - 3 **scale** factors
+    - 3 **shear** parameters
+
+    Let’s create an interactive plot to get an intuition for how these affine matrices can be used to transform a 3D image. The ghost (wireframe) shows the original position; the solid red cube shows the transformed
+    position.
+
+    We can move the sliders to play with applying rigid body transforms to a 3D cube. A rigid body transformation has 6 parameters: translation in x,y, &amp; z, and rotation around each of these axes. The key thing to remember is that a rigid body transform doesn’t allow the image to be fundamentally changed. A full 12 parameter affine transformation adds an additional 3 parameters each for scaling and shearing, which can change the shape of the cube.
+
+    Try moving some of the sliders around. Each time you move a slider it is applying an affine transformation to the matrix and re-plotting.
+
+    Translation moves the cube in x, y, and z dimensions.
+
+    We can also rotate the cube around the x, y, and z axes where the origin is the center point. Continuing to rotate around the point will definitely lead to the cube leaving the current field of view, but it will come back if you keep rotating it.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo, transform_w):
+    tx_slider = mo.ui.slider(start=-15, stop=15, step=0.5, value=0, label=&quot;Translate X&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;trans_x&quot;, float(v)))
+    ty_slider = mo.ui.slider(start=-15, stop=15, step=0.5, value=0, label=&quot;Translate Y&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;trans_y&quot;, float(v)))
+    tz_slider = mo.ui.slider(start=-15, stop=15, step=0.5, value=0, label=&quot;Translate Z&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;trans_z&quot;, float(v)))
+    rx_slider = mo.ui.slider(start=-180, stop=180, step=5, value=0, label=&quot;Rotate X (\u00b0)&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;rot_x&quot;, float(v)))
+    ry_slider = mo.ui.slider(start=-180, stop=180, step=5, value=0, label=&quot;Rotate Y (\u00b0)&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;rot_y&quot;, float(v)))
+    rz_slider = mo.ui.slider(start=-180, stop=180, step=5, value=0, label=&quot;Rotate Z (\u00b0)&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;rot_z&quot;, float(v)))
+    sx_slider = mo.ui.slider(start=0.5, stop=2.0, step=0.1, value=1.0, label=&quot;Scale X&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;scale_x&quot;, float(v)))
+    sy_slider = mo.ui.slider(start=0.5, stop=2.0, step=0.1, value=1.0, label=&quot;Scale Y&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;scale_y&quot;, float(v)))
+    sz_slider = mo.ui.slider(start=0.5, stop=2.0, step=0.1, value=1.0, label=&quot;Scale Z&quot;, on_change=lambda v, _w=transform_w: setattr(_w, &quot;scale_z&quot;, float(v)))
+    return (
+        rx_slider,
+        ry_slider,
+        rz_slider,
+        sx_slider,
+        sy_slider,
+        sz_slider,
+        tx_slider,
+        ty_slider,
+        tz_slider,
+    )
+
+
+@app.cell(hide_code=True)
+def _(
+    mo,
+    rx_slider,
+    ry_slider,
+    rz_slider,
+    sx_slider,
+    sy_slider,
+    sz_slider,
+    transform_view,
+    tx_slider,
+    ty_slider,
+    tz_slider,
+):
+    mo.vstack([
+        mo.md(&quot;**Translation:**&quot;),
+        mo.hstack([tx_slider, ty_slider, tz_slider], justify=&quot;start&quot;, gap=1),
+        mo.md(&quot;**Rotation:**&quot;),
+        mo.hstack([rx_slider, ry_slider, rz_slider], justify=&quot;start&quot;, gap=1),
+        mo.md(&quot;**Scale:**&quot;),
+        mo.hstack([sx_slider, sy_slider, sz_slider], justify=&quot;start&quot;, gap=1),
+        transform_view,
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(
+        mo.md(
+            &quot;**Try this:** Move translation sliders to shift the cube. &quot;
+            &quot;Rotate around each axis. Change scale to stretch/compress &quot;
+            &quot;(goes beyond rigid body!). The affine matrix on the right &quot;
+            &quot;updates live. **Drag to orbit** the 3D view.&quot;
+        ),
+        kind=&quot;info&quot;,
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    The affine matrix encodes all of these transformations compactly. The
+    upper-left 3\(\times\)3 block contains rotation and scaling, while the
+    rightmost column contains translation. The bottom row is always
+    \([0, 0, 0, 1]\).
+
+    **Rotation matrices** for each axis:
+
+    $$R_x(\theta) = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \cos\theta &amp; -\sin\theta \\ 0 &amp; \sin\theta &amp; \cos\theta \end{bmatrix}$$
+
+    $$R_y(\phi) = \begin{bmatrix} \cos\phi &amp; 0 &amp; \sin\phi \\ 0 &amp; 1 &amp; 0 \\ -\sin\phi &amp; 0 &amp; \cos\phi \end{bmatrix}$$
+
+    $$R_z(\psi) = \begin{bmatrix} \cos\psi &amp; -\sin\psi &amp; 0 \\ \sin\psi &amp; \cos\psi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}$$
+
+    The combined rotation is \(R = R_x \cdot R_y \cdot R_z\), and the full
+    affine matrix is built by combining rotation, scaling, and translation.
+
+    Every time we apply a transformation to our images, the result is not
+    a perfect representation of the original data -- we need **interpolation**
+    to fill gaps, which introduces small errors. This is why minimizing the
+    number of resampling steps matters in preprocessing.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ---
+    ## Cost Functions
+
+    Now that we understand affine transformations, how do we use them to
+    **register** one brain image to another? We need a way to quantify
+    how well two images are aligned.
+
+    The key is to identify a way to quantify how aligned the two images are to each other. Our visual systems are very good at identifying when two images are aligned, however, we need to create a quantitative alignment measure. These measures are called
+    **cost functions**.
+
+    A common cost function is the **Sum of Squared Errors (SSE)**. You may remember that this same cost function is used by linear regression to find the best fitting line to data. This measure works best if the images are of the same type and have roughly equivalent signal intensities.
+
+    $$SSE = \sum_{i} (I_{target}(i) - I_{reference}(i))^2$$
+
+    The goal is to find the transformation parameters that **minimize**
+    the cost function. This process is called **optimization**.
+
+    Let’s create another interactive plot and find the optimal X &amp; Y translation parameters that minimize the difference between a two-dimensional target image to a reference image. Try to align the target image (blue square) with the reference image
+    by adjusting the translation sliders. Watch the SSE drop to zero when perfectly aligned!
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(cost_w, mo):
+    cost_tx = mo.ui.slider(start=0, stop=20, step=1, value=0, label=&quot;Translate X&quot;, on_change=lambda v, _w=cost_w: setattr(_w, &quot;trans_x&quot;, float(v)))
+    cost_ty = mo.ui.slider(start=0, stop=20, step=1, value=0, label=&quot;Translate Y&quot;, on_change=lambda v, _w=cost_w: setattr(_w, &quot;trans_y&quot;, float(v)))
+    return cost_tx, cost_ty
+
+
+@app.cell(hide_code=True)
+def _(cost_tx, cost_ty, cost_view, mo):
+    mo.vstack([
+        mo.hstack([cost_tx, cost_ty], justify=&quot;start&quot;, gap=2),
+        cost_view,
+        mo.callout(
+            mo.md(
+                &quot;**Goal:** Find the translation that makes SSE = 0 (perfect overlap, shown in green). &quot;
+                &quot;This is exactly what registration algorithms do automatically -- they search the &quot;
+                &quot;parameter space to minimize the cost function.&quot;
+            ),
+            kind=&quot;info&quot;,
+        ),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    You probably had to move the sliders around back and forth until you were able to reduce the sum of squared error to zero. This cost function increases exponentially the further you are away from your target. The process of minimizing (or sometimes maximizing) cost functions to identify the best fitting parameters is called optimization and is a concept that is core to fitting models to data across many different disciplines.
+
+    Different cost functions work best for different image types:
+
+    | Cost Function | Use Case | Example |
+    |:---:|:---:|:---:|
+    | Sum of Squared Error | Same modality &amp; scaling | Two T2* images |
+    | Normalized correlation | Same modality | Two T1 images |
+    | Correlation ratio | Any modality | T1 and FLAIR |
+    | Mutual information | Any modality | T1 and CT |
+    | Boundary Based Registration | Contrast across boundaries | EPI and T1 |
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(image, mo):
+    mo.vstack([
+        mo.md(r&quot;&quot;&quot;
+        ---
+        ## Realignment
+
+        Now let&#x27;s put everything we learned together to understand how we can correct for head motion in functional images that occurred during a scanning session. It is extremely important to make sure that a specific voxel has the same 3D coordinate across all time points to be able to model neural processes. This of course is made difficult by the fact that participants move during a scanning session and also in between runs.
+
+        Realignment is the preprocessing step in which a rigid body transformation is applied to each volume to align them to a common space. One typically needs to choose a reference volume, which might be the first, middle, or last volume, or the mean of all volumes.
+
+        Let&#x27;s look at an example of the translation and rotation parameters after running realignment on our first subject.
+        &quot;&quot;&quot;),
+        image(&quot;preprocessing/realignment_parameters.png&quot;),
+        mo.md(r&quot;&quot;&quot;
+        Don&#x27;t forget that even though we can approximately put each volume into a similar position with realignment, head motion always distorts the magnetic field and can lead to nonlinear changes in signal intensity that will not be addressed by this procedure. In the resting-state literature, where many analyses are based on functional connectivity, head motion can lead to spurious correlations. Some researchers choose to exclude any subject that moved more than a certain amount. Others choose to remove the impact of these time points in their data through removing the volumes via *scrubbing* or modeling out the volume with a dummy code in the first level general linear models.
+        &quot;&quot;&quot;),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ---
+    ## Spatial Normalization
+
+    There are several other preprocessing steps that involve image registration. The main one is called *spatial normalization*, in which each subject&#x27;s brain data is warped into a common stereotactic space. Talairach is an older space, that has been subsumed by various standards developed by the Montreal Neurological Institute.
+
+    There are a variety of algorithms to warp subject data into stereotactic space. Linear 12 parameter affine transformations have increasingly been replaced by more complicated nonlinear normalizations that have hundreds to thousands of parameters.
+
+    One nonlinear algorithm that has performed very well across comparison studies is *diffeomorphic registration*, which can also be inverted so that subject space can be transformed into stereotactic space and back to subject space. This is the core of the [ANTs](http://stnava.github.io/ANTs/) algorithm that is implemented in fmriprep.
+
+    Let&#x27;s watch another short video by Martin Lindquist and Tor Wager to learn more about the core preprocessing steps.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(youtube):
+    youtube(&quot;qamRGWSC-6g&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(image, mo):
+    mo.vstack([
+        mo.md(r&quot;&quot;&quot;
+        There are many different steps involved in the spatial normalization process and these details vary widely across various imaging software packages. We will briefly discuss some of the steps involved in the anatomical preprocessing pipeline implemented by fMRIprep and will be showing example figures from the output generated by the pipeline.
+
+        First, brains are extracted from the skull and surrounding dura mater. You can check and see how well the algorithm performed by examining the red outline.
+        &quot;&quot;&quot;),
+        image(&quot;preprocessing/T1_normalization.png&quot;),
+        mo.md(r&quot;&quot;&quot;
+        Next, the anatomical images are segmented into different tissue types. These tissue maps are used for various types of analyses, including providing a grey matter mask to reduce the computational time in estimating statistics. In addition, they provide masks to aid in extracting average activity in CSF, or white matter, which might be used as covariates in the statistical analyses to account for physiological noise.
+        &quot;&quot;&quot;),
+        image(&quot;preprocessing/T1_segmentation.png&quot;),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ### Spatial normalization of the anatomical T1w reference
+
+    fmriprep uses [ANTs](http://stnava.github.io/ANTs/) to perform nonlinear spatial normalization. It is easy to check to see how well the algorithm performed by viewing the results of aligning the T1w reference to the stereotactic reference space. Hover on the panels with the mouse pointer to transition between both spaces. We are using the MNI152NLin2009cAsym template.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo, read_svg):
+    mo.Html(f&#x27;&lt;div style=&quot;max-width:100%&quot;&gt;{read_svg(&quot;sub-S01_space-MNI152NLin2009cAsym_T1w.svg&quot;)}&lt;/div&gt;&#x27;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ### Alignment of functional and anatomical MRI data
+
+    Next, we can evaluate the quality of alignment of the functional data to the anatomical T1 image. FSL `flirt` was used to generate transformations from EPI-space to T1w-space — the white matter mask calculated with FSL `fast` (brain tissue segmentation) was used for BBR. Note that Nearest Neighbor interpolation is used in the reportlets in order to highlight potential spin-history and other artifacts, whereas final images are resampled using Lanczos interpolation. Notice these images are much blurrier and show some distortion compared to the T1s.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo, read_svg):
+    mo.Html(f&#x27;&lt;div style=&quot;max-width:100%&quot;&gt;{read_svg(&quot;sub-S01_task-localizer_desc-flirtbbr_bold.svg&quot;)}&lt;/div&gt;&#x27;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ---
+    ## Spatial Smoothing
+
+    Spatial smoothing applies a 3D Gaussian kernel to each volume,
+    blurring the image to remove high-frequency spatial noise. The amount
+    of smoothing is specified by the **Full Width at Half Maximum (FWHM)**
+    of the Gaussian kernel.
+
+    Why blur the image *after* trying so hard to increase resolution?
+    - Increases **signal-to-noise ratio**
+    - Reduces impact of **partial volume effects**
+    - Compensates for **residual misalignment** after normalization
+    - Satisfies assumptions of **Random Field Theory** for multiple
+      comparisons correction
+
+    A common FWHM is 6mm for standard fMRI analyses, though this varies
+    by analysis type (e.g., MVPA typically uses little or no smoothing).
+
+    Adjust the FWHM below to see how smoothing affects the image.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo, smooth_w):
+    fwhm_slider = mo.ui.slider(start=0, stop=20, step=0.5, value=0, label=&quot;FWHM (mm)&quot;, full_width=True, on_change=lambda v, _w=smooth_w: setattr(_w, &quot;fwhm&quot;, float(v)))
+    return (fwhm_slider,)
+
+
+@app.cell(hide_code=True)
+def _(fwhm_slider, mo, smooth_view):
+    mo.vstack([
+        fwhm_slider,
+        smooth_view,
+        mo.callout(
+            mo.md(
+                &quot;**Try this:** Start at FWHM=0 (no smoothing) and slowly increase. &quot;
+                &quot;Notice how fine details (ventricle edges, cortical folds) blur first, &quot;
+                &quot;while overall brain shape is preserved. At FWHM &gt; 10mm, tissue boundaries &quot;
+                &quot;start to disappear. The kernel visualization in the center shows the &quot;
+                &quot;Gaussian width scaling with FWHM.&quot;
+            ),
+            kind=&quot;info&quot;,
+        ),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    Here is what a 3D Gaussian kernel looks like.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _():
+    import numpy as _np
+    import matplotlib.pyplot as _plt
+
+    def plot_gaussian(sigma=2, kind=&#x27;surface&#x27;, cmap=&#x27;viridis&#x27;, linewidth=1, **kwargs):
+        &#x27;&#x27;&#x27;Generates a 3D matplotlib plot of a Gaussian distribution&#x27;&#x27;&#x27;
+        mean = 0
+        domain = 10
+        x = _np.arange(-domain + mean, domain + mean, sigma / 10)
+        y = _np.arange(-domain + mean, domain + mean, sigma / 10)
+        x, y = _np.meshgrid(x, x)
+        r = (x ** 2 + y ** 2) / (2 * sigma ** 2)
+        z = 1 / (_np.pi * sigma ** 4) * (1 - r) * _np.exp(-r)
+
+        fig = _plt.figure(figsize=(12, 6))
+        ax = _plt.axes(projection=&#x27;3d&#x27;)
+        if kind == &#x27;wire&#x27;:
+            ax.plot_wireframe(x, y, z, cmap=cmap, linewidth=linewidth, **kwargs)
+        elif kind == &#x27;surface&#x27;:
+            ax.plot_surface(x, y, z, cmap=cmap, linewidth=linewidth, **kwargs)
+        ax.set_xlabel(&#x27;x&#x27;, fontsize=16)
+        ax.set_ylabel(&#x27;y&#x27;, fontsize=16)
+        ax.set_zlabel(&#x27;z&#x27;, fontsize=16)
+        _plt.axis(&#x27;off&#x27;)
+        return fig
+
+    plot_gaussian(kind=&#x27;surface&#x27;, linewidth=1)
+    return
+
+
+@app.cell(hide_code=True)
+def _(image, mo):
+    mo.vstack([
+        mo.md(r&quot;&quot;&quot;
+        ---
+        ## fmriprep
+
+        Throughout this lab and course, you have frequently heard about [fmriprep](https://fmriprep.readthedocs.io/en/stable/), which is a functional magnetic resonance imaging (fMRI) data preprocessing pipeline that was developed by a team at the [Center for Reproducible Research](http://reproducibility.stanford.edu/) led by Russ Poldrack and Chris Gorgolewski. Fmriprep was designed to provide an easily accessible, state-of-the-art interface that is robust to variations in scan acquisition protocols, requires minimal user input, and provides easily interpretable and comprehensive error and output reporting. Fmriprep performs basic processing steps (coregistration, normalization, unwarping, noise component extraction, segmentation, skullstripping etc.) providing outputs that are ready for data analysis.
+
+        fmriprep was built on top of [nipype](https://nipype.readthedocs.io/en/latest/), which is a tool to build preprocessing pipelines in python using graphs. This provides a completely flexible way to create custom pipelines using any type of software while also facilitating easy parallelization of steps across the pipeline on high performance computing platforms. Nipype is completely flexible, but has a fairly steep learning curve and is best for researchers who have strong opinions about how they want to preprocess their data, or are working with nonstandard data that might require adjusting the preprocessing steps or parameters. In practice, most researchers typically use similar preprocessing steps and do not need to tweak the pipelines very often. In addition, many researchers do not fully understand how each preprocessing step will impact their results and would prefer if somebody else picked suitable defaults based on current best practices in the literature. The fmriprep pipeline uses a combination of tools from well-known software packages, including FSL, ANTs, FreeSurfer and AFNI. This pipeline was designed to provide the best software implementation for each stage of preprocessing, and is quickly being updated as methods evolve and bugs are discovered by a growing user base.
+
+        This tool allows you to easily do the following:
+
+        - Take fMRI data from raw to fully preprocessed form.
+        - Implement tools from different software packages.
+        - Achieve optimal data processing quality by using the best tools available.
+        - Generate preprocessing quality reports, with which the user can easily identify outliers.
+        - Receive verbose output concerning the stage of preprocessing for each subject, including meaningful errors.
+        - Automate and parallelize processing steps, which provides a significant speed-up from typical linear, manual processing.
+        - More information and documentation can be found at [https://fmriprep.readthedocs.io/](https://fmriprep.readthedocs.io/)
+        &quot;&quot;&quot;),
+        image(&quot;preprocessing/fmriprep.png&quot;),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ### Running fmriprep
+
+    Running fmriprep is a (mostly) trivial process of running a single line in the command line specifying a few choices and locations for the output data. One of the annoying things about older neuroimaging software that was developed by academics is that the packages were developed using many different development environments and on different operating systems (e.g., unix, windows, mac). It can be a nightmare getting some of these packages to install on more modern computing systems. As fmriprep uses many different packages, they have made it much easier to circumvent the time-consuming process of installing many different packages by releasing a [docker container](https://fmriprep.readthedocs.io/en/stable/docker.html) that contains everything you need to run the pipeline.
+
+    If you&#x27;re interested in running this on your local computer, here is the code you could use to run it in a jupyter notebook, or even better in the command line on a high performance computing environment.
+
+    ```python
+    import os
+    base_dir = &#x27;/Users/lukechang/Dropbox/Dartbrains/Data&#x27;
+    data_path = os.path.join(base_dir, &#x27;localizer&#x27;)
+    output_path = os.path.join(base_dir, &#x27;preproc&#x27;)
+    work_path = os.path.join(base_dir, &#x27;work&#x27;)
+
+    sub = &#x27;S01&#x27;
+    subs = [f&#x27;S{x:0&gt;2d}&#x27; for x in range(10)]
+    for sub in subs:
+        !fmriprep-docker {data_path} {output_path} participant --participant_label sub-{sub} --write-graph --fs-no-reconall --notrack --fs-license-file ~/Dropbox/Dartbrains/License/license.txt --work-dir {work_path}
+    ```
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(image, mo):
+    mo.vstack([
+        mo.md(r&quot;&quot;&quot;
+        ### Quick primer on High Performance Computing
+
+        We could run fmriprep on our computer, but this could take a long time if we have a lot of participants. Because we have a limited amount of computational resources on our laptops (e.g., cpus, and memory), we would have to run each participant sequentially. For example, if we had 50 participants, it would take 50 times longer to run all participants than a single one.
+
+        Imagine if you had 50 computers and ran each participant separate at the same time in parallel across all of the computers. This would allow us to run 50 participants in the same amount of time as a single participant. This is the basic idea behind high performance computing, which contains a cluster of many computers that have been installed in racks. Below is a picture of what Dartmouth&#x27;s [Discovery cluster](https://rc.dartmouth.edu/index.php/discovery-overview/) looks like:
+        &quot;&quot;&quot;),
+        image(&quot;preprocessing/hpc.png&quot;),
+        mo.md(r&quot;&quot;&quot;
+        A cluster is simply a collection of nodes. A node can be thought of as an individual computer. Each node contains processors, which encompass multiple cores. Discovery contains 3000+ cores, which is certainly a lot more than your laptop!
+
+        In order to submit a job, you can create a Portable Batch System (PBS) script that sets up the parameters (e.g., how much time you want your script to run, specifying directory to run, etc) and submits your job to a queue.
+
+        **NOTE**: If you end up working in a lab in the future, you will likely need to request access to a system like *discovery* using [this type of link](https://rcweb.dartmouth.edu/accounts/).
+
+        For a detailed walkthrough of running fmriprep on Dartmouth&#x27;s Discovery cluster — SLURM scripts, data access on Rolando, and environment setup — see the companion tutorial: [Running fMRIPrep on HPC](./fmriprep_on_discovery.md).
+        &quot;&quot;&quot;),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ### fmriprep output
+
+    You can see a summary of the operations fmriprep performed by examining the `.html` files in the `derivatives/fmriprep` folder within the `localizer` data directory.
+
+    Spend some time looking at the outputs and feel free to examine multiple subjects. The HTML reports let you visually inspect each preprocessing step — brain extraction quality (red outline on T1), tissue segmentation maps, registration quality (hover to compare spaces), carpet plots showing signal quality over time, and motion traces with framewise displacement.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ---
+    ## Limitations of fmriprep
+
+    In general, we recommend using this pipeline if you want a sensible default. Considerable thought has gone into selecting reasonable default parameters and selecting preprocessing steps based on best practices in the field (as determined by the developers). This is not necessarily the case for any of the default settings in any of the more conventional software packages (e.g., spm, fsl, afni, etc).
+
+    However, there is an important tradeoff in using this tool. On the one hand, it&#x27;s nice in that it is incredibly straightforward to use (one line of code!), has excellent documentation, and is actively being developed to fix bugs and improve the overall functionality. There is also a growing user base to ask questions. [Neurostars](https://neurostars.org/) is an excellent forum to post questions and learn from others. On the other hand, fmriprep is unfortunately in its current state not easily customizable. If you disagree with the developers about the order or specific preprocessing steps, it is very difficult to modify. Future versions will hopefully be more modular and easier to make custom pipelines. If you need this type of customizability we strongly recommend using nipype over fmriprep.
+
+    In practice, it&#x27;s always a little bit finicky to get everything set up on a particular system. Sometimes you might run into issues with a specific missing file like the [freesurfer license](https://fmriprep.readthedocs.io/en/stable/usage.html#the-freesurfer-license) even if you&#x27;re not using it. You might also run into issues with the format of the data that might have some conflicts with the [bids-validator](https://github.com/bids-standard/bids-validator). In our experience, there is always some frustration getting this to work, but it&#x27;s very nice once it&#x27;s done.
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r&quot;&quot;&quot;
+    ---
+    ## Exercises
+
+    ### Exercise 1. Inspect HTML output of other participants.
+
+    For this exercise, you will need to navigate to the derivatives folder containing the fmriprep preprocessed data `../data/localizer/derivatives/fmriprep` and inspect the HTML output of subjects other than `S01`. Did the preprocessing steps work? Are there any issues with the data that we should be concerned about?
+    &quot;&quot;&quot;)
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+if __name__ == &quot;__main__&quot;:
+    app.run()
+</code></pre>
+          </div>
+        </article>
+        
+    </main>
+    
+  </div>
+
+  <div class="lightbox-overlay" id="img-lightbox" role="dialog" aria-label="Zoomed figure view">
+    <img id="img-lightbox-target" src="" alt="Enlarged scientific diagram">
+  </div>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Neuroimaging Research Methods with AI</strong> · 26-Week Graduate Curriculum (83 Main Classes · 4 Supplement Labs · 14 Upstream Tutorials · 24 Core Papers · 310 Verified References).
+      Built for macOS on Apple Silicon MacBook Pro with Goose + Ollama (Qwen &amp; Gemma).
+    </div>
+    <div>
+      <a href="../../curriculum/ALL_MATERIALS.html">All 250 Repo Files</a> ·
+      <a href="../../curriculum/SETUP.html">Mac Setup</a> ·
+      <a href="../../curriculum/EQUATION_ATLAS.html">Equation Atlas</a> ·
+      <a href="../../course/COURSEBOOK.html">Compact Coursebook</a> ·
+      <a href="../../THIRD_PARTY_NOTICES.html">Licenses &amp; Provenance</a>
+    </div>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+  <script defer src="../../assets/site.js"></script>
+</body>
+</html>

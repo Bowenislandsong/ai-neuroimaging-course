@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutorial 1: Geometric view of data · Neuroimaging Research Methods with AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-badge">NEURO+AI</span>
+      <span>Neuroimaging Research Methods with AI</span>
+    </a>
+    <nav class="top-links" aria-label="Primary Navigation">
+      <a href="../../index.html">26-Week Roadmap</a>
+      <a href="../../curriculum/SETUP.html">Mac Env &amp; Apple Setup</a>
+      <a href="../../curriculum/STUDY_PLAN.html">Study Plan</a>
+      <a href="../../curriculum/NOTEBOOK_INDEX.html">83 Classes</a>
+      <a href="../../curriculum/EQUATION_ATLAS.html">Equation &amp; Diagram Atlas</a>
+      <a href="../../curriculum/papers/README.html">24 Papers &amp; 310 Citations</a>
+      <a href="../../curriculum/AI_WORKFLOW.html">AI Workflow</a>
+      <a href="../../curriculum/ALL_MATERIALS.html" class="active">All Repo Materials (250)</a>
+    </nav>
+    <div class="reader-controls" aria-label="Reading Comfort Controls">
+      <button type="button" id="eq-logic-toggle-btn" class="ctrl-btn active" title="Expand or collapse all inline equation logic breakdown tables">∑ Logic: Expanded</button>
+      <button type="button" id="focus-mode-btn" class="ctrl-btn" title="Toggle distraction-free wide reading mode">⇄ Focus Width</button>
+      <button type="button" id="theme-cycle-btn" class="ctrl-btn" title="Switch reading theme (Light / Warm Sepia / Dark)">☀ Light</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-expanded="false">
+      <span>☰ Browse 83 Classes, 26-Week Path &amp; Repo Docs</span>
+      <span class="mobile-toggle-hint" style="font-family:var(--font-mono);font-size:0.76rem">Show ▾</span>
+    </button>
+    
+    <aside class="sidebar-left" aria-label="Course and Repository Navigation">
+      <input type="search" id="sidebar-filter-input" class="sidebar-search" placeholder="Filter 83 classes &amp; docs (press /)..." aria-label="Filter classes and documents">
+      <div class="sidebar-mode-tabs" role="tablist">
+        <button type="button" class="sidebar-mode-btn active" data-mode="chronological">26-Week Path</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="strand">By Strand</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="repodocs">Repo Docs</button>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="chronological">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html" class=""><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li><li class="nav-item"><a href="../../curriculum/ALL_MATERIALS.html" class=""><span class="nav-cid">ALL</span><span>All 250 Repo Materials</span><span class="nav-week-tag">Index</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase I · Paper Orientation &amp; Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">W3</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase II · Neuroimaging Data Science &amp; Experimental Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">W7</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase III · Image Processing &amp; Biophysical Pipelines</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">W13</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase IV · General Linear Modeling, Statistical Inference &amp; Multiverse Design</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">W16</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase V · Multivariate Modeling, Dynamics &amp; Foundation Models</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">W22</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase VI · Capstone Generalization &amp; Research Defense</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">W23</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">W25</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="strand" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html"><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Paper Orientation Seminars (R00–R03)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">#1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">#2</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">#3</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">#4</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Foundations &amp; MR Physics (F01–F04)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">#5</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">#6</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">#7</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">#8</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Image Processing &amp; Pipelines (PR01–PR21)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">#29</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">#30</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">#31</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">#32</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">#33</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">#34</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">#35</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">#36</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">#37</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">#38</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">#39</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">#40</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">#42</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">#43</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">#44</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">#46</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">#47</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">#48</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">#49</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">#50</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">#51</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Research Design &amp; Inference (D01–D16)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">#17</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">#18</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">#23</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">#24</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">#41</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">#45</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">#53</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">#54</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">#55</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">#56</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">#57</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">#58</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">#59</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">#60</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">#61</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">#62</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Data Science &amp; Computing (DS01–DS16)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">#9</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">#10</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">#11</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">#12</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">#13</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">#14</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">#15</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">#16</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">#19</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">#20</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">#21</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">#22</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">#25</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">#26</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">#27</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">#28</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Computational Modeling &amp; AI (M01–M18)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">#64</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">#65</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">#66</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">#67</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">#68</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">#69</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">#70</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">#71</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">#72</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">#73</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">#74</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">#75</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">#76</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">#77</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">#78</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">#79</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">#80</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">#81</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Capstone Projects (P01–P04)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">#52</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">#63</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">#82</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">#83</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="repodocs" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Complete Repository Index</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/ALL_MATERIALS.html"><span class="nav-cid">ALL</span><span>All 250 Repository Materials</span></a></li><li class="nav-item"><a href="../../curriculum/EQUATION_ATLAS.html"><span class="nav-cid">EQS</span><span>Equation &amp; Diagram Atlas (83)</span></a></li><li class="nav-item"><a href="../../README.html"><span class="nav-cid">README</span><span>Course Overview (README)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Curriculum &amp; Coursework Guides</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html"><span class="nav-cid">SETUP</span><span>Step 0: macOS Apple Dev + AI</span></a></li><li class="nav-item"><a href="../../curriculum/STUDY_PLAN.html"><span class="nav-cid">PLAN</span><span>26-Week Study Plan</span></a></li><li class="nav-item"><a href="../../curriculum/AI_WORKFLOW.html"><span class="nav-cid">AI</span><span>Agentic AI Supervision Guide</span></a></li><li class="nav-item"><a href="../../curriculum/NOTEBOOK_INDEX.html"><span class="nav-cid">IDX</span><span>83-Class Notebook Index</span></a></li><li class="nav-item"><a href="../../curriculum/ASSESSMENT.html"><span class="nav-cid">RUBRIC</span><span>Assessment &amp; Grading Rubrics</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/EVIDENCE_LEDGER.html"><span class="nav-cid">LEDGER</span><span>Paper Evidence Ledger</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/PAPER_TO_EXPERIMENT.html"><span class="nav-cid">A1-A4</span><span>Paper-to-Experiment Projects</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/SOTA_AUDIT.html"><span class="nav-cid">SOTA</span><span>SOTA Model Audit Worksheet</span></a></li><li class="nav-item"><a href="../../curriculum/COVERAGE_AUDIT.html"><span class="nav-cid">AUDIT</span><span>Curriculum Coverage Audit</span></a></li><li class="nav-item"><a href="../../curriculum/SOURCES.html"><span class="nav-cid">SRC</span><span>University Teaching Sources</span></a></li><li class="nav-item"><a href="../../curriculum/VERIFICATION.html"><span class="nav-cid">VERIF</span><span>83-Notebook Verification Log</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">24 Papers &amp; 310 Citations</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/papers/README.html"><span class="nav-cid">LIB</span><span>24-Paper Library Overview</span></a></li><li class="nav-item"><a href="../../curriculum/papers/READING_METHOD.html"><span class="nav-cid">3PASS</span><span>Three-Pass Reading Method</span></a></li><li class="nav-item"><a href="../../curriculum/papers/REFERENCES.html"><span class="nav-cid">310REF</span><span>All 310 Verified References</span></a></li><li class="nav-item"><a href="../../curriculum/papers/measurement.html"><span class="nav-cid">PB01</span><span>Measurement &amp; BOLD Physics</span></a></li><li class="nav-item"><a href="../../curriculum/papers/processing.html"><span class="nav-cid">PP01-08</span><span>Processing Papers (fMRIPrep–BrainMorph)</span></a></li><li class="nav-item"><a href="../../curriculum/papers/design.html"><span class="nav-cid">PD01-07</span><span>Design &amp; Generalization Papers</span></a></li><li class="nav-item"><a href="../../curriculum/papers/modeling.html"><span class="nav-cid">PM01-08</span><span>Modeling &amp; Foundation AI Papers</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Strand Coverage Ledgers</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/processing_coverage.html"><span class="nav-cid">COV-PR</span><span>Processing Coverage (PR01–PR21)</span></a></li><li class="nav-item"><a href="../../curriculum/design_coverage.html"><span class="nav-cid">COV-D</span><span>Design Coverage (D01–D16)</span></a></li><li class="nav-item"><a href="../../curriculum/data_science_coverage.html"><span class="nav-cid">COV-DS</span><span>Data Science Coverage (DS01–DS16)</span></a></li><li class="nav-item"><a href="../../curriculum/modeling_coverage.html"><span class="nav-cid">COV-M</span><span>Modeling Coverage (M01–M18)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Introductory Coursebook &amp; Labs (course/)</div><ul class="nav-list"><li class="nav-item"><a href="../../course/COURSEBOOK.html"><span class="nav-cid">BOOK</span><span>Unified Introductory Coursebook</span></a></li><li class="nav-item"><a href="../../course/labs/520_design.html"><span class="nav-cid">LAB520</span><span>Lab 520: Experimental Design</span></a></li><li class="nav-item"><a href="../../course/labs/540_processing.html"><span class="nav-cid">LAB540</span><span>Lab 540: Image Processing</span></a></li><li class="nav-item"><a href="../../course/labs/550_modeling.html"><span class="nav-cid">LAB550</span><span>Lab 550: Modeling &amp; ML</span></a></li><li class="nav-item"><a href="../../course/labs/580_data_science.html"><span class="nav-cid">LAB580</span><span>Lab 580: Data Science</span></a></li><li class="nav-item"><a href="../../course/GLOSSARY.html"><span class="nav-cid">GLOSS</span><span>Neuroimaging Glossary</span></a></li><li class="nav-item"><a href="../../course/TRANSFORMATIONS.html"><span class="nav-cid">XFORM</span><span>Transformation Contracts</span></a></li><li class="nav-item"><a href="../../course/REAL_DATA.html"><span class="nav-cid">REAL</span><span>Real fMRI Data Guide</span></a></li><li class="nav-item"><a href="../../course/verification/REPORT.html"><span class="nav-cid">PLOTS</span><span>Verification Report &amp; 22 Plots</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Pinned Upstream Tutorials (third_party/)</div><ul class="nav-list"><li class="nav-item"><a href="../../third_party/README.html"><span class="nav-cid">3P-ALL</span><span>Third-Party Provenance Overview</span></a></li><li class="nav-item"><a href="../../third_party/processing/README.html"><span class="nav-cid">3P-PR</span><span>Nipype &amp; DartBrains Processing (4)</span></a></li><li class="nav-item"><a href="../../third_party/design/README.html"><span class="nav-cid">3P-D</span><span>Poldrack &amp; DartBrains Design (3)</span></a></li><li class="nav-item"><a href="../../third_party/data_science/README.html"><span class="nav-cid">3P-DS</span><span>Neuromatch Data Science (3)</span></a></li><li class="nav-item"><a href="../../third_party/modeling/README.html"><span class="nav-cid">3P-M</span><span>BrainIAK &amp; Neuromatch Modeling (4)</span></a></li><li class="nav-item"><a href="../../THIRD_PARTY_NOTICES.html"><span class="nav-cid">NOTICES</span><span>Complete Third-Party Notices</span></a></li></ul></div>
+      </div>
+    </aside>
+    
+    <main class="main-content" id="top">
+      
+        <section class="class-banner">
+          <div class="badge-row">
+            <span class="badge badge-primary">Pinned Upstream University Tutorial</span>
+            <span class="badge badge-phase"><code>third_party/data_science/W1D4_Tutorial1.ipynb</code></span>
+            <span class="badge badge-tier">47 cells (29 code cells)</span>
+          </div>
+          <h1>Tutorial 1: Geometric view of data</h1>
+          <p style="margin:0.4rem 0 0.8rem;color:var(--ink-secondary);max-width:80ch">This is a byte-for-byte preserved upstream teaching notebook from an external university curriculum (retained under its original open license; see <a href="../../THIRD_PARTY_NOTICES.html">Third-Party Notices</a> and the folder README). Rendered below for convenient reading on the web alongside the downloadable original <code>.ipynb</code>.</p>
+          <div class="banner-actions">
+            <a class="btn-action primary" href="W1D4_Tutorial1.ipynb" download>⬇ Download Original Notebook (W1D4_Tutorial1.ipynb)</a>
+            <a class="btn-action" href="../../third_party/data_science/README.html">📖 Folder Overview &amp; Provenance</a>
+            <a class="btn-action" href="../../curriculum/ALL_MATERIALS.html">🗂 All Repository Materials</a>
+          </div>
+        </section>
+        <article class="content-card">
+          <section class="nb-cell" id="cell-0"><p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content/blob/main/tutorials/W1D4_DimensionalityReduction/W1D4_Tutorial1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> &nbsp; <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/main/tutorials/W1D4_DimensionalityReduction/W1D4_Tutorial1.ipynb" target="_parent"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open in Kaggle"/></a></p></section><section class="nb-cell" id="cell-1"><h1 id="tutorial-1-geometric-view-of-data">Tutorial 1: Geometric view of data</h1>
+<p><strong>Week 1, Day 4: Dimensionality Reduction</strong></p>
+<p><strong>By Neuromatch Academy</strong></p>
+<p><strong>Content creators:</strong> Alex Cayco Gajic, John Murray</p>
+<p><strong>Content reviewers:</strong> Roozbeh Farhoudi, Matt Krause, Spiros Chavlis, Richard Gao, Michael Waskom, Siddharth Suresh, Natalie Schaworonkow, Ella Batty</p>
+<p><strong>Production editors:</strong> Gagana B, Spiros Chavlis</p></section><section class="nb-cell" id="cell-2"><hr />
+<h1 id="tutorial-objectives">Tutorial Objectives</h1>
+<p><em>Estimated timing of tutorial: 50 minutes</em></p>
+<p>In this notebook we'll explore how multivariate data can be represented in different orthonormal bases. This will help us build intuition that will be helpful in understanding PCA in the following tutorial.</p>
+<p>Overview:
+ - Generate correlated multivariate data.
+ - Define an arbitrary orthonormal basis.
+ - Project the data onto the new basis.</p></section><section class="nb-cell" id="cell-3"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 1</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Tutorial slides
+# @markdown These are the slides for the videos in all tutorials today
+from IPython.display import IFrame
+link_id = &quot;kaq2x&quot;
+print(f&quot;If you want to download the slides: https://osf.io/download/{link_id}/&quot;)
+IFrame(src=f&quot;https://mfr.ca-1.osf.io/render?url=https://osf.io/{link_id}/?direct%26mode=render%26action=download%26mode=render&quot;, width=854, height=480)</code></pre></div></section><section class="nb-cell" id="cell-4"><hr />
+<h1 id="setup">Setup</h1></section><section class="nb-cell" id="cell-5"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 2</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Install and import feedback gadget
+
+!pip3 install vibecheck datatops --quiet
+
+from vibecheck import DatatopsContentReviewContainer
+def content_review(notebook_section: str):
+    return DatatopsContentReviewContainer(
+        &quot;&quot;,  # No text prompt
+        notebook_section,
+        {
+            &quot;url&quot;: &quot;https://pmyvdlilci.execute-api.us-east-1.amazonaws.com/klab&quot;,
+            &quot;name&quot;: &quot;neuromatch_cn&quot;,
+            &quot;user_key&quot;: &quot;y1x3mpx5&quot;,
+        },
+    ).render()
+
+
+feedback_prefix = &quot;W1D4_T1&quot;</code></pre></div></section><section class="nb-cell" id="cell-6"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 3</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Imports
+import numpy as np
+import matplotlib.pyplot as plt</code></pre></div></section><section class="nb-cell" id="cell-7"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 4</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Figure Settings
+import logging
+logging.getLogger(&#x27;matplotlib.font_manager&#x27;).disabled = True
+
+import ipywidgets as widgets  # interactive display
+%config InlineBackend.figure_format = &#x27;retina&#x27;
+plt.style.use(&quot;https://raw.githubusercontent.com/NeuromatchAcademy/course-content/main/nma.mplstyle&quot;)</code></pre></div></section><section class="nb-cell" id="cell-8"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 5</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Plotting Functions
+
+def plot_data(X):
+  &quot;&quot;&quot;
+  Plots bivariate data. Includes a plot of each random variable, and a scatter
+  plot of their joint activity. The title indicates the sample correlation
+  calculated from the data.
+
+  Args:
+    X (numpy array of floats) : Data matrix each column corresponds to a
+                                different random variable
+
+  Returns:
+    Nothing.
+  &quot;&quot;&quot;
+
+  fig = plt.figure(figsize=[8, 4])
+  gs = fig.add_gridspec(2, 2)
+  ax1 = fig.add_subplot(gs[0, 0])
+  ax1.plot(X[:, 0], color=&#x27;k&#x27;)
+  plt.ylabel(&#x27;Neuron 1&#x27;)
+  plt.title(f&#x27;Sample var 1: {np.var(X[:, 0]):.1f}&#x27;)
+  ax1.set_xticklabels([])
+  ax2 = fig.add_subplot(gs[1, 0])
+  ax2.plot(X[:, 1], color=&#x27;k&#x27;)
+  plt.xlabel(&#x27;Sample Number&#x27;)
+  plt.ylabel(&#x27;Neuron 2&#x27;)
+  plt.title(f&#x27;Sample var 2: {np.var(X[:, 1]):.1f}&#x27;)
+  ax3 = fig.add_subplot(gs[:, 1])
+  ax3.plot(X[:, 0], X[:, 1], &#x27;.&#x27;, markerfacecolor=[.5, .5, .5],
+           markeredgewidth=0)
+  ax3.axis(&#x27;equal&#x27;)
+  plt.xlabel(&#x27;Neuron 1 activity&#x27;)
+  plt.ylabel(&#x27;Neuron 2 activity&#x27;)
+  plt.title(f&#x27;Sample corr: {np.corrcoef(X[:, 0], X[:, 1])[0, 1]:.1f}&#x27;)
+  plt.show()
+
+
+def plot_basis_vectors(X, W):
+  &quot;&quot;&quot;
+  Plots bivariate data as well as new basis vectors.
+
+  Args:
+    X (numpy array of floats) : Data matrix each column corresponds to a
+                                different random variable
+    W (numpy array of floats) : Square matrix representing new orthonormal
+                                basis each column represents a basis vector
+
+  Returns:
+    Nothing.
+  &quot;&quot;&quot;
+
+  plt.figure(figsize=[4, 4])
+  plt.plot(X[:, 0], X[:, 1], &#x27;.&#x27;, color=[.5, .5, .5], label=&#x27;Data&#x27;)
+  plt.axis(&#x27;equal&#x27;)
+  plt.xlabel(&#x27;Neuron 1 activity&#x27;)
+  plt.ylabel(&#x27;Neuron 2 activity&#x27;)
+  plt.plot([0, W[0, 0]], [0, W[1, 0]], color=&#x27;r&#x27;, linewidth=3,
+           label=&#x27;Basis vector 1&#x27;)
+  plt.plot([0, W[0, 1]], [0, W[1, 1]], color=&#x27;b&#x27;, linewidth=3,
+           label=&#x27;Basis vector 2&#x27;)
+  plt.legend()
+  plt.show()
+
+
+def plot_data_new_basis(Y):
+  &quot;&quot;&quot;
+  Plots bivariate data after transformation to new bases.
+  Similar to plot_data but with colors corresponding to projections onto
+  basis 1 (red) and basis 2 (blue). The title indicates the sample correlation
+  calculated from the data.
+
+  Note that samples are re-sorted in ascending order for the first
+  random variable.
+
+  Args:
+    Y (numpy array of floats) : Data matrix in new basis each column
+                                corresponds to a different random variable
+
+  Returns:
+    Nothing.
+  &quot;&quot;&quot;
+  fig = plt.figure(figsize=[8, 4])
+  gs = fig.add_gridspec(2, 2)
+  ax1 = fig.add_subplot(gs[0, 0])
+  ax1.plot(Y[:, 0], &#x27;r&#x27;)
+  plt.xlabel
+  plt.ylabel(&#x27;Projection \n basis vector 1&#x27;)
+  plt.title(f&#x27;Sample var 1: {np.var(Y[:, 0]):.1f}&#x27;)
+  ax1.set_xticklabels([])
+  ax2 = fig.add_subplot(gs[1, 0])
+  ax2.plot(Y[:, 1], &#x27;b&#x27;)
+  plt.xlabel(&#x27;Sample number&#x27;)
+  plt.ylabel(&#x27;Projection \n basis vector 2&#x27;)
+  plt.title(f&#x27;Sample var 2: {np.var(Y[:, 1]):.1f}&#x27;)
+  ax3 = fig.add_subplot(gs[:, 1])
+  ax3.plot(Y[:, 0], Y[:, 1], &#x27;.&#x27;, color=[.5, .5, .5])
+  ax3.axis(&#x27;equal&#x27;)
+  plt.xlabel(&#x27;Projection basis vector 1&#x27;)
+  plt.ylabel(&#x27;Projection basis vector 2&#x27;)
+  plt.title(f&#x27;Sample corr: {np.corrcoef(Y[:, 0], Y[:, 1])[0, 1]:.1f}&#x27;)
+  plt.show()</code></pre></div></section><section class="nb-cell" id="cell-9"><hr /></section><section class="nb-cell" id="cell-10"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 6</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 1: Geometric view of data
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;THu9yHnpq9I&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1Af4y1R78w&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-11"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 7</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Geometric_view_of_data_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-12"><hr />
+<h1 id="section-1-generate-correlated-multivariate-data">Section 1: Generate correlated multivariate data</h1></section><section class="nb-cell" id="cell-13"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 8</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 2: Multivariate data
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;jcTq2PgU5Vw&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1xz4y1D7ES&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-14"><p>This video describes the covariance matrix and the multivariate normal distribution.</p>
+<p><details class="instructor-details"><summary>🎓 Click here for text recap of video </summary><div class="details-body"></p>
+<p>To gain intuition, we will first use a simple model to generate multivariate data. Specifically, we will draw random samples from a <em>bivariate normal distribution</em>. This is an extension of the one-dimensional normal distribution to two dimensions, in which each \(x_i\) is marginally normal with mean \(\mu_i\) and variance \(\sigma_i^2\):</p>
+<p>\begin{equation}
+x_i \sim \mathcal{N}(\mu_i,\sigma_i^2).
+\end{equation}</p>
+<p>Additionally, the joint distribution for \(x_1\) and \(x_2\) has a specified correlation coefficient \(\rho\). Recall that the correlation coefficient is a normalized version of the covariance, and ranges between -1 and +1:</p>
+<p>\begin{equation}
+\rho = \frac{\text{cov}(x_1, x_2)}{\sqrt{\sigma_1^2 \sigma_2^2}}.
+\end{equation}</p>
+<p>For simplicity, we will assume that the mean of each variable has already been subtracted, so that \(\mu_i=0\) for both \(i=1\) and \(i=2\). The remaining parameters can be summarized in the covariance matrix, which for two dimensions has the following form:</p>
+<p>\begin{equation}
+{\bf \Sigma} =
+\begin{pmatrix}
+ \text{var}(x_1) &amp; \text{cov}(x_1,x_2) \
+ \text{cov}(x_1,x_2) &amp;\text{var}(x_2)
+\end{pmatrix}.
+\end{equation}</p>
+<p>In general, \(\bf \Sigma\) is a symmetric matrix with the variances \(\text{var}(x_i) = \sigma_i^2\) on the diagonal, and the covariances on the off-diagonal. Later, we will see that the covariance matrix plays a key role in PCA.</p>
+<p></div></details></p></section><section class="nb-cell" id="cell-15"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 9</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Multivariate_data_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-16"><h2 id="coding-exercise-1-draw-samples-from-a-distribution">Coding Exercise 1: Draw samples from a distribution</h2>
+<p>We have provided code to draw random samples from a zero-mean bivariate normal distribution with a specified covariance matrix (<code>get_data</code>). Throughout this tutorial, we'll imagine these samples represent the activity (firing rates) of two recorded neurons on different trials. Fill in the function below to calculate the covariance matrix given the desired variances and correlation coefficient. The covariance can be found by rearranging the equation above:</p>
+<p>\begin{equation}
+\text{cov}(x_1,x_2) = \rho \sqrt{\sigma_1^2 \sigma_2^2}.
+\end{equation}</p></section><section class="nb-cell" id="cell-17"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 10</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown Execute this cell to get helper function `get_data`
+
+def get_data(cov_matrix):
+  &quot;&quot;&quot;
+  Returns a matrix of 1000 samples from a bivariate, zero-mean Gaussian.
+
+  Note that samples are sorted in ascending order for the first random variable
+
+  Args:
+    cov_matrix (numpy array of floats): desired covariance matrix
+
+  Returns:
+    (numpy array of floats) : samples from the bivariate Gaussian, with each
+                              column corresponding to a different random
+                              variable
+  &quot;&quot;&quot;
+
+  mean = np.array([0, 0])
+  X = np.random.multivariate_normal(mean, cov_matrix, size=1000)
+  indices_for_sorting = np.argsort(X[:, 0])
+  X = X[indices_for_sorting, :]
+
+  return X
+
+help(get_data)</code></pre></div></section><section class="nb-cell" id="cell-18"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 11</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>def calculate_cov_matrix(var_1, var_2, corr_coef):
+  &quot;&quot;&quot;
+  Calculates the covariance matrix based on the variances and correlation
+  coefficient.
+
+  Args:
+    var_1 (scalar)          : variance of the first random variable
+    var_2 (scalar)          : variance of the second random variable
+    corr_coef (scalar)      : correlation coefficient
+
+  Returns:
+    (numpy array of floats) : covariance matrix
+  &quot;&quot;&quot;
+
+  #################################################
+  ## TODO for students: calculate the covariance matrix
+  # Fill out function and remove
+  raise NotImplementedError(&quot;Student exercise: calculate the covariance matrix!&quot;)
+  #################################################
+
+  # Calculate the covariance from the variances and correlation
+  cov = ...
+
+  cov_matrix = np.array([[var_1, cov], [cov, var_2]])
+
+  return cov_matrix
+
+
+# Set parameters
+np.random.seed(2020)  # set random seed
+variance_1 = 1
+variance_2 = 1
+corr_coef = 0.8
+
+# Compute covariance matrix
+cov_matrix = calculate_cov_matrix(variance_1, variance_2, corr_coef)
+
+# Generate data with this covariance matrix
+X = get_data(cov_matrix)
+
+# Visualize
+plot_data(X)</code></pre></div></section><section class="nb-cell" id="cell-19"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 12</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># to_remove solution
+
+def calculate_cov_matrix(var_1, var_2, corr_coef):
+  &quot;&quot;&quot;
+  Calculates the covariance matrix based on the variances and correlation
+  coefficient.
+
+  Args:
+    var_1 (scalar)          : variance of the first random variable
+    var_2 (scalar)          : variance of the second random variable
+    corr_coef (scalar)      : correlation coefficient
+
+  Returns:
+    (numpy array of floats) : covariance matrix
+  &quot;&quot;&quot;
+
+  # Calculate the covariance from the variances and correlation
+  cov = corr_coef * np.sqrt(var_1 * var_2)
+
+  cov_matrix = np.array([[var_1, cov], [cov, var_2]])
+
+  return cov_matrix
+
+
+# Set parameters
+np.random.seed(2020)  # set random seed
+variance_1 = 1
+variance_2 = 1
+corr_coef = 0.8
+
+# Compute covariance matrix
+cov_matrix = calculate_cov_matrix(variance_1, variance_2, corr_coef)
+
+# Generate data with this covariance matrix
+X = get_data(cov_matrix)
+
+# Visualize
+with plt.xkcd():
+  plot_data(X)</code></pre></div></section><section class="nb-cell" id="cell-20"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 13</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Draw_samples_from_a_distribution_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-21"><h2 id="interactive-demo-1-correlation-effect-on-data">Interactive Demo 1: Correlation effect on data</h2>
+<p>We'll use the function you just completed but now we can change the correlation coefficient via slider. You should get a feel for how changing the correlation coefficient affects the geometry of the simulated data.</p>
+<ol>
+<li>What effect do negative correlation coefficient values have?</li>
+<li>What correlation coefficient results in a circular data cloud?</li>
+</ol>
+<p>Note that we sort the samples according to neuron 1's firing rate, meaning the plot of neuron 1 firing rate over sample number looks clean and pretty unchanging when compared to neuron 2.</p></section><section class="nb-cell" id="cell-22"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 14</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown Execute this cell to enable widget
+
+def _calculate_cov_matrix(var_1, var_2, corr_coef):
+
+  # Calculate the covariance from the variances and correlation
+  cov = corr_coef * np.sqrt(var_1 * var_2)
+
+  cov_matrix = np.array([[var_1, cov], [cov, var_2]])
+
+  return cov_matrix
+
+
+@widgets.interact(corr_coef = widgets.FloatSlider(value=.2, min=-1, max=1, step=0.1))
+def visualize_correlated_data(corr_coef=0):
+  variance_1 = 1
+  variance_2 = 1
+
+  # Compute covariance matrix
+  cov_matrix = _calculate_cov_matrix(variance_1, variance_2, corr_coef)
+
+  # Generate data with this covariance matrix
+  X = get_data(cov_matrix)
+
+  # Visualize
+  plot_data(X)</code></pre></div></section><section class="nb-cell" id="cell-23"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 15</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># to_remove explanation
+&quot;&quot;&quot;
+1) Negative correlation coefficients reverse the direction of the relationship: now higher neuron 1
+activities are associated with lower neuron 2 activities.
+
+2) A correlation coefficient of 0 (no correlation) results in a circular looking data cloud.
+&quot;&quot;&quot;;</code></pre></div></section><section class="nb-cell" id="cell-24"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 16</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Correlation_effect_on_data_Interactive_Demo_and_Discussion&quot;)</code></pre></div></section><section class="nb-cell" id="cell-25"><hr />
+<h1 id="section-2-define-a-new-orthonormal-basis">Section 2: Define a new orthonormal basis</h1>
+<p><em>Estimated timing to here from start of tutorial: 20 min</em></p></section><section class="nb-cell" id="cell-26"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 17</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 3: Orthonormal bases
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;PC1RZELnrIg&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1wT4y1E71g&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-27"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 18</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Orthonormal_Bases_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-28"><p>This video shows that data can be represented in many ways using different bases. It also explains how to check if your favorite basis is orthonormal.</p>
+<p><details class="instructor-details"><summary>🎓 Click here for text recap of video </summary><div class="details-body"></p>
+<p>Next, we will define a new orthonormal basis of vectors \({\bf u} = [u_1,u_2]\) and \({\bf w} = [w_1,w_2]\). As we learned in the video, two vectors are orthonormal if:</p>
+<ol>
+<li>They are orthogonal (i.e., their dot product is zero):</li>
+</ol>
+<p>\begin{equation}
+{\bf u\cdot w} = u_1 w_1 + u_2 w_2 = 0
+\end{equation}</p>
+<ol start="2">
+<li>They have unit length:</li>
+</ol>
+<p>\begin{equation}
+||{\bf u}|| = ||{\bf w} || = 1
+\end{equation}</p>
+<p></div></details></p>
+<p>In two dimensions, it is easy to make an arbitrary orthonormal basis. All we need is a random vector \({\bf u}\), which we have normalized. If we now define the second basis vector to be \({\bf w} = [-u_2,u_1]\), we can check that both conditions are satisfied:</p>
+<p>\begin{equation}
+{\bf u\cdot w} = - u_1 u_2 + u_2 u_1 = 0
+\end{equation}</p>
+<p>and</p>
+<p>\begin{equation}
+{|| {\bf w} ||} = \sqrt{(-u_2)^2 + u_1^2} = \sqrt{u_1^2 + u_2^2} = 1,
+\end{equation}</p>
+<p>where we used the fact that \({\bf u}\) is normalized. So, with an arbitrary input vector, we can define an orthonormal basis, which we will write in matrix by stacking the basis vectors horizontally:</p>
+<p>\begin{equation}
+{{\bf W} } =
+\begin{pmatrix}
+ u_1 &amp; w_1 \
+ u_2 &amp; w_2
+\end{pmatrix}.
+\end{equation}</p></section><section class="nb-cell" id="cell-29"><h2 id="coding-exercise-2-find-an-orthonormal-basis">Coding Exercise 2: Find an orthonormal basis</h2>
+<p>In this exercise you will fill in the function below to define an orthonormal basis, given a single arbitrary 2-dimensional vector as an input.</p>
+<p><strong>Steps</strong></p>
+<ul>
+<li>Modify the function <code>define_orthonormal_basis</code> to first normalize the first basis vector \(\bf u\).</li>
+<li>Then complete the function by finding a basis vector \(\bf w\) that is orthogonal to \(\bf u\).</li>
+<li>Test the function using initial basis vector \({\bf u} = [3,1]\). Plot the resulting basis vectors on top of the data scatter plot using the function <code>plot_basis_vectors</code>. (For the data, use  \(\sigma_1^2 =1\), \(\sigma_2^2 =1\), and \(\rho = .8\)).</li>
+</ul></section><section class="nb-cell" id="cell-30"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 19</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>def define_orthonormal_basis(u):
+  &quot;&quot;&quot;
+  Calculates an orthonormal basis given an arbitrary vector u.
+
+  Args:
+    u (numpy array of floats) : arbitrary 2-dimensional vector used for new
+                                basis
+
+  Returns:
+    (numpy array of floats)   : new orthonormal basis
+                                columns correspond to basis vectors
+  &quot;&quot;&quot;
+
+  #################################################
+  ## TODO for students: calculate the orthonormal basis
+  # Fill out function and remove
+  raise NotImplementedError(&quot;Student exercise: implement the orthonormal basis function&quot;)
+  #################################################
+
+  # Normalize vector u
+  u = ...
+
+  # Calculate vector w that is orthogonal to u
+  w = ...
+
+  # Put in matrix form
+  W = np.column_stack([u, w])
+
+  return W
+
+
+# Set up parameters
+np.random.seed(2020)  # set random seed
+variance_1 = 1
+variance_2 = 1
+corr_coef = 0.8
+u = np.array([3, 1])
+
+# Compute covariance matrix
+cov_matrix = calculate_cov_matrix(variance_1, variance_2, corr_coef)
+
+# Generate data
+X = get_data(cov_matrix)
+
+# Get orthonomal basis
+W = define_orthonormal_basis(u)
+
+# Visualize
+plot_basis_vectors(X, W)</code></pre></div></section><section class="nb-cell" id="cell-31"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 20</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># to_remove solution
+
+def define_orthonormal_basis(u):
+  &quot;&quot;&quot;
+  Calculates an orthonormal basis given an arbitrary vector u.
+
+  Args:
+    u (numpy array of floats) : arbitrary 2-dimensional vector used for new
+                                basis
+
+  Returns:
+    (numpy array of floats)   : new orthonormal basis
+                                columns correspond to basis vectors
+  &quot;&quot;&quot;
+
+  # Normalize vector u
+  u = u / np.sqrt(u[0] ** 2 + u[1] ** 2)
+
+  # Calculate vector w that is orthogonal to u
+  w = np.array([-u[1], u[0]])
+
+  # Put in matrix form
+  W = np.column_stack([u, w])
+
+  return W
+
+
+# Set up parameters
+np.random.seed(2020)  # set random seed
+variance_1 = 1
+variance_2 = 1
+corr_coef = 0.8
+u = np.array([3, 1])
+
+# Compute covariance matrix
+cov_matrix = calculate_cov_matrix(variance_1, variance_2, corr_coef)
+
+# Generate data
+X = get_data(cov_matrix)
+
+# Get orthonomal basis
+W = define_orthonormal_basis(u)
+
+# Visualize
+with plt.xkcd():
+  plot_basis_vectors(X, W)</code></pre></div></section><section class="nb-cell" id="cell-32"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 21</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Find_an_orthonormal_basis_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-33"><hr />
+<h1 id="section-3-project-data-onto-new-basis">Section 3: Project data onto new basis</h1>
+<p><em>Estimated timing to here from start of tutorial: 35 min</em></p></section><section class="nb-cell" id="cell-34"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 22</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 4: Change of basis
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;Mj6BRQPKKUc&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1LK411J7NQ&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-35"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 23</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Change_of_basis_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-36"><p>Finally, we will express our data in the new basis that we have just found. Since \(\bf W\) is orthonormal, we can project the data into our new basis using simple matrix multiplication :</p>
+<p>\begin{equation}
+{\bf Y = X W}.
+\end{equation}</p>
+<p>We will explore the geometry of the transformed data \(\bf Y\) as we vary the choice of basis.</p></section><section class="nb-cell" id="cell-37"><h2 id="coding-exercise-3-change-to-orthonormal-basis">Coding Exercise 3: Change to orthonormal basis</h2>
+<p>In this exercise you will fill in the function below to change data to an orthonormal basis.</p>
+<p><strong>Steps</strong></p>
+<ul>
+<li>Complete the function <code>change_of_basis</code> to project the data onto the new basis.</li>
+<li>Plot the projected data using the function <code>plot_data_new_basis</code>.</li>
+<li>What happens to the correlation coefficient in the new basis? Does it increase or decrease?</li>
+<li>What happens to variance?</li>
+</ul></section><section class="nb-cell" id="cell-38"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 24</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>def change_of_basis(X, W):
+  &quot;&quot;&quot;
+  Projects data onto new basis W.
+
+  Args:
+    X (numpy array of floats) : Data matrix each column corresponding to a
+                                different random variable
+    W (numpy array of floats) : new orthonormal basis columns correspond to
+                                basis vectors
+
+  Returns:
+    (numpy array of floats)    : Data matrix expressed in new basis
+  &quot;&quot;&quot;
+
+  #################################################
+  ## TODO for students: project the data onto a new basis W
+  # Fill out function and remove
+  raise NotImplementedError(&quot;Student exercise: implement change of basis&quot;)
+  #################################################
+
+  # Project data onto new basis described by W
+  Y = ...
+
+  return Y
+
+
+# Project data to new basis
+Y = change_of_basis(X, W)
+
+# Visualize
+plot_data_new_basis(Y)</code></pre></div></section><section class="nb-cell" id="cell-39"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 25</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># to_remove solution
+
+def change_of_basis(X, W):
+  &quot;&quot;&quot;
+  Projects data onto new basis W.
+
+  Args:
+    X (numpy array of floats) : Data matrix each column corresponding to a
+                                different random variable
+    W (numpy array of floats) : new orthonormal basis columns correspond to
+                                basis vectors
+
+  Returns:
+    (numpy array of floats)    : Data matrix expressed in new basis
+  &quot;&quot;&quot;
+
+  # Project data onto new basis described by W
+  Y = X @ W
+
+  return Y
+
+
+# Project data to new basis
+Y = change_of_basis(X, W)
+
+# Visualize
+with plt.xkcd():
+  plot_data_new_basis(Y)</code></pre></div></section><section class="nb-cell" id="cell-40"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 26</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Change_to_orthonormal_basis_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-41"><h2 id="interactive-demo-3-play-with-the-basis-vectors">Interactive Demo 3: Play with the basis vectors</h2>
+<p>To see what happens to the correlation as we change the basis vectors, run the cell below. The parameter \(\theta\) controls the angle of \(\bf u\) in degrees. Use the slider to rotate the basis vectors.</p>
+<ol>
+<li>What happens to the projected data as you rotate the basis?</li>
+<li>How does the correlation coefficient change? How does the variance of the projection onto each basis vector change?</li>
+<li>Are you able to find a basis in which the projected data is <strong>uncorrelated</strong>?</li>
+</ol></section><section class="nb-cell" id="cell-42"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 27</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown Make sure you execute this cell to enable the widget!
+
+def refresh(theta=0):
+  u = np.array([1, np.tan(theta * np.pi / 180)])
+  W = define_orthonormal_basis(u)
+  Y = change_of_basis(X, W)
+  plot_basis_vectors(X, W)
+  plot_data_new_basis(Y)
+
+
+_ = widgets.interact(refresh, theta=(0, 90, 5))</code></pre></div></section><section class="nb-cell" id="cell-43"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 28</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># to_remove explanation
+&quot;&quot;&quot;
+1) As you rotate the basis vectors, the look of the cloud of projected data changes.
+Specifically, the correlations and variances of the projected data change.
+
+2) As the angle increases, the correlation coefficient decreases, goes to 0, then starts
+to become negative. It changes from 0.8 to -.8 when the angle is changed by 90 degrees.
+
+With theta of 0, the data projected onto the two basis vectors has equal variances of 1.
+As theta increases, these variances become unequal: the projected data has larger and larger variance
+for basis vector 1 and smaller variance for basis vector 2. Past theta of 45, the trend reverses and
+the variances start becoming more similar.
+
+3) If theta is 45 degrees, the projected data is uncorrelated.
+&quot;&quot;&quot;;</code></pre></div></section><section class="nb-cell" id="cell-44"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 29</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Play_with_basis_vectors_Interactive_Demo_and_Discussion&quot;)</code></pre></div></section><section class="nb-cell" id="cell-45"><hr />
+<h1 id="summary">Summary</h1>
+<p><em>Estimated timing of tutorial: 50 minutes</em></p>
+<ul>
+<li>
+<p>In this tutorial, we learned that multivariate data can be visualized as a cloud of points in a high-dimensional vector space. The geometry of this cloud is shaped by the covariance matrix.</p>
+</li>
+<li>
+<p>Multivariate data can be represented in a new orthonormal basis using the dot product. These new basis vectors correspond to specific mixtures of the original variables - for example, in neuroscience, they could represent different ratios of activation  across a population of neurons.</p>
+</li>
+<li>
+<p>The projected data (after transforming into the new basis) will generally have a different geometry from the original data. In particular, taking basis vectors that are aligned with the spread of cloud of points decorrelates the data.</p>
+</li>
+<li>
+<p>These concepts - covariance, projections, and orthonormal bases - are key for understanding PCA, which will be our focus in the next tutorial.</p>
+</li>
+</ul></section><section class="nb-cell" id="cell-46"><hr />
+<h1 id="notation">Notation</h1>
+<p>\begin{align}
+x_i &amp;\quad \text{data point for dimension } i\
+\mu_i &amp;\quad \text{mean along dimension } i\
+\sigma_i^2 &amp;\quad \text{variance along dimension } i \
+\bf u, \bf w &amp;\quad \text{orthonormal basis vectors}\
+\rho &amp;\quad \text{correlation coefficient}\
+\bf \Sigma &amp;\quad \text{covariance matrix}\
+\bf X &amp;\quad \text{original data matrix}\
+\bf W &amp;\quad \text{projection matrix}\
+\bf Y &amp;\quad \text{transformed data}\
+\end{align}</p></section>
+        </article>
+        
+    </main>
+    <aside class="sidebar-right" aria-label="On this page"><h3>On This Page</h3><ul class="toc-list"><li><a href="#coding-exercise-1-draw-samples-from-a-distribution">Coding Exercise 1: Draw samples from a distribution</a></li><li><a href="#interactive-demo-1-correlation-effect-on-data">Interactive Demo 1: Correlation effect on data</a></li><li><a href="#coding-exercise-2-find-an-orthonormal-basis">Coding Exercise 2: Find an orthonormal basis</a></li><li><a href="#coding-exercise-3-change-to-orthonormal-basis">Coding Exercise 3: Change to orthonormal basis</a></li><li><a href="#interactive-demo-3-play-with-the-basis-vectors">Interactive Demo 3: Play with the basis vectors</a></li></ul></aside>
+  </div>
+
+  <div class="lightbox-overlay" id="img-lightbox" role="dialog" aria-label="Zoomed figure view">
+    <img id="img-lightbox-target" src="" alt="Enlarged scientific diagram">
+  </div>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Neuroimaging Research Methods with AI</strong> · 26-Week Graduate Curriculum (83 Main Classes · 4 Supplement Labs · 14 Upstream Tutorials · 24 Core Papers · 310 Verified References).
+      Built for macOS on Apple Silicon MacBook Pro with Goose + Ollama (Qwen &amp; Gemma).
+    </div>
+    <div>
+      <a href="../../curriculum/ALL_MATERIALS.html">All 250 Repo Files</a> ·
+      <a href="../../curriculum/SETUP.html">Mac Setup</a> ·
+      <a href="../../curriculum/EQUATION_ATLAS.html">Equation Atlas</a> ·
+      <a href="../../course/COURSEBOOK.html">Compact Coursebook</a> ·
+      <a href="../../THIRD_PARTY_NOTICES.html">Licenses &amp; Provenance</a>
+    </div>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+  <script defer src="../../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+{
+  "method": "Fresh Python namespace per notebook, cells executed sequentially, Matplotlib Agg. Root integration separately runs a real notebook kernel.",
+  "notebooks": 21,
+  "passed_notebooks": 21,
+  "passed_code_cells": 42,
+  "environment": {
+    "python": "3.14.7",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "nibabel": "5.4.2",
+    "scikit-learn": "1.9.1"
+  },
+  "external_tools_executed": false,
+  "results": [
+    {
+      "file": "notebooks/01_processing/01_images_coordinates_metadata.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "shape, units, codes: (12, 14, 10) ('mm', 'sec') 1 1\nvoxel volume mm^3: 12.0\noriginal, correct, wrong world: [16. -4.  0.] [16. -4.  0.] [ 2. -4.  0.]\nwrong-header error mm: 14.0\n"
+    },
+    {
+      "file": "notebooks/01_processing/02_registration_resampling.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "estimated correction and error: (-4, 3) 0.0\nlabel sets: [0. 1.] [0.   0.25 0.5  1.  ]\n"
+    },
+    {
+      "file": "notebooks/01_processing/03_nonlinear_warps.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "min Jacobians: 0.4973484827552852 -0.256628793111787\ninverse vs negation max errors: 0.00013454712976823657 2.3891870007673646\n"
+    },
+    {
+      "file": "notebooks/01_processing/04_bias_field.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "correct / shortcut tissue ratios: 1.6666666666666667 1.0132899252763665\nwithin-tissue CV before/after: 0.10952153283615144 4.475998511201681e-17\n"
+    },
+    {
+      "file": "notebooks/01_processing/05_brain_extraction.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "threshold inclusion/omission: 848 145 components: 2\nWrong seed selects skull; a component ID is not an anatomical label.\n"
+    },
+    {
+      "file": "notebooks/01_processing/06_tissue_segmentation.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "component means: [100.15604011  60.02876311] classification accuracy: 1.0\nhigh-mean class posterior / known mixing fraction: 0.00020734781228702338 0.375\n"
+    },
+    {
+      "file": "notebooks/01_processing/07_morphometry_volume_jacobian.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "fractional / threshold volume mm^3: 34.8 36.0\nconserved vs unmodulated amount: 34.8 53.4\ntrue / observed percentage changes: [-2. -2. -2.] [0.94 0.94 0.94]\nA scanner-dependent measurement effect can reverse the apparent direction.\n"
+    },
+    {
+      "file": "notebooks/01_processing/08_surfaces_topology.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "closed / punctured (Euler,boundary edges): (2, np.int64(0)) (1, np.int64(3))\npaired / shuffled distances mm: [2. 2. 2. 2. 2. 2.] [22. 22.  2.  2.  2.  2.]\n"
+    },
+    {
+      "file": "notebooks/01_processing/09_slice_timing.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "raw/correct/wrong timing MSE: 0.031052744055596774 1.578036760897925e-08 0.12303686605561612\nOriginal acquisition offsets: [0. 1.] seconds; reference offset:1 second\n"
+    },
+    {
+      "file": "notebooks/01_processing/10_motion.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "corrected intensity errors: [0.         0.         0.06799391 0.         0.        ]\nFD(mm), correct vs degrees-as-radians: [       nan 0.         2.87266463 0.         2.87266463] [nan  0. 52.  0. 52.]\nRadius convention:50mm; rotations:radians; first value:undefined.\n"
+    },
+    {
+      "file": "notebooks/01_processing/11_susceptibility_distortion.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "warped/corrected MSE: 0.002356755587581355 3.1523463792422675e-07\n60Hz \u00d7 .05s = 3.0 PE voxels (sign requires convention)\n"
+    },
+    {
+      "file": "notebooks/01_processing/12_spatial_smoothing.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "sigma voxels: [1.2739827  1.2739827  0.63699135] boundary means: 65.45152186954985 100.0\nWrong sigma=6 vox gives FWHM mm: [28.25784054 28.25784054 56.51568108]\n"
+    },
+    {
+      "file": "notebooks/01_processing/13_temporal_filters.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "retained amplitudes: [np.float64(0.008823191580961265), np.float64(0.9989885150066967), np.float64(0.00032293325354603494)] wrong TR target: 0.5077001507172441\nAt TR2s, these .35Hz and sign-reversed .15Hz samples are indistinguishable.\n"
+    },
+    {
+      "file": "notebooks/01_processing/14_nuisance_ica.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "bad/good drift projection: -1.0000000000000007 -1.3522516439934406e-15\nabsolute source/component correlations: [[0.9995486  0.03004309]\n [0.01225791 0.99992487]]\nComponents remain unlabeled: separation is not artifact identification.\n"
+    },
+    {
+      "file": "notebooks/01_processing/15_qc_censoring.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "censored indices: [40 41] retained: 98\nFirst difference undefined; censoring here is an illustrative rule only.\n"
+    },
+    {
+      "file": "notebooks/01_processing/16_diffusion_gradients.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "matched rotation error: 1.1102230246251565e-16\nunmatched rotation error: 0.2191665808907843\nwrong volume/table matching MSE: 0.06285921343100756\nb0 row has zero direction by this convention; do not normalize it to unit length.\n"
+    },
+    {
+      "file": "notebooks/01_processing/17_diffusion_preprocessing.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "noisy/rank2/rank1 MSE: 0.2534959641859091 0.02615993495443046 0.6665164553361319\nKnown rank is an oracle teaching assumption; this is not MP-PCA.\nringing minimum/maximum: -0.0892931383866904 1.0892931383866904\n"
+    },
+    {
+      "file": "notebooks/01_processing/18_diffusion_tensor.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "rank, eigenvalues, MD, FA: 6 [0.0003 0.0003 0.0017] 0.0007666666666666658 0.7990222037494897\nWrong b units: FA unchanged; MD multiplied by1000.\n"
+    },
+    {
+      "file": "notebooks/01_processing/19_crossing_fibers_tractography.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "single-tensor mismatch MSE: 0.0004648029102399988 population/fit FA: 0.7990222037494894 0.44435833469834557\nTwo selected continuations; duplicating seeds would duplicate paths, not axons.\n"
+    },
+    {
+      "file": "notebooks/01_processing/20_parcellations_connectivity.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "before/after global regression: 5.181040781584064e-17 -1.0\ncovered/expected voxel counts: {1: 2, 2: 1} expected3 each\n"
+    },
+    {
+      "file": "notebooks/01_processing/21_workflow_provenance_reports.ipynb",
+      "passed_cells": 2,
+      "failures": [],
+      "stdout": "dependency order: ['load', 'bias', 'mask', 'register', 'inspect', 'extract']\nCycle correctly rejected.\nBad input-only key cannot distinguish sigma1 from sigma2: 986c2395dfc8\n{\n  \"input_and_settings_hash\": \"3d38e843c634fb980b22bc4fae8fcf003fcf8e75354f862b50f98ef268eae0e9\",\n  \"python\": \"3.14.7\",\n  \"numpy\": \"2.5.3\",\n  \"scipy\": \"1.18.1\",\n  \"parameters\": {\n    \"sigma_vox\": 1.0,\n    \"mode\": \"reflect\"\n  },\n  \"data_kind\": \"synthetic\",\n  \"operation_executed\": \"SciPy Gaussian filter only\",\n  \"fmriprep_executed\": false,\n  \"output_sha256\": \"cfcf71212fc846cf022af07adb262d3234356b9a82fda88f72124d7c192add1a\"\n}\n"
+    }
+  ]
+}

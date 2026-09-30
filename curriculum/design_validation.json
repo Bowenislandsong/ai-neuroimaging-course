@@ -1,0 +1,146 @@
+[
+  {
+    "file": "notebooks/02_design/01_questions_estimands_causality.ipynb",
+    "markdown_words": 650,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/02_sampling_missingness_units.ipynb",
+    "markdown_words": 604,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/03_reliability_measurement.ipynb",
+    "markdown_words": 606,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/04_power_precision.ipynb",
+    "markdown_words": 599,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/05_block_event_hrf.ipynb",
+    "markdown_words": 605,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/06_fir_hrf_misspecification.ipynb",
+    "markdown_words": 610,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/07_design_efficiency.ipynb",
+    "markdown_words": 582,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/08_factorial_confounding.ipynb",
+    "markdown_words": 611,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/09_glm_contrasts_inference.ipynb",
+    "markdown_words": 576,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/10_temporal_noise_prewhitening.ipynb",
+    "markdown_words": 558,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/11_group_hierarchy_repeated.ipynb",
+    "markdown_words": 563,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/12_permutation_exchangeability.ipynb",
+    "markdown_words": 602,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/13_multiplicity_clusters_tfce.ipynb",
+    "markdown_words": 597,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/14_roi_selection_circularity.ipynb",
+    "markdown_words": 604,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/15_bayesian_intervals_equivalence.ipynb",
+    "markdown_words": 624,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  },
+  {
+    "file": "notebooks/02_design/16_multiverse_prereg_reproducibility.ipynb",
+    "markdown_words": 644,
+    "execution_tier": "offline",
+    "code_cells": 2,
+    "figures": 1,
+    "method": "Python exec in fresh namespace per notebook; Matplotlib Agg outputs; all code cells executed",
+    "status": "passed"
+  }
+]

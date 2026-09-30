@@ -1,0 +1,114 @@
+[
+  {
+    "id": "DS01",
+    "title": "Arrays, axes, broadcasting, and masks",
+    "path": "notebooks/03_data_science/01_arrays_axes.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/05/1/Arrays.ipynb",
+    "reading": "Data 8: Arrays"
+  },
+  {
+    "id": "DS02",
+    "title": "Participant identity, tidy tables, and join cardinality",
+    "path": "notebooks/03_data_science/02_tables_identity.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/08/4/Joining_Tables_by_Columns.ipynb",
+    "reading": "Data 8: Joining tables by columns"
+  },
+  {
+    "id": "DS03",
+    "title": "NIfTI file contracts, metadata, and precision",
+    "path": "notebooks/03_data_science/03_nifti_io.ipynb",
+    "source": "https://nipy.org/nibabel/nifti_images.html",
+    "reading": "NiBabel: working with NIfTI images"
+  },
+  {
+    "id": "DS04",
+    "title": "Visual distributions, outliers, and robust summaries",
+    "path": "notebooks/03_data_science/04_eda.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/07/2/Visualizing_Numerical_Distributions.ipynb",
+    "reading": "Data 8: Visualizing numerical distributions"
+  },
+  {
+    "id": "DS05",
+    "title": "Missing values, selection, and train-only imputation",
+    "path": "notebooks/03_data_science/05_missingness.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/10/2/Sampling_from_a_Population.ipynb",
+    "reading": "Data 8: Sampling from a population; supplement: sklearn imputation"
+  },
+  {
+    "id": "DS06",
+    "title": "Probability, conditional evidence, and base rates",
+    "path": "notebooks/03_data_science/06_probability.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/18/2/Making_Decisions.ipynb",
+    "reading": "Data 8: Making decisions (Bayes and rare-event prediction)"
+  },
+  {
+    "id": "DS07",
+    "title": "Sampling distributions, dependence, and effective information",
+    "path": "notebooks/03_data_science/07_sampling.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/14/5/Variability_of_the_Sample_Mean.ipynb",
+    "reading": "Data 8: Variability of the sample mean"
+  },
+  {
+    "id": "DS08",
+    "title": "Bootstrap uncertainty at the right unit",
+    "path": "notebooks/03_data_science/08_bootstrap.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/13/2/Bootstrap.ipynb",
+    "reading": "Data 8: Bootstrap"
+  },
+  {
+    "id": "DS09",
+    "title": "Standardization, percent signal change, and reference choices",
+    "path": "notebooks/03_data_science/09_standardization.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/14/3/SD_and_the_Normal_Curve.ipynb",
+    "reading": "Data 8: SD and the normal curve"
+  },
+  {
+    "id": "DS10",
+    "title": "Linear algebra: rank, projection, and identifiability",
+    "path": "notebooks/03_data_science/10_projections.ipynb",
+    "source": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D4_DimensionalityReduction/W1D4_Tutorial1.ipynb",
+    "reading": "Neuromatch W1D4 Tutorial1: Geometric view of data"
+  },
+  {
+    "id": "DS11",
+    "title": "Likelihood: state the noise model before fitting",
+    "path": "notebooks/03_data_science/11_likelihood.ipynb",
+    "source": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D2_ModelFitting/W1D2_Tutorial2.ipynb",
+    "reading": "Neuromatch W1D2 Tutorial2: Linear regression with MLE"
+  },
+  {
+    "id": "DS12",
+    "title": "Optimization, gradients, and learning rates",
+    "path": "notebooks/03_data_science/12_optimization.ipynb",
+    "source": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D2_ModelFitting/W1D2_Tutorial1.ipynb",
+    "reading": "Neuromatch W1D2 Tutorial1: least-squares optimization"
+  },
+  {
+    "id": "DS13",
+    "title": "Regression diagnostics and coefficient instability",
+    "path": "notebooks/03_data_science/13_regression_diagnostics.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/15/5/Visual_Diagnostics.ipynb",
+    "reading": "Data 8: Visual diagnostics; supplement NMA model fitting"
+  },
+  {
+    "id": "DS14",
+    "title": "SVD, PCA, compression, and train-only representations",
+    "path": "notebooks/03_data_science/14_pca_svd.ipynb",
+    "source": "https://github.com/NeuromatchAcademy/course-content/blob/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D4_DimensionalityReduction/W1D4_Tutorial1.ipynb",
+    "reading": "Neuromatch W1D4: geometric representation and dimensionality reduction"
+  },
+  {
+    "id": "DS15",
+    "title": "Feature selection and the full null pipeline",
+    "path": "notebooks/03_data_science/15_selection.ipynb",
+    "source": "https://github.com/data-8/textbook/blob/5235b7653f8dfaeb90e43419b9aa069322f2d60b/chapters/17/2/Training_and_Testing.ipynb",
+    "reading": "Data 8: Training and testing; supplement sklearn leakage examples"
+  },
+  {
+    "id": "DS16",
+    "title": "Reproducible computation and an AI analysis audit",
+    "path": "notebooks/03_data_science/16_reproducibility.ipynb",
+    "source": "https://github.com/NeuromatchAcademy/course-content/tree/44634e960df7a14cd0bf7398187f2d209d26b0e8",
+    "reading": "Neuromatch reproducible notebook structure; course analysis record"
+  }
+]

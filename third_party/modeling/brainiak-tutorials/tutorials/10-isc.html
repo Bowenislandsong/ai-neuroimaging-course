@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inter-Subject Correlation and Inter-Subject Functional Correlation · Neuroimaging Research Methods with AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="../../../../assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../../../index.html">
+      <span class="brand-badge">NEURO+AI</span>
+      <span>Neuroimaging Research Methods with AI</span>
+    </a>
+    <nav class="top-links" aria-label="Primary Navigation">
+      <a href="../../../../index.html">26-Week Roadmap</a>
+      <a href="../../../../curriculum/SETUP.html">Mac Env &amp; Apple Setup</a>
+      <a href="../../../../curriculum/STUDY_PLAN.html">Study Plan</a>
+      <a href="../../../../curriculum/NOTEBOOK_INDEX.html">83 Classes</a>
+      <a href="../../../../curriculum/EQUATION_ATLAS.html">Equation &amp; Diagram Atlas</a>
+      <a href="../../../../curriculum/papers/README.html">24 Papers &amp; 310 Citations</a>
+      <a href="../../../../curriculum/AI_WORKFLOW.html">AI Workflow</a>
+      <a href="../../../../curriculum/ALL_MATERIALS.html" class="active">All Repo Materials (250)</a>
+    </nav>
+    <div class="reader-controls" aria-label="Reading Comfort Controls">
+      <button type="button" id="eq-logic-toggle-btn" class="ctrl-btn active" title="Expand or collapse all inline equation logic breakdown tables">∑ Logic: Expanded</button>
+      <button type="button" id="focus-mode-btn" class="ctrl-btn" title="Toggle distraction-free wide reading mode">⇄ Focus Width</button>
+      <button type="button" id="theme-cycle-btn" class="ctrl-btn" title="Switch reading theme (Light / Warm Sepia / Dark)">☀ Light</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-expanded="false">
+      <span>☰ Browse 83 Classes, 26-Week Path &amp; Repo Docs</span>
+      <span class="mobile-toggle-hint" style="font-family:var(--font-mono);font-size:0.76rem">Show ▾</span>
+    </button>
+    
+    <aside class="sidebar-left" aria-label="Course and Repository Navigation">
+      <input type="search" id="sidebar-filter-input" class="sidebar-search" placeholder="Filter 83 classes &amp; docs (press /)..." aria-label="Filter classes and documents">
+      <div class="sidebar-mode-tabs" role="tablist">
+        <button type="button" class="sidebar-mode-btn active" data-mode="chronological">26-Week Path</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="strand">By Strand</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="repodocs">Repo Docs</button>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="chronological">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../../../curriculum/SETUP.html" class=""><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li><li class="nav-item"><a href="../../../../curriculum/ALL_MATERIALS.html" class=""><span class="nav-cid">ALL</span><span>All 250 Repo Materials</span><span class="nav-week-tag">Index</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase I · Paper Orientation &amp; Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">W3</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase II · Neuroimaging Data Science &amp; Experimental Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">W7</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase III · Image Processing &amp; Biophysical Pipelines</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">W13</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase IV · General Linear Modeling, Statistical Inference &amp; Multiverse Design</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">W16</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase V · Multivariate Modeling, Dynamics &amp; Foundation Models</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">W22</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase VI · Capstone Generalization &amp; Research Defense</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">W23</span></a></li><li class="nav-item"><a href="../../../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">W25</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="strand" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../../../curriculum/SETUP.html"><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Paper Orientation Seminars (R00–R03)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">#1</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">#2</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">#3</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">#4</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Foundations &amp; MR Physics (F01–F04)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">#5</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">#6</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">#7</span></a></li><li class="nav-item"><a href="../../../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">#8</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Image Processing &amp; Pipelines (PR01–PR21)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">#29</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">#30</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">#31</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">#32</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">#33</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">#34</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">#35</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">#36</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">#37</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">#38</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">#39</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">#40</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">#42</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">#43</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">#44</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">#46</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">#47</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">#48</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">#49</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">#50</span></a></li><li class="nav-item"><a href="../../../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">#51</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Research Design &amp; Inference (D01–D16)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">#17</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">#18</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">#23</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">#24</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">#41</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">#45</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">#53</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">#54</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">#55</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">#56</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">#57</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">#58</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">#59</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">#60</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">#61</span></a></li><li class="nav-item"><a href="../../../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">#62</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Data Science &amp; Computing (DS01–DS16)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">#9</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">#10</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">#11</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">#12</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">#13</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">#14</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">#15</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">#16</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">#19</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">#20</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">#21</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">#22</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">#25</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">#26</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">#27</span></a></li><li class="nav-item"><a href="../../../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">#28</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Computational Modeling &amp; AI (M01–M18)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">#64</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">#65</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">#66</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">#67</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">#68</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">#69</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">#70</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">#71</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">#72</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">#73</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">#74</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">#75</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">#76</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">#77</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">#78</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">#79</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">#80</span></a></li><li class="nav-item"><a href="../../../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">#81</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Capstone Projects (P01–P04)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">#52</span></a></li><li class="nav-item"><a href="../../../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">#63</span></a></li><li class="nav-item"><a href="../../../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">#82</span></a></li><li class="nav-item"><a href="../../../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">#83</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="repodocs" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Complete Repository Index</div><ul class="nav-list"><li class="nav-item"><a href="../../../../curriculum/ALL_MATERIALS.html"><span class="nav-cid">ALL</span><span>All 250 Repository Materials</span></a></li><li class="nav-item"><a href="../../../../curriculum/EQUATION_ATLAS.html"><span class="nav-cid">EQS</span><span>Equation &amp; Diagram Atlas (83)</span></a></li><li class="nav-item"><a href="../../../../README.html"><span class="nav-cid">README</span><span>Course Overview (README)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Curriculum &amp; Coursework Guides</div><ul class="nav-list"><li class="nav-item"><a href="../../../../curriculum/SETUP.html"><span class="nav-cid">SETUP</span><span>Step 0: macOS Apple Dev + AI</span></a></li><li class="nav-item"><a href="../../../../curriculum/STUDY_PLAN.html"><span class="nav-cid">PLAN</span><span>26-Week Study Plan</span></a></li><li class="nav-item"><a href="../../../../curriculum/AI_WORKFLOW.html"><span class="nav-cid">AI</span><span>Agentic AI Supervision Guide</span></a></li><li class="nav-item"><a href="../../../../curriculum/NOTEBOOK_INDEX.html"><span class="nav-cid">IDX</span><span>83-Class Notebook Index</span></a></li><li class="nav-item"><a href="../../../../curriculum/ASSESSMENT.html"><span class="nav-cid">RUBRIC</span><span>Assessment &amp; Grading Rubrics</span></a></li><li class="nav-item"><a href="../../../../curriculum/coursework/EVIDENCE_LEDGER.html"><span class="nav-cid">LEDGER</span><span>Paper Evidence Ledger</span></a></li><li class="nav-item"><a href="../../../../curriculum/coursework/PAPER_TO_EXPERIMENT.html"><span class="nav-cid">A1-A4</span><span>Paper-to-Experiment Projects</span></a></li><li class="nav-item"><a href="../../../../curriculum/coursework/SOTA_AUDIT.html"><span class="nav-cid">SOTA</span><span>SOTA Model Audit Worksheet</span></a></li><li class="nav-item"><a href="../../../../curriculum/COVERAGE_AUDIT.html"><span class="nav-cid">AUDIT</span><span>Curriculum Coverage Audit</span></a></li><li class="nav-item"><a href="../../../../curriculum/SOURCES.html"><span class="nav-cid">SRC</span><span>University Teaching Sources</span></a></li><li class="nav-item"><a href="../../../../curriculum/VERIFICATION.html"><span class="nav-cid">VERIF</span><span>83-Notebook Verification Log</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">24 Papers &amp; 310 Citations</div><ul class="nav-list"><li class="nav-item"><a href="../../../../curriculum/papers/README.html"><span class="nav-cid">LIB</span><span>24-Paper Library Overview</span></a></li><li class="nav-item"><a href="../../../../curriculum/papers/READING_METHOD.html"><span class="nav-cid">3PASS</span><span>Three-Pass Reading Method</span></a></li><li class="nav-item"><a href="../../../../curriculum/papers/REFERENCES.html"><span class="nav-cid">310REF</span><span>All 310 Verified References</span></a></li><li class="nav-item"><a href="../../../../curriculum/papers/measurement.html"><span class="nav-cid">PB01</span><span>Measurement &amp; BOLD Physics</span></a></li><li class="nav-item"><a href="../../../../curriculum/papers/processing.html"><span class="nav-cid">PP01-08</span><span>Processing Papers (fMRIPrep–BrainMorph)</span></a></li><li class="nav-item"><a href="../../../../curriculum/papers/design.html"><span class="nav-cid">PD01-07</span><span>Design &amp; Generalization Papers</span></a></li><li class="nav-item"><a href="../../../../curriculum/papers/modeling.html"><span class="nav-cid">PM01-08</span><span>Modeling &amp; Foundation AI Papers</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Strand Coverage Ledgers</div><ul class="nav-list"><li class="nav-item"><a href="../../../../curriculum/processing_coverage.html"><span class="nav-cid">COV-PR</span><span>Processing Coverage (PR01–PR21)</span></a></li><li class="nav-item"><a href="../../../../curriculum/design_coverage.html"><span class="nav-cid">COV-D</span><span>Design Coverage (D01–D16)</span></a></li><li class="nav-item"><a href="../../../../curriculum/data_science_coverage.html"><span class="nav-cid">COV-DS</span><span>Data Science Coverage (DS01–DS16)</span></a></li><li class="nav-item"><a href="../../../../curriculum/modeling_coverage.html"><span class="nav-cid">COV-M</span><span>Modeling Coverage (M01–M18)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Introductory Coursebook &amp; Labs (course/)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../course/COURSEBOOK.html"><span class="nav-cid">BOOK</span><span>Unified Introductory Coursebook</span></a></li><li class="nav-item"><a href="../../../../course/labs/520_design.html"><span class="nav-cid">LAB520</span><span>Lab 520: Experimental Design</span></a></li><li class="nav-item"><a href="../../../../course/labs/540_processing.html"><span class="nav-cid">LAB540</span><span>Lab 540: Image Processing</span></a></li><li class="nav-item"><a href="../../../../course/labs/550_modeling.html"><span class="nav-cid">LAB550</span><span>Lab 550: Modeling &amp; ML</span></a></li><li class="nav-item"><a href="../../../../course/labs/580_data_science.html"><span class="nav-cid">LAB580</span><span>Lab 580: Data Science</span></a></li><li class="nav-item"><a href="../../../../course/GLOSSARY.html"><span class="nav-cid">GLOSS</span><span>Neuroimaging Glossary</span></a></li><li class="nav-item"><a href="../../../../course/TRANSFORMATIONS.html"><span class="nav-cid">XFORM</span><span>Transformation Contracts</span></a></li><li class="nav-item"><a href="../../../../course/REAL_DATA.html"><span class="nav-cid">REAL</span><span>Real fMRI Data Guide</span></a></li><li class="nav-item"><a href="../../../../course/verification/REPORT.html"><span class="nav-cid">PLOTS</span><span>Verification Report &amp; 22 Plots</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Pinned Upstream Tutorials (third_party/)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../third_party/README.html"><span class="nav-cid">3P-ALL</span><span>Third-Party Provenance Overview</span></a></li><li class="nav-item"><a href="../../../../third_party/processing/README.html"><span class="nav-cid">3P-PR</span><span>Nipype &amp; DartBrains Processing (4)</span></a></li><li class="nav-item"><a href="../../../../third_party/design/README.html"><span class="nav-cid">3P-D</span><span>Poldrack &amp; DartBrains Design (3)</span></a></li><li class="nav-item"><a href="../../../../third_party/data_science/README.html"><span class="nav-cid">3P-DS</span><span>Neuromatch Data Science (3)</span></a></li><li class="nav-item"><a href="../../../../third_party/modeling/README.html"><span class="nav-cid">3P-M</span><span>BrainIAK &amp; Neuromatch Modeling (4)</span></a></li><li class="nav-item"><a href="../../../../THIRD_PARTY_NOTICES.html"><span class="nav-cid">NOTICES</span><span>Complete Third-Party Notices</span></a></li></ul></div>
+      </div>
+    </aside>
+    
+    <main class="main-content" id="top">
+      
+        <section class="class-banner">
+          <div class="badge-row">
+            <span class="badge badge-primary">Pinned Upstream University Tutorial</span>
+            <span class="badge badge-phase"><code>third_party/modeling/brainiak-tutorials/tutorials/10-isc.ipynb</code></span>
+            <span class="badge badge-tier">57 cells (24 code cells)</span>
+          </div>
+          <h1>Inter-Subject Correlation and Inter-Subject Functional Correlation</h1>
+          <p style="margin:0.4rem 0 0.8rem;color:var(--ink-secondary);max-width:80ch">This is a byte-for-byte preserved upstream teaching notebook from an external university curriculum (retained under its original open license; see <a href="../../../../THIRD_PARTY_NOTICES.html">Third-Party Notices</a> and the folder README). Rendered below for convenient reading on the web alongside the downloadable original <code>.ipynb</code>.</p>
+          <div class="banner-actions">
+            <a class="btn-action primary" href="10-isc.ipynb" download>⬇ Download Original Notebook (10-isc.ipynb)</a>
+            <a class="btn-action" href="../../../../third_party/modeling/README.html">📖 Folder Overview &amp; Provenance</a>
+            <a class="btn-action" href="../../../../curriculum/ALL_MATERIALS.html">🗂 All Repository Materials</a>
+          </div>
+        </section>
+        <article class="content-card">
+          <section class="nb-cell" id="cell-0"><h2 id="inter-subject-correlation-and-inter-subject-functional-correlation">Inter-Subject Correlation and Inter-Subject Functional Correlation</h2>
+<p><a href="#contributions">Contributions</a></p>
+<p>The functional connectivity methods that we used in previous notebooks compared time series of BOLD activity between voxels within participant to infer how different regions of the brain were interacting. However, BOLD activity contains multiple components (<a href="#fig1">Figure a</a>):</p>
+<ol>
+<li>Task-based/stimulus-evoked signal that is reliable across participants</li>
+<li>Intrinsic fluctuations in neural activity that are participant specific</li>
+<li>Scanner or physiological noise</li>
+</ol>
+<p>In this notebook, we will consider methods that combine data across participants to eliminate #2 and #3 when calculating fMRI reliability (intersubject correlation, ISC, <a href="https://doi.org/10.1126/science.1089506" target="_blank" rel="noopener">Hasson et al., 2004</a>) and connectivity (intersubject functional correlation, ISFC, <a href="https://doi.org/10.1038/ncomms12141" target="_blank" rel="noopener">Simony et al., 2016</a>). ISC and ISFC help isolate #1 because it is the only component that ought to be shared across participants.</p>
+<p><a href="#fig1">Figure b,c</a> show how ISC differs from functional connectivity: rather than correlating brain regions, which preserves participant-specific activity and noise, ISC correlates between the brains of different participants in order to capture only the activity that is shared. In ISC, this correlation is done for every voxel in the brain to the matching voxel in other brains, producing a full brain map. <a href="#fig1">Figure e</a> shows this as the diagonal of a correlation matrix, where each cell corresponds to a voxel in subject X correlated with the same anatomical voxel in subject Y. In practice, to simplify the computation and the interpretation it is typical for ISC to compare each individual participant with the average of all other participants.</p>
+<p><a href="#fig1">Figure d</a> shows ISFC: the correlation of every voxel in one participant with every other voxel in another participant (or average of other participants). This is like FCMA except it is between participants rather than within participants. In fact, these analyses use the same computational tricks. ISFC is valuable because it allows us to identify activity coupling in voxels that are not aligned across participants: the off diagonal in <a href="#fig1">Figure e</a> represents correlations for voxels in different parts of the brain.</p>
+<p><a id="fig1"></a><img alt="alt text" src="https://media.springernature.com/m685/nature-assets/ncomms/2016/160718/ncomms12141/images/ncomms12141-f1.jpg" /></p></section><section class="nb-cell" id="cell-1"><p>We will use ISC and ISFC to identify brain regions that respond preferentially to narrative stories, rather than to a random assortment of words (replicating Simony et al., 2016). Furthermore, seed-based connectivity analysis does not show differences between resting state, random words, and intact narratives, but ISFC does distinguish between these conditions (Simony et al., 2016). Thus, ISFC shows greater sensitivity to the task than seed-based functional connectivity. </p>
+<h2 id="goal-of-this-script">Goal of this script</h2>
+<pre><code>1. To run intersubject correlation (ISC).
+2. To run intersubject functional correlation (ISFC).  
+3. Use ISFC to examine how a network of brain regions that respond to narrative stimuli.
+</code></pre>
+<h2 id="table-of-contents">Table of Contents</h2>
+<p><a href="#isc_isfc_wkflow">1. The ISC-ISFC Workflow</a>  </p>
+<p><a href="#isc">2. ISC</a></p>
+<blockquote>
+<p><a href="#dataset">2.1 The "Pieman" data</a><br />
+<a href="#data_prep_isc">2.2 Data file preparation</a><br />
+<a href="#isc_compute">2.3 Compute ISC</a><br />
+<a href="#isc_stats">2.4 ISC with statistical tests</a>  </p>
+</blockquote>
+<p><a href="#isfc">3. ISFC</a></p>
+<blockquote>
+<p><a href="#isfc_parcel">3.1 Parcel the data</a> <br />
+<a href="#fc_isfc">3.2 Compute FC and ISFC</a></p>
+</blockquote>
+<p><a href="#spat_corr">4. Spatial Correlation</a></p>
+<blockquote>
+<p><a href="#spatial_isc">4.1 Spatial inter-subject correlation</a>  </p>
+</blockquote>
+<h4 id="exercises">Exercises</h4>
+<blockquote>
+<p><a href="#ex1">1</a>   <a href="#ex2">2</a>  <a href="#ex3">3</a>  <a href="#ex4">4</a>  <a href="#ex5">5</a>  <a href="#ex6">6</a>  <a href="#ex7">7</a>  <a href="#ex8">8</a>   <a href="#ex9">9</a><br />
+<a href="#novel">Novel contribution</a>  </p>
+</blockquote></section><section class="nb-cell" id="cell-2"><h2 id="1-the-isc-isfc-workflow">1. The ISC-ISFC workflow  <a id="isc_isfc_wkflow"></a></h2>
+<p>The following sequence of steps are recommended for successfully running ISC and ISFC using <a href="http://brainiak.org/" target="_blank" rel="noopener">BrainIAK</a>. </p>
+<ol>
+<li>
+<p><a href="#data_prep_isc"><strong>Data Preparation:</strong></a> Organize a data directory with fMRI subject data that you want to process. All subjects must be in the same anatomical space for analysis. Also you need to create a whole-brain mask. The outcome of this is an array of anatomically-aligned and temporally-aligned brain data.  </p>
+</li>
+<li>
+<p><a href="#isc_compute"><strong>Compute ISC:</strong></a>  The ISC function computes correlations across subjects for corresponding voxels in the mask. It uses the <code>compute_correlation</code> function in BrainIAK, which is optimized for fast execution (and was used in FCMA).</p>
+</li>
+<li>
+<p><a href="#isc_stats"><strong>Permutation Test for ISC:</strong></a> Perform statistical analysis to determine significant correlation values for ISC.</p>
+</li>
+<li>
+<p><a href="#isfc_compute"><strong>Compute ISFC:</strong></a> The ISFC function computes correlations for every voxel in one subject with every other voxel averaged across subjects.</p>
+</li>
+<li>
+<p><a href="#clust_isfc"><strong>Cluster the ISFC results:</strong></a> Create clusters based on the correlation values. </p>
+</li>
+<li>
+<p><a href="#perm"><strong>Perform ISFC permutation:</strong></a> Perform permutation tests to determine the significance of the results.</p>
+</li>
+</ol></section><section class="nb-cell" id="cell-3"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 1</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>import warnings
+import sys 
+if not sys.warnoptions:
+    warnings.simplefilter(&quot;ignore&quot;)
+import os 
+import glob
+import time
+from copy import deepcopy
+import numpy as np
+import pandas as pd 
+
+from nilearn import datasets
+from nilearn import surface
+from nilearn import plotting
+from nilearn.input_data import NiftiMasker, NiftiLabelsMasker
+import nibabel as nib
+
+from brainiak import image, io
+from brainiak.isc import isc, isfc, permutation_isc
+import matplotlib.pyplot as plt
+import seaborn as sns 
+
+%autosave 5
+%matplotlib inline
+sns.set(style = &#x27;white&#x27;, context=&#x27;talk&#x27;, font_scale=1, rc={&quot;lines.linewidth&quot;: 2})</code></pre></div></section><section class="nb-cell" id="cell-4"><h2 id="2-isc">2. ISC  <a id="isc"></a></h2>
+<h3 id="21-the-pieman-data">2.1 The "Pieman" data  <a id="dataset"></a></h3>
+<p>For this script we will use the "Pieman" dataset from <a href="https://doi.org/10.1038/ncomms12141" target="_blank" rel="noopener">Simony et al. (2016)</a>. A description of the dataset is as follows:</p>
+<blockquote>
+<p>18 native English speakers were scanned (15 females, ages: 18–31), corresponding to the replication dataset from the Pieman study.<br />
+Stimuli for the experiment were generated from a 7 min real life story (<a href="https://www.youtube.com/watch?v=3nZzSUDECLo" target="_blank" rel="noopener">"Pie Man", Jim O'Grady</a>) recorded at a live storytelling performance (<a href="https://themoth.org/" target="_blank" rel="noopener">"The Moth" storytelling event</a>, New York City). Subjects listened to the story from beginning to end (intact condition).
+In addition, subjects listened to scrambled versions of the story, which were generated by dividing the original stimulus into segments of different timescales (paragraphs and words) and then permuting the order of these segments. To generate the scrambled stimuli, the story was segmented manually by identifying the end points of each word and paragraph. Two adjacent short words were assigned to a single segment in cases where we could not separate them. Following segmentation, the intact story was scrambled at two timescales: short—‘words’ (W; 608 words, 0.7±0.5 s each) and long—‘paragraphs’ (P; 11 paragraphs, 38.1±17.6 s each). Laughter and applause were classified as single word events (4.4% of the words). Twelve seconds of neutral music and 3 s of silence preceded, and 15 s of silence followed, each playback in all conditions. These music and silence periods were discarded from all analyses.</p>
+</blockquote>
+<p>More details about the experiment may be accessed in the methods section of the paper.</p></section><section class="nb-cell" id="cell-5"><h3 id="22-data-file-preparation">2.2 Data File Preparation <a id="data_prep_isc"></a></h3>
+<p><strong>Loading and preparing the data:</strong></p>
+<p>BrainIAK has methods to efficiently load data. We have used some of these functions in previous notebooks.</p>
+<blockquote>
+<p><em>load_images:</em> reads data from all subjects in a list that you provide. This is like the function load_images_from_dir but here we specify the names manually. </p>
+<p><em>load_boolean_mask:</em> Create a binary mask from a brain volume</p>
+<p><em>mask_images:</em> Loads the brain images and masks them with the mask provided</p>
+<p><em>image.MaskedMultiSubjectData.from_masked_images:</em> Creates a list of arrays, with each item in the list corresponding to one subject's data. This data format is accepted by the BrainIAK ISC and ISFC function.</p>
+</blockquote></section><section class="nb-cell" id="cell-6"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 2</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Set up experiment metadata
+
+from utils import pieman2_dir, results_path
+print(&#x27;Data directory is: %s&#x27; % pieman2_dir)
+
+dir_mask = os.path.join(pieman2_dir, &#x27;masks/&#x27;)
+mask_name = os.path.join(dir_mask, &#x27;avg152T1_gray_3mm.nii.gz&#x27;)
+all_task_names = [&#x27;word&#x27;, &#x27;intact1&#x27;]
+all_task_des = [&#x27;word level scramble&#x27;, &#x27;intact story&#x27;]
+n_subjs_total = 18
+group_assignment_dict = {task_name: i for i, task_name in enumerate(all_task_names)}
+
+# Where do you want to store the data
+dir_out = results_path + &#x27;isc/&#x27;
+if not os.path.exists(dir_out):
+    os.makedirs(dir_out)
+    print(&#x27;Dir %s created &#x27; % dir_out)</code></pre></div></section><section class="nb-cell" id="cell-7"><h3 id="helper-functions">Helper functions</h3>
+<p>We provide helper functions to load the data.</p>
+<div class="alert alert-block alert-warning">
+<strong>Memory limits</strong> Be aware this is going to be run on 18 participants and may push the limits of your memory and computational resources if you are on a laptop. If you want to run it on fewer participants to protect memory, change <code>n_subjs</code> to be lower (e.g. 10); however, the anticipated results may not generalize to lower sample sizes.
+
+
+</div></section><section class="nb-cell" id="cell-8"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 3</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Reduce the number of subjects per condition to make this notebook faster 
+upper_limit_n_subjs = 18
+
+def get_file_names(data_dir_, task_name_, verbose = False):
+    &quot;&quot;&quot;
+    Get all the participant file names
+    
+    Parameters
+    ----------
+    data_dir_ [str]: the data root dir
+    task_name_ [str]: the name of the task 
+    
+    Return
+    ----------
+    fnames_ [list]: file names for all subjs
+    &quot;&quot;&quot;
+    c_ = 0 
+    fnames_ = []
+    # Collect all file names 
+    for subj in range(1, n_subjs_total): 
+        fname = os.path.join(
+            data_dir_, &#x27;sub-%.3d/func/sub-%.3d-task-%s.nii.gz&#x27; % (subj, subj, task_name_))
+        
+        # If the file exists
+        if os.path.exists(fname):
+            
+            # Add to the list of file names 
+            fnames_.append(fname)
+            if verbose: 
+                print(fname)
+            c_+= 1
+            if c_ &gt;= upper_limit_n_subjs: 
+                break
+    return fnames_</code></pre></div></section><section class="nb-cell" id="cell-9"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 4</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>&quot;&quot;&quot;load brain template&quot;&quot;&quot;
+
+# Load the brain mask
+brain_mask = io.load_boolean_mask(mask_name)
+
+# Get the list of nonzero voxel coordinates
+coords = np.where(brain_mask)
+
+# Load the brain nii image
+brain_nii = nib.load(mask_name)</code></pre></div></section><section class="nb-cell" id="cell-10"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 5</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>&quot;&quot;&quot;load bold data&quot;&quot;&quot;
+
+# load the functional data 
+fnames = {}
+images = {}
+masked_images = {}
+bold = {}
+group_assignment = []
+n_subjs = {}
+
+for task_name in all_task_names: 
+    fnames[task_name] = get_file_names(pieman2_dir, task_name)
+    images[task_name] = io.load_images(fnames[task_name]) 
+    masked_images[task_name] = image.mask_images(images[task_name], brain_mask) 
+    # Concatenate all of the masked images across participants  
+    bold[task_name] = image.MaskedMultiSubjectData.from_masked_images(
+        masked_images[task_name], len(fnames[task_name])
+    )
+    # Convert nans into zeros
+    bold[task_name][np.isnan(bold[task_name])] = 0
+    # compute the group assignment label 
+    n_subjs_this_task = np.shape(bold[task_name])[-1]
+    group_assignment += list(
+        np.repeat(group_assignment_dict[task_name], n_subjs_this_task)
+    )
+    n_subjs[task_name] = np.shape(bold[task_name])[-1]
+    print(&#x27;Data loaded: {} \t shape: {}&#x27; .format(task_name, np.shape(bold[task_name])))</code></pre></div></section><section class="nb-cell" id="cell-11"><p><strong>Exercise 1:</strong><a id="ex1"></a> Inspect the data and report on the following details.</p>
+<ul>
+<li>Brain template </li>
+<li>Report the shape of <code>brain_nii</code>, <code>brain_mask</code></li>
+<li>Visualize <code>brain_nii</code> and <code>brain_mask</code> by plotting the 30th slice along the Z dimension.</li>
+<li>Describe what <code>coords</code> refers to  </li>
+<li>Visualize <code>coords</code> with a 3d plot. For this, only plot every 10th point, otherwise the plot will be slow to load. </li>
+<li>Brain data </li>
+<li>Inspect the shape of <code>bold</code>. How many subjects do we have for each task condition? Do different subjects have the same number of TRs/voxels?</li>
+</ul></section><section class="nb-cell" id="cell-12"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 6</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Insert code below</code></pre></div></section><section class="nb-cell" id="cell-13"><h3 id="23-compute-isc">2.3 Compute ISC <a id="isc_compute"></a></h3>
+<p>ISC is the correlation of each voxel's time series for a participant with the corresponding (anatomically aligned) voxel time series in the average of the other participants' brains. BrainIAK has functions for computing ISC by feeding in the concatenated participant data. </p>
+<p>This will take about 10 minutes to complete.</p></section><section class="nb-cell" id="cell-14"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 7</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># run ISC, loop over conditions 
+isc_maps = {}
+for task_name in all_task_names:
+    isc_maps[task_name] = isc(bold[task_name], pairwise=False)
+    print(&#x27;Shape of %s condition:&#x27; % task_name, np.shape(isc_maps[task_name]))</code></pre></div></section><section class="nb-cell" id="cell-15"><p>The output of ISC is a voxel by participant matrix (showing the result of each individual with the group). Below we will visualize the ISC matrix for one participant and condition back on to the brain to see where activity is correlated between participants.</p></section><section class="nb-cell" id="cell-16"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 8</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># set params 
+subj_id = 0
+task_name = &#x27;intact1&#x27;
+save_data = False
+
+# Make the ISC output a volume
+isc_vol = np.zeros(brain_nii.shape)
+# Map the ISC data for the first participant into brain space
+isc_vol[coords] = isc_maps[task_name][subj_id, :]
+# make a nii image of the isc map 
+isc_nifti = nib.Nifti1Image(isc_vol, brain_nii.affine, brain_nii.header)
+
+# Save the ISC data as a volume
+if save_data: 
+    isc_map_path = os.path.join(dir_out, &#x27;ISC_%s_sub%.2d.nii.gz&#x27; % (task_name, subj_id))
+    nib.save(isc_nifti, isc_map_path)</code></pre></div></section><section class="nb-cell" id="cell-17"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 9</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Plot the data as a statmap
+threshold = .2
+
+f, ax = plt.subplots(1,1, figsize = (12, 5))
+plotting.plot_stat_map(
+    isc_nifti, 
+    threshold=threshold, 
+    axes=ax
+)
+ax.set_title(&#x27;ISC map for subject {}, task = {}&#x27; .format(subj_id,task_name)) </code></pre></div></section><section class="nb-cell" id="cell-18"><p><strong>Exercise 2:</strong> <a id="ex2"></a> Visualize the averaged ISC map (averaged across participants) for each task. </p>
+<ul>
+<li>Make the averaged ISC map for the two conditions (intact, word-scrambled). </li>
+<li>Visualize them using <code>plotting.plot_stat_map</code>. </li>
+</ul>
+<p>Make sure to compare the two maps using the same xyz cut, threshold and vmax. </p></section><section class="nb-cell" id="cell-19"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 10</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Insert code here</code></pre></div></section><section class="nb-cell" id="cell-20"><p>This analysis was performed in volumetric space; however, nilearn makes it easy to compare this data in surface space (assuming the alignment to MNI standard is excellent). Here's an example of surface plot.</p></section><section class="nb-cell" id="cell-21"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 11</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># set some plotting params 
+subj_id = 0 
+task_name = &#x27;intact1&#x27;
+threshold = .2 
+view = &#x27;medial&#x27;
+
+# get a surface
+fsaverage = datasets.fetch_surf_fsaverage5()
+
+# Make the ISC output a volume
+isc_vol = np.zeros(brain_nii.shape)
+# Map the ISC data for the first participant into brain space
+isc_vol[coords] = isc_maps[task_name][subj_id, :]
+# make a nii image of the isc map 
+isc_intact_1subj = nib.Nifti1Image(isc_vol, brain_nii.affine, brain_nii.header)
+
+# make &quot;texture&quot; 
+texture = surface.vol_to_surf(isc_intact_1subj, fsaverage.pial_left) 
+
+# plot 
+title_text = (&#x27;Avg ISC map, {} for one participant&#x27;.format(task_name))
+surf_map = plotting.plot_surf_stat_map(
+    fsaverage.infl_left, texture, 
+    hemi=&#x27;left&#x27;, view=view, 
+    title= title_text, 
+    threshold=threshold, cmap=&#x27;RdYlBu_r&#x27;, 
+    colorbar=True,
+    bg_map=fsaverage.sulc_left)</code></pre></div></section><section class="nb-cell" id="cell-22"><p><strong>Exercise 3:</strong> <a id="ex3"></a> Visualize the averaged ISC map using surface plot. </p>
+<ul>
+<li>Visualize the average ISC maps using <code>plotting.plot_surf_stat_map</code> for:<ul>
+<li>both conditions</li>
+<li>both <code>medial</code> view and <code>lateral</code> views </li>
+</ul>
+</li>
+</ul>
+<p>Make sure you are using the same threshold and vmax for all plots. </p></section><section class="nb-cell" id="cell-23"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 12</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Insert code here</code></pre></div></section><section class="nb-cell" id="cell-24"><p><strong>Exercise 4:</strong> <a id="ex4"></a> Compare the averaged ISC map for the two task conditions. What are some brain regions showing stronger correlation in the intact story condition (vs. the word-level scramble condition)? What does this tell us about the processing of language? </p>
+<p>Hint: The following <a href="https://doi.org/10.1523/JNEUROSCI.3684-10.2011" target="_blank" rel="noopener">paper</a> this work comes from will help.</p></section><section class="nb-cell" id="cell-25"><p><strong>A:</strong></p></section><section class="nb-cell" id="cell-26"><h3 id="24-isc-with-statistical-tests">2.4 ISC with statistical tests  <a id="isc_stats"></a></h3>
+<p>BrainIAK provides several nonparametric statistical tests for ISC analysis (<a href="https://doi.org/10.1101/600114" target="_blank" rel="noopener">Nastase et al., 2019</a>). Nonparametric tests are preferred due to the inherent correlation structure across ISC values—each subject contributes to the ISC of other subjects, violating assumptions of independence required for standard parametric tests (e.g., t-test, ANOVA). We will use the permutation test below.</p></section><section class="nb-cell" id="cell-27"><h4 id="241-permutation-test">2.4.1 Permutation test</h4>
+<p>Permutation tests are used to compute a null distribution of values. We have used permutation tests in previous notebooks and the steps outlined here are similar to what was done in prior notebooks with one small change, incorporating the group of subjects to compute the ISC:</p>
+<ol>
+<li>
+<p>Prepare the data. Here we have two conditions (intact and word_scramble), so we compute ISC for both conditions and concatenate the data for these two conditions for all subjects.  </p>
+<blockquote>
+<p>We use leave-one-subject-out (<code>pairwise=False</code>) to compute ISC and then use these correlations <code>isc_maps_all_tasks</code> to compute statistics.  </p>
+</blockquote>
+</li>
+<li>
+<p>We are going to permute the condition label for each subject to simulate the randomization of conditions. To do this, we first need to assign subjects to the correct experimental conditions that they were in. We have prepared such a list of assignments when we loaded the data and stored the information in the variable: <code>group_assignment</code>.</p>
+</li>
+<li>
+<p>The next steps are executed internally in BrainIAK in the function <code>permutation_isc</code>:    </p>
+<blockquote>
+<ul>
+<li>For each permutation iteration: <blockquote>
+<ul>
+<li>BrainIAK permutes the group assignment for each subject.  </li>
+<li>A mean of the ISC values is then computed for this shuffled 
+group for each condition.   </li>
+<li>A difference of group means is computed between each condition.  </li>
+</ul>
+</blockquote>
+</li>
+<li>The difference values for all iterations is collected and forms the null distribution.   </li>
+</ul>
+</blockquote>
+</li>
+<li>Finally, we pick a threshold value that corresponds to <code>p</code> percent of this distribution.  </li>
+</ol>
+<p><code>permutation_isc</code> returns the actual observed ISC values, p-values, and optionally the resampling distribution.</p></section><section class="nb-cell" id="cell-28"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 13</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Concatenate ISCs from both tasks
+isc_maps_all_tasks = np.vstack([isc_maps[task_name] for
+                                task_name in all_task_names])
+
+print(&#x27;group_assignment: {}&#x27;.format(group_assignment))
+print(&#x27;isc_maps_all_tasks: {}&#x27; .format(np.shape(isc_maps_all_tasks)))</code></pre></div></section><section class="nb-cell" id="cell-29"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 14</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># permutation testing
+n_permutations = 1000
+summary_statistic=&#x27;mean&#x27;
+
+observed, p, distribution = permutation_isc(
+    isc_maps_all_tasks, 
+    pairwise=False,
+    group_assignment=group_assignment, 
+    summary_statistic=summary_statistic,
+    n_permutations=n_permutations
+)
+
+p = p.ravel()
+observed = observed.ravel()
+
+print(&#x27;observed:{}&#x27;.format(np.shape(observed)))
+print(&#x27;p:{}&#x27;.format(np.shape(p)))
+print(&#x27;distribution: {}&#x27;.format(np.shape(distribution)))</code></pre></div></section><section class="nb-cell" id="cell-30"><p><strong>Exercise 5:</strong> <a id="ex5"></a> Interpret the results from the permutation test. </p>
+<ul>
+<li>What's the logic of the permutation test? </li>
+<li>What are the outputs <code>observed</code>, <code>p</code>, <code>distribution</code> </li>
+<li>Visualize the correlation contrast map (e.g. intact &gt; word-level scramble) with a significance criterion (e.g. p &lt; .005). Which region(s) showed higher ISC under the chosen contrast? </li>
+</ul></section><section class="nb-cell" id="cell-31"><p><strong>A:</strong></p></section><section class="nb-cell" id="cell-32"><h2 id="3-isfc">3. ISFC  <a id="isfc"></a></h2>
+<p>The goal of ISFC is to find coupling between brain regions across participants. For example the angular gyrus in subject 1 could be correlated to the pre-frontal cortex in subject 2, if they share some cognitive state. For completely random cognitive states across these two subjects, the correlation should be zero. ISFC helps us identify such commonalities across subjects.</p>
+<p>In this section, we will compare functional connectivity vs. ISFC on the Pieman data. Whereas FC is computed within individuals, ISFC is computed between individuals. Hence the only correlations that should be robust in ISFC are those that are present across individuals. At the end of the exercises, you will qualitatively replicate <a href="https://doi.org/10.1038/ncomms12141" target="_blank" rel="noopener">Simony et al. (2016)</a>, showing that ISFC is sensitive to the cognitive state of the participants.</p></section><section class="nb-cell" id="cell-33"><h3 id="31-parcel-the-data">3.1 Parcel the data  <a id="isfc_parcel"></a></h3>
+<p>ISFC in voxel space is very computationally intensive, so for this notebook we will divide the brain into a smaller number of parcels. We are going to use predefined ROI masks to select the voxels.</p></section><section class="nb-cell" id="cell-34"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 15</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># load a parcel
+atlas = datasets.fetch_atlas_harvard_oxford(&#x27;cort-maxprob-thr25-2mm&#x27;, symmetric_split=True)
+plotting.plot_roi(atlas.maps, title=&#x27;the harvard-oxford parcel&#x27;)
+
+n_regions = len(atlas.labels)-1 # rm background region 
+n_TRs = np.shape(bold[task_name])[0]
+
+print(&#x27;number of voxels:\t {}&#x27;.format(np.shape(bold[task_name][1])))
+print(&#x27;number of parcels:\t {}&#x27;.format(n_regions))</code></pre></div></section><section class="nb-cell" id="cell-35"><p>Convert the bold data into ROI parcels</p></section><section class="nb-cell" id="cell-36"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 16</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Get a masker for the atlas 
+masker_ho = NiftiLabelsMasker(labels_img=atlas.maps)
+
+# Transform the data to the parcel space
+bold_ho = {
+    task_name:np.zeros((n_TRs, n_regions, n_subjs[task_name])) 
+    for task_name in all_task_names}
+
+# Collect all data 
+row_has_nan = np.zeros(shape=(n_regions,), dtype=bool)
+for task_name in all_task_names:
+    for subj_id in range(n_subjs[task_name]):
+        
+        # get the data for task t, subject s 
+        nii_t_s = nib.load(fnames[task_name][subj_id])
+        bold_ho[task_name][:,:,subj_id] = masker_ho.fit_transform(nii_t_s)
+        
+        # figure out missing rois
+        row_has_nan_ = np.any(np.isnan(bold_ho[task_name][:,:,subj_id]),axis=0)
+        row_has_nan[row_has_nan_] = True                
+
+# Figure out which ROI has missing values
+roi_select = np.logical_not(row_has_nan)
+n_roi_select = np.sum(roi_select)
+rois_filtered = np.array(atlas.labels[1:])[roi_select]
+bold_ho_filtered = {
+    task_name:np.zeros((n_TRs, n_roi_select, n_subjs[task_name])) 
+    for task_name in all_task_names
+}
+
+# Remove ROIs with missing values
+for task_name in all_task_names:
+    for subj_id in range(n_subjs[task_name]):
+        bold_ho_filtered[task_name][:,:,subj_id] = bold_ho[task_name][:,roi_select,subj_id]
+              
+print(&#x27;ROI selected\n {}&#x27;.format(rois_filtered))
+print(&#x27;ROI removed due to missing values :( \n {}&#x27;.format(np.array(atlas.labels[1:])[row_has_nan]))</code></pre></div></section><section class="nb-cell" id="cell-37"><h3 id="32-compute-fc-and-isfc">3.2 Compute FC and ISFC  <a id="fc_isfc"></a></h3>
+<p>Here we compute FC and ISFC on the parcellated data. </p></section><section class="nb-cell" id="cell-38"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 17</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Compute FC
+fc_maps = {
+    task_name:np.zeros((n_roi_select,n_roi_select)) 
+    for task_name in all_task_names
+}
+for task_name in all_task_names: 
+    for subj_id in range(n_subjs[task_name]): 
+        fc_maps[task_name] += np.corrcoef(
+            bold_ho_filtered[task_name][:,:,subj_id].T
+        ) / n_subjs[task_name]
+        np.fill_diagonal(fc_maps[task_name], np.nan)     </code></pre></div></section><section class="nb-cell" id="cell-39"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 18</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Compute ISFC
+isfc_maps_ho = {}
+for task_name in all_task_names:
+    isfc_maps_ho[task_name] = isfc(data=bold_ho_filtered[task_name],
+                                   summary_statistic=&#x27;median&#x27;,
+                                   vectorize_isfcs=False)   </code></pre></div></section><section class="nb-cell" id="cell-40"><p><strong>Exercise 6:</strong> <a id="ex6"></a> Visualize the FC/ISFC matrices, averaged across subjects</p>
+<ul>
+<li>Use <code>imshow</code> to visualize the 4 correlation matrices: (FC vs. ISFC) x (word-level scrambled vs. intact story)</li>
+<li>Mark the rows (or columns) with the ROI labels</li>
+</ul></section><section class="nb-cell" id="cell-41"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 19</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Insert code here</code></pre></div></section><section class="nb-cell" id="cell-42"><p><strong>Exercise 7:</strong> <a id="ex7"></a> Visualize FC/ISFC connectivity strength on glass brains </p>
+<ul>
+<li>Use <code>plot_connectome</code> to visualize the 4 correlation matrices: (FC vs. ISFC) x (word-level scrabled vs. intact story)</li>
+<li>Use common <code>edge_threshold</code> for all plots. </li>
+</ul>
+<p><em>Hint:</em> The plot_connectome function takes as an input a correlation matrix (such as the FC one plotted above) and also a set of coordinates that define the XYZ coordinates that corresponds to each column/row of the correlation matrix. In order to get the coordinates of these ROIs, we recommend you use: <code>plotting.find_parcellation_cut_coords(atlas.maps)[roi_select]</code>  </p></section><section class="nb-cell" id="cell-43"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 20</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Insert code here</code></pre></div></section><section class="nb-cell" id="cell-44"><p><strong>Exercise 8:</strong> <a id="ex8"></a> Do FC maps look different across conditions? How about ISFC? And why? Hint: consult this <a href="https://doi.org/10.1038/ncomms12141" target="_blank" rel="noopener">paper</a>.</p></section><section class="nb-cell" id="cell-45"><p><strong>A:</strong></p></section><section class="nb-cell" id="cell-46"><h2 id="4-spatial-pattern-correlation-across-subjects">4. Spatial pattern correlation across subjects <a id="spat_corr"></a></h2>
+<h3 id="41-spatial-inter-subject-correlation">4.1 Spatial inter-subject correlation  <a id="spatial_isc"></a></h3>
+<p><br>
+We can apply the idea of inter-subject analysis to RSA. So far, ISC is being computed between aligned pairs of voxels across time points and it is commonly referred to as temporal ISC. However, we could instead correlate between aligned pairs of time points across voxels. That is, how does the pattern of activity across voxels for one time point correlate with the average pattern of the other participants at that time point. By doing this for each time point, we can generate a time course of these correlations to observe the general ebb and flow of coupling in brain activity across participants. This can be done simply by transposing the voxel and time dimensions (for a 3-D matrix, this is accomplished with a 90 degree rotation). This is a simple <a href="https://lihan.me/2018/01/numpy-reshape-and-transpose/" target="_blank" rel="noopener">transposition</a>. If we have data in the format: (TRs, voxels, subjects), we can use <code>data.transpose(1,0,2)</code>, where the indices refer to the dimensions of the array and we will have an array in the format (voxels, TRs, subjects).</p></section><section class="nb-cell" id="cell-47"><h4 id="compare-the-two-task-conditions-with-spatial-isc">Compare the two task conditions with spatial ISC</h4>
+<p>One way to compare the intact and word_scramble conditions is to plot the correlation values, by TR, for each condition. Again, we can use the same ISC functions from above after transposing the data matrices. </p></section><section class="nb-cell" id="cell-48"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 21</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Get a list of ROIs. 
+roi_mask_path = os.path.join(pieman2_dir,&#x27;masks&#x27;,&#x27;rois&#x27;)
+all_roi_fpaths = glob.glob(os.path.join(roi_mask_path, &#x27;*.nii.gz&#x27;))
+
+# Collect all ROIs 
+all_roi_names = []
+all_roi_nii = {}
+all_roi_masker = {}
+for roi_fpath in all_roi_fpaths:
+    
+    # Compute ROI name
+    roi_fname = os.path.basename(roi_fpath)
+    roi_name = roi_fname.split(&#x27;.&#x27;)[0]
+    all_roi_names.append(roi_name)
+    
+    # Load roi nii file 
+    roi_nii = nib.load(roi_fpath)
+    all_roi_nii[roi_name] = roi_nii
+    
+    # Make roi maskers
+    all_roi_masker[roi_name] = NiftiMasker(mask_img=roi_nii)
+
+print(&#x27;Path to all roi masks: {}&#x27;.format(roi_mask_path))    
+print(&#x27;Here are all ROIs:\n{}&#x27;.format(all_roi_names))</code></pre></div></section><section class="nb-cell" id="cell-49"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 22</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Make a function to load data for one ROI
+def load_roi_data(roi_name): 
+    # Pick a roi masker
+    roi_masker = all_roi_masker[roi_name]    
+    
+    # Preallocate 
+    bold_roi = {task_name:[] for i, task_name in enumerate(all_task_names)}
+    
+    # Gather data 
+    for task_name in all_task_names:
+        for subj_id in range(n_subjs[task_name]):
+            
+            # Get the data for task t, subject s 
+            nii_t_s = nib.load(fnames[task_name][subj_id])
+            bold_roi[task_name].append(roi_masker.fit_transform(nii_t_s))
+            
+        # Reformat the data to std form 
+        bold_roi[task_name] = np.transpose(np.array(bold_roi[task_name]), [1,2,0])
+    return bold_roi</code></pre></div></section><section class="nb-cell" id="cell-50"><p>Compute spatial ISC on some ROIs. </p></section><section class="nb-cell" id="cell-51"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 23</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>roi_selected = [&#x27;dPCC&#x27;, &#x27;vPCUN&#x27;, &#x27;V1&#x27;]
+roi_selected_names = [&#x27;dorsal posterior cingulate cortex&#x27;, &#x27;ventral precuneus&#x27;, &#x27;primary visual cortex&#x27;]
+
+# compute sISC for all ROIs 
+iscs_roi_selected = []
+for j, roi_name in enumerate(roi_selected):
+    print(j, roi_name)
+    
+    # Load data 
+    bold_roi = load_roi_data(roi_name)
+    
+    # Compute isc 
+    iscs_roi = {}
+    for task_name in all_task_names: 
+        iscs_roi[task_name] = isc(np.transpose(bold_roi[task_name], [1,0,2]))
+        
+    iscs_roi_selected.append(iscs_roi)</code></pre></div></section><section class="nb-cell" id="cell-52"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 24</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Plot the spatial ISC over time
+col_pal = sns.color_palette(palette=&#x27;colorblind&#x27;, n_colors=len(all_task_names))
+ci = 95
+
+f, axes = plt.subplots(len(roi_selected), 1, figsize=(14, 5 * len(roi_selected)), sharex=True)
+
+# For each ROI
+for j, roi_name in enumerate(roi_selected):
+    # For each task 
+    for i, task_name in enumerate(all_task_names): 
+        sns.tsplot(
+            iscs_roi_selected[j][task_name], 
+            color=col_pal[i], ci=ci, 
+            ax=axes[j]
+        )
+    f.legend(all_task_des)
+    sns.despine()
+
+# Label the plot 
+for j, roi_name in enumerate(roi_selected):
+    axes[j].axhline(0, color=&#x27;black&#x27;, linestyle=&#x27;--&#x27;, alpha=.3)
+    axes[j].set_ylabel(&#x27;Linear correlation&#x27;)
+    axes[j].set_title(&#x27;Spatial inter-subject correlation, {}&#x27;. format(roi_selected_names[j]))
+    
+axes[-1].set_xlabel(&#x27;TRs&#x27;)</code></pre></div></section><section class="nb-cell" id="cell-53"><p><strong>Exercise 9:</strong><a id="ex9"></a> Interpret the spatial ISC results you observed above.</p></section><section class="nb-cell" id="cell-54"><p><strong>A:</strong></p></section><section class="nb-cell" id="cell-55"><p><strong>Novel contribution:</strong><a id="novel"></a> be creative and make one new discovery by adding an analysis, visualization, or optimization.</p>
+<p>Here are some ideas: </p>
+<ul>
+<li>The ISC package in BrainIAK supports other statistical tests. Study one of them, describe the logic behind it, and re-run the analysis with that test. </li>
+<li>Conduct a sliding window spatial ISC analysis. </li>
+<li>Perform some clustering on the ISFC matrices. Use the clustering (instead of the anatomical parcel) to re-analyze the data, and compare ISFC vs. FC across tasks. See <a href="http://scikit-learn.org/stable/modules/clustering.html" target="_blank" rel="noopener">here</a> for a good resource on clustering algorithms.</li>
+</ul></section><section class="nb-cell" id="cell-56"><h3 id="contributions">Contributions<a id="contributions"></a></h3>
+<p>E. Simony and U. Hasson for providing data<br />
+C. Baldassano and C. Chen provided initial code<br />
+M. Kumar, C. Ellis and N. Turk-Browne produced the initial notebook 4/4/18<br />
+S. Nastase enhanced the ISC brainiak module; added the section on statistical testing <br />
+Q. Lu added solutions; switched to S. Nastase's ISC module; replicated Lerner et al 2011 &amp; Simony et al. 2016; added spatial ISC. <br />
+M. Kumar edits to section introductions and explanation on permutation test.<br />
+K.A. Norman provided suggestions on the overall content and made edits to this notebook.<br />
+C. Ellis incorporated edits from cmhn-s19  </p></section>
+        </article>
+        
+    </main>
+    <aside class="sidebar-right" aria-label="On this page"><h3>On This Page</h3><ul class="toc-list"><li><a href="#inter-subject-correlation-and-inter-subject-functional-correlation">Inter-Subject Correlation and Inter-Subject Functional Correlation</a></li><li><a href="#goal-of-this-script">Goal of this script</a></li><li><a href="#table-of-contents">Table of Contents</a></li><li><a href="#1-the-isc-isfc-workflow">1. The ISC-ISFC workflow</a></li><li><a href="#2-isc">2. ISC</a></li><li class="toc-sub"><a href="#21-the-pieman-data">2.1 The &quot;Pieman&quot; data</a></li><li class="toc-sub"><a href="#22-data-file-preparation">2.2 Data File Preparation</a></li><li class="toc-sub"><a href="#helper-functions">Helper functions</a></li><li class="toc-sub"><a href="#23-compute-isc">2.3 Compute ISC</a></li><li class="toc-sub"><a href="#24-isc-with-statistical-tests">2.4 ISC with statistical tests</a></li><li><a href="#3-isfc">3. ISFC</a></li><li class="toc-sub"><a href="#31-parcel-the-data">3.1 Parcel the data</a></li><li class="toc-sub"><a href="#32-compute-fc-and-isfc">3.2 Compute FC and ISFC</a></li><li><a href="#4-spatial-pattern-correlation-across-subjects">4. Spatial pattern correlation across subjects</a></li><li class="toc-sub"><a href="#41-spatial-inter-subject-correlation">4.1 Spatial inter-subject correlation</a></li><li class="toc-sub"><a href="#contributions">Contributions</a></li></ul></aside>
+  </div>
+
+  <div class="lightbox-overlay" id="img-lightbox" role="dialog" aria-label="Zoomed figure view">
+    <img id="img-lightbox-target" src="" alt="Enlarged scientific diagram">
+  </div>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Neuroimaging Research Methods with AI</strong> · 26-Week Graduate Curriculum (83 Main Classes · 4 Supplement Labs · 14 Upstream Tutorials · 24 Core Papers · 310 Verified References).
+      Built for macOS on Apple Silicon MacBook Pro with Goose + Ollama (Qwen &amp; Gemma).
+    </div>
+    <div>
+      <a href="../../../../curriculum/ALL_MATERIALS.html">All 250 Repo Files</a> ·
+      <a href="../../../../curriculum/SETUP.html">Mac Setup</a> ·
+      <a href="../../../../curriculum/EQUATION_ATLAS.html">Equation Atlas</a> ·
+      <a href="../../../../course/COURSEBOOK.html">Compact Coursebook</a> ·
+      <a href="../../../../THIRD_PARTY_NOTICES.html">Licenses &amp; Provenance</a>
+    </div>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+  <script defer src="../../../../assets/site.js"></script>
+</body>
+</html>

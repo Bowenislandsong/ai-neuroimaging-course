@@ -1,0 +1,234 @@
+[
+  {
+    "id": "PR01",
+    "file": "01_images_coordinates_metadata.ipynb",
+    "title": "Read an image without losing its location",
+    "words": 862,
+    "code_cells": 2,
+    "sources": [
+      "geometry",
+      "bids"
+    ]
+  },
+  {
+    "id": "PR02",
+    "file": "02_registration_resampling.ipynb",
+    "title": "Estimate alignment, then choose how to sample",
+    "words": 816,
+    "code_cells": 2,
+    "sources": [
+      "registration",
+      "fslreg"
+    ]
+  },
+  {
+    "id": "PR03",
+    "file": "03_nonlinear_warps.ipynb",
+    "title": "Read a deformation field and detect folding",
+    "words": 863,
+    "code_cells": 2,
+    "sources": [
+      "fslreg",
+      "registration"
+    ]
+  },
+  {
+    "id": "PR04",
+    "file": "04_bias_field.ipynb",
+    "title": "Separate smooth intensity bias from tissue contrast",
+    "words": 824,
+    "code_cells": 2,
+    "sources": [
+      "structural",
+      "n4"
+    ]
+  },
+  {
+    "id": "PR05",
+    "file": "05_brain_extraction.ipynb",
+    "title": "A brain mask defines what the analysis can see",
+    "words": 835,
+    "code_cells": 2,
+    "sources": [
+      "structural",
+      "fmriprep"
+    ]
+  },
+  {
+    "id": "PR06",
+    "file": "06_tissue_segmentation.ipynb",
+    "title": "Labels, posterior probabilities and partial volume are different",
+    "words": 813,
+    "code_cells": 2,
+    "sources": [
+      "structural"
+    ]
+  },
+  {
+    "id": "PR07",
+    "file": "07_morphometry_volume_jacobian.ipynb",
+    "title": "Measure volume before making an atrophy claim",
+    "words": 839,
+    "code_cells": 2,
+    "sources": [
+      "structural",
+      "surface"
+    ]
+  },
+  {
+    "id": "PR08",
+    "file": "08_surfaces_topology.ipynb",
+    "title": "Surfaces are meshes, not thin voxel masks",
+    "words": 831,
+    "code_cells": 2,
+    "sources": [
+      "surface",
+      "fmriprep"
+    ]
+  },
+  {
+    "id": "PR09",
+    "file": "09_slice_timing.ipynb",
+    "title": "Correct time sampling without inventing slice metadata",
+    "words": 855,
+    "code_cells": 2,
+    "sources": [
+      "timing",
+      "fmriprep"
+    ]
+  },
+  {
+    "id": "PR10",
+    "file": "10_motion.ipynb",
+    "title": "Realign frames and identify what movement correction cannot repair",
+    "words": 819,
+    "code_cells": 2,
+    "sources": [
+      "registration",
+      "fmriprep"
+    ]
+  },
+  {
+    "id": "PR11",
+    "file": "11_susceptibility_distortion.ipynb",
+    "title": "Separate geometric unwarping from signal recovery",
+    "words": 839,
+    "code_cells": 2,
+    "sources": [
+      "fslreg",
+      "diffusion"
+    ]
+  },
+  {
+    "id": "PR12",
+    "file": "12_spatial_smoothing.ipynb",
+    "title": "Choose a spatial scale and inspect boundaries",
+    "words": 803,
+    "code_cells": 2,
+    "sources": [
+      "registration"
+    ]
+  },
+  {
+    "id": "PR13",
+    "file": "13_temporal_filters.ipynb",
+    "title": "Design a temporal filter using actual sampling",
+    "words": 817,
+    "code_cells": 2,
+    "sources": [
+      "signal"
+    ]
+  },
+  {
+    "id": "PR14",
+    "file": "14_nuisance_ica.ipynb",
+    "title": "Remove a modeled nuisance contribution without declaring the residual pure",
+    "words": 851,
+    "code_cells": 2,
+    "sources": [
+      "ica",
+      "fmriprep"
+    ]
+  },
+  {
+    "id": "PR15",
+    "file": "15_qc_censoring.ipynb",
+    "title": "Connect QC decisions to time, coverage and study design",
+    "words": 867,
+    "code_cells": 2,
+    "sources": [
+      "fmriprep",
+      "report"
+    ]
+  },
+  {
+    "id": "PR16",
+    "file": "16_diffusion_gradients.ipynb",
+    "title": "Keep diffusion volumes and gradient directions together",
+    "words": 859,
+    "code_cells": 2,
+    "sources": [
+      "diffusion",
+      "dti"
+    ]
+  },
+  {
+    "id": "PR17",
+    "file": "17_diffusion_preprocessing.ipynb",
+    "title": "Separate denoising, Gibbs removal, eddy correction and interpolation",
+    "words": 916,
+    "code_cells": 2,
+    "sources": [
+      "denoise",
+      "gibbs",
+      "diffusion"
+    ]
+  },
+  {
+    "id": "PR18",
+    "file": "18_diffusion_tensor.ipynb",
+    "title": "Fit a tensor and interpret FA and MD within its limits",
+    "words": 874,
+    "code_cells": 2,
+    "sources": [
+      "dti",
+      "diffusion"
+    ]
+  },
+  {
+    "id": "PR19",
+    "file": "19_crossing_fibers_tractography.ipynb",
+    "title": "A streamline is a model trajectory, not an axon",
+    "words": 898,
+    "code_cells": 2,
+    "sources": [
+      "crossing",
+      "tracking",
+      "diffusion"
+    ]
+  },
+  {
+    "id": "PR20",
+    "file": "20_parcellations_connectivity.ipynb",
+    "title": "Extract region signals with coverage and confounds visible",
+    "words": 864,
+    "code_cells": 2,
+    "sources": [
+      "parcel",
+      "ica"
+    ]
+  },
+  {
+    "id": "PR21",
+    "file": "21_workflow_provenance_reports.ipynb",
+    "title": "Audit the complete processing graph and its evidence",
+    "words": 934,
+    "code_cells": 2,
+    "sources": [
+      "workflow",
+      "bids",
+      "fmriprep",
+      "report"
+    ]
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "retrieved_utc": "2026-09-25",
+  "files": [
+    {
+      "local_file": "basic_workflow.ipynb",
+      "upstream_repository": "https://github.com/nipy/nipype_tutorial",
+      "commit": "f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236",
+      "upstream_path": "notebooks/basic_workflow.ipynb",
+      "source_url": "https://github.com/nipy/nipype_tutorial/blob/f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236/notebooks/basic_workflow.ipynb",
+      "raw_url": "https://raw.githubusercontent.com/nipy/nipype_tutorial/f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236/notebooks/basic_workflow.ipynb",
+      "license": "BSD-3-Clause",
+      "upstream_sha256": "48399033aeba8389a73944859ce3ec6b00356ff43e4634376c4ce9599dfe017a",
+      "local_sha256": "48399033aeba8389a73944859ce3ec6b00356ff43e4634376c4ce9599dfe017a",
+      "changes": [
+        "Unmodified source bytes. Upstream already has no saved outputs or attachments."
+      ],
+      "executed_in_this_course": false
+    },
+    {
+      "local_file": "basic_data_input_bids.ipynb",
+      "upstream_repository": "https://github.com/nipy/nipype_tutorial",
+      "commit": "f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236",
+      "upstream_path": "notebooks/basic_data_input_bids.ipynb",
+      "source_url": "https://github.com/nipy/nipype_tutorial/blob/f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236/notebooks/basic_data_input_bids.ipynb",
+      "raw_url": "https://raw.githubusercontent.com/nipy/nipype_tutorial/f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236/notebooks/basic_data_input_bids.ipynb",
+      "license": "BSD-3-Clause",
+      "upstream_sha256": "06d938f618547ab051fbd37519ce6603b896e93721ab68ed81d3e0f5a315d0a4",
+      "local_sha256": "06d938f618547ab051fbd37519ce6603b896e93721ab68ed81d3e0f5a315d0a4",
+      "changes": [
+        "Unmodified source bytes. Upstream already has no saved outputs or attachments."
+      ],
+      "executed_in_this_course": false
+    },
+    {
+      "local_file": "example_preprocessing.ipynb",
+      "upstream_repository": "https://github.com/nipy/nipype_tutorial",
+      "commit": "f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236",
+      "upstream_path": "notebooks/example_preprocessing.ipynb",
+      "source_url": "https://github.com/nipy/nipype_tutorial/blob/f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236/notebooks/example_preprocessing.ipynb",
+      "raw_url": "https://raw.githubusercontent.com/nipy/nipype_tutorial/f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236/notebooks/example_preprocessing.ipynb",
+      "license": "BSD-3-Clause",
+      "upstream_sha256": "7fbb78e9651fed67abe26f75c7bf4c510fdc9541abd27209fe29f9d5caa92af9",
+      "local_sha256": "7fbb78e9651fed67abe26f75c7bf4c510fdc9541abd27209fe29f9d5caa92af9",
+      "changes": [
+        "Unmodified source bytes. Upstream already has no saved outputs or attachments."
+      ],
+      "executed_in_this_course": false
+    },
+    {
+      "local_file": "DartBrains_Preprocessing.py",
+      "upstream_repository": "https://github.com/ljchang/dartbrains",
+      "commit": "5d727f7a72a7f20bfb32603cac8509d78b9647f2",
+      "upstream_path": "content/Preprocessing.py",
+      "source_url": "https://github.com/ljchang/dartbrains/blob/5d727f7a72a7f20bfb32603cac8509d78b9647f2/content/Preprocessing.py",
+      "raw_url": "https://raw.githubusercontent.com/ljchang/dartbrains/5d727f7a72a7f20bfb32603cac8509d78b9647f2/content/Preprocessing.py",
+      "license": "CC-BY-SA-4.0",
+      "upstream_sha256": "9171a4b6f0be159aabc13965eb4aa1310c576228996f39decb373b3bcba8712c",
+      "local_sha256": "9171a4b6f0be159aabc13965eb4aa1310c576228996f39decb373b3bcba8712c",
+      "changes": [
+        "Unmodified source bytes; local filename renamed."
+      ],
+      "executed_in_this_course": false
+    }
+  ],
+  "license_sources": {
+    "BSD-3-Clause": "https://github.com/nipy/nipype_tutorial/blob/f11c9c7b8e7a1983918f1d517ec9cf3dfcb78236/LICENSE",
+    "CC-BY-SA-4.0_declaration": "https://github.com/ljchang/dartbrains/blob/5d727f7a72a7f20bfb32603cac8509d78b9647f2/README.md",
+    "CC-BY-SA-4.0_legal_text": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/CC-BY-SA-4.0.txt"
+  }
+}

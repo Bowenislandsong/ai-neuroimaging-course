@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutorial 1: Linear regression with MSE · Neuroimaging Research Methods with AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-badge">NEURO+AI</span>
+      <span>Neuroimaging Research Methods with AI</span>
+    </a>
+    <nav class="top-links" aria-label="Primary Navigation">
+      <a href="../../index.html">26-Week Roadmap</a>
+      <a href="../../curriculum/SETUP.html">Mac Env &amp; Apple Setup</a>
+      <a href="../../curriculum/STUDY_PLAN.html">Study Plan</a>
+      <a href="../../curriculum/NOTEBOOK_INDEX.html">83 Classes</a>
+      <a href="../../curriculum/EQUATION_ATLAS.html">Equation &amp; Diagram Atlas</a>
+      <a href="../../curriculum/papers/README.html">24 Papers &amp; 310 Citations</a>
+      <a href="../../curriculum/AI_WORKFLOW.html">AI Workflow</a>
+      <a href="../../curriculum/ALL_MATERIALS.html" class="active">All Repo Materials (250)</a>
+    </nav>
+    <div class="reader-controls" aria-label="Reading Comfort Controls">
+      <button type="button" id="eq-logic-toggle-btn" class="ctrl-btn active" title="Expand or collapse all inline equation logic breakdown tables">∑ Logic: Expanded</button>
+      <button type="button" id="focus-mode-btn" class="ctrl-btn" title="Toggle distraction-free wide reading mode">⇄ Focus Width</button>
+      <button type="button" id="theme-cycle-btn" class="ctrl-btn" title="Switch reading theme (Light / Warm Sepia / Dark)">☀ Light</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-expanded="false">
+      <span>☰ Browse 83 Classes, 26-Week Path &amp; Repo Docs</span>
+      <span class="mobile-toggle-hint" style="font-family:var(--font-mono);font-size:0.76rem">Show ▾</span>
+    </button>
+    
+    <aside class="sidebar-left" aria-label="Course and Repository Navigation">
+      <input type="search" id="sidebar-filter-input" class="sidebar-search" placeholder="Filter 83 classes &amp; docs (press /)..." aria-label="Filter classes and documents">
+      <div class="sidebar-mode-tabs" role="tablist">
+        <button type="button" class="sidebar-mode-btn active" data-mode="chronological">26-Week Path</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="strand">By Strand</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="repodocs">Repo Docs</button>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="chronological">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html" class=""><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li><li class="nav-item"><a href="../../curriculum/ALL_MATERIALS.html" class=""><span class="nav-cid">ALL</span><span>All 250 Repo Materials</span><span class="nav-week-tag">Index</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase I · Paper Orientation &amp; Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">W3</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase II · Neuroimaging Data Science &amp; Experimental Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">W7</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase III · Image Processing &amp; Biophysical Pipelines</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">W13</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase IV · General Linear Modeling, Statistical Inference &amp; Multiverse Design</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">W16</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase V · Multivariate Modeling, Dynamics &amp; Foundation Models</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">W22</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase VI · Capstone Generalization &amp; Research Defense</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">W23</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">W25</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="strand" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html"><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Paper Orientation Seminars (R00–R03)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">#1</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">#2</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">#3</span></a></li><li class="nav-item"><a href="../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">#4</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Foundations &amp; MR Physics (F01–F04)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">#5</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">#6</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">#7</span></a></li><li class="nav-item"><a href="../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">#8</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Image Processing &amp; Pipelines (PR01–PR21)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">#29</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">#30</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">#31</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">#32</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">#33</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">#34</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">#35</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">#36</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">#37</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">#38</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">#39</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">#40</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">#42</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">#43</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">#44</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">#46</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">#47</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">#48</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">#49</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">#50</span></a></li><li class="nav-item"><a href="../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">#51</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Research Design &amp; Inference (D01–D16)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">#17</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">#18</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">#23</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">#24</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">#41</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">#45</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">#53</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">#54</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">#55</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">#56</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">#57</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">#58</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">#59</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">#60</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">#61</span></a></li><li class="nav-item"><a href="../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">#62</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Data Science &amp; Computing (DS01–DS16)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">#9</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">#10</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">#11</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">#12</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">#13</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">#14</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">#15</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">#16</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">#19</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">#20</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">#21</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">#22</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">#25</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">#26</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">#27</span></a></li><li class="nav-item"><a href="../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">#28</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Computational Modeling &amp; AI (M01–M18)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">#64</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">#65</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">#66</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">#67</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">#68</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">#69</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">#70</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">#71</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">#72</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">#73</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">#74</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">#75</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">#76</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">#77</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">#78</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">#79</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">#80</span></a></li><li class="nav-item"><a href="../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">#81</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Capstone Projects (P01–P04)</div><ul class="nav-list"><li class="nav-item"><a href="../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">#52</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">#63</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">#82</span></a></li><li class="nav-item"><a href="../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">#83</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="repodocs" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Complete Repository Index</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/ALL_MATERIALS.html"><span class="nav-cid">ALL</span><span>All 250 Repository Materials</span></a></li><li class="nav-item"><a href="../../curriculum/EQUATION_ATLAS.html"><span class="nav-cid">EQS</span><span>Equation &amp; Diagram Atlas (83)</span></a></li><li class="nav-item"><a href="../../README.html"><span class="nav-cid">README</span><span>Course Overview (README)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Curriculum &amp; Coursework Guides</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/SETUP.html"><span class="nav-cid">SETUP</span><span>Step 0: macOS Apple Dev + AI</span></a></li><li class="nav-item"><a href="../../curriculum/STUDY_PLAN.html"><span class="nav-cid">PLAN</span><span>26-Week Study Plan</span></a></li><li class="nav-item"><a href="../../curriculum/AI_WORKFLOW.html"><span class="nav-cid">AI</span><span>Agentic AI Supervision Guide</span></a></li><li class="nav-item"><a href="../../curriculum/NOTEBOOK_INDEX.html"><span class="nav-cid">IDX</span><span>83-Class Notebook Index</span></a></li><li class="nav-item"><a href="../../curriculum/ASSESSMENT.html"><span class="nav-cid">RUBRIC</span><span>Assessment &amp; Grading Rubrics</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/EVIDENCE_LEDGER.html"><span class="nav-cid">LEDGER</span><span>Paper Evidence Ledger</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/PAPER_TO_EXPERIMENT.html"><span class="nav-cid">A1-A4</span><span>Paper-to-Experiment Projects</span></a></li><li class="nav-item"><a href="../../curriculum/coursework/SOTA_AUDIT.html"><span class="nav-cid">SOTA</span><span>SOTA Model Audit Worksheet</span></a></li><li class="nav-item"><a href="../../curriculum/COVERAGE_AUDIT.html"><span class="nav-cid">AUDIT</span><span>Curriculum Coverage Audit</span></a></li><li class="nav-item"><a href="../../curriculum/SOURCES.html"><span class="nav-cid">SRC</span><span>University Teaching Sources</span></a></li><li class="nav-item"><a href="../../curriculum/VERIFICATION.html"><span class="nav-cid">VERIF</span><span>83-Notebook Verification Log</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">24 Papers &amp; 310 Citations</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/papers/README.html"><span class="nav-cid">LIB</span><span>24-Paper Library Overview</span></a></li><li class="nav-item"><a href="../../curriculum/papers/READING_METHOD.html"><span class="nav-cid">3PASS</span><span>Three-Pass Reading Method</span></a></li><li class="nav-item"><a href="../../curriculum/papers/REFERENCES.html"><span class="nav-cid">310REF</span><span>All 310 Verified References</span></a></li><li class="nav-item"><a href="../../curriculum/papers/measurement.html"><span class="nav-cid">PB01</span><span>Measurement &amp; BOLD Physics</span></a></li><li class="nav-item"><a href="../../curriculum/papers/processing.html"><span class="nav-cid">PP01-08</span><span>Processing Papers (fMRIPrep–BrainMorph)</span></a></li><li class="nav-item"><a href="../../curriculum/papers/design.html"><span class="nav-cid">PD01-07</span><span>Design &amp; Generalization Papers</span></a></li><li class="nav-item"><a href="../../curriculum/papers/modeling.html"><span class="nav-cid">PM01-08</span><span>Modeling &amp; Foundation AI Papers</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Strand Coverage Ledgers</div><ul class="nav-list"><li class="nav-item"><a href="../../curriculum/processing_coverage.html"><span class="nav-cid">COV-PR</span><span>Processing Coverage (PR01–PR21)</span></a></li><li class="nav-item"><a href="../../curriculum/design_coverage.html"><span class="nav-cid">COV-D</span><span>Design Coverage (D01–D16)</span></a></li><li class="nav-item"><a href="../../curriculum/data_science_coverage.html"><span class="nav-cid">COV-DS</span><span>Data Science Coverage (DS01–DS16)</span></a></li><li class="nav-item"><a href="../../curriculum/modeling_coverage.html"><span class="nav-cid">COV-M</span><span>Modeling Coverage (M01–M18)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Introductory Coursebook &amp; Labs (course/)</div><ul class="nav-list"><li class="nav-item"><a href="../../course/COURSEBOOK.html"><span class="nav-cid">BOOK</span><span>Unified Introductory Coursebook</span></a></li><li class="nav-item"><a href="../../course/labs/520_design.html"><span class="nav-cid">LAB520</span><span>Lab 520: Experimental Design</span></a></li><li class="nav-item"><a href="../../course/labs/540_processing.html"><span class="nav-cid">LAB540</span><span>Lab 540: Image Processing</span></a></li><li class="nav-item"><a href="../../course/labs/550_modeling.html"><span class="nav-cid">LAB550</span><span>Lab 550: Modeling &amp; ML</span></a></li><li class="nav-item"><a href="../../course/labs/580_data_science.html"><span class="nav-cid">LAB580</span><span>Lab 580: Data Science</span></a></li><li class="nav-item"><a href="../../course/GLOSSARY.html"><span class="nav-cid">GLOSS</span><span>Neuroimaging Glossary</span></a></li><li class="nav-item"><a href="../../course/TRANSFORMATIONS.html"><span class="nav-cid">XFORM</span><span>Transformation Contracts</span></a></li><li class="nav-item"><a href="../../course/REAL_DATA.html"><span class="nav-cid">REAL</span><span>Real fMRI Data Guide</span></a></li><li class="nav-item"><a href="../../course/verification/REPORT.html"><span class="nav-cid">PLOTS</span><span>Verification Report &amp; 22 Plots</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Pinned Upstream Tutorials (third_party/)</div><ul class="nav-list"><li class="nav-item"><a href="../../third_party/README.html"><span class="nav-cid">3P-ALL</span><span>Third-Party Provenance Overview</span></a></li><li class="nav-item"><a href="../../third_party/processing/README.html"><span class="nav-cid">3P-PR</span><span>Nipype &amp; DartBrains Processing (4)</span></a></li><li class="nav-item"><a href="../../third_party/design/README.html"><span class="nav-cid">3P-D</span><span>Poldrack &amp; DartBrains Design (3)</span></a></li><li class="nav-item"><a href="../../third_party/data_science/README.html"><span class="nav-cid">3P-DS</span><span>Neuromatch Data Science (3)</span></a></li><li class="nav-item"><a href="../../third_party/modeling/README.html"><span class="nav-cid">3P-M</span><span>BrainIAK &amp; Neuromatch Modeling (4)</span></a></li><li class="nav-item"><a href="../../THIRD_PARTY_NOTICES.html"><span class="nav-cid">NOTICES</span><span>Complete Third-Party Notices</span></a></li></ul></div>
+      </div>
+    </aside>
+    
+    <main class="main-content" id="top">
+      
+        <section class="class-banner">
+          <div class="badge-row">
+            <span class="badge badge-primary">Pinned Upstream University Tutorial</span>
+            <span class="badge badge-phase"><code>third_party/data_science/W1D2_Tutorial1.ipynb</code></span>
+            <span class="badge badge-tier">40 cells (19 code cells)</span>
+          </div>
+          <h1>Tutorial 1: Linear regression with MSE</h1>
+          <p style="margin:0.4rem 0 0.8rem;color:var(--ink-secondary);max-width:80ch">This is a byte-for-byte preserved upstream teaching notebook from an external university curriculum (retained under its original open license; see <a href="../../THIRD_PARTY_NOTICES.html">Third-Party Notices</a> and the folder README). Rendered below for convenient reading on the web alongside the downloadable original <code>.ipynb</code>.</p>
+          <div class="banner-actions">
+            <a class="btn-action primary" href="W1D2_Tutorial1.ipynb" download>⬇ Download Original Notebook (W1D2_Tutorial1.ipynb)</a>
+            <a class="btn-action" href="../../third_party/data_science/README.html">📖 Folder Overview &amp; Provenance</a>
+            <a class="btn-action" href="../../curriculum/ALL_MATERIALS.html">🗂 All Repository Materials</a>
+          </div>
+        </section>
+        <article class="content-card">
+          <section class="nb-cell" id="cell-0"><p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content/blob/main/tutorials/W1D2_ModelFitting/W1D2_Tutorial1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> &nbsp; <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content/main/tutorials/W1D2_ModelFitting/W1D2_Tutorial1.ipynb" target="_parent"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open in Kaggle"/></a></p></section><section class="nb-cell" id="cell-1"><h1 id="tutorial-1-linear-regression-with-mse">Tutorial 1: Linear regression with MSE</h1>
+<p><strong>Week 1, Day 2: Model Fitting</strong></p>
+<p><strong>By Neuromatch Academy</strong></p>
+<p><strong>Content creators</strong>: Pierre-Étienne Fiquet, Anqi Wu, Alex Hyafil with help from Byron Galbraith</p>
+<p><strong>Content reviewers</strong>: Lina Teichmann, Saeed Salehi, Patrick Mineault,  Ella Batty, Michael Waskom</p>
+<p><strong>Production editors</strong>: Spiros Chavlis</p></section><section class="nb-cell" id="cell-2"><hr />
+<h1 id="tutorial-objectives">Tutorial Objectives</h1>
+<p><em>Estimated timing of tutorial: 30 minutes</em></p>
+<p>This is Tutorial 1 of a series on fitting models to data. We start with simple linear regression, using least squares optimization (Tutorial 1) and Maximum Likelihood Estimation (Tutorial 2). We will use bootstrapping to build confidence intervals around the inferred linear model parameters (Tutorial 3). We'll finish our exploration of regression models by generalizing to multiple linear regression and polynomial regression (Tutorial 4). We end by learning how to choose between these various models. We discuss the bias-variance trade-off (Tutorial 5) and Cross Validation for model selection (Tutorial 6).</p>
+<p>In this tutorial, we will learn how to fit simple linear models to data.</p>
+<ul>
+<li>Learn how to calculate the mean-squared error (MSE)</li>
+<li>Explore how model parameters (slope) influence the MSE</li>
+<li>Learn how to find the optimal model parameter using least-squares optimization</li>
+</ul>
+<p><br></p>
+<p><strong>Acknowledgements:</strong></p>
+<ul>
+<li>We thank Eero Simoncelli. Much of today's tutorials are inspired by exercises assigned in his mathtools class.</li>
+</ul></section><section class="nb-cell" id="cell-3"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 1</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Tutorial slides
+# @markdown These are the slides for the videos in all tutorials today
+from IPython.display import IFrame
+link_id = &quot;2mkq4&quot;
+print(f&quot;If you want to download the slides: https://osf.io/download/{link_id}/&quot;)
+IFrame(src=f&quot;https://mfr.ca-1.osf.io/render?url=https://osf.io/{link_id}/?direct%26mode=render%26action=download%26mode=render&quot;, width=854, height=480)</code></pre></div></section><section class="nb-cell" id="cell-4"><hr />
+<h1 id="setup">Setup</h1></section><section class="nb-cell" id="cell-5"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 2</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Install and import feedback gadget
+
+!pip3 install vibecheck datatops --quiet
+
+from vibecheck import DatatopsContentReviewContainer
+def content_review(notebook_section: str):
+    return DatatopsContentReviewContainer(
+        &quot;&quot;,  # No text prompt
+        notebook_section,
+        {
+            &quot;url&quot;: &quot;https://pmyvdlilci.execute-api.us-east-1.amazonaws.com/klab&quot;,
+            &quot;name&quot;: &quot;neuromatch_cn&quot;,
+            &quot;user_key&quot;: &quot;y1x3mpx5&quot;,
+        },
+    ).render()
+
+
+feedback_prefix = &quot;W1D2_T1&quot;</code></pre></div></section><section class="nb-cell" id="cell-6"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 3</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>import numpy as np
+import matplotlib.pyplot as plt</code></pre></div></section><section class="nb-cell" id="cell-7"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 4</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Figure Settings
+import logging
+logging.getLogger(&#x27;matplotlib.font_manager&#x27;).disabled = True
+
+import ipywidgets as widgets  # interactive display
+%config InlineBackend.figure_format = &#x27;retina&#x27;
+plt.style.use(&quot;https://raw.githubusercontent.com/NeuromatchAcademy/course-content/main/nma.mplstyle&quot;)</code></pre></div></section><section class="nb-cell" id="cell-8"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 5</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Plotting Functions
+
+def plot_observed_vs_predicted(x, y, y_hat, theta_hat):
+  &quot;&quot;&quot; Plot observed vs predicted data
+
+  Args:
+    x (ndarray): observed x values
+    y (ndarray): observed y values
+    y_hat (ndarray): predicted y values
+    theta_hat (ndarray):
+  &quot;&quot;&quot;
+  fig, ax = plt.subplots()
+  ax.scatter(x, y, label=&#x27;Observed&#x27;)  # our data scatter plot
+  ax.plot(x, y_hat, color=&#x27;r&#x27;, label=&#x27;Fit&#x27;)  # our estimated model
+  # plot residuals
+  ymin = np.minimum(y, y_hat)
+  ymax = np.maximum(y, y_hat)
+  ax.vlines(x, ymin, ymax, &#x27;g&#x27;, alpha=0.5, label=&#x27;Residuals&#x27;)
+  ax.set(
+      title=fr&quot;$\hat{{\theta}}$ = {theta_hat:0.2f}, MSE = {np.mean((y - y_hat)**2):.2f}&quot;,
+      xlabel=&#x27;x&#x27;,
+      ylabel=&#x27;y&#x27;
+  )
+  ax.legend()
+  plt.show()</code></pre></div></section><section class="nb-cell" id="cell-9"><hr />
+<h1 id="section-1-mean-squared-error-mse">Section 1: Mean Squared Error (MSE)</h1></section><section class="nb-cell" id="cell-10"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 6</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 1: Linear Regression &amp; Mean Squared Error
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;HumajfjJ37E&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1tA411e7NW&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-11"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 7</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Mean_Squared_Error_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-12"><p>This video covers a 1D linear regression and mean squared error.</p>
+<p><details class="instructor-details"><summary>🎓 Click here for text recap of video </summary><div class="details-body"></p>
+<p><strong>Linear least squares regression</strong> is an old but gold  optimization procedure that we are going to use for data fitting. Least squares (LS) optimization problems are those in which the objective function is a quadratic function of the
+parameter(s) being optimized.</p>
+<p>Suppose you have a set of measurements: for each data point or measurement, you have \(y_{i}\) (the "dependent" variable) obtained for a different input value, \(x_{i}\) (the "independent" or "explanatory" variable).  Suppose we believe the measurements are proportional to the input values, but are corrupted by some (random) measurement errors, \(\epsilon_{i}\), that is:</p>
+<p>\begin{equation}
+y_{i}= \theta x_{i}+\epsilon_{i}
+\end{equation}</p>
+<p>for some unknown slope parameter \(\theta.\) The least squares regression problem uses <strong>mean squared error (MSE)</strong> as its objective function, it aims to find the value of the parameter \(\theta\) by minimizing the average of squared errors:</p>
+<p>\begin{equation}
+\min <em>{\theta} \frac{1}{N}\sum</em>{i=1}^{N}\left(y_{i}-\theta x_{i}\right)^{2}
+\end{equation}</p></section><section class="nb-cell" id="cell-13"><p>We will now explore how MSE is used in fitting a linear regression model to data. For illustrative purposes, we will create a simple synthetic dataset where we know the true underlying model. This will allow us to see how our estimation efforts compare in uncovering the real model (though in practice we rarely have this luxury).</p>
+<p>First we will generate some noisy samples \(x\) from [0, 10) along the line \(y = 1.2x\) as our dataset we wish to fit a model to.</p></section><section class="nb-cell" id="cell-14"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 8</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title
+
+# @markdown Execute this cell to generate some simulated data
+
+# setting a fixed seed to our random number generator ensures we will always
+# get the same psuedorandom number sequence
+np.random.seed(121)
+
+# Let&#x27;s set some parameters
+theta = 1.2
+n_samples = 30
+
+# Draw x and then calculate y
+x = 10 * np.random.rand(n_samples)  # sample from a uniform distribution over [0,10)
+noise = np.random.randn(n_samples)  # sample from a standard normal distribution
+y = theta * x + noise
+
+# Plot the results
+fig, ax = plt.subplots()
+ax.scatter(x, y)  # produces a scatter plot
+ax.set(xlabel=&#x27;x&#x27;, ylabel=&#x27;y&#x27;);</code></pre></div></section><section class="nb-cell" id="cell-15"><p>Now that we have our suitably noisy dataset, we can start trying to estimate the underlying model that produced it. We use MSE to evaluate how successful a particular slope estimate \(\hat{\theta}\) is for explaining the data, with the closer to 0 the MSE is, the better our estimate fits the data.</p></section><section class="nb-cell" id="cell-16"><h2 id="coding-exercise-1-compute-mse">Coding Exercise 1: Compute MSE</h2>
+<p>In this exercise you will implement a method to compute the mean squared error for a set of inputs \(\mathbf{x}\), measurements \(\mathbf{y}\), and slope estimate \(\hat{\theta}\). Here, \(\mathbf{x}\) and \(\mathbf{y}\) are vectors of data points. We will then compute and print the mean squared error for 3 different choices of theta.</p>
+<p>As a reminder, the equation for computing the estimated y for a single data point is:</p>
+<p>\begin{equation}
+\hat{y}<em>{i}= \theta x</em>{i}
+\end{equation}</p>
+<p>and for mean squared error is:</p>
+<p>\begin{equation}
+\min <em>{\theta} \frac{1}{N}\sum</em>{i=1}^{N}\left(y_{i}-\hat{y}_i\right)^{2}
+\end{equation}</p></section><section class="nb-cell" id="cell-17"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 9</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>def mse(x, y, theta_hat):
+  &quot;&quot;&quot;Compute the mean squared error
+
+  Args:
+    x (ndarray): An array of shape (samples,) that contains the input values.
+    y (ndarray): An array of shape (samples,) that contains the corresponding
+      measurement values to the inputs.
+    theta_hat (float): An estimate of the slope parameter
+
+  Returns:
+    float: The mean squared error of the data with the estimated parameter.
+  &quot;&quot;&quot;
+  ####################################################
+  ## TODO for students: compute the mean squared error
+  # Fill out function and remove
+  raise NotImplementedError(&quot;Student exercise: compute the mean squared error&quot;)
+  ####################################################
+
+  # Compute the estimated y
+  y_hat = ...
+
+  # Compute mean squared error
+  mse = ...
+
+  return mse
+
+
+theta_hats = [0.75, 1.0, 1.5]
+for theta_hat in theta_hats:
+  print(f&quot;theta_hat of {theta_hat} has an MSE of {mse(x, y, theta_hat):.2f}&quot;)</code></pre></div></section><section class="nb-cell" id="cell-18"><p>The result should be:</p>
+<p><div class="code-block-wrap"><div class="code-header"><span>code</span><button type="button" class="copy-btn">Copy</button></div><pre><code>theta_hat of 0.75 has an MSE of 9.08\
+theta_hat of 1.0 has an MSE of 3.0\
+theta_hat of 1.5 has an MSE of 4.52
+</code></pre></div></p></section><section class="nb-cell" id="cell-19"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 10</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># to_remove solution
+def mse(x, y, theta_hat):
+  &quot;&quot;&quot;Compute the mean squared error
+
+  Args:
+    x (ndarray): An array of shape (samples,) that contains the input values.
+    y (ndarray): An array of shape (samples,) that contains the corresponding
+      measurement values to the inputs.
+    theta_hat (float): An estimate of the slope parameter
+
+  Returns:
+    float: The mean squared error of the data with the estimated parameter.
+  &quot;&quot;&quot;
+
+  # Compute the estimated y
+  y_hat = theta_hat * x
+
+  # Compute mean squared error
+  mse = np.mean((y - y_hat)**2)
+
+  return mse
+
+
+theta_hats = [0.75, 1.0, 1.5]
+for theta_hat in theta_hats:
+  print(f&quot;theta_hat of {theta_hat} has an MSE of {mse(x, y, theta_hat):.2f}&quot;)</code></pre></div></section><section class="nb-cell" id="cell-20"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 11</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Compute_MSE_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-21"><p>We see that \(\hat{\theta} = 1.0\) is our best estimate from the three we tried. Looking just at the raw numbers, however, isn't always satisfying, so let's visualize what our estimated model looks like over the data.</p></section><section class="nb-cell" id="cell-22"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 12</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown Execute this cell to visualize estimated models
+
+fig, axes = plt.subplots(ncols=3, figsize=(15, 5))
+for theta_hat, ax in zip(theta_hats, axes):
+
+  # True data
+  ax.scatter(x, y, label=&#x27;Observed&#x27;)  # our data scatter plot
+
+  # Compute and plot predictions
+  y_hat = theta_hat * x
+  ax.plot(x, y_hat, color=&#x27;r&#x27;, label=&#x27;Fit&#x27;)  # our estimated model
+
+  ax.set(
+      title= fr&#x27;$\hat{{\theta}}$= {theta_hat}, MSE = {np.mean((y - y_hat)**2):.2f}&#x27;,
+      xlabel=&#x27;x&#x27;,
+      ylabel=&#x27;y&#x27;
+  );
+
+axes[0].legend()
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-23"><h2 id="interactive-demo-1-mse-explorer">Interactive Demo 1: MSE Explorer</h2>
+<p>Using an interactive widget, we can easily see how changing our slope estimate changes our model fit. We display the <strong>residuals</strong>, the differences between observed and predicted data, as line segments between the data point (observed response) and the corresponding predicted response on the model fit line.</p>
+<ul>
+<li>What value of \(\hat{\theta}\) results in the lowest MSE?</li>
+<li>Is this a good way of estimating \(\theta\)?</li>
+</ul></section><section class="nb-cell" id="cell-24"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 13</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown Make sure you execute this cell to enable the widget!
+@widgets.interact(theta_hat=widgets.FloatSlider(1.0, min=0.0, max=2.0))
+def plot_data_estimate(theta_hat):
+  y_hat = theta_hat * x
+  plot_observed_vs_predicted(x, y, y_hat, theta_hat)</code></pre></div></section><section class="nb-cell" id="cell-25"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 14</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># to_remove explanation
+&quot;&quot;&quot;
+1. Theta_hat = 1.2 results in the minimum MSE
+2. No, this is really inefficient - we do not want to fit models by changing parameters
+on a slider!
+&quot;&quot;&quot;;</code></pre></div></section><section class="nb-cell" id="cell-26"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 15</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_MSE_explorer_Interactive_Demo_Discussion&quot;)</code></pre></div></section><section class="nb-cell" id="cell-27"><p>While visually exploring several estimates can be instructive, it's not the most efficient for finding the best estimate to fit our data. Another technique we can use is to choose a reasonable range of parameter values and compute the MSE at several values in that interval. This allows us to plot the error against the parameter value (this is also called an <strong>error landscape</strong>, especially when we deal with more than one parameter). We can select the final \(\hat{\theta}\)  (\(\hat{\theta}_\textrm{MSE}\)) as the one which results in the lowest error.</p></section><section class="nb-cell" id="cell-28"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 16</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown Execute this cell to loop over theta_hats, compute MSE, and plot results
+
+# Loop over different thetas, compute MSE for each
+theta_hat_grid = np.linspace(-2.0, 4.0)
+errors = np.zeros(len(theta_hat_grid))
+for i, theta_hat in enumerate(theta_hat_grid):
+  errors[i] = mse(x, y, theta_hat)
+
+# Find theta that results in lowest error
+best_error = np.min(errors)
+theta_hat = theta_hat_grid[np.argmin(errors)]
+
+
+# Plot results
+fig, ax = plt.subplots()
+ax.plot(theta_hat_grid, errors, &#x27;-o&#x27;, label=&#x27;MSE&#x27;, c=&#x27;C1&#x27;)
+ax.axvline(theta, color=&#x27;g&#x27;, ls=&#x27;--&#x27;, label=r&quot;$\theta_{True}$&quot;)
+ax.axvline(theta_hat, color=&#x27;r&#x27;, ls=&#x27;-&#x27;, label=r&quot;$\hat{{\theta}}_{MSE}$&quot;)
+ax.set(
+  title=fr&quot;Best fit: $\hat{{\theta}}$ = {theta_hat:.2f}, MSE = {best_error:.2f}&quot;,
+  xlabel=r&quot;$\hat{{\theta}}$&quot;,
+  ylabel=&#x27;MSE&#x27;)
+ax.legend()
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-29"><p>We can see that our best fit is \(\hat{\theta}=1.18\) with an MSE of 1.45. This is quite close to the original true value \(\theta=1.2\)!</p></section><section class="nb-cell" id="cell-30"><hr />
+<h1 id="section-2-least-squares-optimization">Section 2: Least-squares optimization</h1>
+<p><em>Estimated timing to here from start of tutorial: 20 min</em></p>
+<p>While the approach detailed above (computing MSE at various values of \(\hat\theta\)) quickly got us to a good estimate, it still relied on evaluating the MSE value across a grid of hand-specified values. If we didn't pick a good range to begin with, or with enough granularity, we might miss the best possible estimator. Let's go one step further, and instead of finding the minimum MSE from a set of candidate estimates, let's solve for it analytically.</p>
+<p>We can do this by minimizing the cost function. Mean squared error is a convex objective function, therefore we can compute its minimum using calculus. Please see video or Bonus Section 1 for this derivation! After computing the minimum, we find that:</p>
+<p>\begin{equation}
+\hat\theta = \frac{\mathbf{x}^\top \mathbf{y}}{\mathbf{x}^\top \mathbf{x}}
+\end{equation}</p>
+<p>where \(\mathbf{x}\) and \(\mathbf{y}\) are vectors of data points.</p>
+<p>This is known as solving the normal equations. For different ways of obtaining the solution, see the notes on <a href="https://www.cns.nyu.edu/~eero/NOTES/leastSquares.pdf" target="_blank" rel="noopener">Least Squares Optimization</a> by Eero Simoncelli.</p></section><section class="nb-cell" id="cell-31"><h2 id="coding-exercise-2-solve-for-the-optimal-estimator">Coding Exercise 2: Solve for the Optimal Estimator</h2>
+<p>In this exercise, you will write a function that finds the optimal \(\hat{\theta}\) value using the least squares optimization approach (the equation above) to solve MSE minimization. It should take arguments \(x\) and \(y\) and return the solution \(\hat{\theta}\).</p>
+<p>We will then use your function to compute \(\hat{\theta}\) and plot the resulting prediction on top of the data.</p></section><section class="nb-cell" id="cell-32"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 17</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>def solve_normal_eqn(x, y):
+  &quot;&quot;&quot;Solve the normal equations to produce the value of theta_hat that minimizes
+    MSE.
+
+    Args:
+    x (ndarray): An array of shape (samples,) that contains the input values.
+    y (ndarray): An array of shape (samples,) that contains the corresponding
+      measurement values to the inputs.
+
+  Returns:
+    float: the value for theta_hat arrived from minimizing MSE
+  &quot;&quot;&quot;
+
+  ################################################################################
+  ## TODO for students: solve for the best parameter using least squares
+  # Fill out function and remove
+  raise NotImplementedError(&quot;Student exercise: solve for theta_hat using least squares&quot;)
+  ################################################################################
+
+  # Compute theta_hat analytically
+  theta_hat = ...
+
+  return theta_hat
+
+
+theta_hat = solve_normal_eqn(x, y)
+y_hat = theta_hat * x
+plot_observed_vs_predicted(x, y, y_hat, theta_hat)</code></pre></div></section><section class="nb-cell" id="cell-33"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 18</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># to_remove solution
+def solve_normal_eqn(x, y):
+  &quot;&quot;&quot;Solve the normal equations to produce the value of theta_hat that minimizes
+    MSE.
+
+    Args:
+    x (ndarray): An array of shape (samples,) that contains the input values.
+    y (ndarray): An array of shape (samples,) that contains the corresponding
+      measurement values to the inputs.
+
+  Returns:
+    float: the value for theta_hat arrived from minimizing MSE
+  &quot;&quot;&quot;
+
+  # Compute theta_hat analytically
+  theta_hat = (x.T @ y) / (x.T @ x)
+
+  return theta_hat
+
+
+theta_hat = solve_normal_eqn(x, y)
+y_hat = theta_hat * x
+
+with plt.xkcd():
+  plot_observed_vs_predicted(x, y, y_hat, theta_hat)</code></pre></div></section><section class="nb-cell" id="cell-34"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 19</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Solve_for_the_Optimal_Estimator_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-35"><p>We see that the analytic solution produces an even better result than our grid search from before, producing \(\hat{\theta} = 1.21\) with \(\text{MSE} = 1.43\)!</p></section><section class="nb-cell" id="cell-36"><hr />
+<h1 id="summary">Summary</h1>
+<p><em>Estimated timing of tutorial: 30 minutes</em></p>
+<p>Linear least squares regression is an optimization procedure that can be used for data fitting:</p>
+<pre><code>- Task: predict a value for \(y_i\) given \(x_i\)
+- Performance measure: \(\textrm{MSE}\)
+- Procedure: minimize \(\textrm{MSE}\) by solving the normal equations
+</code></pre>
+<p><strong>Key point</strong>: We fit the model by defining an <em>objective function</em> and minimizing it.</p>
+<p><strong>Note</strong>: In this case, there is an <em>analytical</em> solution to the minimization problem and in practice, this solution can be computed using <em>linear algebra</em>. This is <em>extremely</em> powerful and forms the basis for much of numerical computation throughout the sciences.</p></section><section class="nb-cell" id="cell-37"><hr />
+<h1 id="notation">Notation</h1>
+<p>\begin{align}
+x_{i} &amp;\quad \text{input, independent variable}\
+y_{i} &amp;\quad \text{measurement, dependent variable}\
+\mathbf{x} &amp;\quad \text{vector of input values}\
+\mathbf{y} &amp;\quad \text{vector of measurements}\
+\hat{y}<em>{i} &amp;\quad \text{estimate of dependent variable}\
+\epsilon</em>{i} &amp;\quad \text{measurement error}\
+\theta &amp;\quad \text{slope parameter}\
+\hat{\theta} &amp;\quad \text{estimated slope parameter}\
+\hat{\theta}_\text{MSE} &amp;\quad \text{slope parameter estimated via the mean squared error}\
+\textrm{MSE} &amp;\quad \text{mean squared error}\
+\end{align}</p></section><section class="nb-cell" id="cell-38"><hr />
+<h1 id="bonus">Bonus</h1></section><section class="nb-cell" id="cell-39"><h2 id="bonus-section-1-least-squares-optimization-derivation">Bonus Section 1: Least Squares Optimization Derivation</h2>
+<p>We will outline here the derivation of the least squares solution.</p>
+<p>We first set the derivative of the error expression with respect to \(\theta\) equal to zero,</p>
+<p>\begin{align}
+\frac{d}{d\theta}\frac{1}{N}\sum_{i=1}^N(y_i - \theta x_i)^2 &amp;= 0 \
+\frac{1}{N}\sum_{i=1}^N-2x_i(y_i - \theta x_i) &amp;= 0
+\end{align}</p>
+<p>where we used the chain rule. Now solving for \(\theta\), we obtain an optimal value of:</p>
+<p>\begin{equation}
+\hat\theta = \frac{\sum_{i=1}^N x_i y_i}{\sum_{i=1}^N x_i^2}
+\end{equation}</p>
+<p>Which we can write in vector notation as:</p>
+<p>\begin{equation}
+\hat\theta = \frac{\mathbf{x}^\top \mathbf{y}}{\mathbf{x}^\top \mathbf{x}}
+\end{equation}</p>
+<p><br></p>
+<p>This is known as solving the <em>normal equations</em>. For different ways of obtaining the solution, see the notes on <a href="https://www.cns.nyu.edu/~eero/NOTES/leastSquares.pdf" target="_blank" rel="noopener">Least Squares Optimization</a> by Eero Simoncelli.</p></section>
+        </article>
+        
+    </main>
+    <aside class="sidebar-right" aria-label="On this page"><h3>On This Page</h3><ul class="toc-list"><li><a href="#coding-exercise-1-compute-mse">Coding Exercise 1: Compute MSE</a></li><li><a href="#interactive-demo-1-mse-explorer">Interactive Demo 1: MSE Explorer</a></li><li><a href="#coding-exercise-2-solve-for-the-optimal-estimator">Coding Exercise 2: Solve for the Optimal Estimator</a></li><li><a href="#bonus-section-1-least-squares-optimization-derivation">Bonus Section 1: Least Squares Optimization Derivation</a></li></ul></aside>
+  </div>
+
+  <div class="lightbox-overlay" id="img-lightbox" role="dialog" aria-label="Zoomed figure view">
+    <img id="img-lightbox-target" src="" alt="Enlarged scientific diagram">
+  </div>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Neuroimaging Research Methods with AI</strong> · 26-Week Graduate Curriculum (83 Main Classes · 4 Supplement Labs · 14 Upstream Tutorials · 24 Core Papers · 310 Verified References).
+      Built for macOS on Apple Silicon MacBook Pro with Goose + Ollama (Qwen &amp; Gemma).
+    </div>
+    <div>
+      <a href="../../curriculum/ALL_MATERIALS.html">All 250 Repo Files</a> ·
+      <a href="../../curriculum/SETUP.html">Mac Setup</a> ·
+      <a href="../../curriculum/EQUATION_ATLAS.html">Equation Atlas</a> ·
+      <a href="../../course/COURSEBOOK.html">Compact Coursebook</a> ·
+      <a href="../../THIRD_PARTY_NOTICES.html">Licenses &amp; Provenance</a>
+    </div>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+  <script defer src="../../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+#!/usr/bin/env python3
+"""Build paper/lesson indexes and insert original paper questions, preserving code.
+
+Edit curriculum/papers/*_sources.json, lesson_readings.json and key_references.json,
+run scripts/verify_references.py after changing any key reference, then run this.
+It also renders each lesson's "Why this technique matters" block with its verified key
+references and writes the course bibliography (curriculum/papers/REFERENCES.md).
+The supplied notebooks' code cells and reference outputs are not regenerated.
+"""
+from pathlib import Path
+import json
+import re
+import urllib.parse
+
+ROOT = Path(__file__).resolve().parents[1]
+PAPERS = ROOT / 'curriculum/papers'
+KEY_REFERENCES = PAPERS / 'key_references.json'
+VERIFICATION = PAPERS / 'reference_verification.json'
+AGENTIC_GUIDES = ROOT / 'curriculum/agentic_guides.json'
+KEY_ROLES = ('foundational', 'standard tool', 'state of the art', 'critical evaluation', 'review')
+KEY_BLOCK = re.compile(r'\n*<!-- key-references -->.*?<!-- /key-references -->\n*', re.S)
+AGENTIC_BLOCK = re.compile(r'\n*<!-- agentic-guide -->.*?<!-- /agentic-guide -->\n*', re.S)
+
+
+def write_json(path, value):
+    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+
+
+def reference_key(ref):
+    """Identifier shared with verify_references.py and check_repository.py."""
+    if ref.get('doi'):
+        return 'doi:' + ref['doi'].lower()
+    if ref.get('arxiv'):
+        return 'arxiv:' + re.sub(r'v\d+$', '', ref['arxiv'])
+    return 'url:' + ref['url']
+
+
+def reference_link(ref):
+    if ref.get('doi'):
+        # Percent-encode parentheses and angle brackets so Markdown link parsing is unambiguous.
+        return 'https://doi.org/' + urllib.parse.quote(ref['doi'], safe='/:;')
+    if ref.get('arxiv'):
+        return 'https://arxiv.org/abs/' + ref['arxiv']
+    return ref['url']
+
+
+def link_text(text):
+    return re.sub(r'([\\\[\]*_$`|])', r'\\\1', ' '.join(text.split()))
+
+
+def load_key_references():
+    if not KEY_REFERENCES.exists():
+        return {}
+    return {entry['notebook_id']: entry for entry in json.loads(KEY_REFERENCES.read_text())['lessons']}
+
+
+def load_agentic_guides():
+    if not AGENTIC_GUIDES.exists():
+        return {}
+    return json.loads(AGENTIC_GUIDES.read_text())
+
+
+def agentic_guide_block(ident, guide):
+    """Markdown block for macOS (Goose + Ollama: Qwen & Gemma) agentic deliverable supervision."""
+    trace_items = guide['what_to_look_for_and_trace']
+    if isinstance(trace_items, str):
+        trace_items = [trace_items]
+    lines = [
+        '<!-- agentic-guide -->',
+        f'### Agentic Deliverable Supervision ({ident} · macOS Goose + Ollama: Qwen & Gemma)',
+        '',
+        f'**Deliverable focus:** {guide["deliverable_focus"]}',
+        '',
+        '#### 1. Suggestive Prompt (in the spirit of what to ask — adapt, do not copy verbatim)',
+        f'> {guide["suggestive_prompt"]}',
+        '',
+        '#### 2. What to Look For & How to Trace the Error Back Down',
+    ]
+    for item in trace_items:
+        lines.append(f'- {item}')
+    lines += [
+        '',
+        '#### 3. Expected Outcome Range & Why It Must Look That Way',
+        guide['expected_outcome_range_and_why'],
+        '<!-- /agentic-guide -->',
+    ]
+    return '\n'.join(lines)
+
+
+def sorted_references(entry):
+    return sorted(entry['references'], key=lambda r: (KEY_ROLES.index(r['role']), r['year']))
+
+
+def key_reference_block(entry, by_id):
+    """Markdown inserted after the paper-first gate of a computational notebook."""
+    lines = ['<!-- key-references -->', '### Why this technique matters', '',
+             ' '.join(entry['why_it_matters'].split()), '',
+             f'**Key references** · *{entry["technique"]}*', '']
+    for ref in sorted_references(entry):
+        item = (f'- *{ref["role"].capitalize()}* — {ref["cite"]}, '
+                f'[{link_text(ref["title"])}]({reference_link(ref)}), *{ref["venue"]}*. '
+                f'{" ".join(ref["takeaway"].split())}')
+        if ref.get('registry_id'):
+            pid = ref['registry_id']
+            item += f' Course library: [{pid}](../../curriculum/papers/{by_id[pid]["guide"]}).'
+        lines.append(item)
+    lines += ['', 'Full entries, verification status and citation counts: '
+              f'[course bibliography](../../curriculum/papers/REFERENCES.md#{entry["notebook_id"].lower()}).',
+              '<!-- /key-references -->']
+    return '\n'.join(lines)
+
+
+def write_bibliography(key_refs, index, groups, by_id):
+    """Write curriculum/papers/REFERENCES.md from key_references.json and its verification record."""
+    verification = json.loads(VERIFICATION.read_text()) if VERIFICATION.exists() else {'references': {}}
+    records = verification['references']
+    checked = verification.get('checked_at_utc', '')[:10] or 'no date (not yet run)'
+
+    def cited_by(ref):
+        count = records.get(reference_key(ref), {}).get('openalex_cited_by')
+        return f'{count:,}' if isinstance(count, int) else 'n/a'
+
+    def status(ref):
+        return records.get(reference_key(ref), {}).get('status', 'UNVERIFIED')
+
+    lines = ['# Course bibliography: key references by lesson', '',
+             'Every computational lesson opens with a short **Why this technique matters** note and two to four '
+             'key references for the technique it teaches: at least one foundational or standard-tool paper and '
+             'at least one published in 2019 or later. They complement the [24-paper library](README.md), which '
+             'sets each lesson\'s research question, and do not replace it.', '',
+             f'Generated by `scripts/build_reading_indexes.py` from [key_references.json](key_references.json). '
+             f'`scripts/verify_references.py` checked every entry against Crossref, OpenAlex and arXiv on {checked} '
+             '([reference_verification.json](reference_verification.json)): title, year and first author must '
+             'match the DOI or arXiv record. Citation counts are OpenAlex `cited_by_count` values on that date. '
+             'They change daily, favor older papers, and indicate reach rather than quality.', '']
+    unique = {}
+    for directory, title in groups:
+        records_in_group = [r for r in index if r['path'].startswith(f'notebooks/{directory}/') and r['id'] in key_refs]
+        if not records_in_group:
+            continue
+        lines += [f'## {title}', '']
+        for record in records_in_group:
+            entry = key_refs[record['id']]
+            lines += [f'<a id="{record["id"].lower()}"></a>', '',
+                      f'### {record["id"]} · [{record["title"]}](../../{record["path"]})', '',
+                      f'*Technique:* {entry["technique"]}', '', ' '.join(entry['why_it_matters'].split()), '']
+            for ref in sorted_references(entry):
+                library = f' Course library: [{ref["registry_id"]}]({by_id[ref["registry_id"]]["guide"]}).' \
+                    if ref.get('registry_id') else ''
+                lines.append(f'- **{ref["role"].capitalize()}.** {ref["authors"]} ({ref["year"]}). '
+                             f'[{link_text(ref["title"])}]({reference_link(ref)}). *{ref["venue"]}*. '
+                             f'Cited by {cited_by(ref)} (OpenAlex); {status(ref)}.{library}  ')
+                lines.append(f'  {" ".join(ref["takeaway"].split())}')
+                unique.setdefault(reference_key(ref), {'ref': ref, 'lessons': []})['lessons'].append(record['id'])
+            lines.append('')
+    lines += ['## All key references', '',
+              f'{len(unique)} distinct works, sorted by first author. Lessons that share a reference are listed together.', '',
+              '| Reference | Year | Cited by (OpenAlex) | Lessons |', '|---|---|---|---|']
+    for item in sorted(unique.values(), key=lambda x: (x['ref']['cite'].lower(), x['ref']['year'])):
+        ref = item['ref']
+        lessons = ', '.join(f'[{i}](#{i.lower()})' for i in item['lessons'])
+        lines.append(f'| {ref["cite"]}, [{link_text(ref["title"])}]({reference_link(ref)}) | {ref["year"]} | '
+                     f'{cited_by(ref)} | {lessons} |')
+    (PAPERS / 'REFERENCES.md').write_text('\n'.join(lines) + '\n')
+    return len(unique)
+
+
+def main():
+    papers = []
+    for strand in ['measurement', 'processing', 'design', 'modeling']:
+        data = json.loads((PAPERS / f'{strand}_sources.json').read_text())
+        for record in data if isinstance(data, list) else data['papers']:
+            paper = dict(record)
+            paper['guide'] = f'{strand}.md#{paper["id"].lower()}'
+            paper['source_registry'] = f'{strand}_sources.json'
+            papers.append(paper)
+    by_id = {p['id']: p for p in papers}
+    assignments = {x['notebook_id']: x for x in json.loads((PAPERS / 'lesson_readings.json').read_text())}
+    key_refs = load_key_references()
+    agentic_guides = load_agentic_guides()
+    groups = [
+        ('00_paper_orientation', 'Paper orientation — start here'),
+        ('00_foundations', 'Foundations'), ('01_processing', 'Processing'),
+        ('02_design', 'Research design'), ('03_data_science', 'Data science'),
+        ('04_modeling', 'Modeling'), ('05_projects', 'Projects'),
+    ]
+    index = []
+    markdown = ['# Every class', '',
+        '**Start with Step 0 (macOS MacBook Pro Goose + Ollama setup) and R00–R03 before F01.** Use the [26-week study sequence](STUDY_PLAN.md) to interleave the strands. '
+        'These 83 notebooks contain 79 computational lessons/projects and four human-assessed reading seminars. '
+        'The [24-paper library](papers/README.md) supplies exact readings, questions and assignments. '
+        'Paper links motivate a question; they do not mean each paper implements every local method.', '',
+        'Offline computational notebooks include reference outputs; P02 requires a public-data download. '
+        'Reading seminars are submitted for discussion and assessment, not marked as executed. '
+        '[Setup](SETUP.md) · [AI workflow](AI_WORKFLOW.md) · [Assessments](ASSESSMENT.md)', '']
+    for directory, title in groups:
+        markdown += [f'## {title}', '', '| ID | Class | Type | Paper questions |', '|---|---|---|---|']
+        group_index = []
+        for path in sorted((ROOT / 'notebooks' / directory).glob('*.ipynb')):
+            notebook = json.loads(path.read_text())
+            ident = notebook['metadata']['course_id']
+            tier = notebook['metadata']['execution_tier']
+            guide_md = agentic_guide_block(ident, agentic_guides[ident]) if ident in agentic_guides else ''
+            if tier == 'reading':
+                notebook['cells'] = [c for c in notebook['cells']
+                    if c.get('metadata', {}).get('course_component') != 'agentic_guide']
+                if guide_md:
+                    notebook['cells'].append({
+                        'cell_type': 'markdown', 'id': f'agentic-guide-{ident.lower()}',
+                        'metadata': {'course_component': 'agentic_guide'},
+                        'source': (guide_md + '\n').splitlines(keepends=True),
+                    })
+                path.write_text(json.dumps(notebook, indent=1, ensure_ascii=False) + '\n')
+            else:
+                assignment = assignments[ident]
+                ids = assignment['paper_ids']
+                notebook['metadata']['paper_ids'] = ids
+                links = ', '.join(f'[{pid}](../../curriculum/papers/{by_id[pid]["guide"]})' for pid in ids)
+                gate = ('<!-- paper-first -->\n'
+                    '### Research question\n\n'
+                    f'**Reading:** {links}. Review the assigned figure or result before starting the lesson.\n\n'
+                    f'**Question:** {assignment["motivation_question"]}\n\n'
+                    'Record a prediction, a source location, and one point you want this lesson to clarify. '
+                    'Ask your AI tutor to distinguish the paper’s evidence from its interpretation.\n'
+                    '<!-- /paper-first -->')
+                cell = next(c for c in notebook['cells'] if c['cell_type'] == 'markdown')
+                source = ''.join(cell['source']) if isinstance(cell['source'], list) else cell['source']
+                source = re.sub(r'\n*<!-- paper-first -->.*?<!-- /paper-first -->\n*', '\n\n', source, flags=re.S)
+                source = KEY_BLOCK.sub('\n\n', source)
+                first, separator, rest = source.partition('\n')
+                block = gate
+                if ident in key_refs:
+                    block += '\n\n' + key_reference_block(key_refs[ident], by_id)
+                source = first + '\n\n' + block + '\n\n' + rest.lstrip('\n')
+                cell['source'] = source.splitlines(keepends=True)
+                notebook['cells'] = [c for c in notebook['cells']
+                    if c.get('metadata', {}).get('course_component') not in ('paper_return', 'agentic_guide')]
+                return_body = (
+                    '### Return to the research question\n\n'
+                    f'Revisit {links} and your initial prediction. In your '
+                    '[evidence ledger](../../curriculum/coursework/EVIDENCE_LEDGER.md):\n\n'
+                    '1. Cite one output or diagnostic from this lesson and explain the transformation it demonstrates.\n'
+                    '2. Revise one claim or question from the paper, with a figure or section locator. '
+                    'Which part of the published result remains open after this exercise?\n'
+                    '3. Ask AI to propose a next check. Accept, revise or reject it with a scientific reason. '
+                    'Then explain your decision aloud without reading the AI response.\n\n'
+                    'Include this entry in the A2 portfolio when relevant.\n'
+                )
+                if guide_md:
+                    return_body = guide_md + '\n\n' + return_body
+                notebook['cells'].append({
+                    'cell_type': 'markdown', 'id': f'paper-return-{ident.lower()}',
+                    'metadata': {'course_component': 'paper_return'},
+                    'source': return_body.splitlines(keepends=True),
+                })
+                # Match nbformat's existing indentation without rewriting any cell values.
+                path.write_text(json.dumps(notebook, indent=1, ensure_ascii=False) + '\n')
+            ids = notebook['metadata'].get('paper_ids', [])
+            first_cell = next(c for c in notebook['cells'] if c['cell_type'] == 'markdown')
+            first_line = ''.join(first_cell['source']).splitlines()[0]
+            lesson_title = re.sub(r'^#+\s*', '', first_line)
+            lesson_title = re.sub(r'^(?:[A-Z]+\d+|\d+)\s*[·:—–-]\s*', '', lesson_title)
+            record = {'id': ident, 'title': lesson_title, 'path': str(path.relative_to(ROOT)),
+                      'execution_tier': tier, 'paper_ids': ids}
+            index.append(record)
+            group_index.append(record)
+            paper_links = ', '.join(f'[{pid}](papers/{by_id[pid]["guide"]})' for pid in ids)
+            markdown.append(f'| {ident} | [{lesson_title}](../{record["path"]}) | {tier} | {paper_links} |')
+        markdown.append('')
+        if directory == '00_paper_orientation':
+            write_json(ROOT / 'notebooks' / directory / 'index.json', group_index)
+    for paper in papers:
+        paper['motivation_notebook_ids'] = [r['id'] for r in index if paper['id'] in r['paper_ids']]
+    write_json(PAPERS / 'paper_registry.json', {
+        'schema_version': 1,
+        'verified_date_utc': '2026-09-26',
+        'scope': '24 linked papers and original coursework. Six opening reads precede fundamentals. '
+                 'Representative frontier selections are not a global performance ranking. '
+                 'Publication and assigned manuscript versions are recorded separately. '
+                 'No full paper implementation or large-model reproduction is claimed.',
+        'papers': papers,
+    })
+    write_json(ROOT / 'curriculum/notebook_index.json', index)
+    (ROOT / 'curriculum/NOTEBOOK_INDEX.md').write_text('\n'.join(markdown))
+    distinct = write_bibliography(key_refs, index, groups, by_id) if key_refs else 0
+    print(f'Built {len(papers)} paper records and {len(index)} notebook entries; updated {len(assignments)} paper questions; '
+          f'rendered key references for {len(key_refs)} lessons ({distinct} distinct works) and agentic guides for {len(agentic_guides)} lessons.')
+
+
+if __name__ == '__main__':
+    main()

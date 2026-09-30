@@ -1,0 +1,52 @@
+[
+  {
+    "repository": "NeuromatchAcademy/course-content",
+    "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+    "upstream_path": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/NeuromatchAcademy/course-content/44634e960df7a14cd0bf7398187f2d209d26b0e8/LICENSE.md",
+    "local_path": "third_party/data_science/LICENSE.md",
+    "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661",
+    "modified": false,
+    "execution": "not run here; upstream notebook may need internet, exercises, media, or dependencies"
+  },
+  {
+    "repository": "NeuromatchAcademy/course-content",
+    "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+    "upstream_path": "LICENSE-CODE.md",
+    "url": "https://raw.githubusercontent.com/NeuromatchAcademy/course-content/44634e960df7a14cd0bf7398187f2d209d26b0e8/LICENSE-CODE.md",
+    "local_path": "third_party/data_science/LICENSE-CODE.md",
+    "sha256": "20651b355ec5e6abad136a6cf9dae86e2672777b7c6436af09ea1096b66ea308",
+    "modified": false,
+    "execution": "not run here; upstream notebook may need internet, exercises, media, or dependencies"
+  },
+  {
+    "repository": "NeuromatchAcademy/course-content",
+    "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+    "upstream_path": "tutorials/W1D2_ModelFitting/W1D2_Tutorial1.ipynb",
+    "url": "https://raw.githubusercontent.com/NeuromatchAcademy/course-content/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D2_ModelFitting/W1D2_Tutorial1.ipynb",
+    "local_path": "third_party/data_science/W1D2_Tutorial1.ipynb",
+    "sha256": "34c1e5b2b031a6070ce45c3743ae3884711db6993f445ea04d137fcbef658ce0",
+    "modified": false,
+    "execution": "not run here; upstream notebook may need internet, exercises, media, or dependencies"
+  },
+  {
+    "repository": "NeuromatchAcademy/course-content",
+    "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+    "upstream_path": "tutorials/W1D2_ModelFitting/W1D2_Tutorial2.ipynb",
+    "url": "https://raw.githubusercontent.com/NeuromatchAcademy/course-content/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D2_ModelFitting/W1D2_Tutorial2.ipynb",
+    "local_path": "third_party/data_science/W1D2_Tutorial2.ipynb",
+    "sha256": "5a82aedc1205be174ac58149ef18022bc0cbc70f77444310a97f95361d466310",
+    "modified": false,
+    "execution": "not run here; upstream notebook may need internet, exercises, media, or dependencies"
+  },
+  {
+    "repository": "NeuromatchAcademy/course-content",
+    "commit": "44634e960df7a14cd0bf7398187f2d209d26b0e8",
+    "upstream_path": "tutorials/W1D4_DimensionalityReduction/W1D4_Tutorial1.ipynb",
+    "url": "https://raw.githubusercontent.com/NeuromatchAcademy/course-content/44634e960df7a14cd0bf7398187f2d209d26b0e8/tutorials/W1D4_DimensionalityReduction/W1D4_Tutorial1.ipynb",
+    "local_path": "third_party/data_science/W1D4_Tutorial1.ipynb",
+    "sha256": "3a96accf005feed752c4b33bad4682c53307633fb59cedf961e9a80ee210733d",
+    "modified": false,
+    "execution": "not run here; upstream notebook may need internet, exercises, media, or dependencies"
+  }
+]

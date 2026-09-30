@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutorial 1: Introduction to CNNs · Neuroimaging Research Methods with AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="../../../../../../assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../../../../../index.html">
+      <span class="brand-badge">NEURO+AI</span>
+      <span>Neuroimaging Research Methods with AI</span>
+    </a>
+    <nav class="top-links" aria-label="Primary Navigation">
+      <a href="../../../../../../index.html">26-Week Roadmap</a>
+      <a href="../../../../../../curriculum/SETUP.html">Mac Env &amp; Apple Setup</a>
+      <a href="../../../../../../curriculum/STUDY_PLAN.html">Study Plan</a>
+      <a href="../../../../../../curriculum/NOTEBOOK_INDEX.html">83 Classes</a>
+      <a href="../../../../../../curriculum/EQUATION_ATLAS.html">Equation &amp; Diagram Atlas</a>
+      <a href="../../../../../../curriculum/papers/README.html">24 Papers &amp; 310 Citations</a>
+      <a href="../../../../../../curriculum/AI_WORKFLOW.html">AI Workflow</a>
+      <a href="../../../../../../curriculum/ALL_MATERIALS.html" class="active">All Repo Materials (250)</a>
+    </nav>
+    <div class="reader-controls" aria-label="Reading Comfort Controls">
+      <button type="button" id="eq-logic-toggle-btn" class="ctrl-btn active" title="Expand or collapse all inline equation logic breakdown tables">∑ Logic: Expanded</button>
+      <button type="button" id="focus-mode-btn" class="ctrl-btn" title="Toggle distraction-free wide reading mode">⇄ Focus Width</button>
+      <button type="button" id="theme-cycle-btn" class="ctrl-btn" title="Switch reading theme (Light / Warm Sepia / Dark)">☀ Light</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-expanded="false">
+      <span>☰ Browse 83 Classes, 26-Week Path &amp; Repo Docs</span>
+      <span class="mobile-toggle-hint" style="font-family:var(--font-mono);font-size:0.76rem">Show ▾</span>
+    </button>
+    
+    <aside class="sidebar-left" aria-label="Course and Repository Navigation">
+      <input type="search" id="sidebar-filter-input" class="sidebar-search" placeholder="Filter 83 classes &amp; docs (press /)..." aria-label="Filter classes and documents">
+      <div class="sidebar-mode-tabs" role="tablist">
+        <button type="button" class="sidebar-mode-btn active" data-mode="chronological">26-Week Path</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="strand">By Strand</button>
+        <button type="button" class="sidebar-mode-btn" data-mode="repodocs">Repo Docs</button>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="chronological">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../curriculum/SETUP.html" class=""><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/ALL_MATERIALS.html" class=""><span class="nav-cid">ALL</span><span>All 250 Repo Materials</span><span class="nav-week-tag">Index</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase I · Paper Orientation &amp; Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">W1</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">W2</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">W3</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">W3</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase II · Neuroimaging Data Science &amp; Experimental Foundations</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">W4</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">W5</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">W6</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">W7</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">W7</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase III · Image Processing &amp; Biophysical Pipelines</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">W8</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">W9</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">W10</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">W11</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">W12</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">W13</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">W13</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase IV · General Linear Modeling, Statistical Inference &amp; Multiverse Design</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">W14</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">W15</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">W16</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">W16</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase V · Multivariate Modeling, Dynamics &amp; Foundation Models</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">W17</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">W18</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">W19</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">W20</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">W21</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">W22</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">W22</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Phase VI · Capstone Generalization &amp; Research Defense</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">W23</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">W25</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="strand" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Step 0 · macOS Dev &amp; AI Setup</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../curriculum/SETUP.html"><span class="nav-cid">MAC</span><span>Apple Dev + Ollama &amp; Goose</span><span class="nav-week-tag">Wk 0</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Paper Orientation Seminars (R00–R03)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/00_paper_orientation/00_how_to_read.html"><span class="nav-cid">R00</span><span>Read for the question before the equations</span><span class="nav-week-tag">#1</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_paper_orientation/01_why_processing.html"><span class="nav-cid">R01</span><span>Why does a scan need a processing workflow?</span><span class="nav-week-tag">#2</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_paper_orientation/02_why_generalization.html"><span class="nav-cid">R02</span><span>When will a brain result work for a new person?</span><span class="nav-week-tag">#3</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_paper_orientation/03_why_evidence_audits.html"><span class="nav-cid">R03</span><span>Which choices stand between a result and a claim?</span><span class="nav-week-tag">#4</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Foundations &amp; MR Physics (F01–F04)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/00_foundations/01_learning_contract.html"><span class="nav-cid">F01</span><span>What the AI does and what you must understand</span><span class="nav-week-tag">#5</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_foundations/02_measurement_bridge.html"><span class="nav-cid">F02</span><span>From tissue to MRI contrast to BOLD</span><span class="nav-week-tag">#6</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_foundations/03_snippet_literacy.html"><span class="nav-cid">F03</span><span>Read a snippet without becoming a software engineer</span><span class="nav-week-tag">#7</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/00_foundations/04_notebook_environment.html"><span class="nav-cid">F04</span><span>A notebook is an experiment with state</span><span class="nav-week-tag">#8</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Image Processing &amp; Pipelines (PR01–PR21)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/01_processing/01_images_coordinates_metadata.html"><span class="nav-cid">PR01</span><span>Read an image without losing its location</span><span class="nav-week-tag">#29</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/02_registration_resampling.html"><span class="nav-cid">PR02</span><span>Estimate alignment, then choose how to sample</span><span class="nav-week-tag">#30</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/03_nonlinear_warps.html"><span class="nav-cid">PR03</span><span>Read a deformation field and detect folding</span><span class="nav-week-tag">#31</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/04_bias_field.html"><span class="nav-cid">PR04</span><span>Separate smooth intensity bias from tissue contrast</span><span class="nav-week-tag">#32</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/05_brain_extraction.html"><span class="nav-cid">PR05</span><span>A brain mask defines what the analysis can see</span><span class="nav-week-tag">#33</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/06_tissue_segmentation.html"><span class="nav-cid">PR06</span><span>Labels, posterior probabilities and partial volume are different</span><span class="nav-week-tag">#34</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/07_morphometry_volume_jacobian.html"><span class="nav-cid">PR07</span><span>Measure volume before making an atrophy claim</span><span class="nav-week-tag">#35</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/08_surfaces_topology.html"><span class="nav-cid">PR08</span><span>Surfaces are meshes, not thin voxel masks</span><span class="nav-week-tag">#36</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/09_slice_timing.html"><span class="nav-cid">PR09</span><span>Correct time sampling without inventing slice metadata</span><span class="nav-week-tag">#37</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/10_motion.html"><span class="nav-cid">PR10</span><span>Realign frames and identify what movement correction cannot repair</span><span class="nav-week-tag">#38</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/11_susceptibility_distortion.html"><span class="nav-cid">PR11</span><span>Separate geometric unwarping from signal recovery</span><span class="nav-week-tag">#39</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/12_spatial_smoothing.html"><span class="nav-cid">PR12</span><span>Choose a spatial scale and inspect boundaries</span><span class="nav-week-tag">#40</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/13_temporal_filters.html"><span class="nav-cid">PR13</span><span>Design a temporal filter using actual sampling</span><span class="nav-week-tag">#42</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/14_nuisance_ica.html"><span class="nav-cid">PR14</span><span>Remove a modeled nuisance contribution without declaring the residual pure</span><span class="nav-week-tag">#43</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/15_qc_censoring.html"><span class="nav-cid">PR15</span><span>Connect QC decisions to time, coverage and study design</span><span class="nav-week-tag">#44</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/16_diffusion_gradients.html"><span class="nav-cid">PR16</span><span>Keep diffusion volumes and gradient directions together</span><span class="nav-week-tag">#46</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/17_diffusion_preprocessing.html"><span class="nav-cid">PR17</span><span>Separate denoising, Gibbs removal, eddy correction and interpolation</span><span class="nav-week-tag">#47</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/18_diffusion_tensor.html"><span class="nav-cid">PR18</span><span>Fit a tensor and interpret FA and MD within its limits</span><span class="nav-week-tag">#48</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/19_crossing_fibers_tractography.html"><span class="nav-cid">PR19</span><span>A streamline is a model trajectory, not an axon</span><span class="nav-week-tag">#49</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/20_parcellations_connectivity.html"><span class="nav-cid">PR20</span><span>Extract region signals with coverage and confounds visible</span><span class="nav-week-tag">#50</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/01_processing/21_workflow_provenance_reports.html"><span class="nav-cid">PR21</span><span>Audit the complete processing graph and its evidence</span><span class="nav-week-tag">#51</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Research Design &amp; Inference (D01–D16)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/02_design/01_questions_estimands_causality.html"><span class="nav-cid">D01</span><span>The question is an estimand, not a button</span><span class="nav-week-tag">#17</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/02_sampling_missingness_units.html"><span class="nav-cid">D02</span><span>Sampling, missingness, and the people behind rows</span><span class="nav-week-tag">#18</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/03_reliability_measurement.html"><span class="nav-cid">D03</span><span>Reliability is about differences between people</span><span class="nav-week-tag">#23</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/04_power_precision.html"><span class="nav-cid">D04</span><span>Plan sample size from effects and precision</span><span class="nav-week-tag">#24</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/05_block_event_hrf.html"><span class="nav-cid">D05</span><span>Event logs, blocks, convolution, and scan sampling</span><span class="nav-week-tag">#41</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/06_fir_hrf_misspecification.html"><span class="nav-cid">D06</span><span>Let the response shape vary: FIR versus a fixed HRF</span><span class="nav-week-tag">#45</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/07_design_efficiency.html"><span class="nav-cid">D07</span><span>Efficiency belongs to a contrast</span><span class="nav-week-tag">#53</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/08_factorial_confounding.html"><span class="nav-cid">D08</span><span>Factorial questions and the meaning of an interaction</span><span class="nav-week-tag">#54</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/09_glm_contrasts_inference.html"><span class="nav-cid">D09</span><span>From coefficients to a defensible contrast</span><span class="nav-week-tag">#55</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/10_temporal_noise_prewhitening.html"><span class="nav-cid">D10</span><span>Correlated residuals and prewhitening</span><span class="nav-week-tag">#56</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/11_group_hierarchy_repeated.html"><span class="nav-cid">D11</span><span>People, runs, visits, and hierarchical uncertainty</span><span class="nav-week-tag">#57</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/12_permutation_exchangeability.html"><span class="nav-cid">D12</span><span>Permutation tests must preserve the experiment</span><span class="nav-week-tag">#58</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/13_multiplicity_clusters_tfce.html"><span class="nav-cid">D13</span><span>Voxel families, clusters, and TFCE are different targets</span><span class="nav-week-tag">#59</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/14_roi_selection_circularity.html"><span class="nav-cid">D14</span><span>Region selection and evaluation must be independent</span><span class="nav-week-tag">#60</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/15_bayesian_intervals_equivalence.html"><span class="nav-cid">D15</span><span>Intervals, Bayesian updating, and meaningful effects</span><span class="nav-week-tag">#61</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/02_design/16_multiverse_prereg_reproducibility.html"><span class="nav-cid">D16</span><span>Make analytical choices visible before publication</span><span class="nav-week-tag">#62</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Data Science &amp; Computing (DS01–DS16)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/01_arrays_axes.html"><span class="nav-cid">DS01</span><span>Arrays, axes, broadcasting, and masks</span><span class="nav-week-tag">#9</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/02_tables_identity.html"><span class="nav-cid">DS02</span><span>Participant identity, tidy tables, and join cardinality</span><span class="nav-week-tag">#10</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/03_nifti_io.html"><span class="nav-cid">DS03</span><span>NIfTI file contracts, metadata, and precision</span><span class="nav-week-tag">#11</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/04_eda.html"><span class="nav-cid">DS04</span><span>Visual distributions, outliers, and robust summaries</span><span class="nav-week-tag">#12</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/05_missingness.html"><span class="nav-cid">DS05</span><span>Missing values, selection, and train-only imputation</span><span class="nav-week-tag">#13</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/06_probability.html"><span class="nav-cid">DS06</span><span>Probability, conditional evidence, and base rates</span><span class="nav-week-tag">#14</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/07_sampling.html"><span class="nav-cid">DS07</span><span>Sampling distributions, dependence, and effective information</span><span class="nav-week-tag">#15</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/08_bootstrap.html"><span class="nav-cid">DS08</span><span>Bootstrap uncertainty at the right unit</span><span class="nav-week-tag">#16</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/09_standardization.html"><span class="nav-cid">DS09</span><span>Standardization, percent signal change, and reference choices</span><span class="nav-week-tag">#19</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/10_projections.html"><span class="nav-cid">DS10</span><span>Linear algebra: rank, projection, and identifiability</span><span class="nav-week-tag">#20</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/11_likelihood.html"><span class="nav-cid">DS11</span><span>Likelihood: state the noise model before fitting</span><span class="nav-week-tag">#21</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/12_optimization.html"><span class="nav-cid">DS12</span><span>Optimization, gradients, and learning rates</span><span class="nav-week-tag">#22</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/13_regression_diagnostics.html"><span class="nav-cid">DS13</span><span>Regression diagnostics and coefficient instability</span><span class="nav-week-tag">#25</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/14_pca_svd.html"><span class="nav-cid">DS14</span><span>SVD, PCA, compression, and train-only representations</span><span class="nav-week-tag">#26</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/15_selection.html"><span class="nav-cid">DS15</span><span>Feature selection and the full null pipeline</span><span class="nav-week-tag">#27</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/03_data_science/16_reproducibility.html"><span class="nav-cid">DS16</span><span>Reproducible computation and an AI analysis audit</span><span class="nav-week-tag">#28</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Computational Modeling &amp; AI (M01–M18)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/01_representations_encoding_decoding.html"><span class="nav-cid">M01</span><span>What is represented, and in which direction?</span><span class="nav-week-tag">#64</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/02_regularized_linear_models.html"><span class="nav-cid">M02</span><span>Ridge, lasso, and logistic models are different commitments</span><span class="nav-week-tag">#65</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/03_kernels_ensembles.html"><span class="nav-cid">M03</span><span>Curved boundaries: SVM kernels and tree ensembles</span><span class="nav-week-tag">#66</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/04_nested_sites_harmonization.html"><span class="nav-cid">M04</span><span>Nested validation and the limits of site adjustment</span><span class="nav-week-tag">#67</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/05_pca_ica.html"><span class="nav-cid">M05</span><span>PCA reconstruction versus ICA source assumptions</span><span class="nav-week-tag">#68</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/06_clustering_stability.html"><span class="nav-cid">M06</span><span>Clusters, labels, and stability under changed measurements</span><span class="nav-week-tag">#69</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/07_connectomes_graphs.html"><span class="nav-cid">M07</span><span>From regional signals to a graph: every edge is a choice</span><span class="nav-week-tag">#70</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/08_rsa_crossvalidated_distances.html"><span class="nav-cid">M08</span><span>RSA compares relationships, not matching voxel labels</span><span class="nav-week-tag">#71</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/09_searchlight.html"><span class="nav-cid">M09</span><span>Searchlight decoding: a center score describes a neighborhood</span><span class="nav-week-tag">#72</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/10_naturalistic_isc_encoding.html"><span class="nav-cid">M10</span><span>Shared movies: ISC, temporal encoding, and alignment</span><span class="nav-week-tag">#73</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/11_generative_latent_models.html"><span class="nav-cid">M11</span><span>A generative model must reproduce more than a mean</span><span class="nav-week-tag">#74</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/12_hmm_event_segmentation.html"><span class="nav-cid">M12</span><span>Hidden states, emissions, and the meaning of an event</span><span class="nav-week-tag">#75</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/13_latent_dynamics_dcm.html"><span class="nav-cid">M13</span><span>Latent dynamics, Kalman updates, and what DCM adds</span><span class="nav-week-tag">#76</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/14_cnn_backprop_training.html"><span class="nav-cid">M14</span><span>Train a small convolutional network and check its gradients</span><span class="nav-week-tag">#77</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/15_segmentation_losses.html"><span class="nav-cid">M15</span><span>Segmentation, imbalance, Dice, and image-level splits</span><span class="nav-week-tag">#78</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/16_selfsupervision_transfer.html"><span class="nav-cid">M16</span><span>Pretraining, frozen features, and actual fine-tuning</span><span class="nav-week-tag">#79</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/17_attention_foundation_models.html"><span class="nav-cid">M17</span><span>Attention transforms tokens; a model card constrains claims</span><span class="nav-week-tag">#80</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/04_modeling/18_calibration_explanation_reproducibility.html"><span class="nav-cid">M18</span><span>Calibrate probabilities, challenge explanations, preserve the evidence</span><span class="nav-week-tag">#81</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Capstone Projects (P01–P04)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../notebooks/05_projects/01_anatomical_workflow.html"><span class="nav-cid">P01</span><span>Inspect a real anatomical template through spatial transformations</span><span class="nav-week-tag">#52</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/05_projects/02_real_fmri_glm.html"><span class="nav-cid">P02</span><span>A real fMRI run: metadata, design, model, and statistical map</span><span class="nav-week-tag">#63</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/05_projects/03_cohort_generalization.html"><span class="nav-cid">P03</span><span>A cohort prediction workflow with an unseen site</span><span class="nav-week-tag">#82</span></a></li><li class="nav-item"><a href="../../../../../../notebooks/05_projects/04_research_defense.html"><span class="nav-cid">P04</span><span>Turn the notebooks into a defensible supervised research plan</span><span class="nav-week-tag">#83</span></a></li></ul></div>
+      </div>
+      <div class="sidebar-nav-panel" data-panel="repodocs" style="display:none">
+        <div class="nav-group"><div class="nav-group-title">Complete Repository Index</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../curriculum/ALL_MATERIALS.html"><span class="nav-cid">ALL</span><span>All 250 Repository Materials</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/EQUATION_ATLAS.html"><span class="nav-cid">EQS</span><span>Equation &amp; Diagram Atlas (83)</span></a></li><li class="nav-item"><a href="../../../../../../README.html"><span class="nav-cid">README</span><span>Course Overview (README)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Curriculum &amp; Coursework Guides</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../curriculum/SETUP.html"><span class="nav-cid">SETUP</span><span>Step 0: macOS Apple Dev + AI</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/STUDY_PLAN.html"><span class="nav-cid">PLAN</span><span>26-Week Study Plan</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/AI_WORKFLOW.html"><span class="nav-cid">AI</span><span>Agentic AI Supervision Guide</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/NOTEBOOK_INDEX.html"><span class="nav-cid">IDX</span><span>83-Class Notebook Index</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/ASSESSMENT.html"><span class="nav-cid">RUBRIC</span><span>Assessment &amp; Grading Rubrics</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/coursework/EVIDENCE_LEDGER.html"><span class="nav-cid">LEDGER</span><span>Paper Evidence Ledger</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/coursework/PAPER_TO_EXPERIMENT.html"><span class="nav-cid">A1-A4</span><span>Paper-to-Experiment Projects</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/coursework/SOTA_AUDIT.html"><span class="nav-cid">SOTA</span><span>SOTA Model Audit Worksheet</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/COVERAGE_AUDIT.html"><span class="nav-cid">AUDIT</span><span>Curriculum Coverage Audit</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/SOURCES.html"><span class="nav-cid">SRC</span><span>University Teaching Sources</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/VERIFICATION.html"><span class="nav-cid">VERIF</span><span>83-Notebook Verification Log</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">24 Papers &amp; 310 Citations</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../curriculum/papers/README.html"><span class="nav-cid">LIB</span><span>24-Paper Library Overview</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/papers/READING_METHOD.html"><span class="nav-cid">3PASS</span><span>Three-Pass Reading Method</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/papers/REFERENCES.html"><span class="nav-cid">310REF</span><span>All 310 Verified References</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/papers/measurement.html"><span class="nav-cid">PB01</span><span>Measurement &amp; BOLD Physics</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/papers/processing.html"><span class="nav-cid">PP01-08</span><span>Processing Papers (fMRIPrep–BrainMorph)</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/papers/design.html"><span class="nav-cid">PD01-07</span><span>Design &amp; Generalization Papers</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/papers/modeling.html"><span class="nav-cid">PM01-08</span><span>Modeling &amp; Foundation AI Papers</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Strand Coverage Ledgers</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../curriculum/processing_coverage.html"><span class="nav-cid">COV-PR</span><span>Processing Coverage (PR01–PR21)</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/design_coverage.html"><span class="nav-cid">COV-D</span><span>Design Coverage (D01–D16)</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/data_science_coverage.html"><span class="nav-cid">COV-DS</span><span>Data Science Coverage (DS01–DS16)</span></a></li><li class="nav-item"><a href="../../../../../../curriculum/modeling_coverage.html"><span class="nav-cid">COV-M</span><span>Modeling Coverage (M01–M18)</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Introductory Coursebook &amp; Labs (course/)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../course/COURSEBOOK.html"><span class="nav-cid">BOOK</span><span>Unified Introductory Coursebook</span></a></li><li class="nav-item"><a href="../../../../../../course/labs/520_design.html"><span class="nav-cid">LAB520</span><span>Lab 520: Experimental Design</span></a></li><li class="nav-item"><a href="../../../../../../course/labs/540_processing.html"><span class="nav-cid">LAB540</span><span>Lab 540: Image Processing</span></a></li><li class="nav-item"><a href="../../../../../../course/labs/550_modeling.html"><span class="nav-cid">LAB550</span><span>Lab 550: Modeling &amp; ML</span></a></li><li class="nav-item"><a href="../../../../../../course/labs/580_data_science.html"><span class="nav-cid">LAB580</span><span>Lab 580: Data Science</span></a></li><li class="nav-item"><a href="../../../../../../course/GLOSSARY.html"><span class="nav-cid">GLOSS</span><span>Neuroimaging Glossary</span></a></li><li class="nav-item"><a href="../../../../../../course/TRANSFORMATIONS.html"><span class="nav-cid">XFORM</span><span>Transformation Contracts</span></a></li><li class="nav-item"><a href="../../../../../../course/REAL_DATA.html"><span class="nav-cid">REAL</span><span>Real fMRI Data Guide</span></a></li><li class="nav-item"><a href="../../../../../../course/verification/REPORT.html"><span class="nav-cid">PLOTS</span><span>Verification Report &amp; 22 Plots</span></a></li></ul></div><div class="nav-group"><div class="nav-group-title">Pinned Upstream Tutorials (third_party/)</div><ul class="nav-list"><li class="nav-item"><a href="../../../../../../third_party/README.html"><span class="nav-cid">3P-ALL</span><span>Third-Party Provenance Overview</span></a></li><li class="nav-item"><a href="../../../../../../third_party/processing/README.html"><span class="nav-cid">3P-PR</span><span>Nipype &amp; DartBrains Processing (4)</span></a></li><li class="nav-item"><a href="../../../../../../third_party/design/README.html"><span class="nav-cid">3P-D</span><span>Poldrack &amp; DartBrains Design (3)</span></a></li><li class="nav-item"><a href="../../../../../../third_party/data_science/README.html"><span class="nav-cid">3P-DS</span><span>Neuromatch Data Science (3)</span></a></li><li class="nav-item"><a href="../../../../../../third_party/modeling/README.html"><span class="nav-cid">3P-M</span><span>BrainIAK &amp; Neuromatch Modeling (4)</span></a></li><li class="nav-item"><a href="../../../../../../THIRD_PARTY_NOTICES.html"><span class="nav-cid">NOTICES</span><span>Complete Third-Party Notices</span></a></li></ul></div>
+      </div>
+    </aside>
+    
+    <main class="main-content" id="top">
+      
+        <section class="class-banner">
+          <div class="badge-row">
+            <span class="badge badge-primary">Pinned Upstream University Tutorial</span>
+            <span class="badge badge-phase"><code>third_party/modeling/course-content-dl/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.ipynb</code></span>
+            <span class="badge badge-tier">169 cells (84 code cells)</span>
+          </div>
+          <h1>Tutorial 1: Introduction to CNNs</h1>
+          <p style="margin:0.4rem 0 0.8rem;color:var(--ink-secondary);max-width:80ch">This is a byte-for-byte preserved upstream teaching notebook from an external university curriculum (retained under its original open license; see <a href="../../../../../../THIRD_PARTY_NOTICES.html">Third-Party Notices</a> and the folder README). Rendered below for convenient reading on the web alongside the downloadable original <code>.ipynb</code>.</p>
+          <div class="banner-actions">
+            <a class="btn-action primary" href="W2D2_Tutorial1.ipynb" download>⬇ Download Original Notebook (W2D2_Tutorial1.ipynb)</a>
+            <a class="btn-action" href="../../../../../../third_party/modeling/README.html">📖 Folder Overview &amp; Provenance</a>
+            <a class="btn-action" href="../../../../../../curriculum/ALL_MATERIALS.html">🗂 All Repository Materials</a>
+          </div>
+        </section>
+        <article class="content-card">
+          <section class="nb-cell" id="cell-0"><p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content-dl/blob/main/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> &nbsp; <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.ipynb" target="_parent"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open in Kaggle"/></a></p></section><section class="nb-cell" id="cell-1"><h1 id="tutorial-1-introduction-to-cnns">Tutorial 1: Introduction to CNNs</h1>
+<p><strong>Week 2, Day 2: Convnets</strong></p>
+<p><strong>By Neuromatch Academy</strong></p>
+<p><strong>Content creators:</strong> Dawn Estes McKnight, Richard Gerum, Cassidy Pirlot, Rohan Saha, Liam Peet-Pare, Saeed Najafi, Alona Fyshe, Laura Pede, Richard Vogg, Marissa Weis, Timo Lüddecke, Alexander Ecker</p>
+<p><strong>Content reviewers:</strong> Saeed Salehi, Lily Cheng, Yu-Fang Yang, Polina Turishcheva, Bettina Hein, Kelson Shilling-Scrivo, Arush Tagade, Polina Turishcheva, Melvin Selim Atay, Jiaxin Cindy Tu</p>
+<p><strong>Content editors:</strong> Gagana B, Nina Kudryashova, Anmol Gupta, Xiaoxiong Lin, Spiros Chavlis, Roberto Guidotti, Jiaxin Cindy Tu</p>
+<p><strong>Production editors:</strong> Alex Tran-Van-Minh, Gagana B, Spiros Chavlis, Anoop Kulkarni, Roberto Guidotti, Cary Murray</p>
+<p><br></p>
+<p><em>Based on material from:</em> Konrad Kording, Hmrishav Bandyopadhyay, Rahul Shekhar, Tejas Srivastava, Konstantine Tsafatinos</p></section><section class="nb-cell" id="cell-2"><hr />
+<h1 id="tutorial-objectives">Tutorial Objectives</h1>
+<p>At the end of this tutorial, we will be able to:</p>
+<ul>
+<li>Define what convolution is</li>
+<li>Implement convolution as an operation</li>
+</ul></section><section class="nb-cell" id="cell-3"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 1</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Tutorial slides
+from IPython.display import IFrame
+link_id = &quot;x25tw&quot;
+print(f&quot;If you want to download the slides: https://osf.io/download/{link_id}/&quot;)
+IFrame(src=f&quot;https://mfr.ca-1.osf.io/render?url=https://osf.io/{link_id}/?direct%26mode=render%26action=download%26mode=render&quot;, width=854, height=480)</code></pre></div></section><section class="nb-cell" id="cell-4"><hr />
+<h1 id="setup">Setup</h1></section><section class="nb-cell" id="cell-5"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 2</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Install and import feedback gadget
+
+!pip3 install vibecheck datatops --quiet
+
+from vibecheck import DatatopsContentReviewContainer
+def content_review(notebook_section: str):
+    return DatatopsContentReviewContainer(
+        &quot;&quot;,  # No text prompt
+        notebook_section,
+        {
+            &quot;url&quot;: &quot;https://pmyvdlilci.execute-api.us-east-1.amazonaws.com/klab&quot;,
+            &quot;name&quot;: &quot;neuromatch_dl&quot;,
+            &quot;user_key&quot;: &quot;f379rz8y&quot;,
+        },
+    ).render()
+
+
+feedback_prefix = &quot;W2D2_T1&quot;</code></pre></div></section><section class="nb-cell" id="cell-6"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 3</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Imports
+import random
+import time
+import torch
+import scipy.signal
+import numpy as np
+import matplotlib.pyplot as plt
+import IPython
+
+import torch.nn as nn
+import torch.nn.functional as F
+
+import torchvision.transforms as transforms
+import torchvision.datasets as datasets
+from torchvision.utils import make_grid
+from torch.utils.data import DataLoader
+from torchvision.utils import make_grid
+from tqdm.notebook import tqdm, trange
+from PIL import Image
+
+import os
+import requests
+import torchvision
+from torchvision.datasets import ImageFolder</code></pre></div></section><section class="nb-cell" id="cell-7"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 4</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Figure Settings
+import logging
+logging.getLogger(&#x27;matplotlib.font_manager&#x27;).disabled = True
+
+import ipywidgets as widgets  # Interactive display
+%matplotlib inline
+%config InlineBackend.figure_format = &#x27;retina&#x27;
+plt.style.use(&quot;https://raw.githubusercontent.com/NeuromatchAcademy/content-creation/main/nma.mplstyle&quot;)</code></pre></div></section><section class="nb-cell" id="cell-8"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 5</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Helper functions
+from scipy.signal import correlate2d
+import zipfile, gzip, shutil, tarfile
+
+
+def download_data(fname, folder, url, tar):
+  &quot;&quot;&quot;
+  Data downloading from OSF.
+
+  Args:
+    fname : str
+      The name of the archive
+    folder : str
+      The name of the destination folder
+    url : str
+      The download url
+    tar : boolean
+      `tar=True` the archive is `fname`.tar.gz, `tar=False` is `fname`.zip
+
+  Returns:
+    Nothing.
+  &quot;&quot;&quot;
+
+  if not os.path.exists(folder):
+    print(f&#x27;\nDownloading {folder} dataset...&#x27;)
+    r = requests.get(url, allow_redirects=True)
+    with open(fname, &#x27;wb&#x27;) as fh:
+      fh.write(r.content)
+    print(f&#x27;\nDownloading {folder} completed.&#x27;)
+
+    print(&#x27;\nExtracting the files...\n&#x27;)
+    if not tar:
+      with zipfile.ZipFile(fname, &#x27;r&#x27;) as fz:
+        fz.extractall()
+    else:
+      with tarfile.open(fname) as ft:
+        ft.extractall()
+    # Remove the archive
+    os.remove(fname)
+
+    # Extract all .gz files
+    foldername = folder + &#x27;/raw/&#x27;
+    for filename in os.listdir(foldername):
+      # Remove the extension
+      fname = filename.replace(&#x27;.gz&#x27;, &#x27;&#x27;)
+      # Gunzip all files
+      with gzip.open(foldername + filename, &#x27;rb&#x27;) as f_in:
+        with open(foldername + fname, &#x27;wb&#x27;) as f_out:
+          shutil.copyfileobj(f_in, f_out)
+          os.remove(foldername+filename)
+  else:
+    print(f&#x27;{folder} dataset has already been downloaded.\n&#x27;)
+
+
+def check_shape_function(func, image_shape, kernel_shape):
+  &quot;&quot;&quot;
+  Helper function to check shape implementation
+
+  Args:
+    func: f.__name__
+      Function name
+    image_shape: tuple
+      Image shape
+    kernel_shape: tuple
+      Kernel shape
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  correct_shape = correlate2d(np.random.rand(*image_shape), np.random.rand(*kernel_shape), &quot;valid&quot;).shape
+  user_shape = func(image_shape, kernel_shape)
+  if correct_shape != user_shape:
+    print(f&quot;❌ Your calculated output shape is not correct.&quot;)
+  else:
+    print(f&quot;✅ Output for image_shape: {image_shape} and kernel_shape: {kernel_shape}, output_shape: {user_shape}, is correct.&quot;)
+
+
+def check_conv_function(func, image, kernel):
+  &quot;&quot;&quot;
+  Helper function to check conv_function
+
+  Args:
+    func: f.__name__
+      Function name
+    image: np.ndarray
+      Image matrix
+    kernel_shape: np.ndarray
+      Kernel matrix
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  solution_user = func(image, kernel)
+  solution_scipy = correlate2d(image, kernel, &quot;valid&quot;)
+  result_right = (solution_user == solution_scipy).all()
+  if result_right:
+    print(&quot;✅ The function calculated the convolution correctly.&quot;)
+  else:
+    print(&quot;❌ The function did not produce the right output.&quot;)
+    print(&quot;For the input matrix:&quot;)
+    print(image)
+    print(&quot;and the kernel:&quot;)
+    print(kernel)
+    print(&quot;the function returned:&quot;)
+    print(solution_user)
+    print(&quot;the correct output would be:&quot;)
+    print(solution_scipy)
+
+
+def check_pooling_net(net, device=&#x27;cpu&#x27;):
+  &quot;&quot;&quot;
+  Helper function to check pooling output
+
+  Args:
+    net: nn.module
+      Net instance
+    device: string
+      GPU/CUDA if available, CPU otherwise.
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  x_img = emnist_train[x_img_idx][0].unsqueeze(dim=0).to(device)
+  output_x = net(x_img)
+  output_x = output_x.squeeze(dim=0).detach().cpu().numpy()
+
+  right_output = [
+      [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000,
+      0.000000, 0.000000, 0.000000, 0.000000, 0.000000],
+      [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000,
+      0.000000, 0.000000, 0.000000, 0.000000, 0.000000],
+      [9.309552, 1.6216984, 0.000000, 0.000000, 0.000000, 0.000000, 2.2708383,
+      2.6654134, 1.2271233, 0.000000, 0.000000, 0.000000],
+      [12.873457, 13.318945, 9.46229, 4.663746, 0.000000, 0.000000, 1.8889914,
+      0.31068993, 0.000000, 0.000000, 0.000000, 0.000000],
+      [0.000000, 8.354934, 10.378724, 16.882853, 18.499334, 4.8546696, 0.000000,
+      0.000000, 0.000000, 6.29296, 5.096506, 0.000000],
+      [0.000000, 0.000000, 0.31068993, 5.7074604, 9.984148, 4.12916, 8.10037,
+      7.667609, 0.000000, 0.000000, 1.2780352, 0.000000],
+      [0.000000, 2.436305, 3.9764223, 0.000000, 0.000000, 0.000000, 12.98801,
+      17.1756, 17.531992, 11.664275, 1.5453291, 0.000000],
+      [4.2691708, 2.3217516, 0.000000, 0.000000, 1.3798618, 0.05612564, 0.000000,
+      0.000000, 11.218788, 16.360992, 13.980816, 8.354935],
+      [1.8126211, 0.000000, 0.000000, 2.9199777, 3.9382377, 0.000000, 0.000000,
+      0.000000, 0.000000, 0.000000, 6.076582, 10.035061],
+      [0.000000, 0.92164516, 4.434638, 0.7816348, 0.000000, 0.000000, 0.000000,
+      0.000000, 0.000000, 0.000000, 0.000000, 0.83254766],
+      [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000,
+      0.000000, 0.000000, 0.000000, 0.000000, 0.000000],
+      [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000,
+      0.000000, 0.000000, 0.000000, 0.000000, 0.000000]
+  ]
+
+  right_shape = (3, 12, 12)
+
+  if output_x.shape != right_shape:
+    print(f&quot;❌ Your output does not have the right dimensions. Your output is {output_x.shape} the expected output is {right_shape}&quot;)
+  elif (output_x[0] != right_output).all():
+    print(&quot;❌ Your output is not right.&quot;)
+  else:
+    print(&quot;✅ Your network produced the correct output.&quot;)
+
+
+# Just returns accuracy on test data
+def test(model, device, data_loader):
+  &quot;&quot;&quot;
+  Test function
+
+  Args:
+    net: nn.module
+      Net instance
+    device: string
+      GPU/CUDA if available, CPU otherwise.
+    data_loader: torch.loader
+      Test loader
+
+  Returns:
+    acc: float
+      Test accuracy
+  &quot;&quot;&quot;
+  model.eval()
+  correct = 0
+  total = 0
+  for data in data_loader:
+    inputs, labels = data
+    inputs = inputs.to(device).float()
+    labels = labels.to(device).long()
+
+    outputs = model(inputs)
+    _, predicted = torch.max(outputs, 1)
+    total += labels.size(0)
+    correct += (predicted == labels).sum().item()
+
+  acc = 100 * correct / total
+  return f&quot;{acc}%&quot;</code></pre></div></section><section class="nb-cell" id="cell-9"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 6</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Plotting Functions
+
+def display_image_from_greyscale_array(matrix, title):
+  &quot;&quot;&quot;
+  Display image from greyscale array
+
+  Args:
+    matrix: np.ndarray
+      Image
+    title: string
+      Title of plot
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  _matrix = matrix.astype(np.uint8)
+  _img = Image.fromarray(_matrix, &#x27;L&#x27;)
+  plt.figure(figsize=(3, 3))
+  plt.imshow(_img, cmap=&#x27;gray&#x27;, vmin=0, vmax=255) # Using 220 instead of 255 so the examples show up better
+  plt.title(title)
+  plt.axis(&#x27;off&#x27;)
+
+
+def make_plots(original, actual_convolution, solution):
+  &quot;&quot;&quot;
+  Function to build original image/obtained solution and actual convolution
+
+  Args:
+    original: np.ndarray
+      Image
+    actual_convolution: np.ndarray
+      Expected convolution output
+    solution: np.ndarray
+      Obtained convolution output
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  display_image_from_greyscale_array(original, &quot;Original Image&quot;)
+  display_image_from_greyscale_array(actual_convolution, &quot;Convolution result&quot;)
+  display_image_from_greyscale_array(solution, &quot;Your solution&quot;)
+
+
+def plot_loss_accuracy(train_loss, train_acc,
+                       validation_loss, validation_acc):
+  &quot;&quot;&quot;
+  Code to plot loss and accuracy
+
+  Args:
+    train_loss: list
+      Log of training loss
+    validation_loss: list
+      Log of validation loss
+    train_acc: list
+      Log of training accuracy
+    validation_acc: list
+      Log of validation accuracy
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  epochs = len(train_loss)
+  fig, (ax1, ax2) = plt.subplots(1, 2)
+  ax1.plot(list(range(epochs)), train_loss, label=&#x27;Training Loss&#x27;)
+  ax1.plot(list(range(epochs)), validation_loss, label=&#x27;Validation Loss&#x27;)
+  ax1.set_xlabel(&#x27;Epochs&#x27;)
+  ax1.set_ylabel(&#x27;Loss&#x27;)
+  ax1.set_title(&#x27;Epoch vs Loss&#x27;)
+  ax1.legend()
+
+  ax2.plot(list(range(epochs)), train_acc, label=&#x27;Training Accuracy&#x27;)
+  ax2.plot(list(range(epochs)), validation_acc, label=&#x27;Validation Accuracy&#x27;)
+  ax2.set_xlabel(&#x27;Epochs&#x27;)
+  ax2.set_ylabel(&#x27;Accuracy&#x27;)
+  ax2.set_title(&#x27;Epoch vs Accuracy&#x27;)
+  ax2.legend()
+  fig.set_size_inches(15.5, 5.5)</code></pre></div></section><section class="nb-cell" id="cell-10"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 7</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Set random seed
+
+# @markdown Executing `set_seed(seed=seed)` you are setting the seed
+
+# For DL its critical to set the random seed so that students can have a
+# baseline to compare their results to expected results.
+# Read more here: https://pytorch.org/docs/stable/notes/randomness.html
+
+# Call `set_seed` function in the exercises to ensure reproducibility.
+def set_seed(seed=None, seed_torch=True):
+  &quot;&quot;&quot;
+  Function that controls randomness.
+  NumPy and random modules must be imported.
+
+  Args:
+    seed : Integer
+      A non-negative integer that defines the random state. Default is `None`.
+    seed_torch : Boolean
+      If `True` sets the random seed for pytorch tensors, so pytorch module
+      must be imported. Default is `True`.
+
+  Returns:
+    Nothing.
+  &quot;&quot;&quot;
+  if seed is None:
+    seed = np.random.choice(2 ** 32)
+  random.seed(seed)
+  np.random.seed(seed)
+  if seed_torch:
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.cuda.manual_seed(seed)
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
+
+  print(f&#x27;Random seed {seed} has been set.&#x27;)
+
+
+# In case that `DataLoader` is used
+def seed_worker(worker_id):
+  &quot;&quot;&quot;
+  DataLoader will reseed workers following randomness in
+  multi-process data loading algorithm.
+
+  Args:
+    worker_id: integer
+      ID of subprocess to seed. 0 means that
+      the data will be loaded in the main process
+      Refer: https://pytorch.org/docs/stable/data.html#data-loading-randomness for more details
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  worker_seed = torch.initial_seed() % 2**32
+  np.random.seed(worker_seed)
+  random.seed(worker_seed)</code></pre></div></section><section class="nb-cell" id="cell-11"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 8</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Set device (GPU or CPU). Execute `set_device()`
+# especially if torch modules used.
+
+# Inform the user if the notebook uses GPU or CPU.
+
+def set_device():
+  &quot;&quot;&quot;
+  Set the device. CUDA if available, CPU otherwise
+
+  Args:
+    None
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  device = &quot;cuda&quot; if torch.cuda.is_available() else &quot;cpu&quot;
+  if device != &quot;cuda&quot;:
+    print(&quot;WARNING: For this notebook to perform best, &quot;
+        &quot;if possible, in the menu under `Runtime` -&gt; &quot;
+        &quot;`Change runtime type.`  select `GPU` &quot;)
+  else:
+    print(&quot;GPU is enabled in this notebook.&quot;)
+
+  return device</code></pre></div></section><section class="nb-cell" id="cell-12"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 9</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>SEED = 2021
+set_seed(seed=SEED)
+DEVICE = set_device()</code></pre></div></section><section class="nb-cell" id="cell-13"><hr />
+<h1 id="section-0-recap">Section 0: Recap</h1>
+<p><em>Time estimate: ~15mins</em></p></section><section class="nb-cell" id="cell-14"><p>You have learned a lot in the past few days!  Recall that overparametrized ANNs are efficient universal approximators, but also that ANNs can memorize our data.  However, regularization can help ANNs to better generalize. You were introduced to several regularization techniques such as <em>L1</em>, <em>L2</em>, <em>Data Augmentation</em>, and <em>Dropout</em>.</p>
+<p>Today we'll be talking about other ways to simplify ANNs, by making smart changes to their architecture.</p></section><section class="nb-cell" id="cell-15"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 10</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 1: Introduction to CNNs and RNNs
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;5598K-hS89A&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1cL411p7rz&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-16"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 11</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Introduction_to_CNNs_and_RNNs_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-17"><p><strong>Coming Up</strong></p>
+<p>The rest of these lectures focus on another way to reduce parameters: weight-sharing. Weight-sharing is based on the idea that some sets of weights can be used at multiple points in a network. We will focus primarily on CNNs today, where the weight-sharing is across the 2D space of an image.  This weight-sharing technique (across space) can reduce the number of parameters and increase a network's ability to generalize. For completeness, a similar approach is the Recurrent Neural Networks (RNNs), which share parameters across time, but we will not dive into this in this tutorial.</p></section><section class="nb-cell" id="cell-18"><hr />
+<h1 id="section-1-neuroscience-motivation-general-cnn-structure">Section 1: Neuroscience motivation, General CNN structure</h1>
+<p><em>Time estimate: ~25mins</em></p></section><section class="nb-cell" id="cell-19"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 12</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 2: Representations &amp; Visual processing in the brain
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;AXO-iflKa58&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1c64y1x7mJ&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-20"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 13</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Representations_and_Visual_processing_in_the_brain_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-21"><h2 id="think-1-what-makes-a-representation-good">Think! 1: What makes a representation good?</h2>
+<p>Representations have a long and storied history, having been studied by the likes of Aristotle back in 300 BC! Representations are not a new idea, and they certainly don't exist just in neural networks.</p>
+<p>Take a moment with your pod to discuss what would make a good representation, and how that might differ depending on the task you train your CNN to do.</p>
+<p>If there's time, you can also consider how the brain's representations might differ from a <em>learned</em> representation inside a NN.</p></section><section class="nb-cell" id="cell-22"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_82e644f4.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-23"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 14</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_What_makes_a_representation_good_Discussion&quot;)</code></pre></div></section><section class="nb-cell" id="cell-24"><hr />
+<h1 id="section-2-convolutions-and-edge-detection">Section 2: Convolutions and Edge Detection</h1>
+<p><em>Time estimate: ~25mins</em></p></section><section class="nb-cell" id="cell-25"><p>Fundamental to CNNs are convolutions. After all, that is what the <strong>C</strong> in CNN stands for! In this section, we will define what a convolution is, practice performing a convolution, and implement it in code.</p></section><section class="nb-cell" id="cell-26"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 15</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 3: Details about Convolution
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;pmc40WCnF-w&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1Q64y1z77p&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-27"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 16</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Details_about_convolution_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-28"><p>Before jumping into coding exercises, take a moment to look at this animation that steps through the process of convolution.</p>
+<p>Recall from the video that convolution involves sliding the kernel across the image, taking the element-wise product, and adding those products together.</p>
+<p><img src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/correlation.svg"></p>
+<p>Adopted from A. Zhang, Z. C. Lipton, M. Li and A. J. Smola, <em><a href="http://d2l.ai/chapter_convolutional-neural-networks/conv-layer.html" target="_blank" rel="noopener">Dive into Deep Learning</a></em>.</p>
+<p><br></p>
+<p><strong>Note:</strong> You need to run the cell to activate the sliders, and again to run once changing the sliders.</p>
+<p><strong>Tip:</strong> In this animation, and all the ones that follow, you can hover over the parts of the code underlined in red to change them.</p>
+<p><strong>Tip:</strong> Below, the function is called <code>Conv2d</code> because the convolutional filter is a matrix with two dimensions (2D).  There are also 1D and 3D convolutions, but we won't talk about them today.</p></section><section class="nb-cell" id="cell-29"><h3 id="interactive-demo-2-visualization-of-convolution">Interactive Demo 2: Visualization of Convolution</h3></section><section class="nb-cell" id="cell-30"><p><strong>Important:</strong> Change the bool variable <code>run_demo</code> to <code>True</code> by ticking the box, in order to experiment with the demo. Due to video rendering on jupyter-book, we had to remove it from the automatic execution.</p></section><section class="nb-cell" id="cell-31"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 17</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown *Run this cell to enable the widget!*
+
+from IPython.display import HTML
+
+id_html = 2
+url = f&#x27;https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/interactive_demo{id_html}.html&#x27;
+run_demo = False  # @param {type:&quot;boolean&quot;}
+if run_demo:
+  display(HTML(url))</code></pre></div></section><section class="nb-cell" id="cell-32"><h4 id="definitional-note">Definitional Note</h4>
+<p>If you have a background in signal processing or math, you may have already heard of convolution. However, the definitions in other domains and the one we use here are slightly different. The more common definition involves flipping the kernel horizontally and vertically before sliding.</p>
+<p><strong>For our purposes, no flipping is needed. If you are familiar with conventions involving flipping, just assume the kernel is pre-flipped.</strong></p>
+<p>In more general usage, the no-flip operation that we call convolution is known as <em>cross-correlation</em> (hence the usage of <code>scipy.signal.correlate2d</code> in the next exercise). Early papers used the more common definition of convolution, but not using a flip is easier to visualize, and in fact the lack of flip does not impact a CNN's ability to learn.</p></section><section class="nb-cell" id="cell-33"><h2 id="coding-exercise-21-convolution-of-a-simple-kernel">Coding Exercise 2.1: Convolution of a Simple Kernel</h2>
+<p>At its core, convolution is just repeatedly multiplying a matrix, known as a <em>kernel</em> or <em>filter</em>, with some other, larger matrix (in our case the pixels of an image). Consider the below image and kernel:</p>
+<p>\begin{align}
+\textbf{Image} &amp;=
+\begin{bmatrix}0 &amp; 200 &amp; 200 \0 &amp; 0 &amp; 200 \ 0 &amp; 0 &amp; 0
+\end{bmatrix} \ \
+\textbf{Kernel} &amp;=
+\begin{bmatrix} \frac{1}{4} &amp;\frac{1}{4} \\frac{1}{4} &amp; \frac{1}{4}
+\end{bmatrix}
+\end{align}</p>
+<p>Perform (by hand) the operations needed to convolve the kernel and image above. Afterwards enter your results in the "solution" section in the code below. Think about what this specific kernel is doing to the original image.</p></section><section class="nb-cell" id="cell-34"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 18</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>def conv_check():
+  &quot;&quot;&quot;
+  Demonstration of convolution operation
+
+  Args:
+    None
+
+  Returns:
+    original: np.ndarray
+      Image
+    actual_convolution: np.ndarray
+      Expected convolution output
+    solution: np.ndarray
+      Obtained convolution output
+    kernel: np.ndarray
+      Kernel
+  &quot;&quot;&quot;
+  ####################################################################
+  # Fill in missing code below (the elements of the matrix),
+  # then remove or comment the line below to test your function
+  raise NotImplementedError(&quot;Fill in the solution matrix, then delete this&quot;)
+  ####################################################################
+  # Write the solution array and call the function to verify it!
+  solution = ...
+
+  original = np.array([
+                       [0, 200, 200],
+                       [0, 0, 200],
+                       [0, 0, 0]
+                       ])
+
+  kernel = np.array([
+                     [0.25, 0.25],
+                     [0.25, 0.25]
+                     ])
+
+  actual_convolution = scipy.signal.correlate2d(original, kernel, mode=&quot;valid&quot;)
+
+  if (solution == actual_convolution).all():
+    print(&quot;✅ Your solution is correct!\n&quot;)
+  else:
+    print(&quot;❌ Your solution is incorrect.\n&quot;)
+
+  return original, kernel, actual_convolution, solution
+
+
+
+## Uncomment to test your solution!
+# original, kernel, actual_convolution, solution = conv_check()
+# make_plots(original, actual_convolution, solution)</code></pre></div></section><section class="nb-cell" id="cell-35"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_78a81e50.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p>
+<p><em>Example output:</em></p>
+<p><img alt='Solution hint' align='left' width=249.0 height=275.0 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/W2D2_Tutorial1_Solution_78a81e50_1.png></p>
+<p><img alt='Solution hint' align='left' width=249.0 height=275.0 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/W2D2_Tutorial1_Solution_78a81e50_2.png></p>
+<p><img alt='Solution hint' align='left' width=249.0 height=275.0 src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/W2D2_Tutorial1_Solution_78a81e50_3.png></p></section><section class="nb-cell" id="cell-36"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 19</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Convolution_of_a_simple_kernel_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-37"><h2 id="coding-exercise-22-convolution-output-size">Coding Exercise 2.2: Convolution Output Size</h2>
+<p>Now, you have manually calculated a convolution. How did this change the shape of the output? When you know the shapes of the input matrix and kernel, what is the shape of the output?</p>
+<p><strong>Hint:</strong> If you have problems figuring out what the output shape should look like, go back to the visualisation and see how the output shape changes as you modify the image and kernel size.</p></section><section class="nb-cell" id="cell-38"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 20</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>def calculate_output_shape(image_shape, kernel_shape):
+  &quot;&quot;&quot;
+  Helper function to calculate output shape
+
+  Args:
+    image_shape: tuple
+      Image shape
+    kernel_shape: tuple
+      Kernel shape
+
+  Returns:
+    output_height: int
+      Output Height
+    output_width: int
+      Output Width
+  &quot;&quot;&quot;
+  image_height, image_width = image_shape
+  kernel_height, kernel_width = kernel_shape
+  ####################################################################
+  # Fill in missing code below, then remove or comment the line below to test your function
+  raise NotImplementedError(&quot;Fill in the lines below, then delete this&quot;)
+  ####################################################################
+  output_height = ...
+  output_width = ...
+  return output_height, output_width
+
+
+
+# Here we check if your function works correcly by applying it to different image
+# and kernel shapes
+# check_shape_function(calculate_output_shape, image_shape=(3, 3), kernel_shape=(2, 2))
+# check_shape_function(calculate_output_shape, image_shape=(3, 4), kernel_shape=(2, 3))
+# check_shape_function(calculate_output_shape, image_shape=(5, 5), kernel_shape=(5, 5))
+# check_shape_function(calculate_output_shape, image_shape=(10, 20), kernel_shape=(3, 2))
+# check_shape_function(calculate_output_shape, image_shape=(100, 200), kernel_shape=(40, 30))</code></pre></div></section><section class="nb-cell" id="cell-39"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_7c652c63.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-40"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 21</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Convolution_output_size_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-41"><h2 id="coding-exercise-23-coding-a-convolution">Coding Exercise 2.3: Coding a Convolution</h2>
+<p>Here, we have the skeleton of a function that performs convolution using the provided image and kernel matrices.</p>
+<p><em>Exercise:</em> Fill in the missing lines of code. You can test your function by uncommenting the sections beneath it.</p>
+<p>Note: in more general situations, once you understand convolutions, you can use functions already available in <code>pytorch</code>/<code>numpy</code> to perform convolution (such as <code>scipy.signal.correlate2d</code> or <code>scipy.signal.convolve2d</code>).</p></section><section class="nb-cell" id="cell-42"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 22</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>def convolution2d(image, kernel):
+  &quot;&quot;&quot;
+  Convolves a 2D image matrix with a kernel matrix.
+
+  Args:
+    image: np.ndarray
+      Image
+    kernel: np.ndarray
+      Kernel
+
+  Returns:
+    output: np.ndarray
+      Output of convolution
+  &quot;&quot;&quot;
+
+  # Get the height/width of the image, kernel, and output
+  im_h, im_w = image.shape
+  ker_h, ker_w = kernel.shape
+  out_h = im_h - ker_h + 1
+  out_w = im_w - ker_w + 1
+
+  # Create an empty matrix in which to store the output
+  output = np.zeros((out_h, out_w))
+
+  # Iterate over the different positions at which to apply the kernel,
+  # storing the results in the output matrix
+  for out_row in range(out_h):
+    for out_col in range(out_w):
+      # Overlay the kernel on part of the image
+      # (multiply each element of the kernel with some element of the image, then sum)
+      # to determine the output of the matrix at a point
+      current_product = 0
+      for i in range(ker_h):
+        for j in range(ker_w):
+          ####################################################################
+          # Fill in missing code below (...),
+          # then remove or comment the line below to test your function
+          raise NotImplementedError(&quot;Implement the convolution function&quot;)
+          ####################################################################
+          current_product += ...
+
+      output[out_row, out_col] = current_product
+
+  return output
+
+
+
+## Tests
+# First, we test the parameters we used before in the manual-calculation example
+image = np.array([[0, 200, 200], [0, 0, 200], [0, 0, 0]])
+kernel = np.array([[0.25, 0.25], [0.25, 0.25]])
+# check_conv_function(convolution2d, image, kernel)
+
+# Next, we test with a different input and kernel (the numbers 1-9 and 1-4)
+image = np.arange(9).reshape(3, 3)
+kernel = np.arange(4).reshape(2, 2)
+# check_conv_function(convolution2d, image, kernel)</code></pre></div></section><section class="nb-cell" id="cell-43"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_4f643447.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-44"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 23</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Coding_a_Convolution_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-45"><h3 id="convolution-on-the-chicago-skyline">Convolution on the Chicago Skyline</h3>
+<p>After you have finished programming the above convolution function, run the coding cell below, which applies two different kernels to a greyscale picture of Chicago and takes the geometric average of the results.</p>
+<p><strong>Make sure you remove all print statements from your convolution2d implementation, or this will run for a <em>very</em> long time.</strong> It should take somewhere between 10 seconds and 1 minute.</p></section><section class="nb-cell" id="cell-46"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 24</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown ### Load images (run me)
+
+import requests, os
+
+if not os.path.exists(&#x27;images/&#x27;):
+  os.mkdir(&#x27;images/&#x27;)
+
+url = &quot;https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/chicago_skyline_shrunk_v2.bmp&quot;
+r = requests.get(url, allow_redirects=True)
+with open(&quot;images/chicago_skyline_shrunk_v2.bmp&quot;, &#x27;wb&#x27;) as fd:
+  fd.write(r.content)</code></pre></div></section><section class="nb-cell" id="cell-47"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 25</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Visualize the output of your function
+from IPython.display import display
+
+with open(&quot;images/chicago_skyline_shrunk_v2.bmp&quot;, &#x27;rb&#x27;) as skyline_image_file:
+  img_skyline_orig = Image.open(skyline_image_file)
+  img_skyline_mat = np.asarray(img_skyline_orig)
+  kernel_ver = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
+  kernel_hor = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]).T
+  img_processed_mat_ver = convolution2d(img_skyline_mat, kernel_ver)
+  img_processed_mat_hor = convolution2d(img_skyline_mat, kernel_hor)
+  img_processed_mat = np.sqrt(np.multiply(img_processed_mat_ver,
+                                          img_processed_mat_ver) + \
+                              np.multiply(img_processed_mat_hor,
+                                          img_processed_mat_hor))
+
+  img_processed_mat *= 255.0/img_processed_mat.max()
+  img_processed_mat = img_processed_mat.astype(np.uint8)
+  img_processed = Image.fromarray(img_processed_mat, &#x27;L&#x27;)
+  width, height = img_skyline_orig.size
+  scale = 0.6
+  display(img_skyline_orig.resize((int(width*scale), int(height*scale))),
+             Image.NEAREST)
+  display(img_processed.resize((int(width*scale), int(height*scale))),
+             Image.NEAREST)</code></pre></div></section><section class="nb-cell" id="cell-48"><p>Pretty cool, right? We will go into more detail on what's happening in the next section.</p></section><section class="nb-cell" id="cell-49"><h2 id="section-21-demonstration-of-a-cnn-in-pytorch">Section 2.1: Demonstration of a CNN in PyTorch</h2>
+<p>At this point, you should have a fair idea of how to perform a convolution on an image given a kernel. In the following cell, we provide a code snippet that demonstrates setting up a convolutional network using PyTorch.</p>
+<p>We look at the <code>nn</code> module in PyTorch. The <code>nn</code> module contains a plethora of functions that will make implementing a neural network easier. In particular we will look at the <code>nn.Conv2d()</code> function, which creates a convolutional layer that is applied to whatever image that you feed the resulting network.</p>
+<p>Look at the code below. In it, we define a <code>Net</code> class that you can instantiate with a kernel to create a Neural Network object. When you apply the network object to an image (or anything in the form of a matrix), it convolves the kernel over that image.</p></section><section class="nb-cell" id="cell-50"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 26</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>class Net(nn.Module):
+  &quot;&quot;&quot;
+  A convolutional neural network class.
+  When an instance of it is constructed with a kernel, you can apply that instance
+    to a matrix and it will convolve the kernel over that image.
+  i.e. Net(kernel)(image)
+  &quot;&quot;&quot;
+
+  def __init__(self, kernel=None, padding=0):
+    super(Net, self).__init__()
+    &quot;&quot;&quot;
+    Summary of the nn.conv2d parameters (you can also get this by hovering
+    over the method):
+    - in_channels (int): Number of channels in the input image
+    - out_channels (int): Number of channels produced by the convolution
+    - kernel_size (int or tuple): Size of the convolving kernel
+
+    Args:
+      padding: int or tuple, optional
+        Zero-padding added to both sides of the input. Default: 0
+      kernel: np.ndarray
+        Convolving kernel. Default: None
+
+    Returns:
+      Nothing
+    &quot;&quot;&quot;
+    self.conv1 = nn.Conv2d(in_channels=1, out_channels=1, kernel_size=2,
+                           padding=padding)
+
+    # Set up a default kernel if a default one isn&#x27;t provided
+    if kernel is not None:
+      dim1, dim2 = kernel.shape[0], kernel.shape[1]
+      kernel = kernel.reshape(1, 1, dim1, dim2)
+
+      self.conv1.weight = torch.nn.Parameter(kernel)
+      self.conv1.bias = torch.nn.Parameter(torch.zeros_like(self.conv1.bias))
+
+  def forward(self, x):
+    &quot;&quot;&quot;
+    Forward Pass of nn.conv2d
+
+    Args:
+      x: torch.tensor
+        Input features
+
+    Returns:
+      x: torch.tensor
+        Convolution output
+    &quot;&quot;&quot;
+    x = self.conv1(x)
+    return x</code></pre></div></section><section class="nb-cell" id="cell-51"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 27</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Format a default 2x2 kernel of numbers from 0 through 3
+kernel = torch.Tensor(np.arange(4).reshape(2, 2))
+
+# Prepare the network with that default kernel
+net = Net(kernel=kernel, padding=0).to(DEVICE)
+
+# Set up a 3x3 image matrix of numbers from 0 through 8
+image = torch.Tensor(np.arange(9).reshape(3, 3))
+image = image.reshape(1, 1, 3, 3).to(DEVICE)  # BatchSize X Channels X Height X Width
+
+print(&quot;Image:\n&quot; + str(image))
+print(&quot;Kernel:\n&quot; + str(kernel))
+output = net(image)  # Apply the convolution
+print(&quot;Output:\n&quot; + str(output))</code></pre></div></section><section class="nb-cell" id="cell-52"><p>As a quick aside, notice the difference in the input and output size. The input had a size of 3×3, and the output is of size 2×2. This is because of the fact that the kernel can't produce values for the edges of the image - when it slides to an end of the image and is centered on a border pixel, it overlaps space outside of the image that is undefined. If we don't want to lose that information, we will have to pad the image with some defaults (such as 0s) on the border. This process is, somewhat predictably, called <em>padding</em>. We will talk more about padding in the next section.</p></section><section class="nb-cell" id="cell-53"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 28</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>print(&quot;Image (before padding):\n&quot; + str(image))
+print(&quot;Kernel:\n&quot; + str(kernel))
+
+# Prepare the network with the aforementioned default kernel, but this
+# time with padding
+net = Net(kernel=kernel, padding=1).to(DEVICE)
+output = net(image)  # Apply the convolution onto the padded image
+print(&quot;Output:\n&quot; + str(output))</code></pre></div></section><section class="nb-cell" id="cell-54"><h2 id="section-22-padding-and-edge-detection">Section 2.2: Padding and Edge Detection</h2></section><section class="nb-cell" id="cell-55"><p>Before we start in on the exercises, here's a visualization to help you think about padding.</p></section><section class="nb-cell" id="cell-56"><h3 id="interactive-demo-22-visualization-of-convolution-with-padding-and-stride">Interactive Demo 2.2: Visualization of Convolution with Padding and Stride</h3>
+<p>Recall that</p>
+<ul>
+<li>Padding adds rows and columns of zeros to the outside edge of an image</li>
+<li>Stride length adjusts the distance by which a filter is shifted after each convolution.</li>
+</ul>
+<p>Change the padding and stride and see how this affects the shape of the output. How does the padding need to be configured to maintain the shape of the input?</p></section><section class="nb-cell" id="cell-57"><p><strong>Important:</strong> Change the bool variable <code>run_demo</code> to <code>True</code> by ticking the box, in order to experiment with the demo. Due to video rendering on jupyter-book, we had to remove it from the automatic execution.</p></section><section class="nb-cell" id="cell-58"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 29</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown *Run this cell to enable the widget!*
+
+from IPython.display import HTML
+
+id_html = 2.2
+url = f&#x27;https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/interactive_demo{id_html}.html&#x27;
+run_demo = False # @param {type:&quot;boolean&quot;}
+if run_demo:
+  display(HTML(url))</code></pre></div></section><section class="nb-cell" id="cell-59"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 30</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Visualization_of_Convolution_with_Padding_and_Stride_Interactive_Demo&quot;)</code></pre></div></section><section class="nb-cell" id="cell-60"><h3 id="think-221-edge-detection">Think! 2.2.1: Edge Detection</h3></section><section class="nb-cell" id="cell-61"><p>One of the simpler tasks performed by a convolutional layer is edge detection; that is, finding a place in the image where there is a large and abrupt change in color. Edge-detecting filters are usually learned by the first layers in a CNN. Observe the following simple kernel and discuss whether this will detect vertical edges (where the trace of the edge is vertical; i.e. there is a boundary between left and right), or whether it will detect horizontal edges (where the trace of the edge is horizontal; i.e., there is a boundary between top and bottom).</p>
+<p>\begin{equation}
+\textbf{Kernel} =
+\begin{bmatrix} 1 &amp; -1 \ 1 &amp; -1
+\end{bmatrix}
+\end{equation}</p></section><section class="nb-cell" id="cell-62"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_309474b2.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-63"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 31</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Edge_Detection_Discussion&quot;)</code></pre></div></section><section class="nb-cell" id="cell-64"><p>Consider the image below, which has a black vertical stripe with white on the side. This is like a very zoomed-in vertical edge within an image!</p></section><section class="nb-cell" id="cell-65"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 32</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Prepare an image that&#x27;s basically just a vertical black stripe
+X = np.ones((6, 8))
+X[:, 2:6] = 0
+print(X)
+plt.imshow(X, cmap=plt.get_cmap(&#x27;gray&#x27;))
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-66"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 33</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Format the image that&#x27;s basically just a vertical stripe
+image = torch.from_numpy(X)
+image = image.reshape(1, 1, 6, 8) # BatchSize X Channels X Height X Width
+
+# Prepare a 2x2 kernel with 1s in the first column and -1s in the
+# This exact kernel was discussed above!
+kernel = torch.Tensor([[1.0, -1.0], [1.0, -1.0]])
+net = Net(kernel=kernel)
+
+# Apply the kernel to the image and prepare for display
+processed_image = net(image.float())
+processed_image = processed_image.reshape(5, 7).detach().numpy()
+print(processed_image)
+plt.imshow(processed_image, cmap=plt.get_cmap(&#x27;gray&#x27;))
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-67"><p>As you can see, this kernel detects vertical edges (the black stripe corresponds to a highly positive result, while the white stripe corresponds to a highly negative result. However, to display the image, all the pixels are normalized between 0=black and 1=white).</p></section><section class="nb-cell" id="cell-68"><h3 id="think-222-kernel-structure">Think! 2.2.2 Kernel structure</h3>
+<p>If the kernel were transposed (i.e., the columns become rows and the rows become columns), what would the kernel detect? What would be produced by running this kernel on the vertical edge image above?</p></section><section class="nb-cell" id="cell-69"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_7cc3340b.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-70"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 34</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Kernel_structure_Discussion&quot;)</code></pre></div></section><section class="nb-cell" id="cell-71"><hr />
+<h1 id="section-3-kernels-pooling-and-subsampling">Section 3: Kernels, Pooling and Subsampling</h1>
+<p><em>Time estimate: ~50mins</em></p></section><section class="nb-cell" id="cell-72"><p>To visualize the various components of a CNN, we will build a simple CNN step by step. Recall that the MNIST dataset consists of binarized images of handwritten digits. This time, we will use the EMNIST letters dataset, which consists of binarized images of handwritten characters \((A, ..., Z)\).</p>
+<p>We will simplify the problem further by only keeping the images that correspond to \(X\) (labeled as <code>24</code> in the dataset) and \(O\) (labeled as <code>15</code> in the dataset). Then, we will train a CNN to classify an image either an \(X\) or an \(O\).</p></section><section class="nb-cell" id="cell-73"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 35</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Download EMNIST dataset
+
+# webpage: https://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip
+fname = &#x27;EMNIST.zip&#x27;
+folder = &#x27;EMNIST&#x27;
+url = &quot;https://osf.io/xwfaj/download&quot;
+download_data(fname, folder, url, tar=False)</code></pre></div></section><section class="nb-cell" id="cell-74"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 36</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Dataset/DataLoader Functions *(Run me!)*
+
+def get_Xvs0_dataset(normalize=False, download=False):
+  &quot;&quot;&quot;
+  Load Dataset
+
+  Args:
+    normalize: boolean
+      If true, normalise dataloader
+    download: boolean
+      If true, download dataset
+
+  Returns:
+    emnist_train: torch.loader
+      Training Data
+    emnist_test: torch.loader
+      Test Data
+  &quot;&quot;&quot;
+  if normalize:
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,))
+        ])
+  else:
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        ])
+
+  emnist_train = datasets.EMNIST(root=&#x27;.&#x27;,
+                                 split=&#x27;letters&#x27;,
+                                 download=download,
+                                 train=True,
+                                 transform=transform)
+  emnist_test = datasets.EMNIST(root=&#x27;.&#x27;,
+                                split=&#x27;letters&#x27;,
+                                download=download,
+                                train=False,
+                                transform=transform)
+
+  # Only want O (15) and X (24) labels
+  train_idx = (emnist_train.targets == 15) | (emnist_train.targets == 24)
+  emnist_train.targets = emnist_train.targets[train_idx]
+  emnist_train.data = emnist_train.data[train_idx]
+
+  # Convert Xs predictions to 1, Os predictions to 0
+  emnist_train.targets = (emnist_train.targets == 24).type(torch.int64)
+
+  test_idx = (emnist_test.targets == 15) | (emnist_test.targets == 24)
+  emnist_test.targets = emnist_test.targets[test_idx]
+  emnist_test.data = emnist_test.data[test_idx]
+
+  # Convert Xs predictions to 1, Os predictions to 0
+  emnist_test.targets = (emnist_test.targets == 24).type(torch.int64)
+
+  return emnist_train, emnist_test
+
+
+def get_data_loaders(train_dataset, test_dataset,
+                     batch_size=32, seed=0):
+  &quot;&quot;&quot;
+  Helper function to fetch dataloaders
+
+  Args:
+    train_dataset: torch.tensor
+      Training data
+    test_dataset: torch.tensor
+      Test data
+    batch_size: int
+      Batch Size
+    seed: int
+      Set seed for reproducibility
+
+  Returns:
+    emnist_train: torch.loader
+      Training Data
+    emnist_test: torch.loader
+      Test Data
+  &quot;&quot;&quot;
+  g_seed = torch.Generator()
+  g_seed.manual_seed(seed)
+
+  train_loader = DataLoader(train_dataset,
+                            batch_size=batch_size,
+                            shuffle=True,
+                            num_workers=2,
+                            worker_init_fn=seed_worker,
+                            generator=g_seed)
+  test_loader = DataLoader(test_dataset,
+                           batch_size=batch_size,
+                           shuffle=True,
+                           num_workers=2,
+                           worker_init_fn=seed_worker,
+                           generator=g_seed)
+
+  return train_loader, test_loader</code></pre></div></section><section class="nb-cell" id="cell-75"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 37</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>emnist_train, emnist_test = get_Xvs0_dataset(normalize=False, download=False)
+train_loader, test_loader = get_data_loaders(emnist_train, emnist_test,
+                                             seed=SEED)
+
+# Index of an image in the dataset that corresponds to an X and O
+x_img_idx = 4
+o_img_idx = 15</code></pre></div></section><section class="nb-cell" id="cell-76"><p>Let's view a couple samples from the dataset.</p></section><section class="nb-cell" id="cell-77"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 38</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4, figsize=(12, 6))
+ax1.imshow(emnist_train[0][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax2.imshow(emnist_train[10][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax3.imshow(emnist_train[4][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax4.imshow(emnist_train[6][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-78"><h2 id="interactive-demo-3-visualization-of-convolution-with-multiple-filters">Interactive Demo 3: Visualization of Convolution with Multiple Filters</h2>
+<p>Change the number of input channels (e.g., the color channels of an image or the output channels of a previous layer) and the output channels (number of different filters to apply).</p></section><section class="nb-cell" id="cell-79"><p><strong>Important:</strong> Change the bool variable <code>run_demo</code> to <code>True</code> by ticking the box, in order to experiment with the demo. Due to video rendering on jupyter-book, we had to remove it from the automatic execution.</p></section><section class="nb-cell" id="cell-80"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 39</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown *Run this cell to enable the widget!*
+
+from IPython.display import HTML
+
+id_html = 3
+url = f&#x27;https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/interactive_demo{id_html}.html&#x27;
+run_demo = False # @param {type:&quot;boolean&quot;}
+if run_demo:
+  display(HTML(url))</code></pre></div></section><section class="nb-cell" id="cell-81"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 40</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Visualization_of_Convolution_with_Multiple_Filters_Interactive_Demo&quot;)</code></pre></div></section><section class="nb-cell" id="cell-82"><h2 id="section-31-multiple-filters">Section 3.1: Multiple Filters</h2>
+<p>The following network sets up 3 filters and runs them on an image of the dataset from the \(X\) class. Note that we are using "thicker" filters than those presented in the videos. Here, the filters are \(5 \times 5\), whereas in the videos \(3 \times 3\).</p></section><section class="nb-cell" id="cell-83"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 41</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>class Net2(nn.Module):
+  &quot;&quot;&quot;
+  Neural Network instance
+  &quot;&quot;&quot;
+
+  def __init__(self, padding=0):
+    &quot;&quot;&quot;
+    Initialize parameters of Net2
+
+    Args:
+      padding: int or tuple, optional
+        Zero-padding added to both sides of the input. Default: 0
+
+    Returns:
+      Nothing
+    &quot;&quot;&quot;
+    super(Net2, self).__init__()
+    self.conv1 = nn.Conv2d(in_channels=1, out_channels=3, kernel_size=5,
+                           padding=padding)
+
+    # First kernel - leading diagonal
+    kernel_1 = torch.Tensor([[[1., 1., -1., -1., -1.],
+                              [1., 1., 1., -1., -1.],
+                              [-1., 1., 1., 1., -1.],
+                              [-1., -1., 1., 1., 1.],
+                              [-1., -1., -1., 1., 1.]]])
+
+    # Second kernel - other diagonal
+    kernel_2 = torch.Tensor([[[-1., -1., -1., 1., 1.],
+                              [-1., -1., 1., 1., 1.],
+                              [-1., 1., 1., 1., -1.],
+                              [1., 1., 1., -1., -1.],
+                              [1., 1., -1., -1., -1.]]])
+
+    # tThird kernel - checkerboard pattern
+    kernel_3 = torch.Tensor([[[1., 1., -1., 1., 1.],
+                              [1., 1., 1., 1., 1.],
+                              [-1., 1., 1., 1., -1.],
+                              [1., 1., 1., 1., 1.],
+                              [1., 1., -1., 1., 1.]]])
+
+
+    # Stack all kernels in one tensor with (3, 1, 5, 5) dimensions
+    multiple_kernels = torch.stack([kernel_1, kernel_2, kernel_3], dim=0)
+
+    self.conv1.weight = torch.nn.Parameter(multiple_kernels)
+
+    # Negative bias
+    self.conv1.bias = torch.nn.Parameter(torch.Tensor([-4, -4, -12]))
+
+  def forward(self, x):
+    &quot;&quot;&quot;
+    Forward Pass of Net2
+
+    Args:
+      x: torch.tensor
+        Input features
+
+    Returns:
+      x: torch.tensor
+        Convolution output
+    &quot;&quot;&quot;
+    x = self.conv1(x)
+    return x</code></pre></div></section><section class="nb-cell" id="cell-84"><p><strong>Note:</strong> We add a negative bias to give a threshold to select the high output value, which corresponds to the features we want to detect (e.g., 45 degree oriented bar).</p>
+<p>Now, let's visualize the filters using the code given below.</p></section><section class="nb-cell" id="cell-85"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 42</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>net2 = Net2().to(DEVICE)
+fig, (ax11, ax12, ax13) = plt.subplots(1, 3)
+# Show the filters
+ax11.set_title(&quot;filter 1&quot;)
+ax11.imshow(net2.conv1.weight[0, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax12.set_title(&quot;filter 2&quot;)
+ax12.imshow(net2.conv1.weight[1, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax13.set_title(&quot;filter 3&quot;)
+ax13.imshow(net2.conv1.weight[2, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)</code></pre></div></section><section class="nb-cell" id="cell-86"><h3 id="think-31-do-you-see-how-these-filters-would-help-recognize-an-x">Think! 3.1: Do you see how these filters would help recognize an <code>X</code>?</h3></section><section class="nb-cell" id="cell-87"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_800ed014.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-88"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 43</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Multiple_Filters_Discussion&quot;)</code></pre></div></section><section class="nb-cell" id="cell-89"><p>We apply the filters to the images.</p></section><section class="nb-cell" id="cell-90"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 44</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>net2 = Net2().to(DEVICE)
+x_img = emnist_train[x_img_idx][0].unsqueeze(dim=0).to(DEVICE)
+output_x = net2(x_img)
+output_x = output_x.squeeze(dim=0).detach().cpu().numpy()
+
+o_img = emnist_train[o_img_idx][0].unsqueeze(dim=0).to(DEVICE)
+output_o = net2(o_img)
+output_o = output_o.squeeze(dim=0).detach().cpu().numpy()</code></pre></div></section><section class="nb-cell" id="cell-91"><p>Let us view the image of \(X\) and \(O\) and what the output of the filters applied to them looks like. Pay special attention to the areas with very high vs. very low output patterns.</p></section><section class="nb-cell" id="cell-92"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 45</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>fig, ((ax11, ax12, ax13, ax14),
+      (ax21, ax22, ax23, ax24),
+      (ax31, ax32, ax33, ax34)) = plt.subplots(3, 4)
+
+# Show the filters
+ax11.axis(&quot;off&quot;)
+ax12.set_title(&quot;filter 1&quot;)
+ax12.imshow(net2.conv1.weight[0, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax13.set_title(&quot;filter 2&quot;)
+ax13.imshow(net2.conv1.weight[1, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax14.set_title(&quot;filter 3&quot;)
+ax14.imshow(net2.conv1.weight[2, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+
+vmin, vmax = -6, 10
+# Show x and the filters applied to x
+ax21.set_title(&quot;image x&quot;)
+ax21.imshow(emnist_train[x_img_idx][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax22.set_title(&quot;output filter 1&quot;)
+ax22.imshow(output_x[0], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax23.set_title(&quot;output filter 2&quot;)
+ax23.imshow(output_x[1], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax24.set_title(&quot;output filter 3&quot;)
+ax24.imshow(output_x[2], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+
+# Show o and the filters applied to o
+ax31.set_title(&quot;image o&quot;)
+ax31.imshow(emnist_train[o_img_idx][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax32.set_title(&quot;output filter 1&quot;)
+ax32.imshow(output_o[0], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax33.set_title(&quot;output filter 2&quot;)
+ax33.imshow(output_o[1], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax34.set_title(&quot;output filter 3&quot;)
+ax34.imshow(output_o[2], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-93"><h2 id="section-32-relu-after-convolutions">Section 3.2: ReLU after convolutions</h2>
+<p>Up until now we've talked about the convolution operation, which is linear. But the real strength of neural networks comes from the incorporation of non-linear functions.  Furthermore, in the real world, we often have learning problems where the relationship between the input and output is non-linear and complex.</p>
+<p>The ReLU (Rectified Linear Unit) introduces non-linearity into our model, allowing us to learn a more complex function that can better predict the class of an image.</p>
+<p>The ReLU function is shown below.</p>
+<p><br></p>
+<figure>
+  <center><img src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/relu.png width=400px>
+  <figcaption>The Rectified Linear Unit (ReLU) Activation Function<figcaption>
+  </center>
+</figure></section><section class="nb-cell" id="cell-94"><p>Now let us incorporate ReLU into our previous model and visualize the output.</p></section><section class="nb-cell" id="cell-95"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 46</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>class Net3(nn.Module):
+  &quot;&quot;&quot;
+  Neural Network Instance
+  &quot;&quot;&quot;
+
+  def __init__(self, padding=0):
+    &quot;&quot;&quot;
+    Initialize Net3 parameters
+
+    Args:
+      padding: int or tuple, optional
+        Zero-padding added to both sides of the input. Default: 0
+
+    Returns:
+      Nothing
+    &quot;&quot;&quot;
+    super(Net3, self).__init__()
+    self.conv1 = nn.Conv2d(in_channels=1, out_channels=3, kernel_size=5,
+                           padding=padding)
+
+    # First kernel - leading diagonal
+    kernel_1 = torch.Tensor([[[1., 1., -1., -1., -1.],
+                              [1., 1., 1., -1., -1.],
+                              [-1., 1., 1., 1., -1.],
+                              [-1., -1., 1., 1., 1.],
+                              [-1., -1., -1., 1., 1.]]])
+
+    # Second kernel - other diagonal
+    kernel_2 = torch.Tensor([[[-1., -1., -1., 1., 1.],
+                              [-1., -1., 1., 1., 1.],
+                              [-1., 1., 1., 1., -1.],
+                              [1., 1., 1., -1., -1.],
+                              [1., 1., -1., -1., -1.]]])
+
+    # Third kernel -checkerboard pattern
+    kernel_3 = torch.Tensor([[[1., 1., -1., 1., 1.],
+                              [1., 1., 1., 1., 1.],
+                              [-1., 1., 1., 1., -1.],
+                              [1., 1., 1., 1., 1.],
+                              [1., 1., -1., 1., 1.]]])
+
+
+    # Stack all kernels in one tensor with (3, 1, 5, 5) dimensions
+    multiple_kernels = torch.stack([kernel_1, kernel_2, kernel_3], dim=0)
+
+    self.conv1.weight = torch.nn.Parameter(multiple_kernels)
+
+    # Negative bias
+    self.conv1.bias = torch.nn.Parameter(torch.Tensor([-4, -4, -12]))
+
+  def forward(self, x):
+    &quot;&quot;&quot;
+    Forward Pass of Net3
+
+    Args:
+      x: torch.tensor
+        Input features
+
+    Returns:
+      x: torch.tensor
+        Convolution output
+    &quot;&quot;&quot;
+    x = self.conv1(x)
+    x = F.relu(x)
+    return x</code></pre></div></section><section class="nb-cell" id="cell-96"><p>We apply the filters and relus to the images.</p></section><section class="nb-cell" id="cell-97"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 47</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>net3 = Net3().to(DEVICE)
+x_img = emnist_train[x_img_idx][0].unsqueeze(dim=0).to(DEVICE)
+output_x_relu = net3(x_img)
+output_x_relu = output_x_relu.squeeze(dim=0).detach().cpu().numpy()
+
+o_img = emnist_train[o_img_idx][0].unsqueeze(dim=0).to(DEVICE)
+output_o_relu = net3(o_img)
+output_o_relu = output_o_relu.squeeze(dim=0).detach().cpu().numpy()</code></pre></div></section><section class="nb-cell" id="cell-98"><p>Let us view the image of \(X\) and \(O\) and what the output of the filters applied to them look like.</p></section><section class="nb-cell" id="cell-99"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 48</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown *Execute this cell to view the filtered images*
+fig, ((ax11, ax12, ax13, ax14, ax15, ax16, ax17),
+      (ax21, ax22, ax23, ax24, ax25, ax26, ax27),
+      (ax31, ax32, ax33, ax34, ax35, ax36, ax37)) = plt.subplots(3, 4 + 3,
+                                                                 figsize=(14, 6))
+# Show the filters
+ax11.axis(&quot;off&quot;)
+ax12.set_title(&quot;filter 1&quot;)
+ax12.imshow(net3.conv1.weight[0, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax13.set_title(&quot;filter 2&quot;)
+ax13.imshow(net3.conv1.weight[1, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax14.set_title(&quot;filter 3&quot;)
+ax14.imshow(net3.conv1.weight[2, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+
+ax15.set_title(&quot;filter 1&quot;)
+ax15.imshow(net3.conv1.weight[0, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax16.set_title(&quot;filter 2&quot;)
+ax16.imshow(net3.conv1.weight[1, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax17.set_title(&quot;filter 3&quot;)
+ax17.imshow(net3.conv1.weight[2, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+
+vmin, vmax = -6, 10
+# Show x and the filters applied to `x`
+ax21.set_title(&quot;image x&quot;)
+ax21.imshow(emnist_train[x_img_idx][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax22.set_title(&quot;output filter 1&quot;)
+ax22.imshow(output_x[0], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax23.set_title(&quot;output filter 2&quot;)
+ax23.imshow(output_x[1], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax24.set_title(&quot;output filter 3&quot;)
+ax24.imshow(output_x[2], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+
+ax25.set_title(&quot;filter 1 + ReLU&quot;)
+ax25.imshow(output_x_relu[0], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax26.set_title(&quot;filter 2 + ReLU&quot;)
+ax26.imshow(output_x_relu[1], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax27.set_title(&quot;filter 3 + ReLU&quot;)
+ax27.imshow(output_x_relu[2], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+
+# Show o and the filters applied to `o`
+ax31.set_title(&quot;image o&quot;)
+ax31.imshow(emnist_train[o_img_idx][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax32.set_title(&quot;output filter 1&quot;)
+ax32.imshow(output_o[0], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax33.set_title(&quot;output filter 2&quot;)
+ax33.imshow(output_o[1], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax34.set_title(&quot;output filter 3&quot;)
+ax34.imshow(output_o[2], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+
+ax35.set_title(&quot;filter 1 + ReLU&quot;)
+ax35.imshow(output_o_relu[0], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax36.set_title(&quot;filter 2 + ReLU&quot;)
+ax36.imshow(output_o_relu[1], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax37.set_title(&quot;filter 3 + ReLU&quot;)
+ax37.imshow(output_o_relu[2], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-100"><p>Discuss with your pod how the ReLU activations help strengthen the features necessary to detect an \(X\).</p>
+<p><br></p>
+<p><a href="https://stats.stackexchange.com/a/226927" target="_blank" rel="noopener">Here</a> you can found a discussion which talks about how ReLU is useful as an activation funciton.</p>
+<p><a href="https://stats.stackexchange.com/questions/126238/what-are-the-advantages-of-relu-over-sigmoid-function-in-deep-neural-networks?sfb=2" target="_blank" rel="noopener">Here</a> you can found a another excellent discussion about the advantages of using ReLU.</p></section><section class="nb-cell" id="cell-101"><h2 id="section-33-pooling">Section 3.3: Pooling</h2>
+<p>Convolutional layers create feature maps that summarize the presence of particular features (e.g., edges) in the input. However, these feature maps record the <em>precise</em> position of features in the input. That means that small changes to the position of an object in an image can result in a very different feature map. But a cup is a cup (and an \(X\) is an \(X\)) no matter where it appears in the image!  We need to achieve <em>translational invariance</em>.</p>
+<p>A common approach to this problem is called downsampling. Downsampling creates a lower-resolution version of an image, retaining the large structural elements and removing some of the fine detail that may be less relevant to the task. In CNNs, Max-Pooling and Average-Pooling are used to downsample.  These operations shrink the size of the hidden layers, and produce features that are more translationally invariant, which can be better leveraged by subsequent layers.</p></section><section class="nb-cell" id="cell-102"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 49</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 4: Pooling
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;XOss-NUlpo0&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1264y1z7JZ&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-103"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 50</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Pooling_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-104"><p>Like convolutional layers, pooling layers have fixed-shape windows (pooling windows) that are systematically applied to the input.  As with filters, we can change the shape of the window and the size of the stride.  And, just like with filters, every time we apply a pooling operation we produce a single output.</p>
+<p>Pooling performs a kind of information compression that provides summary statistics for a <em>neighborhood</em> of the input.</p>
+<ul>
+<li>In Maxpooling, we compute the maximum value of all pixels in the pooling window.</li>
+<li>In Avgpooling, we compute the average value of all pixels in the pooling window.</li>
+</ul>
+<p>The example below shows the result of Maxpooling within the yellow pooling windows to create the red pooling output matrix.</p>
+<figure>
+    <center><img src=https://developers.google.com/machine-learning/glossary/images/PoolingConvolution.svg?hl=fr width=400px>
+    <figcaption>An Example of Pooling with a kernel size of 2</figcaption>
+    </center>
+</figure>
+
+<p>Pooling gives our network translational invariance by providing a summary of the values in each pooling window. Thus, a small change in the features of the underlying image won't make a huge difference to the output.</p>
+<p>Note that, unlike a convolutional layer, the pooling layer contains no learned parameters! Pooling just computes a pre-determined summary of the input and passes that along.  This is in contrast to the convolutional layer, where there are filters to be learned.</p></section><section class="nb-cell" id="cell-105"><h3 id="interactive-demo-33-the-effect-of-the-stride">Interactive Demo 3.3: The effect of the stride</h3></section><section class="nb-cell" id="cell-106"><p><strong>Important:</strong> Change the bool variable <code>run_demo</code> to <code>True</code> by ticking the box, in order to experiment with the demo. Due to video rendering on jupyter-book, we had to remove it from the automatic execution.</p></section><section class="nb-cell" id="cell-107"><p>The following animation depicts how changing the stride changes the output. The stride defines how much the pooling region is moved over the input matrix to produce the next output (red arrows in the animation).  Give it a try! Change the stride and see how it affects the output shape.  You can also try MaxPool or AvgPool.</p></section><section class="nb-cell" id="cell-108"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 51</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown *Run this cell to enable the widget!*
+
+from IPython.display import HTML
+
+id_html = 3.3
+url = f&#x27;https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/interactive_demo{id_html}.html&#x27;
+run_demo = False # @param {type:&quot;boolean&quot;}
+if run_demo:
+  display(HTML(url))</code></pre></div></section><section class="nb-cell" id="cell-109"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 52</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_The_effect_of_the_stride_Interactive_Demo&quot;)</code></pre></div></section><section class="nb-cell" id="cell-110"><h3 id="coding-exercise-33-implement-maxpooling">Coding Exercise 3.3: Implement MaxPooling</h3>
+<p>Let us now implement MaxPooling in PyTorch and observe the effects of Pooling on the dimension of the input image. Use a kernel of size 2 and stride of 2 for the MaxPooling layer.</p></section><section class="nb-cell" id="cell-111"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 53</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>class Net4(nn.Module):
+  &quot;&quot;&quot;
+  Neural Network instance
+  &quot;&quot;&quot;
+
+  def __init__(self, padding=0, stride=2):
+    &quot;&quot;&quot;
+    Initialise parameters of Net4
+
+    Args:
+      padding: int or tuple, optional
+        Zero-padding added to both sides of the input. Default: 0
+      stride: int
+        Stride
+
+    Returns:
+      Nothing
+    &quot;&quot;&quot;
+    super(Net4, self).__init__()
+    self.conv1 = nn.Conv2d(in_channels=1, out_channels=3, kernel_size=5,
+                            padding=padding)
+
+    # First kernel - leading diagonal
+    kernel_1 = torch.Tensor([[[1., 1., -1., -1., -1.],
+                              [1., 1., 1., -1., -1.],
+                              [-1., 1., 1., 1., -1.],
+                              [-1., -1., 1., 1., 1.],
+                              [-1., -1., -1., 1., 1.]]])
+
+    # Second kernel - other diagonal
+    kernel_2 = torch.Tensor([[[-1., -1., -1., 1., 1.],
+                              [-1., -1., 1., 1., 1.],
+                              [-1., 1., 1., 1., -1.],
+                              [1., 1., 1., -1., -1.],
+                              [1., 1., -1., -1., -1.]]])
+
+    # Third kernel -checkerboard pattern
+    kernel_3 = torch.Tensor([[[1., 1., -1., 1., 1.],
+                              [1., 1., 1., 1., 1.],
+                              [-1., 1., 1., 1., -1.],
+                              [1., 1., 1., 1., 1.],
+                              [1., 1., -1., 1., 1.]]])
+
+
+    # Stack all kernels in one tensor with (3, 1, 5, 5) dimensions
+    multiple_kernels = torch.stack([kernel_1, kernel_2, kernel_3], dim=0)
+
+    self.conv1.weight = torch.nn.Parameter(multiple_kernels)
+
+    # Negative bias
+    self.conv1.bias = torch.nn.Parameter(torch.Tensor([-4, -4, -12]))
+    ####################################################################
+    # Fill in missing code below (...),
+    # then remove or comment the line below to test your function
+    raise NotImplementedError(&quot;Define the maxpool layer&quot;)
+    ####################################################################
+    self.pool = nn.MaxPool2d(kernel_size=..., stride=...)
+
+  def forward(self, x):
+    &quot;&quot;&quot;
+    Forward Pass of Net4
+
+    Args:
+      x: torch.tensor
+        Input features
+
+    Returns:
+      x: torch.tensor
+        Convolution + ReLU output
+    &quot;&quot;&quot;
+    x = self.conv1(x)
+    x = F.relu(x)
+    ####################################################################
+    # Fill in missing code below (...),
+    # then remove or comment the line below to test your function
+    raise NotImplementedError(&quot;Define the maxpool layer&quot;)
+    ####################################################################
+    x = ...  # Pass through a max pool layer
+    return x
+
+
+
+## Check if your implementation is correct
+# net4 = Net4().to(DEVICE)
+# check_pooling_net(net4, device=DEVICE)</code></pre></div></section><section class="nb-cell" id="cell-112"><p><div class="code-block-wrap"><div class="code-header"><span>code</span><button type="button" class="copy-btn">Copy</button></div><pre><code>✅ Your network produced the correct output.
+</code></pre></div></p></section><section class="nb-cell" id="cell-113"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_168b8fcf.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-114"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 54</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Implement_MaxPooling_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-115"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 55</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>x_img = emnist_train[x_img_idx][0].unsqueeze(dim=0).to(DEVICE)
+output_x_pool = net4(x_img)
+output_x_pool = output_x_pool.squeeze(dim=0).detach().cpu().numpy()
+
+o_img = emnist_train[o_img_idx][0].unsqueeze(dim=0).to(DEVICE)
+output_o_pool = net4(o_img)
+output_o_pool = output_o_pool.squeeze(dim=0).detach().cpu().numpy()</code></pre></div></section><section class="nb-cell" id="cell-116"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 56</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown *Run the cell to plot the outputs!*
+
+fig, ((ax11, ax12, ax13, ax14),
+      (ax21, ax22, ax23, ax24),
+      (ax31, ax32, ax33, ax34)) = plt.subplots(3, 4)
+# Show the filters
+ax11.axis(&quot;off&quot;)
+ax12.set_title(&quot;filter 1&quot;)
+ax12.imshow(net4.conv1.weight[0, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax13.set_title(&quot;filter 2&quot;)
+ax13.imshow(net4.conv1.weight[1, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+ax14.set_title(&quot;filter 3&quot;)
+ax14.imshow(net4.conv1.weight[2, 0].detach().cpu().numpy(), cmap=&quot;gray&quot;)
+
+vmin, vmax = -6, 10
+# Show x and the filters applied to x
+ax21.set_title(&quot;image x&quot;)
+ax21.imshow(emnist_train[x_img_idx][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax22.set_title(&quot;output filter 1&quot;)
+ax22.imshow(output_x_pool[0], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax23.set_title(&quot;output filter 2&quot;)
+ax23.imshow(output_x_pool[1], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax24.set_title(&quot;output filter 3&quot;)
+ax24.imshow(output_x_pool[2], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+
+# Show o and the filters applied to o
+ax31.set_title(&quot;image o&quot;)
+ax31.imshow(emnist_train[o_img_idx][0].reshape(28, 28), cmap=&#x27;gray&#x27;)
+ax32.set_title(&quot;output filter 1&quot;)
+ax32.imshow(output_o_pool[0], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax33.set_title(&quot;output filter 2&quot;)
+ax33.imshow(output_o_pool[1], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+ax34.set_title(&quot;output filter 3&quot;)
+ax34.imshow(output_o_pool[2], cmap=&#x27;gray&#x27;, vmin=vmin, vmax=vmax)
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-117"><p>You should observe the size of the output as being half of what you saw after the ReLU section, which is due to the Maxpool layer.</p>
+<p>Despite the reduction in the size of the output, the important or high-level features in the output still remains intact.</p></section><section class="nb-cell" id="cell-118"><hr />
+<h1 id="section-4-putting-it-all-together">Section 4: Putting it all together</h1>
+<p><em>Time estimate: ~33mins</em></p></section><section class="nb-cell" id="cell-119"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 57</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 5: Putting it all together
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;-TJixd9fRCw&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1Fy4y1j7dU&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-120"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 58</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Putting_it_all_together_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-121"><h2 id="section-41-number-of-parameters-in-convolutional-vs-fully-connected-models">Section 4.1: Number of Parameters in Convolutional vs. Fully-connected Models</h2>
+<p>Convolutional networks encourage weight-sharing by learning a single kernel that is repeated over the entire input image. In general, this kernel is just a few parameters, compared to the huge number of parameters in a dense network.</p>
+<p>Let's use the animation below to calculate few-layer network parameters for image data of shape \(32\times32\) using both convolutional layers and dense layers. The <code>Num_Dense</code> in this exercise is the number of dense layers we use in the network, with each dense layer having the same input and output dimensions. <code>Num_Convs</code> is the number of convolutional blocks in the network, with each block containing a single kernel. The kernel size is the length and width of this kernel.</p>
+<p><strong>Note:</strong> you must run the cell before you can use the sliders.</p>
+<p><br></p>
+<center>
+  <img src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D2_Convnets/static/img_params.png>
+  <figcaption> Parameter comparison</figcaption>
+</center></section><section class="nb-cell" id="cell-122"><h3 id="interactive-demo-41-number-of-parameters">Interactive Demo 4.1: Number of Parameters</h3></section><section class="nb-cell" id="cell-123"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 59</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @markdown *Run this cell to enable the widget*
+import io, base64
+from ipywidgets import interact, interactive, fixed, interact_manual
+
+
+def do_plot(image_size, batch_size, number_of_Linear, number_of_Conv2d,
+            kernel_size, pooling, Final_Layer):
+  sample_image = torch.rand(batch_size, 1, image_size, image_size)
+  linear_layer = []
+  linear_nets = []
+  code_dense = &quot;&quot;
+
+  code_dense += f&quot;model_dense = nn.Sequential(\n&quot;
+  code_dense += f&quot;    nn.Flatten(),\n&quot;
+  for i in range(number_of_Linear):
+    linear_layer.append(nn.Linear(image_size * image_size * 1,
+                                  image_size * image_size * 1,
+                                  bias=False))
+    linear_nets.append(nn.Sequential(*linear_layer))
+    code_dense += f&quot;    nn.Linear({image_size}*{image_size}*1, {image_size}*{image_size}*1, bias=False),\n&quot;
+  if Final_Layer is True:
+    linear_layer.append(nn.Linear(image_size * image_size * 1, 10,
+                                  bias=False))
+    linear_nets.append(nn.Sequential(*linear_layer))
+    code_dense += f&quot;    nn.Linear({image_size}*{image_size}*1, 10, bias=False)\n&quot;
+  code_dense += &quot;)\n&quot;
+  code_dense += &quot;result_dense = model_dense(sample_image)\n&quot;
+  linear_layer = nn.Sequential(*linear_layer)
+
+  conv_layer = []
+  conv_nets = []
+  code_conv = &quot;&quot;
+
+  code_conv += f&quot;model_conv = nn.Sequential(\n&quot;
+  for i in range(number_of_Conv2d):
+    conv_layer.append(nn.Conv2d(in_channels=1,
+                                out_channels=1,
+                                kernel_size=kernel_size,
+                                padding=kernel_size // 2,
+                                bias=False))
+
+    conv_nets.append(nn.Sequential(*conv_layer))
+    code_conv += f&quot;    nn.Conv2d(in_channels=1, out_channels=1, kernel_size={kernel_size}, padding={kernel_size//2}, bias=False),\n&quot;
+    if pooling &gt; 0:
+      conv_layer.append(nn.MaxPool2d(2, 2))
+      code_conv += f&quot;    nn.MaxPool2d(2, 2),\n&quot;
+    conv_nets.append(nn.Sequential(*conv_layer))
+  if Final_Layer is True:
+    conv_layer.append(nn.Flatten())
+    code_conv += f&quot;    nn.Flatten(),\n&quot;
+    conv_nets.append(nn.Sequential(*conv_layer))
+    shape_conv = conv_nets[-1](sample_image).shape
+    conv_layer.append(nn.Linear(shape_conv[1], 10, bias=False))
+    code_conv += f&quot;    nn.Linear({shape_conv[1]}, 10, bias=False),\n&quot;
+    conv_nets.append(nn.Sequential(*conv_layer))
+  conv_layer = nn.Sequential(*conv_layer)
+  code_conv += &quot;)\n&quot;
+  code_conv += &quot;result_conv = model_conv(sample_image)\n&quot;
+
+
+  t_1 = time.time()
+  shape_linear = linear_layer(torch.flatten(sample_image, 1)).shape
+  t_2 = time.time()
+  shape_conv = conv_layer(sample_image).shape
+  t_3 = time.time()
+
+  print(&quot;Time taken by Dense Layer {}&quot;.format(t_2 - t_1))
+  print(&quot;Time taken by Conv Layer  {}&quot;.format(t_3 - t_2))
+
+  ax = plt.axes((0, 0, 1, 1))
+  ax.spines[&quot;left&quot;].set_visible(False)
+  plt.yticks([])
+  ax.spines[&quot;bottom&quot;].set_visible(False)
+  ax.spines[&quot;right&quot;].set_visible(False)
+  ax.spines[&quot;top&quot;].set_visible(False)
+  plt.xticks([])
+  p1 = sum(p.numel() for p in linear_layer.parameters())
+  nl = &#x27;\n&#x27;
+  p2 = sum(p.numel() for p in conv_layer.parameters())
+  plt.text(0.1, 0.8,
+           f&quot;Total Parameters in Dense Layer {p1:10,d}{nl}Total Parameters in Conv Layer   {p2:10,d}&quot;)
+
+  plt.text(0.23, 0.62, &quot;Dense Net&quot;, rotation=90,
+           color=&#x27;k&#x27;, ha=&quot;center&quot;, va=&quot;center&quot;)
+
+  def addBox(x, y, w, h, color, text1, text2, text3):
+      &quot;&quot;&quot;
+      Function to render widget
+      &quot;&quot;&quot;
+      ax.add_patch(plt.Rectangle((x, y), w, h, fill=True, color=color,
+                                 alpha=0.5, zorder=1000, clip_on=False))
+      plt.text(x + 0.02, y + h / 2, text1, rotation=90,
+               va=&quot;center&quot;, ha=&quot;center&quot;, size=12)
+      plt.text(x + 0.05, y + h / 2, text2, rotation=90,
+               va=&quot;center&quot;, ha=&quot;center&quot;)
+      plt.text(x + 0.08, y + h / 2, text3, rotation=90,
+               va=&quot;center&quot;, ha=&quot;center&quot;, size=12)
+
+  x = 0.25
+  if 1:
+    addBox(x, 0.5, 0.08, 0.25, [1, 0.5, 0], &quot;Flatten&quot;,
+           tuple(torch.flatten(sample_image, 1).shape), &quot;&quot;)
+    x += 0.08 + 0.01
+
+  for i in range(number_of_Linear):
+    addBox(x, 0.5, 0.1, 0.25, &quot;g&quot;, &quot;Dense&quot;,
+           tuple(linear_nets[i](torch.flatten(sample_image, 1)).shape),
+           list(linear_layer.parameters())[i].numel())
+    x += 0.11
+
+  if Final_Layer is True:
+    i = number_of_Linear
+    addBox(x, 0.5, 0.1, 0.25, &quot;g&quot;, &quot;Dense&quot;,
+           tuple(linear_nets[i](torch.flatten(sample_image, 1)).shape),
+           list(linear_layer.parameters())[i].numel())
+
+  plt.text(0.23, 0.1 + 0.35 / 2, &quot;Conv Net&quot;,
+           rotation=90, color=&#x27;k&#x27;,
+           ha=&quot;center&quot;, va=&quot;center&quot;)
+  x = 0.25
+
+  for i in range(number_of_Conv2d):
+    addBox(x, 0.1, 0.1, 0.35, &quot;r&quot;, &quot;Conv&quot;,
+           tuple(conv_nets[i * 2](sample_image).shape),
+           list(conv_nets[i * 2].parameters())[-1].numel())
+    x += 0.11
+    if pooling &gt; 0:
+      addBox(x, 0.1, 0.08, 0.35, [0, 0.5, 1], &quot;Pooling&quot;,
+             tuple(conv_nets[i * 2 + 1](sample_image).shape), &quot;&quot;)
+      x += 0.08 + 0.01
+
+  if Final_Layer is True:
+    i = number_of_Conv2d
+    addBox(x, 0.1, 0.08, 0.35, [1, 0.5, 0], &quot;Flatten&quot;,
+           tuple(conv_nets[i * 2](sample_image).shape), &quot;&quot;)
+    x += 0.08 + 0.01
+
+    addBox(x, 0.1, 0.1, 0.35, &quot;g&quot;, &quot;Dense&quot;,
+            tuple(conv_nets[i * 2 + 1](sample_image).shape),
+            list(conv_nets[i * 2 + 1].parameters())[-1].numel())
+    x += 0.11
+
+  plt.text(0.08, 0.3 + 0.35 / 2,
+           &quot;Input&quot;, rotation=90, color=&#x27;b&#x27;, ha=&quot;center&quot;, va=&quot;center&quot;)
+
+  ax.add_patch(plt.Rectangle((0.1, 0.3), 0.1, 0.35, fill=True, color=&#x27;b&#x27;,
+                             alpha=0.5, zorder=1000, clip_on=False))
+  plt.text(0.1 + 0.1 / 2, 0.3 + 0.35 / 2, tuple(sample_image.shape),
+           rotation=90, va=&quot;center&quot;, ha=&quot;center&quot;)
+
+  # Plot
+  plt.gcf().set_tight_layout(False)
+  my_stringIObytes = io.BytesIO()
+  plt.savefig(my_stringIObytes, format=&#x27;png&#x27;, dpi=90)
+  my_stringIObytes.seek(0)
+  my_base64_jpgData = base64.b64encode(my_stringIObytes.read())
+
+  del linear_layer, conv_layer
+
+  plt.close()
+  mystring = &quot;&quot;&quot;&lt;img src=&quot;data:image/png;base64,&quot;&quot;&quot; + str(my_base64_jpgData)[2:-1] + &quot;&quot;&quot;&quot; alt=&quot;Graph&quot;&gt;&quot;&quot;&quot;
+
+  return code_dense, code_conv, mystring
+
+
+# Parameters
+caption = widgets.Label(value=&#x27;The values of range1 and range2 are synchronized&#x27;)
+slider_batch_size = widgets.IntSlider(value=100, min=10, max=100, step=10,
+                                      description=&quot;BatchSize&quot;)
+slider_image_size = widgets.IntSlider(value=32, min=32, max=128, step=32,
+                                      description=&quot;ImageSize&quot;)
+slider_number_of_Linear = widgets.IntSlider(value=1,min=1, max=3, step=1,
+                                            description=&quot;NumDense&quot;)
+slider_number_of_Conv2d = widgets.IntSlider(value=1, min=1, max=2, step=1,
+                                            description=&quot;NumConv&quot;)
+slider_kernel_size = widgets.IntSlider(value=5, min=3, max=21, step=2,
+                                       description=&quot;KernelSize&quot;)
+input_pooling = widgets.Checkbox(value=False,
+                                 description=&quot;Pooling&quot;)
+input_Final_Layer = widgets.Checkbox(value=False,
+                                     description=&quot;Final_Layer&quot;)
+
+output_code1 = widgets.HTML(value=&quot;&quot;, )
+
+output_plot = widgets.HTML(value=&quot;&quot;, )
+
+
+def plot_func(batch_size, image_size,
+              number_of_Linear, number_of_Conv2d,
+              kernel_size, pooling, Final_Layer):
+
+    code1, code2, plot = do_plot(image_size, batch_size,
+                                 number_of_Linear, number_of_Conv2d,
+                                 kernel_size, pooling, Final_Layer)
+    output_plot.value = plot
+
+    output_code1.value = &quot;&quot;&quot;
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;style&gt;
+          * {
+            box-sizing: border-box;
+          }
+          .column {
+            float: left;
+            /*width: 33.33%;*/
+            padding: 5px;
+          }
+          /* Clearfix (clear floats) */
+          .row::after {
+            content: &quot;&quot;;
+            clear: both;
+            display: table;
+          }
+          pre {
+            line-height: 1.2em;
+          }
+        &lt;/style&gt;
+      &lt;/head&gt;
+
+      &lt;body&gt;
+        &lt;div class=&quot;row&quot;&gt;
+          &lt;div class=&quot;column&quot; style=&quot;overflow-x: scroll;&quot;&gt;
+          &lt;h2&gt;Code for Dense Network&lt;/h2&gt;
+          &lt;pre&gt;&quot;&quot;&quot; + code1 + &quot;&quot;&quot;&lt;/pre&gt;
+        &lt;/div&gt;
+          &lt;div class=&quot;column&quot; style=&quot;overflow-x: scroll;&quot;&gt;
+          &lt;h2&gt;Code for Conv Network&lt;/h2&gt;
+          &lt;pre&gt;&quot;&quot;&quot; + code2 + &quot;&quot;&quot;&lt;/pre&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+&quot;&quot;&quot;
+
+out = widgets.interactive_output(plot_func, {
+    &quot;batch_size&quot;: slider_batch_size,
+    &quot;image_size&quot;: slider_image_size,
+    &quot;number_of_Linear&quot;: slider_number_of_Linear,
+    &quot;number_of_Conv2d&quot;: slider_number_of_Conv2d,
+    &quot;kernel_size&quot;: slider_kernel_size,
+    &quot;pooling&quot;: input_pooling,
+    &quot;Final_Layer&quot;: input_Final_Layer,
+})
+
+ui = widgets.VBox([slider_batch_size, slider_image_size,
+                   slider_number_of_Linear,
+                   widgets.HBox([slider_number_of_Conv2d,
+                                 slider_kernel_size,
+                                 input_pooling]),
+                   input_Final_Layer])
+display(widgets.HBox([output_plot, output_code1]), ui)
+display(out)</code></pre></div></section><section class="nb-cell" id="cell-124"><p>The difference in parameters is huge, and it continues to increase as the input image size increases. Larger images require that the linear layer use a matrix that can be directly multiplied with the input pixels.</p>
+<p><br></p>
+<p>While pooling does not reduce the number of parameters for a subsequent convolutional layer, it does decreases the image size. Therefore, later dense layers will need fewer parameters.</p>
+<p><br></p>
+<p>The CNN parameter size, however, is invariant of the image size, as irrespective of the input that it gets, it keeps sliding the same learnable filter over the images.</p>
+<p>The reduced parameter set not only brings down memory usage by huge chunks, but it also allows the model to generalize better.</p></section><section class="nb-cell" id="cell-125"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 60</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Number_of_Parameters_Interactive_Demo&quot;)</code></pre></div></section><section class="nb-cell" id="cell-126"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 61</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 6: Implement your own CNN
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;_gkF9Vv7MgE&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV18f4y1j7e4&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-127"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 62</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Implement_your_own_CNN_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-128"><h2 id="coding-exercise-4-implement-your-own-cnn">Coding Exercise 4: Implement your own CNN</h2>
+<p>Let's stack up all we have learnt. Create a CNN with the following structure. <br></p>
+<ul>
+<li>Convolution <code>nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3)</code></li>
+<li>Convolution <code>nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3)</code></li>
+<li>Pool Layer <code>nn.MaxPool2d(kernel_size=2)</code></li>
+<li>Fully Connected Layer <code>nn.Linear(in_features=9216, out_features=128)</code></li>
+<li>Fully Connected layer <code>nn.Linear(in_features=128, out_features=2)</code></li>
+</ul>
+<p>Note: As discussed in the video, we would like to flatten the output from the Convolutional Layers before passing on the Linear layers, thereby converting an input of shape \([\text{BatchSize}, \text{Channels}, \text{Height}, \text{Width}]\) to \([\text{BatchSize}, \text{Channels} \times \text{Height} \times \text{Width}]\), which in this case would be from \([32, 64, 12, 12]\) (output of second convolution layer) to \([32, 64 \times 12 \times 12] = [32, 9216]\). Recall that the input images have size \([28, 28]\).</p>
+<p>Hint: You could use <code>torch.flatten(x, 1)</code> in order to flatten the input at this stage. The \(1\) means it flattens dimensions starting with dimensions 1 in order to exclude the batch dimension from the flattening.</p>
+<p>We should also stop to think about how we get the output of the pooling layer to be \(12 \times 12\). It is because first, the two <code>Conv2d</code> with a <code>kernel_size=3</code> operations cause the image to be reduced to \(26 \times 26\) and the second <code>Conv2d</code> reduces it to \(24 \times 24\). Finally, the <code>MaxPool2d</code> operation reduces the output size by half to \(12 \times 12\).</p>
+<p>Also, don't forget the ReLUs (use e.g., <code>F.ReLU</code>)! No need to add a ReLU after the final fully connected layer.</p></section><section class="nb-cell" id="cell-129"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 63</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Train/Test Functions (Run Me)
+
+# @markdown Double-click to see the contents!
+
+def train(model, device, train_loader, epochs):
+  &quot;&quot;&quot;
+  Training function
+
+  Args:
+    model: nn.module
+      Neural network instance
+    device: string
+      GPU/CUDA if available, CPU otherwise
+    epochs: int
+      Number of epochs
+    train_loader: torch.loader
+      Training Set
+
+  Returns:
+    Nothing
+  &quot;&quot;&quot;
+  model.train()
+
+  criterion = nn.CrossEntropyLoss()
+  optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+  for epoch in range(epochs):
+    with tqdm(train_loader, unit=&#x27;batch&#x27;) as tepoch:
+      for data, target in tepoch:
+        data, target = data.to(device), target.to(device)
+        optimizer.zero_grad()
+        output = model(data)
+
+        loss = criterion(output, target)
+        loss.backward()
+        optimizer.step()
+        tepoch.set_postfix(loss=loss.item())
+        time.sleep(0.1)
+
+def test(model, device, data_loader):
+  &quot;&quot;&quot;
+  Test function
+
+  Args:
+    model: nn.module
+      Neural network instance
+    device: string
+      GPU/CUDA if available, CPU otherwise
+    data_loader: torch.loader
+      Test Set
+
+  Returns:
+    acc: float
+      Test accuracy
+  &quot;&quot;&quot;
+  model.eval()
+  correct = 0
+  total = 0
+  for data in data_loader:
+    inputs, labels = data
+    inputs = inputs.to(device).float()
+    labels = labels.to(device).long()
+
+    outputs = model(inputs)
+    _, predicted = torch.max(outputs, 1)
+    total += labels.size(0)
+    correct += (predicted == labels).sum().item()
+
+  acc = 100 * correct / total
+  return acc</code></pre></div></section><section class="nb-cell" id="cell-130"><p>We download the data. Notice that here, we normalize the dataset.</p></section><section class="nb-cell" id="cell-131"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 64</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>set_seed(SEED)
+emnist_train, emnist_test = get_Xvs0_dataset(normalize=True)
+train_loader, test_loader = get_data_loaders(emnist_train, emnist_test,
+                                             seed=SEED)</code></pre></div></section><section class="nb-cell" id="cell-132"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 65</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>class EMNIST_Net(nn.Module):
+  &quot;&quot;&quot;
+  Neural network instance with following structure
+  nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3) # Convolutional Layer 1
+  nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3) + max-pooling # Convolutional Block 2
+  nn.Linear(in_features=9216, out_features=128) # Fully Connected Layer 1
+  nn.Linear(in_features=128, out_features=2) # Fully Connected Layer 2
+  &quot;&quot;&quot;
+
+  def __init__(self):
+    &quot;&quot;&quot;
+    Initialize parameters of EMNISTNet
+
+    Args:
+      None
+
+    Returns:
+      Nothing
+    &quot;&quot;&quot;
+    super(EMNIST_Net, self).__init__()
+
+    ####################################################################
+    # Fill in missing code below (...),
+    # then remove or comment the line below to test your function
+    raise NotImplementedError(&quot;Define the required layers&quot;)
+    ####################################################################
+    self.conv1 = nn.Conv2d(...)
+    self.conv2 = nn.Conv2d(...)
+    self.fc1 = nn.Linear(...)
+    self.fc2 = nn.Linear(...)
+    self.pool = nn.MaxPool2d(...)
+
+  def forward(self, x):
+    &quot;&quot;&quot;
+    Forward pass of EMNISTNet
+
+    Args:
+      x: torch.tensor
+        Input features
+
+    Returns:
+      x: torch.tensor
+        Output of final fully connected layer
+    &quot;&quot;&quot;
+    ####################################################################
+    # Fill in missing code below (...),
+    # then remove or comment the line below to test your function
+    # Hint: Do not forget to flatten the image as it goes from
+    # Convolution Layers to Linear Layers!
+    raise NotImplementedError(&quot;Define forward pass for any input x&quot;)
+    ####################################################################
+    x = self.conv1(x)
+    x = F.relu(x)
+    x = self.conv2(x)
+    x = ...
+    x = ...
+    x = ...
+    x = ...
+    x = ...
+    x = ...
+    return x
+
+
+
+## Uncomment the lines below to train your network
+# emnist_net = EMNIST_Net().to(DEVICE)
+# print(&quot;Total Parameters in Network {:10d}&quot;.format(sum(p.numel() for p in emnist_net.parameters())))
+# train(emnist_net, DEVICE, train_loader, 1)
+## Uncomment to test your model
+# print(f&#x27;Test accuracy is: {test(emnist_net, DEVICE, test_loader)}&#x27;)</code></pre></div></section><section class="nb-cell" id="cell-133"><p>You should have been able to get a test accuracy of around \(99%\)!</p></section><section class="nb-cell" id="cell-134"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_c295e530.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-135"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 66</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Implement_your_own_CNN_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-136"><p><strong>Note:</strong> We are using a softmax function here which converts a real value to a value between 0 and 1, which can be interpreted as a probability.</p></section><section class="nb-cell" id="cell-137"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 67</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># Index of an image in the dataset that corresponds to an X and O
+x_img_idx = 11
+o_img_idx = 0
+
+print(&quot;Input:&quot;)
+x_img = emnist_train[x_img_idx][0].unsqueeze(dim=0).to(DEVICE)
+plt.imshow(emnist_train[x_img_idx][0].reshape(28, 28),
+           cmap=plt.get_cmap(&#x27;gray&#x27;))
+plt.show()
+output = emnist_net(x_img)
+result = F.softmax(output, dim=1)
+print(&quot;\nResult:&quot;, result)
+print(&quot;Confidence of image being an &#x27;O&#x27;:&quot;, result[0, 0].item())
+print(&quot;Confidence of image being an &#x27;X&#x27;:&quot;, result[0, 1].item())</code></pre></div></section><section class="nb-cell" id="cell-138"><p>The network is quite confident that this image is an \(X\)!</p>
+<p>Note that this is evident from the softmax output, which shows the probabilities of the image belonging to each of the classes. There is a higher probability of belonging to class 1; i.e., class \(X\).</p>
+<p>Let us also test the network on an \(O\) image.</p></section><section class="nb-cell" id="cell-139"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 68</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>print(&quot;Input:&quot;)
+o_img = emnist_train[o_img_idx][0].unsqueeze(dim=0).to(DEVICE)
+plt.imshow(emnist_train[o_img_idx][0].reshape(28, 28),
+           cmap=plt.get_cmap(&#x27;gray&#x27;))
+plt.show()
+output = emnist_net(o_img)
+result = F.softmax(output, dim=1)
+print(&quot;\nResult:&quot;, result)
+print(&quot;Confidence of image being an &#x27;O&#x27;:&quot;, result[0, 0].item())
+print(&quot;Confidence of image being an &#x27;X&#x27;:&quot;, result[0, 1].item())</code></pre></div></section><section class="nb-cell" id="cell-140"><hr />
+<h1 id="section-5-transfer-learning">Section 5: Transfer Learning</h1>
+<p><em>Time estimate: ~24mins</em></p></section><section class="nb-cell" id="cell-141"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 69</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Video 7: Transfer Learning
+from ipywidgets import widgets
+from IPython.display import YouTubeVideo
+from IPython.display import IFrame
+from IPython.display import display
+
+class PlayVideo(IFrame):
+  def __init__(self, id, source, page=1, width=400, height=300, **kwargs):
+    self.id = id
+    if source == &#x27;Bilibili&#x27;:
+      src = f&#x27;https://player.bilibili.com/player.html?bvid={id}&amp;page={page}&#x27;
+    elif source == &#x27;Osf&#x27;:
+      src = f&#x27;https://mfr.ca-1.osf.io/render?url=https://osf.io/download/{id}/?direct%26mode=render&#x27;
+    super(PlayVideo, self).__init__(src, width, height, **kwargs)
+
+
+def display_videos(video_ids, W=400, H=300, fs=1):
+  tab_contents = []
+  for i, video_id in enumerate(video_ids):
+    out = widgets.Output()
+    with out:
+      if video_ids[i][0] == &#x27;Youtube&#x27;:
+        video = YouTubeVideo(id=video_ids[i][1], width=W,
+                             height=H, fs=fs, rel=0)
+        print(f&#x27;Video available at https://youtube.com/watch?v={video.id}&#x27;)
+      else:
+        video = PlayVideo(id=video_ids[i][1], source=video_ids[i][0], width=W,
+                          height=H, fs=fs, autoplay=False)
+        if video_ids[i][0] == &#x27;Bilibili&#x27;:
+          print(f&#x27;Video available at https://www.bilibili.com/video/{video.id}&#x27;)
+        elif video_ids[i][0] == &#x27;Osf&#x27;:
+          print(f&#x27;Video available at https://osf.io/{video.id}&#x27;)
+      display(video)
+    tab_contents.append(out)
+  return tab_contents
+
+
+video_ids = [(&#x27;Youtube&#x27;, &#x27;Qr5l-an5ac4&#x27;), (&#x27;Bilibili&#x27;, &#x27;BV1z54y1E714&#x27;)]
+tab_contents = display_videos(video_ids, W=854, H=480)
+tabs = widgets.Tab()
+tabs.children = tab_contents
+for i in range(len(tab_contents)):
+  tabs.set_title(i, video_ids[i][0])
+display(tabs)</code></pre></div></section><section class="nb-cell" id="cell-142"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 70</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Transfer_Learning_Video&quot;)</code></pre></div></section><section class="nb-cell" id="cell-143"><p>The most common way large image models are trained in practice is via transfer learning. One first pretrains a network on a large classification dataset like ImageNet, then uses the weights of this network as initialization for training ("fine-tuning") that network on your task of choice.</p>
+<p>While training a network twice sounds like a strange thing to do, the model ends up training faster on the target dataset and often outperforms training "from scratch". There are also other benefits such as <a href="https://arxiv.org/pdf/1901.09960.pdf" target="_blank" rel="noopener">robustness to noise</a> that are the subject of <a href="https://arxiv.org/abs/2008.11687" target="_blank" rel="noopener">active research</a>.</p>
+<p>In this section we will demonstrate transfer learning by taking a model trained on ImageNet and teaching it to classify Pokemon.</p>
+<p>If you have more time after this, you could look at the Bonus Lecture to learn more about the different types of modern CNN architectures that have been pretrained for transfer learning applications.</p></section><section class="nb-cell" id="cell-144"><h2 id="section-51-download-and-prepare-the-data">Section 5.1: Download and prepare the data</h2></section><section class="nb-cell" id="cell-145"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 71</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Download Data
+import zipfile, io
+
+# Original link: https://github.com/ben-heil/cis_522_data.git
+url = &#x27;https://osf.io/u4njm/download&#x27;
+
+fname = &#x27;small_pokemon_dataset&#x27;
+
+if not os.path.exists(fname+&#x27;zip&#x27;):
+  print(&quot;Data is being downloaded...&quot;)
+  r = requests.get(url, stream=True)
+  z = zipfile.ZipFile(io.BytesIO(r.content))
+  z.extractall()
+  print(&quot;The download has been completed.&quot;)
+else:
+  print(&quot;Data has already been downloaded.&quot;)</code></pre></div></section><section class="nb-cell" id="cell-146"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 72</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># List the different Pokemon
+os.listdir(&quot;small_pokemon_dataset/&quot;)</code></pre></div></section><section class="nb-cell" id="cell-147"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 73</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Determine number of classes
+num_classes = 0
+for folders in os.listdir(&#x27;small_pokemon_dataset/&#x27;):
+  num_classes += 1
+print(f&quot;{num_classes} types of Pokemon&quot;)</code></pre></div></section><section class="nb-cell" id="cell-148"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 74</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Display Example Images
+train_transform = transforms.Compose((transforms.Resize((256, 256)),
+                                      transforms.ToTensor()))
+
+pokemon_dataset = ImageFolder(&#x27;small_pokemon_dataset&#x27;,
+                              transform=train_transform)
+
+image_count = len(pokemon_dataset)
+train_indices = []
+test_indices = []
+for i in range(image_count):
+  # Put ten percent of the images in the test set
+  if random.random() &lt; .1:
+    test_indices.append(i)
+  else:
+    train_indices.append(i)
+
+pokemon_test_set = torch.utils.data.Subset(pokemon_dataset, test_indices)
+pokemon_train_set = torch.utils.data.Subset(pokemon_dataset, train_indices)
+
+pokemon_train_loader = torch.utils.data.DataLoader(pokemon_train_set,
+                                                   batch_size=16,
+                                                   shuffle=True,)
+pokemon_test_loader = torch.utils.data.DataLoader(pokemon_test_set,
+                                                  batch_size=16)
+
+dataiter = iter(pokemon_train_loader)
+images, labels = next(dataiter)
+
+# Show images
+plt.imshow(make_grid(images, nrow=4).permute(1, 2, 0))
+plt.axis(&#x27;off&#x27;)
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-149"><h2 id="section-52-fine-tuning-a-resnet">Section 5.2: Fine-tuning a ResNet</h2>
+<p>It is common in computer vision to take a large model trained on a large dataset (often ImageNet), replace the classification layer and fine-tune the entire network to perform a different task.</p>
+<p>ResNet (Residual Network) is a deep CNN architecture that uses skip connections to allow gradients to flow through very deep networks without vanishing — making it one of the most widely used image models in practice.</p>
+<p>Here we'll be using a pre-trained ResNet model to classify types of Pokemon.</p></section><section class="nb-cell" id="cell-150"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 75</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>from IPython.display import clear_output,display</code></pre></div></section><section class="nb-cell" id="cell-151"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 76</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>resnet = torchvision.models.resnet18(weights=&#x27;ResNet18_Weights.DEFAULT&#x27;)
+num_ftrs = resnet.fc.in_features
+# Reset final fully connected layer, number of classes = types of Pokemon = 9
+resnet.fc = nn.Linear(num_ftrs, num_classes)
+resnet.to(DEVICE)
+optimizer = torch.optim.Adam(resnet.parameters(), lr=1e-4)
+loss_fn = nn.CrossEntropyLoss()</code></pre></div></section><section class="nb-cell" id="cell-152"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 77</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Finetune ResNet
+pretrained_accs = []
+for epoch in tqdm(range(10)):
+  # Train loop
+  for batch in pokemon_train_loader:
+    images, labels = batch
+    images = images.to(DEVICE)
+    labels = labels.to(DEVICE)
+
+    optimizer.zero_grad()
+    output = resnet(images)
+    loss = loss_fn(output, labels)
+    loss.backward()
+    optimizer.step()
+
+  # Eval loop
+  with torch.no_grad():
+    loss_sum = 0
+    total_correct = 0
+    total = len(pokemon_test_set)
+    for batch in pokemon_test_loader:
+      images, labels = batch
+      images = images.to(DEVICE)
+      labels = labels.to(DEVICE)
+      output = resnet(images)
+      loss = loss_fn(output, labels)
+      loss_sum += loss.item()
+
+      predictions = torch.argmax(output, dim=1)
+
+      num_correct = torch.sum(predictions == labels)
+      total_correct += num_correct
+
+    # Plot accuracy
+    pretrained_accs.append(total_correct.cpu() / total)
+    plt.plot(pretrained_accs)
+    plt.xlabel(&#x27;epoch&#x27;)
+    plt.ylabel(&#x27;accuracy&#x27;)
+    plt.title(&#x27;Pokemon prediction accuracy&#x27;)
+    clear_output(wait=True)
+    display(plt.gcf())
+  plt.close()</code></pre></div></section><section class="nb-cell" id="cell-153"><h2 id="section-53-train-only-classification-layer">Section 5.3: Train only classification layer</h2>
+<p>Another possible way to make use of transfer learning is to take a pre-trained model and replace the last layer, the classification layer (sometimes also called the "linear readout"). Instead of fine-tuning the whole model as before, we train only the classification layer.</p></section><section class="nb-cell" id="cell-154"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 78</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>resnet = torchvision.models.resnet18(weights=&#x27;ResNet18_Weights.DEFAULT&#x27;)
+for param in resnet.parameters():
+  param.requires_grad = False
+num_ftrs = resnet.fc.in_features
+# ResNet final fully connected layer
+resnet.fc = nn.Linear(num_ftrs, num_classes)
+resnet.to(DEVICE)
+optimizer = torch.optim.Adam(resnet.fc.parameters(), lr=1e-2)
+loss_fn = nn.CrossEntropyLoss()</code></pre></div></section><section class="nb-cell" id="cell-155"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 79</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Finetune readout of ResNet
+linreadout_accs = []
+for epoch in tqdm(range(10)):
+  # Train loop
+  for batch in pokemon_train_loader:
+    images, labels = batch
+    images = images.to(DEVICE)
+    labels = labels.to(DEVICE)
+
+    optimizer.zero_grad()
+    output = resnet(images)
+    loss = loss_fn(output, labels)
+    loss.backward()
+    optimizer.step()
+
+  # Eval loop
+  with torch.no_grad():
+    loss_sum = 0
+    total_correct = 0
+    total = len(pokemon_test_set)
+    for batch in pokemon_test_loader:
+      images, labels = batch
+      images = images.to(DEVICE)
+      labels = labels.to(DEVICE)
+      output = resnet(images)
+      loss = loss_fn(output, labels)
+      loss_sum += loss.item()
+
+      predictions = torch.argmax(output, dim=1)
+
+      num_correct = torch.sum(predictions == labels)
+      total_correct += num_correct
+
+    # Plot accuracy
+    linreadout_accs.append(total_correct.cpu() / total)
+    plt.plot(linreadout_accs)
+    plt.xlabel(&#x27;epoch&#x27;)
+    plt.ylabel(&#x27;accuracy&#x27;)
+    plt.title(&#x27;Pokemon prediction accuracy&#x27;)
+    clear_output(wait=True)
+    display(plt.gcf())
+  plt.close()</code></pre></div></section><section class="nb-cell" id="cell-156"><h2 id="section-54-training-resnet-from-scratch">Section 5.4: Training ResNet from scratch</h2>
+<p>As a baseline and for comparison reasons we will also train the ResNet "from scratch" – that is: initialize the weights randomly and train the entire network exclusively on the Pokemon dataset.</p></section><section class="nb-cell" id="cell-157"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 80</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code>resnet = torchvision.models.resnet18(weights=None)
+num_ftrs = resnet.fc.in_features
+# ResNet final fully connected layer
+resnet.fc = nn.Linear(num_ftrs, num_classes)
+resnet.to(DEVICE)
+optimizer = torch.optim.Adam(resnet.parameters(), lr=1e-4)
+
+loss_fn = nn.CrossEntropyLoss()</code></pre></div></section><section class="nb-cell" id="cell-158"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 81</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Train ResNet from scratch
+scratch_accs = []
+for epoch in tqdm(range(10)):
+  # Train loop
+  for batch in pokemon_train_loader:
+    images, labels = batch
+    images = images.to(DEVICE)
+    labels = labels.to(DEVICE)
+
+    optimizer.zero_grad()
+    output = resnet(images)
+    loss = loss_fn(output, labels)
+    loss.backward()
+    optimizer.step()
+
+  # Eval loop
+  with torch.no_grad():
+    loss_sum = 0
+    total_correct = 0
+    total = len(pokemon_test_set)
+    for batch in pokemon_test_loader:
+      images, labels = batch
+      images = images.to(DEVICE)
+      labels = labels.to(DEVICE)
+      output = resnet(images)
+      loss = loss_fn(output, labels)
+      loss_sum += loss.item()
+
+      predictions = torch.argmax(output, dim=1)
+
+      num_correct = torch.sum(predictions == labels)
+      total_correct += num_correct
+
+    scratch_accs.append(total_correct.cpu() / total)
+    plt.plot(scratch_accs)
+    plt.xlabel(&#x27;epoch&#x27;)
+    plt.ylabel(&#x27;accuracy&#x27;)
+    plt.title(&#x27;Pokemon prediction accuracy&#x27;)
+
+    clear_output(wait=True)
+    display(plt.gcf())
+  plt.close()</code></pre></div></section><section class="nb-cell" id="cell-159"><h2 id="section-55-head-to-head-comparison">Section 5.5: Head to Head Comparison</h2>
+<p>Starting from a randomly initialized network works less well, especially in the case of small datsets. Note that the model converges more slowly and less evenly.</p></section><section class="nb-cell" id="cell-160"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 82</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Plot Accuracies
+plt.plot(pretrained_accs, label=&#x27;Pretrained: fine-tuning&#x27;)
+plt.plot(linreadout_accs, label=&#x27;Pretrained: linear Readout&#x27;)
+plt.plot(scratch_accs, label=&#x27;Trained from Scratch&#x27;)
+plt.title(&#x27;Pokemon prediction accuracy&#x27;)
+plt.legend()
+plt.show()</code></pre></div></section><section class="nb-cell" id="cell-161"><h3 id="exercise-551-pretrained-resnet-vs-resnet-trained-from-scratch">Exercise 5.5.1: Pretrained ResNet vs. ResNet trained from scratch</h3>
+<p>First, we compare the Pretrained ResNet with the ResNet trained from scratch. Why might pretrained models outperform models trained from scratch? In what cases would you expect them to be worse?</p></section><section class="nb-cell" id="cell-162"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_e6424437.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-163"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 83</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Pretrained_ResNet_vs_ResNet_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-164"><h3 id="exercise-552-training-only-the-classification-layer">Exercise 5.5.2: Training only the classification layer</h3>
+<p>Second, take a look at the different transfer learning methods - fine-tuning the whole network and training only the classification layer. Why might fine-tuning the whole network outperform training only the classification layer? What are the benefits of training only the classification layer? In what cases would you expect a similar performance of both methods?</p></section><section class="nb-cell" id="cell-165"><p><a href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main/tutorials/W2D2_Convnets/solutions/W2D2_Tutorial1_Solution_b3ebfd81.py" target="_blank" rel="noopener"><em>Click for solution</em></a></p></section><section class="nb-cell" id="cell-166"><div class="code-block-wrap"><div class="code-header"><span>Python · Executable Cell 84</span><button type="button" class="copy-btn">Copy Code</button></div><pre><code># @title Submit your feedback
+content_review(f&quot;{feedback_prefix}_Training_only_the_classification_Exercise&quot;)</code></pre></div></section><section class="nb-cell" id="cell-167"><h2 id="further-reading">Further Reading</h2>
+<p>Supervised pretraining as you've seen here is useful, but there are several other ways of using outside data to improve your models. The ones that are particularly popular right now are self-supervised techniques like <a href="https://arxiv.org/pdf/2002.05709.pdf" target="_blank" rel="noopener">contrastive learning</a>.</p>
+<p>There is also a <a href="https://arxiv.org/abs/2102.01293" target="_blank" rel="noopener">recent paper</a> that seeks to quantify the relationship between model size, pretraining dataset size, training dataset size, and performance.</p></section><section class="nb-cell" id="cell-168"><hr />
+<h1 id="summary">Summary</h1>
+<p>In this Tutorial we have familiarized ouselves with CNNs. We have leaned how the convolution operation works and be applied in various images. Also, we have learned to implement our own CNN. In the bonus Tutorial, we will go deeper in the training of CNNs!</p></section>
+        </article>
+        
+    </main>
+    <aside class="sidebar-right" aria-label="On this page"><h3>On This Page</h3><ul class="toc-list"><li><a href="#think-1-what-makes-a-representation-good">Think! 1: What makes a representation good?</a></li><li class="toc-sub"><a href="#interactive-demo-2-visualization-of-convolution">Interactive Demo 2: Visualization of Convolution</a></li><li><a href="#coding-exercise-21-convolution-of-a-simple-kernel">Coding Exercise 2.1: Convolution of a Simple Kernel</a></li><li><a href="#coding-exercise-22-convolution-output-size">Coding Exercise 2.2: Convolution Output Size</a></li><li><a href="#coding-exercise-23-coding-a-convolution">Coding Exercise 2.3: Coding a Convolution</a></li><li class="toc-sub"><a href="#convolution-on-the-chicago-skyline">Convolution on the Chicago Skyline</a></li><li><a href="#section-21-demonstration-of-a-cnn-in-pytorch">Section 2.1: Demonstration of a CNN in PyTorch</a></li><li><a href="#section-22-padding-and-edge-detection">Section 2.2: Padding and Edge Detection</a></li><li class="toc-sub"><a href="#interactive-demo-22-visualization-of-convolution-with-padding-and-stride">Interactive Demo 2.2: Visualization of Convolution with Padding and Stride</a></li><li class="toc-sub"><a href="#think-221-edge-detection">Think! 2.2.1: Edge Detection</a></li><li class="toc-sub"><a href="#think-222-kernel-structure">Think! 2.2.2 Kernel structure</a></li><li><a href="#interactive-demo-3-visualization-of-convolution-with-multiple-filters">Interactive Demo 3: Visualization of Convolution with Multiple Filters</a></li><li><a href="#section-31-multiple-filters">Section 3.1: Multiple Filters</a></li><li class="toc-sub"><a href="#think-31-do-you-see-how-these-filters-would-help-recognize-an-x">Think! 3.1: Do you see how these filters would help recognize an X?</a></li><li><a href="#section-32-relu-after-convolutions">Section 3.2: ReLU after convolutions</a></li><li><a href="#section-33-pooling">Section 3.3: Pooling</a></li><li class="toc-sub"><a href="#interactive-demo-33-the-effect-of-the-stride">Interactive Demo 3.3: The effect of the stride</a></li><li class="toc-sub"><a href="#coding-exercise-33-implement-maxpooling">Coding Exercise 3.3: Implement MaxPooling</a></li><li><a href="#section-41-number-of-parameters-in-convolutional-vs-fully-connected-models">Section 4.1: Number of Parameters in Convolutional vs. Fully-connected Models</a></li><li class="toc-sub"><a href="#interactive-demo-41-number-of-parameters">Interactive Demo 4.1: Number of Parameters</a></li><li><a href="#coding-exercise-4-implement-your-own-cnn">Coding Exercise 4: Implement your own CNN</a></li><li><a href="#section-51-download-and-prepare-the-data">Section 5.1: Download and prepare the data</a></li><li><a href="#section-52-fine-tuning-a-resnet">Section 5.2: Fine-tuning a ResNet</a></li><li><a href="#section-53-train-only-classification-layer">Section 5.3: Train only classification layer</a></li><li><a href="#section-54-training-resnet-from-scratch">Section 5.4: Training ResNet from scratch</a></li><li><a href="#section-55-head-to-head-comparison">Section 5.5: Head to Head Comparison</a></li><li class="toc-sub"><a href="#exercise-551-pretrained-resnet-vs-resnet-trained-from-scratch">Exercise 5.5.1: Pretrained ResNet vs. ResNet trained from scratch</a></li><li class="toc-sub"><a href="#exercise-552-training-only-the-classification-layer">Exercise 5.5.2: Training only the classification layer</a></li><li><a href="#further-reading">Further Reading</a></li></ul></aside>
+  </div>
+
+  <div class="lightbox-overlay" id="img-lightbox" role="dialog" aria-label="Zoomed figure view">
+    <img id="img-lightbox-target" src="" alt="Enlarged scientific diagram">
+  </div>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Neuroimaging Research Methods with AI</strong> · 26-Week Graduate Curriculum (83 Main Classes · 4 Supplement Labs · 14 Upstream Tutorials · 24 Core Papers · 310 Verified References).
+      Built for macOS on Apple Silicon MacBook Pro with Goose + Ollama (Qwen &amp; Gemma).
+    </div>
+    <div>
+      <a href="../../../../../../curriculum/ALL_MATERIALS.html">All 250 Repo Files</a> ·
+      <a href="../../../../../../curriculum/SETUP.html">Mac Setup</a> ·
+      <a href="../../../../../../curriculum/EQUATION_ATLAS.html">Equation Atlas</a> ·
+      <a href="../../../../../../course/COURSEBOOK.html">Compact Coursebook</a> ·
+      <a href="../../../../../../THIRD_PARTY_NOTICES.html">Licenses &amp; Provenance</a>
+    </div>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+  <script defer src="../../../../../../assets/site.js"></script>
+</body>
+</html>
