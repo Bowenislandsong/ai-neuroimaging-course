@@ -14,6 +14,7 @@ import markdown
 
 from equation_decomposer import render_equation_with_breakdown_html
 from site_theme import SITE_CSS, SITE_JS, render_pipeline_svg
+from course_site import build_academic_pages, build_lecture_decks
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -455,6 +456,7 @@ def wrap_page_html(
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="stylesheet" href="{root_prefix}assets/site.css">
+  <link rel="stylesheet" href="{root_prefix}assets/reader.css">
 </head>
 <body>
   <header class="topbar">
@@ -463,14 +465,13 @@ def wrap_page_html(
       <span>Neuroimaging Research Methods with AI</span>
     </a>
     <nav class="top-links" aria-label="Primary Navigation">
-      <a href="{root_prefix}index.html"{nav_cls("home")}>26-Week Roadmap</a>
-      <a href="{root_prefix}curriculum/SETUP.html"{nav_cls("setup")}>Mac Env &amp; Apple Setup</a>
-      <a href="{root_prefix}curriculum/STUDY_PLAN.html"{nav_cls("plan")}>Study Plan</a>
-      <a href="{root_prefix}curriculum/NOTEBOOK_INDEX.html"{nav_cls("classes")}>83 Classes</a>
-      <a href="{root_prefix}curriculum/EQUATION_ATLAS.html"{nav_cls("equations")}>Equation &amp; Diagram Atlas</a>
-      <a href="{root_prefix}curriculum/papers/README.html"{nav_cls("papers")}>24 Papers &amp; 310 Citations</a>
-      <a href="{root_prefix}curriculum/AI_WORKFLOW.html"{nav_cls("ai")}>AI Workflow</a>
-      <a href="{root_prefix}curriculum/ALL_MATERIALS.html"{nav_cls("materials")}>All Repo Materials (250)</a>
+      <a href="{root_prefix}index.html"{nav_cls("home")}>Overview</a>
+      <a href="{root_prefix}curriculum/SYLLABUS.html">Syllabus</a>
+      <a href="{root_prefix}schedule.html"{nav_cls("plan")}>Schedule</a>
+      <a href="{root_prefix}lectures.html"{nav_cls("classes")}>Lectures &amp; slides</a>
+      <a href="{root_prefix}curriculum/papers/README.html"{nav_cls("papers")}>Readings</a>
+      <a href="{root_prefix}assignments.html">Assignments</a>
+      <a href="{root_prefix}curriculum/SETUP.html"{nav_cls("setup")}>Setup</a>
     </nav>
     <div class="reader-controls" aria-label="Reading Comfort Controls">
       <button type="button" id="eq-logic-toggle-btn" class="ctrl-btn active" title="Expand or collapse all inline equation logic breakdown tables">∑ Logic: Expanded</button>
@@ -497,12 +498,12 @@ def wrap_page_html(
 
   <footer class="site-footer">
     <div>
-      <strong>Neuroimaging Research Methods with AI</strong> · 26-Week Graduate Curriculum (83 Main Classes · 4 Supplement Labs · 14 Upstream Tutorials · 24 Core Papers · 310 Verified References).
-      Built for macOS on Apple Silicon MacBook Pro with Goose + Ollama (Qwen &amp; Gemma).
+      <strong>Neuroimaging Research Methods with AI</strong> · Independent open course.
+      Lecture slides, research readings and reproducible notebook experiments.
     </div>
     <div>
-      <a href="{root_prefix}curriculum/ALL_MATERIALS.html">All 250 Repo Files</a> ·
-      <a href="{root_prefix}curriculum/SETUP.html">Mac Setup</a> ·
+      <a href="{root_prefix}curriculum/ALL_MATERIALS.html">All materials</a> ·
+      <a href="{root_prefix}curriculum/SETUP.html">Setup</a> ·
       <a href="{root_prefix}curriculum/EQUATION_ATLAS.html">Equation Atlas</a> ·
       <a href="{root_prefix}course/COURSEBOOK.html">Compact Coursebook</a> ·
       <a href="{root_prefix}THIRD_PARTY_NOTICES.html">Licenses &amp; Provenance</a>
@@ -601,13 +602,13 @@ def build_notebook_page(
     pipeline_svg = render_pipeline_svg(info["pipeline_steps"], cid)
 
     paper_pills = []
-    for pid in record.get("papers", []):
+    for pid in record.get("paper_ids", []):
         p = papers_by_id.get(pid)
         if p:
-            p_href = root_prefix + "curriculum/papers/" + p["page"] + "#" + pid.lower()
+            p_href = root_prefix + "curriculum/papers/" + p["guide"].replace(".md", ".html")
             paper_pills.append(
                 f'<a class="btn-action" href="{p_href}" title="{html.escape(p["title"])}">'
-                f'📄 {pid}: {html.escape(p["short_title"])} ({p["year"]})</a>'
+                f'{pid} · Reading guide ({p["year"]})</a>'
             )
 
     master_rows = []
@@ -661,6 +662,7 @@ def build_notebook_page(
       </div>
       <h1>{cid} · {html.escape(record['title'])}</h1>
       <div class="banner-actions">
+        <a class="btn-action primary" href="{root_prefix}slides/{cid}.html">Lecture slides</a>
         <a class="btn-action primary" href="{Path(rel_ipynb).name}" download>⬇ Download Notebook (.ipynb)</a>
         <a class="btn-action" href="#master-equation-anatomy">∑ Jump to Equation Logic Breakdown</a>
         <a class="btn-action" href="#concept-diagram-showcase">◫ Scientific Concept Diagram</a>
@@ -1332,6 +1334,7 @@ def build_markdown_pages(all_records: list[dict], enrichment: dict, out_dir: Pat
         + list((ROOT / "curriculum").rglob("*.md"))
         + list((ROOT / "course").rglob("*.md"))
         + list((ROOT / "third_party").rglob("*.md"))
+        + list((ROOT / "website").glob("*.md"))
         + list((ROOT / "data").glob("*.md"))
     )
     for md_path in sorted(set(md_files)):
@@ -1461,6 +1464,10 @@ def main():
     build_equation_atlas_page(all_records, by_chrono, enrichment, out_dir)
     build_all_materials_page(all_records, by_chrono, enrichment, out_dir)
     build_home_page(all_records, by_chrono, enrichment, out_dir)
+    # Preserve the comprehensive materials dashboard as a secondary resource.
+    (out_dir / "index.html").rename(out_dir / "roadmap.html")
+    build_lecture_decks(by_chrono, enrichment, papers_by_id, out_dir, render_markdown_to_html)
+    build_academic_pages(by_chrono, enrichment, out_dir, render_markdown_to_html)
 
     checked_links = verify_site_links(out_dir)
     html_count = len(list(out_dir.rglob("*.html")))

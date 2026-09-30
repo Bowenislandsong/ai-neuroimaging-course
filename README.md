@@ -7,7 +7,11 @@ A 26-week graduate-level course in neuroimaging analysis, experimental design, d
 [![Notebook checks](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml/badge.svg)](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/notebooks.yml)
 [![Publish Course Website to GitHub Pages](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/pages.yml/badge.svg)](https://github.com/Bowenislandsong/ai-neuroimaging-course/actions/workflows/pages.yml)
 
-> **Interactive GitHub Pages Website:** Every push or merge to `main` automatically builds and publishes the complete static course website via [`.github/workflows/pages.yml`](.github/workflows/pages.yml) (`./setup.sh --build-site`). The website organizes all 83 classes in both the **26-Week Chronological Study Path (`#1`–`#83`)** and by **7 Subject Strands (`R`, `F`, `PR`, `D`, `DS`, `M`, `P`)**, embeds verified open-licensed scientific concept diagrams from Wikimedia Commons alongside 5-stage transformation schematics and executed `matplotlib` figures, and provides **logical term-by-term equation breakdowns** explaining which part of each equation does what and what breaks if omitted.
+**[Course website](https://bowenislandsong.github.io/ai-neuroimaging-course/)** · [Syllabus](https://bowenislandsong.github.io/ai-neuroimaging-course/curriculum/SYLLABUS.html) · [Weekly schedule](https://bowenislandsong.github.io/ai-neuroimaging-course/schedule.html) · [Lecture slides](https://bowenislandsong.github.io/ai-neuroimaging-course/lectures.html) · [Assignments](https://bowenislandsong.github.io/ai-neuroimaging-course/assignments.html)
+
+The website pairs every class with a browser lecture deck, complete lesson notes and a downloadable notebook. Slides support keyboard navigation, fullscreen presentation, handout view and printing to PDF. The 26-week schedule connects lectures to reading questions and assignment checkpoints. This is an independent open course, not an official university offering.
+
+Every push or merge to `main` builds and publishes through [the Pages workflow](.github/workflows/pages.yml). In **Settings → Pages → Build and deployment**, select **GitHub Actions**. For a local build, run `./setup.sh --build-site`; see [website maintenance](website/README.md).
 
 ## Step 0 · Set up your MacBook Pro agentic environment (macOS + Apple Dev Tools + Ollama + Goose)
 

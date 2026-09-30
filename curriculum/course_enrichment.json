@@ -1356,7 +1356,7 @@
           "term": "T_{\\text{fix}\\leftarrow\\text{mov}}^{-1}(\\mathbf{x}_m)",
           "role": "Inverse Pullback Coordinate Map",
           "meaning": "Maps each regular grid point x_m in fixed space back to its source location in moving space so no output voxel is left with holes.",
-          "failure": "Applying the forward transform вместо the inverse, moving the brain in the opposite direction or leaving unvisited grid holes."
+          "failure": "Applying the forward transform instead of the inverse, moving the brain in the opposite direction or leaving unvisited grid holes."
         },
         {
           "term": "A_{\\text{mov}}^{-1}(\\cdot)",
