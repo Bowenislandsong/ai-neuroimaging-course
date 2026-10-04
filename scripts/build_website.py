@@ -15,6 +15,7 @@ import markdown
 from equation_decomposer import render_equation_with_breakdown_html
 from site_theme import SITE_CSS, SITE_JS, render_pipeline_svg
 from course_site import build_academic_pages, build_lecture_decks
+from site_discovery import add_site_discovery
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -1469,6 +1470,7 @@ def main():
     build_lecture_decks(by_chrono, enrichment, papers_by_id, out_dir, render_markdown_to_html)
     build_academic_pages(by_chrono, enrichment, out_dir, render_markdown_to_html)
 
+    add_site_discovery(out_dir)
     checked_links = verify_site_links(out_dir)
     html_count = len(list(out_dir.rglob("*.html")))
     print(

@@ -1,0 +1,34 @@
+{
+  "index.html": {
+    "title": "Free Neuroimaging Course: MRI, fMRI & AI Research Methods",
+    "description": "Learn MRI, fMRI and diffusion imaging in a free 26-week course with Python notebooks, lecture slides, research papers and AI-assisted analysis."
+  },
+  "schedule.html": {
+    "title": "26-Week Neuroimaging Course Schedule | MRI & AI",
+    "description": "Follow a 26-week study plan covering MRI foundations, image preprocessing, research design, Python data science and computational modeling."
+  },
+  "lectures.html": {
+    "title": "Neuroimaging Lectures & Python Notebooks | MRI, fMRI & AI",
+    "description": "Browse 83 neuroimaging classes with lecture slides, lesson notes and downloadable notebooks for MRI processing, statistics and AI research methods."
+  },
+  "assignments.html": {
+    "title": "Neuroimaging Research Assignments & Projects",
+    "description": "Practice research paper analysis, controlled notebook experiments, figure reconstruction and a final neuroimaging research proposal with assessment rubrics."
+  },
+  "curriculum/SYLLABUS.html": {
+    "title": "Neuroimaging & AI Course Syllabus | Research Methods",
+    "description": "Explore the course learning outcomes, prerequisites, workload and assessments for studying structural MRI, fMRI, diffusion imaging and AI research methods."
+  },
+  "curriculum/SETUP.html": {
+    "title": "Python & Jupyter Setup for the Neuroimaging Course",
+    "description": "Set up the Python and Jupyter environment for neuroimaging lessons and notebook experiments using the course installation and verification instructions."
+  },
+  "curriculum/papers/README.html": {
+    "title": "Neuroimaging Research Papers & Reading Guides",
+    "description": "Find assigned neuroimaging research papers, publication records and reading guides to connect MRI analysis methods with evidence from the literature."
+  },
+  "course/COURSEBOOK.html": {
+    "title": "Neuroimaging Research Methods Coursebook | MRI & AI",
+    "description": "Read the combined coursebook for neuroimaging research methods, connecting MRI processing, statistical analysis, computational modeling and research practice."
+  }
+}

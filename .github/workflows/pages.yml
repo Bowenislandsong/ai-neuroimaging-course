@@ -27,6 +27,9 @@ jobs:
           version: '0.11.7'
           enable-cache: true
       - name: Build and verify the course website
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ vars.GOOGLE_ANALYTICS_ID }}
+          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
         run: |
           uv sync --locked
           uv run python scripts/check_repository.py
